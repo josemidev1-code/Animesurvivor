@@ -1,0 +1,11 @@
+# Solo los archivos esenciales del juego van al repositorio
+copias/
+index-antes-*.html
+tomarreferencia/
+sprites/
+personajes/
+animaciones/
+FOOTAGE/
+fotos/
+ESCENARIOS/
+*.zip
