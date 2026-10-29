@@ -992,6 +992,7 @@ const CARDS={
  xp:{name:'Sabiduría de Kaio',ds:'+10% de experiencia'},
 };
 const ET={
+ crate:{n:'Caja',hp:20,spd:0,dmg:0,xp:0,r:8},
  saiba:{n:'Saibaman',hp:8,spd:32,dmg:5,xp:1,r:6},
  soldier:{n:'Soldado',hp:18,spd:28,dmg:8,xp:2,r:7,shoot:3.6},
  rrsoldier:{n:'Soldado Red Ribbon',hp:18,spd:30,dmg:8,xp:2,r:7,shoot:3.2},
@@ -1010,6 +1011,14 @@ const ET={
  saibaX:{n:'Saibaman suicida',hp:30,spd:60,dmg:28,xp:4,r:6,kami:1},
  saibaR:{n:'Saibaman rojo',hp:55,spd:44,dmg:12,xp:5,r:6},
  soldierE:{n:'Élite',hp:80,spd:32,dmg:14,xp:7,r:7,shoot:2.6},
+ saibaB:{n:'Saibaman de ki',hp:18,spd:30,dmg:8,xp:2,r:6,shoot:3.4},
+ cellsemiE:{n:'CELL SEMIPERFECTO',hp:300,spd:70,dmg:13,xp:25,r:8,elite:1},
+ vegetaE:{n:'VEGETA',hp:620,spd:56,dmg:17,xp:50,r:8,elite:1,shoot:1.8},
+ turlesE:{n:'TURLES',hp:480,spd:54,dmg:15,xp:40,r:8,elite:1,shoot:1.8},
+ frostE:{n:'FROST',hp:420,spd:58,dmg:14,xp:40,r:8,elite:1,shoot:1.6},
+ hitE:{n:'HIT',hp:560,spd:62,dmg:17,xp:50,r:8,elite:1,shoot:2},
+ zamasuE:{n:'ZAMASU',hp:520,spd:58,dmg:16,xp:50,r:8,elite:1,shoot:1.7},
+ superbuuE:{n:'SUPER BUU',hp:780,spd:56,dmg:18,xp:55,r:9,elite:1,shoot:1.9},
  coolerE:{n:'COOLER',hp:600,spd:54,dmg:17,xp:50,r:8,elite:1,shoot:1.6},
  a16E:{n:'ANDROIDE 16',hp:820,spd:40,dmg:18,xp:55,r:9,elite:1,shoot:2.4},
  cellimpE:{n:'CELL IMPERFECTO',hp:540,spd:60,dmg:15,xp:45,r:8,elite:1},
@@ -1017,6 +1026,18 @@ const ET={
  fatbuuE:{n:'MAJIN BUU',hp:900,spd:38,dmg:18,xp:55,r:10,elite:1,alias:'fatbuu'},
  majinvE:{n:'MAJIN VEGETA',hp:700,spd:58,dmg:17,xp:50,r:8,elite:1,shoot:1.7,alias:'majinv'},
  dodoria:{n:'DODORIA',boss:1,ai:'dash'},
+ turles:{n:'TURLES',boss:1,ai:'frieza'},
+ frost:{n:'FROST',boss:1,ai:'dash'},
+ coolerB:{n:'COOLER',boss:1,ai:'frieza'},
+ vegetaSB:{n:'VEGETA',boss:1,ai:'dash'},
+ freezaF:{n:'FREEZER FORMA FINAL',boss:1,ai:'spiral'},
+ a16B:{n:'ANDROIDE 16',boss:1,ai:'dash'},
+ janemba:{n:'SUPER JANEMBA',boss:1,ai:'buu'},
+ jiren:{n:'JIREN',boss:1,ai:'dash'},
+ hitB:{n:'HIT',boss:1,ai:'dash'},
+ superbuuB:{n:'SUPER BUU',boss:1,ai:'buu'},
+ zamasuB:{n:'ZAMASU',boss:1,ai:'frieza'},
+ billsB:{n:'BILLS',boss:1,ai:'spiral'},
  zarbon:{n:'ZARBON',boss:1,ai:'frieza'},
  ginyu:{n:'CAPITÁN GINYU',boss:1,ai:'dash'},
  frieza:{n:'FREEZER',boss:1,ai:'frieza'},
@@ -1083,6 +1104,19 @@ const MAPS={
 const BOSS_T=[180,360,540,720,900];
 const WAVE_T=[130,230,310,410,490,590,670,770,850];
 const WAVES={"freezer":[["saibaR",14],["soldierE",8],["burter",1],["coolerE",1],["saibaX",12],["jeice",1]],"tierra":[["celljr",10],["cellimpE",1],["saibaR",14],["a16E",1],["rrsoldier",12],["a17e",1]],"buu":[["blob",18],["majin",10],["fatbuuE",1],["majinvE",1],["kidbuuE",1],["celljrE",3]],"super":[["soldierE",10],["coolerE",1],["majinvE",1],["a16E",1],["kidbuuE",1],["cellimpE",2]]},WSAGA={"namek":"freezer","vegetasei":"freezer","yardrat":"freezer","volcan":"freezer","gizard":"freezer","kaio":"freezer","tierra":"tierra","redribbon":"tierra","musculo":"tierra","capsule":"tierra","desierto":"tierra","futuro":"tierra","kame":"tierra","paoz":"tierra","pradera":"tierra","bosque":"tierra","arena":"buu","lookout":"buu","budokai":"buu","kaioshin":"buu","infierno":"buu","time":"super","bills":"super","poder":"super"};
+const NOSPR={"soldier":"saibaB","rrsoldier":"saibaB","majin":"saibaB","soldierE":"saibaR","blob":"saiba","celljr":"saibaR","celljrE":"cellsemiE","nappaE":"vegetaE","burter":"coolerE","jeice":"frostE","guldo":"turlesE","dodoria":"turles","zarbon":"frost","ginyu":"coolerB","nappa":"vegetaSB","mecha":"freezaF","a19":"a16B","dabura":"janemba"};
+(function(){const f=t=>NOSPR[t]||t,SQ={'¡FUERZAS ESPECIALES!':'¡INVASORES DEL ESPACIO!','¡LOS CELL JR.!':'¡EL ASALTO DE CELL!'};
+  for(const k in MAPS){const M=MAPS[k];M.pool.forEach(p=>p[1]=f(p[1]));if(M.ring)M.ring=M.ring.map(f);M.bosses=M.bosses.map(f);
+    if(M.squad){M.squad[1]=M.squad[1].map(f);M.squad[2]=SQ[M.squad[2]]||M.squad[2]}}
+  if(MAPS.poder){MAPS.poder.bosses[4]='jiren';MAPS.poder.bosses[1]='hitB'}
+  if(MAPS.futuro)MAPS.futuro.bosses=['a16B','black','zamasuB','rose','brolyB'];
+  if(MAPS.kaioshin)MAPS.kaioshin.bosses[3]='superbuuB';
+  if(MAPS.bills)MAPS.bills.bosses[4]='billsB';
+  const EL={freezer:['turlesE','frostE','coolerE'],tierra:['cellimpE','a16E','cellsemiE'],buu:['majinvE','fatbuuE','superbuuE'],super:['hitE','zamasuE','vegetaE']};
+  for(const k in MAPS){const L=EL[WSAGA[k]||'tierra'];L.forEach((id,i)=>MAPS[k].pool.push([300+i*150,id,0.25]))}
+  WAVES.buu.push(['superbuuE',1]);WAVES.super.push(['hitE',1],['zamasuE',1]);
+  for(const k in WAVES)WAVES[k].forEach(w=>w[0]=f(w[0]))})();
+
 const RINGS=[90,270,450,630,810];
 const MAXE=280;
 
@@ -1220,7 +1254,7 @@ function hurt(e,dmg,kx=0,ky=0){
   if(texts.length<70)texts.push({x:e.x+rnd(-3,3),y:e.y-e.h*0.8,v:Math.round(dmg),t:0.6,c:crit?'#ffd23f':'#ffffff'});
   sfx('hit');if(fxs.length<40&&Math.random()<0.45)fx(e.x+rnd(-3,3),e.y-e.h*0.5+rnd(-3,3),'spark',crit?'#ffd23f':'#bfe6ff',0.16);
   if(e.hp<=0)kill(e)}
-function kill(e){
+function kill(e){if(e.crate){e.dead=true;crateLoot(e);return}
   e.dead=true;S.kills++;S.kt=S.kt||{};S.kt[e.type]=(S.kt[e.type]||0)+1;if(ET[e.type].elite)S.elites=(S.elites||0)+1;if(e.type==='saiba'||e.type==='saibaR')S.saiba++;
   if(e.boss){for(let i=0;i<6;i++)setTimeout(()=>{fx(e.x+rnd(-18,18),e.y-10+rnd(-18,12),i%2?'fire':'gold',16+(i%3)*4,0.6);smoke(e.x,e.y-10,6)},i*140)}
   else fx(e.x,e.y-e.h*0.45,DEATHK[e.type]||"fire",8,0.36);
@@ -1254,13 +1288,13 @@ function fire(id,m,st,ps){
    case 'shot':{const n=st.count*(ev?2:1),ts=nearestN(ox,oy,n);
      for(let i=0;i<n;i++){const t=ts[i%Math.max(1,ts.length)];const a=aimAt(t)+(ts.length<n?(i-(n-1)/2)*0.18:rnd(-0.05,0.05));
        projs.push({k:'ki',x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:4*ps.area,dmg,pierce:st.pierce+(ev?2:0),life:1.3,hit:new Set(),col:W.col})}
-     P.atkT=P.atkD=0.24;P.atkA=aimAt(ts[0]);sfx('shot');break}
+     P.atkT=P.atkD=0.24;P.atkK=1;P.atkA=aimAt(ts[0]);sfx('shot');break}
    case 'beam':{const t=nearest(ox,oy,st.len);const a=aimAt(t);shout(id,ev);
      const evm=ev?1.5:1;
      const ch=st.charge||0.25,dur=st.dur*(ev?1.3:1);
      beams.push({x:ox,y:oy,a,len:st.len*ps.area*(ev?1.25:1),wid:st.wid*ps.area*evm,dur,t:-ch,T:ch,tick:0,dmg:dmg*0.45,col:W.col,spiral:W.spiral,hero:1,big:!W.spiral});
      P.cast={a,t:ch+dur};sfx('charge');setTimeout(()=>sfx('beam'),ch*1000);break}
-   case 'big':{const t=nearest(ox,oy,220);const a=aimAt(t);shout(id,ev);P.atkT=P.atkD=0.3;P.atkA=a;
+   case 'big':{const t=nearest(ox,oy,220);const a=aimAt(t);shout(id,ev);P.atkT=P.atkD=0.3;P.atkK=1;P.atkA=a;
      projs.push({k:'big',x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:(ev?9:6)*ps.area,dmg,rad:st.rad*ps.area*(ev?1.4:1),life:1.8,hit:new Set(),col:W.col,pierce:0});
      sfx('shot');break}
    case 'disc':{const n=st.count*(ev?2:1),ts=nearestN(ox,oy,6);
@@ -1284,7 +1318,7 @@ function manual(k){if(state!=='play'||!P)return;const ps=stats();P.mcd=P.mcd||[0
     P.x=t.x-d*16;P.y=t.y+1;P.face=d;P.dir='side';P.iframe=Math.max(P.iframe,0.35);
     for(let i=0;i<10;i++)parts.push({x:P.x+rnd(-6,6),y:P.y-rnd(0,30),vx:rnd(-24,24),vy:-rnd(10,34),t:0.35,c:'#ffffff',s:2});
     const dmg=(26+4*P.lvl)*ps.dmg;near(t.x,t.y,36,e=>{if(Math.hypot(e.x-t.x,e.y-t.y)<36+e.r)hurt(e,dmg,d*60,0)});
-    P.atkT=P.atkD=0.32;P.atkA=d>0?0:Math.PI;cam.shake=Math.max(cam.shake||0,3);P.mcd[2]=P.mcdM[2]=MCD[2]}}
+    P.atkT=P.atkD=0.32;P.atkK=0;P.atkA=d>0?0:Math.PI;cam.shake=Math.max(cam.shake||0,3);P.mcd[2]=P.mcdM[2]=MCD[2]}}
 function updateMoves(dt,ps){
   for(const id of P.order){const m=P.moves[id],W=MV[id],st=W.st(m.lv);
     if(W.kind==='orbit'){continue}
@@ -1297,16 +1331,16 @@ function updateMoves(dt,ps){
 
 // ---------- spawning ----------
 function spawn(type,x,y){
-  let d=ET[type];if(d.boss)d={...d,...BOSS_SLOT[Math.min(4,S.bossN||0)]};const sc=1+S.t/170+(S.endless?S.t/300:0);
+  type=NOSPR[type]||type;let d=ET[type];if(d.boss)d={...d,...BOSS_SLOT[Math.min(4,S.bossN||0)]};const lv=(P&&P.lvl||1)-1,sc=(1+S.t/170+(S.endless?S.t/300:0))*(1+0.045*lv);
   if(x===undefined){const a=rnd(TAU),r=Math.hypot(VW,VH)/2+20;x=P.x+Math.cos(a)*r;y=P.y+Math.sin(a)*r}
   const spr=enemySprite(type);
-  const e={type,x,y,hp:d.hp*(d.boss?1:sc),maxhp:0,spd:d.spd*(d.boss?1:rnd(0.9,1.1)),dmg:d.dmg*(1+S.t/500),xp:d.xp,r:d.r,boss:!!d.boss,final:!!d.final,ai:d.ai,
+  const e={type,x,y,hp:d.hp*(d.boss?1:sc),maxhp:0,spd:d.spd*(d.boss?1:rnd(0.9,1.1)),dmg:d.dmg*(1+S.t/500)*(1+0.02*lv),xp:d.xp,r:d.r,boss:!!d.boss,final:!!d.final,ai:d.ai,
     kx:0,ky:0,flash:0,anim:rnd(4),spr,h:spr.h*(spr.big?1:d.boss?2:1),shootT:d.shoot?rnd(1,d.shoot):0,aiT:2,aiS:0,pc:(PAL[type]||{}).g||(PAL[type]||{}).p||(PAL[type]||{}).s,aura:d.aura};
-  if(d.boss&&S.endless)e.hp*=1+S.t/600;
+  if(d.boss)e.hp*=1+0.03*lv;if(d.boss&&S.endless)e.hp*=1+S.t/600;
   {const D=DIFF[S.diff||0];e.hp*=D.hp;e.dmg*=D.dmg;if(!d.boss)e.spd*=Math.min(1.25,1+(D.hp-1)*0.05)}
   e.maxhp=e.hp;e.sc=d.boss?2:1;enemies.push(e);return e}
 function pickType(t){
-  const pool=MAPS[S.map].pool.filter(p=>t>=p[0]).map(p=>[p[1],p[2]+(p[0]>200?t/200:0)]);
+  const pool=MAPS[S.map].pool.filter(p=>t>=p[0]).map(p=>[p[1],p[2]+(p[0]>200&&!ET[p[1]].elite?t/200:0)]);
   let sum=pool.reduce((a,b)=>a+b[1],0),r=rnd(sum);for(const [k,w] of pool){if((r-=w)<=0)return k}return pool[0][0]}
 function director(dt){
   S.spawnT-=dt;
@@ -1322,7 +1356,7 @@ function director(dt){
     S.banner={t:2,text:'¡OLEADA!',sub:ET[typ].n,boss:ET[typ].elite?1:0}}}
   if(S.bossIdx<BOSS_T.length&&S.t>=BOSS_T[S.bossIdx]){const id=MAPS[S.map].bosses[S.bossIdx];S.bossIdx++;spawnBoss(id,S.bossIdx===5)}
   if(S.endless&&S.t>=S.nextEndless){S.nextEndless=S.t+90;const b=MAPS[S.map].bosses;spawnBoss(b[(Math.random()*b.length)|0])}}
-function spawnBoss(id,final){const a=rnd(TAU);S.bossN=S.bossIdx-1;if(S.endless)S.bossN=4;const e=spawn(id,P.x+Math.cos(a)*150,P.y+Math.sin(a)*150);e.final=!!final;S.boss=e;
+function spawnBoss(id,final){islandStart();const a=rnd(TAU);S.bossN=S.bossIdx-1;if(S.endless)S.bossN=4;const e=spawn(id,P.x+Math.cos(a)*90,P.y+Math.sin(a)*90);e.final=!!final;S.boss=e;
   S.banner={t:3,text:'¡'+ET[id].n+'!',sub:'Ha aparecido un villano',boss:1};sfx('boss');cam.shake=6}
 
 // ---------- boss AI ----------
@@ -1331,7 +1365,7 @@ function eshot(x,y,a,sp,dmg,r=3,col='#ff5aa0'){eshots.push({x,y,vx:Math.cos(a)*s
 const BBEAM={frieza:['RAYO MORTAL',['#a0207a','#ff6ad0','#ffffff'],8],golden:['RAYO MORTAL',['#a0207a','#ff6ad0','#ffffff'],10],frieza100:['RAYO MORTAL',['#a0207a','#ff6ad0','#ffffff'],9],
   cell:['¡KAMEHAMEHA!',['#1a6ad8','#7ac8ff','#ffffff'],18],black:['¡KAMEHAMEHA NEGRO!',['#5a1a6a','#c060d0','#ffffff'],16],rose:['¡KAMEHAMEHA ROSÉ!',['#a02a78','#ff7ac8','#ffffff'],20],
   majinv:['¡FINAL FLASH!',['#c89a10','#ffe066','#ffffff'],22],brolyB:['¡GIGANTIC METEOR!',['#2a8a2a','#8af06a','#ffffff'],24],mecha:['RAYO MORTAL',['#a0207a','#ff6ad0','#ffffff'],8],
-  vegeta:['¡GALICK HO!',['#5a2a9a','#b07aff','#ffffff'],16],a19:['ABSORCIÓN',['#c83030','#ff9a5a','#ffffff'],12],buu:['¡VANISH BALL!',['#a02a78','#ff8ad0','#ffffff'],16]};
+  vegeta:['¡GALICK HO!',['#5a2a9a','#b07aff','#ffffff'],16],vegetaSB:['¡GALICK HO!',['#5a2a9a','#b07aff','#ffffff'],16],turles:['¡KILL DRIVER!',['#8a1a1a','#ff7a3a','#ffffff'],14],frost:['RAYO MORTAL',['#2a3aa0','#7ab0ff','#ffffff'],9],coolerB:['¡SUPERNOVA!',['#a0207a','#ff6ad0','#ffffff'],18],freezaF:['RAYO MORTAL',['#a0207a','#ff6ad0','#ffffff'],10],a16B:['¡HELL’S FLASH!',['#c89a10','#ffe066','#ffffff'],18],janemba:['¡RAKSHASA!',['#8a1a2a','#ff5a6a','#ffffff'],16],jiren:['¡POWER IMPACT!',['#a01a1a','#ff6a4a','#ffffff'],20],hitB:['¡SALTO TEMPORAL!',['#5a2a9a','#c08aff','#ffffff'],12],superbuuB:['¡KAMEHAMEHA DE BUU!',['#a02a78','#ff8ad0','#ffffff'],18],zamasuB:['¡ESPADA DIVINA!',['#5a2aa0','#a07aff','#ffffff'],12],billsB:['¡HAKAI!',['#6a2aa0','#c890ff','#ffffff'],24],a19:['ABSORCIÓN',['#c83030','#ff9a5a','#ffffff'],12],buu:['¡VANISH BALL!',['#a02a78','#ff8ad0','#ffffff'],16]};
 function bossBeam(e,dt){const B=BBEAM[e.type];if(!B)return false;e.bT=(e.bT===undefined?5:e.bT)-dt;
   if(e.bT<=0){e.bT=7+rnd(0,2);ebeams.push({e,x:e.x,y:e.y-14,a:Math.atan2(P.y-10-(e.y-14),P.x-e.x),t:-1.1,T:1.1,dur:0.8,len:460,wid:B[2],col:B[1],name:B[0],big:B[2]>14,dmg:e.dmg*1.6})}
   return ebeams.some(b=>b.e===e&&b.t<0.8)}
@@ -1408,7 +1442,7 @@ function update(dt){
   if(P.cast){P.cast.t-=dt;if(P.cast.t<=0)P.cast=null}
   const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.55:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
   if(P.moving){if(Math.abs(mx)>Math.abs(my)*1.1)P.dir='side';else P.dir=my<0?'up':'down'}
-  P.x+=mx*ps.spd*dt*slow;P.y+=my*ps.spd*dt*slow;if(P.moving)P.anim+=dt*9;
+  P.x+=mx*ps.spd*dt*slow;P.y+=my*ps.spd*dt*slow;islandTick();crateTick(dt);if(P.moving)P.anim+=dt*9;
   P.iframe-=dt;P.hitT-=dt;P.atkT=(P.atkT||0)-dt;if(P.mcd)for(let i=0;i<3;i++)P.mcd[i]-=dt;if(P.shout&&(P.shout.t-=dt)<=0)P.shout=null;
   if(P.moving&&Math.random()<0.25)parts.push({x:P.x+rnd(-3,3),y:P.y-1,vx:-mx*10,vy:-rnd(2,8),t:0.3,c:MAPK==='namek'?'#a6d8a0':MAPK==='tierra'||MAPK==='kame'?'#e6cfa0':MAPK==='musculo'?'#ffffff':'#d8d4c0',s:1});
   if(ps.regen)P.hp=Math.min(ps.maxhp,P.hp+ps.regen*dt);
@@ -1417,7 +1451,7 @@ function update(dt){
   // enemies
   const far=Math.hypot(VW,VH)*0.75;
   for(const e of enemies){if(e.dead)continue;
-    e.flash-=dt;e.anim+=dt*6;
+    e.flash-=dt;e.anim+=dt*6;if(e.crate)continue;
     let skip=false;if(e.boss)skip=bossAI(e,dt);
     const dx=P.x-e.x,dy=P.y-e.y,d=Math.hypot(dx,dy)||1;
     if(!skip){e.x+=dx/d*e.spd*dt;e.y+=dy/d*e.spd*dt}
@@ -1442,7 +1476,8 @@ function update(dt){
     if(p.k==='ki'&&Math.random()<0.5)parts.push({x:p.x,y:p.y,vx:0,vy:0,t:0.15,c:p.col[1],s:1})}
   projs=projs.filter(p=>p.life>0);
   // beams
-  for(const b of beams){b.t+=dt;const fx=Math.cos(b.a)<0?-1:1;b.x=P.x+fx*(b.t<0?-10:15);b.y=P.y-(b.t<0?14:19);
+  for(const b of beams){b.t+=dt;const fx=Math.cos(b.a)<0?-1:1,hp=b.hero?heroHand(b.t<0?0:1,fx<0):null;if(hp){b.x=hp[0];b.y=hp[1]}else{b.x=P.x+fx*(b.t<0?-10:15);b.y=P.y-(b.t<0?14:19)}
+    if(b.hero&&b.t>=0&&b.t<b.dur*0.8){cam.shake=Math.max(cam.shake||0,b.big?2.5:1.5);if(Math.random()<0.6)parts.push({x:b.x+rnd(-3,3),y:b.y+rnd(-3,3),vx:-fx*rnd(20,60),vy:rnd(-30,30),t:0.25,c:b.col[Math.random()<0.5?1:2],s:2})}
     if(b.t>=0){b.tick-=dt;if(b.tick<=0){b.tick=0.1;const ca=Math.cos(b.a),sa=Math.sin(b.a);
       for(const e of enemies){if(e.dead)continue;const ex=e.x-b.x,ey=e.y-6-b.y,along=ex*ca+ey*sa;if(along<0||along>b.len)continue;
         const perp=Math.abs(-ex*sa+ey*ca);if(perp<b.wid/2+e.r)hurt(e,b.dmg,ca*40,sa*40)}}}}
@@ -1494,9 +1529,11 @@ function digits(str,x,y,col){const w=str.length*4;x=Math.round(x-w/2);y=Math.rou
 function text(s,x,y,col,size=8,align='center'){s=s.normalize('NFD').replace(/[\u0300-\u036f]/g,'');ctx.font=size+'px "Press Start 2P", monospace';ctx.textAlign=align;ctx.textBaseline='top';
   ctx.fillStyle=OUTL;for(const [a,b] of [[-1,0],[1,0],[0,-1],[0,1],[1,1]])ctx.fillText(s,x+a,y+b);ctx.fillStyle=col;ctx.fillText(s,x,y)}
 function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypot(P.x-e.x,P.y-e.y),T=ET[e.type]||{};let A=o.Walk,i=0,bob=0;
-  if(e.flash>0&&o.Hurt){A=o.Hurt;i=1}
+  const eb=e.boss&&o.Cast?ebeams.find(b=>b.e===e&&b.t<b.dur):null;
+  if(eb){A=o.Cast;i=eb.t<0?0:Math.min(1,A.R.length-1)}
+  else if(e.flash>0&&o.Hurt){A=o.Hurt;i=1}
   else if(d<e.r+18&&o.Attack){A=o.Attack;i=scFrame(A,t)}
-  else if(T.shoot&&e.shootT<0.35&&o.Cast){A=o.Cast;i=0}
+  else if(T.shoot&&o.Cast&&(e.shootT<0.35||e.shootT>T.shoot-0.25)){A=o.Cast;i=e.shootT<0.35?0:Math.min(1,A.R.length-1)}
   else if(A.R.length>1)i=scFrame(A,t);else bob=Math.round(Math.sin(t*6+e.x*0.07)*1);
   const im=(left?A.L:A.R)[i]||A.R[0],z=e.boss?0.62:0.5,w=im.width*z,hh=im.height*z;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-hh+bob),w,hh);
   if(e.flash>0){ctx.globalAlpha=0.55;const wi=e.spr.pkw||(e.spr.pkw={});const key=A===o.Hurt?'h'+left:'x';if(!wi[key])wi[key]=tintC(im,'#ffffff');ctx.drawImage(wi[key],Math.round(x-w/2),Math.round(y-hh+bob),w,hh);ctx.globalAlpha=1}}
@@ -1852,17 +1889,79 @@ const WORLD={
   Object.assign(PROG,{kame:PROG.namek,kaio:PROG.time,poder:[[50,53,57],[52,55,59],[48,52,55],[53,57,60]],bills:[[51,55,58],[53,56,60],[50,53,57],[48,51,55]],infierno:PROG.arena,yardrat:[[57,61,64],[54,57,61],[52,56,59],[55,59,62]],
     kaioshin:PROG.namek,redribbon:PROG.tierra,musculo:[[55,59,62],[52,55,59],[50,54,57],[53,57,60]],budokai:PROG.time,lookout:[[60,64,67],[55,59,62],[57,60,64],[53,57,60]],capsule:PROG.futuro,paoz:PROG.tierra,desierto:PROG.tierra,volcan:PROG.vegetasei,gizard:PROG.tierra,pradera:PROG.namek,bosque:PROG.namek});
 })();
-function onWaterAt(x,y){const W=WORLD[MAPK];return !!(W&&W.wet&&W.wet(Math.floor(x/T),Math.floor(y/T)))}
+function onWaterAt(x,y){const W=WORLD[MAPK];if(S&&S.isl)return false;return !!(W&&W.wet&&W.wet(Math.floor(x/T),Math.floor(y/T)))}
+// ---------- boss island: each boss fight teleports you to a floating arena themed after the stage ----------
+const ISLR=11;
+function isTheme(){return ['volcan','vegetasei','infierno'].includes(MAPK)?'lava':['poder','kaio','time'].includes(MAPK)?'void':MAPK==='lookout'?'sky':'sea'}
+function islandStart(){if(S.isl)return;const ax=Math.round((P.x+48000)/T)*T,ay=Math.round(P.y/T)*T;
+  S.isl={x:ax,y:ay,bx:P.x,by:P.y,end:0};for(let i=0;i<14;i++)burst(P.x,P.y-8,1,['#ffffff','#bfe6ff','#ffd23f']);
+  P.x=ax;P.y=ay+40;cam.x=P.x-VW/2;cam.y=P.y-VH/2;S.flash=0.6;enemies=enemies.filter(e=>e.boss);eshots.length=0;ebeams.length=0;sfx('boom')}
+function islandTick(){const I=S.isl;if(!I)return;
+  const d=Math.hypot(P.x-I.x,P.y-I.y),R=ISLR*T-10;if(d>R){P.x=I.x+(P.x-I.x)/d*R;P.y=I.y+(P.y-I.y)/d*R}
+  if(!S.boss&&!I.end)I.end=S.t+2.5;
+  if(I.end&&S.t>=I.end){const dx=I.bx-I.x,dy=I.by-I.y,near=o=>Math.hypot(o.x-I.x,o.y-I.y)<ISLR*T*3;
+    for(const g of gems)if(near(g)){g.x+=dx;g.y+=dy}for(const p of pickups)if(near(p)){p.x+=dx;p.y+=dy}
+    enemies=enemies.filter(e=>!near(e));P.x=I.bx;P.y=I.by;cam.x=P.x-VW/2;cam.y=P.y-VH/2;S.flash=0.5;S.isl=null}}
+function drawIsland(time){const I=S.isl,W=WORLD[MAPK],cx=Math.floor(cam.x),cy=Math.floor(cam.y),wf=Math.floor(time*3)%4,th=isTheme();
+  const tx0=Math.floor(cx/T)-1,ty0=Math.floor(cy/T)-1,tx1=Math.floor((cx+VW)/T)+1,ty1=Math.floor((cy+VH)/T)+1,ax=I.x/T,ay=I.y/T;
+  const inI=(tx,ty)=>Math.hypot(tx+0.5-ax,ty+0.5-ay)<=ISLR;
+  for(let ty=ty0;ty<=ty1;ty++)for(let tx=tx0;tx<=tx1;tx++){const x=tx*T-cx,y=ty*T-cy;
+    if(inI(tx,ty)){const mx=tx-ax,my=ty-ay,r=Math.hypot(tx+0.5-ax,ty+0.5-ay);
+      if(r<3.2||W.special(mx,my))ctx.drawImage(groundTile(TILES.stone,tx,ty),x,y);else W.tile(mx,my,x,y,wf);
+      if(r>=2.6&&r<3.2){ctx.fillStyle='#8e8a7e';ctx.fillRect(x,y+T-2,T,2)}
+      if(!inI(tx,ty+1)){ctx.fillStyle='#7a5a3a';ctx.fillRect(x,y+T-6,T,6);ctx.fillStyle='#5a3e26';ctx.fillRect(x+((tx*5)&7),y+T-4,7,1);ctx.fillStyle='#2a1c10';ctx.fillRect(x,y+T-1,T,1)}
+      continue}
+    if(inI(tx,ty-1)){ctx.fillStyle=th==='lava'?'#3a1a10':th==='sea'?'#1a5a8a':'#20183a';ctx.fillRect(x,y,T,T);ctx.fillStyle='#5a3e26';ctx.fillRect(x+2,y,T-4,5+((tx*3)&3));continue}
+    if(th==='lava')ctx.drawImage((TILES.lava2||TILES.lava)[(wf+((tx+ty)&1))%4],x,y);
+    else if(th==='void')ctx.drawImage(TILES.void[(wf+((tx*3+ty)&3))%4],x,y);
+    else if(th==='sky')ctx.drawImage(TILES.cloudsky[(wf+((tx+ty*2)&3))%4],x,y);
+    else ctx.drawImage(TILES.sea[(wf+((tx+ty)&1))%4],x,y)}
+  for(let ty=ty0-3;ty<=ty1+1;ty++)for(let tx=tx0-3;tx<=tx1+1;tx++){if(!inI(tx,ty))continue;const r=Math.hypot(tx+0.5-ax,ty+0.5-ay),mx=tx-ax,my=ty-ay;let d=null;
+    if(r>ISLR-2.2){for(let k=0;k<8;k++){const a=k/8*TAU;if(tx===Math.floor(ax+Math.cos(a)*(ISLR-1.5))&&ty===Math.floor(ay+Math.sin(a)*(ISLR-1.5)))d=DECOR.pillar}}
+    else if(r>4.5&&r<ISLR-2.5&&!W.special(mx,my)&&h2(tx,ty,9)<0.45)d=W.decor(mx,my,h2(mx,my,3));
+    if(d)ctx.drawImage(d,tx*T-cx-d.width/2+8,ty*T-cy-d.height/2+8)}}
+// ---------- breakable crates + Dragon Balls lying around the map ----------
+const CRATESPR=[];
+(function(){const P=(g,x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(x,y,w,h)};
+  const wood=mk(18,18),g=wood.getContext('2d');P(g,1,3,16,14,'#b07a3a');P(g,1,3,16,2,'#d8a060');P(g,1,15,16,2,'#6a4620');P(g,3,6,12,8,'#9a6a30');P(g,3,6,12,1,'#7a5222');
+    for(let i=0;i<12;i++)P(g,3+i,6+Math.round(i*8/12),1,1,'#d8a060');P(g,1,3,2,14,'#8a8e98');P(g,15,3,2,14,'#8a8e98');P(g,1,3,2,1,'#c8ccd4');P(g,15,3,2,1,'#c8ccd4');
+  const cap=mk(18,18),h=cap.getContext('2d');P(h,2,4,14,13,'#e8ecf2');P(h,2,4,14,2,'#ffffff');P(h,2,15,14,2,'#a8b0bc');P(h,2,8,14,3,'#2a5ab0');P(h,4,9,10,1,'#ffe060');P(h,7,1,4,3,'#a8b0bc');P(h,8,0,2,1,'#e83a2a');
+  for(const c of [wood,cap]){const o=addOutline(c,'#1a1008'),w=tintC(o,'#ffffff');CRATESPR.push({fr:[o],fl:[o],wh:[w],whf:[w],w:16,h:18})}})();
+function spawnCrate(x,y){if(!SPR.crate)SPR.crate=CRATESPR[0];const e=spawn('crate',x,y);e.crate=1;e.spr=CRATESPR[Math.random()<0.7?0:1];e.h=18;e.hp=e.maxhp=20+S.t/8;e.spd=0;e.dmg=0;e.kx=e.ky=0;return e}
+function crateLoot(e){burst(e.x,e.y-8,14,['#d8a060','#8a5a2a','#ffe060']);sfx('gem');const r=Math.random(),x=e.x,y=e.y;
+  if(r<0.05&&S.balls<7)pickups.push({k:'dball',n:(S.ballN++%7)+1,x,y});
+  else if(r<0.15)pickups.push({k:'chest',x,y});
+  else if(r<0.38)pickups.push({k:'senzu',x,y});
+  else if(r<0.58){for(let i=0;i<6;i++)dropGem(x+rnd(-10,10),y+rnd(-10,10),3+(S.t/60|0))}
+  else for(let i=0;i<3;i++)pickups.push({k:'zeni',x:x+rnd(-8,8),y:y+rnd(-6,6)})}
+function crateTick(dt){if(S.isl||state!=='play')return;S.crateT=(S.crateT||3)-dt;S.dbT=(S.dbT===undefined?60:S.dbT)-dt;
+  let n=0;for(const e of enemies)if(e.crate&&!e.dead){if(Math.hypot(e.x-P.x,e.y-P.y)>700)e.dead=true;else n++}
+  if(S.crateT<=0){S.crateT=5;if(n<6){const a=rnd(TAU),d=rnd(150,300);spawnCrate(P.x+Math.cos(a)*d,P.y+Math.sin(a)*d)}}
+  if(S.dbT<=0){S.dbT=80;if(S.balls<7&&!pickups.some(k=>k.k==='dball')){const a=rnd(TAU),d=rnd(260,420);pickups.push({k:'dball',n:(S.ballN++%7)+1,x:P.x+Math.cos(a)*d,y:P.y+Math.sin(a)*d,radar:1});S.banner={t:2,text:'¡EL RADAR DETECTA UNA BOLA!',sub:'Sigue la flecha amarilla'}}}}
+function drawRadar(time){if(!S||S.isl)return;const k=pickups.find(p=>p.k==='dball'&&p.radar);if(!k)return;const dx=k.x-P.x,dy=k.y-P.y,d=Math.hypot(dx,dy);if(d<VH*0.45)return;
+  const a=Math.atan2(dy,dx),cx=VW/2+Math.cos(a)*(VH/2-26),cy=VH/2+Math.sin(a)*(VH/2-26),b=(time*4|0)%2;
+  ctx.save();ctx.translate(Math.round(cx),Math.round(cy));ctx.rotate(a);ctx.fillStyle=OUTL;ctx.fillRect(-6,-5,12,10);ctx.fillStyle=b?'#ffd23f':'#ff9a1a';for(let i=0;i<5;i++)ctx.fillRect(-4+i,-4+i,2,8-i*2);ctx.restore();
+  drawDBall(Math.round(cx-Math.cos(a)*12),Math.round(cy-Math.sin(a)*12)+3,k.n)}
 function edges(tx,ty,x,y,f,c1,c2){const n=f(tx,ty-1),s=f(tx,ty+1),w=f(tx-1,ty),e=f(tx+1,ty);if(!(n||s||w||e))return;
   ctx.fillStyle=c1;if(n)ctx.fillRect(x,y,T,3);if(s)ctx.fillRect(x,y+T-3,T,3);if(w)ctx.fillRect(x,y,3,T);if(e)ctx.fillRect(x+T-3,y,3,T);
   ctx.fillStyle=c2;if(n)ctx.fillRect(x,y+3,T,1);if(s)ctx.fillRect(x,y+T-4,T,1);if(w)ctx.fillRect(x+3,y,1,T);if(e)ctx.fillRect(x+T-4,y,1,T)}
 function drawWorld(time){
+  if(S&&S.isl&&!['title','maps','mine','gacha','credits','train','forge'].includes(state)){drawIsland(time);return}
   const W=WORLD[MAPK],cx=Math.floor(cam.x),cy=Math.floor(cam.y);
   const tx0=Math.floor(cx/T)-1,ty0=Math.floor(cy/T)-1,tx1=Math.floor((cx+VW)/T)+1,ty1=Math.floor((cy+VH)/T)+1;
   const wf=Math.floor(time*3)%4;
   for(let ty=ty0;ty<=ty1;ty++)for(let tx=tx0;tx<=tx1;tx++)W.tile(tx,ty,tx*T-cx,ty*T-cy,wf);
   for(let ty=ty0-3;ty<=ty1+1;ty++)for(let tx=tx0-3;tx<=tx1+1;tx++){if(W.special(tx,ty))continue;const d=W.decor(tx,ty,h2(tx,ty,3));
     if(d)ctx.drawImage(d,tx*T-cx+((h2(tx,ty,4)*8)|0)-d.width/2+8,ty*T-cy+((h2(tx,ty,6)*8)|0)-d.height/2+8)}}
+// punto de las manos en el frame de cargar (0) o de lanzar (1) de la animación Cast del héroe (el héroe se dibuja a 0.5)
+function heroHand(i,left){const pk=scHero(S.hid,P.form);if(!pk||!pk.Cast)return null;const c=pk.Cast.R[Math.min(i,pk.Cast.R.length-1)];
+  if(!c._hand){const W=c.width,H=c.height,d=c.getContext('2d').getImageData(0,0,W,H).data;let y0=H,y1=0;
+    for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(d[(y*W+x)*4+3]>40){if(y<y0)y0=y;if(y>y1)y1=y}
+    if(i===0)c._hand=[W/2+W*0.12,H-(H-y0)*0.42];
+    else{const ya=y0+(y1-y0)*0.25|0,yb=y0+(y1-y0)*0.7|0;let bx=-1,sy=0,n=0;
+      for(let x=W-1;x>=0&&bx<0;x--)for(let y=ya;y<=yb;y++)if(d[(y*W+x)*4+3]>40){bx=x;sy+=y;n++}
+      c._hand=bx<0?[W*0.75,H*0.6]:[bx,sy/n]}}
+  return[P.x+(left?-1:1)*(c._hand[0]-c.width/2)*0.5,P.y+(c._hand[1]-c.height+1)*0.5]}
 function drawBeam(b){
   const ox=Math.round(b.x-cam.x),oy=Math.round(b.y-cam.y),t=b.t;
   ctx.save();ctx.translate(ox,oy);ctx.rotate(b.a);
@@ -1879,6 +1978,7 @@ function drawBeam(b){
     ctx.fillStyle=C[0];ctx.fillRect(0,-W/2-1,L,W+2);ctx.fillStyle=C[1];ctx.fillRect(0,-W/2,L,W);ctx.fillStyle=C[2];ctx.fillRect(0,-1,L,2);
     for(let x=0;x<L;x+=2){const s=Math.sin(x*0.25-t*30)*(W/2+5);ctx.fillStyle=s>0?'#ff6ad0':'#ffb0ea';ctx.fillRect(x,Math.round(s)-1,2,3);ctx.fillRect(x,Math.round(-s)-1,2,3)}
     ctx.restore();return}
+  {ctx.globalAlpha=0.18+0.08*Math.sin(t*30);ctx.fillStyle=C[1];ctx.fillRect(0,-W-5,L,W*2+10);ctx.globalAlpha=0.12;ctx.fillRect(0,-W-10,L,W*2+20);ctx.globalAlpha=1}
   // jagged outer flame, layered like hama-bead pixel art
   for(let x=0;x<L;x+=2){const n=Math.sin(x*0.7+t*40)*0.5+Math.sin(x*0.23-t*25)*0.5,j=Math.round(n*W*0.12);
     const w0=W/2+2+j+(x%6===0?2:0),w1=W/2*0.78+j*0.5,w2=W/2*0.42;
@@ -1985,7 +2085,10 @@ function render(time){
         const bobY=P.moving?((P.anim|0)%2):((time*2.5|0)%2),lean=P.moving?(((P.anim|0)%4)<2?1:-1):0;
         ctx.drawImage(im,0,0,im.width,Math.round(im.height*0.6),Math.round(x-w/2+lean),Math.round(y-h+bobY),w,Math.round(h*0.6));
         ctx.drawImage(im,0,Math.round(im.height*0.6),im.width,im.height-Math.round(im.height*0.6),Math.round(x-w/2),Math.round(y-h+bobY+h*0.6),w,h-Math.round(h*0.6))}
-      else if(pk){const left=P.cast?Math.cos(P.cast.a)<0:P.atkT>0?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&P.atkT>0&&(pk.Attack||pk.Cast),A=P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,wt=P.anim/9,i=P.cast?(chg?0:1):P.hitT>0?1:atk?Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length)):P.moving?(A.R.length>1?scFrame(A,wt):0):scFrame(A,time),im=(left?A.L:A.R)[i],bob=P.moving&&!P.cast&&!(P.hitT>0)&&A.R.length===1?Math.round(Math.sin(wt*6)*2)-2:0;ctx.drawImage(im,Math.round(x-im.width/2),Math.round(y-im.height+1+bob));if(chg){const r=4+((time*14|0)%3),kb=kiSprite(r,['#1a5ad8','#6ac8ff','#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.9;ctx.drawImage(kb,Math.round(x+(left?-1:1)*im.width*0.12-kb.width/2),Math.round(y-im.height*0.42-kb.height/2));ctx.globalAlpha=1}}
+      else if(pk){const left=P.cast?Math.cos(P.cast.a)<0:P.atkT>0?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&P.atkT>0&&(P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,wt=P.anim/9,i=P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?(A.R.length>1?scFrame(A,wt):0):scFrame(A,time),im=(left?A.L:A.R)[i],bob=P.moving&&!P.cast&&!(P.hitT>0)&&A.R.length===1?Math.round(Math.sin(wt*6)*2)-2:0;
+        {const TR=P.tr||(P.tr=[]);if(P.moving&&!P.cast&&!(P.hitT>0)){if(!(time-TR.lt<0.045)){TR.lt=time;TR.unshift([P.x,P.y]);if(TR.length>4)TR.length=4}}else TR.length=0;
+          for(let k=TR.length-1;k>=1;k--){ctx.globalAlpha=0.34-k*0.08;ctx.drawImage(im,Math.round(x+(TR[k][0]-P.x)*2-im.width/2),Math.round(y+(TR[k][1]-P.y)*2-im.height+1+bob))}ctx.globalAlpha=1}
+        ctx.drawImage(im,Math.round(x-im.width/2),Math.round(y-im.height+1+bob));if(chg&&!bm){const r=4+((time*14|0)%3),kb=kiSprite(r,['#1a5ad8','#6ac8ff','#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.9;ctx.drawImage(kb,Math.round(x+(left?-1:1)*im.width*0.12-kb.width/2),Math.round(y-im.height*0.42-kb.height/2));ctx.globalAlpha=1}}
       else{const img=P.hitT>0?(flip?fr.wf:fr.w):(flip?fr.f:fr.c);ctx.drawImage(img,Math.round(x-img.width/2),Math.round(y-img.height+1))}
       ctx.restore();continue}
     const sc=e.spr.big?1:e.boss?2:1,x=e.x-cam.x,y=e.y-cam.y;shadow(x,y,e.spr.w*sc*0.6);
@@ -2046,7 +2149,7 @@ function hud(time){
   let x=4;for(const id of P.order){const mv=P.moves[id];ctx.fillStyle=mv.evo?'#ffd23f':'#2c3a6e';ctx.fillRect(x-1,30,18,18);ctx.fillStyle='#10162a';ctx.fillRect(x,31,16,16);ctx.drawImage(ic(id),x,31);digits(mv.evo?'9':String(mv.lv),x+14,44,mv.evo?'#ffd23f':'#ffffff');x+=20}
   x=4;for(const id in P.cards){ctx.drawImage(ic(id),x,51,12,12);digits(String(P.cards[id]),x+11,58,'#bfe6ff');x+=14}
   // boss bar
-  if(S.boss&&!S.boss.dead){const w=Math.min(200,VW-40),bx=Math.round(VW/2-w/2),by=VH-16;bar(bx,by,w,6,S.boss.hp/S.boss.maxhp,'#c83ad8');text(ET[S.boss.type].n,VW/2,by-11,'#ffb0f0',8)}
+  drawRadar(time);if(S.boss&&!S.boss.dead){const w=Math.min(200,VW-40),bx=Math.round(VW/2-w/2),by=VH-16;bar(bx,by,w,6,S.boss.hp/S.boss.maxhp,'#c83ad8');text(ET[S.boss.type].n,VW/2,by-11,'#ffb0f0',8)}
   else if(S.bossIdx<BOSS_T.length){const left=BOSS_T[S.bossIdx]-S.t;if(left<20)text('SE ACERCA '+ET[MAPS[S.map].bosses[S.bossIdx]].n+' '+Math.ceil(left),VW/2,VH-14,(time*4|0)%2?'#ff4d5e':'#ffffff',8)}
   // banner
   if(S.banner){const b=S.banner,y=VH*0.32;ctx.fillStyle='rgba(5,8,18,.6)';ctx.fillRect(0,y-6,VW,34);
@@ -2069,7 +2172,7 @@ function loadMine(){try{const d=JSON.parse(localStorage.getItem('animesurvivor-s
 function saveMine(){try{localStorage.setItem('animesurvivor-sprites',JSON.stringify(MY));return true}catch(e){return false}}
 
 // ---------- animaciones SpriteCollab (Idle/Walk/Hurt, 8 direcciones; solo las filas Derecha e Izquierda) ----------
-const SCPACK={"h":{"goku":{"0":"goku","1":"goku-ssj1","2":"goku-ssj2","3":"goku-ssj3","4":"goku-blue"},"vegeta":{"0":"vegeta","1":"vegeta-ssj","3":"majinv","4":"vegeta-blue"},"vegetaue":{"0":"vegeta","1":"vegeta-ssj","3":"24-vegeta-ultra-ego","2":"vegeta-blue"},"piccolo":{"0":"piccolo"},"krilin":{"0":"krilin"},"gohan":{"0":"21-gohan-nino","1":"gohan-ssj"},"trunks":{"0":"38-trunks-espada","1":"trunks-ssj"},"a18":{"0":"a18"},"a18npc":{"0":"a18"},"a17npc":{"0":"a17"},"bardock":{"0":"bardock"},"broly":{"0":"broly"},"vegetto":{"0":"vegetto"},"gogeta":{"0":"gogeta"},"black":{"0":"black","1":"rose"},"gokuui":{"0":"goku","1":"goku-ssj1","2":"goku-blue","3":"gokuui"}},"e":{"saiba":"saibaman","saibaX":"saibaman","frieza":"freeza","frieza100":"freeza-fp","raditz":"raditz","a17e":"a17","a18e":"a18","cell":"cell","rose":"rose","black":"black","golden":"golden","fatbuu":"fatbuu","buu":"kidbuu","majinv":"majinv","coolerE":"cooler","a16E":"a16","cellimpE":"cellimp"},"s":{"saibaman":{"Idle":[56,48,[60],SPRITES_DATA[0]],"Walk":[56,48,[8,8,8,8],SPRITES_DATA[1]],"Attack":[56,48,[5,4,8,5],SPRITES_DATA[2]],"Cast":[56,48,[10,10],SPRITES_DATA[3]],"Hurt":[56,48,[6,10],SPRITES_DATA[4]]},"goku":{"Idle":[80,56,[60],SPRITES_DATA[5]],"Walk":[80,56,[8],SPRITES_DATA[6]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[7]],"Cast":[80,56,[10,10],SPRITES_DATA[8]],"Hurt":[80,56,[6,10],SPRITES_DATA[9]]},"goku-ssj1":{"Idle":[80,56,[60],SPRITES_DATA[10]],"Walk":[80,56,[8],SPRITES_DATA[11]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[12]],"Cast":[80,56,[10,10],SPRITES_DATA[13]],"Hurt":[80,56,[6,10],SPRITES_DATA[14]]},"vegeta":{"Idle":[72,56,[60],SPRITES_DATA[15]],"Walk":[72,56,[8],SPRITES_DATA[16]],"Attack":[72,56,[5,4,8,5],SPRITES_DATA[17]],"Cast":[72,56,[10,10],SPRITES_DATA[18]],"Hurt":[72,56,[6,10],SPRITES_DATA[19]]},"cell":{"Idle":[80,64,[60],SPRITES_DATA[20]],"Walk":[80,64,[8],SPRITES_DATA[21]],"Attack":[80,64,[5,4,8,5],SPRITES_DATA[22]],"Cast":[80,64,[10,10],SPRITES_DATA[23]],"Hurt":[80,64,[6,10],SPRITES_DATA[24]]},"freeza":{"Idle":[56,48,[60],SPRITES_DATA[25]],"Walk":[56,48,[8,8,8,8],SPRITES_DATA[26]],"Attack":[56,48,[5,4,8,5],SPRITES_DATA[27]],"Cast":[56,48,[10,10],SPRITES_DATA[28]],"Hurt":[56,48,[6,10],SPRITES_DATA[29]]},"goku-ssj3":{"Idle":[80,64,[60],SPRITES_DATA[30]],"Walk":[80,64,[8],SPRITES_DATA[31]],"Attack":[80,64,[5,4,8,5],SPRITES_DATA[32]],"Cast":[80,64,[10,10],SPRITES_DATA[33]],"Hurt":[80,64,[6,10],SPRITES_DATA[34]]},"piccolo":{"Idle":[64,56,[60],SPRITES_DATA[35]],"Walk":[64,56,[8],SPRITES_DATA[36]],"Attack":[64,56,[5,4,8,5],SPRITES_DATA[37]],"Cast":[64,56,[10,10],SPRITES_DATA[38]],"Hurt":[64,56,[6,10],SPRITES_DATA[39]]},"goku-ssj2":{"Idle":[80,64,[60],SPRITES_DATA[40]],"Walk":[80,64,[8],SPRITES_DATA[41]],"Attack":[80,64,[5,4,8,5],SPRITES_DATA[42]],"Cast":[80,64,[10,10],SPRITES_DATA[43]],"Hurt":[80,64,[6,10],SPRITES_DATA[44]]},"vegeta-ssj":{"Idle":[72,64,[60],SPRITES_DATA[45]],"Walk":[72,64,[8],SPRITES_DATA[46]],"Attack":[72,64,[5,4,8,5],SPRITES_DATA[47]],"Cast":[72,64,[10,10],SPRITES_DATA[48]],"Hurt":[72,64,[6,10],SPRITES_DATA[49]]},"gohan-ssj":{"Idle":[72,56,[60],SPRITES_DATA[50]],"Walk":[72,56,[8],SPRITES_DATA[51]],"Attack":[72,56,[5,4,8,5],SPRITES_DATA[52]],"Cast":[72,56,[10,10],SPRITES_DATA[53]],"Hurt":[72,56,[6,10],SPRITES_DATA[54]]},"a18":{"Idle":[80,56,[60],SPRITES_DATA[55]],"Walk":[80,56,[8],SPRITES_DATA[56]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[57]],"Cast":[80,56,[10,10],SPRITES_DATA[58]],"Hurt":[80,56,[6,10],SPRITES_DATA[59]]},"bardock":{"Idle":[80,56,[60],SPRITES_DATA[60]],"Walk":[80,56,[8],SPRITES_DATA[61]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[62]],"Cast":[80,56,[10,10],SPRITES_DATA[63]],"Hurt":[80,56,[6,10],SPRITES_DATA[64]]},"broly":{"Idle":[104,80,[60],SPRITES_DATA[65]],"Walk":[104,80,[8],SPRITES_DATA[66]],"Attack":[104,80,[5,4,8,5],SPRITES_DATA[67]],"Cast":[104,80,[10,10],SPRITES_DATA[68]],"Hurt":[104,80,[6,10],SPRITES_DATA[69]]},"vegetto":{"Idle":[72,64,[60],SPRITES_DATA[70]],"Walk":[72,64,[8],SPRITES_DATA[71]],"Attack":[72,64,[5,4,8,5],SPRITES_DATA[72]],"Cast":[72,64,[10,10],SPRITES_DATA[73]],"Hurt":[72,64,[6,10],SPRITES_DATA[74]]},"gogeta":{"Idle":[88,64,[60],SPRITES_DATA[75]],"Walk":[88,64,[8],SPRITES_DATA[76]],"Attack":[88,64,[5,4,8,5],SPRITES_DATA[77]],"Cast":[88,64,[10,10],SPRITES_DATA[78]],"Hurt":[88,64,[6,10],SPRITES_DATA[79]]},"raditz":{"Idle":[64,64,[60],SPRITES_DATA[80]],"Walk":[64,64,[8],SPRITES_DATA[81]],"Attack":[64,64,[5,4,8,5],SPRITES_DATA[82]],"Cast":[64,64,[10,10],SPRITES_DATA[83]],"Hurt":[64,64,[6,10],SPRITES_DATA[84]]},"trunks-ssj":{"Idle":[72,72,[60],SPRITES_DATA[85]],"Walk":[72,72,[8],SPRITES_DATA[86]],"Attack":[72,72,[5,4,8,5],SPRITES_DATA[87]],"Cast":[72,72,[10,10],SPRITES_DATA[88]],"Hurt":[72,72,[6,10],SPRITES_DATA[89]]},"a17":{"Idle":[64,56,[60],SPRITES_DATA[90]],"Walk":[64,56,[8],SPRITES_DATA[91]],"Attack":[64,56,[5,4,8,5],SPRITES_DATA[92]],"Cast":[64,56,[10,10],SPRITES_DATA[93]],"Hurt":[64,56,[6,10],SPRITES_DATA[94]]},"black":{"Idle":[96,64,[60],SPRITES_DATA[95]],"Walk":[96,64,[8],SPRITES_DATA[96]],"Attack":[96,64,[5,4,8,5],SPRITES_DATA[97]],"Cast":[96,64,[10,10],SPRITES_DATA[98]],"Hurt":[96,64,[6,10],SPRITES_DATA[99]]},"krilin":{"Idle":[48,48,[60],SPRITES_DATA[100]],"Walk":[48,48,[8],SPRITES_DATA[101]],"Attack":[48,48,[5,4,8,5],SPRITES_DATA[102]],"Cast":[48,48,[10,10],SPRITES_DATA[103]],"Hurt":[48,48,[6,10],SPRITES_DATA[104]]},"rose":{"Idle":[56,64,[60],SPRITES_DATA[105]],"Walk":[56,64,[8],SPRITES_DATA[106]],"Attack":[56,64,[5,4,8,5],SPRITES_DATA[107]],"Cast":[56,64,[10,10],SPRITES_DATA[108]],"Hurt":[56,64,[6,10],SPRITES_DATA[109]]},"freeza-fp":{"Idle":[88,56,[14,14,14,14],SPRITES_DATA[110]],"Walk":[88,56,[8],SPRITES_DATA[111]],"Attack":[88,56,[5,4,8,5],SPRITES_DATA[112]],"Cast":[88,56,[10,10],SPRITES_DATA[113]],"Hurt":[88,56,[6,10],SPRITES_DATA[114]]},"goku-blue":{"Idle":[80,64,[60],SPRITES_DATA[115]],"Walk":[80,64,[8],SPRITES_DATA[116]],"Attack":[80,64,[5,4,8,5],SPRITES_DATA[117]],"Cast":[80,64,[10,10],SPRITES_DATA[118]],"Hurt":[80,64,[6,10],SPRITES_DATA[119]]},"golden":{"Idle":[80,56,[60],SPRITES_DATA[120]],"Walk":[80,56,[8],SPRITES_DATA[121]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[122]],"Cast":[80,56,[10,10],SPRITES_DATA[123]],"Hurt":[80,56,[6,10],SPRITES_DATA[124]]},"fatbuu":{"Idle":[104,64,[60],SPRITES_DATA[125]],"Walk":[104,64,[8],SPRITES_DATA[126]],"Attack":[104,64,[5,4,8,5],SPRITES_DATA[127]],"Cast":[104,64,[10,10],SPRITES_DATA[128]],"Hurt":[104,64,[6,10],SPRITES_DATA[129]]},"kidbuu":{"Idle":[72,56,[60],SPRITES_DATA[130]],"Walk":[72,56,[8],SPRITES_DATA[131]],"Attack":[72,56,[5,4,8,5],SPRITES_DATA[132]],"Cast":[72,56,[10,10],SPRITES_DATA[133]],"Hurt":[72,56,[6,10],SPRITES_DATA[134]]},"majinv":{"Idle":[72,64,[60],SPRITES_DATA[135]],"Walk":[72,64,[8],SPRITES_DATA[136]],"Attack":[72,64,[5,4,8,5],SPRITES_DATA[137]],"Cast":[72,64,[10,10],SPRITES_DATA[138]],"Hurt":[72,64,[6,10],SPRITES_DATA[139]]},"cooler":{"Idle":[88,64,[60],SPRITES_DATA[140]],"Walk":[88,64,[8],SPRITES_DATA[141]],"Attack":[88,64,[5,4,8,5],SPRITES_DATA[142]],"Cast":[88,64,[10,10],SPRITES_DATA[143]],"Hurt":[88,64,[6,10],SPRITES_DATA[144]]},"a16":{"Idle":[96,56,[60],SPRITES_DATA[145]],"Walk":[96,56,[8],SPRITES_DATA[146]],"Attack":[96,56,[5,4,8,5],SPRITES_DATA[147]],"Cast":[96,56,[10,10],SPRITES_DATA[148]],"Hurt":[96,56,[6,10],SPRITES_DATA[149]]},"cellimp":{"Idle":[64,64,[60],SPRITES_DATA[150]],"Walk":[64,64,[8],SPRITES_DATA[151]],"Attack":[64,64,[5,4,8,5],SPRITES_DATA[152]],"Cast":[64,64,[10,10],SPRITES_DATA[153]],"Hurt":[64,64,[6,10],SPRITES_DATA[154]]},"gokuui":{"Idle":[64,64,[60],SPRITES_DATA[155]],"Walk":[64,64,[8],SPRITES_DATA[156]],"Attack":[64,64,[5,4,8,5],SPRITES_DATA[157]],"Cast":[64,64,[10,10],SPRITES_DATA[158]],"Hurt":[64,64,[6,10],SPRITES_DATA[159]]},"vegeta-blue":{"Idle":[72,64,[60],SPRITES_DATA[160]],"Walk":[72,64,[8],SPRITES_DATA[161]],"Attack":[72,64,[5,4,8,5],SPRITES_DATA[162]],"Cast":[72,64,[10,10],SPRITES_DATA[163]],"Hurt":[72,64,[6,10],SPRITES_DATA[164]]},"21-gohan-nino":{"Idle":[40,48,[30,6,10,6],SPRITES_DATA[165]],"Walk":[48,48,[5,5,5,5,5,5,5,5],SPRITES_DATA[166]],"Hurt":[48,56,[2,8],SPRITES_DATA[167]],"Cast":[48,48,[10,10],SPRITES_DATA[168]]},"38-trunks-espada":{"Idle":[40,56,[30,6,10,6],SPRITES_DATA[169]],"Walk":[48,56,[5,5,5,5,5,5,5,5],SPRITES_DATA[170]],"Hurt":[48,64,[2,8],SPRITES_DATA[171]],"Cast":[48,56,[10,10],SPRITES_DATA[172]]},"24-vegeta-ultra-ego":{"Idle":[48,64,[30,6,10,6],SPRITES_DATA[173]],"Walk":[48,64,[5,5,5,5,5,5,5,5],SPRITES_DATA[174]],"Hurt":[56,64,[2,8],SPRITES_DATA[175]],"Cast":[48,64,[10,10],SPRITES_DATA[176]]}}};const SCC={};
+const SCPACK={"h":{"goku":{"0":"goku","1":"goku-ssj1","2":"goku-ssj2","3":"goku-ssj3","4":"goku-blue"},"vegeta":{"0":"vegeta","1":"vegeta-ssj","3":"majinv","4":"vegeta-blue"},"vegetaue":{"0":"vegeta","1":"vegeta-ssj","3":"24-vegeta-ultra-ego","2":"vegeta-blue"},"piccolo":{"0":"piccolo"},"krilin":{"0":"krilin"},"gohan":{"0":"21-gohan-nino","1":"gohan-ssj"},"trunks":{"0":"38-trunks-espada","1":"trunks-ssj"},"a18":{"0":"a18"},"a18npc":{"0":"a18"},"a17npc":{"0":"a17"},"bardock":{"0":"bardock"},"broly":{"0":"broly"},"vegetto":{"0":"vegetto"},"gogeta":{"0":"gogeta"},"black":{"0":"black","1":"rose"},"gokuui":{"0":"goku","1":"goku-ssj1","2":"goku-blue","3":"gokuui"}},"e":{"hitB":"hit","hitE":"hit","superbuuB":"superbuu","superbuuE":"superbuu","zamasuB":"zamasu","zamasuE":"zamasu","billsB":"bills","turles":"turles","frost":"frost","coolerB":"cooler","vegetaSB":"vegeta","vegetaE":"vegeta","freezaF":"freezaF","a16B":"a16","janemba":"janemba","jiren":"jiren","cellsemiE":"cellsemi","frostE":"frost","turlesE":"turles","saibaR":"saibaman","saibaB":"saibaman","saiba":"saibaman","saibaX":"saibaman","frieza":"freeza","frieza100":"freeza-fp","raditz":"raditz","a17e":"a17","a18e":"a18","cell":"cell","rose":"rose","black":"black","golden":"golden","fatbuu":"fatbuu","buu":"kidbuu","majinv":"majinv","coolerE":"cooler","a16E":"a16","cellimpE":"cellimp"},"s":{"hit":{"Idle":[80,56,[60],SPRITES_DATA[210]],"Walk":[80,56,[8],SPRITES_DATA[211]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[212]],"Cast":[80,56,[10,10],SPRITES_DATA[213]],"Hurt":[80,56,[6,10],SPRITES_DATA[214]]},"superbuu":{"Idle":[56,64,[60],SPRITES_DATA[215]],"Walk":[56,64,[8],SPRITES_DATA[216]],"Attack":[56,64,[5,4,8,5],SPRITES_DATA[217]],"Cast":[56,64,[10,10],SPRITES_DATA[218]],"Hurt":[56,64,[6,10],SPRITES_DATA[219]]},"zamasu":{"Idle":[64,64,[60],SPRITES_DATA[220]],"Walk":[64,64,[8],SPRITES_DATA[221]],"Attack":[64,64,[5,4,8,5],SPRITES_DATA[222]],"Cast":[64,64,[10,10],SPRITES_DATA[223]],"Hurt":[64,64,[6,10],SPRITES_DATA[224]]},"bills":{"Idle":[96,64,[60],SPRITES_DATA[225]],"Walk":[96,64,[8],SPRITES_DATA[226]],"Attack":[96,64,[5,4,8,5],SPRITES_DATA[227]],"Cast":[96,64,[10,10],SPRITES_DATA[228]],"Hurt":[96,64,[6,10],SPRITES_DATA[229]]},"turles":{"Idle":[80,64,[60],SPRITES_DATA[180]],"Walk":[80,64,[8],SPRITES_DATA[181]],"Attack":[80,64,[5,4,8,5],SPRITES_DATA[182]],"Cast":[80,64,[10,10],SPRITES_DATA[183]],"Hurt":[80,64,[6,10],SPRITES_DATA[184]]},"janemba":{"Idle":[96,72,[60],SPRITES_DATA[185]],"Walk":[96,72,[8],SPRITES_DATA[186]],"Attack":[96,72,[5,4,8,5],SPRITES_DATA[187]],"Cast":[96,72,[10,10],SPRITES_DATA[188]],"Hurt":[96,72,[6,10],SPRITES_DATA[189]]},"freezaF":{"Idle":[72,48,[60],SPRITES_DATA[190]],"Walk":[72,48,[8],SPRITES_DATA[191]],"Attack":[72,48,[5,4,8,5],SPRITES_DATA[192]],"Cast":[72,48,[10,10],SPRITES_DATA[193]],"Hurt":[72,48,[6,10],SPRITES_DATA[194]]},"frost":{"Idle":[64,56,[60],SPRITES_DATA[195]],"Walk":[64,56,[8],SPRITES_DATA[196]],"Attack":[64,56,[5,4,8,5],SPRITES_DATA[197]],"Cast":[64,56,[10,10],SPRITES_DATA[198]],"Hurt":[64,56,[6,10],SPRITES_DATA[199]]},"cellsemi":{"Idle":[72,64,[60],SPRITES_DATA[200]],"Walk":[72,64,[8],SPRITES_DATA[201]],"Attack":[72,64,[5,4,8,5],SPRITES_DATA[202]],"Cast":[72,64,[10,10],SPRITES_DATA[203]],"Hurt":[72,64,[6,10],SPRITES_DATA[204]]},"jiren":{"Idle":[56,56,[60],SPRITES_DATA[205]],"Walk":[56,56,[8],SPRITES_DATA[206]],"Attack":[56,56,[5,4,8,5],SPRITES_DATA[207]],"Cast":[56,56,[10,10],SPRITES_DATA[208]],"Hurt":[56,56,[6,10],SPRITES_DATA[209]]},"saibaman":{"Idle":[56,48,[60],SPRITES_DATA[0]],"Walk":[56,48,[8,8,8,8],SPRITES_DATA[1]],"Attack":[56,48,[5,4,8,5],SPRITES_DATA[2]],"Cast":[56,48,[10,10],SPRITES_DATA[3]],"Hurt":[56,48,[6,10],SPRITES_DATA[4]]},"goku":{"Idle":[80,56,[60],SPRITES_DATA[5]],"Walk":[80,56,[8],SPRITES_DATA[6]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[7]],"Cast":[80,56,[10,10],SPRITES_DATA[8]],"Hurt":[80,56,[6,10],SPRITES_DATA[9]]},"goku-ssj1":{"Idle":[80,56,[60],SPRITES_DATA[10]],"Walk":[80,56,[8],SPRITES_DATA[11]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[12]],"Cast":[80,56,[10,10],SPRITES_DATA[13]],"Hurt":[80,56,[6,10],SPRITES_DATA[14]]},"vegeta":{"Idle":[72,56,[60],SPRITES_DATA[15]],"Walk":[72,56,[8],SPRITES_DATA[16]],"Attack":[72,56,[5,4,8,5],SPRITES_DATA[17]],"Cast":[72,56,[10,10],SPRITES_DATA[18]],"Hurt":[72,56,[6,10],SPRITES_DATA[19]]},"cell":{"Idle":[80,64,[60],SPRITES_DATA[20]],"Walk":[80,64,[8],SPRITES_DATA[21]],"Attack":[80,64,[5,4,8,5],SPRITES_DATA[22]],"Cast":[80,64,[10,10],SPRITES_DATA[23]],"Hurt":[80,64,[6,10],SPRITES_DATA[24]]},"freeza":{"Idle":[56,48,[60],SPRITES_DATA[25]],"Walk":[56,48,[8,8,8,8],SPRITES_DATA[26]],"Attack":[56,48,[5,4,8,5],SPRITES_DATA[27]],"Cast":[56,48,[10,10],SPRITES_DATA[28]],"Hurt":[56,48,[6,10],SPRITES_DATA[29]]},"goku-ssj3":{"Idle":[80,64,[60],SPRITES_DATA[30]],"Walk":[80,64,[8],SPRITES_DATA[31]],"Attack":[80,64,[5,4,8,5],SPRITES_DATA[32]],"Cast":[80,64,[10,10],SPRITES_DATA[33]],"Hurt":[80,64,[6,10],SPRITES_DATA[34]]},"piccolo":{"Idle":[64,56,[60],SPRITES_DATA[35]],"Walk":[64,56,[8],SPRITES_DATA[36]],"Attack":[64,56,[5,4,8,5],SPRITES_DATA[37]],"Cast":[64,56,[10,10],SPRITES_DATA[38]],"Hurt":[64,56,[6,10],SPRITES_DATA[39]]},"goku-ssj2":{"Idle":[80,64,[60],SPRITES_DATA[40]],"Walk":[80,64,[8],SPRITES_DATA[41]],"Attack":[80,64,[5,4,8,5],SPRITES_DATA[42]],"Cast":[80,64,[10,10],SPRITES_DATA[43]],"Hurt":[80,64,[6,10],SPRITES_DATA[44]]},"vegeta-ssj":{"Idle":[72,64,[60],SPRITES_DATA[45]],"Walk":[72,64,[8],SPRITES_DATA[46]],"Attack":[72,64,[5,4,8,5],SPRITES_DATA[47]],"Cast":[72,64,[10,10],SPRITES_DATA[48]],"Hurt":[72,64,[6,10],SPRITES_DATA[49]]},"gohan-ssj":{"Idle":[72,56,[60],SPRITES_DATA[50]],"Walk":[72,56,[8],SPRITES_DATA[51]],"Attack":[72,56,[5,4,8,5],SPRITES_DATA[52]],"Cast":[72,56,[10,10],SPRITES_DATA[53]],"Hurt":[72,56,[6,10],SPRITES_DATA[54]]},"a18":{"Idle":[80,56,[60],SPRITES_DATA[55]],"Walk":[80,56,[8],SPRITES_DATA[56]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[57]],"Cast":[80,56,[10,10],SPRITES_DATA[58]],"Hurt":[80,56,[6,10],SPRITES_DATA[59]]},"bardock":{"Idle":[80,56,[60],SPRITES_DATA[60]],"Walk":[80,56,[8],SPRITES_DATA[61]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[62]],"Cast":[80,56,[10,10],SPRITES_DATA[63]],"Hurt":[80,56,[6,10],SPRITES_DATA[64]]},"broly":{"Idle":[104,80,[60],SPRITES_DATA[65]],"Walk":[104,80,[8],SPRITES_DATA[66]],"Attack":[104,80,[5,4,8,5],SPRITES_DATA[67]],"Cast":[104,80,[10,10],SPRITES_DATA[68]],"Hurt":[104,80,[6,10],SPRITES_DATA[69]]},"vegetto":{"Idle":[72,64,[60],SPRITES_DATA[70]],"Walk":[72,64,[8],SPRITES_DATA[71]],"Attack":[72,64,[5,4,8,5],SPRITES_DATA[72]],"Cast":[72,64,[10,10],SPRITES_DATA[73]],"Hurt":[72,64,[6,10],SPRITES_DATA[74]]},"gogeta":{"Idle":[88,64,[60],SPRITES_DATA[75]],"Walk":[88,64,[8],SPRITES_DATA[76]],"Attack":[88,64,[5,4,8,5],SPRITES_DATA[77]],"Cast":[88,64,[10,10],SPRITES_DATA[78]],"Hurt":[88,64,[6,10],SPRITES_DATA[79]]},"raditz":{"Idle":[64,64,[60],SPRITES_DATA[80]],"Walk":[64,64,[8],SPRITES_DATA[81]],"Attack":[64,64,[5,4,8,5],SPRITES_DATA[82]],"Cast":[64,64,[10,10],SPRITES_DATA[83]],"Hurt":[64,64,[6,10],SPRITES_DATA[84]]},"trunks-ssj":{"Idle":[72,72,[60],SPRITES_DATA[85]],"Walk":[72,72,[8],SPRITES_DATA[86]],"Attack":[72,72,[5,4,8,5],SPRITES_DATA[87]],"Cast":[72,72,[10,10],SPRITES_DATA[88]],"Hurt":[72,72,[6,10],SPRITES_DATA[89]]},"a17":{"Idle":[64,56,[60],SPRITES_DATA[90]],"Walk":[64,56,[8],SPRITES_DATA[91]],"Attack":[64,56,[5,4,8,5],SPRITES_DATA[92]],"Cast":[64,56,[10,10],SPRITES_DATA[93]],"Hurt":[64,56,[6,10],SPRITES_DATA[94]]},"black":{"Idle":[96,64,[60],SPRITES_DATA[95]],"Walk":[96,64,[8],SPRITES_DATA[96]],"Attack":[96,64,[5,4,8,5],SPRITES_DATA[97]],"Cast":[96,64,[10,10],SPRITES_DATA[98]],"Hurt":[96,64,[6,10],SPRITES_DATA[99]]},"krilin":{"Idle":[48,48,[60],SPRITES_DATA[100]],"Walk":[48,48,[8],SPRITES_DATA[101]],"Attack":[48,48,[5,4,8,5],SPRITES_DATA[102]],"Cast":[48,48,[10,10],SPRITES_DATA[103]],"Hurt":[48,48,[6,10],SPRITES_DATA[104]]},"rose":{"Idle":[56,64,[60],SPRITES_DATA[105]],"Walk":[56,64,[8],SPRITES_DATA[106]],"Attack":[56,64,[5,4,8,5],SPRITES_DATA[107]],"Cast":[56,64,[10,10],SPRITES_DATA[108]],"Hurt":[56,64,[6,10],SPRITES_DATA[109]]},"freeza-fp":{"Idle":[88,56,[14,14,14,14],SPRITES_DATA[110]],"Walk":[88,56,[8],SPRITES_DATA[111]],"Attack":[88,56,[5,4,8,5],SPRITES_DATA[112]],"Cast":[88,56,[10,10],SPRITES_DATA[113]],"Hurt":[88,56,[6,10],SPRITES_DATA[114]]},"goku-blue":{"Idle":[80,64,[60],SPRITES_DATA[115]],"Walk":[80,64,[8],SPRITES_DATA[116]],"Attack":[80,64,[5,4,8,5],SPRITES_DATA[117]],"Cast":[80,64,[10,10],SPRITES_DATA[118]],"Hurt":[80,64,[6,10],SPRITES_DATA[119]]},"golden":{"Idle":[80,56,[60],SPRITES_DATA[120]],"Walk":[80,56,[8],SPRITES_DATA[121]],"Attack":[80,56,[5,4,8,5],SPRITES_DATA[122]],"Cast":[80,56,[10,10],SPRITES_DATA[123]],"Hurt":[80,56,[6,10],SPRITES_DATA[124]]},"fatbuu":{"Idle":[104,64,[60],SPRITES_DATA[125]],"Walk":[104,64,[8],SPRITES_DATA[126]],"Attack":[104,64,[5,4,8,5],SPRITES_DATA[127]],"Cast":[104,64,[10,10],SPRITES_DATA[128]],"Hurt":[104,64,[6,10],SPRITES_DATA[129]]},"kidbuu":{"Idle":[72,56,[60],SPRITES_DATA[130]],"Walk":[72,56,[8],SPRITES_DATA[131]],"Attack":[72,56,[5,4,8,5],SPRITES_DATA[132]],"Cast":[72,56,[10,10],SPRITES_DATA[133]],"Hurt":[72,56,[6,10],SPRITES_DATA[134]]},"majinv":{"Idle":[72,64,[60],SPRITES_DATA[135]],"Walk":[72,64,[8],SPRITES_DATA[136]],"Attack":[72,64,[5,4,8,5],SPRITES_DATA[137]],"Cast":[72,64,[10,10],SPRITES_DATA[138]],"Hurt":[72,64,[6,10],SPRITES_DATA[139]]},"cooler":{"Idle":[88,64,[60],SPRITES_DATA[140]],"Walk":[88,64,[8],SPRITES_DATA[141]],"Attack":[88,64,[5,4,8,5],SPRITES_DATA[142]],"Cast":[88,64,[10,10],SPRITES_DATA[143]],"Hurt":[88,64,[6,10],SPRITES_DATA[144]]},"a16":{"Idle":[96,56,[60],SPRITES_DATA[145]],"Walk":[96,56,[8],SPRITES_DATA[146]],"Attack":[96,56,[5,4,8,5],SPRITES_DATA[147]],"Cast":[96,56,[10,10],SPRITES_DATA[148]],"Hurt":[96,56,[6,10],SPRITES_DATA[149]]},"cellimp":{"Idle":[64,64,[60],SPRITES_DATA[150]],"Walk":[64,64,[8],SPRITES_DATA[151]],"Attack":[64,64,[5,4,8,5],SPRITES_DATA[152]],"Cast":[64,64,[10,10],SPRITES_DATA[153]],"Hurt":[64,64,[6,10],SPRITES_DATA[154]]},"gokuui":{"Idle":[64,64,[60],SPRITES_DATA[155]],"Walk":[64,64,[8],SPRITES_DATA[156]],"Attack":[64,64,[5,4,8,5],SPRITES_DATA[157]],"Cast":[64,64,[10,10],SPRITES_DATA[158]],"Hurt":[64,64,[6,10],SPRITES_DATA[159]]},"vegeta-blue":{"Idle":[72,64,[60],SPRITES_DATA[160]],"Walk":[72,64,[8],SPRITES_DATA[161]],"Attack":[72,64,[5,4,8,5],SPRITES_DATA[162]],"Cast":[72,64,[10,10],SPRITES_DATA[163]],"Hurt":[72,64,[6,10],SPRITES_DATA[164]]},"21-gohan-nino":{"Idle":[40,48,[30,6,10,6],SPRITES_DATA[165]],"Walk":[48,48,[5,5,5,5,5,5,5,5],SPRITES_DATA[166]],"Hurt":[48,56,[2,8],SPRITES_DATA[167]],"Cast":[48,48,[10,10],SPRITES_DATA[168]]},"38-trunks-espada":{"Idle":[40,56,[30,6,10,6],SPRITES_DATA[169]],"Walk":[48,56,[5,5,5,5,5,5,5,5],SPRITES_DATA[170]],"Hurt":[48,64,[2,8],SPRITES_DATA[171]],"Cast":[48,56,[10,10],SPRITES_DATA[172]]},"24-vegeta-ultra-ego":{"Idle":[48,64,[30,6,10,6],SPRITES_DATA[173]],"Walk":[48,64,[5,5,5,5,5,5,5,5],SPRITES_DATA[174]],"Hurt":[56,64,[2,8],SPRITES_DATA[175]],"Cast":[48,64,[10,10],SPRITES_DATA[176]]}}};const SCC={};
 function scLoad(k){if(SCC[k])return SCC[k];const o=SCC[k]={ok:0};let n=0;
   for(const a in SCPACK.s[k]){const [fw,fh,du,url]=SCPACK.s[k][a],im=new Image();
     im.onload=()=>{const cut=r=>{const L=[];for(let i=0;i<im.width/fw;i++){const c=mk(fw,fh-4);c.getContext('2d').drawImage(im,i*fw,r*fh,fw,fh-4,0,0,fw,fh-4);L.push(c)}return L};
@@ -2079,7 +2182,9 @@ function scFrame(A,t){let x=(t*60)%A.tot;for(let i=0;i<A.du.length;i++){x-=A.du[
 function scHero(id,form){const H=SCPACK.h[id];if(!H)return null;for(let f=form;f>=0;f--)if(H[f]){const o=scLoad(H[f]);return o.ok?o:null}return null}
 function scKeyE(id){if(SCPACK.e[id])return SCPACK.e[id];const t=ET[id];if(!t)return null;if(t.alias)return scKeyE(t.alias);
   if(t.hero){const H=SCPACK.h[t.hero[0]];if(H)for(let f=t.hero[1];f>=0;f--)if(H[f])return H[f]}return null}
-function scEnemy(id){const k=scKeyE(id);if(!k)return null;const o=scLoad(k);if(!o.ok)return null;
+const SCTINT={saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)'},SCTC={};
+function scTintPk(o,f){const r={ok:1};for(const a in o){if(a==='ok')continue;const A=o[a],tc=c=>{const n=mk(c.width,c.height),g=n.getContext('2d');g.filter=f;g.drawImage(c,0,0);return n};r[a]={...A,R:A.R.map(tc),L:A.L.map(tc)}}return r}
+function scEnemy(id){const k=scKeyE(id);if(!k)return null;const o0=scLoad(k);if(!o0.ok)return null;const o=SCTINT[id]?(SCTC[id]||(SCTC[id]=scTintPk(o0,SCTINT[id]))):o0;
   const W=o.Walk,wh=W.R.map(c=>tintC(c,'#ffffff')),whf=W.L.map(c=>tintC(c,'#ffffff')),src=SCPACK.s[k].Walk;
   const hf=0.5;return{pk:o,fr:W.R,fl:W.L,wh,whf,w:Math.round(src[0]*0.6*hf),h:Math.round((W.R[0].height-6)*hf),big:1,half:hf}}
 for(const k in SCPACK.s)scLoad(k);
@@ -2257,7 +2362,7 @@ function drawTrain(){const s=loadSave();$('#tInfo').innerHTML=`Zeni <b>${s.zeni}
     if(ok){const b=document.createElement('button');b.type='button';b.className='btn';b.textContent=`+${m.rw[k]} TICKETS`;b.onclick=()=>{s.mis[m.id]=k+1;s.tickets+=m.rw[k];writeSave();sfx('trans');drawTrain()};d.appendChild(b)}
     else d.insertAdjacentHTML('beforeend',`<span class="pr">${done?'COMPLETA':'+'+m.rw[k]+' tickets'}</span>`);
     mb.appendChild(d)});
-  {const box=$('#tBes'),bes=s.bes||{},ids=Object.keys(ET).filter(id=>!['shadow'].includes(id));box.innerHTML='';let got=0;
+  {const box=$('#tBes'),bes=s.bes||{},ids=Object.keys(ET).filter(id=>!['shadow','crate'].includes(id));box.innerHTML='';let got=0;
     ids.forEach(id=>{const n=bes[id]||0;if(n)got++;const d=document.createElement('div');d.className=n?'':'no';const c=mk(36,48),g=c.getContext('2d');
       try{const sp=enemySprite(id),im=sp.fr[0],k=Math.min(1,36/im.width,48/im.height);g.imageSmoothingEnabled=false;g.drawImage(im,(36-im.width*k)/2,48-im.height*k,im.width*k,im.height*k)}catch(e){}
       d.appendChild(c);d.insertAdjacentHTML('beforeend',n?`<span>${ET[id].n}</span><span>${n}</span>`:'<span>???</span>');box.appendChild(d)});
