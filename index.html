@@ -1,0 +1,103 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DBZ Survivor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<canvas id="game" aria-label="DBZ Survivor, juego"></canvas>
+<div id="hudBtns" hidden><button id="bMute" type="button" aria-label="Silenciar">SON</button><button id="bPause" type="button" aria-label="Pausa">II</button></div>
+
+<div id="title" class="ov">
+  <h1 class="logo">DBZ<span>SURVIVOR</span></h1>
+  <p class="tag">SOBREVIVE 15 MINUTOS · 6 ESCENARIOS</p>
+  <div class="btns"><button class="btn" id="bGacha" type="button">GACHAPÓN</button><button class="btn" id="bTrain" type="button">ENTRENAMIENTO</button><button class="btn alt" id="bForge" type="button">CREA TU GUERRERO</button><button class="btn alt" id="bMine" type="button" hidden>MIS SPRITES</button><button class="btn alt" id="bCredits" type="button">CRÉDITOS</button></div>
+  <p class="help" id="wallet"></p>
+  <p class="help" id="best"></p>
+  <div class="chars" id="chars"></div>
+  <p class="help"><b>Flechas / WASD</b> o arrastra para moverte. Las bolas de ki salen solas; pulsa <b>1</b> para una ráfaga de ki, <b>2</b> para tu onda (Kamehameha, Galick Gun...) y <b>3</b> para teletransportarte al enemigo más cercano y golpearle. Recoge orbes de ki, sube de nivel, elige técnicas y transfórmate. Cada 3 minutos llega un villano. Reúne las 7 Bolas de Dragón para pedir un deseo a Shenlong.</p>
+</div>
+<div id="mine" class="ov dark" hidden>
+  <h2>MIS SPRITES</h2>
+  <p class="help">1. Elige a quién cambiar. 2. Sube una imagen PNG; puede ser una hoja con muchos personajes. 3. Toca el sprite que quieres usar. Se guarda solo en este navegador.</p>
+  <div class="btns">
+    <label class="sel"><span>Personaje</span><select id="mWho"></select></label>
+    <label class="sel"><span>Forma</span><select id="mForm"></select></label>
+    <label class="btn" for="mFile">SUBIR IMAGEN</label><input type="file" id="mFile" accept="image/*" hidden>
+  </div>
+  <p class="help" id="mInfo"></p>
+  <div id="mPicks" class="picks"></div>
+  <div id="mCurrent" class="picks small"></div>
+  <div class="btns"><button class="btn alt" id="mClear" type="button">BORRAR TODOS</button><button class="btn" id="mBack" type="button">LISTO</button></div>
+</div>
+<div id="gacha" class="ov dark" hidden>
+  <h2>GACHAPÓN DE SHENLONG</h2>
+  <canvas id="gBanner" width="160" height="60" aria-hidden="true"></canvas>
+  <p class="stat" id="gInfo"></p>
+  <p class="help">3★ 70% · 4★ 24% · 5★ 6%. Cada 70 tiradas sin 5★, el siguiente es 5★ seguro. Los repetidos se convierten en zeni.</p>
+  <div class="btns"><button class="btn alt" id="gPull1" type="button">TIRAR x1 · 1 TICKET</button><button class="btn" id="gPull10" type="button">TIRAR x10 · 10 TICKETS</button><button class="btn" id="gPull100" type="button">TIRAR x100 · 100 TICKETS</button><button class="btn alt" id="gBack" type="button">VOLVER</button></div>
+  <div class="gres" id="gRes"></div>
+</div>
+<div id="forge" class="ov dark" hidden>
+  <h2>CREA TU GUERRERO</h2>
+  <p class="help">Sube la imagen de cualquier personaje, ponle nombre y elige su técnica. El juego lo anima solo. Se guarda únicamente en este navegador.</p>
+  <canvas id="fPrev" width="180" height="200" style="image-rendering:pixelated;border:3px solid var(--edge)"></canvas>
+  <p class="help" id="fInfo"></p>
+  <div class="btns">
+    <label class="sel"><span>Imagen</span><input id="fFile" type="file" accept="image/*"></label>
+    <label class="sel"><span>Nombre</span><input id="fName" type="text" maxlength="14" placeholder="Nombre"></label>
+    <label class="sel"><span>Estilo</span><select id="fType"></select></label>
+    <label class="sel"><span>Técnica</span><select id="fMove"></select></label>
+    <label class="sel"><span>Aura</span><select id="fAura"></select></label>
+  </div>
+  <div class="btns"><button class="btn" id="fMake" type="button">CREAR</button><label class="btn alt" style="cursor:pointer">IMPORTAR<input id="fImport" type="file" accept=".json,application/json" hidden></label><button class="btn alt" id="fBack" type="button">VOLVER</button></div>
+  <div class="tgrid" id="fList"></div>
+</div>
+<div id="train" class="ov dark" hidden>
+  <h2>SALA DE ENTRENAMIENTO</h2>
+  <p class="help" id="tInfo"></p>
+  <h3 class="sub">MEJORAS PERMANENTES</h3>
+  <div class="tgrid" id="tList"></div>
+  <h3 class="sub">MISIONES</h3>
+  <div class="tgrid" id="tMis"></div>
+  <h3 class="sub">BESTIARIO</h3>
+  <p class="help" id="tBesInfo"></p>
+  <div class="bes" id="tBes"></div>
+  <h3 class="sub">MAESTRIA</h3>
+  <div class="tgrid" id="tMast"></div>
+  <p class="help">Copia de seguridad: guarda tu progreso en un archivo y recupéralo en otro navegador o dispositivo.</p>
+  <div class="btns"><button class="btn alt" id="bkSave" type="button">GUARDAR COPIA</button><label class="btn alt" style="cursor:pointer">CARGAR COPIA<input id="bkLoad" type="file" accept=".json,application/json" hidden></label><button class="btn alt" id="trBack" type="button">VOLVER</button></div>
+</div>
+<div id="credits" class="ov dark" hidden>
+  <h2>CRÉDITOS</h2>
+  <div id="cList" class="help"></div>
+  <p class="help">Sprites animados a partir de "Dragon Ball Sagas": qsab101, LukasAhl1, thekrillmaster, Manikdx2000, gogeta68, MV95, PeculiarDoc, LICHT y YoloKing777.</p>
+  <p class="help">Juego de fans sin ánimo de lucro. Dragon Ball pertenece a Bird Studio, Shueisha y Toei Animation.</p>
+  <div class="btns"><button class="btn alt" id="cBack" type="button">VOLVER</button></div>
+</div>
+<div id="maps" class="ov" hidden>
+  <h2>ELIGE ESCENARIO</h2>
+  <div class="btns" id="diffs"></div>
+  <p class="help" id="diffInfo"></p>
+  <div class="chars" id="mapCards"></div>
+  <div class="btns"><button class="btn alt" id="bBack" type="button">VOLVER</button></div>
+</div>
+<div id="levelup" class="ov dark" hidden>
+  <h2 id="luTitle">¡SUBES DE NIVEL!</h2>
+  <div class="ups" id="ups"></div>
+  <p class="help">Teclas <b>1 · 2 · 3</b> o toca una carta</p>
+</div>
+<div id="pause" class="ov dark" hidden>
+  <h2>PAUSA</h2>
+  <div class="moves" id="pauseMoves"></div>
+  <div class="btns"><button class="btn" id="bResume" type="button">SEGUIR</button><button class="btn alt" id="bQuit" type="button">ABANDONAR</button></div>
+</div>
+<div id="end" class="ov dark" hidden>
+  <h2 id="endTitle">HAS CAIDO</h2>
+  <div id="endStats"></div>
+  <div class="btns" id="endBtns"></div>
+</div>
+
+<script src="sprites.js"></script>
+<script src="script.js"></script>

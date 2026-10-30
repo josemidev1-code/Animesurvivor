@@ -1,0 +1,9 @@
+# Bibliotecas de recursos grandes (no se versionan)
+sprites/
+ESCENARIOS/
+animaciones/
+copias/
+fotos/
+tomarreferencia/
+_organizacion_sprites/
+__pycache__/
