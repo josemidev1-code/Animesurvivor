@@ -33,10 +33,13 @@
 </div>
 <div id="gacha" class="ov dark" hidden>
   <h2>GACHAPÓN DE SHENLONG</h2>
+  <div class="btns" id="gTabs"></div>
   <canvas id="gBanner" width="160" height="60" aria-hidden="true"></canvas>
   <p class="stat" id="gInfo"></p>
-  <p class="help">3★ 70% · 4★ 24% · 5★ 6%. Cada 70 tiradas sin 5★, el siguiente es 5★ seguro. Los repetidos se convierten en zeni.</p>
+  <p class="help" id="gRates"></p>
   <div class="btns"><button class="btn alt" id="gPull1" type="button">TIRAR x1 · 1 TICKET</button><button class="btn" id="gPull10" type="button">TIRAR x10 · 10 TICKETS</button><button class="btn" id="gPull100" type="button">TIRAR x100 · 100 TICKETS</button><button class="btn alt" id="gBack" type="button">VOLVER</button></div>
+  <div class="btns"><button class="btn" id="gFree" type="button" hidden>DESEO GRATIS DEL DIA</button><button class="btn alt" id="gHist" type="button">HISTORIAL</button></div>
+  <div class="ghist" id="gHistBox" hidden></div>
   <div class="gres" id="gRes"></div>
 </div>
 <div id="forge" class="ov dark" hidden>

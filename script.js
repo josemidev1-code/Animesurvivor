@@ -1377,7 +1377,7 @@ function newGame(hid,map){
   MAPK=map||MAPK;
   solidReset();
   const H=HEROES[hid];
-  S={map:MAPK,bossN:0,t:0,kills:0,spawnT:0,bossIdx:0,ringIdx:0,boss:null,banner:null,flash:0,pending:0,hid,won:false,endless:false,nextEndless:0,zeni:0,freeze:0,diff:pickedDiff,meta:metaBonus(),mr:1+0.01*mastRank(hid),saiba:0,forms:0,evos:0,balls:0,ballN:0,wishes:0,bank:{t:0,kills:0,boss:0,saiba:0,forms:0,evos:0,zeni:0,wishes:0}};S.revives=S.meta.revive;
+  S={map:MAPK,bossN:0,t:0,kills:0,spawnT:0,bossIdx:0,ringIdx:0,boss:null,banner:null,flash:0,pending:0,hid,won:false,endless:false,nextEndless:0,zeni:0,freeze:0,diff:pickedDiff,meta:metaBonus(),mr:1+0.01*mastRank(hid),aw:awaken(hid),saiba:0,forms:0,evos:0,balls:0,ballN:0,wishes:0,bank:{t:0,kills:0,boss:0,saiba:0,forms:0,evos:0,zeni:0,wishes:0}};S.revives=S.meta.revive;
   P={dir:'down',cast:null,x:0,y:0,hp:H.hp,face:1,anim:0,moving:false,iframe:0,lvl:1,xp:0,need:need(1),form:0,
      moves:{},order:[],cards:{},orbA:0,hitT:0,sel:0,sigT:0.6,sigCD:1,sigN:0,sigU:2,sigB:[],powT:1.2};
   P.hp=stats().maxhp;fxSl.length=0;fxRg.length=0;
@@ -1389,8 +1389,8 @@ function addMove(id){if(!P.moves[id]){P.moves[id]={lv:1,t:0.4,evo:false};P.order
 function stats(){
   const H=HEROES[S.hid],c=P.cards,f=P.form,M=S.meta;
   return{
-    dmg:H.atk*(1+0.12*(c.power||0))*(1+0.25*f)*M.dmg*S.mr,
-    maxhp:H.hp+20*(c.hp||0)+15*f+M.hp,
+    dmg:H.atk*(1+0.12*(c.power||0))*(1+0.25*f)*M.dmg*S.mr*(1+0.08*(S.aw||0)),
+    maxhp:Math.round((H.hp+20*(c.hp||0)+15*f+M.hp)*(1+0.08*(S.aw||0))),
     spd:1.3*H.spd*(1+0.08*(c.speed||0))*(1+0.06*f)*M.spd,
     cd:Math.pow(0.92,c.cd||0)*(1-0.05*f)*M.cd,
     mag:40*(1+0.35*(c.magnet||0))*M.mag,
@@ -2234,12 +2234,12 @@ function progTick(){const k=S.bossKills||0,sv=loadSave();sv.mprog=sv.mprog||{};i
 function heroMigrate(sv){if(sv.lockv)return;sv.lockv=1;const keep={goku:1,vegeta:1,piccolo:1};for(const k in sv.owned)if(CUSTOM.some(c=>c.id===k))keep[k]=sv.owned[k];
   try{localStorage.setItem('animesurvivor-owned-backup',JSON.stringify(sv.owned))}catch(e){}sv.owned=keep;sv.tickets=Math.max(sv.tickets||0,20);writeSave()}
 // ---------- Shenron wish: the summoning plays out, the colour of the light tells the rarity ----------
-(function wishUI(){const h=$('#gacha h2');if(h)h.textContent='PIDE UN DESEO A SHENRON';const hp=$('#gacha .help');if(hp)hp.textContent='Junta las 7 bolas y pide tu deseo. Luz azul: 3★ (70%) · luz morada: 4★ (24%) · luz dorada: 5★ (6%). A los 70 deseos sin 5★, el siguiente es 5★ seguro. Los repetidos se convierten en zeni.';
+(function wishUI(){const h=$('#gacha h2');if(h)h.textContent='PIDE UN DESEO A SHENRON';const hp=$('#gacha .help');if(hp)hp.textContent='Junta las 7 bolas y pide tu deseo. Luz azul: 3★ · luz morada: 4★ · luz dorada: 5★.';
   const L={gPull1:'1 DESEO · 1 TICKET',gPull10:'10 DESEOS · 10 TICKETS',gPull100:'100 DESEOS · 100 TICKETS'};setTimeout(()=>{for(const id in L){const b=$('#'+id);if(b){b.textContent=L[id];b.onclick=()=>wish(+id.slice(5))}}},0);
   const bg=$('#bGacha');if(bg)bg.textContent='SHENRON';
   const st=document.createElement('style');st.textContent='#wishFx{position:fixed;inset:0;z-index:50;width:100vw;height:100vh;image-rendering:pixelated;cursor:pointer;background:#04060e;object-fit:contain}';document.head.appendChild(st)})();
-function wish(n){const s=loadSave();if(s.tickets<n){$('#gInfo').textContent=`Te faltan tickets: tienes ${s.tickets} y necesitas ${n}. Gana más jugando partidas.`;return}
-  const m=muted;muted=true;doPull(n);muted=m;const box=$('#gRes'),top=box.querySelector('.r5')?5:box.querySelector('.r4')?4:3,news=box.querySelectorAll('.gcard').length;box.style.display='none';
+function wish(n,free){const s=loadSave();if(free?!freeReady():s.tickets<n){$('#gInfo').textContent=`Te faltan tickets: tienes ${s.tickets} y necesitas ${n}. Gana más jugando partidas.`;return}
+  const m=muted;muted=true;doPull(n,free);muted=m;const box=$('#gRes'),top=box.querySelector('.r5')?5:box.querySelector('.r4')?4:3,news=box.querySelectorAll('.gcard').length;box.style.display='none';
   const W=320,H=180,c=mk(W,H);c.id='wishFx';const g=c.getContext('2d');g.imageSmoothingEnabled=false;document.body.appendChild(c);
   const COL={3:['#3a8aff','#bfe6ff'],4:['#b04aff','#f0c0ff'],5:['#ffb020','#fff6a0']}[top],shen=shenlong(),t0=performance.now(),dur=top===5?4.2:3.6,cf=[],sd=[];let done=false,ph=0;
   for(let i=0;i<60;i++)sd.push([Math.random()*W,Math.random()*H,Math.random()]);
@@ -2739,27 +2739,54 @@ function drawTrain(){const s=loadSave();$('#tInfo').innerHTML=`Zeni <b>${s.zeni}
   const hb=$('#tMast');hb.innerHTML=Object.keys(HDEF).filter(id=>s.owned[id]).map(id=>{const r=mastRank(id),x=s.mast[id]||0,a=mastXP(r),b2=mastXP(r+1);
     return `<span class="mast"><b>${HDEF[id].name}</b> Rango ${r} · +${r}% daño · próximo premio ${(r+1)%5===0?10:2} tickets<span class="bar"><b style="width:${r>=30?100:Math.min(100,(x-a)/(b2-a)*100)}%"></b></span></span>`}).join('')}
 const GPOOL={3:[],4:[],5:[]};for(const id in HDEF){const r=HDEF[id].rar;if(r&&!HDEF[id].npc)GPOOL[r].push(id)}if(!GPOOL[3].length)GPOOL[3]=GPOOL[4].slice();
-function pullOne(){const s=loadSave();s.pity++;s.pulls++;let r=Math.random(),rar=r<0.06?5:r<0.30?4:3;if(s.pity>=70)rar=5;if(rar===5)s.pity=0;
-  const pool=GPOOL[rar],id=pool[(Math.random()*pool.length)|0],isNew=!s.owned[id];
-  if(isNew)s.owned[id]=1;else{s.owned[id]++;s.zeni+=rar===5?150:rar===4?50:20}
-  return{id,rar,isNew}}
+// ---------- wishes: featured banner (rotates every 3 days, 50/50 with guarantee), soft pity, awakening from duplicates ----------
+const G5=0.04,G4=0.20,SOFT5=50,PITY5=70,PITY4=10,AWMAX=5;
+function gBanners(){const per=Math.floor(Date.now()/864e5/3),p5=GPOOL[5],p4=GPOOL[4];
+  const f5=p5.length?p5[per%p5.length]:null,f4=[...new Set([p4[per%p4.length],p4[(per+3)%p4.length]])].filter(Boolean);
+  return[{id:'feat',name:'DESEO DESTACADO',f5,f4,ends:(per+1)*3*864e5},{id:'perm',name:'DESEO PERMANENTE',f4:[]}]}
+let gSel='feat';
+const gBanner=()=>gBanners().find(b=>b.id===gSel)||gBanners()[0];
+function awaken(id){return clamp(((loadSave().owned||{})[id]||0)-1,0,AWMAX)}
+function pick(a){return a[(Math.random()*a.length)|0]}
+function pullOne(bn=gBanner()){const s=loadSave(),k=s.pity+1,k4=(s.pity4||0)+1;s.pulls++;
+  let rar=Math.random()<(k>=PITY5?1:G5+Math.max(0,k-SOFT5)*0.06)?5:(k4>=PITY4||Math.random()<G4)?4:3,id,feat=false;
+  s.pity=rar===5?0:k;s.pity4=rar>=4?0:k4;
+  if(rar===5&&bn.f5){if(s.guar||Math.random()<0.5){id=bn.f5;feat=true;s.guar=0}else{const o=GPOOL[5].filter(x=>x!==bn.f5);id=o.length?pick(o):bn.f5;s.guar=1}}
+  else if(rar===4&&bn.f4.length&&Math.random()<0.5){id=pick(bn.f4);feat=true}
+  else id=pick(GPOOL[rar]);
+  const before=s.owned[id]||0,isNew=!before;s.owned[id]=before+1;let aw=0,zeni=0;
+  if(!isNew){if(before<=AWMAX)aw=before;else{zeni=rar===5?300:rar===4?80:25;s.zeni+=zeni}}
+  (s.hist=s.hist||[]).unshift({id,rar,t:Date.now(),b:bn.id});if(s.hist.length>80)s.hist.length=80;
+  return{id,rar,isNew,aw,zeni,feat}}
+const today=()=>new Date().toISOString().slice(0,10);
+const freeReady=()=>loadSave().freeD!==today();
 function portrait(id,form){const F=heroFrames(id,form||0).downidle[0].c,my=myHero(id,form||0);return my?my.c:F}
-function doPull(n){const s=loadSave();if(s.tickets<n){$('#gInfo').textContent=`Te faltan tickets: tienes ${s.tickets} y necesitas ${n}. Gana más jugando partidas.`;return}
-  s.tickets-=n;const res=[];for(let i=0;i<n;i++)res.push(pullOne());writeSave();
+function doPull(n,free){const s=loadSave();if(free){if(!freeReady())return;s.freeD=today()}else if(s.tickets<n){$('#gInfo').textContent=`Te faltan tickets: tienes ${s.tickets} y necesitas ${n}. Gana más jugando partidas.`;return}
+  if(!free)s.tickets-=n;const bn=gBanner(),res=[];for(let i=0;i<n;i++)res.push(pullOne(bn));writeSave();
   const box=$('#gRes');box.innerHTML='';
-  const show=n>10?res.filter(r=>r.isNew||r.rar>=4).slice(0,30):res;
+  const show=n>10?res.filter(r=>r.isNew||r.rar>=4||r.aw).slice(0,30):res;
   show.sort((a,b)=>b.rar-a.rar).forEach((r,i)=>{const d=document.createElement('div');d.className='gcard r'+r.rar;d.style.animationDelay=(i*0.12)+'s';
     const c=mk(38,54),im=portrait(r.id);c.getContext('2d').drawImage(im,0,0,im.width,im.height,(38-Math.min(38,im.width))/2,54-Math.min(54,im.height),Math.min(38,im.width),Math.min(54,im.height));d.appendChild(c);
-    d.insertAdjacentHTML('beforeend',`<span class="st">${'★'.repeat(r.rar)}</span><span class="nm">${HDEF[r.id].name}</span><span class="tag">${r.isNew?'¡NUEVO!':'+zeni'}</span>`);box.appendChild(d)});
+    d.insertAdjacentHTML('beforeend',`<span class="st">${'★'.repeat(r.rar)}</span><span class="nm">${HDEF[r.id].name}</span><span class="tag">${r.isNew?'¡NUEVO!':r.aw?'DESPERTAR +'+r.aw:'+'+r.zeni+' ZENI'}</span>${r.feat?'<span class="st">DESTACADO</span>':''}`);box.appendChild(d)});
   if(n>10)box.insertAdjacentHTML('beforeend',`<p class="help" style="grid-column:1/-1">Mostrando lo nuevo y los 4★ y 5★ de ${n} tiradas.</p>`);
   if(res.some(r=>r.rar===5)){sfx('trans')}else sfx('level');
   gachaInfo();buildCards()}
-function gachaInfo(){const s=loadSave();$('#gInfo').innerHTML=`Tickets <b>${s.tickets}</b> · Zeni <b>${s.zeni}</b> · 5★ seguro en <b>${70-s.pity}</b> tiradas`}
+function gachaInfo(){const s=loadSave(),bn=gBanner(),hr=Math.max(0,Math.ceil(((bn.ends||0)-Date.now())/36e5)),nm=id=>HDEF[id]?HDEF[id].name:id;
+  $('#gTabs').innerHTML=gBanners().map(b=>`<button class="btn${b.id===gSel?'':' alt'}" type="button" data-b="${b.id}">${b.name}</button>`).join('');
+  $('#gTabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{gSel=b.dataset.b;gachaInfo()});
+  $('#gInfo').innerHTML=`Tickets <b>${s.tickets}</b> · Zeni <b>${s.zeni}</b> · 5★ seguro en <b>${PITY5-s.pity}</b> · 4★ seguro en <b>${PITY4-(s.pity4||0)}</b>`;
+  $('#gRates').innerHTML=(bn.id==='feat'&&bn.f5?`5★ destacado: <b>${nm(bn.f5)}</b> · 4★ destacados: <b>${bn.f4.map(nm).join(', ')}</b> · cambia en ${hr} h<br>${s.guar?'<b style="color:var(--ki)">¡Tu próximo 5★ será el destacado!</b>':'Si tu 5★ no es el destacado, el siguiente lo será seguro.'}`
+    :'Todos los personajes con la misma probabilidad.')+`<br>5★ ${G5*100}% (sube a partir del deseo ${SOFT5}) · 4★ ${G4*100}%. Cada repetido despierta al personaje (+8% daño y vida, hasta +${AWMAX}).`;
+  $('#gFree').hidden=!freeReady();
+  $('#gHistBox').innerHTML=(s.hist||[]).slice(0,40).map(h=>`<span class="h r${h.rar}">${'★'.repeat(h.rar)} ${nm(h.id)}</span>`).join('')||'Aún no has pedido deseos.'}
 let bannerT=0;
-function drawBanner(){const c=$('#gBanner'),g=c.getContext('2d');g.imageSmoothingEnabled=false;g.fillStyle='#0c1630';g.fillRect(0,0,160,60);
+function drawBanner(){const c=$('#gBanner'),g=c.getContext('2d'),bn=gBanner();g.imageSmoothingEnabled=false;g.fillStyle=bn.id==='feat'?'#22143a':'#0c1630';g.fillRect(0,0,160,60);
   bannerT++;for(let i=0;i<7;i++){const a=i/7*TAU+bannerT*0.02,x=80+Math.cos(a)*60,y=30+Math.sin(a)*20;pball(g,Math.round(x),Math.round(y),5,['#c85a10','#f2911a','#ffc44a','#fff0b0']);g.fillStyle='#d81e1e';g.fillRect(Math.round(x)-1,Math.round(y)-1,2,2)}
-  const ids=GPOOL[5];ids.forEach((id,i)=>{const im=heroFrames(id,1).downidle[(bannerT>>4)%2].c;g.drawImage(im,30+i*Math.min(26,104/Math.max(1,ids.length-1)),4,im.width*0.75|0,im.height*0.75|0)})}
-function openGacha(){initAudio();state='gacha';$('#title').hidden=true;$('#gacha').hidden=false;$('#gRes').innerHTML='';gachaInfo();
+  const fr=(id,f)=>heroFrames(id,f).downidle[(bannerT>>4)%2].c;
+  if(bn.id==='feat'&&bn.f5){bn.f4.forEach((id,i)=>{const im=fr(id,0);g.drawImage(im,i?112:10,10,im.width*0.85|0,im.height*0.85|0)});
+    const im=fr(bn.f5,Math.min(1,HDEF[bn.f5].forms.length-1)),fl=auraFlames(heroAura(bn.f5,1))[(bannerT>>2)%3];g.globalAlpha=0.8;g.drawImage(fl,80-fl.width/2,60-fl.height);g.globalAlpha=1;g.drawImage(im,80-im.width/2,60-im.height);return}
+  const ids=GPOOL[5];ids.forEach((id,i)=>{const im=fr(id,1);g.drawImage(im,30+i*Math.min(26,104/Math.max(1,ids.length-1)),4,im.width*0.75|0,im.height*0.75|0)})}
+function openGacha(){initAudio();state='gacha';$('#gFree').onclick=()=>wish(1,true);$('#gHist').onclick=()=>{const h=$('#gHistBox');h.hidden=!h.hidden};$('#title').hidden=true;$('#gacha').hidden=false;$('#gRes').innerHTML='';gachaInfo();
   const tick=()=>{if(state!=='gacha')return;drawBanner();requestAnimationFrame(tick)};tick()}
 // ---------- sprite pack: sprites/manifest.json next to index.html (for your own hosted version) ----------
 let PACK_CREDITS=[];
@@ -2805,7 +2832,7 @@ function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(
   for(const id of ids){const H=HEROES[id],own=!!sv.owned[id]||id==='gokuui',b=document.createElement('button');b.type='button';b.className='card'+(own?'':' locked');
     const c=mk(38*3,54*3),g=c.getContext('2d');g.imageSmoothingEnabled=false;
     b.appendChild(c);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
-    b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p><span class="stats">VIDA ${H.hp} · VEL ${H.spd} · ATQ x${H.atk}</span>${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
+    b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p><span class="stats">VIDA ${H.hp} · VEL ${H.spd} · ATQ x${H.atk}</span>${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
     b.onclick=()=>own?chooseMap(id):openGacha();box.appendChild(b);
     let f=0,form=0;const draw=()=>{if(state!=='title')return;f++;if(f%16===0)form=(form+1)%H.forms.length;if(!own)form=0;const s=heroSprite(id,form);g.clearRect(0,0,c.width,c.height);
       if(form>0){const fl=auraFlames(heroAura(id,form))[f%3];g.globalAlpha=0.8;g.drawImage(fl,(c.width-fl.width*3)/2,c.height-fl.height*3,fl.width*3,fl.height*3);g.globalAlpha=1}
