@@ -2590,7 +2590,7 @@ function splitSheet(img){
   boxes.sort((a,b)=>(Math.round(a.y0/20)-Math.round(b.y0/20))||a.x0-b.x0);
   return boxes.slice(0,120).map(b=>{const w=b.x1-b.x0+1,h=b.y1-b.y0+1,o=mk(w,h);o.getContext('2d').drawImage(c,b.x0,b.y0,w,h,0,0,w,h);return o})}
 function mineWhoList(){const L=[];for(const id in HEROES)if(!HEROES[id].npc)L.push(['h:'+id,HEROES[id].name]);for(const id in ET)L.push(['e:'+id,(ET[id].boss?'Jefe: ':'Enemigo: ')+ET[id].n]);return L}
-function openMine(){state='mine';$('#title').hidden=true;$('#mine').hidden=false;
+function openMine(){state='mine';hideMenus();$('#mine').hidden=false;
   const who=$('#mWho');if(!who.options.length){for(const [v,t] of mineWhoList()){const o=document.createElement('option');o.value=v;o.textContent=t;who.appendChild(o)}}
   refreshMineForm();renderMineCurrent()}
 function refreshMineForm(){const v=$('#mWho').value,sel=$('#mForm');sel.innerHTML='';
@@ -2636,9 +2636,10 @@ function loop(now){
   requestAnimationFrame(loop)}
 const demo=[];
 function drawTitleDemo(time){
-  if(!demo.length){const ids=['saiba','saiba','soldier','celljr','raditz','frieza','cell','saibaR','buu','ginyu','nappa','dodoria','zarbon','a19','dabura','fatbuu','blob','majin','rrsoldier','frieza100','mecha'];ids.forEach((id,i)=>demo.push({id,x:rnd(VW),y:rnd(VH),vx:rnd(-12,12),vy:rnd(-8,8)}))}
-  for(const d of demo){d.x+=d.vx/60;d.y+=d.vy/60;if(d.x<-20)d.x=VW+20;if(d.x>VW+20)d.x=-20;if(d.y<0)d.y=VH+20;if(d.y>VH+30)d.y=0;
-    const s=enemySprite(d.id),sc=s.big?1:ET[d.id].boss?2:1;shadow(d.x,d.y,s.w*sc*0.8);drawSprite(s,d.x,d.y,time*6,d.vx<0,false,sc)}}
+  if(!demo.length){const ids=Object.keys(SCPACK.h).filter(k=>HEROES[k]);for(let i=0;i<11&&ids.length;i++){const id=ids[(Math.random()*ids.length)|0],f=Object.keys(SCPACK.h[id]);demo.push({id,form:+f[(Math.random()*f.length)|0],x:rnd(VW),y:rnd(VH),vx:rnd(-14,14),vy:rnd(-6,6),k:Math.random()})}}
+  demo.sort((a,b)=>a.y-b.y);
+  for(const d of demo){d.x+=d.vx/60;d.y+=d.vy/60;if(d.x<-30)d.x=VW+30;if(d.x>VW+30)d.x=-30;if(d.y<10)d.y=VH+30;if(d.y>VH+40)d.y=10;
+    const A=heroAnim(d.id,d.form,'Walk');if(!A)continue;const fr=(d.vx<0?A.L:A.R)[scFrame(A,time+d.k*3)];shadow(d.x,d.y,fr.width*0.6);ctx.drawImage(fr,Math.round(d.x-fr.width/2),Math.round(d.y-fr.height))}}
 let pickedHero='goku';
 function drawDiffs(){const box=$('#diffs'),top=DIFF.length;box.innerHTML='';
   DIFF.forEach((D,i)=>{const b=document.createElement('button');b.type='button';b.className='btn '+(i===pickedDiff?'':'alt');b.textContent=i>top?'???':D.n;b.disabled=i>top;if(i>top)b.style.opacity=.45;
@@ -2646,7 +2647,7 @@ function drawDiffs(){const box=$('#diffs'),top=DIFF.length;box.innerHTML='';
   $('#diffInfo').innerHTML=`Enemigos x${D.hp} de vida · Premios <b style="color:${D.c}">x${D.rw}</b>. Derrota 2 jefes en un escenario para abrir el siguiente.`;
   $('#mapCards').querySelectorAll('button').forEach(b=>{const id=b.dataset.map,c=mapClear(id),ok=mapOpen(id);b.classList.toggle('locked',!ok);
     b.querySelector('.clr').textContent=c>=0?'Superado: '+DIFF[c].n:ok?'Sin superar':mapLockMsg(id);b.title=ok?'':mapLockMsg(id)})}
-function chooseMap(hid){initAudio();pickedHero=hid;$('#title').hidden=true;$('#maps').hidden=false;buildMapCards();drawDiffs();setTimeout(()=>{const b=$('#mapCards button');b&&b.focus()},20)}
+function chooseMap(hid){initAudio();pickedHero=hid;hideMenus();$('#maps').hidden=false;buildMapCards();drawDiffs();setTimeout(()=>{const b=$('#mapCards button');b&&b.focus()},20)}
 let mapCardsBuilt=false;
 function buildMapCards(){if(mapCardsBuilt)return;mapCardsBuilt=true;const box=$('#mapCards'),keep=MAPK,cx=cam.x,cy=cam.y;
   for(const id in MAPS){const M=MAPS[id],b=document.createElement('button');b.type='button';b.className='card';
@@ -2655,7 +2656,7 @@ function buildMapCards(){if(mapCardsBuilt)return;mapCardsBuilt=true;const box=$(
     b.dataset.map=id;b.insertAdjacentHTML('beforeend','<span class="stats clr"></span>');
     b.onclick=()=>{if(!mapOpen(id)){$('#diffInfo').textContent=mapLockMsg(id);return}if(false){$('#diffInfo').textContent=`Para jugar ${M.name} en ${DIFF[pickedDiff].n} primero gánalo en ${DIFF[pickedDiff-1].n}.`;return}$('#maps').hidden=true;startGame(pickedHero,id)};box.appendChild(b)}
   MAPK=keep;cam.x=cx;cam.y=cy}
-function startGame(hid,map){initAudio();newGame(hid,map);state='play';$('#title').hidden=true;$('#maps').hidden=true;$('#end').hidden=true;$('#hudBtns').hidden=false;last=performance.now()}
+function startGame(hid,map){initAudio();newGame(hid,map);state='play';hideMenus();$('#maps').hidden=true;$('#end').hidden=true;$('#hudBtns').hidden=false;last=performance.now()}
 function pauseGame(){state='pause';$('#pause').hidden=false;
   $('#pauseMoves').innerHTML=P.order.map(id=>`<span>${P.moves[id].evo?MV[id].evo:MV[id].name} · NV ${P.moves[id].lv}</span>`).join('')+Object.keys(P.cards).map(id=>`<span>${CARDS[id].name} · ${P.cards[id]}</span>`).join('');
   setTimeout(()=>$('#bResume').focus(),20)}
@@ -2717,7 +2718,7 @@ function stat(k,v=1){const s=loadSave();s.st[k]=(s.st[k]||0)+v}
 function dailyGift(){const s=loadSave(),d=new Date().toISOString().slice(0,10);if(s.daily===d)return 0;
   const y=new Date(Date.now()-864e5).toISOString().slice(0,10);s.streak=s.daily===y?Math.min(7,(s.streak||0)+1):1;s.daily=d;
   const n=2+s.streak;s.tickets+=n;writeSave();return n}
-function openTrain(){state='train';$('#title').hidden=true;$('#train').hidden=false;drawTrain()}
+function openTrain(){state='train';hideMenus();$('#train').hidden=false;drawTrain()}
 function drawTrain(){const s=loadSave();$('#tInfo').innerHTML=`Zeni <b>${s.zeni}</b> · Tickets <b>${s.tickets}</b>`;
   const box=$('#tList');box.innerHTML='';
   UPG.forEach(u=>{const lv=s.up[u.id]||0,max=lv>=u.max,c=upCost(u,lv),b=document.createElement('button');b.type='button';b.className='up train';
@@ -2738,7 +2739,7 @@ function drawTrain(){const s=loadSave();$('#tInfo').innerHTML=`Zeni <b>${s.zeni}
     $('#tBesInfo').textContent=`Has derrotado ${got} de ${ids.length} tipos de enemigo.`}
   const hb=$('#tMast');hb.innerHTML=Object.keys(HDEF).filter(id=>s.owned[id]).map(id=>{const r=mastRank(id),x=s.mast[id]||0,a=mastXP(r),b2=mastXP(r+1);
     return `<span class="mast"><b>${HDEF[id].name}</b> Rango ${r} · +${r}% daño · próximo premio ${(r+1)%5===0?10:2} tickets<span class="bar"><b style="width:${r>=30?100:Math.min(100,(x-a)/(b2-a)*100)}%"></b></span></span>`}).join('')}
-const GPOOL={3:[],4:[],5:[]};for(const id in HDEF){const r=HDEF[id].rar;if(r&&!HDEF[id].npc)GPOOL[r].push(id)}if(!GPOOL[3].length)GPOOL[3]=GPOOL[4].slice();
+const GPOOL={3:[],4:[],5:[]};for(const id in HDEF){const r=HDEF[id].rar;if(r&&!HDEF[id].npc&&SCPACK.h[id])GPOOL[r].push(id)}if(!GPOOL[3].length)GPOOL[3]=GPOOL[4].slice();
 // ---------- wishes: featured banner (rotates every 3 days, 50/50 with guarantee), soft pity, awakening from duplicates ----------
 const G5=0.04,G4=0.20,SOFT5=50,PITY5=70,PITY4=10,AWMAX=5;
 function gBanners(){const per=Math.floor(Date.now()/864e5/3),p5=GPOOL[5],p4=GPOOL[4];
@@ -2786,7 +2787,7 @@ function drawBanner(){const c=$('#gBanner'),g=c.getContext('2d'),bn=gBanner();g.
   if(bn.id==='feat'&&bn.f5){bn.f4.forEach((id,i)=>{const im=fr(id,0);g.drawImage(im,i?112:10,10,im.width*0.85|0,im.height*0.85|0)});
     const im=fr(bn.f5,Math.min(1,HDEF[bn.f5].forms.length-1)),fl=auraFlames(heroAura(bn.f5,1))[(bannerT>>2)%3];g.globalAlpha=0.8;g.drawImage(fl,80-fl.width/2,60-fl.height);g.globalAlpha=1;g.drawImage(im,80-im.width/2,60-im.height);return}
   const ids=GPOOL[5];ids.forEach((id,i)=>{const im=fr(id,1);g.drawImage(im,30+i*Math.min(26,104/Math.max(1,ids.length-1)),4,im.width*0.75|0,im.height*0.75|0)})}
-function openGacha(){initAudio();state='gacha';$('#gFree').onclick=()=>wish(1,true);$('#gHist').onclick=()=>{const h=$('#gHistBox');h.hidden=!h.hidden};$('#title').hidden=true;$('#gacha').hidden=false;$('#gRes').innerHTML='';gachaInfo();
+function openGacha(){initAudio();state='gacha';$('#gFree').onclick=()=>wish(1,true);$('#gHist').onclick=()=>{const h=$('#gHistBox');h.hidden=!h.hidden};hideMenus();$('#gacha').hidden=false;$('#gRes').innerHTML='';gachaInfo();
   const tick=()=>{if(state!=='gacha')return;drawBanner();requestAnimationFrame(tick)};tick()}
 // ---------- sprite pack: sprites/manifest.json next to index.html (for your own hosted version) ----------
 let PACK_CREDITS=[];
@@ -2799,7 +2800,7 @@ fetch('sprites/manifest.json').then(r=>r.ok?r.json():null).then(m=>{if(!m)return
     else{const wi=new Image();wi.onload=()=>{if(!o.c)return;const c=mk(wi.width,wi.height);c.getContext('2d').drawImage(wi,0,0);o.walk=strip(c,Math.max(1,Math.round(wi.width/o.c.width)));o.walkF=o.walk.map(flipC)};wi.onerror=()=>{};setTimeout(()=>{wi.src='sprites/'+img.replace(/\.png$/i,'_walk.png')},300)}}
   for(const id in m.enemies||{}){if(MYC['e:'+id])continue;const o={};MYC['e:'+id]=o;load(m.enemies[id],c=>{o.c=c;delete SPR[id]})}
 }).catch(()=>{});
-function openCredits(){state='credits';$('#title').hidden=true;$('#credits').hidden=false;
+function openCredits(){state='credits';hideMenus();$('#credits').hidden=false;
   const L=[['Juego, código y pixel art original','AnimeSurvivor'],...PACK_CREDITS.map(c=>[c.what||'Sprites',c.name+(c.url?' · '+c.url:'')])];
   $('#cList').innerHTML=L.map(([a,b])=>`<p class="stat">${a}: <b>${b.replace(/</g,'&lt;')}</b></p>`).join('')}
 function fmt(t){return String(Math.floor(t/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0')}
@@ -2820,7 +2821,7 @@ function endGame(won){
   add('REINTENTAR',won?'alt':'',()=>startGame(S.hid,S.map));
   add('PERSONAJES','alt',()=>{$('#end').hidden=true;showTitle()});
   $('#end').hidden=false;setTimeout(()=>btns.querySelector('button').focus(),20)}
-function showTitle(){state='title';$('#title').hidden=false;$('#hudBtns').hidden=true;buildCards();
+function showTitle(){state='title';if(started)openHub();else{hideMenus();$('#start').hidden=false}$('#hudBtns').hidden=true;buildCards();
   const best=loadBest();const parts=Object.keys(HEROES).filter(k=>best[k]).map(k=>`${HEROES[k].name} ${fmt(best[k].t)}`);
   $('#best').textContent=parts.length?'Récords: '+parts.join(' · '):'';
   const gift=dailyGift();if(gift)$('#best').insertAdjacentHTML('afterbegin',`<b style="color:var(--ki)">¡Regalo diario! +${gift} tickets (racha ${loadSave().streak} días)</b><br>`);
@@ -2828,17 +2829,17 @@ function showTitle(){state='title';$('#title').hidden=false;$('#hudBtns').hidden
 // character cards
 const cardTimers=[];
 function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(clearInterval);cardTimers.length=0;const sv=loadSave();heroMigrate(sv);
-  const ids=Object.keys(HEROES).filter(k=>!HEROES[k].npc).sort((a,b)=>(!sv.owned[a])-(!sv.owned[b]));
+  const ids=Object.keys(HEROES).filter(spriteHero).sort((a,b)=>(!sv.owned[a])-(!sv.owned[b]));
   for(const id of ids){const H=HEROES[id],own=!!sv.owned[id]||id==='gokuui',b=document.createElement('button');b.type='button';b.className='card'+(own?'':' locked');
     const c=mk(38*3,54*3),g=c.getContext('2d');g.imageSmoothingEnabled=false;
     b.appendChild(c);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
     b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p><span class="stats">VIDA ${H.hp} · VEL ${H.spd} · ATQ x${H.atk}</span>${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
-    b.onclick=()=>own?chooseMap(id):openGacha();box.appendChild(b);
+    b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
     let f=0,form=0;const draw=()=>{if(state!=='title')return;f++;if(f%16===0)form=(form+1)%H.forms.length;if(!own)form=0;const s=heroSprite(id,form);g.clearRect(0,0,c.width,c.height);
       if(form>0){const fl=auraFlames(heroAura(id,form))[f%3];g.globalAlpha=0.8;g.drawImage(fl,(c.width-fl.width*3)/2,c.height-fl.height*3,fl.width*3,fl.height*3);g.globalAlpha=1}
       const my=scHero(id,form)?null:myHero(id,form);if(my&&my.c){const im=my.c,k=Math.min(c.width/im.width,c.height/im.height);const z=k>=1?Math.floor(k):k;g.drawImage(im,(c.width-im.width*z)/2,c.height-im.height*z-((f%2)?1:0),im.width*z,im.height*z)}else{const pk=scHero(id,form);if(pk){const im=pk.Idle.R[scFrame(pk.Idle,f*0.18)],z=2;g.drawImage(im,(c.width-im.width*z)/2,c.height-im.height*z,im.width*z,im.height*z)}else g.drawImage(s.fr[f%4],0,0,s.w,s.h,(c.width-s.w*3)/2,c.height-s.h*3,s.w*3,s.h*3)}};
     draw();cardTimers.push(setInterval(draw,180))}
-  $('#wallet').textContent=`Tickets: ${sv.tickets} · Zeni: ${sv.zeni} · Personajes: ${Object.keys(sv.owned).length}/${Object.keys(HEROES).filter(k=>!HEROES[k].npc).length}`}
+  $('#wallet').textContent=`Tickets: ${sv.tickets} · Zeni: ${sv.zeni} · Personajes: ${Object.keys(HEROES).filter(k=>spriteHero(k)&&sv.owned[k]).length}/${Object.keys(HEROES).filter(spriteHero).length}`}
 // ---------- Crea tu guerrero: player-made heroes from any PNG, stored only in this browser ----------
 const CTYPES={bal:{n:'Equilibrado',hp:115,spd:62,atk:1},str:{n:'Fuerza bruta',hp:105,spd:57,atk:1.15},fast:{n:'Velocidad',hp:95,spd:72,atk:0.95},tank:{n:'Tanque',hp:150,spd:54,atk:0.9,regen:0.4}};
 const CMOVES=['kame','galick','makanko','masenko','kienzan','genki','bigbang','burning','riot','eraser','finalkame','stardust','aura','orbs'];
@@ -2853,7 +2854,7 @@ function regCustom(d,cb){const im=new Image();im.onload=()=>{const c=fitCanvas(i
   const s=loadSave();if(!s.owned[id]){s.owned[id]=1;writeSave()}cb&&cb()};im.src=d.img}
 function unregCustom(id){delete HDEF[id];delete MYC['h:'+id+':0'];const s=loadSave();delete s.owned[id];writeSave()}
 let forgeImg=null,forgeT=0;
-function openForge(){state='forge';$('#title').hidden=true;$('#forge').hidden=false;forgeImg=null;$('#fName').value='';$('#fInfo').textContent='Sube un PNG o JPG de tu personaje, mirando de frente.';
+function openForge(){state='forge';hideMenus();$('#forge').hidden=false;forgeImg=null;$('#fName').value='';$('#fInfo').textContent='Sube un PNG o JPG de tu personaje, mirando de frente.';
   const sel=(el,o)=>{el.innerHTML=Object.entries(o).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')};
   sel($('#fType'),Object.fromEntries(Object.entries(CTYPES).map(([k,v])=>[k,v.n])));sel($('#fMove'),Object.fromEntries(CMOVES.map(k=>[k,MV[k].name])));sel($('#fAura'),CAURAS);
   listForge();const tick=()=>{if(state!=='forge')return;drawForge();requestAnimationFrame(tick)};tick()}
@@ -2902,6 +2903,69 @@ $('#fImport').onchange=e=>{const f=e.target.files[0];if(!f)return;f.text().then(
 $('#bCredits').onclick=openCredits;$('#cBack').onclick=()=>{$('#credits').hidden=true;showTitle()};
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='play')pauseGame()});
 // test hook
+// ---------- DragonBall Survivor menu: start screen, side menu hub, companion, event, roster, shop, ranking, settings ----------
+let started=false,hubTimer=0;
+function spriteHero(id){return !!(HEROES[id]&&!HEROES[id].npc&&(SCPACK.h[id]||HEROES[id].custom))}
+function hideMenus(){for(const k of ['#title','#hub','#start','#roster','#shop','#rank','#settings']){const e=$(k);if(e)e.hidden=true}clearInterval(hubTimer)}
+function heroAnim(id,form,anim){const pk=scHero(id,form);return pk&&(pk[anim]||pk.Idle)}
+// visible box of a frame (sprite-pack cells carry a lot of empty margin), cached per frame
+const BBOX=new WeakMap();
+function bbox(im){let b=BBOX.get(im);if(b)return b;const d=im.getContext('2d').getImageData(0,0,im.width,im.height).data;let x0=im.width,y0=im.height,x1=-1,y1=-1;
+  for(let y=0;y<im.height;y++)for(let x=0;x<im.width;x++)if(d[(y*im.width+x)*4+3]>8){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}
+  b=x1<0?{x:0,y:0,w:im.width,h:im.height}:{x:x0,y:y0,w:x1-x0+1,h:y1-y0+1};BBOX.set(im,b);return b}
+function drawHeroInto(c,id,form,t,anim){const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.clearRect(0,0,c.width,c.height);
+  const A=heroAnim(id,form,anim||'Idle');if(!A)return false;const im=A.R[scFrame(A,t)],b=bbox(A.R[0]),k=Math.max(1,Math.floor(Math.min((c.width-8)/b.w,(c.height-6)/b.h)));
+  g.drawImage(im,b.x,0,b.w,b.y+b.h,(c.width-b.w*k)/2|0,c.height-(b.y+b.h)*k+b.y*k-2,b.w*k,(b.y+b.h)*k);return true}
+function companion(){const s=loadSave();if(s.sel&&s.owned[s.sel]&&spriteHero(s.sel))return s.sel;return Object.keys(HEROES).find(k=>s.owned[k]&&spriteHero(k))||'goku'}
+function pickHero(id){const s=loadSave();s.sel=id;writeSave();showTitle()}
+function countdown(ms){ms=Math.max(0,ms);const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60,s=Math.floor(ms/1e3)%60,p=n=>String(n).padStart(2,'0');return(d?d+'d ':'')+p(h)+':'+p(m)+':'+p(s)}
+const HUB_ITEMS=[
+  ['play','kame','JUGAR','Elige escenario y lucha',()=>chooseMap(companion())],
+  ['roster','aura','PERSONAJES',()=>{const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);return `${all.filter(k=>s.owned[k]).length} / ${all.length} guerreros`},openRoster],
+  ['train','power','MEJORAS','Hazte más fuerte en cada partida',()=>openTrain()],
+  ['shop','senzu','TIENDA','Cambia zeni por tickets',openShop],
+  ['wish','orbs','SHENRON',()=>{const b=gBanners()[0];return b.f5&&HEROES[b.f5]?'Destacado: '+HEROES[b.f5].name:'Pide tus deseos'},()=>openGacha()],
+  ['mis','xp','MISIONES',()=>{const n=misReady();return n?`¡${n} recompensa${n>1?'s':''} lista${n>1?'s':''}!`:'Misiones, logros y bestiario'},()=>{openTrain();setTimeout(()=>$('#tMis').scrollIntoView({block:'start'}),30)}],
+  ['rank','stardust','RANKING','Tus mejores marcas',openRank],
+  ['set','cd','AJUSTES','Sonido, pantalla y copia de seguridad',openSettings]];
+function buildHub(){const nav=$('#hubMenu');nav.innerHTML='';
+  for(const [k,ic,t,sub,fn] of HUB_ITEMS){const b=document.createElement('button');b.type='button';b.className='hitem';b.dataset.k=k;
+    const c=icon(ic),z=mk(32,32),g=z.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(c,0,0,32,32);b.appendChild(z);
+    b.insertAdjacentHTML('beforeend',`<span><b>${t}</b><small>${typeof sub==='function'?sub():sub}</small></span>`);b.onclick=()=>{initAudio();sfx('shot');fn()};nav.appendChild(b)}}
+function hubRefresh(){const s=loadSave(),best=loadBest(),id=companion(),H=HEROES[id],all=Object.keys(HEROES).filter(spriteHero);
+  $('#cZeni').textContent='ZENI '+s.zeni;$('#cTix').textContent='TICKETS '+s.tickets;$('#cHeroes').textContent='GUERREROS '+all.filter(k=>s.owned[k]).length+'/'+all.length;
+  $('#hCompName').textContent=H.name;const aw=awaken(id),mr=mastRank(id);
+  $('#hCompTags').innerHTML=(H.rar?`<span class="pill r${H.rar}">${'★'.repeat(H.rar)}</span>`:'')+(aw?`<span class="pill">DESPERTAR +${aw}</span>`:'')+(mr?`<span class="pill">MAESTRÍA ${mr}</span>`:'');
+  const bt=Object.values(best).reduce((m,b)=>Math.max(m,b.t||0),0),st=s.st||{};
+  $('#hubStats').innerHTML=`Tiempo jugado <b>${fmt(st.secs||0)}</b> · Mejor tiempo <b>${fmt(bt)}</b><br>Derrotados <b>${st.kills||0}</b> · Jefes <b>${st.boss||0}</b> · Deseos <b>${s.pulls||0}</b>`;
+  buildHub();evTick()}
+function evTick(){const b=gBanners()[0];if(!b.f5||!HEROES[b.f5]){$('#hEvent').hidden=true;return}$('#hEvent').hidden=false;$('#hEvent').innerHTML=`<b>¡DESEO DESTACADO: ${HEROES[b.f5].name}!</b> Termina en ${countdown(b.ends-Date.now())}`}
+function openHub(){hideMenus();state='title';$('#hub').hidden=false;hubRefresh();const c=$('#hCompC');let t=0;
+  let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;t+=0.12;drawHeroInto(c,companion(),0,t);if(++n%8===0)evTick()},120)}
+function enterGame(){if(started)return;started=true;initAudio();sfx('level');openHub()}
+function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
+  $('#rInfo').innerHTML=`Tienes <b>${all.filter(k=>s.owned[k]).length}</b> de <b>${all.length}</b>. Toca uno tuyo para llevarlo de compañero; los que te faltan se consiguen pidiendo deseos a Shenron.`}
+const SHOP=[{n:'1 TICKET',d:'Un deseo a Shenron',c:120,t:1},{n:'10 TICKETS',d:'Diez deseos con descuento',c:1100,t:10},{n:'50 TICKETS',d:'El pack del guerrero',c:5000,t:50}];
+function openShop(){hideMenus();state='title';$('#shop').hidden=false;drawShop()}
+function drawShop(){const s=loadSave();$('#shInfo').innerHTML=`Tienes <b>${s.zeni}</b> zeni y <b>${s.tickets}</b> tickets. El zeni se gana jugando partidas y con los repetidos al máximo despertar.`;
+  const box=$('#shList');box.innerHTML='';SHOP.forEach(it=>{const b=document.createElement('button');b.type='button';b.className='card';const ok=s.zeni>=it.c;if(!ok)b.classList.add('locked');
+    const z=mk(48,48),g=z.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(icon('orbs'),0,0,48,48);b.appendChild(z);
+    b.insertAdjacentHTML('beforeend',`<h3>${it.n}</h3><p>${it.d}</p><span class="stats">${it.c} ZENI</span>`);
+    b.onclick=()=>{const s=loadSave();if(s.zeni<it.c){sfx('hurt');return}s.zeni-=it.c;s.tickets+=it.t;writeSave();sfx('gem');drawShop()};box.appendChild(b)})}
+function openRank(){hideMenus();state='title';$('#rank').hidden=false;const best=loadBest(),rows=Object.keys(best).filter(k=>HEROES[k]).sort((a,b)=>best[b].t-best[a].t);
+  $('#rkList').innerHTML=(rows.length?rows.map((k,i)=>`<p class="stat">${i+1}. <b>${HEROES[k].name}</b> · ${fmt(best[k].t)} · ${best[k].k} derrotados</p>`).join(''):'<p class="help">Juega una partida para entrar en el ranking.</p>')
+    +'<h3 class="sub">ESCENARIOS SUPERADOS</h3>'+Object.keys(MAPS).map(k=>{const c=mapClear(k);return `<p class="stat">${MAPS[k].name} · <b style="color:${c>=0?DIFF[c].c:'var(--dim)'}">${c>=0?DIFF[c].n:'—'}</b></p>`}).join('')}
+function openSettings(){hideMenus();state='title';$('#settings').hidden=false;setLabels()}
+function setLabels(){$('#sMute').textContent='SONIDO: '+($('#bMute').textContent==='MUDO'?'NO':'SÍ');$('#sCol').textContent='VER COLISIONES: '+(debugSolid?'SÍ':'NO')}
+function toggleFull(){if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen().catch(()=>{})}
+(function hubWire(){
+  $('#start').onclick=enterGame;addEventListener('keydown',e=>{if(!started&&state==='title'&&!$('#start').hidden)enterGame()});
+  $('#hComp').onclick=openRoster;$('#hEvent').onclick=()=>openGacha();
+  $('#hSave').onclick=()=>$('#bkSave').click();$('#hMute').onclick=()=>{$('#bMute').click();$('#hMute').textContent=$('#bMute').textContent==='MUDO'?'MUDO':'SONIDO'};$('#hFull').onclick=toggleFull;$('#hSet').onclick=openSettings;
+  $('#rBack').onclick=showTitle;$('#shBack').onclick=showTitle;$('#rkBack').onclick=showTitle;$('#sBack').onclick=showTitle;
+  $('#sMute').onclick=()=>{$('#bMute').click();setLabels()};$('#sFull').onclick=toggleFull;$('#sCol').onclick=()=>{debugSolid=!debugSolid;setLabels()};
+  $('#sSave').onclick=()=>$('#bkSave').click();$('#sLoad').onclick=()=>$('#bkLoad').click();$('#sForge').onclick=()=>openForge();$('#sMine').onclick=()=>$('#bMine').click();$('#sCred').onclick=()=>openCredits();
+  $('#rosterBox').appendChild($('#chars'))})();
 window.AS={spawnAt:(t,dx,dy)=>spawn(t,P.x+dx,P.y+dy),spawnBoss,spawnCrate,putPickup,dropGem,addMove:id=>{addMove(id);const m=P.moves[id];m.lv=5},ebeamT:()=>ebeams.length?ebeams[0].t:null,setDiff:d=>{pickedDiff=d},kiSprite,autoWalk,ET,fxFrames,sparkFrames,fxN:()=>fxs.length,HDEF,loadSave,doPull,heroFrames,enemySprite,beamT:()=>{const b=beams.find(q=>q.hero);return b?b.t:-1},beamsN:()=>beams.length,enemies:()=>enemies,eshots:()=>eshots,gems:()=>gems,pickups:()=>pickups,spd:()=>stats().spd,maps:()=>Object.keys(WORLD),decorAudit:()=>Object.keys(DECOR).filter(k=>!(k in SOLID_DEF)),obstacle:(tx,ty)=>{solidSync();return solidAt(tx,ty)},solid:(x,y,r)=>solidHit(x,y,r),move:(o,dx,dy,r)=>solidMove(o,dx,dy,r),place:(o,r,f)=>solidPlace(o,r,f),setMap:id=>{MAPK=id;S.map=id;S.isl=null;solidReset()},get state(){return state},get S(){return S},get P(){return P},start:startGame,tick:(sec)=>{for(let i=0;i<sec*30;i++){if(state==='play')update(1/30)}},pick:i=>{const b=$('#ups').querySelectorAll('button')[i||0];b&&b.click()}};
 newGame('goku');showTitle();
 (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>requestAnimationFrame(loop));

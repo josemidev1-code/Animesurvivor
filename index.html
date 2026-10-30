@@ -1,15 +1,65 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>DBZ Survivor</title>
+<title>DragonBall Survivor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
 <link rel="stylesheet" href="style.css">
 
-<canvas id="game" aria-label="DBZ Survivor, juego"></canvas>
+<canvas id="game" aria-label="DragonBall Survivor, juego"></canvas>
 <div id="hudBtns" hidden><button id="bMute" type="button" aria-label="Silenciar">SON</button><button id="bPause" type="button" aria-label="Pausa">II</button></div>
 
-<div id="title" class="ov">
+<div id="start" class="ov start" hidden>
+  <h1 class="logo">DRAGON BALL<span>SURVIVOR</span></h1>
+  <p class="tag">Sobrevive a las hordas con tus guerreros Z</p>
+  <p class="press">PULSA PARA EMPEZAR</p>
+</div>
+<div id="hub" hidden>
+  <div class="hubTop"><span class="chip zeni" id="cZeni"></span><span class="chip tix" id="cTix"></span><span class="chip" id="cHeroes"></span>
+    <button class="chip act gold" id="hSave" type="button">GUARDAR</button><button class="chip act" id="hMute" type="button">SONIDO</button><button class="chip act" id="hFull" type="button">PANTALLA</button><button class="chip act" id="hSet" type="button">AJUSTES</button></div>
+  <div class="hubMid">
+    <h1 class="logo">DRAGON BALL<span>SURVIVOR</span></h1>
+    <p class="hubSub">SAGA DE LOS GUERREROS Z</p>
+    <button class="event" id="hEvent" type="button"></button>
+    <button class="comp" id="hComp" type="button" aria-label="Cambiar de compañero"><canvas id="hCompC" width="180" height="180"></canvas></button>
+    <p class="compName" id="hCompName"></p>
+    <p class="compTags" id="hCompTags"></p>
+  </div>
+  <nav class="hubMenu" id="hubMenu" aria-label="Menú principal"></nav>
+  <div class="hubStats" id="hubStats"></div>
+</div>
+<div id="roster" class="ov dark" hidden>
+  <h2>PERSONAJES</h2>
+  <p class="help" id="rInfo"></p>
+  <div id="rosterBox"></div>
+  <div class="btns"><button class="btn alt" id="rBack" type="button">VOLVER</button></div>
+</div>
+<div id="shop" class="ov dark" hidden>
+  <h2>TIENDA DE BULMA</h2>
+  <p class="help" id="shInfo"></p>
+  <div class="chars" id="shList"></div>
+  <div class="btns"><button class="btn alt" id="shBack" type="button">VOLVER</button></div>
+</div>
+<div id="rank" class="ov dark" hidden>
+  <h2>RANKING</h2>
+  <div id="rkList" class="help"></div>
+  <div class="btns"><button class="btn alt" id="rkBack" type="button">VOLVER</button></div>
+</div>
+<div id="settings" class="ov dark" hidden>
+  <h2>AJUSTES</h2>
+  <div class="setList">
+    <button class="btn alt" id="sMute" type="button">SONIDO</button>
+    <button class="btn alt" id="sFull" type="button">PANTALLA COMPLETA</button>
+    <button class="btn alt" id="sCol" type="button">VER COLISIONES</button>
+    <button class="btn alt" id="sSave" type="button">GUARDAR COPIA</button>
+    <button class="btn alt" id="sLoad" type="button">CARGAR COPIA</button>
+    <button class="btn alt" id="sForge" type="button">CREA TU GUERRERO</button>
+    <button class="btn alt" id="sMine" type="button">MIS SPRITES</button>
+    <button class="btn alt" id="sCred" type="button">CRÉDITOS</button>
+  </div>
+  <div class="btns"><button class="btn" id="sBack" type="button">VOLVER</button></div>
+</div>
+<div id="title" class="ov" hidden>
   <h1 class="logo">DBZ<span>SURVIVOR</span></h1>
   <p class="tag">SOBREVIVE 15 MINUTOS · 6 ESCENARIOS</p>
   <div class="btns"><button class="btn" id="bGacha" type="button">GACHAPÓN</button><button class="btn" id="bTrain" type="button">ENTRENAMIENTO</button><button class="btn alt" id="bForge" type="button">CREA TU GUERRERO</button><button class="btn alt" id="bMine" type="button" hidden>MIS SPRITES</button><button class="btn alt" id="bCredits" type="button">CRÉDITOS</button></div>
