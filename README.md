@@ -20,9 +20,8 @@ Juego de supervivencia estilo PokeSurvivor con personajes de Dragon Ball, en pix
 ## Controles
 
 - Flechas / WASD (o arrastrar en móvil): moverse
-- 1: ráfaga de bolas de ki
-- 2: onda del personaje (Kamehameha, Galick Gun, Makankosappo...)
-- 3: teletransporte al enemigo más cercano y golpe cuerpo a cuerpo
+- 1 a 6 (o tocar la barra de abajo): elegir qué ataque se lanza solo. El personaje ataca automáticamente al enemigo más cercano; tú solo te mueves y cambias de ataque
+- Cada personaje tiene 4-6 ataques de la serie (Kamehameha, Final Flash, Makankosappo, Genkidama, espada de Trunks...). Los dos primeros están desde el principio y el resto se desbloquean en los niveles 4, 8, 13 y 19
 - P / Esc: pausa · M: silenciar
 
 Juego de fans sin ánimo de lucro. Dragon Ball pertenece a sus autores. Sprites animados a partir de "Dragon Ball Sagas" (qsab101, LukasAhl1, thekrillmaster, Manikdx2000, gogeta68, MV95, PeculiarDoc, LICHT, YoloKing777, Mangal666 y otros autores de la colección).
