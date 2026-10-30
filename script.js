@@ -1071,11 +1071,11 @@ const SIGS={goku:['kiblast','punch','kame','kaioken','instant','genki'],vegeta:[
  vegetagt:['kiblast','punch','galick','bigbang','finalshine','kick'],gokusuper:['kiblast','punch','kaioken','kame','godkame','genki'],
  vegetasuper:['renzoku','punch','galick','bigbang','finalflash','gamma'],trunkscell:['kiblast','tsword','burning','finishbuster','kick','heatdome'],
  roshi:['kiblast','punch','kame','mafuba','kick']};
-const UNLOCK_LV=[1,1,4,8,13,19];
+const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
 function sigList(hid=S.hid){if(SIGS[hid])return SIGS[hid];const st=HEROES[hid]&&HEROES[hid].start;return['kiblast','punch',MV[st]&&st!=='kiblast'?st:'kame','kick','renzoku']}
-function sigOpen(){return sigList().filter((id,i)=>P.lvl>=UNLOCK_LV[i])}
-function sigLv(i){return clamp(1+Math.floor((P.lvl-UNLOCK_LV[i])/4),1,5)}
+function sigOpen(){return sigList().slice(0,P.sigU||2)}
+function sigLv(i){return clamp(1+((P.sigB&&P.sigB[i])||0)+Math.floor(P.lvl/12),1,5)}
 function sigSelect(n){if(state!=='play'||!P)return;const L=sigOpen();if(n<0||n>=L.length||n===P.sel)return;P.sel=n;P.sigT=Math.min(P.sigT,0.25);sfx('shot')}
 function sigReach(W,st){return W.kind==='melee'?st.reach:W.kind==='sword'?st.rad+70:W.kind==='beam'?Math.min(st.len,300):W.kind==='nova'?st.rad:W.kind==='big'?220:260}
 // hand position: chest height, a little in front of the hero; 'up' attacks come from above the head
@@ -1244,6 +1244,18 @@ const ET={
  broly3B:{n:'BROLY SUPER SAIYAN',boss:1,ai:'buu'},
  brolyssj4B:{n:'BROLY SSJ4',boss:1,ai:'buu'},
  kalessjB:{n:'KALE BERSERKER',boss:1,ai:'buu'},
+ frzS2:{n:'Soldado raso',hp:14,spd:36,dmg:6,xp:1,r:6},
+ frzS4:{n:'Soldado de Freezer',hp:26,spd:30,dmg:9,xp:2,r:7,shoot:3.4},
+ saiyanLow:{n:'Saiyan de clase baja',hp:50,spd:42,dmg:11,xp:4,r:7},
+ garlicH1:{n:'Esbirro de Garlic',hp:45,spd:34,dmg:11,xp:4,r:8},
+ garlicH2:{n:'Esbirro de Garlic',hp:60,spd:30,dmg:13,xp:5,r:8,shoot:3.2},
+ demonS:{n:'Demonio',hp:30,spd:46,dmg:9,xp:3,r:7},
+ demonS2:{n:'Demonio de élite',hp:55,spd:44,dmg:12,xp:5,r:7,shoot:3},
+ garlicE:{n:'GARLIC JR.',hp:520,spd:52,dmg:15,xp:45,r:8,elite:1,shoot:1.8},
+ demonE:{n:'DEMONIO GIGANTE',hp:900,spd:40,dmg:20,xp:60,r:10,elite:1},
+ garlicB:{n:'SUPER GARLIC JR.',boss:1,ai:'buu'},
+ babyB:{n:'BABY VEGETA',boss:1,ai:'dash'},
+ shenronB:{n:'SHENRON OSCURO',boss:1,ai:'spiral'},
 };
 // boss strength depends on its slot in the run, not on who it is
 const BOSS_SLOT=[{hp:900,spd:38,dmg:11,xp:80},{hp:2600,spd:36,dmg:16,xp:120},{hp:4600,spd:36,dmg:19,xp:160},{hp:7200,spd:40,dmg:22,xp:220},{hp:11000,spd:46,dmg:24,xp:300}];
@@ -1288,7 +1300,7 @@ const MAPS={
 const BOSS_T=[180,360,540,720,900];
 const WAVE_T=[130,230,310,410,490,590,670,770,850];
 const WAVES={"freezer":[["saibaR",14],["soldierE",8],["burter",1],["coolerE",1],["saibaX",12],["jeice",1]],"tierra":[["celljr",10],["cellimpE",1],["saibaR",14],["a16E",1],["rrsoldier",12],["a17e",1]],"buu":[["blob",18],["majin",10],["fatbuuE",1],["majinvE",1],["kidbuuE",1],["celljrE",3]],"super":[["soldierE",10],["coolerE",1],["majinvE",1],["a16E",1],["kidbuuE",1],["cellimpE",2]]},WSAGA={"namek":"freezer","vegetasei":"freezer","yardrat":"freezer","volcan":"freezer","gizard":"freezer","kaio":"freezer","tierra":"tierra","redribbon":"tierra","musculo":"tierra","capsule":"tierra","desierto":"tierra","futuro":"tierra","kame":"tierra","paoz":"tierra","pradera":"tierra","bosque":"tierra","arena":"buu","lookout":"buu","budokai":"buu","kaioshin":"buu","infierno":"buu","time":"super","bills":"super","poder":"super"};
-const NOSPR={"soldier":"saibaB","rrsoldier":"saibaB","majin":"saibaB","soldierE":"saibaR","blob":"saiba","celljr":"saibaR","celljrE":"cellsemiE","nappaE":"vegetaE","burter":"coolerE","jeice":"frostE","guldo":"turlesE","dodoria":"turles","zarbon":"frost","ginyu":"coolerB","nappa":"vegetaSB","mecha":"freezaF","a19":"a16B","dabura":"janemba"};
+const NOSPR={"rrsoldier":"saibaB","blob":"saiba","nappaE":"vegetaE","burter":"coolerE","guldo":"turlesE","dodoria":"turles","zarbon":"frost","nappa":"vegetaSB","a19":"a16B","dabura":"janemba"};
 (function(){const f=t=>NOSPR[t]||t,SQ={'¡FUERZAS ESPECIALES!':'¡INVASORES DEL ESPACIO!','¡LOS CELL JR.!':'¡EL ASALTO DE CELL!'};
   for(const k in MAPS){const M=MAPS[k];M.pool.forEach(p=>p[1]=f(p[1]));if(M.ring)M.ring=M.ring.map(f);M.bosses=M.bosses.map(f);
     if(M.squad){M.squad[1]=M.squad[1].map(f);M.squad[2]=SQ[M.squad[2]]||M.squad[2]}}
@@ -1297,13 +1309,15 @@ const NOSPR={"soldier":"saibaB","rrsoldier":"saibaB","majin":"saibaB","soldierE"
   if(MAPS.kaioshin)MAPS.kaioshin.bosses[3]='superbuuB';
   if(MAPS.bills)MAPS.bills.bosses[4]='billsB';
   const EL={freezer:['kingvegE','raditzssjE','turlesE','frostE','vegsaiE','freeza2E','coolerE'],tierra:['raditzssjE','cellimpE','a16E','cellsemiE','a21E','cellperfE'],
-    buu:['majinvE','fatbuuE','gohanpossE','buuthinE','superbuuE'],super:['frost2E','black2E','hitE','zamasuE','hit2E','zamasuhE','vegetaE','fakegokuE','kalessjE']};
+    buu:['garlicE','majinvE','fatbuuE','gohanpossE','buuthinE','demonE','superbuuE'],super:['frost2E','black2E','hitE','zamasuE','hit2E','zamasuhE','vegetaE','fakegokuE','kalessjE']};
   // elites come in one by one, weakest first; renegade saiyans fill the mid game
   for(const k in MAPS){const L=EL[WSAGA[k]||'tierra'];L.forEach((id,i)=>MAPS[k].pool.push([240+i*Math.round(600/L.length),id,0.25]));
-    MAPS[k].pool.push([150,'renegA',2],[330,'renegB',2],[520,'renegC',2])}
-  const B={namek:['zarbon','freeza1B','freeza2B','freeza3B','frieza100'],vegetasei:['dodoria','zarbon','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
+    MAPS[k].pool.push([150,'renegA',2],[330,'renegB',2],[520,'renegC',2]);
+    const R={freezer:[[0,'frzS2',4],[120,'frzS4',3],[260,'saiyanLow',2]],tierra:[[60,'frzS2',2],[260,'saiyanLow',2]],buu:[[90,'garlicH1',3],[200,'demonS',3],[320,'garlicH2',2],[420,'demonS2',3]],super:[[0,'frzS2',3],[200,'demonS',2],[360,'demonS2',2]]}[WSAGA[k]||'tierra'];
+    R.forEach(p=>MAPS[k].pool.push(p.slice()))}
+  const B={namek:['ginyu','freeza1B','freeza2B','freeza3B','frieza100'],vegetasei:['dodoria','zarbon','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
     tierra:['raditz','nappa','mecha','a21B','cell'],redribbon:['a19','mecha','a21B','a21mB','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
-    kaioshin:['dabura','majinv','buuthinB','buugohanB','buu'],infierno:['frieza','cell','dabura','ozarugB','janemba'],time:['zarbon','a21B','ozarugB','moroB','golden'],
+    kaioshin:['dabura','majinv','buuthinB','buugohanB','buu'],infierno:['garlicB','cell','dabura','ozarugB','janemba'],time:['zarbon','babyB','ozarugB','moroB','shenronB'],lookout:['garlicB','nappa','cell','fatbuu','buu'],
     bills:['golden','toppoB','whisB','billsB','zenoB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a19','broly2B','mecha','cell'],
     pradera:['raditz','nappa','vegetaB','broly3B','frieza'],bosque:['raditz','ozaruB','a19','piccoloB','cell']};
   for(const k in B)if(MAPS[k])MAPS[k].bosses=B[k].map(f);
@@ -1364,7 +1378,7 @@ function newGame(hid,map){
   const H=HEROES[hid];
   S={map:MAPK,bossN:0,t:0,kills:0,spawnT:0,bossIdx:0,ringIdx:0,boss:null,banner:null,flash:0,pending:0,hid,won:false,endless:false,nextEndless:0,zeni:0,freeze:0,diff:pickedDiff,meta:metaBonus(),mr:1+0.01*mastRank(hid),saiba:0,forms:0,evos:0,balls:0,ballN:0,wishes:0,bank:{t:0,kills:0,boss:0,saiba:0,forms:0,evos:0,zeni:0,wishes:0}};S.revives=S.meta.revive;
   P={dir:'down',cast:null,x:0,y:0,hp:H.hp,face:1,anim:0,moving:false,iframe:0,lvl:1,xp:0,need:need(1),form:0,
-     moves:{},order:[],cards:{},orbA:0,hitT:0,sel:0,sigT:0.6,sigCD:1,sigN:0};
+     moves:{},order:[],cards:{},orbA:0,hitT:0,sel:0,sigT:0.6,sigCD:1,sigN:0,sigU:2,sigB:[]};
   P.hp=stats().maxhp;fxSl.length=0;fxRg.length=0;
   fxs=[];ebeams=[];enemies=[];projs=[];eshots=[];beams=[];bombs=[];gems=[];pickups=[];parts=[];texts=[];
   cam.x=-VW/2;cam.y=-VH/2;
@@ -1548,6 +1562,10 @@ function director(dt){
   {S.waveIdx=S.waveIdx||0;if(S.waveIdx<WAVE_T.length&&S.t>=WAVE_T[S.waveIdx]){const L=WAVES[WSAGA[S.map]||'tierra'],w=L[S.waveIdx%L.length];S.waveIdx++;
     const [typ,cnt]=w,a0=rnd(TAU),r=Math.max(VW,VH)/2+16;for(let i=0;i<cnt&&enemies.length<MAXE;i++){const a=a0+(cnt>1?(i/(cnt-1)-0.5)*1.3:0),e=spawn(typ,P.x+Math.cos(a)*(r+rnd(0,24)),P.y+Math.sin(a)*(r+rnd(0,24)));if(e&&ET[typ].elite&&cnt===1)e.ball=1}
     S.banner={t:2,text:'¡OLEADA!',sub:ET[typ].n,boss:ET[typ].elite?1:0}}}
+  {const mi=Math.floor(S.t/60);if(mi>(S.minute||0)){S.minute=mi;const L=MAPS[S.map].pool.filter(p=>S.t>=p[0]&&!ET[p[1]].elite).map(p=>p[1]),typ=L[(Math.random()*L.length)|0]||'saiba',
+      n=Math.min(64,12+mi*5),kind=mi%3,r=Math.max(VW,VH)/2+14,a0=rnd(TAU);
+      for(let i=0;i<n&&enemies.length<MAXE;i++){const a=kind===1?i/n*TAU:a0+(kind===2&&i%2?Math.PI:0)+rnd(-0.35,0.35),rr=r+(kind===1?0:rnd(0,60)),e=spawn(typ,P.x+Math.cos(a)*rr,P.y+Math.sin(a)*rr);if(e&&kind!==1)e.spd*=1.25}
+      S.banner={t:2,text:'MINUTO '+mi,sub:['¡ESTAMPIDA!','¡TE RODEAN!','¡ATAQUE EN PINZA!'][kind]}}}
   if(S.bossIdx<BOSS_T.length&&S.t>=BOSS_T[S.bossIdx]){const id=MAPS[S.map].bosses[S.bossIdx];S.bossIdx++;spawnBoss(id,S.bossIdx===5)}
   if(S.endless&&S.t>=S.nextEndless){S.nextEndless=S.t+90;const b=MAPS[S.map].bosses;spawnBoss(b[(Math.random()*b.length)|0])}}
 function spawnBoss(id,final){islandStart();const a=rnd(TAU);S.bossN=S.bossIdx-1;if(S.endless)S.bossN=4;const e=spawn(id,P.x+Math.cos(a)*90,P.y+Math.sin(a)*90);e.final=!!final;S.boss=e;
@@ -1591,8 +1609,9 @@ function options(){
     else if(!m.evo&&P.cards[MV[id].req])o.push({t:'evo',id,w:100})}
   if(P.order.length<4)for(const id in MV){if(P.moves[id])continue;const W=MV[id];if(W.only&&!W.only.includes(hid))continue;if(W.sig||sigList().includes(id))continue;o.push({t:'new',id,w:W.only?3:2})}
   for(const id in CARDS){if((P.cards[id]||0)<5)o.push({t:'card',id,w:2})}
-  const pick=[];const evo=o.filter(x=>x.t==='evo');pick.push(...evo.slice(0,3));
-  let rest=o.filter(x=>x.t!=='evo');
+  {const L=sigList(),u=P.sigU||2;if(u<L.length&&P.lvl>=UNLOCK_LV[u])o.push({t:'sig',id:L[u]});sigOpen().forEach((id,i)=>{if(sigLv(i)<5)o.push({t:'sigup',i,id,w:4})})}
+  const pick=[];const evo=o.filter(x=>x.t==='evo'||x.t==='sig');pick.push(...evo.slice(0,3));
+  let rest=o.filter(x=>x.t!=='evo'&&x.t!=='sig');
   while(pick.length<3&&rest.length){let s=rest.reduce((a,b)=>a+b.w,0),r=rnd(s),i=0;for(;i<rest.length;i++){if((r-=rest[i].w)<=0)break}
     i=Math.min(i,rest.length-1);pick.push(rest[i]);rest.splice(i,1)}
   if(!pick.length)pick.push({t:'heal'},{t:'zeni'});
@@ -1603,6 +1622,8 @@ function applyOpt(op){
    case 'evo':P.moves[op.id].evo=true;S.evos++;S.banner={t:2,text:MV[op.id].evo.toUpperCase(),sub:'¡Técnica evolucionada!'};break;
    case 'card':P.cards[op.id]=(P.cards[op.id]||0)+1;if(op.id==='hp')P.hp+=20;break;
    case 'heal':P.hp=stats().maxhp;break;
+   case 'sig':P.sigU=(P.sigU||2)+1;break;
+   case 'sigup':P.sigB[op.i]=(P.sigB[op.i]||0)+1;break;
    case 'zeni':S.zeni+=50;break;
   }
   P.hp=Math.min(P.hp,stats().maxhp)}
@@ -1610,12 +1631,15 @@ function optInfo(op){
   if(op.t==='move'||op.t==='new'){const W=MV[op.id],lv=P.moves[op.id]?P.moves[op.id].lv+1:1;return{ic:op.id,nm:W.name,lv:op.t==='new'?'¡NUEVA TÉCNICA!':'NIVEL '+lv,ds:W.ds[lv-1]+(lv===5?' · Evoluciona con '+CARDS[W.req].name:''),cls:op.t==='new'?'new':''}}
   if(op.t==='evo'){const W=MV[op.id];return{ic:op.id,nm:W.evo,lv:'CARTA DORADA',ds:'Evoluciona '+W.name+': mucho más daño y tamaño.',cls:'evo'}}
   if(op.t==='card'){const C=CARDS[op.id],lv=(P.cards[op.id]||0)+1;return{ic:op.id,nm:C.name,lv:'NIVEL '+lv,ds:C.ds,cls:''}}
+  if(op.t==='sig'||op.t==='sigup'){const W=MV[op.id],cv=mk(16,16),KD={beam:'Onda de energía gigante',big:'Esfera de energía que estalla',shot:'Ráfaga de bolas de ki',melee:'Golpes cuerpo a cuerpo',sword:'Corte en arco',nova:'Onda de choque a tu alrededor',disc:'Disco cortante',bomb:'Esfera gigante que cae del cielo'};cv.getContext('2d').drawImage(sigIcon(op.id),0,0);
+    if(op.t==='sig')return{cv,nm:W.name,lv:'¡NUEVO ATAQUE!',ds:KD[W.kind]+'. Se usa con la tecla '+((P.sigU||2)+1)+'.',cls:'evo'};
+    return{cv,nm:W.name,lv:'NIVEL '+(sigLv(op.i)+1),ds:'Más daño y alcance. Tecla '+(op.i+1)+'.',cls:''}}
   if(op.t==='heal')return{ic:'senzu',nm:'Semilla Senzu',lv:'CURA',ds:'Recupera toda la vida.',cls:''};
   return{ic:'xp',nm:'Zeni',lv:'+50',ds:'Monedas para la tienda.',cls:''}}
 function openLevelUp(title){
   state='levelup';const box=$('#ups');box.innerHTML='';$('#luTitle').textContent=title||'¡NIVEL '+P.lvl+'!';
   options().forEach((op,i)=>{const inf=optInfo(op),b=document.createElement('button');b.type='button';b.className='up '+inf.cls;
-    const ic=icon(inf.ic);ic.setAttribute('aria-hidden','true');b.appendChild(ic);
+    const ic=inf.cv||icon(inf.ic);ic.setAttribute('aria-hidden','true');b.appendChild(ic);
     b.insertAdjacentHTML('beforeend',`<span class="lv">${inf.lv}</span><span class="nm">${inf.nm}</span><span class="ds">${inf.ds}</span><span class="key">[${i+1}]</span>`);
     b.onclick=()=>{applyOpt(op);sfx('gem');$('#levelup').hidden=true;S.pending=Math.max(0,S.pending-1);state='play';last=performance.now()};
     box.appendChild(b)});
@@ -2136,6 +2160,39 @@ function drawRadar(time){if(!S||S.isl)return;const k=pickups.find(p=>p.k==='dbal
   const a=Math.atan2(dy,dx),cx=VW/2+Math.cos(a)*(VH/2-26),cy=VH/2+Math.sin(a)*(VH/2-26),b=(time*4|0)%2;
   ctx.save();ctx.translate(Math.round(cx),Math.round(cy));ctx.rotate(a);ctx.fillStyle=OUTL;ctx.fillRect(-6,-5,12,10);ctx.fillStyle=b?'#ffd23f':'#ff9a1a';for(let i=0;i<5;i++)ctx.fillRect(-4+i,-4+i,2,8-i*2);ctx.restore();
   drawDBall(Math.round(cx-Math.cos(a)*12),Math.round(cy-Math.sin(a)*12)+3,k.n)}
+// ---------- series landmarks: Kame House sign, Umigame, Freezer's ship, Saiyan pods, Capsule Corp sign ----------
+(function landmarks(){
+  const D=(w,h,fn,ol)=>{const c=mk(w,h),g=c.getContext('2d');fn(g,(x,y,ww,hh,col)=>{g.fillStyle=col;g.fillRect(x,y,ww,hh)});return ol===0?c:addOutline(c,ol||'#141018')};
+  const GL={K:'1.1/1.1/11./1.1/1.1',A:'.1./1.1/111/1.1/1.1',M:'1.1/111/111/1.1/1.1',E:'111/1../11./1../111',H:'1.1/1.1/111/1.1/1.1',O:'111/1.1/1.1/1.1/111',U:'1.1/1.1/1.1/1.1/111',
+    S:'111/1../111/..1/111',C:'111/1../1../1../111',P:'111/1.1/111/1../1..',R:'11./1.1/11./1.1/1.1',L:'1../1../1../1../111','.':'.../.../.../.../.1.',' ':'.../.../.../.../...'};
+  const txt=(p,s,x,y,col)=>{for(const ch of s){const r=(GL[ch]||GL[' ']).split('/');r.forEach((row,j)=>{for(let i=0;i<3;i++)if(row[i]==='1')p(x+i,y+j,1,1,col)});x+=4}};
+  const shd=(g,cx,cy,rx,ry)=>{g.fillStyle='rgba(10,20,20,.35)';for(let y=-ry;y<=ry;y++)for(let x=-rx;x<=rx;x++)if(x*x/(rx*rx)+y*y/(ry*ry)<=1)g.fillRect(cx+x,cy+y,1,1)};
+  // Kame House: pink walls, red hip roof, white sign with KAME HOUSE over the door, round windows, antenna
+  DECOR.kamehouse=D(72,66,(g,p)=>{shd(g,36,61,32,5);p(8,32,56,28,'#f6aebd');p(8,32,56,3,'#ffd4dc');p(8,57,56,3,'#c87a8a');for(let x=12;x<62;x+=8)p(x,46,1,11,'#e898a8');
+    p(14,36,44,8,'#fffaf2');p(14,36,44,1,'#ffffff');p(14,43,44,1,'#d8ccc0');txt(p,'KAME HOUSE',16,38,'#d8282a');
+    p(31,46,10,14,'#8a4a2a');p(32,47,8,1,'#b06a3a');p(38,53,1,2,'#ffe060');for(const x of [16,49]){p(x,47,8,8,'#6ac0f0');p(x,47,8,1,'#ffffff');p(x+3,47,1,8,'#3a7aa8');p(x,50,8,1,'#3a7aa8')}
+    for(let y=0;y<24;y++){const w=Math.round(30+y*1.75);p(36-(w>>1),8+y,w,1,y%4===3?'#b02424':'#dc3a36')}p(2,31,68,3,'#8a1a1a');p(20,8,32,2,'#ff6a5a');
+    p(58,0,2,14,'#9a9aa2');p(54,2,10,1,'#c8c8d0');p(56,5,6,1,'#c8c8d0');p(10,12,6,10,'#f6aebd');p(10,10,6,3,'#c83a36')},'#2a1018');
+  DECOR.turtle=D(26,18,(g,p)=>{shd(g,13,15,11,2);pball(g,12,8,9,['#2a6a2a','#3a8a32','#5aaa44','#8ad070'],6);for(const [x,y] of [[8,6],[13,5],[16,9],[10,10]])p(x,y,3,2,'#2a6a2a');
+    pball(g,22,9,3,['#a8a070','#d0c890','#f0e8b0']);p(23,8,1,1,'#101010');p(2,12,3,2,'#c8c090');p(17,13,3,2,'#c8c090')},'#10200c');
+  // Freezer's spaceship: round white saucer with a ring of portholes, yellow lights and landing legs
+  DECOR.fship=D(84,56,(g,p)=>{shd(g,42,50,38,5);for(const x of [14,42,70])p(x-1,38,3,12,'#8a8e98');
+    pball(g,42,30,38,['#9a9eaa','#c4c8d2','#e2e6ee','#ffffff'],17);p(6,32,72,3,'#8a8e98');for(let i=0;i<9;i++){const x=10+i*8;p(x,26,4,4,'#3a3e4a');p(x+1,26,2,1,'#7ab8f0')}
+    for(let i=0;i<5;i++)p(14+i*14,36,3,2,'#ffd23f');pball(g,42,16,10,['#8a5ab0','#b07ad8','#e0b0ff'],6)},'#14161e');
+  // Saiyan attack pod resting in its impact crater
+  DECOR.podcrater=D(44,30,(g,p)=>{for(let y=-12;y<=12;y++)for(let x=-20;x<=20;x++){const d=Math.sqrt(x*x/400+y*y/144);if(d>1)continue;g.fillStyle=d>0.78?(y<0?'#7e5e36':'#d8bc88'):(y<0?'#6a4a2a':'#9a7a4e');g.fillRect(22+x,16+y,1,1)}
+    pball(g,22,14,8,['#8a8e9a','#b8bcc8','#e0e4ec','#ffffff']);p(17,11,8,5,'#5a1a2a');p(18,12,6,3,'#d83a5a');p(19,12,2,1,'#ffa0b0');p(14,18,3,3,'#8a8e9a');p(27,18,3,3,'#8a8e9a')},'#1e140a');
+  // Capsule Corp HQ with its logo
+  DECOR.ccorp=D(66,52,(g,p)=>{shd(g,33,47,30,4);pball(g,33,27,27,['#c8ced6','#e0e6ec','#f4f8fc','#ffffff'],21);p(6,39,54,8,'#d8dee4');p(28,35,10,12,'#3a5a8a');
+    p(5,14,56,9,'#ffffff');p(6,15,54,7,'#2a5ab0');txt(p,'CAPSULE CORP.',7,16,'#ffffff');for(const x of [9,52])p(x,26,5,4,'#7ac8f0')},'#1a2028');
+  // place landmarks on solid ground, deterministically
+  const spot=(W,x0,y0)=>{for(let r=0;r<12;r++)for(let dy=-r;dy<=r;dy++)for(let dx=-r;dx<=r;dx++){const x=x0+dx,y=y0+dy;if(!W.special(x,y)&&!W.special(x+1,y)&&!W.special(x,y+1)&&!W.special(x-1,y))return x+','+y}return ''};
+  const pin=(id,list)=>{const W=WORLD[id];if(!W)return;const at={};for(const [x,y,d] of list)at[spot(W,x,y)]=d;const old=W.decor;
+    W.decor=(tx,ty,v)=>{const k=at[tx+','+ty];if(k)return DECOR[k];for(const s in at){const [x,y]=s.split(',').map(Number);if(Math.abs(tx-x)<4&&Math.abs(ty-y)<3)return null}return old(tx,ty,v)}};
+  pin('namek',[[14,-9,'fship']]);pin('tierra',[[-9,6,'podcrater'],[12,10,'podcrater']]);pin('gizard',[[-10,7,'podcrater']]);pin('pradera',[[9,7,'podcrater']]);pin('vegetasei',[[8,-7,'podcrater']]);
+  {const W=WORLD.capsule,old=W.decor;W.decor=(tx,ty,v)=>tx===8&&ty===-7?DECOR.ccorp:Math.abs(tx-8)<4&&Math.abs(ty+7)<3?null:old(tx,ty,v)}
+  {const W=WORLD.kame,old=W.decor;W.decor=(tx,ty,v)=>tx===3&&ty===2?DECOR.turtle:old(tx,ty,v)}
+})();
 function edges(tx,ty,x,y,f,c1,c2){const n=f(tx,ty-1),s=f(tx,ty+1),w=f(tx-1,ty),e=f(tx+1,ty);if(!(n||s||w||e))return;
   ctx.fillStyle=c1;if(n)ctx.fillRect(x,y,T,3);if(s)ctx.fillRect(x,y+T-3,T,3);if(w)ctx.fillRect(x,y,3,T);if(e)ctx.fillRect(x+T-3,y,3,T);
   ctx.fillStyle=c2;if(n)ctx.fillRect(x,y+3,T,1);if(s)ctx.fillRect(x,y+T-4,T,1);if(w)ctx.fillRect(x+3,y,1,T);if(e)ctx.fillRect(x+T-4,y,1,T)}
@@ -2378,6 +2435,9 @@ const SCPACK={"h":{"goku":{"0":"goku","1":"goku-ssj1","2":"goku-ssj2","3":"goku-
 // v13: one sheet per character from sprites/ and personajes/ (rows Idle,Walk,Attack,Cast,Hurt facing right; mirrored at load)
 const SCNEW={"a17-x":[230,38,45,{"Kick":[4,6,8]}],"a18-x":[231,42,37,{"Kick":[4,6,8]}],"a21":[232,46,71,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"a21m":[233,50,71,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"bardock-ssj":[234,54,56,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"bardock-ssj4":[235,50,54,{"Idle":[40,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"bardock-x":[236,42,50,{"Kick":[4,6,8]}],"black-ssj":[237,42,60,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"black-x":[238,48,47,{"Kick":[4,6,8]}],"black2":[239,48,57,{"Idle":[40,10,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"broly-2":[240,50,65,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"broly-3":[241,52,61,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"broly-ssj4":[242,78,82,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"broly-x":[243,78,60,{"Kick":[4,6,8]}],"buu-gohan":[244,56,61,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"buu-thin":[245,56,57,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"caulifla":[246,44,55,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"cell-perf2":[247,46,57,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"enemy1":[248,52,67,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"enemy2":[249,50,68,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"enemy3":[250,42,68,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"freeza-1":[251,46,54,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"freeza-2":[252,40,60,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"freeza-3":[253,74,78,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"freeza-final2":[254,48,45,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"frost-2":[255,56,47,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"gohan-adult":[256,36,53,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"gohan-kid":[257,50,53,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"gohan-mystic":[258,40,59,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"gohan-poss":[259,48,53,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"gohan-ssj-x":[260,38,48,{"Kick":[4,6,8]}],"gohan-ssj2":[261,38,55,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-blue-x":[262,48,47,{"Kick":[4,6,8]}],"goku-bluek":[263,48,58,{"Idle":[40,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-fake":[264,56,62,{"Idle":[40,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-god":[265,50,57,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-kaioken":[266,52,56,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-ssj1-x":[267,48,53,{"Kick":[4,6,8]}],"goku-ssj2-x":[268,46,52,{"Kick":[4,6,8]}],"goku-ssj3-x":[269,56,52,{"Kick":[4,6,8]}],"goku-ssj4":[270,58,57,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-ssjk":[271,48,58,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-ssjn":[272,36,58,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-uic":[273,50,68,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-whis":[274,50,57,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"goku-x":[275,48,52,{"Kick":[4,6,8]}],"gokuui-x":[276,56,52,{"Kick":[4,6,8]}],"gotenks":[277,42,49,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"hit2":[278,56,55,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"kale":[279,42,50,{"Idle":[40,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"kale-ssj":[280,46,53,{"Idle":[40,10,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"kefla":[281,64,62,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"kingvegeta":[282,38,67,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"kuririn2":[283,42,56,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"kyabe":[284,42,50,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"kyabe-ssj":[285,42,50,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"majinv-x":[286,38,55,{"Kick":[4,6,8]}],"moro":[287,54,102,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"mtrunks":[288,74,57,{"Idle":[40,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"ozaru":[289,116,114,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"ozaru-gold":[290,84,107,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"piccolo-x":[291,52,47,{"Kick":[4,6,8]}],"raditz-ssj":[292,58,55,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"rose-x":[293,78,50,{"Kick":[4,6,8]}],"roshi":[294,62,80,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"smtrunks":[295,66,69,{"Idle":[40,10,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"toppo":[296,60,58,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"trunks-armor":[297,38,49,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"trunks-ssj-x":[298,48,50,{"Kick":[4,6,8]}],"vegeta-blue-x":[299,44,52,{"Kick":[4,6,8]}],"vegeta-bluefp":[300,48,61,{"Idle":[40,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"vegeta-buu":[301,50,55,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"vegeta-buussj":[302,50,55,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"vegeta-god":[303,48,55,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"vegeta-grade":[304,52,56,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"vegeta-saiyan":[305,48,55,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"vegeta-ssj-x":[306,44,51,{"Kick":[4,6,8]}],"vegeta-ssj4":[307,46,56,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"vegeta-x":[308,44,51,{"Kick":[4,6,8]}],"vegetto-x":[309,46,53,{"Kick":[4,6,8]}],"vegito":[310,48,61,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"vegito-blue":[311,46,58,{"Idle":[40,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"vegito-ssj2":[312,40,61,{"Idle":[40,10,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"whis":[313,38,85,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"zamasu-fused":[314,50,62,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"zamasu-half":[315,58,63,{"Idle":[40,10,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"zeno":[316,56,88,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}]};
 for(const k in SCNEW){const [n,fw,fh,du]=SCNEW[k],x=k.endsWith('-x'),o=x?SCPACK.s[k.slice(0,-2)]:(SCPACK.s[k]={});if(o)Object.keys(du).forEach((a,r)=>o[a]=[fw,fh,du[a],SPRITES_DATA[n],r])}
+// v15: villains taken from personajes/ (Ginyu, Jeice, Freezer soldiers, Garlic Jr., demons...) and recoloured bodies (Cell Jr., Meca Freezer, Baby Vegeta)
+const SCNEW15={"babyvegeta":[317,50,55,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"celljr":[318,33,41,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"demon":[319,60,88,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"demon2":[320,48,66,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"demon3":[321,48,66,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"garlic":[322,36,54,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"garlic_h1":[323,50,74,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"garlic_h2":[324,50,74,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"garlicsuper":[325,58,86,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"ginyu":[326,46,70,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"jeice":[327,42,68,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"makyan":[328,46,66,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"mechafreeza":[329,48,45,{"Idle":[60],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"saiyanw":[330,48,78,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"shenron":[331,48,64,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"soldier1":[332,46,64,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"soldier2":[333,42,54,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"soldier3":[334,40,66,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}],"soldier4":[335,40,54,{"Idle":[40,10],"Walk":[7,7,7,7],"Attack":[4,5,8,5],"Cast":[10,10],"Hurt":[6,10],"Kick":[4,6,8]}]};
+for(const k in SCNEW15){const [n,fw,fh,du]=SCNEW15[k],o=SCPACK.s[k]={};Object.keys(du).forEach((a,r)=>o[a]=[fw,fh,du[a],SPRITES_DATA[n],r])}
 Object.assign(SCPACK.h,{trunks:{0:'mtrunks',1:'trunks-ssj',2:'smtrunks'},gohan:{0:'gohan-kid',1:'gohan-ssj',2:'gohan-ssj2',3:'gohan-mystic'},krilin:{0:'kuririn2'},
   bardock:{0:'bardock',1:'bardock-ssj',3:'bardock-ssj4'},vegetto:{0:'vegito',1:'vegetto',2:'vegito-ssj2',3:'vegito-blue'},black:{0:'black',1:'black-ssj',2:'rose'},
   gotenks:{0:'gotenks'},kefla:{0:'kefla'},caulifla:{0:'caulifla'},kale:{0:'kale',1:'kale-ssj'},kyabe:{0:'kyabe',1:'kyabe-ssj'},gohanadult:{0:'gohan-adult',1:'gohan-mystic'},
@@ -2388,7 +2448,8 @@ Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta
   renegA:'enemy1',renegB:'enemy2',renegC:'enemy3',kingvegE:'kingvegeta',raditzssjE:'raditz-ssj',vegsaiE:'vegeta-saiyan',freeza2E:'freeza-2',cellperfE:'cell-perf2',a21E:'a21',
   buuthinE:'buu-thin',gohanpossE:'gohan-poss',frost2E:'frost-2',black2E:'black2',hit2E:'hit2',zamasuhE:'zamasu-half',kalessjE:'kale-ssj',fakegokuE:'goku-fake',
   freeza1B:'freeza-1',freeza2B:'freeza-2',freeza3B:'freeza-3',ozaruB:'ozaru',ozarugB:'ozaru-gold',a21B:'a21',a21mB:'a21m',blackssjB:'black-ssj',zamasufB:'zamasu-fused',
-  buuthinB:'buu-thin',buugohanB:'buu-gohan',toppoB:'toppo',whisB:'whis',zenoB:'zeno',moroB:'moro',broly2B:'broly-2',broly3B:'broly-3',brolyssj4B:'broly-ssj4',kalessjB:'kale-ssj'});
+  buuthinB:'buu-thin',buugohanB:'buu-gohan',soldier:'soldier1',soldierE:'soldier3',majin:'makyan',celljr:'celljr',celljrE:'celljr',jeice:'jeice',ginyu:'ginyu',mecha:'mechafreeza',
+  frzS2:'soldier2',frzS4:'soldier4',saiyanLow:'saiyanw',garlicH1:'garlic_h1',garlicH2:'garlic_h2',demonS:'demon2',demonS2:'demon3',garlicE:'garlic',demonE:'demon',garlicB:'garlicsuper',babyB:'babyvegeta',shenronB:'shenron',toppoB:'toppo',whisB:'whis',zenoB:'zeno',moroB:'moro',broly2B:'broly-2',broly3B:'broly-3',brolyssj4B:'broly-ssj4',kalessjB:'kale-ssj'});
 
 function scLoad(k){if(SCC[k])return SCC[k];const o=SCC[k]={ok:0};let n=0;
   for(const a in SCPACK.s[k]){const [fw,fh,du,url,row]=SCPACK.s[k][a],im=new Image();
