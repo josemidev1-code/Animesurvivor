@@ -2744,7 +2744,7 @@ function drawTrain(){const s=loadSave();$('#tInfo').innerHTML=`Zeni <b>${s.zeni}
     $('#tBesInfo').textContent=`Has derrotado ${got} de ${ids.length} tipos de enemigo.`}
   const hb=$('#tMast');hb.innerHTML=Object.keys(HDEF).filter(id=>s.owned[id]).map(id=>{const r=mastRank(id),x=s.mast[id]||0,a=mastXP(r),b2=mastXP(r+1);
     return `<span class="mast"><b>${HDEF[id].name}</b> Rango ${r} · +${r}% daño · próximo premio ${(r+1)%5===0?10:2} tickets<span class="bar"><b style="width:${r>=30?100:Math.min(100,(x-a)/(b2-a)*100)}%"></b></span></span>`}).join('')}
-const GPOOL={3:[],4:[],5:[]};for(const id in HDEF){const r=HDEF[id].rar;if(r&&!HDEF[id].npc&&SCPACK.h[id])GPOOL[r].push(id)}if(!GPOOL[3].length)GPOOL[3]=GPOOL[4].slice();
+const GPOOL={3:[],4:[],5:[]};for(const id in HDEF){const r=HDEF[id].rar;if(r&&spriteHero(id))GPOOL[r].push(id)}if(!GPOOL[3].length)GPOOL[3]=GPOOL[4].slice();
 // ---------- wishes: featured banner (rotates every 3 days, 50/50 with guarantee), soft pity, awakening from duplicates ----------
 const G5=0.04,G4=0.20,SOFT5=50,PITY5=70,PITY4=10,AWMAX=5;
 function gBanners(){const per=Math.floor(Date.now()/864e5/3),p5=GPOOL[5],p4=GPOOL[4];
@@ -2910,7 +2910,8 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='p
 // test hook
 // ---------- DragonBall Survivor menu: start screen, side menu hub, companion, event, roster, shop, ranking, settings ----------
 let started=false,hubTimer=0;
-function spriteHero(id){return !!(HEROES[id]&&!HEROES[id].npc&&(SCPACK.h[id]||HEROES[id].custom))}
+// characters without good sprites are out of the game until they arrive (see SPRITES_PENDIENTES.md)
+function spriteHero(id){return !!(HEROES[id]&&!HEROES[id].npc&&!['roshi'].includes(id)&&(SCPACK.h[id]||HEROES[id].custom))}
 function hideMenus(){for(const k of ['#title','#hub','#start','#roster','#shop','#rank','#settings']){const e=$(k);if(e)e.hidden=true}clearInterval(hubTimer)}
 function heroAnim(id,form,anim){const pk=scHero(id,form);return pk&&(pk[anim]||pk.Idle)}
 // visible box of a frame (sprite-pack cells carry a lot of empty margin), cached per frame
