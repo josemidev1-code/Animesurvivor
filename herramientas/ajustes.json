@@ -1,0 +1,18 @@
+{
+  "packs": {
+    "00_Dragon_Ball_Z/00_Saiyans/Raditz/084_Raditz": {
+      "excludePack": false,
+      "excludeFrames": [],
+      "rename": null,
+      "rarity": null,
+      "role": null,
+      "animations": {
+        "idle": [],
+        "walk": [],
+        "attack": [],
+        "ki": [],
+        "hurt": []
+      }
+    }
+  }
+}

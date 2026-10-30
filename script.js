@@ -2227,7 +2227,8 @@ function drawSolidDebug(){if(!debugSolid)return;solidSync();const x0=Math.floor(
 // stages open one after another, in story order: beat 2 bosses (or win) on a stage to open the next
 const MORDER=['kame','paoz','budokai','redribbon','musculo','desierto','bosque','tierra','pradera','gizard','kaio','namek','yardrat','vegetasei','capsule','futuro','arena','lookout','time','kaioshin','infierno','volcan','bills','poder'];
 {const rest=Object.keys(MAPS).filter(k=>!MORDER.includes(k));for(const k of [...MORDER.filter(k=>MAPS[k]),...rest]){const v=MAPS[k];delete MAPS[k];MAPS[k]=v}}
-function mapOpen(id){const o=Object.keys(MAPS),i=o.indexOf(id);if(i<=0)return true;const sv=loadSave(),p=o[i-1];return (sv.mprog&&sv.mprog[p]>=2)||mapClear(p)>=0||mapClear(id)>=0||(sv.mprog&&sv.mprog[id]>0)}
+// every stage is open from the start
+function mapOpen(id){return true}
 function mapLockMsg(id){const o=Object.keys(MAPS),p=o[o.indexOf(id)-1];return 'BLOQUEADO: derrota 2 jefes en '+(MAPS[p]?MAPS[p].name:'el escenario anterior')}
 function progTick(){const k=S.bossKills||0,sv=loadSave();sv.mprog=sv.mprog||{};if(k<=(sv.mprog[S.map]||0))return;sv.mprog[S.map]=k;writeSave();
   if(k===2){const o=Object.keys(MAPS),n=o[o.indexOf(S.map)+1];if(n)setTimeout(()=>{if(state==='play')S.banner={t:3.2,text:'¡NUEVO ESCENARIO!',sub:MAPS[n].name+' desbloqueado'}},3200)}}
@@ -2535,6 +2536,10 @@ Object.assign(SCPACK.h,{trunks:{0:'mtrunks',1:'trunks-ssj',2:'smtrunks'},gohan:{
   gokugt:{0:'goku',1:'goku-ssj4'},vegetagt:{0:'vegeta',1:'vegeta-ssj4'},gokusuper:{0:'goku-whis',1:'goku-kaioken',2:'goku-ssjk',3:'goku-god',4:'goku-bluek'},
   vegetasuper:{0:'vegeta-buu',1:'vegeta-buussj',2:'vegeta-god',3:'vegeta-blue',4:'vegeta-bluefp'},trunkscell:{0:'trunks-armor'},roshi:{0:'roshi'}});
 SCPACK.h.vegeta[2]='vegeta-grade';SCPACK.h.gokuui[4]='goku-uic';
+// hand-picked animations (herramientas/animaciones.json -> animaciones_juego.js) replace the pack of that form
+const PORTRAIT={};
+if(window.ANIM_SET)for(const id in ANIM_SET.h)for(const f in ANIM_SET.h[id]){const F=ANIM_SET.h[id][f],k='as-'+id+'-'+f;SCPACK.s[k]={};
+  for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait}
 Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta-buussj',rose:'rose',
   renegA:'enemy1',renegB:'enemy2',renegC:'enemy3',kingvegE:'kingvegeta',raditzssjE:'raditz-ssj',vegsaiE:'vegeta-saiyan',freeza2E:'freeza-2',cellperfE:'cell-perf2',a21E:'a21',
   buuthinE:'buu-thin',gohanpossE:'gohan-poss',frost2E:'frost-2',black2E:'black2',hit2E:'hit2',zamasuhE:'zamasu-half',kalessjE:'kale-ssj',fakegokuE:'goku-fake',
@@ -2828,7 +2833,7 @@ function showTitle(){state='title';if(started)openHub();else{hideMenus();$('#sta
   const n=misReady();if(n)$('#bTrain').dataset.n=n;else delete $('#bTrain').dataset.n;buildCards()}
 // character cards
 const cardTimers=[];
-function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(clearInterval);cardTimers.length=0;const sv=loadSave();heroMigrate(sv);
+function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(clearInterval);cardTimers.length=0;const sv=loadSave();heroMigrate(sv);unlockAll(sv);
   const ids=Object.keys(HEROES).filter(spriteHero).sort((a,b)=>(!sv.owned[a])-(!sv.owned[b]));
   for(const id of ids){const H=HEROES[id],own=!!sv.owned[id]||id==='gokuui',b=document.createElement('button');b.type='button';b.className='card'+(own?'':' locked');
     const c=mk(38*3,54*3),g=c.getContext('2d');g.imageSmoothingEnabled=false;
@@ -2917,6 +2922,8 @@ function drawHeroInto(c,id,form,t,anim){const g=c.getContext('2d');g.imageSmooth
   const A=heroAnim(id,form,anim||'Idle');if(!A)return false;const im=A.R[scFrame(A,t)],b=bbox(A.R[0]),k=Math.max(1,Math.floor(Math.min((c.width-8)/b.w,(c.height-6)/b.h)));
   g.drawImage(im,b.x,0,b.w,b.y+b.h,(c.width-b.w*k)/2|0,c.height-(b.y+b.h)*k+b.y*k-2,b.w*k,(b.y+b.h)*k);return true}
 function companion(){const s=loadSave();if(s.sel&&s.owned[s.sel]&&spriteHero(s.sel))return s.sel;return Object.keys(HEROES).find(k=>s.owned[k]&&spriteHero(k))||'goku'}
+// every character with sprites is playable from the start (the gacha now only awakens them)
+function unlockAll(sv){let n=0;for(const k in HEROES)if(spriteHero(k)&&!sv.owned[k]){sv.owned[k]=1;n++}if(n)writeSave()}
 function pickHero(id){const s=loadSave();s.sel=id;writeSave();showTitle()}
 function countdown(ms){ms=Math.max(0,ms);const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60,s=Math.floor(ms/1e3)%60,p=n=>String(n).padStart(2,'0');return(d?d+'d ':'')+p(h)+':'+p(m)+':'+p(s)}
 const HUB_ITEMS=[
@@ -2966,7 +2973,7 @@ function toggleFull(){if(document.fullscreenElement)document.exitFullscreen();el
   $('#sMute').onclick=()=>{$('#bMute').click();setLabels()};$('#sFull').onclick=toggleFull;$('#sCol').onclick=()=>{debugSolid=!debugSolid;setLabels()};
   $('#sSave').onclick=()=>$('#bkSave').click();$('#sLoad').onclick=()=>$('#bkLoad').click();$('#sForge').onclick=()=>openForge();$('#sMine').onclick=()=>$('#bMine').click();$('#sCred').onclick=()=>openCredits();
   $('#rosterBox').appendChild($('#chars'))})();
-window.AS={spawnAt:(t,dx,dy)=>spawn(t,P.x+dx,P.y+dy),spawnBoss,spawnCrate,putPickup,dropGem,addMove:id=>{addMove(id);const m=P.moves[id];m.lv=5},ebeamT:()=>ebeams.length?ebeams[0].t:null,setDiff:d=>{pickedDiff=d},kiSprite,autoWalk,ET,fxFrames,sparkFrames,fxN:()=>fxs.length,HDEF,loadSave,doPull,heroFrames,enemySprite,beamT:()=>{const b=beams.find(q=>q.hero);return b?b.t:-1},beamsN:()=>beams.length,enemies:()=>enemies,eshots:()=>eshots,gems:()=>gems,pickups:()=>pickups,spd:()=>stats().spd,maps:()=>Object.keys(WORLD),decorAudit:()=>Object.keys(DECOR).filter(k=>!(k in SOLID_DEF)),obstacle:(tx,ty)=>{solidSync();return solidAt(tx,ty)},solid:(x,y,r)=>solidHit(x,y,r),move:(o,dx,dy,r)=>solidMove(o,dx,dy,r),place:(o,r,f)=>solidPlace(o,r,f),setMap:id=>{MAPK=id;S.map=id;S.isl=null;solidReset()},get state(){return state},get S(){return S},get P(){return P},start:startGame,tick:(sec)=>{for(let i=0;i<sec*30;i++){if(state==='play')update(1/30)}},pick:i=>{const b=$('#ups').querySelectorAll('button')[i||0];b&&b.click()}};
+window.AS={SCPACK,scHero,scLoad,heroAnim,spawnAt:(t,dx,dy)=>spawn(t,P.x+dx,P.y+dy),spawnBoss,spawnCrate,putPickup,dropGem,addMove:id=>{addMove(id);const m=P.moves[id];m.lv=5},ebeamT:()=>ebeams.length?ebeams[0].t:null,setDiff:d=>{pickedDiff=d},kiSprite,autoWalk,ET,fxFrames,sparkFrames,fxN:()=>fxs.length,HDEF,loadSave,doPull,heroFrames,enemySprite,beamT:()=>{const b=beams.find(q=>q.hero);return b?b.t:-1},beamsN:()=>beams.length,enemies:()=>enemies,eshots:()=>eshots,gems:()=>gems,pickups:()=>pickups,spd:()=>stats().spd,maps:()=>Object.keys(WORLD),decorAudit:()=>Object.keys(DECOR).filter(k=>!(k in SOLID_DEF)),obstacle:(tx,ty)=>{solidSync();return solidAt(tx,ty)},solid:(x,y,r)=>solidHit(x,y,r),move:(o,dx,dy,r)=>solidMove(o,dx,dy,r),place:(o,r,f)=>solidPlace(o,r,f),setMap:id=>{MAPK=id;S.map=id;S.isl=null;solidReset()},get state(){return state},get S(){return S},get P(){return P},start:startGame,tick:(sec)=>{for(let i=0;i<sec*30;i++){if(state==='play')update(1/30)}},pick:i=>{const b=$('#ups').querySelectorAll('button')[i||0];b&&b.click()}};
 newGame('goku');showTitle();
 (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>requestAnimationFrame(loop));
 })();

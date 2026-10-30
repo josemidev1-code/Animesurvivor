@@ -1,0 +1,45 @@
+{
+  "_ayuda": "Animaciones elegidas a mano. Por personaje del juego y número de forma (0 = base): pack de sprites/ y fotogramas por número (orden natural del nombre de archivo; míralos con herramientas/ver_pack.py). idle = quieto, move = vuelo/impulso al moverse, attack = puñetazos, kick = patadas, ki = [cargar, disparar], pow = aura/transformación, hurt = [golpe, retroceso], portrait = cara grande. Opcional: <anim>Du = duración de cada fotograma en ticks de 1/60 s. Después: python herramientas/montar_animaciones.py",
+  "heroes": {
+    "goku": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "idle": [
+          1,
+          2
+        ],
+        "idleDu": [
+          26,
+          26
+        ],
+        "move": [
+          7
+        ],
+        "attack": [
+          18,
+          21,
+          22,
+          23
+        ],
+        "kick": [
+          25,
+          26,
+          27
+        ],
+        "ki": [
+          35,
+          37
+        ],
+        "pow": [
+          41,
+          42
+        ],
+        "hurt": [
+          31,
+          29
+        ],
+        "portrait": 59
+      }
+    }
+  }
+}

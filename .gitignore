@@ -7,3 +7,8 @@ fotos/
 tomarreferencia/
 _organizacion_sprites/
 __pycache__/
+# salidas regenerables
+personajes/
+.personajes_importando/
+herramientas/_revisar/
+herramientas/__pycache__/
