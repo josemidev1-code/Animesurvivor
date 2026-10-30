@@ -11,6 +11,12 @@ Juego de supervivencia estilo PokeSurvivor con personajes de Dragon Ball, en pix
 | `script.js` | Todo el código del juego |
 | `sprites.js` | Las imágenes (sprites animados y escenarios) en base64; `script.js` las usa como `SPRITES_DATA[n]` |
 
+## Personajes
+
+- 26 héroes jugables, con formas animadas (quieto, andar, ataque, ki con la mano abierta y daño).
+- Más de 60 enemigos y jefes por sagas: los débiles salen primero y los fuertes al final de cada partida.
+- La cámara se acerca según el tamaño de la pantalla, para que los personajes se vean bien también en pantallas pequeñas.
+
 ## Controles
 
 - Flechas / WASD (o arrastrar en móvil): moverse
@@ -19,4 +25,4 @@ Juego de supervivencia estilo PokeSurvivor con personajes de Dragon Ball, en pix
 - 3: teletransporte al enemigo más cercano y golpe cuerpo a cuerpo
 - P / Esc: pausa · M: silenciar
 
-Juego de fans sin ánimo de lucro. Dragon Ball pertenece a sus autores. Sprites animados a partir de "Dragon Ball Sagas" (qsab101, LukasAhl1, thekrillmaster, Manikdx2000, gogeta68, MV95, PeculiarDoc, LICHT y YoloKing777).
+Juego de fans sin ánimo de lucro. Dragon Ball pertenece a sus autores. Sprites animados a partir de "Dragon Ball Sagas" (qsab101, LukasAhl1, thekrillmaster, Manikdx2000, gogeta68, MV95, PeculiarDoc, LICHT, YoloKing777, Mangal666 y otros autores de la colección).
