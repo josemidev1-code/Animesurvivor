@@ -299,3 +299,5 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 ### Lo que hice
 - Jefes: ninguno tenía radio de colisión en `ET` (`r` indefinido), así que ni las bolas ni los golpes los tocaban, y ellos tampoco te dañaban por contacto. Ahora `spawn` les da `r:13` (y 6 a cualquier enemigo sin radio). Probado: Raditz baja de 900 a 779 en 10 s.
 - Barra de vida encima de la cabeza de cada enemigo (roja normal, naranja élite, morada jefe).
+- Lanzamientos orientados: si el enemigo está claramente encima, el personaje usa la pose de brazos arriba (fotogramas `pow`) y la bola sale por encima de la cabeza; si no, se gira a izquierda o derecha hacia él (ya estaba).
+- Bolas teledirigidas: Blaster Meteor (Broly, Kale, Kefla), Hellzone Grenade, Renzoku, Ráfaga de Krilin, Gekiretsu Madan y Kamikaze Fantasma salen abiertas y giran hacia su enemigo. Probado con Broly: 16 KO en 12 s sin errores.

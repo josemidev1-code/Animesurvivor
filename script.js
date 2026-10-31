@@ -1064,7 +1064,7 @@ Object.assign(MV.masenko,{pose:'up'});Object.assign(MV.kienzan,{pose:'up'});Obje
 Object.assign(MV.burning,{pose:'cast'});Object.assign(MV.riot,{pose:'cast'});Object.assign(MV.eraser,{pose:'cast'});Object.assign(MV.finalkame,{pose:'beam'});Object.assign(MV.stardust,{pose:'up'});
 const BEAM=(name,col,cd,d0,d1,len,wid,ch)=>({name,kind:'beam',pose:'beam',sig:1,col,st:l=>({cd:cd-l*0.4,dmg:d0+l*d1,len:len+l*20,wid:wid+l*2.5,dur:0.9+l*0.08,charge:ch})});
 const BIG=(name,col,cd,d0,d1,rad,spd,pose='cast')=>({name,kind:'big',pose,sig:1,col,st:l=>({cd:cd-l*0.2,dmg:d0+l*d1,rad:rad+l*4,spd})});
-const SHOT=(name,col,cd,d0,d1,n0,spd,o={})=>({name,kind:'shot',pose:'cast',sig:1,col,ring:o.ring,st:l=>({cd:cd-l*0.06,dmg:d0+l*d1,count:n0+l,spd,pierce:o.pierce||0})});
+const SHOT=(name,col,cd,d0,d1,n0,spd,o={})=>({name,kind:'shot',pose:'cast',sig:1,col,ring:o.ring,home:o.home,st:l=>({cd:cd-l*0.06,dmg:d0+l*d1,count:n0+l,spd,pierce:o.pierce||0})});
 const NOVA=(name,col,cd,d0,d1,rad,stun=0)=>({name,kind:'nova',pose:'cast',sig:1,col,st:l=>({cd:cd-l*0.3,dmg:d0+l*d1,rad:rad+l*6,stun:stun?stun+l*0.2:0})});
 const MELEE=(name,col,pose,cd,d0,d1,hits,reach,rad,o={})=>({name,kind:'melee',pose,sig:1,col,...o,st:l=>({cd:cd-l*0.06,dmg:d0+l*d1,hits:hits+(l>=4?1:0),reach,rad,kb:o.kb||70})});
 const SWORD=(name,col,cd,d0,d1,rad,arc)=>({name,kind:'sword',pose:'atk',sig:1,col,st:l=>({cd:cd-l*0.05,dmg:d0+l*d1,rad:rad+l*3,arc})});
@@ -1080,14 +1080,14 @@ Object.assign(MV,{
  spiritsword:SWORD('Espada Espiritual',['#3a8aff','#bfe6ff'],1.1,22,8,44,2.2),
  kiblade:SWORD('Espada de Ki',['#ff4ad0','#ffc0f0'],1.0,20,7,38,1.8),
  scythe:SWORD('Guadaña Rosé',['#d02a80','#ffb0e0'],2.2,36,12,60,3.4),
- renzoku:SHOT('Renzoku Energy Dan',['#e09a1a','#ffd23f','#ffffff'],1.2,7,3,5,230),
- scatter:SHOT('Ráfaga de Krilin',['#e0a010','#ffd23f','#fff8c0'],1.3,6,2,6,220),
- hellzone:SHOT('Hellzone Grenade',['#d8b010','#ffe060','#ffffff'],2.2,8,3,10,150,{ring:1,pierce:1}),
+ renzoku:SHOT('Renzoku Energy Dan',['#e09a1a','#ffd23f','#ffffff'],1.2,7,3,5,230,{home:1}),
+ scatter:SHOT('Ráfaga de Krilin',['#e0a010','#ffd23f','#fff8c0'],1.3,6,2,6,220,{home:1}),
+ hellzone:SHOT('Hellzone Grenade',['#d8b010','#ffe060','#ffffff'],2.2,8,3,10,150,{ring:1,pierce:1,home:1}),
  lances:SHOT('Lanzas Divinas',['#c02a80','#ff6ad0','#ffe0ff'],1.2,9,3,4,260,{pierce:1}),
- blaster:SHOT('Blaster Meteor',['#2a9a20','#8af06a','#f0fff0'],1.6,8,3,8,170,{ring:1}),
- ghost:SHOT('Ataque Kamikaze Fantasma',['#c8d0e8','#ffffff','#ffffff'],1.5,12,4,3,120,{pierce:2}),
+ blaster:SHOT('Blaster Meteor',['#2a9a20','#8af06a','#f0fff0'],1.6,8,3,8,170,{ring:1,home:1}),
+ ghost:SHOT('Ataque Kamikaze Fantasma',['#c8d0e8','#ffffff','#ffffff'],1.5,12,4,3,120,{pierce:2,home:1}),
  a18volley:SHOT('Ráfaga de Energía',['#1a6ad8','#7ad0ff','#ffffff'],1.0,7,3,4,240),
- gekiretsu:SHOT('Gekiretsu Madan',['#d8a010','#ffe060','#ffffff'],1.4,8,3,6,210),
+ gekiretsu:SHOT('Gekiretsu Madan',['#d8a010','#ffe060','#ffffff'],1.4,8,3,6,210,{home:1}),
  finalflash:BEAM('Final Flash',['#d8b010','#fff06a','#ffffff'],7,40,14,280,22,1.0),
  eyebeam:{...BEAM('Rayo de los Ojos',['#d02020','#ff8a6a','#ffffff'],1.8,22,8,220,3,0.2),st:l=>({cd:1.8-l*0.08,dmg:22+l*8,len:220,wid:4,dur:0.25,charge:0.2})},
  heatdome:BEAM('Heat Dome Attack',['#d8a010','#ffe060','#ffffff'],6,36,13,250,18,0.8),
@@ -1161,7 +1161,9 @@ function sigUpdate(dt,ps){
   const t=nearest(P.x,P.y,sigReach(W,st));if(!t){P.sigT=0.1;return}
   const a=Math.atan2(t.y-6-(P.y-13),t.x-P.x);P.sigT=P.sigCD=Math.max(0.35,st.cd*ps.cd);
   if(W.pose==='up'||W.kind==='nova'||(W.kind!=='beam'&&W.kind!=='melee'&&W.kind!=='sword'&&W.pose==='cast')){
-    const wind=W.pose==='up'?0.5:W.kind==='nova'?0.3:0.12;P.pend={id,m,st,t:wind,T:wind,pose:W.pose,a,col:W.col};P.face=Math.cos(a)<0?-1:1;P.dir='side';return}
+    // si el enemigo está encima, lanza con los brazos arriba y la bola sale por encima de la cabeza
+    const up=W.pose==='up'||(W.kind!=='nova'&&Math.sin(a)<-0.6),wind=W.pose==='up'?0.5:W.kind==='nova'?0.3:up?0.22:0.12;
+    P.pend={id,m,st,t:wind,T:wind,pose:up?'up':W.pose,a,col:W.col};P.face=Math.cos(a)<0?-1:1;P.dir='side';return}
   FO=sigOrigin(W.pose,a);fire(id,m,st,ps);FO=null}
 function fireSig(W,st,dmg,ps){
   const t=nearest(P.x,P.y,sigReach(W,st)+10);if(!t)return;const d=t.x>=P.x?1:-1;P.face=d;P.dir='side';
@@ -1557,7 +1559,7 @@ function fire(id,m,st,ps){
      // se gira hacia el enemigo y la bola sale de la mano, no del pecho ni por la espalda
      if(!FO&&!W.ring&&ts[0]){P.atkFace=ts[0].x<P.x?-1:1;P.face=P.atkFace;ox=P.x+P.face*9;oy=P.y-20}
      for(let i=0;i<n;i++){const t=ts[i%Math.max(1,ts.length)];const a=W.ring?i*TAU/n+rnd(-0.05,0.05):aimAt(t)+(ts.length<n?(i-(n-1)/2)*0.18:rnd(-0.05,0.05));
-       projs.push({k:'ki',x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:4*ps.area,dmg,pierce:st.pierce+(ev?2:0),life:1.3,hit:new Set(),col:W.col,spr:FO&&KI_REAL.has(id)?heroKi():null})}
+       projs.push({k:'ki',x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:4*ps.area,dmg,pierce:st.pierce+(ev?2:0),life:W.home?2.2:1.3,home:W.home?(t||true):null,age:0,hit:new Set(),col:W.col,spr:FO&&KI_REAL.has(id)?heroKi():null})}
      P.atkT=P.atkD=0.24;P.atkK=1;P.atkA=aimAt(ts[0]);sfx('shot');break}
    case 'beam':{const t=nearest(ox,oy,st.len);const a=aimAt(t);shout(id,ev);
      const evm=ev?1.5:1;
@@ -1753,6 +1755,8 @@ function update(dt){
   // player projectiles
   for(const p of projs){p.life-=dt;
     if(p.k==='disc'){p.age+=dt;if(p.age>p.out){const dx=P.x-p.x,dy=P.y-10-p.y,d=Math.hypot(dx,dy)||1;p.vx+=(dx/d*260-p.vx)*dt*6;p.vy+=(dy/d*260-p.vy)*dt*6;if(d<10&&p.age>p.out+0.1)p.life=0;if(!p.back){p.back=1;p.hit.clear()}}}
+    // bolas teledirigidas: salen abiertas y luego giran hacia su enemigo
+    if(p.home&&(p.age=(p.age||0)+dt)>0.12){if(p.home===true||p.home.dead)p.home=nearest(p.x,p.y,240)||true;if(p.home!==true){const sp=Math.hypot(p.vx,p.vy),a=Math.atan2(p.home.y-8-p.y,p.home.x-p.x),k=Math.min(1,dt*7);p.vx+=(Math.cos(a)*sp-p.vx)*k;p.vy+=(Math.sin(a)*sp-p.vy)*k}}
     p.x+=p.vx*dt;p.y+=p.vy*dt;if(p.life<=0)continue;
     near(p.x,p.y+6,p.r+14,e=>{if(p.life<=0||p.hit.has(e))return;if(Math.hypot(e.x-p.x,e.y-6-p.y)<p.r+e.r){p.hit.add(e);
       if(p.k==='big'){explode(p.x,p.y,p.rad,p.dmg,p.col);p.life=0;return}
