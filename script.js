@@ -1485,7 +1485,7 @@ function hitPlayer(d,big){
   if(P.iframe>0||state!=='play')return;const st=stats();d=Math.max(1,d-st.armor);
   P.hp-=d;P.iframe=big?1.0:0.6;P.hitT=0.2;cam.shake=Math.max(cam.shake,3);sfx('hurt');
   if(P.hp<=0){if(S.revives>0){S.revives--;P.hp=stats().maxhp;P.iframe=2.5;S.flash=0.4;S.banner={t:2,text:'¡SEMILLA SENZU!',sub:'Vuelves a la carga'};fx(P.x,P.y-10,'green',24,0.6);for(const e of enemies)if(!e.boss&&Math.hypot(e.x-P.x,e.y-P.y)<90)hurt(e,9999);sfx('trans');return}
-    P.hp=0;endGame(false)}}
+    P.hp=0;P.dead=0.001;P.moving=false;P.cast=null;P.pend=null;state='dying';sfx('boom')}}
 
 // ---------- weapons ----------
 const SHOUTS={kame:['KA-ME-HA-ME-HA!','#9fe8ff'],galick:['GALICK HO!','#e6a8ff'],makanko:['MAKANKOSAPPO!','#ffe86a'],genki:['GENKIDAMA!','#bfe6ff'],bigbang:['BIG BANG!','#bfe6ff'],masenko:['MASENKO!','#ffcc33'],burning:['BURNING ATTACK!','#ffb03a'],riot:['RIOT JAVELIN!','#7ab8ff'],eraser:['ERASER CANNON!','#b8f040'],finalkame:['FINAL KAMEHAMEHA!','#f0d040'],stardust:['STARDUST BREAKER!','#ff6ad0']};
@@ -2415,7 +2415,7 @@ function render(time){
         const bobY=P.moving?((P.anim|0)%2):((time*2.5|0)%2),lean=P.moving?(((P.anim|0)%4)<2?1:-1):0;
         ctx.drawImage(im,0,0,im.width,Math.round(im.height*0.6),Math.round(x-w/2+lean),Math.round(y-h+bobY),w,Math.round(h*0.6));
         ctx.drawImage(im,0,Math.round(im.height*0.6),im.width,im.height-Math.round(im.height*0.6),Math.round(x-w/2),Math.round(y-h+bobY+h*0.6),w,h-Math.round(h*0.6))}
-      else if(pk){const left=P.pend?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:P.atkT>0?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&P.atkT>0&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.powT>0&&pk.Pow?pk.Pow:P.pend?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,wt=P.anim/9,i=(P.powT>0||(P.pend&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):P.pend?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?(A.R.length>1?scFrame(A,wt):0):scFrame(A,time),im=(left?A.L:A.R)[i],bob=P.moving&&!P.cast&&!(P.hitT>0)&&A.R.length===1?Math.round(Math.sin(wt*6)*2)-2:0;
+      else if(pk){const left=P.pend?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:P.atkT>0?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&P.atkT>0&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):P.powT>0&&pk.Pow?pk.Pow:P.pend?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,wt=P.anim/9,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(P.powT>0||(P.pend&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):P.pend?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?(A.R.length>1?scFrame(A,wt):0):scFrame(A,time),im=(left?A.L:A.R)[i],bob=P.moving&&!P.cast&&!(P.hitT>0)&&A.R.length===1?Math.round(Math.sin(wt*6)*2)-2:0;
         {const TR=P.tr||(P.tr=[]);if(P.moving&&!P.cast&&!(P.hitT>0)){if(!(time-TR.lt<0.045)){TR.lt=time;TR.unshift([P.x,P.y]);if(TR.length>4)TR.length=4}}else TR.length=0;
           for(let k=TR.length-1;k>=1;k--){ctx.globalAlpha=0.34-k*0.08;ctx.drawImage(im,Math.round(x+(TR[k][0]-P.x)*2-im.width/2),Math.round(y+(TR[k][1]-P.y)*2-im.height+1+bob))}ctx.globalAlpha=1}
         if(P.kaioT>0){const fl=auraFlames('red')[(time*14|0)%3];ctx.globalAlpha=0.85;ctx.drawImage(fl,Math.round(x-fl.width/2),Math.round(y-fl.height+3));ctx.globalAlpha=1}
@@ -2545,7 +2545,9 @@ var FUERA=new Set(['roshi']);
 for(const id in HDEF){const D=HDEF[id],A=window.ANIM_SET&&ANIM_SET.h[id];if(D.npc||D.custom)continue;
   if(!A){FUERA.add(id);continue}const keep=Object.keys(A).map(Number).sort((a,b)=>a-b);
   if(keep.length!==D.forms.length||keep.some((f,i)=>f!==i)){for(const k of ['forms','aura','hair','hc','formPal'])if(Array.isArray(D[k]))D[k]=keep.map(f=>D[k][Math.min(f,D[k].length-1)]);
-    const H={};keep.forEach((f,i)=>H[i]='as-'+id+'-'+f);SCPACK.h[id]=H}}
+    const H={},R={};keep.forEach((f,i)=>{H[i]='as-'+id+'-'+f;if(PORTRAIT[id]&&PORTRAIT[id][f])R[i]=PORTRAIT[id][f]});SCPACK.h[id]=H;if(PORTRAIT[id])PORTRAIT[id]=R}}
+// big face of a form: that form, else the closest one of the same character
+function faceOf(id,form=0){const P=PORTRAIT[id];if(!P)return null;if(P[form])return P[form];const k=Object.keys(P).map(Number).sort((a,b)=>Math.abs(a-form)-Math.abs(b-form));return k.length?P[k[0]]:null}
 Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta-buussj',rose:'rose',
   renegA:'enemy1',renegB:'enemy2',renegC:'enemy3',kingvegE:'kingvegeta',raditzssjE:'raditz-ssj',vegsaiE:'vegeta-saiyan',freeza2E:'freeza-2',cellperfE:'cell-perf2',a21E:'a21',
   buuthinE:'buu-thin',gohanpossE:'gohan-poss',frost2E:'frost-2',black2E:'black2',hit2E:'hit2',zamasuhE:'zamasu-half',kalessjE:'kale-ssj',fakegokuE:'goku-fake',
@@ -2641,6 +2643,7 @@ function loop(now){
   const dt=Math.min(1/30,(now-last)/1000);last=now;
   try{
   if(state==='play')update(dt);
+  if(state==='dying'){P.dead+=dt;cam.shake=Math.max(cam.shake||0,P.dead<0.3?3:0);if(P.dead>1.8){P.dead=0;endGame(false)}}
   if(state==='title'||state==='maps'||state==='mine'||state==='gacha'||state==='credits'||state==='train'||state==='forge'){demoT+=dt;MAPK=Object.keys(WORLD)[Math.floor(demoT/12)%Object.keys(WORLD).length];cam.x=Math.sin(demoT*0.05)*400+demoT*12;cam.y=Math.cos(demoT*0.04)*300;ctx.fillStyle='#000';ctx.fillRect(0,0,VW,VH);drawWorld(now/1000);drawTitleDemo(now/1000)}
   else if(S)render(now/1000);
   present()}catch(err){console.error(err)}
@@ -2845,7 +2848,7 @@ function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(
     const c=mk(38*3,54*3),g=c.getContext('2d');g.imageSmoothingEnabled=false;
     b.appendChild(c);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
     b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p><span class="stats">VIDA ${H.hp} · VEL ${H.spd} · ATQ x${H.atk}</span>${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
-    b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
+    b.dataset.id=id;b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
     let f=0,form=0;const draw=()=>{if(state!=='title')return;f++;if(f%16===0)form=(form+1)%H.forms.length;if(!own)form=0;const s=heroSprite(id,form);g.clearRect(0,0,c.width,c.height);
       if(form>0){const fl=auraFlames(heroAura(id,form))[f%3];g.globalAlpha=0.8;g.drawImage(fl,(c.width-fl.width*3)/2,c.height-fl.height*3,fl.width*3,fl.height*3);g.globalAlpha=1}
       const my=scHero(id,form)?null:myHero(id,form);if(my&&my.c){const im=my.c,k=Math.min(c.width/im.width,c.height/im.height);const z=k>=1?Math.floor(k):k;g.drawImage(im,(c.width-im.width*z)/2,c.height-im.height*z-((f%2)?1:0),im.width*z,im.height*z)}else{const pk=scHero(id,form);if(pk){const im=pk.Idle.R[scFrame(pk.Idle,f*0.18)],z=2;g.drawImage(im,(c.width-im.width*z)/2,c.height-im.height*z,im.width*z,im.height*z)}else g.drawImage(s.fr[f%4],0,0,s.w,s.h,(c.width-s.w*3)/2,c.height-s.h*3,s.w*3,s.h*3)}};
@@ -2948,7 +2951,7 @@ function buildHub(){const nav=$('#hubMenu');nav.innerHTML='';
     b.insertAdjacentHTML('beforeend',`<span><b>${t}</b><small>${typeof sub==='function'?sub():sub}</small></span>`);b.onclick=()=>{initAudio();sfx('shot');fn()};nav.appendChild(b)}}
 function hubRefresh(){const s=loadSave(),best=loadBest(),id=companion(),H=HEROES[id],all=Object.keys(HEROES).filter(spriteHero);
   $('#cZeni').textContent='ZENI '+s.zeni;$('#cTix').textContent='TICKETS '+s.tickets;$('#cHeroes').textContent='GUERREROS '+all.filter(k=>s.owned[k]).length+'/'+all.length;
-  $('#hCompName').textContent=H.name;const aw=awaken(id),mr=mastRank(id);
+  $('#hCompName').textContent=H.name;{const f=faceOf(id,0);$('#hFace').src=f||'';$('#hFace').hidden=!f}const aw=awaken(id),mr=mastRank(id);
   $('#hCompTags').innerHTML=(H.rar?`<span class="pill r${H.rar}">${'★'.repeat(H.rar)}</span>`:'')+(aw?`<span class="pill">DESPERTAR +${aw}</span>`:'')+(mr?`<span class="pill">MAESTRÍA ${mr}</span>`:'');
   const bt=Object.values(best).reduce((m,b)=>Math.max(m,b.t||0),0),st=s.st||{};
   $('#hubStats').innerHTML=`Tiempo jugado <b>${fmt(st.secs||0)}</b> · Mejor tiempo <b>${fmt(bt)}</b><br>Derrotados <b>${st.kills||0}</b> · Jefes <b>${st.boss||0}</b> · Deseos <b>${s.pulls||0}</b>`;
@@ -2957,7 +2960,9 @@ function evTick(){const b=gBanners()[0];if(!b.f5||!HEROES[b.f5]){$('#hEvent').hi
 function openHub(){hideMenus();state='title';$('#hub').hidden=false;hubRefresh();const c=$('#hCompC');let t=0;
   let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;t+=0.12;drawHeroInto(c,companion(),0,t);if(++n%8===0)evTick()},120)}
 function enterGame(){if(started)return;started=true;initAudio();sfx('level');openHub()}
-function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
+function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();{let t=0;hubTimer=setInterval(()=>{if($('#roster').hidden)return;t+=0.12;const id=$('#rPrev').dataset.id;if(id)drawHeroInto($('#rPrevC'),id,0,t)},120)}const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
+  const prev=id=>{const H=HEROES[id],f=faceOf(id,0);$('#rPrevImg').src=f||'';$('#rPrevImg').hidden=!f;$('#rPrevName').textContent=H.name;$('#rPrevForms').textContent=(H.forms||[]).join(' · ');$('#rPrev').dataset.id=id};
+  $('#chars').querySelectorAll('.card').forEach(b=>{b.onmouseenter=b.onfocus=()=>prev(b.dataset.id)});prev(companion());
   $('#rInfo').innerHTML=`Tienes <b>${all.filter(k=>s.owned[k]).length}</b> de <b>${all.length}</b>. Toca uno tuyo para llevarlo de compañero; los que te faltan se consiguen pidiendo deseos a Shenron.`}
 const SHOP=[{n:'1 TICKET',d:'Un deseo a Shenron',c:120,t:1},{n:'10 TICKETS',d:'Diez deseos con descuento',c:1100,t:10},{n:'50 TICKETS',d:'El pack del guerrero',c:5000,t:50}];
 function openShop(){hideMenus();state='title';$('#shop').hidden=false;drawShop()}

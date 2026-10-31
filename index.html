@@ -21,7 +21,7 @@
     <h1 class="logo">DRAGON BALL<span>SURVIVOR</span></h1>
     <p class="hubSub">SAGA DE LOS GUERREROS Z</p>
     <button class="event" id="hEvent" type="button"></button>
-    <button class="comp" id="hComp" type="button" aria-label="Cambiar de compañero"><canvas id="hCompC" width="180" height="180"></canvas></button>
+    <button class="comp" id="hComp" type="button" aria-label="Cambiar de compañero"><img id="hFace" alt="" hidden><canvas id="hCompC" width="180" height="180"></canvas></button>
     <p class="compName" id="hCompName"></p>
     <p class="compTags" id="hCompTags"></p>
   </div>
@@ -31,7 +31,7 @@
 <div id="roster" class="ov dark" hidden>
   <h2>PERSONAJES</h2>
   <p class="help" id="rInfo"></p>
-  <div id="rosterBox"></div>
+  <div class="rWrap"><div class="rPrev" id="rPrev"><img id="rPrevImg" alt=""><canvas id="rPrevC" width="120" height="120"></canvas><p id="rPrevName"></p><p id="rPrevForms"></p></div><div id="rosterBox"></div></div>
   <div class="btns"><button class="btn alt" id="rBack" type="button">VOLVER</button></div>
 </div>
 <div id="shop" class="ov dark" hidden>

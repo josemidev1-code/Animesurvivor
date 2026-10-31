@@ -15,8 +15,8 @@ from PIL import Image
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SPRITES = os.path.join(RAIZ, 'sprites')
 # nombre en el juego -> duración por defecto de cada fotograma (ticks de 1/60 s)
-DUR = {'Idle': 24, 'Walk': 8, 'Attack': 5, 'Kick': 6, 'Cast': 12, 'Pow': 6, 'Hurt': 10}
-CLAVES = {'idle': 'Idle', 'move': 'Walk', 'attack': 'Attack', 'kick': 'Kick', 'ki': 'Cast', 'pow': 'Pow', 'hurt': 'Hurt'}
+DUR = {'Idle': 24, 'Walk': 8, 'Attack': 5, 'Kick': 6, 'Cast': 12, 'Pow': 6, 'Hurt': 10, 'Faint': 14}
+CLAVES = {'idle': 'Idle', 'move': 'Walk', 'attack': 'Attack', 'kick': 'Kick', 'ki': 'Cast', 'pow': 'Pow', 'hurt': 'Hurt', 'faint': 'Faint'}
 PIE = 4  # el juego recorta 4 filas de la parte de abajo de cada celda
 
 nat = lambda s: [int(t) if t.isdigit() else t.lower() for t in re.split(r'(\d+)', s)]
@@ -156,7 +156,8 @@ def leer_config():
     for r in rutas:
         if not os.path.exists(r): continue
         for h, formas in json.load(open(r, encoding='utf-8')).get('heroes', {}).items():
-            heroes.setdefault(h, {}).update(formas)
+            for f, e in formas.items():  # se mezcla campo a campo: extras.json solo añade muerte y retrato
+                heroes.setdefault(h, {}).setdefault(f, {}).update(e)
     return heroes
 
 
