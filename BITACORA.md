@@ -216,3 +216,17 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Revisadas visualmente 19 hojas de los siete packs mixtos (2.396 PNG): abundan las poses aisladas, sin secuencias completas para los soldados, Ginyu o Jeice. La carpeta PIXELARTSCLAUDEYOTELOSPASO está vacía.
 - Revisadas a ojo las hojas de Vegeta, Black, A17, Frost, Broly y Kale. Enlazados 13 tipos más a sus formas elegidas a mano; Broly Legendario usa ahora la forma legendaria (antes usaba SSJ4).
 - Corregido drawPkEnemy: ignoraba la selección de guardia hecha por scEnemy y seguía dibujando el único fotograma de vuelo. Ahora la guardia se aplica también al dibujar. Recursos a v26.
+- Intento de recuperar Zamasu corrupto desde el pack 106: revisadas hoja completa, selecciones ampliadas y previsualización. La primera selección mezclaba carga/disparo con orientaciones distintas y los supuestos daños eran patadas; se descartó antes de integrarla. A medias: encontrar daño y ki coherentes en un único pack (106/107), sin darlo por bueno por tener muchos PNG.
+- Retirados temporalmente 44 tipos sin secuencias revisadas; conservados 70 tipos con sus animaciones y la sombra del jugador. Quitada la invocación de Cell Jr. de Cell. Los 24 mapas conservan cinco jefes con nombres reales; los mapas sin población inicial reciben Saibaman como enemigo explícito.
+- Quitadas las rutas que dibujaban enemigos por código durante la carga y añadida recuperación del sprite al terminar de cargar (incluidos los alias). Se mantiene la importación manual de sprites del usuario.
+- Auditoría reproducible en herramientas/comprobar_enemigos.cjs: 16 minutos por cada uno de los 24 mapas, 120 jefes, más de 170.000 apariciones simuladas sin tipos retirados; comprobados inicio, anillos, oleadas, guardia y carga diferida. Es una simulación de lógica con dibujo/sonido sustituidos, no una partida visual.
+- La política del navegador impidió abrir file:///.../index.html. No se ha verificado visualmente una partida en esta sesión.
+- Verificados los 56 conjuntos y sus 1.163 tiras PNG embebidas (dimensiones, fotogramas no vacíos y coincidencia con la configuración), los cinco recursos locales en v27 y la sintaxis de JavaScript. Los enemigos pendientes de decodificar no se mueven ni atacan hasta tener sprite visible.
+
+### A medias / problemas
+- La recuperación de los 44 tipos retirados sigue pendiente de secuencias buenas. En especial, revisar el pack 107 de Zamasu corrupto y los daños/ki del 106; no quedó ninguna selección provisional integrada.
+- Falta comprobar visualmente una partida, Ráfaga de Ki y transformación; las comprobaciones automáticas no certifican el aspecto o el equilibrio de las partidas.
+- No se han empezado las variantes jugables, los efectos ni el HUD: se ha trabajado en la prioridad de enemigos del relevo.
+
+### Siguiente paso recomendado
+- Jugar una partida con los enemigos corregidos y revisar ki/transformación; recuperar Zamasu corrupto solo si pasa la guía. Después, seguir con Goku película Broly (216, 222, 221 y 217).

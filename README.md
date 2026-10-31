@@ -28,16 +28,24 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 ## Cómo está ahora (31/10/2026)
 
 - **56 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
-- Enemigos y jefes solo con sprites reales (los recoloreados falsos se quitaron).
+- **70 tipos de enemigo** con animaciones seleccionadas de sus propios personajes; además, la sombra del jugador.
+- **44 tipos retirados temporalmente** por no tener secuencias completas revisadas (lista en `SPRITES_PENDIENTES.md`).
+  Los 24 mapas conservan cinco encuentros con jefes. Hay menos variedad de enemigos normales mientras se recuperan sus packs.
+- Los enemigos con un único fotograma de vuelo flotan en guardia; durante la carga ya no se dibujan cuerpos por código.
 - Logo del menú y esferas del dragón dibujados por ti.
 - Gachapón de Shenron, tienda, misiones, ranking, mejoras; todo desbloqueado de momento.
 - El menú abre en menos de 1 segundo: los sprites se cargan al empezar la partida.
 
 ## Lo que falta (en este orden)
 
-1. Meter los packs que quedan: variantes de Goku (65 packs), Vegeta (34) y Goku Black fanmade (23).
-2. Ataques con efectos reales de los sprites (Kamehameha, bolas de ki, auras) en vez de dibujados por código.
-3. HUD y subida de nivel como las capturas de PokéSurvivor que mandaste.
+1. Probar visualmente una partida con los enemigos corregidos, Ráfaga de Ki y una transformación. Recuperar los enemigos retirados solo cuando haya secuencias buenas; Zamasu corrupto (packs 106/107) necesita revisar daño y ki.
+2. Meter los packs que quedan: variantes de Goku (65 packs), Vegeta (34) y Goku Black fanmade (23).
+3. Ataques con efectos reales de los sprites (Kamehameha, bolas de ki, auras) en vez de dibujados por código.
+4. HUD y subida de nivel como las capturas de PokéSurvivor que mandaste.
+
+Comprobación de enemigos sin navegador: `node herramientas/comprobar_enemigos.cjs`.
+Ejecuta las tablas y el director del juego durante 16 minutos simulados en cada mapa, con dibujo y sonido simulados.
+No sustituye jugar una partida: el navegador de pruebas no permitió abrir el archivo local en la sesión 6.
 
 ## Reglas
 

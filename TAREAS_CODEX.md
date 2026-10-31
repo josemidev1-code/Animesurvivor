@@ -2,9 +2,20 @@
 
 Antes: lee `AGENTS.md` y `herramientas/GUIA_ANIMACIONES.md`. Apunta todo en `BITACORA.md` y haz commit tras cada tarea.
 Python: `C:\Users\soyjo\AppData\Local\Programs\Python\Python314\python.exe` con `PYTHONIOENCODING=utf-8`.
-Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=25`).
+Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=27`).
 
 ## 1. Rehacer los ~45 enemigos con recorte viejo (prioridad del usuario)
+
+**Estado tras Codex, sesión 6:** 13 IDs más enlazados a formas ya revisadas, corregida la guardia en el dibujado,
+44 tipos retirados temporalmente de todo el catálogo activo. Lista exacta en `SPRITES_PENDIENTES.md`, A.1.
+Los 24 mapas conservan cinco jefes; hay menos variedad de enemigos normales. `node herramientas/comprobar_enemigos.cjs`
+comprueba las tablas y simula 16 minutos por mapa. Falta ver una partida: la política del navegador impidió abrir
+el archivo local. También siguen pendientes el lanzamiento de Ráfaga de Ki y una transformación en pantalla.
+
+No des por hecho que hay un pack propio de todos ellos: revisados los siete packs mixtos (2.396 PNG), muchos solo
+tienen una pose aislada. Zamasu corrupto (106/107) es el primer candidato para recuperar; la selección de prueba
+del 106 se descartó al confundir patadas con daño y mezclar orientaciones en ki. No quedó integrada.
+Los demás retirados necesitan secuencias completas antes de volver a añadirlos.
 
 Problema: sus tiras salen de `sprites.js` (importación vieja): tienen **huecos transparentes** (se borró el blanco)
 y muchos andan con una sola pose. Lista: última sección de `PIXEL_ART_POR_CODIGO.md`
@@ -43,7 +54,7 @@ izquierda, casillas de ataque abajo, panel azul con cartas al subir de nivel, ba
 ## Cómo probar
 
 Servidor: `python -m http.server 8765` en la raíz y abre `http://localhost:8765/index.html`.
-En la consola, `window.AS` da acceso al juego: `AS.spawnAt('jeice',60,0)`, `AS.addMove('kiblast')`,
+En la consola, `window.AS` da acceso al juego: `AS.spawnAt('blackssjB',60,0)`, `AS.addMove('kiblast')`,
 `AS.scLoad(clave)`, `AS.scHero(id,forma)`. Para entrar en partida: carta del personaje → `#start` → JUGAR → `#mapCards button`.
 Pendiente de ver en pantalla: un lanzamiento de Ráfaga de Ki (el personaje debe girarse hacia el enemigo)
 y una transformación al subir de nivel.

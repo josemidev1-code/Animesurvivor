@@ -69,8 +69,9 @@ Cada mapa tiene **suelo** (baldosa que se repite) y **decorado** (objetos que bl
 
 ## Enemigos con recorte viejo (esto no hace falta que lo dibujes)
 
-Estos sí salen de sprites reales, pero los recortó mal la importación vieja (huecos transparentes y muy pequeños).
-**Los rehago yo** desde sus packs de `sprites/`; solo si alguno no tiene pack bueno te lo pediré:
+La importación vieja tenía huecos transparentes y tamaños incorrectos. En la sesión 6 se enlazaron 13 tipos más
+a sus formas revisadas y se retiraron 44 tipos hasta tener secuencias buenas. El juego ya no usa sus tiras viejas.
+La lista exacta y los candidatos para recuperarlos están en `SPRITES_PENDIENTES.md`, apartado A.1:
 Jeice, Capitán Ginyu, soldados de Freezer, Esbirro de Babidi, Cell Jr., Meca Freezer, Saiyans renegados, Rey Vegeta,
 Vegeta Saiyan, Freezer 2ª forma, Androide 21, Ozaru, Garlic Jr. y sus esbirros, demonios, Shenron oscuro, Whis, Zeno,
 Goku Black SSJ, Kale Berserker, Broly (película), Goku falso.

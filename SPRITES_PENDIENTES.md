@@ -1,6 +1,6 @@
 # Sprites pendientes
 
-Última revisión: 31/10/2026 (Claude, sesión 3).
+Última revisión de enemigos: 31/10/2026 (Codex, sesión 6).
 
 El juego solo usa las formas de `herramientas/animaciones.json` y `herramientas/animaciones/*.json`, elegidas a mano
 y revisadas con `revisar_todo.py`. Cómo meter una forma: ver `herramientas/GUIA_ANIMACIONES.md` y `herramientas/poner.py`.
@@ -9,6 +9,39 @@ y revisadas con `revisar_todo.py`. Cómo meter una forma: ver `herramientas/GUIA
 
 - Maestro Roshi; Dodoria, Zarbon, Nappa, A19, Dabura, Burter, Guldo, soldado Red Ribbon y bolita de Buu
   (Gemini los había puesto con sprites de otros personajes recoloreados; se quitaron).
+
+### A.1) Enemigos retirados del juego por animaciones sin revisar (44 tipos)
+
+No se borraron sus fuentes ni sus tiras antiguas. Se quitaron del catálogo activo, los mapas, los escuadrones y las
+oleadas; Cell tampoco invoca Cell Jr. Los huecos de jefes los ocupan otros villanos con su nombre real y la misma
+escala de dificultad por posición. Se usa Saibaman en los mapas que se quedaban sin enemigos iniciales.
+
+| Personaje / grupo | IDs retirados |
+|---|---|
+| Soldados de Freezer | `soldier`, `soldierE`, `frzS2`, `frzS4` |
+| Red Ribbon y esbirro de Babidi | `rrsoldier`, `majin` |
+| Bolita de Buu y Cell Jr. | `blob`, `celljr`, `celljrE` |
+| Nappa, Dodoria, Zarbon, A19, Dabura | `nappa`, `nappaE`, `dodoria`, `zarbon`, `a19`, `dabura` |
+| Fuerzas especiales | `ginyu`, `jeice`, `burter`, `guldo` |
+| Meca Freezer | `mecha` |
+| Saiyans y Rey Vegeta | `renegA`, `renegB`, `renegC`, `saiyanLow`, `kingvegE` |
+| Freezer segunda forma | `freeza2E`, `freeza2B` |
+| Androide 21 | `a21E`, `a21B`, `a21mB` |
+| Zamasu corrupto y Goku falso | `zamasuhE`, `fakegokuE` |
+| Ozaru | `ozaruB`, `ozarugB` |
+| Whis y Zeno | `whisB`, `zenoB` |
+| Garlic Jr. y esbirros | `garlicE`, `garlicB`, `garlicH1`, `garlicH2` |
+| Demonios | `demonS`, `demonS2`, `demonE` |
+| Shenron oscuro | `shenronB` |
+
+Revisadas visualmente 19 hojas de los siete packs mixtos (2.396 PNG). Hay poses aisladas de varios personajes de
+esta tabla, pero no se encontraron secuencias completas que cumplan la guía. No confundir esas poses con un pack
+completo. Zamasu corrupto sí tiene los packs 106/107: revisado el 106, la selección inicial no superó la revisión
+de daño y carga/disparo y se descartó. Es el primer candidato para continuar la recuperación.
+
+Recuperados con formas ya revisadas: Vegeta Saiyan/base, Majin Vegeta, Frost final, Black base/SSJ, Broly
+contenido/SSJ/legendario, Kale SSJ y A17 jefe (13 IDs). Kale se llama **Kale Super Saiyan** porque ese es su pack.
+No se han añadido personajes jugables en esta revisión.
 
 ## B) Packs de `sprites/` que aún no están en el juego (174)
 

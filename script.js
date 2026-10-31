@@ -836,20 +836,16 @@ function villainSprite(id){const V=VDEF[id],pal=VPAL[id];
   return{fr,fl,wh:fr.map(c=>tintC(c,'#ffffff')),whf:fl.map(c=>tintC(c,'#ffffff')),w:fr[0].width,h:fr[0].height,big:1}}
 
 function enemySprite(id){
-  if(SPR[id])return SPR[id];
+  if(SPR[id]&&!SPR[id].pending)return SPR[id];
   if(id!=='shadow'){const sp=scEnemy(id);if(sp)return SPR[id]=sp}
   {const m=myEnemy(id);if(m)return SPR[id]=m}
   if(id==='shadow'){const F=heroFrames(S.hid,P.form),dk=c=>{const o=mk(c.width,c.height),g=o.getContext('2d');g.drawImage(c,0,0);g.globalCompositeOperation='source-atop';g.fillStyle='rgba(30,0,50,.72)';g.fillRect(0,0,o.width,o.height);g.fillStyle='#ff2a4a';return o};
     const fr=F.downwalk.map(x=>dk(x.c));return{fr,fl:fr.map(flipC),wh:F.downwalk.map(x=>x.w),whf:F.downwalk.map(x=>x.wf),w:fr[0].width,h:fr[0].height,big:1}}
-  if(id!=='shadow'){const sp=scEnemy(id);if(sp)return SPR[id]=sp}
-  if(ET[id]&&ET[id].hero){const [hid,form]=ET[id].hero,F=heroFrames(hid,form),fr=F.downwalk.map(x=>x.c);
-    return SPR[id]={fr,fl:F.downwalk.map(x=>x.f),wh:F.downwalk.map(x=>x.w),whf:F.downwalk.map(x=>x.wf),w:fr[0].width,h:fr[0].height,big:1}}
   if(ET[id]&&ET[id].alias)return SPR[id]=enemySprite(ET[id].alias);
-  if(GFORCE[id]){VDEF[id]=VDEF.ginyu;VPAL[id]={...VPAL.ginyu,...GFORCE[id]};const sp=villainSprite(id);delete VDEF[id];return SPR[id]=sp}
-  {const sp=scEnemy(id);if(sp)return SPR[id]=sp}if(VDEF[id])return SPR[id]=villainSprite(id);
-  const map={saiba:[B_SAIBA,16,'g','G'],saibaR:[B_SAIBA,16,'g','G'],saibaX:[B_SAIBA,16,'g','G'],soldier:[B_SOLD,16,'d','w'],soldierE:[B_SOLD,16,'d','w'],
-    celljr:[B_CJR,12,'b','g'],celljrE:[B_CJR,12,'b','g'],dodoria:[B_DOD,14,'d','w'],zarbon:[B_ZAR,14,'d','w'],frieza100:[B_FRZ,14,'w','W'],raditz:[B_RAD,14,'d','w'],nappa:[B_NAP,14,'d','w'],a19:[B_A19,14,'k','g'],dabura:[B_DAB,14,'p','k'],fatbuu:[B_FBUU,14,'w','y'],blob:[B_BLOB,12,'p','P'],rrsoldier:[B_SOLD,16,'d','w'],majin:[B_SOLD,16,'d','w'],ginyu:[B_GINYU,14,'d','w'],frieza:[B_FRZ,14,'w','W'],mecha:[B_FRZ,14,'w','W'],cell:[B_CELL,14,'g','b'],buu:[B_BUU,14,'w','y']};
-  const m=map[id];return SPR[id]=buildChar(m[0],m[1],m[2],m[3],PAL[id])}
+  // Mientras se decodifica el PNG no se inventa un personaje por código.
+  // No se guarda en SPR: el render vuelve a pedir su sprite cuando esté listo.
+  return ENEMIGO_CARGANDO}
+const ENEMIGO_CARGANDO=(()=>{const c=mk(1,1);return{pending:1,fr:[c],fl:[c],wh:[c],whf:[c],w:16,h:26,big:1}})();
 
 // ---------- Namek tiles & decor (procedural pixel art) ----------
 const T=16, TILES={grass:[],water:[]};
@@ -1346,7 +1342,7 @@ const MAPS={
 const BOSS_T=[180,360,540,720,900];
 const WAVE_T=[130,230,310,410,490,590,670,770,850];
 const WAVES={"freezer":[["saibaR",14],["soldierE",8],["ginyu",1],["coolerE",1],["saibaX",12],["jeice",1]],"tierra":[["celljr",10],["cellimpE",1],["saibaR",14],["a16E",1],["soldier",12],["a17e",1]],"buu":[["majin",18],["majin",10],["fatbuuE",1],["majinvE",1],["kidbuuE",1],["celljrE",3]],"super":[["soldierE",10],["coolerE",1],["majinvE",1],["a16E",1],["kidbuuE",1],["cellimpE",2]]},WSAGA={"namek":"freezer","vegetasei":"freezer","yardrat":"freezer","volcan":"freezer","gizard":"freezer","kaio":"freezer","tierra":"tierra","redribbon":"tierra","musculo":"tierra","capsule":"tierra","desierto":"tierra","futuro":"tierra","kame":"tierra","paoz":"tierra","pradera":"tierra","bosque":"tierra","arena":"buu","lookout":"buu","budokai":"buu","kaioshin":"buu","infierno":"buu","time":"super","bills":"super","poder":"super"};
-const NOSPR={"rrsoldier":"saibaB","blob":"saiba","nappaE":"vegetaE","burter":"coolerE","guldo":"turlesE","dodoria":"turles","zarbon":"frost","nappa":"vegetaSB","a19":"a16B","dabura":"janemba"};
+const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SET.
 (function(){const f=t=>NOSPR[t]||t,SQ={'¡FUERZAS ESPECIALES!':'¡INVASORES DEL ESPACIO!','¡LOS CELL JR.!':'¡EL ASALTO DE CELL!'};
   for(const k in MAPS){const M=MAPS[k];M.pool.forEach(p=>p[1]=f(p[1]));if(M.ring)M.ring=M.ring.map(f);M.bosses=M.bosses.map(f);
     if(M.squad){M.squad[1]=M.squad[1].map(f);M.squad[2]=SQ[M.squad[2]]||M.squad[2]}}
@@ -1590,7 +1586,7 @@ function updateMoves(dt,ps){
 
 // ---------- spawning ----------
 function spawn(type,x,y){
-  type=NOSPR[type]||type;let d=ET[type];if(d.boss)d={...d,...BOSS_SLOT[Math.min(4,S.bossN||0)]};const lv=(P&&P.lvl||1)-1,sc=(1+S.t/170+(S.endless?S.t/300:0))*(1+0.045*lv);
+  let d=ET[type];if(!d)throw new Error('Enemigo sin animaciones revisadas: '+type);if(d.boss)d={...d,...BOSS_SLOT[Math.min(4,S.bossN||0)]};const lv=(P&&P.lvl||1)-1,sc=(1+S.t/170+(S.endless?S.t/300:0))*(1+0.045*lv);
   if(x===undefined){const a=rnd(TAU),r=Math.hypot(VW,VH)/2+20;x=P.x+Math.cos(a)*r;y=P.y+Math.sin(a)*r}
   const spr=enemySprite(type);
   const e={type,x,y,hp:d.hp*(d.boss?1:sc),maxhp:0,spd:d.spd*(d.boss?1:rnd(0.9,1.1)),dmg:d.dmg*(1+S.t/500)*(1+0.02*lv),xp:d.xp,r:d.r,boss:!!d.boss,final:!!d.final,ai:d.ai,
@@ -1643,7 +1639,8 @@ function bossAI(e,dt){
    case 'spiral':e.sp=(e.sp||0)+dt*2.4;if(e.aiT<=0){e.aiT=0.16;eshot(e.x,e.y-14,e.sp,80,e.dmg*0.5,3,'#ff7a4a');eshot(e.x,e.y-14,e.sp+Math.PI,80,e.dmg*0.5,3,'#ff7a4a')}break;
    case 'cell':if(e.aiT<=0){e.aiT=3.5;e.cnt=(e.cnt||0)+1;
        eshot(e.x,e.y-14,a,95,e.dmg*1.2,7,'#5ab0ff');
-       if(e.cnt%2===0)for(let i=0;i<3;i++)spawn('celljr',e.x+rnd(-20,20),e.y+rnd(-20,20))}break;
+       // La invocación de Cell Jr. volverá cuando tenga secuencias revisadas.
+       }break;
    case 'buu':if(e.aiS>0){e.aiS-=dt;if(solidMove(e,e.dx*dt,e.dy*dt,e.r))e.aiS=0;return true}
      if(e.aiT<=0){e.aiT=2.6;e.cnt=(e.cnt||0)+1;
        if(e.cnt%2){e.aiS=0.5;e.dx=Math.cos(a)*260;e.dy=Math.sin(a)*260}
@@ -1720,6 +1717,8 @@ function update(dt){
   // enemies
   const far=Math.hypot(VW,VH)*0.75;
   for(const e of enemies){if(e.dead)continue;
+    // Un enemigo que todavía no se puede ver no se mueve ni ataca.
+    if(e.spr.pending){e.spr=enemySprite(e.type);if(e.spr.pending)continue;e.h=e.spr.h}
     e.flash-=dt;e.anim+=dt*6;if(e.powT>0)e.powT-=dt;if(e.crate)continue;
     let skip=false;if(e.boss)skip=bossAI(e,dt);
     const dx=P.x-e.x,dy=P.y-e.y,d=Math.hypot(dx,dy)||1;
@@ -2475,6 +2474,7 @@ function render(time){
         if(chg&&!bm){const r=4+((time*14|0)%3),kb=kiSprite(r,['#1a5ad8','#6ac8ff','#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.9;ctx.drawImage(kb,Math.round(x+(left?-1:1)*im.width*0.12-kb.width/2),Math.round(y-im.height*0.42-kb.height/2));ctx.globalAlpha=1}}
       else{const img=P.hitT>0?(flip?fr.wf:fr.w):(flip?fr.f:fr.c);ctx.drawImage(img,Math.round(x-img.width/2),Math.round(y-img.height+1))}
       ctx.restore();continue}
+    if(e.spr.pending){e.spr=enemySprite(e.type);if(e.spr.pending)continue;e.h=e.spr.h}
     const sc=e.spr.big?1:e.boss?2:1,x=e.x-cam.x,y=e.y-cam.y;shadow(x,y,e.spr.w*sc*0.6);
     if(e.aura){const fl=auraFlames(e.aura)[(time*10|0)%3];ctx.globalAlpha=0.75;ctx.drawImage(fl,Math.round(x-fl.width/2),Math.round(y-fl.height+2));ctx.globalAlpha=1}
     if(e.spr.pk)drawPkEnemy(e,x,y);else drawSprite(e.spr,x,y+(e.boss?0:0),e.anim,e.x>P.x,e.flash>0,sc);if(e.ball)drawDBall(x,y-e.h*sc-6+Math.round(Math.sin(time*6)),4)}
@@ -2628,6 +2628,29 @@ const ENEMIGO_HEROE={hitB:['hit',0],hitE:['hit',0],hit2E:['hit',0],superbuuB:['b
   frost2E:['frost',1],black2E:['black',0],blackssjB:['black',1],
   broly2B:['broly',0],broly3B:['broly',1],brolyB:['broly',2],kalessjE:['kale',1],kalessjB:['kale',1],a17B:['a17',0]};
 for(const id in ENEMIGO_HEROE){const [h,f]=ENEMIGO_HEROE[id];if(ET[id]&&SCPACK.h[h]&&SCPACK.h[h][f]){ET[id].hero=[h,f];delete SCPACK.e[id]}}
+// También los jefes que ya declaraban hero deben saltarse la tira antigua.
+for(const id in ET){const h=ET[id].hero;if(h&&window.ANIM_SET&&ANIM_SET.h[h[0]]&&ANIM_SET.h[h[0]][h[1]])delete SCPACK.e[id]}
+const FUERA_ENEMIGOS={};
+(function depurarEnemigos(){
+  for(const id in ET){if(id==='crate'||id==='shadow')continue;
+    const k=scKeyE(id);if(!k||!k.startsWith('as-'))FUERA_ENEMIGOS[id]=ET[id].n}
+  for(const id in FUERA_ENEMIGOS){delete ET[id];delete SCPACK.e[id];delete SPR[id]}
+  // Kale tiene aquí el pack SSJ, no una forma berserker distinta.
+  for(const id of ['kalessjE','kalessjB'])if(ET[id])ET[id].n='KALE SUPER SAIYAN';
+  const refuerzos={freezer:['raditz','turles','coolerB','frieza','golden'],tierra:['raditz','turles','a16B','cell','frieza'],
+    buu:['janemba','majinv','fatbuu','superbuuB','buu'],super:['hitB','zamasuB','toppoB','billsB','jiren']};
+  for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';
+    M.pool=M.pool.filter(p=>ET[p[1]]);
+    if(!M.pool.some(p=>p[0]===0))M.pool.unshift([0,'saiba',10]);
+    M.ring=(M.ring||[]).filter(id=>ET[id]);if(!M.ring.length)M.ring=['saiba','saiba'];if(M.ring.length===1)M.ring.push(M.ring[0]);
+    if(M.squad){M.squad[1]=M.squad[1].filter(id=>ET[id]);if(!M.squad[1].length)delete M.squad}
+    // Se conservan cinco encuentros y la escala de dificultad por posición.
+    // Los suplentes salen con su nombre y su sprite, sin hacerse pasar por otro.
+    const usados=new Set(M.bosses.filter(id=>ET[id]));
+    M.bosses=M.bosses.map(id=>{if(ET[id])return id;const nuevo=refuerzos[saga].find(t=>!usados.has(t))||refuerzos[saga][0];usados.add(nuevo);return nuevo});
+  }
+  for(const saga in WAVES){WAVES[saga]=WAVES[saga].filter(w=>ET[w[0]]);if(!WAVES[saga].length)WAVES[saga]=[['saiba',14]]}
+})();
 const SCTINT={saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)'},SCTC={};
 function scTintPk(o,f){const r={ok:1};for(const a in o){if(a==='ok')continue;const A=o[a],tc=c=>{const n=mk(c.width,c.height),g=n.getContext('2d');g.filter=f;g.drawImage(c,0,0);return n};r[a]={...A,R:A.R.map(tc),L:A.L.map(tc)}}return r}
 function scEnemy(id){const k=scKeyE(id);if(!k)return null;const o0=scLoad(k);if(!o0.ok)return null;const o=SCTINT[id]?(SCTC[id]||(SCTC[id]=scTintPk(o0,SCTINT[id]))):o0;
