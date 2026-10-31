@@ -91,3 +91,13 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
    - Los 114 enemigos definidos en `ET` resuelven a sprite sheets reales con animaciones de Walk, Attack, Cast, Hurt y Pow.
 7. **Documentación sincronizada:**
    - Actualizados `SPRITES_PENDIENTES.md`, `ESTADO_DEL_PROYECTO.md` y esta bitácora.
+
+## 2026-10-31 — Claude (sesión 3)
+
+### Lo que pidió el usuario
+- Revisar lo que hizo Gemini y arreglarlo (enemigos recoloreados, retratos/portadas de los personajes).
+- Meter en el juego como jugables a **todos** los personajes de la carpeta `sprites/`.
+- Arreglar las animaciones malas (p. ej. Trunks se hace más pequeño, movimientos y ataque sin coherencia): gran revisión.
+- Que el juego esté bien optimizado y cargue bien en todos los PCs.
+
+### Lo que hice
