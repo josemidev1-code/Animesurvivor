@@ -178,3 +178,6 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Comprobado: el menú de personajes muestra los 55 y no hay errores. Falta jugar una partida con los nuevos.
 - Recordatorio para la siguiente IA: cada personaje nuevo necesita **dos cosas**: sus formas en
   `herramientas/animaciones/*.json` **y** su entrada en `NUEVOS` de `script.js` (nombre, formas, auras, ataques).
+- Partidas de prueba (usuario: «Probar partida antes»): Goku Xeno y Cumber entran en partida y juegan sin errores.
+  Las 41 formas de los personajes nuevos o cambiados cargan sus 7 animaciones, con la misma altura entre formas.
+  Para probar por código: `window.AS` (`AS.scLoad`, `AS.scHero(id,forma)`) y en el menú: carta del personaje → `#start` → JUGAR → `#mapCards button`.
