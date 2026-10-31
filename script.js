@@ -690,6 +690,15 @@ const NUEVOS={
  babyvegeta:{name:'BABY VEGETA',rar:5,hp:120,spd:66,atk:1.3,start:'galick',desc:'El parásito Tsufur en el cuerpo de Vegeta.',forms:['SUPER BABY'],aura:['gold'],sig:['kiblast','punch','galick','kick','finalshine','bigbang']},
  bra:{name:'BRA',rar:3,hp:105,spd:70,atk:1.05,start:'masenko',desc:'La hija de Vegeta, del Multiverso.',forms:['BASE','SUPER SAIYAN'],aura:['white','gold'],sig:['kiblast','punch','kick','masenko','renzoku']},
 };
+// formas añadidas a personajes que ya estaban
+Object.assign(HDEF.gokugt,{forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 3','SUPER SAIYAN 4'],aura:['white','gold','gold','red']});
+Object.assign(HDEF.vegetagt,{forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 4'],aura:['white','gold','red']});
+Object.assign(HDEF.piccolo,{forms:['BASE','PICCOLO NARANJA'],aura:['white','orange']});
+Object.assign(HDEF.kefla,{forms:['SUPER SAIYAN','SSJ BLUE'],aura:['green','blue']});
+Object.assign(HDEF.broly,{forms:['CONTENIDO','SUPER SAIYAN','LEGENDARIO','SUPER SAIYAN 4'],aura:['gold','gold','green','red']});
+Object.assign(HDEF.gohanadult,{forms:['BASE','MÍSTICO','BESTIA'],aura:['white','white','purple']});
+Object.assign(HDEF.trunkscell,{forms:['BASE','SUPER SAIYAN'],aura:['white','gold']});
+Object.assign(HDEF.gogeta,{forms:['SUPER GOGETA','SUPER SAIYAN 4','SSJ BLUE'],aura:['gold','red','blue']});
 for(const id in NUEVOS){const N=NUEVOS[id];HDEF[id]={...HDEF.goku,...N};delete HDEF[id].sig}
 const HEROES=HDEF;
 function heroPal(id,form){const D=HDEF[id],p={...D.pal};

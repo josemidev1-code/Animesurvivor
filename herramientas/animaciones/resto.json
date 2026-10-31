@@ -1,130 +1,393 @@
 {
-  "heroes": {
-    "piccolo": {
-      "0": {
-        "pack": "07_Personajes_sin_saga_concreta/Piccolo/083_Piccolo",
-        "idle": [1, 2],
-        "move": [21],
-        "attack": [16, 17, 18],
-        "kick": [25, 26, 27],
-        "ki": [42, 41],
-        "pow": [51, 52],
-        "hurt": [34, 38]
-      }
-    },
-    "gohan": {
-      "1": {
-        "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Gohan/037_Teen Gohan SSJ",
-        "idle": [2, 3],
-        "move": [6],
-        "attack": [9, 10, 11],
-        "kick": [12, 13, 14],
-        "ki": [51, 53],
-        "pow": [34, 35, 36],
-        "hurt": [24, 25]
-      },
-      "2": {
-        "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Gohan/038_Teen Gohan SSJ2",
-        "idle": [2, 3],
-        "move": [6],
-        "attack": [13, 14, 15],
-        "kick": [16, 17, 18, 19],
-        "ki": [55, 57],
-        "pow": [38, 39, 40],
-        "hurt": [28, 30]
-      },
-      "3": {
-        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico",
-        "idle": [12, 13],
-        "move": [24],
-        "attack": [40, 41, 42, 43],
-        "kick": [49, 50, 51],
-        "ki": [75, 77],
-        "pow": [71, 72, 73],
-        "hurt": [62, 63]
-      }
-    },
-    "gohanadult": {
-      "0": {
-        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/034_Gohan Adulto",
-        "idle": [3, 4],
-        "move": [42],
-        "attack": [33, 34, 35, 36],
-        "kick": [25, 26, 27],
-        "ki": [81, 84],
-        "pow": [62, 63],
-        "hurt": [54, 55]
-      },
-      "1": {
-        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico",
-        "idle": [12, 13],
-        "move": [24],
-        "attack": [40, 41, 42, 43],
-        "kick": [49, 50, 51],
-        "ki": [75, 77],
-        "pow": [71, 72, 73],
-        "hurt": [62, 63]
-      }
-    },
-    "trunkscell": {
-      "0": {
-        "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/233_TRUNKS CON ARMADURA,BASE, ANDRÉS GAMEN ANIMATIONS",
-        "idle": [26, 27],
-        "move": [2],
-        "attack": [4, 5, 6, 7],
-        "kick": [10, 11, 12, 13],
-        "ki": [42, 43],
-        "pow": [49, 51],
-        "hurt": [24, 30],
-        "portrait": 55,
-        "escalaFija": true
-      }
-    },
-    "bardock": {
-      "0": {
-        "pack": "01_Dragon_Ball_Super/05_Broly/Bardock/003_BARDOCK,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
-        "idle": [9, 10],
-        "move": [123],
-        "attack": [97, 98, 99, 100],
-        "kick": [109, 110, 111, 112],
-        "ki": [59, 65],
-        "pow": [82, 83],
-        "hurt": [84, 85],
-        "portrait": 0,
-        "escalaFija": true
-      },
-      "1": {
-        "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Bardock/015_Bardock Ssj",
-        "idle": [6, 7],
-        "move": [11],
-        "attack": [25, 26, 27, 28],
-        "kick": [18, 19, 20, 21],
-        "ki": [60, 62],
-        "pow": [0, 1],
-        "hurt": [40, 41]
-      },
-      "3": {
-        "pack": "05_Fanmade_y_alternativos/Bardock/014_Bardock SSJ4",
-        "idle": [2, 3],
-        "move": [5],
-        "attack": [11, 12, 13],
-        "kick": [17, 18, 19],
-        "ki": [52, 56],
-        "pow": [43, 44, 45],
-        "hurt": [32, 33]
-      }
-    },
-    "kefla": {
-      "0": {
-        "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Kefla/074_Kefla Super Sayajin",
-        "idle": [28, 29],
-        "move": [136],
-        "attack": [56, 57, 58, 59],
-        "kick": [75, 76, 77, 78],
-        "ki": [133, 135],
-        "pow": [139, 140, 141],
-        "hurt": [94, 95]
-      }
-    }
+ "heroes": {
+  "piccolo": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/Piccolo/083_Piccolo",
+    "idle": [
+     1,
+     2
+    ],
+    "move": [
+     21
+    ],
+    "attack": [
+     16,
+     17,
+     18
+    ],
+    "kick": [
+     25,
+     26,
+     27
+    ],
+    "ki": [
+     42,
+     41
+    ],
+    "pow": [
+     51,
+     52
+    ],
+    "hurt": [
+     34,
+     38
+    ]
+   }
+  },
+  "gohan": {
+   "1": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Gohan/037_Teen Gohan SSJ",
+    "idle": [
+     2,
+     3
+    ],
+    "move": [
+     6
+    ],
+    "attack": [
+     9,
+     10,
+     11
+    ],
+    "kick": [
+     12,
+     13,
+     14
+    ],
+    "ki": [
+     51,
+     53
+    ],
+    "pow": [
+     34,
+     35,
+     36
+    ],
+    "hurt": [
+     24,
+     25
+    ]
+   },
+   "2": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Gohan/038_Teen Gohan SSJ2",
+    "idle": [
+     2,
+     3
+    ],
+    "move": [
+     6
+    ],
+    "attack": [
+     13,
+     14,
+     15
+    ],
+    "kick": [
+     16,
+     17,
+     18,
+     19
+    ],
+    "ki": [
+     55,
+     57
+    ],
+    "pow": [
+     38,
+     39,
+     40
+    ],
+    "hurt": [
+     28,
+     30
+    ]
+   },
+   "3": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico",
+    "idle": [
+     12,
+     13
+    ],
+    "move": [
+     24
+    ],
+    "attack": [
+     40,
+     41,
+     42,
+     43
+    ],
+    "kick": [
+     49,
+     50,
+     51
+    ],
+    "ki": [
+     75,
+     77
+    ],
+    "pow": [
+     71,
+     72,
+     73
+    ],
+    "hurt": [
+     62,
+     63
+    ]
+   }
+  },
+  "gohanadult": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/034_Gohan Adulto",
+    "idle": [
+     3,
+     4
+    ],
+    "move": [
+     42
+    ],
+    "attack": [
+     33,
+     34,
+     35,
+     36
+    ],
+    "kick": [
+     25,
+     26,
+     27
+    ],
+    "ki": [
+     81,
+     84
+    ],
+    "pow": [
+     62,
+     63
+    ],
+    "hurt": [
+     54,
+     55
+    ]
+   },
+   "1": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico",
+    "idle": [
+     12,
+     13
+    ],
+    "move": [
+     24
+    ],
+    "attack": [
+     40,
+     41,
+     42,
+     43
+    ],
+    "kick": [
+     49,
+     50,
+     51
+    ],
+    "ki": [
+     75,
+     77
+    ],
+    "pow": [
+     71,
+     72,
+     73
+    ],
+    "hurt": [
+     62,
+     63
+    ]
+   }
+  },
+  "trunkscell": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/233_TRUNKS CON ARMADURA,BASE, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     26,
+     27
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     7,
+     8,
+     9
+    ],
+    "kick": [
+     11,
+     12
+    ],
+    "ki": [
+     41,
+     42
+    ],
+    "pow": [
+     28,
+     29
+    ],
+    "hurt": [
+     24,
+     30
+    ],
+    "faint": [
+     25
+    ],
+    "portrait": 55
+   }
+  },
+  "bardock": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/05_Broly/Bardock/003_BARDOCK,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     9,
+     10
+    ],
+    "move": [
+     123
+    ],
+    "attack": [
+     97,
+     98,
+     99,
+     100
+    ],
+    "kick": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "ki": [
+     59,
+     65
+    ],
+    "pow": [
+     82,
+     83
+    ],
+    "hurt": [
+     84,
+     85
+    ],
+    "portrait": 0,
+    "escalaFija": true
+   },
+   "1": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Bardock/015_Bardock Ssj",
+    "idle": [
+     6,
+     7
+    ],
+    "move": [
+     11
+    ],
+    "attack": [
+     25,
+     26,
+     27,
+     28
+    ],
+    "kick": [
+     18,
+     19,
+     20,
+     21
+    ],
+    "ki": [
+     60,
+     62
+    ],
+    "pow": [
+     0,
+     1
+    ],
+    "hurt": [
+     40,
+     41
+    ]
+   },
+   "3": {
+    "pack": "05_Fanmade_y_alternativos/Bardock/014_Bardock SSJ4",
+    "idle": [
+     2,
+     3
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     11,
+     12,
+     13
+    ],
+    "kick": [
+     17,
+     18,
+     19
+    ],
+    "ki": [
+     52,
+     56
+    ],
+    "pow": [
+     43,
+     44,
+     45
+    ],
+    "hurt": [
+     32,
+     33
+    ]
+   }
+  },
+  "kefla": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Kefla/074_Kefla Super Sayajin",
+    "idle": [
+     28,
+     29
+    ],
+    "move": [
+     136
+    ],
+    "attack": [
+     56,
+     57,
+     58,
+     59
+    ],
+    "kick": [
+     75,
+     76,
+     77,
+     78
+    ],
+    "ki": [
+     133,
+     135
+    ],
+    "pow": [
+     139,
+     140,
+     141
+    ],
+    "hurt": [
+     94,
+     95
+    ]
+   }
   }
+ }
 }

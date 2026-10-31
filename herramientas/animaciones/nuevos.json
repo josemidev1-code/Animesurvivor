@@ -1557,6 +1557,493 @@
     "portrait": 105,
     "altura": 52
    }
+  },
+  "gogeta": {
+   "1": {
+    "pack": "02_GT/Gogeta/257_GOGETA SSJ4 GT",
+    "idle": [
+     38,
+     39
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     48
+    ],
+    "attack": [
+     52,
+     53,
+     54,
+     56
+    ],
+    "kick": [
+     60,
+     62
+    ],
+    "ki": [
+     147,
+     149
+    ],
+    "pow": [
+     108,
+     109
+    ],
+    "hurt": [
+     103,
+     103
+    ],
+    "faint": [
+     104
+    ],
+    "portrait": 0,
+    "altura": 56
+   },
+   "2": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Gogeta/252_gogeta.ssj blue HD.andres Game",
+    "idle": [
+     61,
+     62
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     68
+    ],
+    "attack": [
+     89,
+     90,
+     91
+    ],
+    "kick": [
+     95,
+     96
+    ],
+    "ki": [
+     195,
+     196
+    ],
+    "pow": [
+     57,
+     58,
+     59
+    ],
+    "hurt": [
+     112,
+     113
+    ],
+    "faint": [
+     117
+    ],
+    "portrait": 206,
+    "altura": 54
+   }
+  },
+  "gokugt": {
+   "1": {
+    "pack": "02_GT/Goku/259_GOKU SSJ GT",
+    "idle": [
+     10,
+     11
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     18
+    ],
+    "attack": [
+     24,
+     25,
+     27
+    ],
+    "kick": [
+     38,
+     39
+    ],
+    "ki": [
+     86,
+     87
+    ],
+    "pow": [
+     5,
+     6,
+     7
+    ],
+    "hurt": [
+     14,
+     15
+    ],
+    "portrait": 0,
+    "altura": 46
+   },
+   "2": {
+    "pack": "02_GT/Goku/260_GOKU SSJ3 GT",
+    "idle": [
+     15,
+     16
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     24
+    ],
+    "attack": [
+     33,
+     36,
+     35
+    ],
+    "kick": [
+     46,
+     47
+    ],
+    "ki": [
+     92,
+     93
+    ],
+    "pow": [
+     50,
+     51,
+     52
+    ],
+    "hurt": [
+     23,
+     25
+    ],
+    "portrait": 0,
+    "altura": 50
+   }
+  },
+  "vegetagt": {
+   "1": {
+    "pack": "02_GT/Vegeta/263_VEGETA SSJ GT",
+    "idle": [
+     10,
+     11
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     15
+    ],
+    "attack": [
+     20,
+     21,
+     23
+    ],
+    "kick": [
+     28,
+     29
+    ],
+    "ki": [
+     81,
+     84
+    ],
+    "pow": [
+     6,
+     7
+    ],
+    "hurt": [
+     36,
+     37
+    ],
+    "portrait": 0,
+    "altura": 50
+   }
+  },
+  "piccolo": {
+   "1": {
+    "pack": "01_Dragon_Ball_Super/08_Super_Hero/Piccolo/191_Orange Piccolo, Sprites BY ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     63,
+     64
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     59
+    ],
+    "attack": [
+     24,
+     25,
+     26
+    ],
+    "kick": [
+     41,
+     42
+    ],
+    "ki": [
+     14,
+     6
+    ],
+    "pow": [
+     35,
+     36
+    ],
+    "hurt": [
+     32,
+     34
+    ],
+    "faint": [
+     31
+    ],
+    "portrait": 71,
+    "altura": 58
+   }
+  },
+  "kefla": {
+   "1": {
+    "pack": "05_Fanmade_y_alternativos/Kefla/202_KEFLA ssjblue,ssjblue evolution, Andrés Gamen",
+    "idle": [
+     15,
+     16
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     26
+    ],
+    "attack": [
+     34,
+     35,
+     36
+    ],
+    "kick": [
+     40,
+     41
+    ],
+    "ki": [
+     64,
+     66
+    ],
+    "pow": [
+     62,
+     63
+    ],
+    "hurt": [
+     45,
+     46
+    ],
+    "faint": [
+     48
+    ],
+    "portrait": 82,
+    "altura": 54
+   }
+  },
+  "broly": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/017_Broly Segunda Forma",
+    "idle": [
+     41,
+     42
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     15,
+     16,
+     18
+    ],
+    "kick": [
+     21,
+     24
+    ],
+    "ki": [
+     54,
+     47
+    ],
+    "pow": [
+     38,
+     39,
+     40
+    ],
+    "hurt": [
+     31,
+     33
+    ],
+    "faint": [
+     37
+    ],
+    "altura": 62
+   },
+   "1": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/019_Broly Terceira forma",
+    "idle": [
+     1,
+     2
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     7,
+     8,
+     10
+    ],
+    "kick": [
+     13,
+     14
+    ],
+    "ki": [
+     42,
+     43
+    ],
+    "pow": [
+     18
+    ],
+    "hurt": [
+     31,
+     32
+    ],
+    "faint": [
+     33
+    ],
+    "altura": 62
+   },
+   "3": {
+    "pack": "05_Fanmade_y_alternativos/Broly/018_Broly Ssj4",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     9,
+     10,
+     11
+    ],
+    "kick": [
+     13,
+     15
+    ],
+    "ki": [
+     43,
+     45
+    ],
+    "pow": [
+     37,
+     38
+    ],
+    "hurt": [
+     28,
+     29
+    ],
+    "faint": [
+     30
+    ],
+    "altura": 64
+   }
+  },
+  "gohanadult": {
+   "2": {
+    "pack": "01_Dragon_Ball_Super/08_Super_Hero/Gohan/119_GOHAN BESTIA VERSIÓN 2 (ANDRÉS GAMEN ANIMATIONS)",
+    "idle": [
+     130,
+     131
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     138
+    ],
+    "attack": [
+     126,
+     127,
+     128
+    ],
+    "kick": [
+     115,
+     116
+    ],
+    "ki": [
+     17,
+     18
+    ],
+    "pow": [
+     66,
+     67,
+     68
+    ],
+    "hurt": [
+     73,
+     73
+    ],
+    "faint": [
+     71
+    ],
+    "portrait": 0,
+    "altura": 50
+   }
+  },
+  "trunkscell": {
+   "1": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/234_TRUNKS CON ARMADURA,SSJ1, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     4,
+     5
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     12
+    ],
+    "attack": [
+     15,
+     17,
+     18
+    ],
+    "kick": [
+     19,
+     23
+    ],
+    "ki": [
+     38,
+     40
+    ],
+    "pow": [
+     42
+    ],
+    "hurt": [
+     25,
+     26
+    ],
+    "faint": [
+     30
+    ],
+    "portrait": 54
+   }
   }
  }
 }
