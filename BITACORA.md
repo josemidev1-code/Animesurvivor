@@ -122,3 +122,10 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 
 ### Siguiente paso recomendado
 - Seguir metiendo los packs pendientes (apartado B de `SPRITES_PENDIENTES.md`), luego ataques con efectos reales.
+
+## 2026-10-31 — Claude (sesión 4)
+
+### Lo que pidió el usuario
+- «Sí, sigue»: seguir metiendo los 174 packs pendientes de `sprites/` como jugables.
+
+### Lo que hice
