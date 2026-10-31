@@ -2795,8 +2795,10 @@ function chooseMap(hid){initAudio();pickedHero=hid;hideMenus();$('#maps').hidden
 let mapCardsBuilt=false;
 function buildMapCards(){if(mapCardsBuilt)return;mapCardsBuilt=true;const box=$('#mapCards'),keep=MAPK,cx=cam.x,cy=cam.y;
   for(const id in MAPS){const M=MAPS[id],b=document.createElement('button');b.type='button';b.className='card';
+    // portada del escenario (sprites/06_Escenarios, generada con herramientas/montar_portadas.py)
+    if(window.MAP_COVER&&MAP_COVER[id]){const im=new Image();im.className='map';im.alt='';im.src=MAP_COVER[id];b.appendChild(im)}else{
     const c=mk(88,55);c.className='map';MAPK=id;cam.x=-44+(id==='arena'?-140:0);cam.y=-28+(id==='arena'?-150:id==='time'?-60:0);if(id==='futuro'){cam.x=-130;cam.y=-60}if(id==='vegetasei'){cam.x=-120;cam.y=-120}if(M.cam){cam.x=M.cam[0];cam.y=M.cam[1]}drawWorld(0);c.getContext('2d').drawImage(view,0,0,88,55,0,0,88,55);
-    b.appendChild(c);b.insertAdjacentHTML('beforeend',`<h3>${M.name}</h3><p>${M.sub}</p><span class="bosses">${M.bosses.map(x=>ET[x].n).join(' · ')}</span>`);
+    b.appendChild(c)}b.insertAdjacentHTML('beforeend',`<h3>${M.name}</h3><p>${M.sub}</p><span class="bosses">${M.bosses.map(x=>ET[x].n).join(' · ')}</span>`);
     b.dataset.map=id;b.insertAdjacentHTML('beforeend','<span class="stats clr"></span>');
     b.onclick=()=>{if(!mapOpen(id)){$('#diffInfo').textContent=mapLockMsg(id);return}if(false){$('#diffInfo').textContent=`Para jugar ${M.name} en ${DIFF[pickedDiff].n} primero gánalo en ${DIFF[pickedDiff-1].n}.`;return}$('#maps').hidden=true;startGame(pickedHero,id)};box.appendChild(b)}
   MAPK=keep;cam.x=cx;cam.y=cy}
