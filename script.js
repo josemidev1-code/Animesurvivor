@@ -2644,31 +2644,35 @@ ICON_C.senzu=icon('senzu');
 function bar(x,y,w,h,f,col,bg='#1a1f38'){ctx.fillStyle=OUTL;ctx.fillRect(x-1,y-1,w+2,h+2);ctx.fillStyle=bg;ctx.fillRect(x,y,w,h);ctx.fillStyle=col;ctx.fillRect(x,y,Math.round(w*clamp(f,0,1)),h)}
 function hud(time){
   const ps=stats();
-  bar(2,2,VW-4,5,P.xp/P.need,'#3a9aff');ctx.fillStyle='#bfe6ff';ctx.fillRect(2,2,Math.round((VW-4)*clamp(P.xp/P.need,0,1)),1);
-  text('NV '+P.lvl,4,10,'#ffffff',8,'left');
+  // HUD como PokéSurvivor: arriba a la izquierda nombre, nivel y vida con números; experiencia como línea fina
+  {const nm=HEROES[S.hid].name+(P.form>0?' · '+HEROES[S.hid].forms[P.form]:''),hw=Math.min(100,VW*0.24|0);
+    text(nm,4,3,'#ffffff',6,'left');text('Nv. '+P.lvl,4,11,'#ffd23f',6,'left');
+    const hx=37,hy=11,f=clamp(P.hp/ps.maxhp,0,1);ctx.fillStyle='rgba(0,0,0,.55)';ctx.fillRect(hx-1,hy-1,hw+2,8);ctx.fillStyle='#3a1018';ctx.fillRect(hx,hy,hw,6);
+    ctx.fillStyle=f<0.3?'#ff2a3a':'#ff4d5e';ctx.fillRect(hx,hy,Math.round(hw*f),6);ctx.fillStyle='rgba(255,255,255,.35)';ctx.fillRect(hx,hy,Math.round(hw*f),1);
+    text(Math.ceil(P.hp)+' / '+Math.round(ps.maxhp),hx+hw/2,hy+1,'#ffffff',4);
+    ctx.fillStyle='#10162a';ctx.fillRect(hx,hy+8,hw,2);ctx.fillStyle='#3a9aff';ctx.fillRect(hx,hy+8,Math.round(hw*clamp(P.xp/P.need,0,1)),2)}
   {const L=sigOpen(),n=L.length,w=26,gap=4,x0=Math.round(VW/2-(n*w+(n-1)*gap)/2),y=VH-26;P.barR=[];
     for(let i=0;i<n;i++){const x=x0+i*(w+gap),on=i===P.sel;P.barR.push([x,y,w,22]);ctx.fillStyle=on?'rgba(70,46,0,.85)':'rgba(8,10,30,.75)';ctx.fillRect(x,y,w,22);
       ctx.drawImage(sigIcon(L[i]),x+5,y+4);if(on&&P.sigT>0){ctx.fillStyle='rgba(0,0,0,.55)';ctx.fillRect(x,y,w,Math.round(22*clamp(P.sigT/P.sigCD,0,1)))}
       ctx.fillStyle=on?'#ffd23f':'#3a4a7a';ctx.fillRect(x,y,w,1);ctx.fillRect(x,y+21,w,1);ctx.fillRect(x,y,1,22);ctx.fillRect(x+w-1,y,1,22);text(String(i+1),x+2,y+2,'#ffd23f',6,'left')}
-    if(L[P.sel])text(MV[L[P.sel]].name.toUpperCase(),VW/2,y-10,'#ffffff',6);
+    if(L[P.sel])text(MV[L[P.sel]].name,VW/2,y-9,'#ff9a3a',6);
+    text('WASD moverse · 1-'+n+' cambiar técnica · Esc pausa',VW/2,VH-3,'rgba(200,210,235,.55)',4)
     if(P.newSig){const id=L[P.newSig.i];if(id&&((P.newSig.t*4|0)%2||P.newSig.t<2.2)){text('¡NUEVO ATAQUE: '+MV[id].name.toUpperCase()+'!',VW/2,y-34,'#ffd23f',8);text('PULSA '+(P.newSig.i+1)+' PARA USARLO',VW/2,y-22,'#ffffff',6)}}}
-  for(let i=0;i<7;i++){const x=VW/2-30+i*10,y=24;if(i<S.balls)drawDBall(x,y,i+1);else{ctx.globalAlpha=0.3;drawDBall(x,y,i+1);ctx.globalAlpha=1}}
-  const m=Math.floor(S.t/60),s=Math.floor(S.t%60);text(String(m).padStart(2,'0')+':'+String(s).padStart(2,'0'),VW/2,10,'#ffffff',8);
-  text('KO '+S.kills,VW-4,10,'#ffffff',8,'right');
-  if(P.form>0)text(HEROES[S.hid].forms[P.form],VW/2,21,'#ffd23f',8);
-  // hp bar
-  bar(4,21,64,5,P.hp/ps.maxhp,P.hp/ps.maxhp<0.3?'#ff4d5e':'#4fd16a');
+  for(let i=0;i<7;i++){const x=VW/2-30+i*10,y=27;if(i<S.balls)drawDBall(x,y,i+1);else{ctx.globalAlpha=0.3;drawDBall(x,y,i+1);ctx.globalAlpha=1}}
+  // arriba en el centro: tiempo grande y una línea con mapa, derrotados, zeni y esferas
+  const m=Math.floor(S.t/60),s=Math.floor(S.t%60);text(m+':'+String(s).padStart(2,'0'),VW/2,3,'#ffffff',10);
+  text((VW>=330?MAPS[S.map].name+' · ':'')+S.kills+' derrotados · '+S.zeni+' zeni'+(S.diff?' · '+DIFF[S.diff].n:''),VW/2,15,'rgba(200,210,235,.75)',4);
   // moves & cards
-  let x=4;for(const id of P.order){const mv=P.moves[id];ctx.fillStyle=mv.evo?'#ffd23f':'#2c3a6e';ctx.fillRect(x-1,30,18,18);ctx.fillStyle='#10162a';ctx.fillRect(x,31,16,16);ctx.drawImage(ic(id),x,31);digits(mv.evo?'9':String(mv.lv),x+14,44,mv.evo?'#ffd23f':'#ffffff');x+=20}
-  x=4;for(const id in P.cards){ctx.drawImage(ic(id),x,51,12,12);digits(String(P.cards[id]),x+11,58,'#bfe6ff');x+=14}
+  let x=4;for(const id of P.order){const mv=P.moves[id];ctx.fillStyle=mv.evo?'#ffd23f':'#2c3a6e';ctx.fillRect(x-1,25,18,18);ctx.fillStyle='#10162a';ctx.fillRect(x,26,16,16);ctx.drawImage(ic(id),x,26);digits(mv.evo?'9':String(mv.lv),x+14,39,mv.evo?'#ffd23f':'#ffffff');x+=20}
+  x=4;for(const id in P.cards){ctx.drawImage(ic(id),x,46,12,12);digits(String(P.cards[id]),x+11,53,'#bfe6ff');x+=14}
   // boss bar
   if(S.ev){const E=S.ev;
-    if(E.k==='kaio')text(`RETO DE KAIO ${Math.min(E.need,S.kills-E.k0)}/${E.need} · ${Math.ceil(E.t)}s`,VW/2,30,'#ffd23f',8);
-    if(E.k==='furia')text(`FURIA SAIYAN x2 · ${Math.ceil(E.t)}s`,VW/2,30,'#ff7a3a',8);
-    if(E.k==='elite')text(`GUERRERO DE ÉLITE · ${Math.ceil(E.t)}s`,VW/2,30,'#ff4d5e',8);
-    if(E.k==='gravedad')text(`GRAVEDAD x100 · EXP x2 · ${Math.ceil(E.t)}s`,VW/2,30,'#c0a0ff',8);
-    if(E.k==='tiempo')text(`TIEMPO DETENIDO · ${Math.ceil(E.t)}s`,VW/2,30,'#bfe6ff',8);
-    if(E.k==='fusion')text(`FUSIÓN · ${Math.ceil(E.t)}s`,VW/2,30,'#ffd23f',8);
+    if(E.k==='kaio')text(`RETO DE KAIO ${Math.min(E.need,S.kills-E.k0)}/${E.need} · ${Math.ceil(E.t)}s`,VW/2,36,'#ffd23f',8);
+    if(E.k==='furia')text(`FURIA SAIYAN x2 · ${Math.ceil(E.t)}s`,VW/2,36,'#ff7a3a',8);
+    if(E.k==='elite')text(`GUERRERO DE ÉLITE · ${Math.ceil(E.t)}s`,VW/2,36,'#ff4d5e',8);
+    if(E.k==='gravedad')text(`GRAVEDAD x100 · EXP x2 · ${Math.ceil(E.t)}s`,VW/2,36,'#c0a0ff',8);
+    if(E.k==='tiempo')text(`TIEMPO DETENIDO · ${Math.ceil(E.t)}s`,VW/2,36,'#bfe6ff',8);
+    if(E.k==='fusion')text(`FUSIÓN · ${Math.ceil(E.t)}s`,VW/2,36,'#ffd23f',8);
     if(E.k==='genkidama'){text(`GENKIDAMA ${Math.ceil(E.t)}`,VW/2,30,'#6ab8ff',8);}}
   drawRadar(time);if(S.boss&&!S.boss.dead){const w=Math.min(200,VW-40),bx=Math.round(VW/2-w/2),by=VH-16;bar(bx,by,w,6,S.boss.hp/S.boss.maxhp,'#c83ad8');text(ET[S.boss.type].n,VW/2,by-11,'#ffb0f0',8)}
   else if(S.bossIdx<BOSS_T.length){const left=BOSS_T[S.bossIdx]-S.t;if(left<20)text('SE ACERCA '+ET[MAPS[S.map].bosses[S.bossIdx]].n+' '+Math.ceil(left),VW/2,VH-14,(time*4|0)%2?'#ff4d5e':'#ffffff',8)}
@@ -2677,9 +2681,7 @@ function hud(time){
     text(b.text,VW/2,y,b.boss?'#ff4d5e':'#ffd23f',b.text.length>16?8:12);text(b.sub,VW/2,y+16,'#ffffff',8)}
   // joystick
   if(joy.on){ring(Math.round(joy.ox),Math.round(joy.oy),18,'rgba(255,255,255,.5)',2);const dx=joy.x-joy.ox,dy=joy.y-joy.oy,d=Math.hypot(dx,dy),k=d>18?18/d:1;circ(Math.round(joy.ox+dx*k),Math.round(joy.oy+dy*k),6,'rgba(255,255,255,.6)')}
-  // zeni
-  text('Z '+S.zeni,VW-4,21,'#ffd23f',8,'right');
-  if(S.diff)text(DIFF[S.diff].n,VW-4,32,DIFF[S.diff].c,8,'right');
+
 }
 function present(){sctx.imageSmoothingEnabled=false;sctx.drawImage(view,0,0,VW*2,VH*2,0,0,VW*SC*DPR,VH*SC*DPR)}
 

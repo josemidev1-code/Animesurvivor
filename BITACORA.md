@@ -342,3 +342,7 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - La bola que se carga antes de cada rayo es la bola de ki real de los packs (antes cuadrados de colores).
 - Todas las técnicas de bolas (Blaster Meteor, Hellzone, Rayo Chocolate, Justice Flash…) usan la bola de ki con estela del pack, y las bolas grandes (Masenko, Big Bang, Eraser Cannon, Death Ball…) la esfera del pack, teñidas con su color. Funciones `kiOrb` y `kiShot`; si el sprite no ha cargado se usa el dibujo anterior.
 - Probado en partida: Broly (bolas y Eraser Cannon) y el Kamehameha de Cell, sin errores.
+
+### Sesión 9, sexta parte: capturas de PokéSurvivor (menú y partida) sin texto
+- Interpretado como «la partida debe verse así». HUD rehecho: arriba a la izquierda nombre (y forma), «Nv. N» y barra de vida roja con «vida / máximo»; la experiencia pasa a una línea fina azul bajo la vida. Arriba en el centro el tiempo grande y una línea gris con mapa, derrotados, zeni y dificultad (sin el mapa en pantallas estrechas); debajo las 7 esferas. Abajo el nombre de la técnica en naranja, las casillas y una línea de ayuda de controles. Quitados «KO» y «Z» de la esquina derecha.
+- Probado en 800×600 y 1600×900. El menú ya seguía ese esquema (panel azul a la derecha y carta del personaje en el centro).
