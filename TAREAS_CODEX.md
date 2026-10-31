@@ -2,7 +2,7 @@
 
 Antes: lee `AGENTS.md` y `herramientas/GUIA_ANIMACIONES.md`. Apunta todo en `BITACORA.md` y haz commit tras cada tarea.
 Python: `C:\Users\soyjo\AppData\Local\Programs\Python\Python314\python.exe` con `PYTHONIOENCODING=utf-8`.
-Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=53`).
+Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=54`).
 
 **Prioridad actual (usuario, sesión 7): seguir animando todos los personajes.** Integrados 6 nuevos jugables con
 17 formas (62 en total). Continuar la lista B real de `SPRITES_PENDIENTES.md`; el apartado C explica por qué se
@@ -17,7 +17,7 @@ de cosas dibujadas por código de `PIXEL_ART_POR_CODIGO.md` (suelos, rayos, aura
 
 **Sesión 9, segunda parte:** cuerpo orientado al moverse/atacar, 11 formas corregidas, 26 ataques de la serie
 (`SIGS_SERIE`, barrera y absorción en `NOVA`), ficha animada en PERSONAJES y 6 eventos aleatorios (`eventos()` en script.js).
-Todos los personajes tienen lista propia. Hay 12 eventos (`EVENTOS`). Ideas siguientes: efectos de los packs para los rayos.
+Todos los personajes tienen lista propia. Hay 12 eventos (`EVENTOS`). Rayos y bolas ya salen de los packs (`kiOrb`, `kiShot`). Quedan por código: Makankosappo, disparos enemigos, auras.
 
 **Petición de sesión 8:** buscar sprites y pixel art animado en DeviantArt, especialmente objetos, con créditos.
 Primer lote integrado: senzu real, cápsulas de vida/ki y radar; fuentes en `CREDITOS_RECURSOS.md`.

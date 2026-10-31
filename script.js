@@ -2453,9 +2453,9 @@ function drawBeam(b){
   ctx.save();ctx.translate(ox,oy);ctx.rotate(b.a);
   const C=b.col; // [outer, mid, core]
   if(t<0){ // charging: growing orb with converging sparks
-    const k=1-(-t)/b.T,r=Math.round(2+k*(b.big?9:5)),fl=(Math.random()*2)|0;
-    ctx.fillStyle=C[0];ctx.fillRect(-r-1-fl,-r-1-fl,(r+1+fl)*2,(r+1+fl)*2);
-    ctx.fillStyle=C[1];ctx.fillRect(-r,-r,r*2,r*2);ctx.fillStyle=C[2];ctx.fillRect(-r/2,-r/2,r,r);
+    const k=1-(-t)/b.T,r=Math.round(2+k*(b.big?9:5)),fl=(Math.random()*2)|0,orb=kiOrb(C);
+    if(orb){const d=(r+1+fl)*2.2;ctx.drawImage(orb,Math.round(-d/2),Math.round(-d/2),Math.round(d),Math.round(d))}
+    else{ctx.fillStyle=C[0];ctx.fillRect(-r-1-fl,-r-1-fl,(r+1+fl)*2,(r+1+fl)*2);ctx.fillStyle=C[1];ctx.fillRect(-r,-r,r*2,r*2);ctx.fillStyle=C[2];ctx.fillRect(-r/2,-r/2,r,r)}
     for(let i=0;i<6;i++){const a=i/6*TAU+t*9,d=8+((1-k)*24);ctx.fillStyle=i%2?C[2]:C[1];ctx.fillRect(Math.round(Math.cos(a)*d),Math.round(Math.sin(a)*d),2,2)}
     ctx.restore();return}
   const grow=Math.min(1,t/0.12),fade=1-Math.max(0,(t-b.dur*0.75)/(b.dur*0.25));
@@ -2464,7 +2464,7 @@ function drawBeam(b){
     ctx.fillStyle=C[0];ctx.fillRect(0,-W/2-1,L,W+2);ctx.fillStyle=C[1];ctx.fillRect(0,-W/2,L,W);ctx.fillStyle=C[2];ctx.fillRect(0,-1,L,2);
     for(let x=0;x<L;x+=2){const s=Math.sin(x*0.25-t*30)*(W/2+5);ctx.fillStyle=s>0?'#ff6ad0':'#ffb0ea';ctx.fillRect(x,Math.round(s)-1,2,3);ctx.fillRect(x,Math.round(-s)-1,2,3)}
     ctx.restore();return}
-  if(b.hero&&FXI.kame&&FXI.galick){const sh=GALICK_SET.has(b.mv)?'galick':'kame',fi=(t*14|0)%FXI[sh].length,im=fxTint(FXI[sh][fi],C,sh+fi+C.join()),sw=im.width,shh=im.height,
+  if((b.hero||b.e)&&FXI.kame&&FXI.galick){const sh=b.e?(/GALICK|FLASH|SUPERNOVA/.test(b.name)?'galick':'kame'):GALICK_SET.has(b.mv)?'galick':'kame',fi=(t*14|0)%FXI[sh].length,im=fxTint(FXI[sh][fi],C,sh+fi+C.join()),sw=im.width,shh=im.height,
       k=Math.max(0.3,W*1.9/shh),H=Math.round(shh*k),hx=Math.round(sw*0.3*k),tx=Math.round(sw*0.14*k),back=-2,bl=Math.max(0,L-tx-hx+back);
     ctx.globalAlpha=Math.max(0.2,fade);ctx.drawImage(im,Math.round(sw*0.5),0,2,shh,hx-back-1,-H>>1,bl+2,H);ctx.drawImage(im,sw-Math.round(sw*0.14),0,Math.round(sw*0.14),shh,hx-back+bl,-H>>1,tx,H);
     ctx.drawImage(im,0,0,Math.round(sw*0.3),shh,-back,-H>>1,hx,H);ctx.globalAlpha=1;ctx.restore();return}
@@ -2509,7 +2509,12 @@ function discSprite(r,col,f){r=Math.max(4,Math.min(16,r));const key='d'+r+col.jo
     if(k){g.fillStyle=k;g.fillRect(cx+x,cy+y,1,1)}}
   g.fillStyle='rgba(255,255,255,.9)';const a=f/4*Math.PI;g.fillRect(Math.round(cx+Math.cos(a)*rx*0.65),Math.round(cy+Math.sin(a)*ry*0.65),2,1);
   return KIC[key]=c}
-function drawKi(p,x,y,time){if(p.spr){const im=p.spr,w=Math.round(im.width*0.6),h=Math.round(im.height*0.6);ctx.save();ctx.translate(x,y);ctx.rotate(Math.atan2(p.vy,p.vx));ctx.drawImage(im,-Math.round(w*0.7),-(h>>1),w,h);ctx.restore();return}
+// bola redonda (orbe) y bola con estela de los packs, teñidas con los colores de la técnica
+function kiOrb(C){const b=FXI['ki-buu-thin'];return b?fxTint(b[0],C,'orb'+C.join()):null}
+function kiShot(C){const b=FXI['ki-goku'];return b?fxTint(b[0],C,'shot'+C.join()):null}
+function drawKi(p,x,y,time){if(!p.spr&&p.col){const im=p.k==='big'?kiOrb(p.col):kiShot(p.col);if(im){const k=p.k==='big'?Math.max(1,p.r*2.4/im.height):Math.max(0.6,p.r/6.5),w=Math.round(im.width*k),h=Math.round(im.height*k);
+    ctx.save();ctx.translate(x,y);if(p.k!=='big')ctx.rotate(Math.atan2(p.vy,p.vx));ctx.drawImage(im,p.k==='big'?-(w>>1):-Math.round(w*0.7),-(h>>1),w,h);ctx.restore();return}}
+  if(p.spr){const im=p.spr,w=Math.round(im.width*0.6),h=Math.round(im.height*0.6);ctx.save();ctx.translate(x,y);ctx.rotate(Math.atan2(p.vy,p.vx));ctx.drawImage(im,-Math.round(w*0.7),-(h>>1),w,h);ctx.restore();return}
   const sp=Math.hypot(p.vx,p.vy)||1,nx=p.vx/sp,ny=p.vy/sp,r=Math.round(p.r);
   for(let i=3;i>=1;i--){const rr=Math.max(1,r-i),tx=Math.round(x-nx*i*(r+1)*0.9),ty=Math.round(y-ny*i*(r+1)*0.9);ctx.globalAlpha=0.25+0.15*(3-i);circ(tx,ty,rr,p.col[i>1?0:1])}
   ctx.globalAlpha=1;const im=kiSprite(r,p.col,(time*16|0)%2);ctx.drawImage(im,x-(im.width>>1),y-(im.height>>1))}

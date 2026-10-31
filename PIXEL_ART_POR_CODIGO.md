@@ -43,8 +43,8 @@ Cada mapa tiene **suelo** (baldosa que se repite) y **decorado** (objetos que bl
 
 | # | Qué | Notas |
 |---|---|---|
-| 2.1 | Rayos: Kamehameha, Galick Gun, Final Flash, Big Bang, Masenko, Makankosappo… | se dibujan por código; muchos packs traen el rayo: puedo sacarlos de ahí |
-| 2.2 | Bolas de ki (Ráfaga de Ki y disparos de enemigos) | algunas ya usan el sprite del pack |
+| 2.1 | Rayos | ✅ héroes y jefes usan el rayo de los packs (teñido); solo el Makankosappo (espiral) sigue por código |
+| 2.2 | Bolas de ki | ✅ las técnicas del jugador usan bolas de los packs; los disparos de los enemigos siguen por código |
 | 2.3 | Kienzan (disco) | |
 | 2.4 | Genkidama, esferas que giran, cortes de espada | |
 | 2.5 | Auras de los personajes (blanca, dorada, roja, azul, verde, morada, naranja, plateada) | |

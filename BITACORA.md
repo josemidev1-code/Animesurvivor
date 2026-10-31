@@ -336,3 +336,9 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Seis eventos nuevos (ya son 12, sin repetir el anterior): ¡Una esfera ha caído! (esfera del dragón lejos, a buscarla con el radar), Guerrero de élite (enemigo con aura roja y mucha vida; si lo derrotas en 35 s suelta un cofre), Gravedad x100 (20 s más lento pero el doble de experiencia), Genkidama (cuenta atrás de 10 s con la bola creciendo sobre la cabeza y luego barre la pantalla), Tiempo detenido (6 s los enemigos no se mueven) y Fusión (15 s más velocidad y técnicas más rápidas).
 - Marcas de meteoritos y Genkidama se dibujan ahora en el mundo (antes iban en la capa del HUD y salían desplazadas).
 - Probados los seis forzándolos en partida: sin errores; el élite tarda ~24 s con Goku de nivel bajo.
+
+### Sesión 9, quinta parte: «Rayos de los packs»
+- Los rayos de los héroes ya usaban el Kamehameha y el Galick Gun de los packs. Ahora también los de los jefes (Kamehameha de Cell, Final Flash de Vegeta, Supernova de Cooler…), teñidos con su color.
+- La bola que se carga antes de cada rayo es la bola de ki real de los packs (antes cuadrados de colores).
+- Todas las técnicas de bolas (Blaster Meteor, Hellzone, Rayo Chocolate, Justice Flash…) usan la bola de ki con estela del pack, y las bolas grandes (Masenko, Big Bang, Eraser Cannon, Death Ball…) la esfera del pack, teñidas con su color. Funciones `kiOrb` y `kiShot`; si el sprite no ha cargado se usa el dibujo anterior.
+- Probado en partida: Broly (bolas y Eraser Cannon) y el Kamehameha de Cell, sin errores.
