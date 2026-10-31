@@ -2,6 +2,8 @@
 
 Última actualización: 31/10/2026.
 
+> Si eres una IA: lee primero `AGENTS.md` y apunta todo en `BITACORA.md`.
+
 ## La idea
 
 Un juego de supervivencia estilo PokéSurvivor / Vampire Survivors con personajes de Dragon Ball, en **pixel art**,
