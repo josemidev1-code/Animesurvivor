@@ -8,6 +8,7 @@ Ya hechos por ti: ✅ logo del menú · ✅ las 7 esferas del dragón.
 
 ## 1. Escenarios (lo que más se ve)
 
+Las tarjetas de «Elige escenario» ya usan portadas reales de `sprites/06_Escenarios` (`portadas_mapas.js`).
 Cada mapa tiene **suelo** (baldosa que se repite) y **decorado** (objetos que bloquean el paso). Todo por código.
 
 | # | Mapa | Qué haría falta |
@@ -67,7 +68,7 @@ de radar animado de Lady-Pixel. Créditos y fuentes en `CREDITOS_RECURSOS.md`. E
 |---|---|
 | 4.1 | Iconos de los ataques (las casillas de abajo y las cartas al subir de nivel) |
 | 4.2 | Radar del dragón (la flecha que apunta a la esfera) |
-| 4.3 | Shenron (cuando juntas las 7 esferas) |
+| 4.3 | ✅ Shenron: sprite de `sprites/shenron/shenron.jpg` (gachapón y deseo de las 7 esferas) |
 | 4.4 | Barras de vida y experiencia, números de daño |
 
 ## Enemigos con recorte viejo (esto no hace falta que lo dibujes)

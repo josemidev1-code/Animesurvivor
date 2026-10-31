@@ -169,3 +169,21 @@ h2{font-family:var(--pix);font-size:clamp(14px,3.4vw,22px);color:var(--ki);margi
 #radarAviso img{width:48px;height:48px;image-rendering:pixelated}
 #cList{max-width:750px}
 #cList a{color:var(--namek)}
+/* subida de nivel como el panel azul de PokéSurvivor */
+#levelup{background:rgba(4,8,20,.55)}
+#levelup .lupanel{display:flex;flex-direction:column;align-items:center;gap:6px;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);overflow:auto;padding:20px 24px;background:linear-gradient(#2c4fa8,#1c3274);border:3px solid #6f8fe0;border-radius:6px;box-shadow:0 0 0 3px #0a1230,0 10px 40px rgba(0,0,0,.6)}
+#levelup h2{color:#fff;font-size:22px;text-shadow:2px 2px 0 #0a1230;margin:0}
+#levelup .lusub{font-family:var(--pix);font-size:9px;color:#dfe8ff;margin:4px 0 6px}
+#levelup kbd{display:inline-block;border:2px solid #b8c8f0;border-radius:4px;padding:3px 5px;margin:0 2px;font-family:var(--pix);font-size:8px;color:#fff}
+#levelup .ups{flex-direction:column;flex-wrap:nowrap;gap:10px;width:min(560px,calc(100vw - 64px))}
+#levelup .up{width:100%;flex-direction:row;align-items:center;gap:12px;padding:10px 14px;background:rgba(18,34,86,.55);border:2px solid #4a66b8;border-radius:8px;box-shadow:none;text-align:left;transform:none}
+#levelup .up:hover,#levelup .up:focus-visible{border-color:var(--ki);background:rgba(20,32,80,.85);transform:none}
+#levelup .up canvas{flex:none;width:44px;height:44px;padding:6px;background:rgba(10,20,60,.6);border-radius:6px}
+#levelup .up .tx{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}
+#levelup .up .hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#levelup .up .nm{font-size:11px;color:#fff}
+#levelup .up .lv{font-size:7px;color:#fff;background:#3f63c8;border:1px solid #8fa8f0;border-radius:4px;padding:3px 5px}
+#levelup .up.new .lv{background:#2f8ad8;color:#fff}
+#levelup .up .ds{font-size:18px;color:#c8d4f4}
+#levelup .up .key{flex:none;border:2px solid #b8c8f0;border-radius:5px;padding:6px 7px;color:#fff;font-size:9px}
+#levelup .up.evo{background:linear-gradient(90deg,rgba(90,64,8,.85),rgba(40,30,6,.85));border-color:var(--ki)}

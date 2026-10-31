@@ -13,6 +13,7 @@ Juego de supervivencia (estilo PokéSurvivor / Vampire Survivors) con personajes
 | `animaciones_juego.js` | Las animaciones de los personajes (se genera solo con `herramientas/montar_animaciones.py`) |
 | `sprites.js` | Enemigos, escenarios y efectos ya metidos en el juego |
 | `ui_imagenes.js` | Tu logo y tus 7 esferas, metidos en el juego |
+| `portadas_mapas.js`, `shenron_imagen.js` | Portadas de los mapas y Shenron del gachapón (se generan con `herramientas/montar_portadas.py` y `montar_shenron.py`) |
 | `ui/` | Tu logo y tus esferas en PNG (si los cambias, hay que volver a meterlos) |
 | `ui/objetos/` | Senzu, cápsulas, radares, originales y procedencia de cada recurso |
 | `CREDITOS_RECURSOS.md` | Autores de los recursos incorporados y catálogo de fuentes revisadas |
@@ -40,7 +41,8 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 - Senzu y radar con sprites de Legacy of Goku II; cápsulas de vitalidad (+25% vida), cápsulas de ki
   (técnica especial lista) y radar (atrae toda la experiencia), disponibles al romper cajas.
   El radar de Lady-Pixel aparece animado al atraer experiencia o detectar una esfera; créditos con enlaces y sin conexión.
-- Gachapón de Shenron, tienda, misiones, ranking, mejoras; todo desbloqueado de momento.
+- Jefes con daño corregido, vida sobre la cabeza de cada enemigo, bolas teledirigidas y panel de nivel azul (sesión 9).
+- Gachapón de Shenron (con su sprite real), tienda, misiones, ranking, mejoras; todo desbloqueado de momento.
 - El menú abre en menos de 1 segundo: los sprites se cargan al empezar la partida.
 
 ## Lo que falta (en este orden)

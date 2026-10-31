@@ -2,11 +2,18 @@
 
 Antes: lee `AGENTS.md` y `herramientas/GUIA_ANIMACIONES.md`. Apunta todo en `BITACORA.md` y haz commit tras cada tarea.
 Python: `C:\Users\soyjo\AppData\Local\Programs\Python\Python314\python.exe` con `PYTHONIOENCODING=utf-8`.
-Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=31`).
+Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=40`).
 
 **Prioridad actual (usuario, sesión 7): seguir animando todos los personajes.** Integrados 6 nuevos jugables con
 17 formas (62 en total). Continuar la lista B real de `SPRITES_PENDIENTES.md`; el apartado C explica por qué se
 aparcan ciertos packs incompletos. Las selecciones nuevas están en `variantes.json` y sus altas en `NUEVOS`.
+
+**Sesión 9 (Claude):** arreglados los jefes invulnerables (no tenían radio `r`), vida sobre la cabeza de los enemigos,
+bolas teledirigidas (opción `home` de `SHOT`), pose de brazos arriba si el enemigo está encima, portadas de mapas
+(`portadas_mapas.js`), Shenron real en el gachapón (`shenron_imagen.js`) y panel de subida de nivel azul.
+Pendiente de esa petición: repasar a ojo caminar/atacar de TODOS los personajes (formas con `move` de 1 fotograma
+flotan; `attack`/`ki` deben mirar hacia el enemigo), más variedad de enemigos (recuperar los 44 retirados) y el resto
+de cosas dibujadas por código de `PIXEL_ART_POR_CODIGO.md` (suelos, rayos, auras, iconos).
 
 **Petición de sesión 8:** buscar sprites y pixel art animado en DeviantArt, especialmente objetos, con créditos.
 Primer lote integrado: senzu real, cápsulas de vida/ki y radar; fuentes en `CREDITOS_RECURSOS.md`.

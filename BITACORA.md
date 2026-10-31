@@ -304,3 +304,10 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Portadas de los 24 mapas: elegidas de `sprites/06_Escenarios` (no existe ya otra carpeta de portadas; el archivo antiguo no está en el escritorio). `herramientas/montar_portadas.py` las recorta a 264×165 y las incrusta en `portadas_mapas.js` (`window.MAP_COVER`, con la ruta de origen en `MAP_COVER_SRC`). Las tarjetas de «Elige escenario» las usan en vez del dibujo del suelo.
 - Gachapón: Shenron pixelado de `sprites/shenron/shenron.jpg` recortado a su rejilla real (píxel de 14,15 px, fondo blanco quitado) con `herramientas/montar_shenron.py` → `ui/shenron.png` y `shenron_imagen.js`. Sale en el cartel (a la izquierda, con las 7 esferas del usuario girando en vez de bolas dibujadas) y en la animación de invocación. Eliminado el Shenron dibujado por código (`shenlong`), también en el deseo de las 7 esferas.
 - Quitados los muñecos dibujados por código que seguían saliendo: el cartel del gachapón usa la guardia real de cada pack; «Tu sombra» usa el pack de tu personaje oscurecido (`SCTINT.shadow`); el jugador ya no se dibuja con el modelo por código mientras carga su pack.
+- Subida de nivel como la captura de PokéSurvivor: panel azul centrado («¡Nivel N!», «Elige una recompensa · 1 2 3»), filas con icono, nombre, etiqueta, descripción y tecla; la elegida con borde amarillo.
+
+### A medias / problemas
+- No repasados uno a uno los 62 personajes: caminar y atacar siguen con la selección de fotogramas actual. Los sprites solo miran a izquierda/derecha; «arriba» usa la pose de poder.
+- La variedad de enemigos sigue limitada: 44 tipos retirados hasta tener secuencias buenas.
+- Siguen por código: suelos y decorados de los mapas, rayos, auras, iconos y chispas (`PIXEL_ART_POR_CODIGO.md`).
+- La antigua carpeta de portadas ya no existe; se usaron fondos de `sprites/06_Escenarios`. Si tienes las portadas originales, cambia los números de `ELEGIDAS` en `herramientas/montar_portadas.py`.

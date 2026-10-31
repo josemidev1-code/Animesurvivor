@@ -1703,10 +1703,10 @@ function optInfo(op){
   if(op.t==='heal')return{ic:'senzu',nm:'Semilla Senzu',lv:'CURA',ds:'Recupera toda la vida.',cls:''};
   return{ic:'xp',nm:'Zeni',lv:'+50',ds:'Monedas para la tienda.',cls:''}}
 function openLevelUp(title){
-  state='levelup';const box=$('#ups');box.innerHTML='';$('#luTitle').textContent=title||'¡NIVEL '+P.lvl+'!';
+  state='levelup';const box=$('#ups');box.innerHTML='';$('#luTitle').textContent=title||'¡Nivel '+P.lvl+'!';
   options().forEach((op,i)=>{const inf=optInfo(op),b=document.createElement('button');b.type='button';b.className='up '+inf.cls;
     const ic=inf.cv||icon(inf.ic);ic.setAttribute('aria-hidden','true');b.appendChild(ic);
-    b.insertAdjacentHTML('beforeend',`<span class="lv">${inf.lv}</span><span class="nm">${inf.nm}</span><span class="ds">${inf.ds}</span><span class="key">[${i+1}]</span>`);
+    b.insertAdjacentHTML('beforeend',`<span class="tx"><span class="hd"><span class="nm">${inf.nm}</span><span class="lv">${inf.lv}</span></span><span class="ds">${inf.ds}</span></span><span class="key">${i+1}</span>`);
     b.onclick=()=>{applyOpt(op);sfx('gem');$('#levelup').hidden=true;S.pending=Math.max(0,S.pending-1);state='play';last=performance.now()};
     box.appendChild(b)});
   $('#levelup').hidden=false;setTimeout(()=>{const f=box.querySelector('button');f&&f.focus({preventScroll:true})},30);sfx('level')}
