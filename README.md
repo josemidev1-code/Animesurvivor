@@ -14,6 +14,8 @@ Juego de supervivencia (estilo PokéSurvivor / Vampire Survivors) con personajes
 | `sprites.js` | Enemigos, escenarios y efectos ya metidos en el juego |
 | `ui_imagenes.js` | Tu logo y tus 7 esferas, metidos en el juego |
 | `ui/` | Tu logo y tus esferas en PNG (si los cambias, hay que volver a meterlos) |
+| `ui/objetos/` | Senzu, cápsulas, radares, originales y procedencia de cada recurso |
+| `CREDITOS_RECURSOS.md` | Autores de los recursos incorporados y catálogo de fuentes revisadas |
 | `sprites/` | Los packs de sprites originales de donde salen los personajes |
 | `herramientas/` | Programas para elegir fotogramas y montar las animaciones (ver `herramientas/GUIA_ANIMACIONES.md`) |
 | `BITACORA.md` | Diario: lo que pediste y lo que se hizo en cada sesión |
@@ -35,6 +37,9 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
   Los 24 mapas conservan cinco encuentros con jefes. Hay menos variedad de enemigos normales mientras se recuperan sus packs.
 - Los enemigos con un único fotograma de vuelo flotan en guardia; durante la carga ya no se dibujan cuerpos por código.
 - Logo del menú y esferas del dragón dibujados por ti.
+- Senzu y radar con sprites de Legacy of Goku II; cápsulas de vitalidad (+25% vida), cápsulas de ki
+  (técnica especial lista) y radar (atrae toda la experiencia), disponibles al romper cajas.
+  El radar de Lady-Pixel aparece animado al atraer experiencia o detectar una esfera; créditos con enlaces y sin conexión.
 - Gachapón de Shenron, tienda, misiones, ranking, mejoras; todo desbloqueado de momento.
 - El menú abre en menos de 1 segundo: los sprites se cargan al empezar la partida.
 
@@ -52,6 +57,10 @@ Comprobación de personajes: `node herramientas/comprobar_personajes.cjs`. Para 
 Comprobación de enemigos sin navegador: `node herramientas/comprobar_enemigos.cjs`.
 Ejecuta las tablas y el director del juego durante 16 minutos simulados en cada mapa, con dibujo y sonido simulados.
 No sustituye jugar una partida: el navegador de pruebas no permitió abrir el archivo local en la sesión 6.
+
+Objetos: `node herramientas/comprobar_objetos.cjs`. Para regenerar los recortes, imágenes incrustadas y créditos:
+`python herramientas/montar_objetos.py` (Pillow). Las condiciones y fuentes están en `ui/objetos/fuentes.json`;
+el GIF de Lady-Pixel se conserva íntegro. Falta revisar estos objetos en una partida real.
 
 ## Reglas
 

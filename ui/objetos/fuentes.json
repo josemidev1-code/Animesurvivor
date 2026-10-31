@@ -1,0 +1,28 @@
+{
+  "fechaRevision": "2026-10-31",
+  "fuentes": [
+    {
+      "id": "log2",
+      "archivo": "originales/objetos_log2.png",
+      "nombre": "Objetos de Dragon Ball Z: The Legacy of Goku II",
+      "autor": "Ragengow (extracción); Webfoot Technologies / Atari (juego original)",
+      "url": "https://www.spriters-resource.com/game_boy_advance/dbzlog2/asset/175858/",
+      "condiciones": "La hoja dice No Credit Needed. Se acredita igualmente la extracción. Es material del juego original; no se presenta como CC0 ni como arte propio.",
+      "objetos": {
+        "senzu": [59, 29, 26, 27],
+        "capsulaVida": [1, 30, 17, 30],
+        "capsulaKi": [19, 122, 17, 30],
+        "radar": [97, 29, 26, 27]
+      }
+    },
+    {
+      "id": "ladyPixel",
+      "archivo": "originales/radar_lady_pixel.gif",
+      "nombre": "Dragon Radar (animado)",
+      "autor": "Lady-Pixel",
+      "url": "https://www.deviantart.com/lady-pixel/art/Dragon-Radar-891273130",
+      "condiciones": "La descripción permite usarlo, prohíbe copiar, calcar, editar o atribuírselo. Se conserva el GIF original íntegro y se muestra como imagen animada, sin recortar ni recolorear.",
+      "imagenIntegra": "radarAnimado"
+    }
+  ]
+}

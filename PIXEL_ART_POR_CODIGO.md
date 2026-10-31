@@ -54,9 +54,12 @@ Cada mapa tiene **suelo** (baldosa que se repite) y **decorado** (objetos que bl
 | # | Qué |
 |---|---|
 | 3.1 | Gemas de experiencia (las que sueltan los enemigos) |
-| 3.2 | Semilla senzu |
+| 3.2 | ✅ Semilla senzu: sprite de Legacy of Goku II, extraído por Ragengow (`ui/objetos/`) |
 | 3.3 | Monedas de zeni |
 | 3.4 | Cajas que se rompen y sueltan premios |
+
+Ya incorporados también: cápsulas de vitalidad y ki y radar (sprites de Legacy of Goku II), e indicador
+de radar animado de Lady-Pixel. Créditos y fuentes en `CREDITOS_RECURSOS.md`. El icono Rastreador usa el radar real.
 
 ## 4. Interfaz
 

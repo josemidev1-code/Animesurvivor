@@ -966,9 +966,19 @@ const onRing=(tx,ty)=>Math.abs(tx)<=11&&Math.abs(ty)<=11;
   {const c=mk(14,18),g=c.getContext('2d');g.fillStyle='rgba(60,40,10,.3)';g.fillRect(4,14,9,3);g.fillStyle='#4a8a3a';g.fillRect(5,2,4,14);g.fillRect(1,6,2,5);g.fillRect(11,4,2,6);g.fillRect(3,9,2,2);g.fillRect(9,8,2,2);
     g.fillStyle='#6aaa4a';g.fillRect(6,2,1,13);g.fillRect(1,6,1,4);g.fillRect(11,4,1,5);DECOR.cactus=addOutline(c,'#1a3010')}
 })();
+// Objetos reales: fuentes, originales y recortes en ui/objetos/.
+const OBJ_IMG={};
+for(const id of ['senzu','capsulaVida','capsulaKi','radar']){
+  if(!window.UI_IMG?.[id])continue;
+  const im=new Image();im.onload=()=>{delete ICON_C[id];if(id==='radar')delete ICON_C.magnet};im.src=window.UI_IMG[id];OBJ_IMG[id]=im;
+}
+function drawObjeto(id,x,y,w=14){const im=OBJ_IMG[id];if(!im?.complete||!im.naturalWidth)return;
+  const h=w*im.naturalHeight/im.naturalWidth;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-h),w,h)}
 // ---------- icons ----------
 function icon(id){
   const c=mk(16,16),g=c.getContext('2d');const px=(x,y,w,h,col)=>{g.fillStyle=col;g.fillRect(x,y,w,h)};
+  const objeto=OBJ_IMG[id==='magnet'?'radar':id];
+  if(objeto){if(objeto.complete&&objeto.naturalWidth){const z=Math.min(16/objeto.naturalWidth,16/objeto.naturalHeight),w=objeto.naturalWidth*z,h=objeto.naturalHeight*z;g.drawImage(objeto,(16-w)/2,(16-h)/2,w,h)}return c}
   switch(id){
    case 'kiblast':pball(g,9,8,4,['#e09a1a','#ffd23f','#fff3a0','#ffffff']);px(1,7,4,2,'#ffd23f');px(2,10,3,1,'#ffb020');break;
    case 'kame':px(0,6,12,4,'#3aa8ff');px(0,7,12,2,'#bff0ff');pball(g,12,8,3,['#3aa8ff','#9fe8ff','#ffffff']);break;
@@ -989,12 +999,12 @@ function icon(id){
    case 'hp':px(3,4,4,6,'#ff4d5e');px(9,4,4,6,'#ff4d5e');px(4,10,8,2,'#ff4d5e');px(6,12,4,2,'#ff4d5e');px(7,6,2,4,'#ff4d5e');px(4,5,2,2,'#ffb0b8');break;
    case 'speed':for(let i=0;i<3;i++){px(2+i*4,4,2,2,'#4fd1a5');px(4+i*4,6,2,4,'#4fd1a5');px(2+i*4,10,2,2,'#4fd1a5')}break;
    case 'cd':pball(g,8,8,6,['#1a3a8a','#3a6ad8','#7aa8ff']);px(7,4,2,5,'#ffffff');px(8,8,3,2,'#ffffff');break;
-   case 'magnet':px(2,5,12,6,'#2a2a3a');px(9,5,5,5,'#4dff6a');px(10,6,2,2,'#c8ffd0');px(2,11,3,3,'#2a2a3a');break;
+   case 'magnet':break;
    case 'regen':pball(g,8,8,5,['#3a7a2a','#5aa83a','#8ad25a','#c8f09a'],6);px(7,3,1,10,'#3a7a2a');break;
    case 'area':for(let a=0;a<20;a++){const t=a/20*TAU;px(8+Math.cos(t)*6|0,8+Math.sin(t)*6|0,1,1,'#ffd23f')}px(7,7,3,3,'#ffd23f');break;
    case 'armor':px(3,3,10,9,'#d7e4f0');px(4,4,8,7,'#ece6da');px(3,3,3,3,'#d2a24c');px(10,3,3,3,'#d2a24c');px(6,12,4,2,'#262838');break;
    case 'xp':pball(g,8,8,5,['#1a5ad8','#3a9aff','#9ad8ff','#ffffff']);break;
-   case 'senzu':pball(g,8,8,4,['#3a7a2a','#5aa83a','#8ad25a','#c8f09a'],6);break;
+   case 'senzu':break;
    default:px(4,4,8,8,'#888');
   }
   return addOutline(c)}
@@ -1777,7 +1787,7 @@ function update(dt){
   for(const k of pickups){const d=Math.hypot(P.x-k.x,P.y-k.y);
     if(k.k==='magnet'||d<ps.mag*0.6){k.x+=(P.x-k.x)*dt*6;k.y+=(P.y-k.y)*dt*6}
     if(d<12){k.got=1;
-      if(k.k==='senzu'){P.hp=Math.min(ps.maxhp,P.hp+ps.maxhp*0.5);S.banner={t:1.2,text:'¡SEMILLA SENZU!',sub:'+50% vida'};sfx('level')}
+      if(k.k==='senzu'||k.k==='capsulaVida'||k.k==='capsulaKi'||k.k==='radar')recogerObjeto(k.k,ps);
       if(k.k==='zeni'){S.zeni+=10;sfx('gem')}
       if(k.k==='dball'){S.balls++;sfx('level');S.banner={t:1.6,text:'¡BOLA DE '+k.n+' ESTRELLA'+(k.n>1?'S':'')+'!',sub:S.balls+' de 7'};if(S.balls>=7){S.balls=0;S.wish=true}}
       if(k.k==='chest'){S.zeni+=60;S.pending++;S.chest=true;for(const g of gems)g.mag=true}}}
@@ -1786,6 +1796,14 @@ function update(dt){
   checkForm();
   if(S.wish&&state==='play'){S.wish=false;S.wishes++;openWish()}
   if(S.pending>0&&state==='play'){openLevelUp(S.chest?'¡COFRE DEL VILLANO!':null);S.chest=false}
+}
+function recogerObjeto(id,ps){
+  if(id==='senzu'||id==='capsulaVida'){const fraccion=id==='senzu'?0.5:0.25;P.hp=Math.min(ps.maxhp,P.hp+ps.maxhp*fraccion);
+    S.banner={t:1.4,text:id==='senzu'?'¡SEMILLA SENZU!':'¡CÁPSULA DE VITALIDAD!',sub:'+'+(fraccion*100)+'% vida'}}
+  else if(id==='capsulaKi'){P.sigT=0;S.banner={t:1.4,text:'¡CÁPSULA DE KI!',sub:'Tu técnica especial está lista'}}
+  else if(id==='radar'){for(const g of gems)g.mag=true;S.radarHasta=S.t+4;
+    S.banner={t:1.4,text:'¡RADAR DEL DRAGÓN!',sub:'Atrae toda la experiencia del suelo'}}
+  sfx('level');
 }
 function updateFx(dt){
   for(const p of parts){p.t-=dt;if(!p.ring){p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=0.92;p.vy*=0.92}}
@@ -2208,8 +2226,11 @@ function spawnCrate(x,y){if(!SPR.crate)SPR.crate=CRATESPR[0];const e=spawn('crat
 function crateLoot(e){burst(e.x,e.y-8,14,['#d8a060','#8a5a2a','#ffe060']);sfx('gem');const r=Math.random(),x=e.x,y=e.y;
   if(r<0.05&&S.balls<7)putPickup({k:'dball',n:(S.ballN++%7)+1,x,y});
   else if(r<0.15)putPickup({k:'chest',x,y});
-  else if(r<0.38)putPickup({k:'senzu',x,y});
-  else if(r<0.58){for(let i=0;i<6;i++)dropGem(x+rnd(-10,10),y+rnd(-10,10),3+(S.t/60|0))}
+  else if(r<0.30)putPickup({k:'senzu',x,y});
+  else if(r<0.40)putPickup({k:'capsulaVida',x,y});
+  else if(r<0.50)putPickup({k:'capsulaKi',x,y});
+  else if(r<0.58)putPickup({k:'radar',x,y});
+  else if(r<0.78){for(let i=0;i<6;i++)dropGem(x+rnd(-10,10),y+rnd(-10,10),3+(S.t/60|0))}
   else for(let i=0;i<3;i++)putPickup({k:'zeni',x:x+rnd(-8,8),y:y+rnd(-6,6)})}
 function crateTick(dt){if(state==='play')progTick();if(S.isl||state!=='play')return;S.crateT=(S.crateT||3)-dt;S.dbT=(S.dbT===undefined?60:S.dbT)-dt;
   let n=0;for(const e of enemies)if(e.crate&&!e.dead){if(Math.hypot(e.x-P.x,e.y-P.y)>700)e.dead=true;else n++}
@@ -2406,6 +2427,11 @@ function drawKi(p,x,y,time){if(p.spr){const im=p.spr,w=Math.round(im.width*0.6),
   ctx.globalAlpha=1;const im=kiSprite(r,p.col,(time*16|0)%2);ctx.drawImage(im,x-(im.width>>1),y-(im.height>>1))}
 // esferas del dragón dibujadas por el usuario (ui/esfera1..7.png, cargadas desde ui_imagenes.js); 18 px = 9 unidades
 if(window.UI_IMG){document.querySelectorAll('[data-ui]').forEach(e=>e.src=UI_IMG[e.dataset.ui]);const fav=document.createElement('link');fav.rel='icon';fav.href=UI_IMG.logo;document.head.appendChild(fav)}
+const radarAviso=$('#radarAviso');
+function actualizarRadarAnimado(){if(!radarAviso)return;
+  // El GIF de Lady-Pixel se muestra íntegro en DOM para conservar sus 44 fotogramas.
+  radarAviso.hidden=!(state==='play'&&S&&!S.isl&&((S.radarHasta||0)>S.t||pickups.some(k=>k.k==='dball'&&k.radar)));
+}
 const DBIMG=[];if(window.UI_IMG)for(let k=1;k<=7;k++){const im=new Image();im.src=UI_IMG['esfera'+k];DBIMG[k]=im}
 function drawDBall(x,y,n){const im=DBIMG[n];if(im&&im.complete&&im.naturalWidth){ctx.drawImage(im,Math.round(x*2-9)/2,Math.round(y*2-9)/2,9,9);return}
   circ(x,y,5,OUTL);circ(x,y,4,'#e0761a');circ(x-1,y-1,3,'#f2a02a')}
@@ -2445,7 +2471,7 @@ function render(time){
   for(const g of gems){const col=g.v>=20?['#ff4a5a','#ffb0b8']:g.v>=5?['#3ad870','#b0ffc8']:['#3a9aff','#c8ecff'];const x=X(g.x),y=Y(g.y)+((time*4+g.x)%2<1?0:-1);
     ctx.fillStyle=OUTL;ctx.fillRect(x-2,y-3,5,7);ctx.fillStyle=col[0];ctx.fillRect(x-1,y-2,3,5);ctx.fillStyle=col[1];ctx.fillRect(x-1,y-2,1,2)}
   for(const k of pickups){const x=X(k.x),y=Y(k.y);
-    if(k.k==='senzu'){ctx.drawImage(ICON_C.senzu,x-8,y-12)}
+    if(OBJ_IMG[k.k]){drawObjeto(k.k,x,y-3+Math.round(Math.sin(time*4)*1.5),k.k.startsWith('capsula')?8:14)}
     else if(k.k==='zeni'){ctx.fillStyle=OUTL;ctx.fillRect(x-3,y-7,7,7);ctx.fillStyle='#ffd23f';ctx.fillRect(x-2,y-6,5,5);ctx.fillStyle='#fff3a0';ctx.fillRect(x-1,y-5,2,2)}
     else if(k.k==='dball'){const b=Math.round(Math.sin(time*5)*2);ring(x,y-8+b,7+((time*8|0)%2),'rgba(255,200,80,.6)');drawDBall(x,y-8+b,k.n)}
     else if(k.k==='chest'){const b=(time*6|0)%2;ctx.fillStyle=OUTL;ctx.fillRect(x-8,y-12-b,16,12);ctx.fillStyle='#b8741a';ctx.fillRect(x-7,y-11-b,14,10);ctx.fillStyle='#ffd23f';ctx.fillRect(x-7,y-8-b,14,2);ctx.fillRect(x-1,y-9-b,3,4)}}
@@ -2743,7 +2769,7 @@ function loop(now){
   if(state==='dying'){P.dead+=dt;cam.shake=Math.max(cam.shake||0,P.dead<0.3?3:0);if(P.dead>1.8){P.dead=0;endGame(false)}}
   if(state==='title'||state==='maps'||state==='mine'||state==='gacha'||state==='credits'||state==='train'||state==='forge'){demoT+=dt;MAPK=Object.keys(WORLD)[Math.floor(demoT/12)%Object.keys(WORLD).length];cam.x=Math.sin(demoT*0.05)*400+demoT*12;cam.y=Math.cos(demoT*0.04)*300;ctx.fillStyle='#000';ctx.fillRect(0,0,VW,VH);drawWorld(now/1000);drawTitleDemo(now/1000)}
   else if(S)render(now/1000);
-  present()}catch(err){console.error(err)}
+  actualizarRadarAnimado();present()}catch(err){console.error(err)}
   requestAnimationFrame(loop)}
 const demo=[];
 function drawTitleDemo(time){
@@ -2900,9 +2926,9 @@ function drawBanner(){const c=$('#gBanner'),g=c.getContext('2d'),bn=gBanner();g.
   const ids=GPOOL[5];ids.forEach((id,i)=>{const im=fr(id,1);g.drawImage(im,30+i*Math.min(26,104/Math.max(1,ids.length-1)),4,im.width*0.75|0,im.height*0.75|0)})}
 function openGacha(){initAudio();state='gacha';$('#gFree').onclick=()=>wish(1,true);$('#gHist').onclick=()=>{const h=$('#gHistBox');h.hidden=!h.hidden};hideMenus();$('#gacha').hidden=false;$('#gRes').innerHTML='';gachaInfo();
   const tick=()=>{if(state!=='gacha')return;drawBanner();requestAnimationFrame(tick)};tick()}
-// ---------- sprite pack: sprites/manifest.json next to index.html (for your own hosted version) ----------
-let PACK_CREDITS=[];
-fetch('sprites/manifest.json').then(r=>r.ok?r.json():null).then(m=>{if(!m)return;PACK_CREDITS=m.credits||[];
+// Manifest opcional incrustado por quien personalice el juego; nunca se pide JSON por red.
+let PACK_CREDITS=window.RECURSOS_CREDITOS||[];
+(()=>{const m=window.SPRITE_MANIFEST;if(!m)return;PACK_CREDITS=PACK_CREDITS.concat(m.credits||[]);
   const load=(url,cb)=>{const im=new Image();im.onload=()=>{const c=mk(im.width,im.height);c.getContext('2d').drawImage(im,0,0);cb(c);if(state==='title')buildCards()};im.src='sprites/'+url};
   const strip=(c,n)=>{const w=Math.floor(c.width/n),out=[];for(let i=0;i<n;i++){const o=mk(w,c.height);o.getContext('2d').drawImage(c,i*w,0,w,c.height,0,0,w,c.height);out.push(o)}return out};
   for(const h in m.heroes||{})for(const f in m.heroes[h]){const e=m.heroes[h][f],key='h:'+h+':'+f;if(MYC[key])continue;const o={};MYC[key]=o;
@@ -2910,10 +2936,12 @@ fetch('sprites/manifest.json').then(r=>r.ok?r.json():null).then(m=>{if(!m)return
     if(e.walk)load(e.walk,c=>{o.walk=strip(c,e.walkFrames||4);o.walkF=o.walk.map(flipC)});
     else{const wi=new Image();wi.onload=()=>{if(!o.c)return;const c=mk(wi.width,wi.height);c.getContext('2d').drawImage(wi,0,0);o.walk=strip(c,Math.max(1,Math.round(wi.width/o.c.width)));o.walkF=o.walk.map(flipC)};wi.onerror=()=>{};setTimeout(()=>{wi.src='sprites/'+img.replace(/\.png$/i,'_walk.png')},300)}}
   for(const id in m.enemies||{}){if(MYC['e:'+id])continue;const o={};MYC['e:'+id]=o;load(m.enemies[id],c=>{o.c=c;delete SPR[id]})}
-}).catch(()=>{});
+})();
 function openCredits(){state='credits';hideMenus();$('#credits').hidden=false;
-  const L=[['Juego, código y pixel art original','AnimeSurvivor'],...PACK_CREDITS.map(c=>[c.what||'Sprites',c.name+(c.url?' · '+c.url:'')])];
-  $('#cList').innerHTML=L.map(([a,b])=>`<p class="stat">${a}: <b>${b.replace(/</g,'&lt;')}</b></p>`).join('')}
+  const L=[{what:'Diseño y programación',name:'AnimeSurvivor'},{what:'Logo y siete esferas del dragón',name:'Josemi'},...PACK_CREDITS],box=$('#cList');box.replaceChildren();
+  for(const c of L){const p=document.createElement('p');p.className='stat';p.append((c.what||'Sprites')+': ');
+    const b=document.createElement('b');b.textContent=c.name;p.appendChild(b);
+    if(/^https?:\/\//i.test(c.url||'')){const a=document.createElement('a');a.href=c.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Ver fuente';p.append(' · ',a)}box.appendChild(p)}}
 function fmt(t){return String(Math.floor(t/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0')}
 function endGame(won){
   state='end';$('#hudBtns').hidden=true;

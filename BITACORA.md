@@ -260,3 +260,16 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 
 ### Siguiente paso recomendado
 - Continuar con Goku Granola (132, 136 y 149), revisando los packs antes de seleccionar fotogramas. Mantener NUEVOS, el paquete generado y la lista de pendientes sincronizados; verificar con comprobar_personajes.cjs. Probar también las nuevas cadenas de transformación en partida.
+
+## 2026-10-31 — Codex (sesión 8)
+
+### Lo que pidió el usuario
+- «BUSCA todo tipo de pixel arts animados y pack de sprites de devianart y seguimos desarrollando, y del que cojas menciona créditos, me hace falta objetos de la serie rollo semillas senzu y todo».
+
+### Lo que hice
+- Se prioriza buscar objetos de Dragon Ball y recursos animados en DeviantArt, comprobar condiciones y autoría, e integrar los aprovechables con créditos visibles.
+- Integrados recortes reales de senzu, cápsulas de vitalidad y ki y radar de Legacy of Goku II (hoja de Ragengow; Webfoot Technologies / Atari). Original y coordenadas conservados en ui/objetos/; no se han usado dibujos nuevos por código.
+- GIF Dragon Radar de Lady-Pixel incorporado íntegro (44 fotogramas, con transparencia) como indicador de detección/recogida; su ficha permite usarlo sin editar. Las senzu y cápsulas de SailorTrekkie92 quedan fuera: su biografía exige permiso previo.
+- Cápsula de vitalidad: +25% de vida sin superar el máximo; cápsula de ki: técnica especial lista; radar: atrae toda la experiencia del suelo. Salen al romper cajas. La senzu conserva +50% de vida.
+- Créditos con autores y enlaces integrados en ui_imagenes.js; eliminado el fetch del manifest inexistente. El manifest opcional de personalización ahora puede incrustarse como window.SPRITE_MANIFEST.
+- Generador montar_objetos.py y comprobación de objetos: imágenes incrustadas, GIF idéntico al original, límites de curación, recarga, atracción, ocho ramas del botín y ocultación del indicador al pausar. También pasan las comprobaciones de personajes y enemigos.
