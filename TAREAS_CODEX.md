@@ -2,10 +2,10 @@
 
 Antes: lee `AGENTS.md` y `herramientas/GUIA_ANIMACIONES.md`. Apunta todo en `BITACORA.md` y haz commit tras cada tarea.
 Python: `C:\Users\soyjo\AppData\Local\Programs\Python\Python314\python.exe` con `PYTHONIOENCODING=utf-8`.
-Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=29`).
+Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=30`).
 
-**Prioridad actual (usuario, sesión 7): seguir animando todos los personajes.** Integrados 5 nuevos jugables con
-14 formas (61 en total). Continuar la lista B real de `SPRITES_PENDIENTES.md`; el apartado C explica por qué se
+**Prioridad actual (usuario, sesión 7): seguir animando todos los personajes.** Integrados 6 nuevos jugables con
+17 formas (62 en total). Continuar la lista B real de `SPRITES_PENDIENTES.md`; el apartado C explica por qué se
 aparcan ciertos packs incompletos. Las selecciones nuevas están en `variantes.json` y sus altas en `NUEVOS`.
 
 ## 1. Rehacer los ~45 enemigos con recorte viejo (prioridad del usuario)
@@ -36,14 +36,15 @@ Cómo (igual que los héroes):
 
 ## 2. Meter los packs pendientes como jugables
 
-Lista en `SPRITES_PENDIENTES.md` (apartado B): 62 de Goku, 30 de Vegeta, 16 de Goku Black. Agrupa 3-6 packs por personaje.
+Lista en `SPRITES_PENDIENTES.md` (apartado B): 59 de Goku, 30 de Vegeta, 16 de Goku Black. Agrupa 3-6 packs por personaje.
 Cada personaje necesita **dos cosas** (si falta la segunda, no sale en el juego):
 - sus formas en `herramientas/animaciones/variantes.json` (con `poner.py`), y
 - su entrada en la tabla `NUEVOS` de `script.js` (copia el formato de `gokumoro`: name, rar, hp, spd, atk, start, desc,
   forms, aura, sig). Auras válidas: white, gold, red, blue, green, purple, orange, silver.
-Siguiente grupo propuesto: variantes fanmade de Goku (129 Bestia, 130 Ikari, 131 Místico, 139 SSJ 100), siempre después de mirar sus hojas.
+Siguiente grupo propuesto: Goku de Granola (132, 136 y 149), siempre después de mirar sus hojas.
+Goku alternativo (129 Bestia, 130 Ikari y 131 Místico) ya está integrado; 139 SSJ 100 queda pendiente.
 Goku Broly 216/221 ya están; 217/222 quedan incompletos (ver apartado C).
-Quita de `SPRITES_PENDIENTES.md` los packs usados y actualiza el número de jugables en `README.md` (ahora 61).
+Quita de `SPRITES_PENDIENTES.md` los packs usados y actualiza el número de jugables en `README.md` (ahora 62).
 
 ## 3. Sustituir el pixel art dibujado por código
 

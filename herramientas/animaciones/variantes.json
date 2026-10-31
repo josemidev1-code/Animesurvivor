@@ -1995,6 +1995,127 @@
     ],
     "portrait": 1
    }
+  },
+  "gokualt": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/131_GOKU MODO MÍSTICO,DBZ, ANDRÉS GAMEN ANIMATIONS (SPRITES HD)",
+    "idle": [
+     90,
+     91
+    ],
+    "move": [
+     87
+    ],
+    "attack": [
+     73,
+     74,
+     75,
+     76
+    ],
+    "kick": [
+     67,
+     68
+    ],
+    "ki": [
+     51,
+     50
+    ],
+    "pow": [
+     42,
+     43
+    ],
+    "hurt": [
+     34,
+     35
+    ],
+    "faint": [
+     32
+    ],
+    "portrait": 3
+   },
+   "1": {
+    "pack": "05_Fanmade_y_alternativos/Goku/130_GOKU MODO IKARI,SPRITE HD, BY ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     73,
+     74
+    ],
+    "move": [
+     66
+    ],
+    "attack": [
+     71,
+     62,
+     63,
+     65
+    ],
+    "kick": [
+     55,
+     56,
+     57
+    ],
+    "ki": [
+     23,
+     14
+    ],
+    "pow": [
+     38,
+     39
+    ],
+    "hurt": [
+     41,
+     42
+    ],
+    "faint": [
+     43
+    ],
+    "portrait": 4,
+    "escalaFrames": {
+     "38": 2.4,
+     "39": 2.4,
+     "43": 4
+    }
+   },
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Goku/129_GOKU MODO BESTIA,BY ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     35,
+     36
+    ],
+    "move": [
+     93
+    ],
+    "attack": [
+     77,
+     80,
+     81,
+     82
+    ],
+    "kick": [
+     68,
+     69
+    ],
+    "ki": [
+     48,
+     58
+    ],
+    "pow": [
+     40,
+     41
+    ],
+    "hurt": [
+     21,
+     23
+    ],
+    "faint": [
+     20
+    ],
+    "portrait": 113,
+    "escalaFrames": {
+     "40": 4,
+     "41": 4,
+     "48": 4
+    }
+   }
   }
  }
 }

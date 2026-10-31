@@ -27,9 +27,9 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 
 ## Cómo está ahora (31/10/2026)
 
-- **61 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
+- **62 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
 - Nuevos de la sesión 7: Goku película Broly (4 formas), Vegeta Blue manga (2), Vegeta Dios de Broly (1),
-  Black Time Breaker (3) y Goku Black fanmade (4). Las 14 formas tienen guardia, impulso, combo, patada, ki, aura, daño, muerte y retrato.
+  Black Time Breaker (3), Goku Black fanmade (4) y Goku alternativo (Místico, Ikari y Bestia). Las 17 formas tienen guardia, impulso, combo, patada, ki, aura, daño, muerte y retrato.
 - **70 tipos de enemigo** con animaciones seleccionadas de sus propios personajes; además, la sombra del jugador.
 - **44 tipos retirados temporalmente** por no tener secuencias completas revisadas (lista en `SPRITES_PENDIENTES.md`).
   Los 24 mapas conservan cinco encuentros con jefes. Hay menos variedad de enemigos normales mientras se recuperan sus packs.
@@ -40,13 +40,14 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 
 ## Lo que falta (en este orden)
 
-1. Seguir animando los packs pendientes: Goku (62), Vegeta (30) y Goku Black (16); 127 packs en total en la lista B de `SPRITES_PENDIENTES.md` (incluye incompletos).
+1. Seguir animando los packs pendientes: Goku (59), Vegeta (30) y Goku Black (16); 124 packs en total en la lista B de `SPRITES_PENDIENTES.md` (incluye incompletos).
 2. Probar una partida con los personajes nuevos, los enemigos corregidos, Ráfaga de Ki y una transformación. Recuperar los enemigos retirados solo con secuencias buenas.
 3. Ataques con efectos reales de los sprites (Kamehameha, bolas de ki, auras) en vez de dibujados por código.
 4. HUD y subida de nivel como las capturas de PokéSurvivor que mandaste.
+5. Pulir los escenarios, como señaló el usuario en la sesión 7.
 
 Comprobación de personajes: `node herramientas/comprobar_personajes.cjs`. Para aplicar las reglas de fotogramas y muerte a las incorporaciones de esta sesión:
-`node herramientas/comprobar_personajes.cjs gokubroly vegetamanga vegetabroly blacktime blackfan`.
+`node herramientas/comprobar_personajes.cjs gokubroly vegetamanga vegetabroly blacktime blackfan gokualt`.
 
 Comprobación de enemigos sin navegador: `node herramientas/comprobar_enemigos.cjs`.
 Ejecuta las tablas y el director del juego durante 16 minutos simulados en cada mapa, con dibujo y sonido simulados.

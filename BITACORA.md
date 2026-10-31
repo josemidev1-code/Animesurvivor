@@ -247,3 +247,16 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Revisados todos los PNG de los packs, revisar_todo y generadas previsualizaciones PNG/GIF de cada forma nueva. En Black Kaioken se sustituyeron dos poses quietas que entraron por error en move por los impulsos 93/94 y se corrigió la escala desigual entre los dos fotogramas de aura.
 - Majin Black 183–187 revisados, pero sin selección completa que cumpla daño y patadas: quedan pendientes y anotados, no se inventan acciones.
 - Herramienta comprobar_personajes.cjs: detecta animaciones sin alta en NUEVOS, discrepancias de formas, retratos o ataques inexistentes y tiras PNG con medidas/duraciones incorrectas. Con IDs aplica además las cantidades de la guía y exige muerte. Las cinco incorporaciones (14 formas) y todo NUEVOS (36 personajes, 87 formas) pasan.
+- El usuario comenta: «me está gustando el trabajo [...] falta pulir algunos escenarios [...] por lo general está muy bien». Se anota el pulido de escenarios como pendiente posterior, manteniendo ahora el foco en animar personajes.
+- Goku alternativo integrado con Místico (131), Ikari (130) y Bestia (129): impulso, guardia, combo, patadas, ki, aura, dos reacciones de daño, muerte y retrato. Revisadas las tres previsualizaciones completas tras corregir escala en auras, muerte de Ikari y carga de Bestia; el disparo Místico usa ahora carga 51 y lanzamiento 50, y Bestia lanza con palma extendida (58).
+- Goku 139 (SSJ 100) revisado pero sin selección legible completa; se mantiene pendiente por su cabello que oculta las acciones.
+- Estado: seis jugables nuevos, 17 formas, 62 personajes en total. Primeros lotes guardados en 3a2b8af y 1ebaa99; recursos finales a v30. Pendientes reales en la lista B: 124 packs (incluye incompletos), de los cuales Goku 59, Vegeta 30 y Black 16.
+- Verificación final: decodificadas las 1.299 tiras PNG de los 62 conjuntos, sin celdas vacías ni dimensiones incorrectas; índices de las 17 formas nuevas válidos y cinco recursos locales en v30. Pasan la comprobación estricta de los seis nuevos personajes, el registro completo de NUEVOS (37 personajes, 90 formas), sintaxis y diff. La auditoría de enemigos conserva 24 mapas y 120 jefes.
+
+### A medias / problemas
+- Todavía quedan variantes por animar: no se han dado por completados los 124 packs pendientes ni los enemigos retirados. Los incompletos revisados se explican en SPRITES_PENDIENTES.md, apartado C.
+- Revisión visual hecha sobre las hojas y previsualizaciones PNG; quedan partidas reales con los personajes nuevos, Ráfaga de Ki y transformaciones. No se ha probado el juego en navegador en esta sesión (la apertura local ya quedó bloqueada por su política en la sesión 6).
+- El pulido de escenarios queda anotado para después de las animaciones; no se han cambiado escenarios.
+
+### Siguiente paso recomendado
+- Continuar con Goku Granola (132, 136 y 149), revisando los packs antes de seleccionar fotogramas. Mantener NUEVOS, el paquete generado y la lista de pendientes sincronizados; verificar con comprobar_personajes.cjs. Probar también las nuevas cadenas de transformación en partida.

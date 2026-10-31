@@ -44,13 +44,13 @@ Recuperados con formas ya revisadas: Vegeta Saiyan/base, Majin Vegeta, Frost fin
 contenido/SSJ/legendario, Kale SSJ y A17 jefe (13 IDs). Kale se llama **Kale Super Saiyan** porque ese es su pack.
 No se han añadido personajes jugables en esta revisión.
 
-## B) Packs de `sprites/` que aún no están en el juego (127)
+## B) Packs de `sprites/` que aún no están en el juego (124)
 
 Casi todos son **versiones alternativas** de personajes que ya son jugables (otro artista, otra ropa, formas fanmade:
 Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos como formas o personajes nuevos
 (p. ej. "GOKU XENO", "GOKU FANMADE", "BLACK FANMADE") eligiendo fotogramas con `ver_pack.py`.
 
-### Goku (62)
+### Goku (59)
 - `00_Dragon_Ball_Z/01_Namek_y_Freezer/Goku/060_Goku Ssj (Saga Freeza)`
 - `00_Dragon_Ball_Z/01_Namek_y_Freezer/Goku/128_GOKU GINYU, ANDRÉS GAMEN ANIMATIONS ✓ SPRITE HD`
 - `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/281_GOKU YADRAT BASE`
@@ -88,9 +88,6 @@ Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos co
 - `03_Daima/Goku/279_GOKU SSJ4 ULSW DBZ DAIMA`
 - `05_Fanmade_y_alternativos/Goku/059_Goku SSJ Kaioken`
 - `05_Fanmade_y_alternativos/Goku/127_GOKU EVIL SSJ 2 , ANDRÉS GAMEN ANIMATIONS , SPRITE HD,`
-- `05_Fanmade_y_alternativos/Goku/129_GOKU MODO BESTIA,BY ANDRÉS GAMEN ANIMATIONS`
-- `05_Fanmade_y_alternativos/Goku/130_GOKU MODO IKARI,SPRITE HD, BY ANDRÉS GAMEN ANIMATIONS`
-- `05_Fanmade_y_alternativos/Goku/131_GOKU MODO MÍSTICO,DBZ, ANDRÉS GAMEN ANIMATIONS (SPRITES HD)`
 - `05_Fanmade_y_alternativos/Goku/133_GOKU MUI BLUE EVOLUTION, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )`
 - `05_Fanmade_y_alternativos/Goku/134_GOKU MUI BLUE, ANDRÉS GAMEN ANIMATIONS ✓ SPRITE HD`
 - `05_Fanmade_y_alternativos/Goku/135_GOKU MUI DIOS, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )`
@@ -219,3 +216,5 @@ Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos co
 - Vegeta 304 (abrigo): no tiene todas las acciones de combate y daño.
 - Vegeta 250 (Dios patrullero): solo se identificó un fotograma de daño; descartada la selección que repetía ese fotograma.
 - Majin Black 183–187: no se localizaron todas las secuencias de patada y daño exigidas; no se integran aún.
+
+- Goku 139 (SSJ 100): mini-pack de 28 imágenes con cabello que tapa casi todo el cuerpo; no se encontró una selección legible y completa de combate/daño. Se mantiene pendiente.
