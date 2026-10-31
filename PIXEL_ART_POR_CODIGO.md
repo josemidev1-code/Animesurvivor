@@ -9,6 +9,7 @@ Ya hechos por ti: ✅ logo del menú · ✅ las 7 esferas del dragón.
 ## 1. Escenarios (lo que más se ve)
 
 Las tarjetas de «Elige escenario» ya usan portadas reales de `sprites/06_Escenarios` (`portadas_mapas.js`).
+✅ Sesión 9: 32 suelos y los árboles/rocas genéricos ya son baldosas reales (Ninja Adventure, CC0). Quedan por código agua, lava, cielo, relieves y edificios propios de cada mapa.
 Cada mapa tiene **suelo** (baldosa que se repite) y **decorado** (objetos que bloquean el paso). Todo por código.
 
 | # | Mapa | Qué haría falta |

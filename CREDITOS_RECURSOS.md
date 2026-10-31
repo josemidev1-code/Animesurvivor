@@ -34,6 +34,15 @@ Ninguna de las tres fichas indica restricciones; se acredita al autor y a los co
 
 Burter (BrolyGamer096) y Recoome (Bite035) no permiten bajar el original a tamaño completo sin cuenta; pendientes.
 
+## Escenarios (sesión 9)
+
+| Recurso | Crédito | Fuente | Uso en el juego |
+|---|---|---|---|
+| Suelos (hierba, arena, tierra, nieve, ladrillo), árboles y rocas | **Pixel-Boy y AAA** — Ninja Adventure Asset Pack, licencia **CC0** (piden un enlace como agradecimiento) | [itch.io](https://pixel-boy.itch.io/ninja-adventure-asset-pack) · [GitHub](https://github.com/pixel-boy/NinjaAdventure) | 32 suelos de los mapas y árboles/rocas genéricos (`escenarios_tiles.js`, generado con `herramientas/montar_escenarios.py`) |
+
+Tilesets originales en `sprites/06_Escenarios/Tiles/`. Agua, lava, cielo y suelos muy propios de Dragon Ball (camino de la
+serpiente, Yardrat, Red Ribbon) siguen dibujados por código porque el pack no los trae.
+
 ## Recursos que ya tenía el proyecto
 
 - **Josemi**: logo y siete esferas del dragón de `ui/`.

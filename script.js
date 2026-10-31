@@ -871,6 +871,11 @@ const T=16, TILES={grass:[],water:[]};
     TILES.water.push(c)}
 })();
 const DECOR={};
+// Suelos y decorados reales (escenarios_tiles.js, pack Ninja Adventure CC0): sustituyen a los dibujados por código
+// al cargar la imagen; si no carga, se queda el dibujo anterior.
+(function escenariosReales(){const pinta=(src,f,cb)=>{const im=new Image();im.onload=()=>{const c=mk(im.width,im.height),g=c.getContext('2d');g.imageSmoothingEnabled=false;if(f)g.filter=f;g.drawImage(im,0,0);cb(c)};im.src=src};
+  for(const k in window.ESC_TILES||{}){const E=ESC_TILES[k];pinta(E.src,E.f,c=>{const L=[];for(let i=0;i<E.n;i++){const t=mk(T,T);t.getContext('2d').drawImage(c,i*T,0,T,T,0,0,T,T);L.push(t)}if(TILES[k])TILES[k].splice(0,TILES[k].length,...L)})}
+  for(const k in window.ESC_DECOR||{}){const E=ESC_DECOR[k];pinta(E.src,E.f,c=>{DECOR[k]=c})}})();
 (function buildDecor(){
   // Ajissa tree, seen from above: round blue-green canopy with shadow
   for(let v=0;v<2;v++){const s=v?30:24,c=mk(s+8,s+8),g=c.getContext('2d'),r=s/2|0;
@@ -3051,6 +3056,7 @@ let PACK_CREDITS=window.RECURSOS_CREDITOS||[];
 PACK_CREDITS=PACK_CREDITS.concat([
  {what:'Soldado de Freezer (enemigo)',name:'TheWarriorFF2 / Spir1tSolo; con Que, qsab101, DyanDisel, Izanagi797, Orumaitoobeso, Reeck495, MV95, MANIKDX y Papuro Tenkikujimo',url:'https://www.deviantart.com/thewarriorff2/art/Frieza-s-Soldier-1-Sprite-Sheet-856331851'},
  {what:'Capitán Ginyu (jefe)',name:'Strice12; con azazel300, JustOruma, MrDryy, Godkuuxfy, MAST3RK1LL3R171, GZ52, arisrad, AlanBrito962 y MatheusAnimaa',url:'https://www.deviantart.com/strice12/art/Sheet-Sprite-Ginyu-Ulsw-1161968207'},
+ {what:'Suelos, árboles y rocas de los escenarios (CC0)',name:'Pixel-Boy y AAA, Ninja Adventure Asset Pack',url:'https://pixel-boy.itch.io/ninja-adventure-asset-pack'},
  {what:'Jeice (enemigo de élite)',name:'MrDryy; faceset de MAST3RK1LL3R171; con Qsab101, ErickJCrack507, Scarlettdancer2627, JustOruma, Arisrad y Yasertheblack',url:'https://www.deviantart.com/mrdryy/art/Jeice-Sprite-Sheet-ULSW-1145996714'}]);
 (()=>{const m=window.SPRITE_MANIFEST;if(!m)return;PACK_CREDITS=PACK_CREDITS.concat(m.credits||[]);
   const load=(url,cb)=>{const im=new Image();im.onload=()=>{const c=mk(im.width,im.height);c.getContext('2d').drawImage(im,0,0);cb(c);if(state==='title')buildCards()};im.src='sprites/'+url};

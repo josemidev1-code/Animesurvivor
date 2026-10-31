@@ -359,3 +359,9 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Formas elegidas a ojo en `herramientas/animaciones/enemigos.json` (`e_soldado`, `e_ginyu`, `e_jeice`) y enlazadas: soldado, soldado raso, soldado de Freezer y élite (con los colores alternativos de la hoja), Jeice (élite) y Capitán Ginyu (jefe, vuelve a Namek y al escuadrón de Fuerzas Especiales). 82 tipos activos, 35 retirados.
 - Créditos con autor, coautores y enlace dentro del juego (pantalla de créditos) y en `CREDITOS_RECURSOS.md`. Burter y Recoome no dejan bajar el original sin cuenta: pendientes.
 - Tamaños: medidos todos los enemigos normales frente a Goku (24-30 px). Desentonaban los que yo encogí: Fragmento de Buu (16) y Cell Jr. (19). Ahora el fragmento mide como Kid Buu y Cell Jr. algo menos que Cell. Probado en partida.
+
+### Sesión 9, novena parte: escenarios («Usa tiles libres»)
+- Búsqueda: en `sprites/` solo hay fondos laterales de juegos de lucha; en DeviantArt los tilesets de Dragon Ball son laterales (Dragon Ball Karma, Super Butouden, descartados y borrados) o pintados (LorisC93); Spriters Resource (Legacy of Goku II) pide verificación anti-bots y no se ha forzado. El usuario eligió tiles libres.
+- Pack Ninja Adventure de Pixel-Boy y AAA (CC0), tilesets bajados de su GitHub a `sprites/06_Escenarios/Tiles/`. `herramientas/montar_escenarios.py` genera `escenarios_tiles.js` con 32 suelos (hierba, estepa, arena, tierra, nieve, ladrillo… con tintes por mapa) y 9 decorados (árboles grandes y pequeños, árboles de Namek teñidos, rocas). Se cargan al iniciar y sustituyen a los dibujados por código; si no cargan, queda el dibujo anterior.
+- Probados Praderas, Desierto, Infierno y Budokai sin errores. Créditos en el juego y en `CREDITOS_RECURSOS.md`.
+- Quedan por código: agua, lava, cielo, relieves (mesetas, cañones) y edificios propios de cada mapa.
