@@ -359,3 +359,38 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Formas elegidas a ojo en `herramientas/animaciones/enemigos.json` (`e_soldado`, `e_ginyu`, `e_jeice`) y enlazadas: soldado, soldado raso, soldado de Freezer y élite (con los colores alternativos de la hoja), Jeice (élite) y Capitán Ginyu (jefe, vuelve a Namek y al escuadrón de Fuerzas Especiales). 82 tipos activos, 35 retirados.
 - Créditos con autor, coautores y enlace dentro del juego (pantalla de créditos) y en `CREDITOS_RECURSOS.md`. Burter y Recoome no dejan bajar el original sin cuenta: pendientes.
 - Tamaños: medidos todos los enemigos normales frente a Goku (24-30 px). Desentonaban los que yo encogí: Fragmento de Buu (16) y Cell Jr. (19). Ahora el fragmento mide como Kid Buu y Cell Jr. algo menos que Cell. Probado en partida.
+
+## 2026-10-31 — Claude (sesión 10, personajes de DeviantArt)
+
+### Lo que pidió el usuario
+- (Encargo desde la sesión principal) Tener a todos los personajes de la serie: añadir como jugables los que faltan usando
+  hojas de DeviantArt, siempre acreditando al autor. Otra sesión trabaja a la vez en los escenarios: no tocar el código de mapas.
+
+### Lo que hice
+- Faltaban (entre otros): Nappa, Zarbon, Dodoria, Recoome, Burter, Guldo, Ginyu y Jeice (solo enemigos), Androides 19/20/21,
+  Dabura, Tenshinhan, Chaoz, Yajirobe, Videl, Uub, Pan, Goten y Trunks niños, Mr. Satán.
+- Nueva herramienta `herramientas/bajar_deviantart.py <url> [destino.png]`: lee la ficha (título, autor, descripción, licencia)
+  y baja el original `fullview` a tamaño completo (avisa si solo hay versión reescalada).
+- Tanda 1, 7 jugables nuevos: **Nappa, Capitán Ginyu, Jeice, Guldo, Uub, Mr. Satán y Androide 21** (forma Majin).
+  Packs 403-410 en `sprites/.../DeviantArt/`; animaciones en `herramientas/animaciones/deviantart.json`, elegidas a ojo con
+  `previsualizar.py` (guardia, impulso, combo, patada, ki 2, aura, daño 2, tumbado y retrato). Los retratos y el tumbado que la
+  herramienta no recorta (fuera de la zona o demasiado bajos) se añadieron como `retrato.png`/`tumbado.png` al final del pack,
+  así no cambian los números de los fotogramas (Ginyu sigue sirviendo al jefe con los mismos números).
+- 13 técnicas propias: Break Cannon y Bomber DX (Nappa), Milky Cannon y Cambio de Cuerpo (Ginyu, paraliza), Crusher Ball (Jeice),
+  Rocas Psíquicas y Parada del Tiempo (Guldo), Kiai (Uub), Megaton Punch, Dynamite Kick y Regalo Explosivo (Mr. Satán, sin ki),
+  Photon Wave y Menú Completo (A21, cura). Listas en `SIGS_SERIE`.
+- Créditos en la pantalla del juego (`PACK_CREDITS`) y en `CREDITOS_RECURSOS.md`. `index.html` a `?v=61`.
+- Comprobado: `comprobar_personajes.cjs` con los 7 (modo estricto) y con todos (44 personajes, 97 formas). En el navegador:
+  69/69 guerreros, Nappa y Mr. Satán jugados, y las 13 técnicas probadas con `window.AS` sin errores de consola.
+
+### A medias / problemas
+- Descartados por calidad o condiciones: Zarbon/Dodoria (FilipeSpriter, JPEG borroso con capturas del anime), A19 (JPEG),
+  Zarbon y Yajirobe de arisrad (a la venta). La carpeta del A19 recortado quedó en `sprites/00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt`
+  (no versionada, sin usar): no se me permitió borrarla.
+- Guldo cae en «tumbado» con una pose de caída (la hoja no tiene uno en el suelo); Mr. Satán y Guldo no tienen pose real de vuelo
+  (saltan hacia delante).
+- Burter y Recoome siguen pendientes (sin original sin cuenta).
+
+### Siguiente paso recomendado
+- Tanda 2 con los mismos pasos. Candidatos ya vistos: Tenshinhan (HJproduction, «Tiencham AF»), Dabura (deviantarter1236),
+  Videl (AThePro013), Uub de MrDryy (alternativa), Burter (BrolyGamer096) — comprobar antes que el fullview sea original (`r:1`).

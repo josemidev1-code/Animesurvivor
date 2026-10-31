@@ -34,6 +34,25 @@ Ninguna de las tres fichas indica restricciones; se acredita al autor y a los co
 
 Burter (BrolyGamer096) y Recoome (Bite035) no permiten bajar el original a tamaño completo sin cuenta; pendientes.
 
+## Personajes jugables de DeviantArt (sesión 10)
+
+Hojas originales bajadas con `herramientas/bajar_deviantart.py` (lee la ficha, muestra descripción y licencia y baja el
+`fullview` original) y troceadas con `recortar_hoja.py`. Ninguna ficha indica restricciones de uso; se acredita al autor y a
+los coautores que cita. Los retratos y el fotograma «tumbado» de cada pack son recortes de la misma hoja
+(`retrato.png` y `tumbado.png`). Ginyu y Jeice reutilizan las hojas de la sesión 9 (packs 401 y 402).
+
+| Recurso | Crédito | Fuente | Pack |
+|---|---|---|---|
+| Nappa | **Strice12**; con AlquimistaSK, GABY361, SheriffSyler, AThePro013, MrDryy, JCO2003, Scarlettdancer2627, Diego Tesfaye | [Nappa sheet sprite ulsw](https://www.deviantart.com/strice12/art/Nappa-sheet-sprite-ulsw-1107877711) | `00_Saiyans/DeviantArt/403_NAPPA (Strice12)` |
+| Guldo | **Strice12**; con JCO2003, BrolyGamer096, Marcowwwww, JustOruma, Pedrocarlos877, MrDryy, AlquimistaSK | [Guldo Sheet Sprite Ulsw](https://www.deviantart.com/strice12/art/Guldo-Sheet-Sprite-Ulsw-1154137000) | `01_Namek_y_Freezer/DeviantArt/404_GULDO (Strice12)` |
+| Uub | **Strice12**; con ErickJCrack507, MrDryy, Godkuufy, JustOruma, Scarlettdancer2627, AS02X, pedrocarlos8772 | [Uub Sheet Sprite Ulsw](https://www.deviantart.com/strice12/art/Uub-Sheet-Sprite-Ulsw-1157141190) | `03_Majin_Buu/DeviantArt/408_UUB (Strice12)` |
+| Mr. Satán | **JayHyperStarX** (la ficha no cita coautores) | [Hercule Satan - Sprite Sheet](https://www.deviantart.com/jayhyperstarx/art/Hercule-Satan---Sprite-Sheet-1039720310) | `03_Majin_Buu/DeviantArt/409_MR SATAN (JayHyperStarX)` |
+| Androide 21 (Majin) | **arisrad**; combinada con hojas de GMInazuma y ErickJCrack507; con Mattfv y LUISFCX12; banner de R0N1N60 | [android-21-swl-sprite-sheet](https://www.deviantart.com/arisrad/art/android-21-swl-sprite-sheet-by-ARIS-RAD-1131494602) | `04_Heroes_y_videojuegos/DeviantArt/410_ANDROIDE 21 (arisrad)` |
+
+Revisadas y descartadas: Zarbon y Dodoria de FilipeSpriter (hoja en JPEG borrosa y con capturas del anime), Androide 19 de
+ChrisReinerVV (comprimida en JPEG: bordes verdes sucios; su carpeta `02_Androides_Cell_y_Trunks/DeviantArt` quedó en
+`sprites/` sin usar), Zarbon y Yajirobe de arisrad (se venden: «for sell»).
+
 ## Recursos que ya tenía el proyecto
 
 - **Josemi**: logo y siete esferas del dragón de `ui/`.

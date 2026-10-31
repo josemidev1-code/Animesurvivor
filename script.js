@@ -707,6 +707,14 @@ const NUEVOS={
  blacktime:{name:'BLACK TIME BREAKER',rar:5,hp:120,spd:68,atk:1.3,start:'blackkame',desc:'El Goku Black enmascarado de Heroes.',forms:['SSJ DIOS','SSJ ROSÉ','SSJ ROSÉ 3'],aura:['red','purple','purple'],sig:['kiblast','punch','kick','blackkame','kiblade','scythe']},
  blackfan:{name:'GOKU BLACK FANMADE',rar:5,hp:120,spd:68,atk:1.3,start:'blackkame',desc:'Goku Black en formas alternativas creadas por fans.',forms:['SSJ RAGE','ROSÉ KAIOKEN','ROSÉ ULTRA INSTINTO','MUI'],aura:['gold','red','purple','silver'],sig:['kiblast','punch','kick','blackkame','kiblade','scythe']},
  gokualt:{name:'GOKU ALTERNATIVO',rar:5,hp:130,spd:66,atk:1.3,start:'kame',desc:'Tres versiones de Goku creadas por fans: Místico, Ikari y Bestia.',forms:['MÍSTICO','IKARI','BESTIA'],aura:['white','green','purple'],sig:['kiblast','punch','kick','kame','instant','genki']},
+ // hojas de DeviantArt (sesión 10; animaciones en herramientas/animaciones/deviantart.json, créditos en PACK_CREDITS)
+ nappa:{name:'NAPPA',rar:3,hp:150,spd:58,atk:1.15,start:'breakcannon',desc:'El gigante de élite Saiyan. Break Cannon y Bomber DX.',forms:['BASE'],aura:['gold'],sig:['kiblast','punch','breakcannon','kick','bomberdx']},
+ ginyu:{name:'CAPITÁN GINYU',rar:4,hp:125,spd:62,atk:1.15,start:'milky',desc:'Líder de las Fuerzas Especiales. Cambia de cuerpo con su rival.',forms:['BASE'],aura:['purple'],sig:['kiblast','punch','kick','milky','bodychange']},
+ jeice:{name:'JEICE',rar:3,hp:105,spd:70,atk:1.05,start:'burning',desc:'El veloz de las Fuerzas Especiales. Lanza la Crusher Ball.',forms:['BASE'],aura:['red'],sig:['kiblast','punch','kick','crusherball','renzoku']},
+ guldo:{name:'GULDO',rar:3,hp:95,spd:58,atk:1.0,start:'kienzan',desc:'Detiene el tiempo y lanza rocas con la mente.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','psychorock','timefreeze']},
+ uub:{name:'UUB',rar:4,hp:120,spd:68,atk:1.15,start:'kame',desc:'La reencarnación de Kid Buu y alumno de Goku.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kiai','kame','renzoku']},
+ mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
+ a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
 };
 // formas añadidas a personajes que ya estaban
 Object.assign(HDEF.gokugt,{forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 3','SUPER SAIYAN 4'],aura:['white','gold','gold','red']});
@@ -1146,6 +1154,20 @@ Object.assign(MV,{
  brablast:SHOT('Ráfaga de Bra',['#d02a80','#ff8ad0','#fff0f8'],1.0,8,3,4,230,{home:1}),
  timebreak:NOVA('Ruptura del Tiempo',['#5a1a6a','#c060d0','#ffe0ff'],6,30,11,85,1.8),
  acidspit:SHOT('Ácido Saibaman',['#4a8a1a','#a0f040','#f0ffc0'],1.0,7,3,2,170,{pierce:1}),
+ // personajes de DeviantArt (sesión 10)
+ breakcannon:BEAM('Break Cannon',['#d86a10','#ffb03a','#ffffff'],6,42,15,270,20,0.8),
+ bomberdx:NOVA('Bomber DX',['#d86a10','#ffb03a','#fff3c0'],6,44,16,75),
+ milky:BEAM('Milky Cannon',['#7a24d8','#d08aff','#ffffff'],5.5,40,14,260,18,0.7),
+ bodychange:NOVA('Cambio de Cuerpo',['#7a24d8','#d08aff','#ffffff'],7,20,8,80,2.2),
+ crusherball:BIG('Crusher Ball',['#c8202a','#ff6a3a','#ffd08a','#ffffff'],2.8,36,13,30,150),
+ psychorock:SHOT('Rocas Psíquicas',['#6a4a2a','#b08a5a','#f0e0c0'],1.4,10,4,3,200,{home:1}),
+ timefreeze:NOVA('Parada del Tiempo',['#2a9a20','#8af06a','#f0fff0'],7,10,4,110,2.6),
+ kiai:NOVA('Kiai',['#c8d0e8','#ffffff','#ffffff'],3.5,26,10,70),
+ megaton:MELEE('Megaton Punch',['#ffffff','#ffd23f'],'atk',1.6,26,10,1,120,30,{kb:220}),
+ dynamite:MELEE('Dynamite Kick',['#ff8a3a','#ffd23f'],'kick',1.8,24,9,2,140,30,{kb:200}),
+ presentbomb:BOMB('Regalo Explosivo',['#c8202a','#ff8a6a','#ffd0c0','#ffffff'],6,50,18,36),
+ photonwave:BEAM('Photon Wave',['#d02a80','#ff8ad0','#ffffff'],6,44,15,280,20,0.8),
+ fullcourse:NOVA('Menú Completo',['#d02a80','#ff8ad0','#ffe0f0'],7,34,12,70,0,{heal:0.3}),
 });
 const SIGS={goku:['kiblast','punch','kame','kaioken','instant','genki'],vegeta:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
  piccolo:['kiblast','punch','eyebeam','makanko','hellzone','lightgren'],krilin:['kiblast','kick','kienzan','scatter','taiyoken','kame'],
@@ -1179,7 +1201,11 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  gokumoro:['kiblast','silver','kick','kame','instant','godkame'],gokubroly:['kiblast','punch','kame','instant','godkame','genki'],
  vegetamanga:['kiblast','punch','galick','finalflash','gamma','finalexp'],vegetabroly:['renzoku','punch','galick','finalflash','gamma','finalexp'],
  blacktime:['lances','kiblade','blackkame','timebreak','kick','scythe'],blackfan:['kiblade','lances','scythe','blackkame','timebreak','kick'],
- gokualt:['kiblast','punch','kaioken','ikarikame','dragonfist','genki']};
+ gokualt:['kiblast','punch','kaioken','ikarikame','dragonfist','genki'],
+ nappa:['kiblast','punch','breakcannon','kick','bomberdx','lariat'],ginyu:['kiblast','punch','kick','milky','bodychange','renzoku'],
+ jeice:['kiblast','punch','kick','crusherball','renzoku'],guldo:['kiblast','punch','kick','psychorock','timefreeze'],
+ uub:['kiblast','punch','kick','kiai','kame','renzoku'],mrsatan:['punch','kick','megaton','dynamite','presentbomb'],
+ a21:['kiblast','punch','kick','choco','photonwave','fullcourse']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
@@ -3050,8 +3076,14 @@ let PACK_CREDITS=window.RECURSOS_CREDITOS||[];
 // hojas de DeviantArt usadas para enemigos (sesión 9); los coautores son los que cita cada ficha
 PACK_CREDITS=PACK_CREDITS.concat([
  {what:'Soldado de Freezer (enemigo)',name:'TheWarriorFF2 / Spir1tSolo; con Que, qsab101, DyanDisel, Izanagi797, Orumaitoobeso, Reeck495, MV95, MANIKDX y Papuro Tenkikujimo',url:'https://www.deviantart.com/thewarriorff2/art/Frieza-s-Soldier-1-Sprite-Sheet-856331851'},
- {what:'Capitán Ginyu (jefe)',name:'Strice12; con azazel300, JustOruma, MrDryy, Godkuuxfy, MAST3RK1LL3R171, GZ52, arisrad, AlanBrito962 y MatheusAnimaa',url:'https://www.deviantart.com/strice12/art/Sheet-Sprite-Ginyu-Ulsw-1161968207'},
- {what:'Jeice (enemigo de élite)',name:'MrDryy; faceset de MAST3RK1LL3R171; con Qsab101, ErickJCrack507, Scarlettdancer2627, JustOruma, Arisrad y Yasertheblack',url:'https://www.deviantart.com/mrdryy/art/Jeice-Sprite-Sheet-ULSW-1145996714'}]);
+ {what:'Capitán Ginyu (jefe y jugable)',name:'Strice12; con azazel300, JustOruma, MrDryy, Godkuuxfy, MAST3RK1LL3R171, GZ52, arisrad, AlanBrito962 y MatheusAnimaa',url:'https://www.deviantart.com/strice12/art/Sheet-Sprite-Ginyu-Ulsw-1161968207'},
+ {what:'Jeice (enemigo de élite y jugable)',name:'MrDryy; faceset de MAST3RK1LL3R171; con Qsab101, ErickJCrack507, Scarlettdancer2627, JustOruma, Arisrad y Yasertheblack',url:'https://www.deviantart.com/mrdryy/art/Jeice-Sprite-Sheet-ULSW-1145996714'},
+ // personajes jugables de DeviantArt (sesión 10); Ginyu y Jeice usan las hojas de arriba
+ {what:'Nappa (jugable)',name:'Strice12; con AlquimistaSK, GABY361, SheriffSyler, AThePro013, MrDryy, JCO2003, Scarlettdancer2627 y Diego Tesfaye',url:'https://www.deviantart.com/strice12/art/Nappa-sheet-sprite-ulsw-1107877711'},
+ {what:'Guldo (jugable)',name:'Strice12; con JCO2003, BrolyGamer096, Marcowwwww, JustOruma, Pedrocarlos877, MrDryy y AlquimistaSK',url:'https://www.deviantart.com/strice12/art/Guldo-Sheet-Sprite-Ulsw-1154137000'},
+ {what:'Uub (jugable)',name:'Strice12; con ErickJCrack507, MrDryy, Godkuufy, JustOruma, Scarlettdancer2627, AS02X y pedrocarlos8772',url:'https://www.deviantart.com/strice12/art/Uub-Sheet-Sprite-Ulsw-1157141190'},
+ {what:'Mr. Satán (jugable)',name:'JayHyperStarX',url:'https://www.deviantart.com/jayhyperstarx/art/Hercule-Satan---Sprite-Sheet-1039720310'},
+ {what:'Androide 21 (jugable)',name:'arisrad; combinada con hojas de GMInazuma y ErickJCrack507; con Mattfv y LUISFCX12; banner de R0N1N60',url:'https://www.deviantart.com/arisrad/art/android-21-swl-sprite-sheet-by-ARIS-RAD-1131494602'}]);
 (()=>{const m=window.SPRITE_MANIFEST;if(!m)return;PACK_CREDITS=PACK_CREDITS.concat(m.credits||[]);
   const load=(url,cb)=>{const im=new Image();im.onload=()=>{const c=mk(im.width,im.height);c.getContext('2d').drawImage(im,0,0);cb(c);if(state==='title')buildCards()};im.src='sprites/'+url};
   const strip=(c,n)=>{const w=Math.floor(c.width/n),out=[];for(let i=0;i<n;i++){const o=mk(w,c.height);o.getContext('2d').drawImage(c,i*w,0,w,c.height,0,0,w,c.height);out.push(o)}return out};
