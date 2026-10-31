@@ -1,0 +1,79 @@
+{
+ "heroes": {
+  "gokuui": {
+   "4": {
+    "faint": [
+     54
+    ]
+   }
+  },
+  "gokusuper": {
+   "4": {
+    "faint": [
+     55
+    ]
+   }
+  },
+  "vegeta": {
+   "4": {
+    "faint": [
+     56
+    ]
+   }
+  },
+  "vegetaue": {
+   "0": {
+    "faint": [
+     54
+    ]
+   },
+   "3": {
+    "faint": [
+     83
+    ]
+   }
+  },
+  "vegetagt": {
+   "0": {
+    "faint": [
+     62,
+     63
+    ]
+   }
+  },
+  "vegetasuper": {
+   "3": {
+    "faint": [
+     56
+    ]
+   },
+   "4": {
+    "faint": [
+     81
+    ]
+   }
+  },
+  "vegetto": {
+   "0": {
+    "faint": [
+     69
+    ]
+   }
+  },
+  "gokugt": {
+   "1": {
+    "faint": [
+     61,
+     62
+    ]
+   }
+  },
+  "trunkscell": {
+   "0": {
+    "faint": [
+     54
+    ]
+   }
+  }
+ }
+}

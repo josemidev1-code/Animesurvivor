@@ -1,0 +1,226 @@
+{
+  "heroes": {
+    "goku": {
+      "1": {
+        "pack": "01_Dragon_Ball_Super/05_Broly/Goku/220_GOKU,SSJ 1,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "idle": [5, 6],
+        "idleDu": [26, 26],
+        "move": [11],
+        "attack": [15, 16, 17],
+        "kick": [18, 19],
+        "ki": [34, 35],
+        "pow": [28, 29],
+        "hurt": [24, 26],
+        "portrait": 41
+      },
+      "2": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Goku/055_Goku SSJ 2",
+        "idle": [26, 27],
+        "idleDu": [26, 26],
+        "move": [9],
+        "attack": [18, 19, 20],
+        "kick": [16, 17],
+        "ki": [50, 52],
+        "pow": [0, 1],
+        "hurt": [30, 31]
+      },
+      "3": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/147_GOKU SSJ3,SAGA MAJIN BUU,DBZ, ANDRÉS GAMEN ANIMATIONS",
+        "idle": [6, 7],
+        "move": [32],
+        "attack": [88, 89, 90, 91],
+        "kick": [85, 87],
+        "ki": [65, 59],
+        "pow": [66, 67],
+        "hurt": [47, 48],
+        "portrait": 2
+      },
+      "4": {
+        "pack": "01_Dragon_Ball_Super/05_Broly/Goku/141_GOKU SSJ BLUE ,DBS BROLY, MEJORADO, BY ANDRÉS GAMEN ANIMATIONS",
+        "idle": [2, 3, 4],
+        "move": [12],
+        "attack": [72, 73, 74, 75],
+        "kick": [63, 64, 65, 66],
+        "ki": [51, 50],
+        "pow": [41, 42],
+        "hurt": [53, 54],
+        "portrait": 6
+      }
+    },
+    "gokuui": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "idle": [1, 2],
+        "idleDu": [26, 26],
+        "move": [7],
+        "attack": [18, 21, 22, 23],
+        "kick": [25, 26, 27],
+        "ki": [35, 37],
+        "pow": [41, 42],
+        "hurt": [31, 29],
+        "portrait": 59
+      },
+      "1": {
+        "pack": "01_Dragon_Ball_Super/05_Broly/Goku/220_GOKU,SSJ 1,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "idle": [5, 6],
+        "idleDu": [26, 26],
+        "move": [11],
+        "attack": [15, 16, 17],
+        "kick": [18, 19],
+        "ki": [34, 35],
+        "pow": [28, 29],
+        "hurt": [24, 26],
+        "portrait": 41
+      },
+      "2": {
+        "pack": "01_Dragon_Ball_Super/05_Broly/Goku/141_GOKU SSJ BLUE ,DBS BROLY, MEJORADO, BY ANDRÉS GAMEN ANIMATIONS",
+        "idle": [2, 3, 4],
+        "move": [12],
+        "attack": [72, 73, 74, 75],
+        "kick": [63, 64, 65, 66],
+        "ki": [51, 50],
+        "pow": [41, 42],
+        "hurt": [53, 54],
+        "portrait": 6
+      },
+      "3": {
+        "pack": "05_Fanmade_y_alternativos/Goku/219_GOKU, ULTRA INSTINTO SEÑAL,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "idle": [9, 10],
+        "move": [15],
+        "attack": [22, 23, 24],
+        "kick": [33, 34, 35],
+        "ki": [55, 62],
+        "pow": [36, 37],
+        "hurt": [46, 47],
+        "portrait": 66
+      },
+      "4": {
+        "pack": "05_Fanmade_y_alternativos/Goku/218_GOKU, ULTRA INSTINTO DOMINADO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "idle": [12, 13],
+        "idleDu": [26, 26],
+        "move": [18],
+        "attack": [27, 28, 29],
+        "kick": [32, 33],
+        "ki": [51, 50],
+        "pow": [61, 62],
+        "hurt": [34, 36],
+        "portrait": 68
+      }
+    },
+    "gokugt": {
+      "0": {
+        "pack": "02_GT/Goku/258_GOKU BASE GT",
+        "idle": [1, 2, 3],
+        "move": [8],
+        "attack": [17, 18, 19, 20],
+        "kick": [21, 22, 23],
+        "ki": [54, 61],
+        "pow": [33, 34, 35],
+        "hurt": [10, 12],
+        "portrait": 0
+      },
+      "1": {
+        "pack": "02_GT/Goku/261_GOKU SSJ4 GT",
+        "idle": [9, 10],
+        "move": [76],
+        "attack": [22, 23, 24, 25],
+        "kick": [28, 29],
+        "ki": [110, 118],
+        "pow": [41, 42, 43],
+        "hurt": [20, 32],
+        "portrait": 0
+      }
+    },
+    "gokusuper": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Goku/062_Goku Whis Gi",
+        "idle": [1, 2],
+        "idleDu": [26, 26],
+        "move": [14],
+        "attack": [18, 19, 20],
+        "kick": [30, 31],
+        "ki": [56, 57],
+        "pow": [44, 45, 46],
+        "hurt": [40, 42]
+      },
+      "1": {
+        "pack": "07_Personajes_sin_saga_concreta/Goku/063_Goku kaioken",
+        "idle": [8, 9],
+        "idleDu": [26, 26],
+        "move": [20],
+        "attack": [15, 16, 17, 18],
+        "kick": [23, 24, 25],
+        "ki": [57, 62],
+        "pow": [12, 13, 14],
+        "hurt": [46, 47]
+      },
+      "2": {
+        "pack": "05_Fanmade_y_alternativos/Goku/275_GOKU SUPER SAIYAJIN KAIOKEN",
+        "idle": [14, 15],
+        "move": [64, 65],
+        "attack": [21, 22, 23, 24],
+        "kick": [16, 17, 18],
+        "ki": [43, 47],
+        "pow": [37, 38, 39],
+        "hurt": [63, 64],
+        "portrait": 12
+      },
+      "3": {
+        "pack": "01_Dragon_Ball_Super/00_Dioses_y_Super_Saiyan_God/Goku/050_Goku God",
+        "idle": [5, 6, 7],
+        "move": [29],
+        "attack": [24, 25, 26, 27],
+        "kick": [32, 33],
+        "ki": [40, 43],
+        "pow": [40, 41],
+        "hurt": [51, 52]
+      },
+      "4": {
+        "pack": "01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Goku/048_Goku Blue Kaioken Whis Gi",
+        "idle": [42, 44],
+        "idleDu": [26, 26],
+        "move": [6, 7],
+        "attack": [12, 13, 14, 15],
+        "kick": [32, 33, 34],
+        "ki": [75, 77],
+        "pow": [50, 51],
+        "hurt": [48, 49]
+      }
+    },
+    "black": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/040_Goku Black 2",
+        "idle": [3, 4],
+        "idleDu": [26, 26],
+        "move": [29],
+        "attack": [40, 41, 42],
+        "kick": [32, 33, 34],
+        "ki": [46, 48],
+        "pow": [70, 71],
+        "hurt": [63, 64]
+      },
+      "1": {
+        "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Goku Black/043_Goku Black SSJ(versión 2)",
+        "idle": [10, 11],
+        "idleDu": [26, 26],
+        "move": [142],
+        "attack": [42, 43, 44, 45],
+        "kick": [48, 49, 50],
+        "ki": [84, 85],
+        "pow": [29, 30],
+        "hurt": [36, 38]
+      },
+      "2": {
+        "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/041_Goku Black Rose",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [21, 22],
+        "attack": [29, 30, 31, 32],
+        "kick": [37, 38, 39],
+        "ki": [71, 96],
+        "pow": [27, 28],
+        "hurt": [52, 54]
+      }
+    }
+  }
+}

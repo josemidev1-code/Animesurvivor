@@ -2553,7 +2553,7 @@ Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta
   buuthinE:'buu-thin',gohanpossE:'gohan-poss',frost2E:'frost-2',black2E:'black2',hit2E:'hit2',zamasuhE:'zamasu-half',kalessjE:'kale-ssj',fakegokuE:'goku-fake',
   freeza1B:'freeza-1',freeza2B:'freeza-2',freeza3B:'freeza-3',ozaruB:'ozaru',ozarugB:'ozaru-gold',a21B:'a21',a21mB:'a21m',blackssjB:'black-ssj',zamasufB:'zamasu-fused',
   buuthinB:'buu-thin',buugohanB:'buu-gohan',soldier:'soldier1',soldierE:'soldier3',majin:'makyan',celljr:'celljr',celljrE:'celljr',jeice:'jeice',ginyu:'ginyu',mecha:'mechafreeza',
-  frzS2:'soldier2',frzS4:'soldier4',saiyanLow:'saiyanw',garlicH1:'garlic_h1',garlicH2:'garlic_h2',demonS:'demon2',demonS2:'demon3',garlicE:'garlic',demonE:'demon',garlicB:'garlicsuper',babyB:'babyvegeta',shenronB:'shenron',toppoB:'toppo',whisB:'whis',zenoB:'zeno',moroB:'moro',broly2B:'broly-2',broly3B:'broly-3',brolyssj4B:'broly-ssj4',kalessjB:'kale-ssj'});
+  frzS2:'soldier2',frzS4:'soldier4',saiyanLow:'saiyanw',garlicH1:'garlic_h1',garlicH2:'garlic_h2',demonS:'demon2',demonS2:'demon3',garlicE:'garlic',demonE:'demon',garlicB:'garlicsuper',babyB:'babyvegeta',shenronB:'shenron',toppoB:'toppo',whisB:'whis',zenoB:'zeno',moroB:'moro',broly2B:'broly-2',broly3B:'broly-3',brolyssj4B:'broly-ssj4',kalessjB:'kale-ssj',dodoria:'toppo',zarbon:'frost',nappa:'saiyanw',nappaE:'saiyanw',a19:'a16',dabura:'janemba',burter:'ginyu',guldo:'garlic',rrsoldier:'soldier3',blob:'celljr'});
 
 function scLoad(k){if(SCC[k])return SCC[k];const o=SCC[k]={ok:0};let n=0;
   for(const a in SCPACK.s[k]){const [fw,fh,du,url,row]=SCPACK.s[k][a],im=new Image();
@@ -2564,7 +2564,7 @@ function scFrame(A,t){let x=(t*60)%A.tot;for(let i=0;i<A.du.length;i++){x-=A.du[
 function scHero(id,form){const H=SCPACK.h[id];if(!H)return null;for(let f=form;f>=0;f--)if(H[f]){const o=scLoad(H[f]);return o.ok?o:null}return null}
 function scKeyE(id){if(SCPACK.e[id])return SCPACK.e[id];const t=ET[id];if(!t)return null;if(t.alias)return scKeyE(t.alias);
   if(t.hero){const H=SCPACK.h[t.hero[0]];if(H)for(let f=t.hero[1];f>=0;f--)if(H[f])return H[f]}return null}
-const SCTINT={saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)'},SCTC={};
+const SCTINT={saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)',burter:'hue-rotate(180deg)',dodoria:'hue-rotate(290deg) saturate(1.4)',zarbon:'hue-rotate(80deg) saturate(1.2)',a19:'brightness(1.15) contrast(1.1) grayscale(0.2)',dabura:'hue-rotate(330deg)',guldo:'hue-rotate(90deg) saturate(1.3)',blob:'hue-rotate(280deg) saturate(1.5)',rrsoldier:'hue-rotate(-40deg) brightness(0.95)'},SCTC={};
 function scTintPk(o,f){const r={ok:1};for(const a in o){if(a==='ok')continue;const A=o[a],tc=c=>{const n=mk(c.width,c.height),g=n.getContext('2d');g.filter=f;g.drawImage(c,0,0);return n};r[a]={...A,R:A.R.map(tc),L:A.L.map(tc)}}return r}
 function scEnemy(id){const k=scKeyE(id);if(!k)return null;const o0=scLoad(k);if(!o0.ok)return null;const o=SCTINT[id]?(SCTC[id]||(SCTC[id]=scTintPk(o0,SCTINT[id]))):o0;
   const W=o.Walk,wh=W.R.map(c=>tintC(c,'#ffffff')),whf=W.L.map(c=>tintC(c,'#ffffff')),src=SCPACK.s[k].Walk;
@@ -2775,13 +2775,13 @@ function pullOne(bn=gBanner()){const s=loadSave(),k=s.pity+1,k4=(s.pity4||0)+1;s
   return{id,rar,isNew,aw,zeni,feat}}
 const today=()=>new Date().toISOString().slice(0,10);
 const freeReady=()=>loadSave().freeD!==today();
-function portrait(id,form){const F=heroFrames(id,form||0).downidle[0].c,my=myHero(id,form||0);return my?my.c:F}
+function portrait(id,form){const f=faceOf(id,form||0);if(f)return f;const my=myHero(id,form||0);if(my&&my.c)return my.c.toDataURL();const F=heroFrames(id,form||0).downidle[0].c;return F.toDataURL()}
 function doPull(n,free){const s=loadSave();if(free){if(!freeReady())return;s.freeD=today()}else if(s.tickets<n){$('#gInfo').textContent=`Te faltan tickets: tienes ${s.tickets} y necesitas ${n}. Gana más jugando partidas.`;return}
   if(!free)s.tickets-=n;const bn=gBanner(),res=[];for(let i=0;i<n;i++)res.push(pullOne(bn));writeSave();
   const box=$('#gRes');box.innerHTML='';
   const show=n>10?res.filter(r=>r.isNew||r.rar>=4||r.aw).slice(0,30):res;
   show.sort((a,b)=>b.rar-a.rar).forEach((r,i)=>{const d=document.createElement('div');d.className='gcard r'+r.rar;d.style.animationDelay=(i*0.12)+'s';
-    const c=mk(38,54),im=portrait(r.id);c.getContext('2d').drawImage(im,0,0,im.width,im.height,(38-Math.min(38,im.width))/2,54-Math.min(54,im.height),Math.min(38,im.width),Math.min(54,im.height));d.appendChild(c);
+    const img=document.createElement('img');img.className='gFace';img.src=portrait(r.id,0);img.alt=HDEF[r.id].name;d.appendChild(img);
     d.insertAdjacentHTML('beforeend',`<span class="st">${'★'.repeat(r.rar)}</span><span class="nm">${HDEF[r.id].name}</span><span class="tag">${r.isNew?'¡NUEVO!':r.aw?'DESPERTAR +'+r.aw:'+'+r.zeni+' ZENI'}</span>${r.feat?'<span class="st">DESTACADO</span>':''}`);box.appendChild(d)});
   if(n>10)box.insertAdjacentHTML('beforeend',`<p class="help" style="grid-column:1/-1">Mostrando lo nuevo y los 4★ y 5★ de ${n} tiradas.</p>`);
   if(res.some(r=>r.rar===5)){sfx('trans')}else sfx('level');
@@ -2845,14 +2845,16 @@ const cardTimers=[];
 function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(clearInterval);cardTimers.length=0;const sv=loadSave();heroMigrate(sv);unlockAll(sv);
   const ids=Object.keys(HEROES).filter(spriteHero).sort((a,b)=>(!sv.owned[a])-(!sv.owned[b]));
   for(const id of ids){const H=HEROES[id],own=!!sv.owned[id]||id==='gokuui',b=document.createElement('button');b.type='button';b.className='card'+(own?'':' locked');
-    const c=mk(38*3,54*3),g=c.getContext('2d');g.imageSmoothingEnabled=false;
-    b.appendChild(c);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
+    const img=document.createElement('img');img.className='cardFace';
+    const f0=faceOf(id,0)||(MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():'');
+    img.src=f0||'';img.alt=H.name;
+    b.appendChild(img);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
     b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p><span class="stats">VIDA ${H.hp} · VEL ${H.spd} · ATQ x${H.atk}</span>${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
     b.dataset.id=id;b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
-    let f=0,form=0;const draw=()=>{if(state!=='title')return;f++;if(f%16===0)form=(form+1)%H.forms.length;if(!own)form=0;const s=heroSprite(id,form);g.clearRect(0,0,c.width,c.height);
-      if(form>0){const fl=auraFlames(heroAura(id,form))[f%3];g.globalAlpha=0.8;g.drawImage(fl,(c.width-fl.width*3)/2,c.height-fl.height*3,fl.width*3,fl.height*3);g.globalAlpha=1}
-      const my=scHero(id,form)?null:myHero(id,form);if(my&&my.c){const im=my.c,k=Math.min(c.width/im.width,c.height/im.height);const z=k>=1?Math.floor(k):k;g.drawImage(im,(c.width-im.width*z)/2,c.height-im.height*z-((f%2)?1:0),im.width*z,im.height*z)}else{const pk=scHero(id,form);if(pk){const im=pk.Idle.R[scFrame(pk.Idle,f*0.18)],z=2;g.drawImage(im,(c.width-im.width*z)/2,c.height-im.height*z,im.width*z,im.height*z)}else g.drawImage(s.fr[f%4],0,0,s.w,s.h,(c.width-s.w*3)/2,c.height-s.h*3,s.w*3,s.h*3)}};
-    draw();cardTimers.push(setInterval(draw,180))}
+    if(own&&H.forms&&H.forms.length>1){let form=0;cardTimers.push(setInterval(()=>{
+      if(state!=='title')return;form=(form+1)%H.forms.length;
+      const fn=faceOf(id,form);if(fn&&img.src!==fn)img.src=fn;
+    },2500))}}
   $('#wallet').textContent=`Tickets: ${sv.tickets} · Zeni: ${sv.zeni} · Personajes: ${Object.keys(HEROES).filter(k=>spriteHero(k)&&sv.owned[k]).length}/${Object.keys(HEROES).filter(spriteHero).length}`}
 // ---------- Crea tu guerrero: player-made heroes from any PNG, stored only in this browser ----------
 const CTYPES={bal:{n:'Equilibrado',hp:115,spd:62,atk:1},str:{n:'Fuerza bruta',hp:105,spd:57,atk:1.15},fast:{n:'Velocidad',hp:95,spd:72,atk:0.95},tank:{n:'Tanque',hp:150,spd:54,atk:0.9,regen:0.4}};
@@ -2957,10 +2959,10 @@ function hubRefresh(){const s=loadSave(),best=loadBest(),id=companion(),H=HEROES
   $('#hubStats').innerHTML=`Tiempo jugado <b>${fmt(st.secs||0)}</b> · Mejor tiempo <b>${fmt(bt)}</b><br>Derrotados <b>${st.kills||0}</b> · Jefes <b>${st.boss||0}</b> · Deseos <b>${s.pulls||0}</b>`;
   buildHub();evTick()}
 function evTick(){const b=gBanners()[0];if(!b.f5||!HEROES[b.f5]){$('#hEvent').hidden=true;return}$('#hEvent').hidden=false;$('#hEvent').innerHTML=`<b>¡DESEO DESTACADO: ${HEROES[b.f5].name}!</b> Termina en ${countdown(b.ends-Date.now())}`}
-function openHub(){hideMenus();state='title';$('#hub').hidden=false;hubRefresh();const c=$('#hCompC');let t=0;
-  let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;t+=0.12;drawHeroInto(c,companion(),0,t);if(++n%8===0)evTick()},120)}
+function openHub(){hideMenus();state='title';$('#hub').hidden=false;hubRefresh();
+  let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;if(++n%8===0)evTick()},120)}
 function enterGame(){if(started)return;started=true;initAudio();sfx('level');openHub()}
-function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();{let t=0;hubTimer=setInterval(()=>{if($('#roster').hidden)return;t+=0.12;const id=$('#rPrev').dataset.id;if(id)drawHeroInto($('#rPrevC'),id,0,t)},120)}const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
+function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
   const prev=id=>{const H=HEROES[id],f=faceOf(id,0);$('#rPrevImg').src=f||'';$('#rPrevImg').hidden=!f;$('#rPrevName').textContent=H.name;$('#rPrevForms').textContent=(H.forms||[]).join(' · ');$('#rPrev').dataset.id=id};
   $('#chars').querySelectorAll('.card').forEach(b=>{b.onmouseenter=b.onfocus=()=>prev(b.dataset.id)});prev(companion());
   $('#rInfo').innerHTML=`Tienes <b>${all.filter(k=>s.owned[k]).length}</b> de <b>${all.length}</b>. Toca uno tuyo para llevarlo de compañero; los que te faltan se consiguen pidiendo deseos a Shenron.`}

@@ -133,6 +133,14 @@ def cargar_forma(f):
         de_pie = [im for im in anims['Hurt'] if (lambda b: (b[2] - b[0]) <= 1.35 * (b[3] - b[1]))(im.getbbox())]
         if de_pie: anims['Hurt'] = [de_pie[min(k, len(de_pie) - 1)] for k in range(len(anims['Hurt']))]
     ret = peq[f['portrait']] if 'portrait' in f else None
+    if not ret and 'Idle' in anims and anims['Idle']:
+        idle_im = anims['Idle'][0]
+        b = idle_im.getbbox()
+        if b:
+            head_h = max(14, round((b[3] - b[1]) * 0.46))
+            cx = (b[0] + b[2]) // 2
+            w = round(head_h * 0.95)
+            ret = idle_im.crop((max(0, cx - w//2), b[1], min(idle_im.width, cx + w//2), b[1] + head_h))
     return anims, (ret.crop(ret.getbbox()) if ret else None), esc
 
 

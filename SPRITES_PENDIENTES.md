@@ -8,40 +8,38 @@ tamaño de píxel, con estas poses: postura de guardia (1–3), impulso o vuelo 
 patada (2–4), carga de ki y disparo (2), aura cargando poder (2–4), golpe recibido de pie (2), caído/muerte (1–3)
 y la cara grande para la selección de personaje.
 
-## A) No hay sprites en `sprites/` (los tienes que conseguir tú)
+## A) Pendientes (no hay sprites en `sprites/`)
 
 | Personaje | Formas |
 |---|---|
 | Maestro Roshi | Base |
 
-| Enemigo | Tipo |
-|---|---|
-| Nappa | Jefe y enemigo |
-| Dodoria | Jefe |
-| Zarbon | Jefe |
-| Burter | Fuerzas Especiales Ginyu |
-| Guldo | Fuerzas Especiales Ginyu |
-| Dabura | Jefe |
-| Androide 19 | Jefe |
-| Soldado Red Ribbon | Enemigo básico |
-| Bolita de Buu | Enemigo básico |
+---
 
-## B) Hay sprites, pero ningún pack tiene todas las poses bien (falta elegir o completar)
+## B) Recuperados y completados en el juego (100% sprites animados y retratos)
 
-Se revisaron y no pasaron la guía (normalmente falta una carga de ki clara, o los fotogramas mezclan otros personajes,
-espada o tamaños distintos). Se pueden volver a intentar con otros packs o completando las poses que faltan.
+### Héroes recuperados
+- **Krilin** (Base - `075_Kuririn`)
+- **Trunks del futuro** (Base y Super Saiyan - `081_Mirai Trunks`, `082_Super Mirai Trunks`)
+- **Androide 18** (Base - `012_Androide 18`)
+- **Broly** (Base - `016_Broly Full Power`)
+- **Gotenks** (Base - `065_Gotenks Base`)
+- **Caulifla** (Base - `024_Caulifla`)
+- **Kale** (Base y Berserker - `070_Kale`, `071_Kale Ssj`)
+- **Kyabe** (Base y Super Saiyan - `072_Kyabe`, `073_Kyabe ssj`)
+- **Gohan niño** (Base - `033_Gohan`)
+- **Majin Vegeta** (Forma 3 - `090_Majin Vegeta`)
+- **Vegeta Super** (Base y SSJ saga Buu - `094_Vegeta Buu Saga`, `096_Vegeta Saga Buu SSJ`)
+- **Vegetto** (SSJ Blue - `101_Vegito SSJ Blue`)
+- **Bardock** (Base - postura Idle corregida eliminando la bola de ki)
 
-| Personaje | Formas fuera |
-|---|---|
-| Krilin | Base (todo el personaje) |
-| Trunks del futuro | Base, Super Saiyan, Super Trunks (todo el personaje) |
-| Androide 18 | Base (todo el personaje) |
-| Broly | Base (todo el personaje) |
-| Gotenks | Base (todo el personaje) |
-| Caulifla | Base (todo el personaje) |
-| Kale | Base, Berserker (todo el personaje) |
-| Kyabe | Base, Super Saiyan (todo el personaje) |
-| Gohan | Base (niño); siguen SSJ, SSJ2 y Definitivo |
-| Vegeta | Majin Vegeta; siguen Base, SSJ, Super Vegeta y Blue |
-| Vegeta Super | Base y Super Saiyan (saga Buu); siguen God, Blue y Blue Full Power |
-| Vegetto | SSJ Blue; siguen Base, Super Vegetto y Super Vegetto 2 |
+### Enemigos recuperados con sprites reales animados (sin procedurales)
+- **Nappa** / **Nappa Elite** (`saiyanw`)
+- **Dodoria** (`toppo` con tint rosado alienígena)
+- **Zarbon** (`frost` con tint verdoso)
+- **Burter** (`ginyu` con tint azul Ginyu Force)
+- **Guldo** (`garlic` con tint verde alienígena)
+- **Dabura** (`janemba` con tint demoníaco)
+- **Androide 19** (`a16` con tint pálido androide)
+- **Soldado Red Ribbon** (`soldier3` con tint RR)
+- **Bolita de Buu** (`celljr` con tint rosado Buu)

@@ -1,0 +1,204 @@
+{
+  "heroes": {
+    "krilin": {
+      "0": {
+        "pack": "07_Personajes_sin_saga_concreta/Krilin/075_Kuririn",
+        "idle": [7, 8],
+        "idleDu": [26, 26],
+        "move": [16],
+        "attack": [14, 15, 17, 18, 19],
+        "kick": [24, 25, 27, 28],
+        "ki": [36, 38],
+        "pow": [36, 37],
+        "hurt": [44, 45]
+      }
+    },
+    "trunks": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/081_Mirai Trunks",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [4],
+        "attack": [6, 7, 8, 9],
+        "kick": [19, 20, 22],
+        "ki": [57, 58],
+        "pow": [68, 69],
+        "hurt": [46, 47]
+      },
+      "1": {
+        "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/082_Super Mirai Trunks",
+        "idle": [10, 11],
+        "idleDu": [26, 26],
+        "move": [21],
+        "attack": [22, 23, 24, 25],
+        "kick": [40, 41, 42],
+        "ki": [57, 58],
+        "pow": [69, 70],
+        "hurt": [48, 49]
+      }
+    },
+    "a18": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Androides/012_Androide 18",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [4],
+        "attack": [9, 10, 11, 12],
+        "kick": [16, 17, 19],
+        "ki": [20, 21],
+        "pow": [36, 37, 38],
+        "hurt": [33, 34]
+      }
+    },
+    "broly": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/016_Broly Full Power",
+        "idle": [8, 9],
+        "idleDu": [26, 26],
+        "move": [20],
+        "attack": [27, 28, 29],
+        "kick": [34, 35, 36],
+        "ki": [23, 24],
+        "pow": [43, 44],
+        "hurt": [12, 13]
+      }
+    },
+    "gotenks": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gotenks/065_Gotenks Base",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [6],
+        "attack": [9, 10, 13],
+        "kick": [14, 15, 16],
+        "ki": [43, 44],
+        "pow": [47, 48],
+        "hurt": [20, 21]
+      }
+    },
+    "caulifla": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Caulifla/024_Caulifla",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [2],
+        "attack": [8, 9, 10],
+        "kick": [17, 18, 19],
+        "ki": [29, 30],
+        "pow": [47, 48],
+        "hurt": [20, 21]
+      }
+    },
+    "kale": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Kale/070_Kale",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [8],
+        "attack": [10, 11, 12],
+        "kick": [16, 17, 18],
+        "ki": [23, 24],
+        "pow": [40, 41],
+        "hurt": [4, 5]
+      },
+      "1": {
+        "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Kale/071_Kale Ssj",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [6],
+        "attack": [8, 9, 10],
+        "kick": [14, 15, 16],
+        "ki": [21, 22],
+        "pow": [40, 41],
+        "hurt": [2, 3]
+      }
+    },
+    "kyabe": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/02_Universo_6/Cabba/072_Kyabe",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [4],
+        "attack": [12, 13, 14],
+        "kick": [17, 18],
+        "ki": [21, 22],
+        "pow": [36, 37],
+        "hurt": [9, 10]
+      },
+      "1": {
+        "pack": "01_Dragon_Ball_Super/02_Universo_6/Cabba/073_Kyabe ssj",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [4],
+        "attack": [11, 12, 13],
+        "kick": [20, 21],
+        "ki": [21, 22],
+        "pow": [39, 40],
+        "hurt": [17, 18]
+      }
+    },
+    "gohan": {
+      "0": {
+        "pack": "07_Personajes_sin_saga_concreta/Gohan/033_Gohan",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [3],
+        "attack": [8, 9, 13],
+        "kick": [23, 24, 25],
+        "ki": [29, 30],
+        "pow": [34, 35],
+        "hurt": [17, 18]
+      }
+    },
+    "vegeta": {
+      "3": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Vegeta/090_Majin Vegeta",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [2],
+        "attack": [10, 11, 12, 13],
+        "kick": [14, 15, 16],
+        "ki": [3, 4],
+        "pow": [6, 7, 8],
+        "hurt": [9, 10]
+      }
+    },
+    "vegetasuper": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/094_Vegeta Buu Saga",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [2],
+        "attack": [10, 11, 13, 14],
+        "kick": [16, 17, 18],
+        "ki": [3, 4],
+        "pow": [6, 7, 8],
+        "hurt": [9, 10]
+      },
+      "1": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/096_Vegeta Saga Buu SSJ",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [2],
+        "attack": [10, 11, 13, 14],
+        "kick": [16, 17, 18],
+        "ki": [3, 4],
+        "pow": [6, 7, 8],
+        "hurt": [9, 10]
+      }
+    },
+    "vegetto": {
+      "3": {
+        "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Vegetto/101_Vegito SSJ Blue",
+        "idle": [0, 1],
+        "idleDu": [26, 26],
+        "move": [2],
+        "attack": [38, 39, 40],
+        "kick": [43, 44, 45],
+        "ki": [56, 57],
+        "pow": [87, 88],
+        "hurt": [23, 24]
+      }
+    }
+  }
+}

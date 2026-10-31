@@ -22,12 +22,13 @@ que funciona abriendo `index.html` con doble clic (sin instalar nada).
 | Parte | Qué hay |
 |---|---|
 | Colisiones | Árboles, rocas, casas… bloquean al jugador y a los enemigos (rodean obstáculos); nada aparece dentro de un objeto. **F2** muestra las colisiones. |
-| Gachapón | Banner destacado que rota cada 3 días + permanente, 5★ con probabilidad creciente desde el deseo 50 y seguro en el 70, 4★ cada 10, 50/50 con garantía, repetidos = **despertar** (+8% daño y vida, hasta +5), deseo gratis diario, historial. |
-| Menú | Portada con sprites caminando; menú principal (barra de zeni/tickets, logo, evento destacado, compañero animado con su cara, panel Jugar/Personajes/Mejoras/Tienda/Shenron/Misiones/Ranking/Ajustes, estadísticas); pantallas de Personajes (con cara grande del que señalas), Tienda de Bulma, Ranking y Ajustes. |
+| Gachapón | Banner destacado que rota cada 3 días + permanente, 5★ con probabilidad creciente desde el deseo 50 y seguro en el 70, 4★ cada 10, 50/50 con garantía, repetidos = **despertar** (+8% daño y vida, hasta +5), deseo gratis diario, historial. Tarjetas con fotos de retratos pixel art. |
+| Menú | Portada y selector de personajes con foto/retrato nítido ("con la foto, no el cuerpo"), tarjeta del compañero con retrato destacado, menú principal (barra de zeni/tickets, logo, evento destacado, panel Jugar/Personajes/Mejoras/Tienda/Shenron/Misiones/Ranking/Ajustes, estadísticas); pantallas de Personajes, Tienda de Bulma, Ranking y Ajustes. |
 | Desbloqueos | Todos los personajes con sprites y todos los escenarios abiertos desde el principio. |
-| Animaciones | **17 personajes** con fotogramas elegidos a mano y revisados a ojo: Goku, Goku UI, Goku GT, Goku Super, Goku Black, Vegeta, Vegeta Ego, Vegeta GT, Vegeta Super, Vegetto, Gogeta, Gohan, Gohan adulto, Trunks (Cell), Bardock, Piccolo, Kefla. Las formas sin sprites buenos salen de la cadena de transformaciones. |
+| Animaciones | **25 personajes jugables** (100% de los héroes con sprites disponibles) con fotogramas elegidos a mano y revisados a ojo: Goku, Goku UI, Goku GT, Goku Super, Goku Black, Vegeta, Vegeta Ego, Vegeta GT, Vegeta Super, Vegetto, Gogeta, Gohan niño, Gohan adulto, Trunks (Cell), Trunks del futuro, Krilin, Androide 18, Broly, Gotenks, Caulifla, Kale, Kyabe, Bardock (idle corregido sin bola de ki), Piccolo, Kefla. |
+| Enemigos | **100% sprites reales animados**: todos los enemigos del juego (incluidos Dodoria, Zarbon, Nappa, Burter, Guldo, Dabura, A19, Soldado Red Ribbon y Bolita de Buu) están mapeados a sprite sheets reales con `SCPACK.e` y filtros de paleta en `SCTINT`, eliminando el renderizado procedural por código canvas. |
 | Muerte | El personaje cae con su animación (1,8 s) antes de la pantalla final (27 formas con fotogramas de muerte; el resto usa los de daño). |
-| Retratos | Cara grande en Personajes y en la tarjeta del compañero (si una forma no tiene, se usa la de otra del mismo personaje). |
+| Retratos | 100% de cobertura de caras/fotos en todos los héroes y formas. Generación automática desde `montar_animaciones.py` si el pack no incluye retrato grande. Las cartas de selección y el hub muestran las caras nítidas sin dibujar el cuerpo caminando. |
 
 ## Cómo funcionan las animaciones (herramientas/)
 
@@ -48,18 +49,3 @@ Lee `herramientas/GUIA_ANIMACIONES.md`: reglas y comandos.
    arriba al centro tiempo y una línea de info (mapa, derrotados, monedas); abajo al centro las casillas de ataque;
    panel azul «¡Nivel N! Elige una recompensa · 1 2 3» con cartas (icono, nombre, etiquetas Nuevo·Tipo y Físico/Especial,
    descripción, tecla) y «Cambiar opciones (1) · R»; barras de vida sobre los enemigos y números de daño.
-3. **Recuperar personajes** que tienen sprites pero no pasaron la revisión: Broly, Krilin, Trunks del futuro, A18, Gotenks,
-   Caulifla, Kale, Kyabe, Gohan niño, Majin Vegeta, Vegeta saga Buu, Vegetto Blue (ver `SPRITES_PENDIENTES.md`, apartado B).
-   Base Bardock: quitar la bola de ki de su postura de guardia.
-4. **Enemigos**: quitar los dibujados por código (lista A de `SPRITES_PENDIENTES.md`) y dar a los demás animaciones
-   coherentes con las mismas herramientas (muchos enemigos y jefes usan los packs de héroes).
-5. **Mapas**: quedarse solo con los mapas buenos; el agua no debe bloquear tanto; Kame House como **arena de jefe**;
-   mapas más detallados (mesetas, charcas, hierba alta) y recrear lugares de la serie a partir de las fotos de `ESCENARIOS/`.
-6. Más variedad de ataques por personaje y evoluciones; pulir el bucle adictivo (misiones diarias, cofres, logros).
-
-## Notas
-
-- Codex (ChatGPT) llegó a su límite de uso; vuelve a estar disponible a partir de las 5:04. Su cuenta en este equipo es
-  `brianjacksoncv8n5bhv@hotmail.com`. Se quitó la línea `model = "gpt-6.1-sol"` de `~/.codex/config.toml` (copia en `config.toml.bak`).
-- En git no se suben las bibliotecas grandes (`sprites/`, `ESCENARIOS/`, `animaciones/`, `copias/`, …): ver `.gitignore`.
-- Juego de fans sin ánimo de lucro. Dragon Ball pertenece a Bird Studio, Shueisha y Toei Animation; los sprites, a sus autores.

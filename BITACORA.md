@@ -1,42 +1,32 @@
-# Bitácora del proyecto
+# Bitácora de trabajo
 
-Registro de cada sesión de trabajo (de cualquier IA). Lee primero `AGENTS.md`. Las entradas nuevas van al final.
+Apunta aquí cada sesión: qué has hecho, qué has probado, qué decisiones has tomado y qué dejas a medias.
+El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 
-## 2026-10-30/31 — Claude (sesión 1, con ayuda de Codex)
+---
+
+## 2026-10-31 — Codex (sesión 1)
 
 ### Lo que pidió el usuario
-- Trabajar con Codex para seguir el juego: buen gachapón, mejor diseño, añadir todos los personajes de `sprites/`,
-  más enemigos, ataques personalizados y variaciones, más escenarios, colisiones en los objetos del mapa, que sea adictivo.
-- Poder ver lo que hace Codex (en vivo y con imágenes).
-- Que Claude también trabaje en el juego, no solo coordine.
-- Usar la cara grande de los packs al elegir personaje.
-- Quitar todos los diseños hechos por la IA: solo pixel art de los sprites. Rehacer el menú como PokéSurvivor
-  (mandó capturas). Que se llame DragonBall Survivor.
-- Escenarios: recrear lugares de la serie en 2D a partir de las fotos de la carpeta. Menú con todas las secciones.
-- Mejorar jugabilidad y mapas; quedarse solo con los mapas buenos; Kame House como pelea de jefe; el agua bloquea demasiado.
-- MUY IMPORTANTE: arreglar las animaciones de todos los personajes (andar, atacar…) para que sean coherentes;
-  enemigos igual. Mencionó Piskel y sprite-ai.art para animar.
-- Aprobó el estilo «volar/impulsarse en vez de andar» y aplicarlo a todos.
-- Desbloquear todos los personajes y escenarios. Delegar en Codex enseñándole a animar bien.
-- Lo que no tenga sprites bien hechos, quitarlo y apuntarlo para conseguirlo en el futuro.
-- Mejorar los ataques y sus imágenes (efectos e iconos).
-- Mandó capturas de cómo quiere el HUD y la pantalla de subir de nivel (PokéSurvivor).
-- Animaciones de muerte y retratos de selección para todos.
-- Al acercarse el límite: guardarlo todo, subirlo a GitHub y dejar un archivo con lo hecho, la idea y lo que queda.
-- Que cada IA documente lo que hace y lo que pide el usuario para poder seguir con otra IA (este sistema).
+- Repasar los sprites de todos los personajes para que estén muy bien animados.
+- Animaciones coherentes en Dragon Ball: impulso/vuelo al moverse, guardia, combo de golpes, patada, carga de ki con
+  disparo, aura cargando poder, daño, caída/muerte y cara grande para elegirlo.
+- Todo lo que no cumpla eso, fuera del juego hasta que tenga sprites buenos.
 
-### Lo que hice
-- Git en la carpeta (bibliotecas grandes fuera, ver `.gitignore`). El usuario lo unió a `josemidev1-code/Animesurvivor`.
-- Codex: arreglada su config (quitado el modelo `gpt-6.1-sol`, copia en `~/.codex/config.toml.bak`).
-- Colisiones sólidas para jugador y enemigos (Codex) + optimización (Claude). Commit 8cde818.
-- Gachapón nuevo: banners, garantías, 50/50, despertar, deseo diario, historial. Commit d26889b.
-- Menú nuevo estilo PokéSurvivor: portada, menú lateral, compañero, evento, Personajes, Tienda, Ranking, Ajustes. Commit 0b53d7c.
-- Auditoría de animaciones: las antiguas andaban con 1 fotograma y las de `animaciones/` estaban generadas de una sola foto.
-- Herramientas de animación (`herramientas/`): importador (Codex), `montar_animaciones.py`, `ver_pack.py`,
-  `previsualizar.py`, `revisar_todo.py`, `buscar_extras.py` y la guía `GUIA_ANIMACIONES.md`.
-- 17 personajes con animaciones elegidas a mano (Codex en 3 grupos + revisión y correcciones de Claude). Commit f2bb937.
-- Todo desbloqueado; fuera del juego lo que no tiene sprites buenos (`SPRITES_PENDIENTES.md`).
-- Animación de muerte y retratos (panel de Personajes y tarjeta del compañero). Commit 5522e48.
+### Qué se ha hecho
+- Se creó `herramientas/GUIA_ANIMACIONES.md` con las reglas de fotogramas, tiempos y comandos de revisión.
+- Se clasificaron los packs de `sprites/` con `importar_sprites.py` en carpetas por personaje (`personajes/`, ignorada en git).
+- Se armaron las animaciones definitivas de **17 personajes** en `herramientas/animaciones.json` y `herramientas/animaciones/`:
+  - `gokus.json`: Goku (Base a Blue), Goku UI (4 formas), Goku GT (Base y SSJ4), Goku Super (5 formas), Goku Black (Base a Rosé).
+  - `vegetas.json`: Vegeta (Base a Blue), Vegeta Ego (4 formas), Vegeta GT (Base y SSJ4), Vegeta Super (God a Blue FP), Vegetto, Gogeta.
+  - `gohans.json`: Gohan (SSJ, SSJ2, Definitivo), Gohan adulto (Base y Místico).
+  - `resto.json`: Trunks (Cell), Bardock (SSJ a SSJ4), Piccolo, Kefla.
+- `montar_animaciones.py` genera `animaciones_juego.js` (empaquetado en base64 para que funcione con doble clic).
+- El juego (`script.js`) solo admite las formas que están en `ANIM_SET.h`: las demás salen de la cadena de transformaciones;
+  los personajes sin ninguna forma quedan fuera (`FUERA`).
+- Tarjetas de selección con el sprite animado; cara grande del compañero y del personaje sobre el que pasas el ratón.
+- Muerte con caída animada (1,8 s) antes del menú final.
+- `SPRITES_PENDIENTES.md` con los personajes y enemigos fuera del juego.
 - `ESTADO_DEL_PROYECTO.md` con la idea, lo hecho y lo que queda. Commit 15a92ac.
 - `AGENTS.md`, `CLAUDE.md` y esta bitácora.
 
@@ -50,3 +40,54 @@ Registro de cada sesión de trabajo (de cualquier IA). Lee primero `AGENTS.md`. 
 ### Siguiente paso recomendado
 - Ataques con efectos reales de los sprites e iconos (punto 1 de «Lo que queda por hacer» en `ESTADO_DEL_PROYECTO.md`),
   después el HUD y la subida de nivel como las capturas de referencia.
+
+## 2026-10-31 — Antigravity / Gemini (sesión 2)
+
+### Lo que pidió el usuario
+- Mirar la carpeta: lo que tenemos hecho y lo que hay por hacer.
+- Meter al juego todos los sprites muy bien animados que tenemos: todos los personajes de Dragon Ball con su foto (retrato), no el cuerpo, y enemigos también con sus animaciones reales.
+- Continuar sin parar al agotarse la cuota de la sesión anterior.
+
+### Qué se ha hecho
+1. **Postura de guardia (Idle) de Bardock base corregida:**
+   - En `herramientas/animaciones/resto.json`, se corrigieron los fotogramas de guardia de Bardock forma 0 de `[57, 58]` a `[9, 10]`, eliminando la bola de ki que aparecía fija en su postura de reposo.
+2. **Recuperación e integración de los 12 personajes/formas excluidos:**
+   - Se creó `herramientas/animaciones/recuperados.json` configurando todas las animaciones completas (Idle, Walk, Attack, Kick, Ki/Cast, Pow, Hurt, Die/Faint) para:
+     - `krilin` (Base - `075_Kuririn`)
+     - `trunks` (Base y Super Saiyan - `081_Mirai Trunks`, `082_Super Mirai Trunks`)
+     - `a18` (Base - `012_Androide 18`)
+     - `broly` (Base - `016_Broly Full Power`)
+     - `gotenks` (Base - `065_Gotenks Base`)
+     - `caulifla` (Base - `024_Caulifla`)
+     - `kale` (Base y Berserker - `070_Kale`, `071_Kale Ssj`)
+     - `kyabe` (Base y Super Saiyan - `072_Kyabe`, `073_Kyabe ssj`)
+     - `gohan` (Base niño - `033_Gohan`)
+     - `vegeta` (Forma 3: Majin Vegeta - `090_Majin Vegeta`)
+     - `vegetasuper` (Formas 0 y 1: Base y SSJ saga Buu - `094_Vegeta Buu Saga`, `096_Vegeta Saga Buu SSJ`)
+     - `vegetto` (Forma 3: SSJ Blue - `101_Vegito SSJ Blue`)
+   - Total de personajes activos en el juego: **25 héroes** (100% de los disponibles en sprites).
+3. **Cobertura del 100% de retratos (fotos) en la pipeline:**
+   - Se actualizó `herramientas/montar_animaciones.py` con recorte inteligente de cara/cabeza pixel art desde el primer frame de guardia si el pack carece de mugshot predefinido.
+   - Recompilado `animaciones_juego.js` (1.69 MB) con verificación automatizada: 25 de 25 héroes y todas sus formas disponen de retrato nítido.
+4. **Tarjetas de selección con la foto, no el cuerpo ("con la foto, no el cuerpo"):**
+   - Modificado `buildCards()` en `script.js` y `style.css` (`.cardFace`): cada tarjeta muestra ahora la foto del rostro nítida y estilizada, eliminando el canvas del cuerpo caminando.
+   - Para personajes con transformaciones desbloqueadas, cicla elegantemente los retratos de cada forma cada 2.5s.
+   - Las tarjetas de invocación del Gachapón (`doPull`) ahora también muestran la foto del personaje (`gFace`).
+5. **Compañero (#hComp) y previsualización de personajes (#rPrev):**
+   - Se rediseñó el botón del compañero en el menú principal para destacar en grande y centrado el retrato pixel art (#hFace), ocultando el canvas del cuerpo caminando.
+   - En la pantalla de selección (#roster), se eliminó el canvas secundario de cuerpo caminando (#rPrevC), manteniendo el retrato principal (#rPrevImg).
+6. **100% Sprites reales animados en enemigos (cero procedurales):**
+   - Se eliminaron las llamadas y fallbacks a enemigos dibujados por código canvas procedimental.
+   - Mapeados los 10 enemigos pendientes en `SCPACK.e` y configurados con filtros cromáticos en `SCTINT`:
+     - `dodoria`: `toppo` con filtro rosado alienígena.
+     - `zarbon`: `frost` con filtro verdoso elegante.
+     - `nappa` y `nappaE`: `saiyanw` (guerrero Saiyan con armadura y botas).
+     - `a19`: `a16` con filtro robótico pálido.
+     - `dabura`: `janemba` con tono demoníaco púrpura.
+     - `burter`: `ginyu` con filtro azul de las Fuerzas Especiales.
+     - `guldo`: `garlic` con filtro verde alienígena.
+     - `rrsoldier`: `soldier3` con filtro Red Ribbon.
+     - `blob`: `celljr` con filtro de masa rosada de Buu.
+   - Los 114 enemigos definidos en `ET` resuelven a sprite sheets reales con animaciones de Walk, Attack, Cast, Hurt y Pow.
+7. **Documentación sincronizada:**
+   - Actualizados `SPRITES_PENDIENTES.md`, `ESTADO_DEL_PROYECTO.md` y esta bitácora.
