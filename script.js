@@ -2385,8 +2385,11 @@ function drawKi(p,x,y,time){if(p.spr){const im=p.spr,w=Math.round(im.width*0.6),
   const sp=Math.hypot(p.vx,p.vy)||1,nx=p.vx/sp,ny=p.vy/sp,r=Math.round(p.r);
   for(let i=3;i>=1;i--){const rr=Math.max(1,r-i),tx=Math.round(x-nx*i*(r+1)*0.9),ty=Math.round(y-ny*i*(r+1)*0.9);ctx.globalAlpha=0.25+0.15*(3-i);circ(tx,ty,rr,p.col[i>1?0:1])}
   ctx.globalAlpha=1;const im=kiSprite(r,p.col,(time*16|0)%2);ctx.drawImage(im,x-(im.width>>1),y-(im.height>>1))}
-function drawDBall(x,y,n){circ(x,y,5,OUTL);circ(x,y,4,'#e0761a');circ(x-1,y-1,3,'#f2a02a');ctx.fillStyle='#fff0b0';ctx.fillRect(x-3,y-3,2,1);
-  ctx.fillStyle='#d81e1e';const P7=[[0,0],[-2,-1],[2,1],[-1,2],[1,-2],[2,-1],[-2,1]];for(let i=0;i<n;i++)ctx.fillRect(x+P7[i][0],y+P7[i][1],1,1)}
+// esferas del dragón dibujadas por el usuario (ui/esfera1..7.png, cargadas desde ui_imagenes.js); 18 px = 9 unidades
+if(window.UI_IMG){document.querySelectorAll('[data-ui]').forEach(e=>e.src=UI_IMG[e.dataset.ui]);const fav=document.createElement('link');fav.rel='icon';fav.href=UI_IMG.logo;document.head.appendChild(fav)}
+const DBIMG=[];if(window.UI_IMG)for(let k=1;k<=7;k++){const im=new Image();im.src=UI_IMG['esfera'+k];DBIMG[k]=im}
+function drawDBall(x,y,n){const im=DBIMG[n];if(im&&im.complete&&im.naturalWidth){ctx.drawImage(im,Math.round(x*2-9)/2,Math.round(y*2-9)/2,9,9);return}
+  circ(x,y,5,OUTL);circ(x,y,4,'#e0761a');circ(x-1,y-1,3,'#f2a02a')}
 let SHEN=null;
 function shenlong(){if(SHEN)return SHEN;const W=170,H=96,c=mk(W,H),g=c.getContext('2d');
   const pts=[];for(let i=0;i<=60;i++){const t=i/60;pts.push([12+t*120,70-Math.sin(t*Math.PI*2.2)*22-t*30,9-t*3])}
@@ -2511,7 +2514,7 @@ function hud(time){
       ctx.fillStyle=on?'#ffd23f':'#3a4a7a';ctx.fillRect(x,y,w,1);ctx.fillRect(x,y+21,w,1);ctx.fillRect(x,y,1,22);ctx.fillRect(x+w-1,y,1,22);text(String(i+1),x+2,y+2,'#ffd23f',6,'left')}
     if(L[P.sel])text(MV[L[P.sel]].name.toUpperCase(),VW/2,y-10,'#ffffff',6);
     if(P.newSig){const id=L[P.newSig.i];if(id&&((P.newSig.t*4|0)%2||P.newSig.t<2.2)){text('¡NUEVO ATAQUE: '+MV[id].name.toUpperCase()+'!',VW/2,y-34,'#ffd23f',8);text('PULSA '+(P.newSig.i+1)+' PARA USARLO',VW/2,y-22,'#ffffff',6)}}}
-  for(let i=0;i<7;i++){const x=VW/2-21+i*7,y=24;if(i<S.balls){circ(x,y,3,OUTL);circ(x,y,2,'#f2911a');ctx.fillStyle='#d81e1e';ctx.fillRect(x,y,1,1)}else{ctx.fillStyle='rgba(255,255,255,.25)';ctx.fillRect(x-1,y-1,3,3)}}
+  for(let i=0;i<7;i++){const x=VW/2-30+i*10,y=24;if(i<S.balls)drawDBall(x,y,i+1);else{ctx.globalAlpha=0.3;drawDBall(x,y,i+1);ctx.globalAlpha=1}}
   const m=Math.floor(S.t/60),s=Math.floor(S.t%60);text(String(m).padStart(2,'0')+':'+String(s).padStart(2,'0'),VW/2,10,'#ffffff',8);
   text('KO '+S.kills,VW-4,10,'#ffffff',8,'right');
   if(P.form>0)text(HEROES[S.hid].forms[P.form],VW/2,21,'#ffd23f',8);

@@ -4,12 +4,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
-<link rel="stylesheet" href="style.css?v=20">
+<link rel="stylesheet" href="style.css?v=21">
 
 <canvas id="game" aria-label="DragonBall Survivor, juego"></canvas>
 <div id="hudBtns" hidden><button id="bMute" type="button" aria-label="Silenciar">SON</button><button id="bPause" type="button" aria-label="Pausa">II</button></div>
 
 <div id="start" class="ov start" hidden>
+  <img class="logoImg" data-ui="logo" alt="">
   <h1 class="logo">DRAGON BALL<span>SURVIVOR</span></h1>
   <p class="tag">Sobrevive a las hordas con tus guerreros Z</p>
   <p class="press">PULSA PARA EMPEZAR</p>
@@ -18,6 +19,7 @@
   <div class="hubTop"><span class="chip zeni" id="cZeni"></span><span class="chip tix" id="cTix"></span><span class="chip" id="cHeroes"></span>
     <button class="chip act gold" id="hSave" type="button">GUARDAR</button><button class="chip act" id="hMute" type="button">SONIDO</button><button class="chip act" id="hFull" type="button">PANTALLA</button><button class="chip act" id="hSet" type="button">AJUSTES</button></div>
   <div class="hubMid">
+    <img class="logoImg" data-ui="logo" alt="">
     <h1 class="logo">DRAGON BALL<span>SURVIVOR</span></h1>
     <p class="hubSub">SAGA DE LOS GUERREROS Z</p>
     <button class="event" id="hEvent" type="button"></button>
@@ -152,6 +154,7 @@
   <div class="btns" id="endBtns"></div>
 </div>
 
-<script src="sprites.js?v=20"></script>
-<script src="animaciones_juego.js?v=20"></script>
-<script src="script.js?v=20"></script>
+<script src="sprites.js?v=21"></script>
+<script src="ui_imagenes.js?v=21"></script>
+<script src="animaciones_juego.js?v=21"></script>
+<script src="script.js?v=21"></script>

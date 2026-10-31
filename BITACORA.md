@@ -129,3 +129,20 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - «Sí, sigue»: seguir metiendo los 174 packs pendientes de `sprites/` como jugables.
 
 ### Lo que hice
+- El usuario mandó dos imágenes en pixel art: un pergamino rojo con una bola de dragón («ese va a ser el logo del menú»)
+  y las 7 esferas del dragón («estas las esferas»). Guardadas en `ui/` y puestas en el juego.
+- Logo: el dibujo en papel cuadriculado se convirtió en sprite real (1 cuadro = 1 píxel) → `ui/logo.png` (22×17).
+  Sale en la portada, en el menú principal y como icono de la pestaña.
+- Esferas: recortadas las 7 de la imagen, reducidas a su píxel real (18×18) y numeradas contando las estrellas rojas
+  → `ui/esfera1..7.png`. Las usa `drawDBall` (bolas en el suelo, radar y marcador de arriba).
+- Todo va embebido en `ui_imagenes.js` (base64) para que funcione con doble clic. Originales en `ui/*_original.png`.
+- Personajes nuevos de esta sesión (`herramientas/animaciones/variantes.json` + tabla `NUEVOS`): Gohan DBS (5 formas),
+  Gohan poseído, Gohan manga, Bardock Leyendas (4), Majin Cell, Trunks SSJ2 manga, Trunks armadura Ultra SSJ, Cumber,
+  DLRX, Saiyans zombis (3), Broly fanmade (2), Gogeta fanmade (3), Vegetto fanmade (4). Total: 55 jugables.
+
+### A medias / problemas
+- Faltan las variantes de Goku (72 packs), Vegeta (34) y Goku Black (23). Iba a empezar por Goku Xeno (266, 253, 180).
+- Mini-packs incompletos que no se pueden usar (sin daño ni patadas): Broly 007, 008, 194; Gogeta black 155.
+
+### Siguiente paso recomendado
+- Seguir con Goku (Xeno, UI, fanmade, Z, Moro), luego Vegeta y Goku Black.
