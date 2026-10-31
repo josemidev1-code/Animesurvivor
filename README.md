@@ -27,7 +27,7 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 
 ## Cómo está ahora (31/10/2026)
 
-- **56 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
+- **57 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
 - **70 tipos de enemigo** con animaciones seleccionadas de sus propios personajes; además, la sombra del jugador.
 - **44 tipos retirados temporalmente** por no tener secuencias completas revisadas (lista en `SPRITES_PENDIENTES.md`).
   Los 24 mapas conservan cinco encuentros con jefes. Hay menos variedad de enemigos normales mientras se recuperan sus packs.

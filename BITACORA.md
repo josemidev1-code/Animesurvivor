@@ -230,3 +230,14 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 
 ### Siguiente paso recomendado
 - Jugar una partida con los enemigos corregidos y revisar ki/transformación; recuperar Zamasu corrupto solo si pasa la guía. Después, seguir con Goku película Broly (216, 222, 221 y 217).
+
+## 2026-10-31 — Codex (sesión 7)
+
+### Lo que pidió el usuario
+- «SEGUIMOS ANIMANDO A TODOS LOS PERSONAJES».
+
+### Lo que hice
+- Se retoma la incorporación de personajes y formas pendientes, priorizando ahora las animaciones por petición del usuario. Primer grupo: Goku de la película Broly; después Vegeta y Goku Black.
+- Goku película Broly integrado como nuevo jugable: BASE, SSJ, SSJ DIOS y BLUE PERFECTO. Reutilizadas las selecciones revisadas de base/SSJ (con muerte propia añadida) y elegidas a mano las formas 216 y 221. Revisadas hojas completas, selecciones y previsualizaciones de ambas formas nuevas. Registro en NUEVOS y recursos a v28.
+- Packs 217 y 222 revisados: invierno no tiene acciones de combate completas; Blue carece de patada completa. Se mantienen pendientes y anotados en el apartado C, sin mezclarles sprites de otro pack.
+- Corregida la lista B: todavía incluía muchos packs ya integrados por Claude. Se eliminan los usados según la configuración real y se recalculan los totales por grupo.

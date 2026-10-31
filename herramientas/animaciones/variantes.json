@@ -1414,6 +1414,162 @@
     ],
     "portrait": 169
    }
+  },
+  "gokubroly": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     1,
+     2
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     7
+    ],
+    "attack": [
+     18,
+     21,
+     22,
+     23
+    ],
+    "kick": [
+     25,
+     26,
+     27
+    ],
+    "ki": [
+     35,
+     37
+    ],
+    "pow": [
+     41,
+     42
+    ],
+    "hurt": [
+     31,
+     29
+    ],
+    "portrait": 59,
+    "faint": [
+     33
+    ]
+   },
+   "1": {
+    "pack": "01_Dragon_Ball_Super/05_Broly/Goku/220_GOKU,SSJ 1,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     5,
+     6
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     11
+    ],
+    "attack": [
+     15,
+     16,
+     17
+    ],
+    "kick": [
+     18,
+     19
+    ],
+    "ki": [
+     34,
+     35
+    ],
+    "pow": [
+     28,
+     29
+    ],
+    "hurt": [
+     24,
+     26
+    ],
+    "portrait": 41,
+    "faint": [
+     26
+    ]
+   },
+   "2": {
+    "pack": "01_Dragon_Ball_Super/05_Broly/Goku/216_GOKU, SSJ GOD,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     11,
+     12
+    ],
+    "move": [
+     18
+    ],
+    "attack": [
+     23,
+     24,
+     25,
+     26
+    ],
+    "kick": [
+     28,
+     29
+    ],
+    "ki": [
+     50,
+     53
+    ],
+    "pow": [
+     31,
+     32
+    ],
+    "hurt": [
+     40,
+     41
+    ],
+    "faint": [
+     43
+    ],
+    "portrait": 58
+   },
+   "3": {
+    "pack": "01_Dragon_Ball_Super/05_Broly/Goku/221_GOKU,SSJ BLUE PERFECTO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     18,
+     19
+    ],
+    "move": [
+     24
+    ],
+    "attack": [
+     29,
+     32,
+     33,
+     34
+    ],
+    "kick": [
+     43,
+     44,
+     45,
+     46
+    ],
+    "ki": [
+     54,
+     56
+    ],
+    "pow": [
+     93,
+     94
+    ],
+    "hurt": [
+     35,
+     36
+    ],
+    "faint": [
+     38
+    ],
+    "portrait": 79
+   }
   }
  }
 }

@@ -701,6 +701,7 @@ const NUEVOS={
  vegettofan:{name:'VEGETTO FANMADE',rar:5,hp:135,spd:70,atk:1.35,start:'kame',desc:'Vegetto en formas de fans.',forms:['SSJ DIOS','DIOS KAIOKEN','SUPER SAIYAN 4','MUI'],aura:['red','red','red','silver'],sig:['kiblast','punch','kick','kame','finalflash','kiblade']},
  gokuxeno:{name:'GOKU XENO',rar:5,hp:125,spd:68,atk:1.3,start:'kame',desc:'El Goku de la Patrulla del Tiempo.',forms:['BASE','SSJ DIOS','SUPER SAIYAN 4'],aura:['white','red','red'],sig:['kiblast','punch','kick','kame','instant','genki']},
  gokumoro:{name:'GOKU SAGA MORO',rar:5,hp:125,spd:68,atk:1.3,start:'kame',desc:'Goku con la ropa rota en la lucha contra Moro.',forms:['BASE','SUPER SAIYAN','SSJ DIOS','SSJ BLUE','ULTRA INSTINTO','MUI'],aura:['white','gold','red','blue','silver','silver'],sig:['kiblast','punch','kick','kame','instant','silver']},
+ gokubroly:{name:'GOKU PELÍCULA BROLY',rar:5,hp:125,spd:68,atk:1.3,start:'kame',desc:'Goku frente a Broly: de base a Super Saiyan Blue perfecto.',forms:['BASE','SUPER SAIYAN','SSJ DIOS','SSJ BLUE PERFECTO'],aura:['white','gold','red','blue'],sig:['kiblast','punch','kick','kame','instant','genki']},
 };
 // formas añadidas a personajes que ya estaban
 Object.assign(HDEF.gokugt,{forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 3','SUPER SAIYAN 4'],aura:['white','gold','gold','red']});
