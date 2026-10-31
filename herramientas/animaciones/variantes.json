@@ -475,6 +475,287 @@
     ],
     "portrait": 1
    }
+  },
+  "trunks": {
+   "2": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Trunks/235_TRUNKS DEL FUTURO,SSJ2 MANGA, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     74,
+     75
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     80
+    ],
+    "attack": [
+     46,
+     47,
+     50
+    ],
+    "kick": [
+     61,
+     62
+    ],
+    "ki": [
+     33,
+     35
+    ],
+    "pow": [
+     39
+    ],
+    "hurt": [
+     77,
+     78
+    ],
+    "faint": [
+     71
+    ],
+    "portrait": 0
+   }
+  },
+  "trunkscell": {
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Trunks/232_TRUNKS CON ARMADURA, ULTRA SSJ, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     11,
+     12
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     21
+    ],
+    "attack": [
+     20,
+     22,
+     24
+    ],
+    "kick": [
+     26,
+     27
+    ],
+    "ki": [
+     51,
+     56
+    ],
+    "pow": [
+     37,
+     38,
+     39
+    ],
+    "hurt": [
+     33,
+     29
+    ],
+    "faint": [
+     35
+    ],
+    "portrait": 64
+   }
+  },
+  "cumber": {
+   "0": {
+    "pack": "04_Heroes_y_videojuegos/Cumber/196_KAMBA,Damaged, Andrés Gamen",
+    "idle": [
+     3,
+     4
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     13,
+     14
+    ],
+    "kick": [
+     11,
+     12
+    ],
+    "ki": [
+     15,
+     17
+    ],
+    "pow": [
+     2
+    ],
+    "hurt": [
+     8,
+     9
+    ],
+    "faint": [
+     10
+    ],
+    "altura": 60
+   }
+  },
+  "dlrx": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/DLRX/009_DLRX-v5 Sprite pack",
+    "idle": [
+     8,
+     9
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     13
+    ],
+    "attack": [
+     27,
+     29,
+     31
+    ],
+    "kick": [
+     41,
+     44
+    ],
+    "ki": [
+     59,
+     72
+    ],
+    "pow": [
+     63,
+     64,
+     65
+    ],
+    "hurt": [
+     46,
+     47
+    ],
+    "faint": [
+     48
+    ],
+    "portrait": 84
+   }
+  },
+  "zombies": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Gohan/284_GOHAN ZOMBIE ULSW",
+    "idle": [
+     4,
+     5
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     19
+    ],
+    "attack": [
+     22,
+     24,
+     30
+    ],
+    "kick": [
+     26,
+     27
+    ],
+    "ki": [
+     76,
+     98
+    ],
+    "pow": [
+     73,
+     74
+    ],
+    "hurt": [
+     48,
+     47
+    ],
+    "faint": [
+     71
+    ],
+    "portrait": 0
+   },
+   "1": {
+    "pack": "05_Fanmade_y_alternativos/Goku/285_GOKU ZOMBIE ULSW",
+    "idle": [
+     9,
+     10
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     2
+    ],
+    "attack": [
+     31,
+     34,
+     35
+    ],
+    "kick": [
+     39,
+     40
+    ],
+    "ki": [
+     69,
+     72
+    ],
+    "pow": [
+     61,
+     62
+    ],
+    "hurt": [
+     56,
+     57
+    ],
+    "faint": [
+     58
+    ],
+    "portrait": 0
+   },
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Vegeta/286_VEGETA ZOMBIE ULSW",
+    "idle": [
+     22,
+     23
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     28
+    ],
+    "attack": [
+     32,
+     33,
+     36
+    ],
+    "kick": [
+     40,
+     41
+    ],
+    "ki": [
+     98,
+     99
+    ],
+    "pow": [
+     59,
+     60
+    ],
+    "hurt": [
+     51,
+     52
+    ],
+    "faint": [
+     53
+    ]
+   }
   }
  }
 }

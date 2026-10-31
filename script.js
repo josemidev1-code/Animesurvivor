@@ -697,7 +697,8 @@ Object.assign(HDEF.piccolo,{forms:['BASE','PICCOLO NARANJA'],aura:['white','oran
 Object.assign(HDEF.kefla,{forms:['SUPER SAIYAN','SSJ BLUE'],aura:['green','blue']});
 Object.assign(HDEF.broly,{forms:['CONTENIDO','SUPER SAIYAN','LEGENDARIO','SUPER SAIYAN 4'],aura:['gold','gold','green','red']});
 Object.assign(HDEF.gohanadult,{forms:['BASE','MÍSTICO','BESTIA'],aura:['white','white','purple']});
-Object.assign(HDEF.trunkscell,{forms:['BASE','SUPER SAIYAN'],aura:['white','gold']});
+Object.assign(HDEF.trunkscell,{forms:['BASE','SUPER SAIYAN','ULTRA SSJ'],aura:['white','gold','gold']});
+Object.assign(HDEF.trunks,{forms:['BASE','SUPER SAIYAN','SSJ2 MANGA'],aura:['white','gold','gold']});
 Object.assign(HDEF.gogeta,{forms:['SUPER GOGETA','SUPER SAIYAN 4','SSJ BLUE'],aura:['gold','red','blue']});
 for(const id in NUEVOS){const N=NUEVOS[id];HDEF[id]={...HDEF.goku,...N};delete HDEF[id].sig}
 const HEROES=HDEF;
