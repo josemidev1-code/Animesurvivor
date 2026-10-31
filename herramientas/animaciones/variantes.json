@@ -756,6 +756,89 @@
      53
     ]
    }
+  },
+  "brolyfan": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Broly/211_BROLY SSJ FALSO,DBZ, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     67,
+     68
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     55
+    ],
+    "attack": [
+     47,
+     49,
+     50
+    ],
+    "kick": [
+     52,
+     53
+    ],
+    "ki": [
+     12,
+     19
+    ],
+    "pow": [
+     36,
+     37,
+     38
+    ],
+    "hurt": [
+     44,
+     45
+    ],
+    "faint": [
+     43
+    ],
+    "portrait": 0,
+    "altura": 62
+   },
+   "1": {
+    "pack": "05_Fanmade_y_alternativos/Broly/006_BROLY SSJ 3 DBZ ANDRES GAMEN ANIMATIONS",
+    "idle": [
+     78,
+     79
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     100
+    ],
+    "attack": [
+     111,
+     112,
+     113
+    ],
+    "kick": [
+     84,
+     86
+    ],
+    "ki": [
+     49,
+     33
+    ],
+    "pow": [
+     75,
+     76
+    ],
+    "hurt": [
+     119,
+     120
+    ],
+    "faint": [
+     82
+    ],
+    "portrait": 0,
+    "altura": 62
+   }
   }
  }
 }
