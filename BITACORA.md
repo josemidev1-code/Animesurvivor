@@ -146,3 +146,25 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 
 ### Siguiente paso recomendado
 - Seguir con Goku (Xeno, UI, fanmade, Z, Moro), luego Vegeta y Goku Black.
+
+## 2026-10-31 — Claude (sesión 5)
+
+### Lo que pidió el usuario
+- «seguimos» (con cuidado por el límite de contexto).
+- «apunta cambios que has hecho y simplifica la carpeta de animesurvivor con solo las cosas útiles, lo demás quítalo»,
+  para poder leerla sin perder tiempo con cosas que no sirven.
+
+### Lo que hice
+- Goku Xeno: saqué las hojas de sus 3 packs (266 base, 253 SSJ Dios, 180 SSJ4) pero aún no están en el juego.
+- Carpeta simplificada. Lo que no usa el juego se movió (no se borró) a `Desktop/AnimeSurvivor_archivo/`:
+  `copias/` (index viejos), `fotos/` (capturas), `personajes/` y `animaciones/` (importación vieja de Gemini/Codex),
+  `_organizacion_sprites/`, `ESCENARIOS/` (fondos sueltos, los del juego ya van en `sprites.js`),
+  `tomarreferencia/` (3,6 GB) y en `herramientas_viejas/` los scripts que ya no se usan
+  (`importar_sprites.py`, `ajustes.json`, `informe_importacion.json`, `revision.html`, `buscar_extras.py`).
+- Borrados los temporales (`herramientas/_revisar`, `__pycache__`, `_debug_raditz.png`): se regeneran solos.
+- `ESTADO_DEL_PROYECTO.md` se junta con `README.md`: ahora el README dice qué es cada archivo, cómo está el juego
+  y lo que falta. `AGENTS.md` y la guía de animaciones apuntan al README.
+
+### Siguiente paso recomendado
+- Goku Xeno (gokuxeno: BASE, SSJ DIOS, SSJ4) en `herramientas/animaciones/variantes.json` y en `NUEVOS` de `script.js`;
+  después el resto de variantes de Goku, Vegeta y Goku Black (lista en `SPRITES_PENDIENTES.md`).

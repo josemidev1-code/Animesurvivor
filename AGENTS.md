@@ -5,9 +5,9 @@ Para que nadie pierda el hilo, **todas las IAs deben cumplir estas reglas**.
 
 ## Al empezar
 
-1. Lee `ESTADO_DEL_PROYECTO.md` (la idea, lo hecho y lo que queda) y las últimas entradas de `BITACORA.md`.
+1. Lee `README.md` (qué es cada archivo, cómo está y lo que queda) y las últimas entradas de `BITACORA.md`.
 2. Si vas a tocar animaciones, lee `herramientas/GUIA_ANIMACIONES.md`.
-3. Si no queda claro qué hacer, sigue la lista «Lo que queda por hacer» de `ESTADO_DEL_PROYECTO.md` en orden,
+3. Si no queda claro qué hacer, sigue la lista «Lo que falta» de `README.md` en orden,
    salvo que el usuario pida otra cosa.
 
 ## Mientras trabajas
@@ -21,7 +21,7 @@ Para que nadie pierda el hilo, **todas las IAs deben cumplir estas reglas**.
 ## Antes de acabar (o si notas que se acerca tu límite)
 
 1. Cierra tu entrada de `BITACORA.md` con: qué quedó hecho, qué quedó a medias y qué debería hacer la siguiente IA.
-2. Actualiza `ESTADO_DEL_PROYECTO.md` (tablas «Hecho» y «Lo que queda por hacer») si ha cambiado algo.
+2. Actualiza `README.md` («Cómo está ahora» y «Lo que falta») si ha cambiado algo.
 3. Haz commit de todo. Si puedes, `git push` (el repositorio es `josemidev1-code/Animesurvivor`, rama `main`).
 
 ## Formato de cada entrada de la bitácora

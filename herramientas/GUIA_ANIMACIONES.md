@@ -14,7 +14,7 @@ Python: `C:\Users\soyjo\AppData\Local\Programs\Python\Python314\python.exe` (pon
 | Revisar una forma elegida | `python herramientas/previsualizar.py <heroe> <forma>` | `herramientas/_revisar/<heroe>_<forma>.png` y `.gif` |
 | Meterlo en el juego | `python herramientas/montar_animaciones.py [heroe ...]` | `animaciones_juego.js` |
 
-Para encontrar packs: `personajes/roster.js` (campo `packDir`) o la carpeta `sprites/` (categoría/saga/personaje/pack).
+Para encontrar packs: la carpeta `sprites/` (categoría/saga/personaje/pack).
 Los números de fotograma son el orden natural de los nombres de archivo del pack (los que imprime `ver_pack.py`).
 
 ## Formato (`herramientas/animaciones.json` y `herramientas/animaciones/*.json`)
