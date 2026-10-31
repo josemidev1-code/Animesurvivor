@@ -20,6 +20,20 @@ Los originales, fuentes y coordenadas están en `ui/objetos/fuentes.json` y `ui/
 `herramientas/montar_objetos.py` genera los PNG recortados de la hoja y los incrusta en `ui_imagenes.js`.
 La eliminación de fondo solo afecta al azul conectado al borde de cada recorte, conservando los detalles interiores.
 
+## Enemigos de DeviantArt (sesión 9)
+
+Descargadas las hojas originales (tamaño completo) y troceadas con `herramientas/recortar_hoja.py` en
+`sprites/00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/` (la hoja original se conserva junto a cada pack).
+Ninguna de las tres fichas indica restricciones; se acredita al autor y a los coautores que cita cada una.
+
+| Recurso | Crédito | Fuente | Uso en el juego |
+|---|---|---|---|
+| Soldado de Freezer | **TheWarriorFF2 / Spir1tSolo**; con Que, qsab101, DyanDisel, Izanagi797, Orumaitoobeso, Reeck495, MV95, MANIKDX, Papuro Tenkikujimo | [Frieza's Soldier 1 Sprite Sheet](https://www.deviantart.com/thewarriorff2/art/Frieza-s-Soldier-1-Sprite-Sheet-856331851) | Soldado, soldado raso, soldado de Freezer y élite (colores alternativos) |
+| Capitán Ginyu | **Strice12**; con azazel300, JustOruma, MrDryy, Godkuuxfy, MAST3RK1LL3R171, GZ52, arisrad, AlanBrito962, MatheusAnimaa | [Sheet Sprite Ginyu Ulsw](https://www.deviantart.com/strice12/art/Sheet-Sprite-Ginyu-Ulsw-1161968207) | Jefe y escuadrón de Fuerzas Especiales |
+| Jeice | **MrDryy**; faceset de MAST3RK1LL3R171; con Qsab101, ErickJCrack507, Scarlettdancer2627, JustOruma, Arisrad, Yasertheblack | [Jeice Sprite Sheet ULSW](https://www.deviantart.com/mrdryy/art/Jeice-Sprite-Sheet-ULSW-1145996714) | Enemigo de élite y escuadrón |
+
+Burter (BrolyGamer096) y Recoome (Bite035) no permiten bajar el original a tamaño completo sin cuenta; pendientes.
+
 ## Recursos que ya tenía el proyecto
 
 - **Josemi**: logo y siete esferas del dragón de `ui/`.

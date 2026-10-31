@@ -2764,8 +2764,8 @@ const ENEMIGO_HEROE={hitB:['hit',0],hitE:['hit',0],hit2E:['hit',0],superbuuB:['b
 // sesión 9: más variedad de enemigos normales con packs ya revisados (antes solo quedaban saibamen)
 Object.assign(ET,{zombi:{n:'Saiyan zombi',hp:26,spd:26,dmg:9,xp:2,r:7},zombiR:{n:'Saiyan zombi furioso',hp:44,spd:46,dmg:12,xp:4,r:7},
   zamasuC:{n:'Clon de Zamasu',hp:30,spd:38,dmg:11,xp:3,r:7,shoot:3.2}});
-Object.assign(ENEMIGO_HEROE,{celljr:['cell',2],celljrE:['cell',2],majin:['buu',4],zombi:['zombies',0],zombiR:['zombies',1],zamasuC:['zamasu',0]});
-if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.34],['celljrE',0.4],['majin',0.36]])if(ET[id])ET[id].z=z;
+Object.assign(ENEMIGO_HEROE,{soldier:['e_soldado',0],soldierE:['e_soldado',0],frzS2:['e_soldado',0],frzS4:['e_soldado',0],ginyu:['e_ginyu',0],jeice:['e_jeice',0],celljr:['cell',2],celljrE:['cell',2],majin:['buu',4],zombi:['zombies',0],zombiR:['zombies',1],zamasuC:['zamasu',0]});
+if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);
   if(saga==='tierra'&&!M.pool.some(p=>p[1]==='celljr'))M.pool.push([150,'celljr',3]);
@@ -2794,7 +2794,7 @@ const FUERA_ENEMIGOS={};
   }
   for(const saga in WAVES){WAVES[saga]=WAVES[saga].filter(w=>ET[w[0]]);if(!WAVES[saga].length)WAVES[saga]=[['saiba',14]]}
 })();
-const SCTINT={celljr:'hue-rotate(150deg) saturate(1.15)',celljrE:'hue-rotate(150deg) saturate(1.3)',saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)'},SCTC={};
+const SCTINT={frzS2:'hue-rotate(95deg) saturate(1.2)',frzS4:'hue-rotate(200deg)',soldierE:'hue-rotate(300deg) saturate(1.3)',celljr:'hue-rotate(150deg) saturate(1.15)',celljrE:'hue-rotate(150deg) saturate(1.3)',saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)'},SCTC={};
 function scTintPk(o,f){const r={ok:1};for(const a in o){if(a==='ok')continue;const A=o[a],tc=c=>{const n=mk(c.width,c.height),g=n.getContext('2d');g.filter=f;g.drawImage(c,0,0);return n};r[a]={...A,R:A.R.map(tc),L:A.L.map(tc)}}return r}
 function scEnemy(id){const k=scKeyE(id);if(!k)return null;const o0=scLoad(k);if(!o0.ok)return null;const o=SCTINT[id]?(SCTC[id]||(SCTC[id]=scTintPk(o0,SCTINT[id]))):o0;
   const an=o.Walk&&o.Walk.R.length>1?'Walk':'Idle',W=o[an],wh=W.R.map(c=>tintC(c,'#ffffff')),whf=W.L.map(c=>tintC(c,'#ffffff')),src=SCPACK.s[k][an];
@@ -3047,6 +3047,11 @@ function openGacha(){initAudio();state='gacha';$('#gFree').onclick=()=>wish(1,tr
   const tick=()=>{if(state!=='gacha')return;drawBanner();requestAnimationFrame(tick)};tick()}
 // Manifest opcional incrustado por quien personalice el juego; nunca se pide JSON por red.
 let PACK_CREDITS=window.RECURSOS_CREDITOS||[];
+// hojas de DeviantArt usadas para enemigos (sesión 9); los coautores son los que cita cada ficha
+PACK_CREDITS=PACK_CREDITS.concat([
+ {what:'Soldado de Freezer (enemigo)',name:'TheWarriorFF2 / Spir1tSolo; con Que, qsab101, DyanDisel, Izanagi797, Orumaitoobeso, Reeck495, MV95, MANIKDX y Papuro Tenkikujimo',url:'https://www.deviantart.com/thewarriorff2/art/Frieza-s-Soldier-1-Sprite-Sheet-856331851'},
+ {what:'Capitán Ginyu (jefe)',name:'Strice12; con azazel300, JustOruma, MrDryy, Godkuuxfy, MAST3RK1LL3R171, GZ52, arisrad, AlanBrito962 y MatheusAnimaa',url:'https://www.deviantart.com/strice12/art/Sheet-Sprite-Ginyu-Ulsw-1161968207'},
+ {what:'Jeice (enemigo de élite)',name:'MrDryy; faceset de MAST3RK1LL3R171; con Qsab101, ErickJCrack507, Scarlettdancer2627, JustOruma, Arisrad y Yasertheblack',url:'https://www.deviantart.com/mrdryy/art/Jeice-Sprite-Sheet-ULSW-1145996714'}]);
 (()=>{const m=window.SPRITE_MANIFEST;if(!m)return;PACK_CREDITS=PACK_CREDITS.concat(m.credits||[]);
   const load=(url,cb)=>{const im=new Image();im.onload=()=>{const c=mk(im.width,im.height);c.getContext('2d').drawImage(im,0,0);cb(c);if(state==='title')buildCards()};im.src='sprites/'+url};
   const strip=(c,n)=>{const w=Math.floor(c.width/n),out=[];for(let i=0;i<n;i++){const o=mk(w,c.height);o.getContext('2d').drawImage(c,i*w,0,w,c.height,0,0,w,c.height);out.push(o)}return out};

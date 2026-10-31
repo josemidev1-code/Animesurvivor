@@ -352,3 +352,10 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Recuperados con packs ya revisados: Cell Jr. y CELL JR. élite (pack de Cell Perfecto, pequeño y teñido de azul) y el antiguo «majin», ahora «Fragmento de Buu» (Kid Buu pequeño).
 - Nuevos: Saiyan zombi y Saiyan zombi furioso (pack de los Saiyans zombi) en todos los mapas, y Clon de Zamasu (dispara) en la saga Super y el Futuro de Trunks. Tamaño propio por tipo (`ET[id].z`).
 - 76 tipos activos (antes 70), 41 retirados (antes 44). `comprobar_enemigos.cjs` actualizado a la regla nueva (lejos se impulsan, cerca guardia) y pasa: 24 mapas, 173.299 apariciones simuladas sin tipos retirados. Vistos en partida sin errores.
+
+### Sesión 9, octava parte: «Sí, búscalos» + «están en mis sprites y si no en DeviantArt, con créditos; en la foto hay incoherencias en los tamaños»
+- En `sprites/` no hay packs de soldados ni de las Fuerzas Especiales (confirmado por nombre en todas las carpetas y por la revisión previa de los packs mixtos).
+- DeviantArt: descargadas a tamaño original tres hojas sin restricciones en su ficha: Soldado de Freezer (TheWarriorFF2), Capitán Ginyu (Strice12) y Jeice (MrDryy). Nueva herramienta `herramientas/recortar_hoja.py` que trocea una hoja en un PNG por fotograma (quita el fondo y salta retratos y textos). Packs 400-402 en `sprites/00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/`.
+- Formas elegidas a ojo en `herramientas/animaciones/enemigos.json` (`e_soldado`, `e_ginyu`, `e_jeice`) y enlazadas: soldado, soldado raso, soldado de Freezer y élite (con los colores alternativos de la hoja), Jeice (élite) y Capitán Ginyu (jefe, vuelve a Namek y al escuadrón de Fuerzas Especiales). 82 tipos activos, 35 retirados.
+- Créditos con autor, coautores y enlace dentro del juego (pantalla de créditos) y en `CREDITOS_RECURSOS.md`. Burter y Recoome no dejan bajar el original sin cuenta: pendientes.
+- Tamaños: medidos todos los enemigos normales frente a Goku (24-30 px). Desentonaban los que yo encogí: Fragmento de Buu (16) y Cell Jr. (19). Ahora el fragmento mide como Kid Buu y Cell Jr. algo menos que Cell. Probado en partida.

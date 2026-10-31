@@ -11,7 +11,10 @@ y revisadas con `revisar_todo.py`. Cómo meter una forma: ver `herramientas/GUIA
 - Maestro Roshi; Dodoria, Zarbon, Nappa, A19, Dabura, Burter, Guldo, soldado Red Ribbon y bolita de Buu
   (Gemini los había puesto con sprites de otros personajes recoloreados; se quitaron).
 
-### A.1) Enemigos retirados del juego por animaciones sin revisar (44 tipos)
+### A.1) Enemigos retirados del juego por animaciones sin revisar (35 tipos)
+
+Sesión 9: fuente nueva para recuperarlos, hojas de DeviantArt troceadas con `herramientas/recortar_hoja.py`
+(créditos en `CREDITOS_RECURSOS.md`). Candidatos ya localizados: Burter (BrolyGamer096), Recoome (Bite035).
 
 No se borraron sus fuentes ni sus tiras antiguas. Se quitaron del catálogo activo, los mapas, los escuadrones y las
 oleadas; Cell tampoco invoca Cell Jr. Los huecos de jefes los ocupan otros villanos con su nombre real y la misma
@@ -19,11 +22,10 @@ escala de dificultad por posición. Se usa Saibaman en los mapas que se quedaban
 
 | Personaje / grupo | IDs retirados |
 |---|---|
-| Soldados de Freezer | `soldier`, `soldierE`, `frzS2`, `frzS4` |
-| Red Ribbon y esbirro de Babidi | `rrsoldier`, `majin` |
-| Bolita de Buu y Cell Jr. | `blob`, `celljr`, `celljrE` |
+| Red Ribbon | `rrsoldier` (`majin` vuelve como Fragmento de Buu) |
+| Bolita de Buu | `blob` (Cell Jr. recuperado en la sesión 9) |
 | Nappa, Dodoria, Zarbon, A19, Dabura | `nappa`, `nappaE`, `dodoria`, `zarbon`, `a19`, `dabura` |
-| Fuerzas especiales | `ginyu`, `jeice`, `burter`, `guldo` |
+| Fuerzas especiales | `burter`, `guldo` (Ginyu y Jeice recuperados en la sesión 9 con hojas de DeviantArt) |
 | Meca Freezer | `mecha` |
 | Saiyans y Rey Vegeta | `renegA`, `renegB`, `renegC`, `saiyanLow`, `kingvegE` |
 | Freezer segunda forma | `freeza2E`, `freeza2B` |
