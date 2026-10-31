@@ -1323,7 +1323,7 @@ const MAPS={
 };
 const BOSS_T=[180,360,540,720,900];
 const WAVE_T=[130,230,310,410,490,590,670,770,850];
-const WAVES={"freezer":[["saibaR",14],["soldierE",8],["burter",1],["coolerE",1],["saibaX",12],["jeice",1]],"tierra":[["celljr",10],["cellimpE",1],["saibaR",14],["a16E",1],["rrsoldier",12],["a17e",1]],"buu":[["blob",18],["majin",10],["fatbuuE",1],["majinvE",1],["kidbuuE",1],["celljrE",3]],"super":[["soldierE",10],["coolerE",1],["majinvE",1],["a16E",1],["kidbuuE",1],["cellimpE",2]]},WSAGA={"namek":"freezer","vegetasei":"freezer","yardrat":"freezer","volcan":"freezer","gizard":"freezer","kaio":"freezer","tierra":"tierra","redribbon":"tierra","musculo":"tierra","capsule":"tierra","desierto":"tierra","futuro":"tierra","kame":"tierra","paoz":"tierra","pradera":"tierra","bosque":"tierra","arena":"buu","lookout":"buu","budokai":"buu","kaioshin":"buu","infierno":"buu","time":"super","bills":"super","poder":"super"};
+const WAVES={"freezer":[["saibaR",14],["soldierE",8],["ginyu",1],["coolerE",1],["saibaX",12],["jeice",1]],"tierra":[["celljr",10],["cellimpE",1],["saibaR",14],["a16E",1],["soldier",12],["a17e",1]],"buu":[["majin",18],["majin",10],["fatbuuE",1],["majinvE",1],["kidbuuE",1],["celljrE",3]],"super":[["soldierE",10],["coolerE",1],["majinvE",1],["a16E",1],["kidbuuE",1],["cellimpE",2]]},WSAGA={"namek":"freezer","vegetasei":"freezer","yardrat":"freezer","volcan":"freezer","gizard":"freezer","kaio":"freezer","tierra":"tierra","redribbon":"tierra","musculo":"tierra","capsule":"tierra","desierto":"tierra","futuro":"tierra","kame":"tierra","paoz":"tierra","pradera":"tierra","bosque":"tierra","arena":"buu","lookout":"buu","budokai":"buu","kaioshin":"buu","infierno":"buu","time":"super","bills":"super","poder":"super"};
 const NOSPR={"rrsoldier":"saibaB","blob":"saiba","nappaE":"vegetaE","burter":"coolerE","guldo":"turlesE","dodoria":"turles","zarbon":"frost","nappa":"vegetaSB","a19":"a16B","dabura":"janemba"};
 (function(){const f=t=>NOSPR[t]||t,SQ={'¡FUERZAS ESPECIALES!':'¡INVASORES DEL ESPACIO!','¡LOS CELL JR.!':'¡EL ASALTO DE CELL!'};
   for(const k in MAPS){const M=MAPS[k];M.pool.forEach(p=>p[1]=f(p[1]));if(M.ring)M.ring=M.ring.map(f);M.bosses=M.bosses.map(f);
@@ -1398,7 +1398,7 @@ let ebeams=[];let S, P, enemies, projs, eshots, beams, bombs, gems, pickups, par
 const cam={x:0,y:0,shake:0};
 let state='title',debugSolid=false;
 function newGame(hid,map){
-  MAPK=map||MAPK;
+  MAPK=map||MAPK;precarga(hid,MAPK);
   solidReset();
   const H=HEROES[hid];
   S={map:MAPK,bossN:0,t:0,kills:0,spawnT:0,bossIdx:0,ringIdx:0,boss:null,banner:null,flash:0,pending:0,hid,won:false,endless:false,nextEndless:0,zeni:0,freeze:0,diff:pickedDiff,meta:metaBonus(),mr:1+0.01*mastRank(hid),aw:awaken(hid),saiba:0,forms:0,evos:0,balls:0,ballN:0,wishes:0,bank:{t:0,kills:0,boss:0,saiba:0,forms:0,evos:0,zeni:0,wishes:0}};S.revives=S.meta.revive;
@@ -2582,7 +2582,7 @@ Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta
 function scLoad(k){if(SCC[k])return SCC[k];const o=SCC[k]={ok:0};let n=0;
   for(const a in SCPACK.s[k]){const [fw,fh,du,url,row]=SCPACK.s[k][a],im=new Image();
     im.onload=()=>{const cut=r=>{const L=[];for(let i=0;i<(row===undefined?im.width/fw:du.length);i++){const c=mk(fw,fh-4);c.getContext('2d').drawImage(im,i*fw,r*fh,fw,fh-4,0,0,fw,fh-4);L.push(c)}return L};
-      const R=cut(row===undefined?0:row);o[a]={R,L:row===undefined?cut(1):R.map(flipC),du,tot:du.reduce((p,q)=>p+q,0)};if(++n===Object.keys(SCPACK.s[k]).length){o.ok=1;for(const id in ET)if(id!=='shadow'&&scKeyE(id)===k)delete SPR[id];if(state==='title')buildCards()}};im.src=url}
+      const R=cut(row===undefined?0:row);o[a]={R,L:row===undefined?cut(1):R.map(flipC),du,tot:du.reduce((p,q)=>p+q,0)};if(++n===Object.keys(SCPACK.s[k]).length){o.ok=1;for(const id in ET)if(id!=='shadow'&&scKeyE(id)===k)delete SPR[id]}};im.src=url}
   return o}
 function scFrame(A,t){let x=(t*60)%A.tot;for(let i=0;i<A.du.length;i++){x-=A.du[i];if(x<0)return i}return 0}
 function scHero(id,form){const H=SCPACK.h[id];if(!H)return null;for(let f=form;f>=0;f--)if(H[f]){const o=scLoad(H[f]);return o.ok?o:null}return null}
@@ -2593,7 +2593,11 @@ function scTintPk(o,f){const r={ok:1};for(const a in o){if(a==='ok')continue;con
 function scEnemy(id){const k=scKeyE(id);if(!k)return null;const o0=scLoad(k);if(!o0.ok)return null;const o=SCTINT[id]?(SCTC[id]||(SCTC[id]=scTintPk(o0,SCTINT[id]))):o0;
   const W=o.Walk,wh=W.R.map(c=>tintC(c,'#ffffff')),whf=W.L.map(c=>tintC(c,'#ffffff')),src=SCPACK.s[k].Walk;
   const hf=0.5;return{pk:o,fr:W.R,fl:W.L,wh,whf,w:Math.round(src[0]*0.6*hf),h:Math.round((W.R[0].height-6)*hf),big:1,half:hf}}
-for(const k in SCPACK.s)scLoad(k);
+// carga perezosa: al arrancar no se decodifica nada; cada partida carga solo su héroe y los enemigos de su mapa
+// (antes se decodificaban todas las tiras de golpe y en PCs modestos el menú tardaba y se comía la memoria)
+function precarga(hid,mk){const H=SCPACK.h[hid];if(H)for(const f in H)scLoad(H[f]);const M=MAPS[mk];if(!M)return;
+  const ids=new Set([...M.pool.map(p=>p[1]),...M.bosses,...(M.ring||[]),...(M.squad?M.squad[1]:[])]);
+  for(const w in WAVES)WAVES[w].forEach(x=>ids.add(x[0]));for(const id of ids){const k=scKeyE(id);if(k&&SCPACK.s[k])scLoad(k)}}
 function myHero(id,form){if(id==='gokuui' && DBZ_GOKU.c)return DBZ_GOKU;for(let f=form;f>=0;f--){const o=MYC['h:'+id+':'+f];if(o&&o.c){if(!o.walk){o.walk=autoWalk(o.c);o.walkF=o.walk.map(flipC)}return o}}return null}
 // a single still PNG gets a 4-frame walk: the bottom of the sprite is split in two legs that lift in turn
 function autoWalk(c){const W=c.width,H=c.height,d=c.getContext('2d').getImageData(0,0,W,H).data;let x0=W,x1=0,y0=H,y1=0;
