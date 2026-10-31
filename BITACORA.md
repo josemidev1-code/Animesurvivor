@@ -168,3 +168,13 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 ### Siguiente paso recomendado
 - Goku Xeno (gokuxeno: BASE, SSJ DIOS, SSJ4) en `herramientas/animaciones/variantes.json` y en `NUEVOS` de `script.js`;
   después el resto de variantes de Goku, Vegeta y Goku Black (lista en `SPRITES_PENDIENTES.md`).
+
+### Más (sesión 5) — «Sí, sigue»
+- Goku Xeno jugable (`gokuxeno`): BASE (pack 266), SSJ DIOS (253) y SSJ4 limit breaker (180), revisado a ojo.
+- **Arreglo importante:** los 10 personajes de variantes de la sesión 4 (Gohan DBS, Gohan poseído, Gohan manga,
+  Bardock Leyendas, Cumber, DLRX, Saiyans zombi, Broly/Gogeta/Vegetto fanmade) tenían animaciones pero nunca se
+  dieron de alta en `NUEVOS` de `script.js`, así que no salían en el juego. Ya están. Ahora sí hay 55 jugables
+  (antes eran 44, no 55 como se dijo). Scripts a `?v=22`.
+- Comprobado: el menú de personajes muestra los 55 y no hay errores. Falta jugar una partida con los nuevos.
+- Recordatorio para la siguiente IA: cada personaje nuevo necesita **dos cosas**: sus formas en
+  `herramientas/animaciones/*.json` **y** su entrada en `NUEVOS` de `script.js` (nombre, formas, auras, ataques).

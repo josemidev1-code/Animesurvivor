@@ -1118,6 +1118,109 @@
     ],
     "portrait": 123
    }
+  },
+  "gokuxeno": {
+   "0": {
+    "pack": "04_Heroes_y_videojuegos/Goku/266_GOKU BASE XENO ULSW",
+    "idle": [
+     4,
+     5
+    ],
+    "move": [
+     14
+    ],
+    "attack": [
+     15,
+     16,
+     17
+    ],
+    "kick": [
+     25,
+     26
+    ],
+    "ki": [
+     51,
+     60
+    ],
+    "pow": [
+     42
+    ],
+    "hurt": [
+     33,
+     36
+    ],
+    "faint": [
+     37
+    ],
+    "portrait": 0
+   },
+   "1": {
+    "pack": "04_Heroes_y_videojuegos/Goku/253_goku_xeno ssj dios.andres Game",
+    "idle": [
+     1,
+     2
+    ],
+    "move": [
+     9
+    ],
+    "attack": [
+     27,
+     28,
+     29
+    ],
+    "kick": [
+     41,
+     46
+    ],
+    "ki": [
+     62,
+     63
+    ],
+    "pow": [
+     69
+    ],
+    "hurt": [
+     52,
+     53
+    ],
+    "faint": [
+     60
+    ]
+   },
+   "2": {
+    "pack": "04_Heroes_y_videojuegos/Goku/180_Goku xeno ssj 4 limit brecker HD.andres Gamen",
+    "idle": [
+     14,
+     15
+    ],
+    "move": [
+     21
+    ],
+    "attack": [
+     37,
+     38,
+     39
+    ],
+    "kick": [
+     50,
+     51
+    ],
+    "ki": [
+     61,
+     66
+    ],
+    "pow": [
+     63
+    ],
+    "hurt": [
+     55,
+     56
+    ],
+    "faint": [
+     60
+    ],
+    "portrait": 82
+   }
   }
  }
 }

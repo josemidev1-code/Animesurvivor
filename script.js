@@ -689,6 +689,17 @@ const NUEVOS={
  moro:{name:'MORO',rar:5,hp:130,spd:62,atk:1.25,start:'orbs',desc:'El devorador de planetas.',forms:['ULTRA INSTINTO'],aura:['white'],sig:['kiblast','punch','kick','finalexp','omega']},
  babyvegeta:{name:'BABY VEGETA',rar:5,hp:120,spd:66,atk:1.3,start:'galick',desc:'El parásito Tsufur en el cuerpo de Vegeta.',forms:['SUPER BABY'],aura:['gold'],sig:['kiblast','punch','galick','kick','finalshine','bigbang']},
  bra:{name:'BRA',rar:3,hp:105,spd:70,atk:1.05,start:'masenko',desc:'La hija de Vegeta, del Multiverso.',forms:['BASE','SUPER SAIYAN'],aura:['white','gold'],sig:['kiblast','punch','kick','masenko','renzoku']},
+ gohandbs:{name:'GOHAN DBS',rar:5,hp:120,spd:66,atk:1.25,start:'masenko',desc:'Gohan de Super, del Torneo del Poder a la saga de Granolah.',forms:['BASE','MÍSTICO','ULTRA INSTINTO','MUI','BESTIA'],aura:['white','white','silver','silver','purple'],sig:['kiblast','punch','kick','masenko','kame','gekiretsu']},
+ gohanposeido:{name:'GOHAN POSEÍDO',rar:3,hp:105,spd:66,atk:1.1,start:'masenko',desc:'Gohan controlado por una fuerza oscura.',forms:['POSEÍDO'],aura:['purple'],sig:['kiblast','punch','kick','masenko']},
+ gohanmanga:{name:'GOHAN MANGA',rar:4,hp:115,spd:66,atk:1.15,start:'masenko',desc:'Gohan en la saga de Moro del manga.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','masenko','kame']},
+ bardockalt:{name:'BARDOCK LEYENDAS',rar:5,hp:125,spd:64,atk:1.2,start:'riot',desc:'Bardock en sus versiones de fans.',forms:['BASE','SUPER SAIYAN','BLACK','EVOLUCIÓN'],aura:['white','gold','red','gold'],sig:['kiblast','punch','kick','riot','finalshine']},
+ cumber:{name:'CUMBER',rar:5,hp:140,spd:60,atk:1.3,start:'eraser',desc:'El Saiyan del mal de Heroes.',forms:['BASE'],aura:['purple'],sig:['kiblast','punch','kick','eraser','roar']},
+ dlrx:{name:'DLRX',rar:4,hp:115,spd:68,atk:1.15,start:'kame',desc:'Saiyan creado por fans.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ zombies:{name:'SAIYANS ZOMBI',rar:3,hp:120,spd:58,atk:1.1,start:'kame',desc:'Gohan, Goku y Vegeta convertidos en zombis.',forms:['GOHAN','GOKU','VEGETA'],aura:['green','green','green'],sig:['kiblast','punch','kick','kame','galick']},
+ brolyfan:{name:'BROLY FANMADE',rar:5,hp:150,spd:58,atk:1.3,start:'eraser',desc:'Broly en formas inventadas por fans.',forms:['SSJ FALSO','SUPER SAIYAN 3'],aura:['green','gold'],sig:['kiblast','punch','kick','eraser','omega']},
+ gogetafan:{name:'GOGETA FANMADE',rar:5,hp:135,spd:70,atk:1.35,start:'stardust',desc:'Gogeta en formas de fans.',forms:['BLUE EVOLUTION','SSJ4 BLUE','MUI'],aura:['blue','blue','silver'],sig:['kiblast','punch','kick','bbkame','stardust']},
+ vegettofan:{name:'VEGETTO FANMADE',rar:5,hp:135,spd:70,atk:1.35,start:'kame',desc:'Vegetto en formas de fans.',forms:['SSJ DIOS','DIOS KAIOKEN','SUPER SAIYAN 4','MUI'],aura:['red','red','red','silver'],sig:['kiblast','punch','kick','kame','finalflash','kiblade']},
+ gokuxeno:{name:'GOKU XENO',rar:5,hp:125,spd:68,atk:1.3,start:'kame',desc:'El Goku de la Patrulla del Tiempo.',forms:['BASE','SSJ DIOS','SUPER SAIYAN 4'],aura:['white','red','red'],sig:['kiblast','punch','kick','kame','instant','genki']},
 };
 // formas añadidas a personajes que ya estaban
 Object.assign(HDEF.gokugt,{forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 3','SUPER SAIYAN 4'],aura:['white','gold','gold','red']});
