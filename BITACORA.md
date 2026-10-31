@@ -205,3 +205,14 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Instrucciones en `TAREAS_CODEX.md` (enlazado desde `AGENTS.md` y `README.md`). Orden: 1) rehacer los ~45 enemigos
   con recorte viejo, 2) packs pendientes como jugables, 3) sustituir el pixel art por código con los dibujos del
   usuario, 4) HUD como PokéSurvivor.
+
+## 2026-10-31 — Codex (sesión 6)
+
+### Lo que pidió el usuario
+- «Seguimos con el trabajo, mira toda la carpeta y sigue con lo que te ha dicho Claude».
+
+### Lo que hice
+- Leídos el relevo de Claude, README, instrucciones y bitácora. El primer trabajo pendiente son los enemigos con recorte viejo; se mantiene ese orden.
+- Revisadas visualmente 19 hojas de los siete packs mixtos (2.396 PNG): abundan las poses aisladas, sin secuencias completas para los soldados, Ginyu o Jeice. La carpeta PIXELARTSCLAUDEYOTELOSPASO está vacía.
+- Revisadas a ojo las hojas de Vegeta, Black, A17, Frost, Broly y Kale. Enlazados 13 tipos más a sus formas elegidas a mano; Broly Legendario usa ahora la forma legendaria (antes usaba SSJ4).
+- Corregido drawPkEnemy: ignoraba la selección de guardia hecha por scEnemy y seguía dibujando el único fotograma de vuelo. Ahora la guardia se aplica también al dibujar. Recursos a v26.

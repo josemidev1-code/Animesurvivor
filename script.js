@@ -1798,7 +1798,7 @@ function digits(str,x,y,col){const w=str.length*4;x=Math.round(x-w/2);y=Math.rou
       if(pass===0){ctx.fillStyle=OUTL;ctx.fillRect(px-1,py-1,3,3)}else{ctx.fillStyle=col;ctx.fillRect(px,py,1,1)}}}}
 function text(s,x,y,col,size=8,align='center'){s=s.normalize('NFD').replace(/[\u0300-\u036f]/g,'');ctx.font=size+'px "Press Start 2P", monospace';ctx.textAlign=align;ctx.textBaseline='top';
   ctx.fillStyle=OUTL;for(const [a,b] of [[-1,0],[1,0],[0,-1],[0,1],[1,1]])ctx.fillText(s,x+a,y+b);ctx.fillStyle=col;ctx.fillText(s,x,y)}
-function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypot(P.x-e.x,P.y-e.y),T=ET[e.type]||{};let A=o.Walk,i=0,bob=0;
+function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypot(P.x-e.x,P.y-e.y),T=ET[e.type]||{};let A=o.Walk&&o.Walk.R.length>1?o.Walk:o.Idle,i=0,bob=0;
   const eb=e.boss&&o.Cast?ebeams.find(b=>b.e===e&&b.t<b.dur):null;
   if(e.powT>0&&o.Pow){A=o.Pow;i=(e.anim*1.4|0)%A.R.length}
   else if(eb){A=o.Cast;i=eb.t<0?0:Math.min(1,A.R.length-1)}
@@ -2623,7 +2623,10 @@ const ENEMIGO_HEROE={hitB:['hit',0],hitE:['hit',0],hit2E:['hit',0],superbuuB:['b
   a16B:['a16',0],a16E:['a16',0],a17e:['a17',0],a18e:['a18',0],janemba:['janemba',0],jiren:['jiren',0],
   cellimpE:['cell',0],cellsemiE:['cell',1],cell:['cell',2],cellperfE:['cell',2],saiba:['saibaman',0],saibaR:['saibaman',0],saibaB:['saibaman',0],saibaX:['saibaman',0],
   raditz:['raditz',0],raditzssjE:['raditz',1],fatbuu:['buu',0],buuthinE:['buu',1],buuthinB:['buu',1],buugohanB:['buu',3],buu:['buu',4],
-  gohanpossE:['gohanposeido',0],babyB:['babyvegeta',0],toppoB:['toppo',0],moroB:['moro',0],brolyssj4B:['broly',3]};
+  gohanpossE:['gohanposeido',0],babyB:['babyvegeta',0],toppoB:['toppo',0],moroB:['moro',0],brolyssj4B:['broly',3],
+  vegetaSB:['vegeta',0],vegetaE:['vegeta',0],vegsaiE:['vegeta',0],majinv:['vegeta',3],
+  frost2E:['frost',1],black2E:['black',0],blackssjB:['black',1],
+  broly2B:['broly',0],broly3B:['broly',1],brolyB:['broly',2],kalessjE:['kale',1],kalessjB:['kale',1],a17B:['a17',0]};
 for(const id in ENEMIGO_HEROE){const [h,f]=ENEMIGO_HEROE[id];if(ET[id]&&SCPACK.h[h]&&SCPACK.h[h][f]){ET[id].hero=[h,f];delete SCPACK.e[id]}}
 const SCTINT={saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)'},SCTC={};
 function scTintPk(o,f){const r={ok:1};for(const a in o){if(a==='ok')continue;const A=o[a],tc=c=>{const n=mk(c.width,c.height),g=n.getContext('2d');g.filter=f;g.drawImage(c,0,0);return n};r[a]={...A,R:A.R.map(tc),L:A.L.map(tc)}}return r}
