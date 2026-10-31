@@ -2439,21 +2439,9 @@ function actualizarRadarAnimado(){if(!radarAviso)return;
 const DBIMG=[];if(window.UI_IMG)for(let k=1;k<=7;k++){const im=new Image();im.src=UI_IMG['esfera'+k];DBIMG[k]=im}
 function drawDBall(x,y,n){const im=DBIMG[n];if(im&&im.complete&&im.naturalWidth){ctx.drawImage(im,Math.round(x*2-9)/2,Math.round(y*2-9)/2,9,9);return}
   circ(x,y,5,OUTL);circ(x,y,4,'#e0761a');circ(x-1,y-1,3,'#f2a02a')}
-let SHEN=null;
-function shenlong(){if(SHEN)return SHEN;const W=170,H=96,c=mk(W,H),g=c.getContext('2d');
-  const pts=[];for(let i=0;i<=60;i++){const t=i/60;pts.push([12+t*120,70-Math.sin(t*Math.PI*2.2)*22-t*30,9-t*3])}
-  const fill=(x,y,r,col)=>{g.fillStyle=col;for(let yy=-r;yy<=r;yy++){const w=Math.floor(Math.sqrt(r*r-yy*yy));g.fillRect(Math.round(x-w),Math.round(y+yy),w*2+1,1)}};
-  for(const [x,y,r] of pts)fill(x,y,r+1,'#0c2a14');
-  for(const [x,y,r] of pts){fill(x,y,r,'#2f8a3a');fill(x,y-r*0.35,r*0.55,'#4fb84a')}
-  for(let i=2;i<60;i+=3){const [x,y,r]=pts[i];g.fillStyle='#e8d070';g.fillRect(Math.round(x),Math.round(y+r*0.5),2,2);g.fillStyle='#1f6a2a';g.fillRect(Math.round(x)-1,Math.round(y-r*0.2),1,1)}
-  for(let i=6;i<56;i+=5){const [x,y,r]=pts[i];g.fillStyle='#e05a1a';g.fillRect(Math.round(x),Math.round(y-r-3),2,3)}
-  const [hx,hy]=pts[60];fill(hx+8,hy-2,9,'#0c2a14');fill(hx+8,hy-2,8,'#3a9a3e');fill(hx+15,hy+1,6,'#0c2a14');fill(hx+15,hy+1,5,'#4fb84a');
-  g.fillStyle='#ff2a2a';g.fillRect(hx+8,hy-5,3,2);g.fillStyle='#ffffff';g.fillRect(hx+9,hy-5,1,1);
-  g.fillStyle='#e8d070';for(let i=0;i<8;i++){g.fillRect(hx+2-i,hy-10-i,2,2);g.fillRect(hx+6-i,hy-12-i*0.6,2,2)}
-  g.fillStyle='#f4f0e0';g.fillRect(hx+18,hy+4,1,3);g.fillRect(hx+15,hy+5,1,3);
-  g.strokeStyle='#e8d070';g.fillStyle='#e8d070';for(let i=0;i<14;i++){g.fillRect(hx+20+i,hy-1+Math.round(Math.sin(i*0.6)*2),1,1);g.fillRect(hx+20+i,hy+3+Math.round(Math.cos(i*0.6)*2),1,1)}
-  for(let i=0;i<7;i++){const a=i/7*Math.PI*2;fill(30+Math.cos(a)*18,24+Math.sin(a)*8,3,'#c85a10');fill(30+Math.cos(a)*18,24+Math.sin(a)*8,2,'#f2911a');g.fillStyle='#d81e1e';g.fillRect(Math.round(30+Math.cos(a)*18),Math.round(24+Math.sin(a)*8),1,1)}
-  return SHEN=c}
+let SHEN=null;const SHENIMG=new Image();if(window.SHENRON_IMG)SHENIMG.src=SHENRON_IMG;
+// Shenron: sprite de sprites/shenron (herramientas/montar_shenron.py), sin dibujos por código
+function shenlong(){if(SHEN)return SHEN;const c=mk(170,96),g=c.getContext('2d');if(!(SHENIMG.complete&&SHENIMG.naturalWidth))return c;const k=96/SHENIMG.naturalHeight;g.imageSmoothingEnabled=false;g.drawImage(SHENIMG,Math.round(85-SHENIMG.naturalWidth*k/2),0,Math.round(SHENIMG.naturalWidth*k),96);return SHEN=c}
 function openWish(){state='levelup';const box=$('#ups');box.innerHTML='';{const sc=document.createElement('canvas');sc.width=170;sc.height=96;sc.getContext('2d').drawImage(shenlong(),0,0);sc.style.cssText='max-width:510px;width:100%;image-rendering:pixelated';const wr=document.createElement('div');wr.style.cssText='flex-basis:100%;display:flex;justify-content:center';wr.appendChild(sc);box.appendChild(wr)}$('#luTitle').textContent='¡SHENLONG! PIDE UN DESEO';S.flash=0.6;cam.shake=6;sfx('trans');
   const W=[['wPow','PODER ILIMITADO','Todas tus técnicas suben 1 nivel.',()=>{for(const id of P.order){const m=P.moves[id];if(m.lv<5)m.lv++}}],
     ['wLife','VIDA ETERNA','Vida al máximo y una resurrección extra en esta partida.',()=>{S.revives++;P.hp=stats().maxhp}],
@@ -2927,8 +2915,12 @@ function gachaInfo(){const s=loadSave(),bn=gBanner(),hr=Math.max(0,Math.ceil(((b
   $('#gFree').hidden=!freeReady();
   $('#gHistBox').innerHTML=(s.hist||[]).slice(0,40).map(h=>`<span class="h r${h.rar}">${'★'.repeat(h.rar)} ${nm(h.id)}</span>`).join('')||'Aún no has pedido deseos.'}
 let bannerT=0;
-function drawBanner(){const c=$('#gBanner'),g=c.getContext('2d'),bn=gBanner();g.imageSmoothingEnabled=false;g.fillStyle=bn.id==='feat'?'#22143a':'#0c1630';g.fillRect(0,0,160,60);
-  bannerT++;for(let i=0;i<7;i++){const a=i/7*TAU+bannerT*0.02,x=80+Math.cos(a)*60,y=30+Math.sin(a)*20;pball(g,Math.round(x),Math.round(y),5,['#c85a10','#f2911a','#ffc44a','#fff0b0']);g.fillStyle='#d81e1e';g.fillRect(Math.round(x)-1,Math.round(y)-1,2,2)}
+function drawBanner(){const c=$('#gBanner'),g=c.getContext('2d'),bn=gBanner();g.setTransform(1,0,0,1,0,0);g.imageSmoothingEnabled=false;g.fillStyle=bn.id==='feat'?'#22143a':'#0c1630';g.fillRect(0,0,c.width,60);
+  bannerT++;
+  // Shenron pixelado (sprites/shenron) detrás y las 7 esferas del usuario girando a su alrededor
+  if(SHENIMG.complete&&SHENIMG.naturalWidth){const k=56/SHENIMG.naturalHeight,fl=Math.round(Math.sin(bannerT*0.05)*2);g.drawImage(SHENIMG,4,2+fl,Math.round(SHENIMG.naturalWidth*k),56)}g.setTransform(1,0,0,1,c.width-160,0);
+  for(let i=0;i<7;i++){const a=i/7*TAU+bannerT*0.02,x=80+Math.cos(a)*64,y=30+Math.sin(a)*22,im=DBIMG[i+1];
+    if(im&&im.complete&&im.naturalWidth)g.drawImage(im,Math.round(x-5),Math.round(y-5),10,10);else{pball(g,Math.round(x),Math.round(y),5,['#c85a10','#f2911a','#ffc44a','#fff0b0'])}}
   const fr=(id,f)=>heroFrames(id,f).downidle[(bannerT>>4)%2].c;
   if(bn.id==='feat'&&bn.f5){bn.f4.forEach((id,i)=>{const im=fr(id,0);g.drawImage(im,i?112:10,10,im.width*0.85|0,im.height*0.85|0)});
     const im=fr(bn.f5,Math.min(1,HDEF[bn.f5].forms.length-1)),fl=auraFlames(heroAura(bn.f5,1))[(bannerT>>2)%3];g.globalAlpha=0.8;g.drawImage(fl,80-fl.width/2,60-fl.height);g.globalAlpha=1;g.drawImage(im,80-im.width/2,60-im.height);return}

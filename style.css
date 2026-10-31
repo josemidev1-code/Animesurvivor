@@ -58,7 +58,7 @@ h2{font-family:var(--pix);font-size:clamp(14px,3.4vw,22px);color:var(--ki);margi
 .card.locked canvas{filter:brightness(0) opacity(.55)}
 .card.locked .map{filter:grayscale(1) brightness(.45)}
 .card .rar{font-family:var(--pix);font-size:9px;color:var(--ki)}
-#gBanner{width:320px;max-width:100%;height:auto;image-rendering:pixelated}
+#gBanner{width:440px;max-width:100%;height:auto;image-rendering:pixelated}
 .up{background:var(--panel);border:3px solid var(--edge);box-shadow:0 0 0 3px var(--shadow),5px 5px 0 3px var(--shadow);width:210px;max-width:100%;padding:12px;display:flex;flex-direction:column;gap:6px;align-items:center;color:var(--ink);font:inherit;cursor:pointer;transition:transform .1s,border-color .1s}
 .up:hover,.up:focus-visible{border-color:var(--namek);outline:none;transform:translateY(-4px)}
 .up canvas{width:48px;height:48px;image-rendering:pixelated}
