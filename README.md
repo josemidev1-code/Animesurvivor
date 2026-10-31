@@ -48,8 +48,10 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 1. Seguir animando los packs pendientes: Goku (59), Vegeta (30) y Goku Black (16); 124 packs en total en la lista B de `SPRITES_PENDIENTES.md` (incluye incompletos).
 2. Probar una partida con los personajes nuevos, los enemigos corregidos, Ráfaga de Ki y una transformación. Recuperar los enemigos retirados solo con secuencias buenas.
 3. Ataques con efectos reales de los sprites (Kamehameha, bolas de ki, auras) en vez de dibujados por código.
+   Fuentes nuevas revisadas en `CREDITOS_RECURSOS.md` (efecto de impulso de LyanCv505, hojas de qsab101).
 4. HUD y subida de nivel como las capturas de PokéSurvivor que mandaste.
-5. Pulir los escenarios, como señaló el usuario en la sesión 7.
+5. Pulir los escenarios, como señaló el usuario en la sesión 7. Tileset de LorisC93 descargado y acreditado
+   en `recursos_pendientes/escenarios/`, pendiente de comprobar estilo y colisiones antes de usarlo.
 
 Comprobación de personajes: `node herramientas/comprobar_personajes.cjs`. Para aplicar las reglas de fotogramas y muerte a las incorporaciones de esta sesión:
 `node herramientas/comprobar_personajes.cjs gokubroly vegetamanga vegetabroly blacktime blackfan gokualt`.

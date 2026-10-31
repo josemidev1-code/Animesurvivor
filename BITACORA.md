@@ -273,3 +273,16 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Cápsula de vitalidad: +25% de vida sin superar el máximo; cápsula de ki: técnica especial lista; radar: atrae toda la experiencia del suelo. Salen al romper cajas. La senzu conserva +50% de vida.
 - Créditos con autores y enlaces integrados en ui_imagenes.js; eliminado el fetch del manifest inexistente. El manifest opcional de personalización ahora puede incrustarse como window.SPRITE_MANIFEST.
 - Generador montar_objetos.py y comprobación de objetos: imágenes incrustadas, GIF idéntico al original, límites de curación, recarga, atracción, ocho ramas del botín y ocultación del indicador al pausar. También pasan las comprobaciones de personajes y enemigos.
+- Primer lote guardado en el commit b2ff745: objetos reales, radar animado, créditos locales, generador y comprobaciones.
+- Catálogo de 10 recursos/fichas de DeviantArt documentado con autores y condiciones. Incluye hojas de qsab101, efecto de impulso de LyanCv505, objetos, avatares y escenarios. Se han diferenciado los recursos incorporados, las referencias y los que requieren permiso.
+- Tileset Dragon Ball RMXP de LorisC93 descargado (256×928), revisado y acreditado en recursos_pendientes/escenarios/FUENTE.md. No está integrado: requiere comprobar coherencia visual con el juego y colisiones. El efecto de LyanCv505 permite uso con crédito, pero la descarga original exige registro; no se ha creado cuenta ni incorporado la previsualización JPEG.
+- README, TAREAS_CODEX y PIXEL_ART_POR_CODIGO actualizados. Los cinco recursos de index.html están en v31.
+
+### A medias / problemas
+- La lógica de los nuevos objetos pasa las comprobaciones automáticas y sus recortes se han revisado a ojo. Falta verlos en una partida real; no se ha vuelto a intentar la apertura local que quedó bloqueada por la política del navegador en la sesión 6.
+- No se han dado por terminados los escenarios ni importadas las hojas de personajes/efectos del catálogo. Los packs de personajes pendientes de la sesión 7 siguen pendientes.
+- Los avatares de senzu y cápsula de SailorTrekkie92 no están en el proyecto: requieren permiso explícito de su autora. Las fuentes que se usan realmente están identificadas en CREDITOS_RECURSOS.md y ui/objetos/fuentes.json.
+
+### Siguiente paso recomendado
+- Probar las cajas y los cuatro objetos: vida con límite, técnica especial lista, atracción de gemas e indicador que se oculta al pausar. Revisar también la pantalla de créditos abriendo index.html con doble clic.
+- Continuar las animaciones de Goku Granola (132, 136, 149) y usar el catálogo para sustituir efectos/escenarios después de comprobar sus condiciones y su estilo.

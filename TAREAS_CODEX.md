@@ -8,6 +8,13 @@ Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recur
 17 formas (62 en total). Continuar la lista B real de `SPRITES_PENDIENTES.md`; el apartado C explica por qué se
 aparcan ciertos packs incompletos. Las selecciones nuevas están en `variantes.json` y sus altas en `NUEVOS`.
 
+**Petición de sesión 8:** buscar sprites y pixel art animado en DeviantArt, especialmente objetos, con créditos.
+Primer lote integrado: senzu real, cápsulas de vida/ki y radar; fuentes en `CREDITOS_RECURSOS.md`.
+El radar animado de Lady-Pixel se conserva íntegro. `node herramientas/comprobar_objetos.cjs` pasa;
+falta revisar los objetos en una partida real. Catálogo de personajes, efectos y escenarios revisados en ese documento.
+El tileset de LorisC93 está descargado en `recursos_pendientes/escenarios/`, todavía sin usar.
+No usar los avatares de SailorTrekkie92 sin su permiso: su biografía lo exige.
+
 ## 1. Rehacer los ~45 enemigos con recorte viejo (prioridad del usuario)
 
 **Estado tras Codex, sesión 6:** 13 IDs más enlazados a formas ya revisadas, corregida la guardia en el dibujado,
