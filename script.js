@@ -845,8 +845,8 @@ function enemySprite(id){
   if(SPR[id]&&!SPR[id].pending)return SPR[id];
   if(id!=='shadow'){const sp=scEnemy(id);if(sp)return SPR[id]=sp}
   {const m=myEnemy(id);if(m)return SPR[id]=m}
-  if(id==='shadow'){const F=heroFrames(S.hid,P.form),dk=c=>{const o=mk(c.width,c.height),g=o.getContext('2d');g.drawImage(c,0,0);g.globalCompositeOperation='source-atop';g.fillStyle='rgba(30,0,50,.72)';g.fillRect(0,0,o.width,o.height);g.fillStyle='#ff2a4a';return o};
-    const fr=F.downwalk.map(x=>dk(x.c));return{fr,fl:fr.map(flipC),wh:F.downwalk.map(x=>x.w),whf:F.downwalk.map(x=>x.wf),w:fr[0].width,h:fr[0].height,big:1}}
+  // tu sombra: tu mismo pack de sprites, oscurecido (nada dibujado por código)
+  if(id==='shadow'&&S&&P){const h=[S.hid,P.form];if(String(ET.shadow.hero)!==String(h)){ET.shadow.hero=h;delete SCTC.shadow}SCTINT.shadow='brightness(.35) sepia(1) hue-rotate(220deg) saturate(2.5)';const sp=scEnemy('shadow');if(sp)return sp}
   if(ET[id]&&ET[id].alias)return SPR[id]=enemySprite(ET[id].alias);
   // Mientras se decodifica el PNG no se inventa un personaje por código.
   // No se guarda en SPR: el render vuelve a pedir su sprite cuando esté listo.
@@ -2496,7 +2496,7 @@ function render(time){
         ctx.drawImage(im,Math.round(x-im.width/2),Math.round(y-im.height+1+bob));
         if(P.pend){const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(x+(up?0:(left?-1:1)*im.width*0.3)-kb.width/2),Math.round(up?y-im.height-kb.height*0.6:y-im.height*0.5-kb.height/2));ctx.globalAlpha=1}
         if(chg&&!bm){const r=4+((time*14|0)%3),kb=kiSprite(r,['#1a5ad8','#6ac8ff','#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.9;ctx.drawImage(kb,Math.round(x+(left?-1:1)*im.width*0.12-kb.width/2),Math.round(y-im.height*0.42-kb.height/2));ctx.globalAlpha=1}}
-      else{const img=P.hitT>0?(flip?fr.wf:fr.w):(flip?fr.f:fr.c);ctx.drawImage(img,Math.round(x-img.width/2),Math.round(y-img.height+1))}
+      // mientras carga su pack no se dibuja ningún muñeco hecho por código
       ctx.restore();continue}
     if(e.spr.pending){e.spr=enemySprite(e.type);if(e.spr.pending)continue;e.h=e.spr.h}
     const sc=e.spr.big?1:e.boss?2:1,x=e.x-cam.x,y=e.y-cam.y;shadow(x,y,e.spr.w*sc*0.6);
@@ -2921,10 +2921,12 @@ function drawBanner(){const c=$('#gBanner'),g=c.getContext('2d'),bn=gBanner();g.
   if(SHENIMG.complete&&SHENIMG.naturalWidth){const k=56/SHENIMG.naturalHeight,fl=Math.round(Math.sin(bannerT*0.05)*2);g.drawImage(SHENIMG,4,2+fl,Math.round(SHENIMG.naturalWidth*k),56)}g.setTransform(1,0,0,1,c.width-160,0);
   for(let i=0;i<7;i++){const a=i/7*TAU+bannerT*0.02,x=80+Math.cos(a)*64,y=30+Math.sin(a)*22,im=DBIMG[i+1];
     if(im&&im.complete&&im.naturalWidth)g.drawImage(im,Math.round(x-5),Math.round(y-5),10,10);else{pball(g,Math.round(x),Math.round(y),5,['#c85a10','#f2911a','#ffc44a','#fff0b0'])}}
-  const fr=(id,f)=>heroFrames(id,f).downidle[(bannerT>>4)%2].c;
-  if(bn.id==='feat'&&bn.f5){bn.f4.forEach((id,i)=>{const im=fr(id,0);g.drawImage(im,i?112:10,10,im.width*0.85|0,im.height*0.85|0)});
-    const im=fr(bn.f5,Math.min(1,HDEF[bn.f5].forms.length-1)),fl=auraFlames(heroAura(bn.f5,1))[(bannerT>>2)%3];g.globalAlpha=0.8;g.drawImage(fl,80-fl.width/2,60-fl.height);g.globalAlpha=1;g.drawImage(im,80-im.width/2,60-im.height);return}
-  const ids=GPOOL[5];ids.forEach((id,i)=>{const im=fr(id,1);g.drawImage(im,30+i*Math.min(26,104/Math.max(1,ids.length-1)),4,im.width*0.75|0,im.height*0.75|0)})}
+  // héroes con sus sprites reales (guardia del pack); mientras cargan no se dibuja nada
+  const fr=(id,f)=>{const o=scHero(id,f),A=o&&(o.Idle||o.Walk);return A&&A.R.length?A.R[(bannerT>>4)%A.R.length]:null};
+  const put=(im,cx,hh)=>{if(!im)return;const k=Math.min(1,hh/im.height);g.drawImage(im,Math.round(cx-im.width*k/2),Math.round(60-im.height*k),Math.round(im.width*k),Math.round(im.height*k))};
+  if(bn.id==='feat'&&bn.f5){bn.f4.forEach((id,i)=>put(fr(id,0),i?136:24,42));
+    const fl=auraFlames(heroAura(bn.f5,1))[(bannerT>>2)%3];g.globalAlpha=0.8;g.drawImage(fl,80-fl.width/2,60-fl.height);g.globalAlpha=1;put(fr(bn.f5,Math.min(1,HDEF[bn.f5].forms.length-1)),80,56);return}
+  const ids=GPOOL[5];ids.forEach((id,i)=>put(fr(id,1),14+i*Math.min(26,132/Math.max(1,ids.length-1)),40))}
 function openGacha(){initAudio();state='gacha';$('#gFree').onclick=()=>wish(1,true);$('#gHist').onclick=()=>{const h=$('#gHistBox');h.hidden=!h.hidden};hideMenus();$('#gacha').hidden=false;$('#gRes').innerHTML='';gachaInfo();
   const tick=()=>{if(state!=='gacha')return;drawBanner();requestAnimationFrame(tick)};tick()}
 // Manifest opcional incrustado por quien personalice el juego; nunca se pide JSON por red.
