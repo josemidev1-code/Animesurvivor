@@ -29,7 +29,8 @@ for n, (i, f) in enumerate(fr):
     f2 = f.resize((f.width * k, f.height * k), Image.NEAREST)
     if f2.width > cw - 8 or f2.height > ch - 22: f2.thumbnail((cw - 8, ch - 22), Image.NEAREST)
     hoja.paste(f2, (x + (cw - f2.width) // 2, y + ch - 4 - f2.height), f2)
-    d.rectangle((x, y, x + 40, y + 14), fill=(20, 12, 28, 255)); d.text((x + 3, y + 2), str(i), fill=(255, 220, 80, 255))
+    d.rectangle((x, y, x + cw - 1, y + ch - 1), outline=(30, 90, 70, 255))  # borde de la celda: el número es de lo que hay dentro
+    d.rectangle((x, y, x + 30, y + 14), fill=(20, 12, 28, 255)); d.text((x + 3, y + 2), str(i), fill=(255, 220, 80, 255))
 os.makedirs(os.path.join(RAIZ, 'herramientas', '_revisar'), exist_ok=True)
 nombre = os.path.basename(pack.rstrip('/\\')).replace(' ', '_')[:40] + ('_sel' if solo else '')
 out = os.path.join(RAIZ, 'herramientas', '_revisar', 'pack_' + nombre + '.png')

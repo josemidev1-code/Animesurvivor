@@ -18,6 +18,7 @@ SPRITES = os.path.join(RAIZ, 'sprites')
 DUR = {'Idle': 24, 'Walk': 8, 'Attack': 5, 'Kick': 6, 'Cast': 12, 'Pow': 6, 'Hurt': 10, 'Faint': 14}
 CLAVES = {'idle': 'Idle', 'move': 'Walk', 'attack': 'Attack', 'kick': 'Kick', 'ki': 'Cast', 'pow': 'Pow', 'hurt': 'Hurt', 'faint': 'Faint'}
 PIE = 4  # el juego recorta 4 filas de la parte de abajo de cada celda
+ALTO_BASE = 52  # alto en píxeles de la postura de guardia de un adulto (ver "altura" en cada forma)
 
 nat = lambda s: [int(t) if t.isdigit() else t.lower() for t in re.split(r'(\d+)', s)]
 
@@ -97,6 +98,15 @@ def tira(imgs):
     return out, cw, ch
 
 
+def busto(im):
+    """Cara de reserva cuando no hay retrato: cabeza y hombros del fotograma de guardia, centrados en la cabeza."""
+    b = im.getbbox(); alto = b[3] - b[1]; y1 = b[1] + max(14, round(alto * 0.5)); px = im.load()
+    cab = [x for y in range(b[1], b[1] + max(6, alto // 5)) for x in range(b[0], b[2]) if px[x, y][3] > 0]
+    cx = (min(cab) + max(cab)) / 2 if cab else (b[0] + b[2]) / 2; m = round((y1 - b[1]) * 0.5)
+    c = im.crop((max(0, round(cx - m)), b[1], min(im.width, round(cx + m)), y1))
+    return c
+
+
 def data_url(im):
     b = io.BytesIO(); im.save(b, 'PNG', optimize=True)
     return 'data:image/png;base64,' + base64.b64encode(b.getvalue()).decode()
@@ -128,19 +138,25 @@ def cargar_forma(f):
     peq = {i: red(i) for i in usados}
     if f.get('espejo'):  # el pack mira a la izquierda: el juego necesita que miren a la derecha
         peq = {i: im.transpose(Image.FLIP_LEFT_RIGHT) for i, im in peq.items()}
-    anims = {nombre: [peq[i] for i in f[k]] for k, nombre in CLAVES.items() if f.get(k)}
+    # mismo tamaño en todas las formas: la postura de guardia se lleva a la altura del personaje (ALTO_BASE
+    # o "altura" en la forma); así no encoge ni crece al transformarse aunque cada pack venga a otra escala
+    altos = sorted(peq[i].getbbox()[3] - peq[i].getbbox()[1] for i in f.get('idle', usados) if peq[i].getbbox())
+    k = (f.get('altura') or ALTO_BASE) / altos[len(altos) // 2] if altos else 1
+    if abs(k - 1) > 0.04:
+        peq = {i: im.resize((max(1, round(im.width * k)), max(1, round(im.height * k))), Image.NEAREST) for i, im in peq.items()}
+    anims = {nombre: [peq[i] for i in f[k2]] for k2, nombre in CLAVES.items() if f.get(k2)}
     if 'Hurt' in anims:  # nunca tumbado en el suelo: si un fotograma de daño está tumbado se usa el de pie
         de_pie = [im for im in anims['Hurt'] if (lambda b: (b[2] - b[0]) <= 1.35 * (b[3] - b[1]))(im.getbbox())]
-        if de_pie: anims['Hurt'] = [de_pie[min(k, len(de_pie) - 1)] for k in range(len(anims['Hurt']))]
-    ret = peq[f['portrait']] if 'portrait' in f else None
-    if not ret and 'Idle' in anims and anims['Idle']:
-        idle_im = anims['Idle'][0]
-        b = idle_im.getbbox()
-        if b:
-            head_h = max(14, round((b[3] - b[1]) * 0.46))
-            cx = (b[0] + b[2]) // 2
-            w = round(head_h * 0.95)
-            ret = idle_im.crop((max(0, cx - w//2), b[1], min(idle_im.width, cx + w//2), b[1] + head_h))
+        if de_pie: anims['Hurt'] = [de_pie[min(j, len(de_pie) - 1)] for j in range(len(anims['Hurt']))]
+    ret = None
+    if f.get('retrato'):  # cara grande de otro pack del mismo personaje: ["<pack>", fotograma]
+        rp, ri = f['retrato']; ret = limpiar(frames_del_pack(rp)[ri]); e = escala_pixel(ret)
+        if e > 1.05: ret = ret.resize((max(1, round(ret.width / e)), max(1, round(ret.height / e))), Image.NEAREST)
+    elif 'portrait' in f:
+        ret = crudos[f['portrait']]; e = medidas[f['portrait']]
+        if e > 1.05: ret = ret.resize((max(1, round(ret.width / e)), max(1, round(ret.height / e))), Image.NEAREST)
+    if not ret and anims.get('Idle'):
+        ret = busto(anims['Idle'][0])
     return anims, (ret.crop(ret.getbbox()) if ret else None), esc
 
 
