@@ -1,0 +1,896 @@
+{
+ "heroes": {
+  "raditz": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/00_Saiyans/Raditz/084_Raditz",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     6
+    ],
+    "attack": [
+     11,
+     12,
+     15
+    ],
+    "kick": [
+     17,
+     18
+    ],
+    "ki": [
+     39,
+     40
+    ],
+    "pow": [
+     32,
+     33,
+     34
+    ],
+    "hurt": [
+     22,
+     23
+    ],
+    "faint": [
+     27
+    ]
+   },
+   "1": {
+    "pack": "05_Fanmade_y_alternativos/Raditz/085_Raditz Ssj",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     6
+    ],
+    "attack": [
+     11,
+     12,
+     13
+    ],
+    "kick": [
+     17,
+     18
+    ],
+    "ki": [
+     39,
+     40
+    ],
+    "pow": [
+     28,
+     29,
+     30
+    ],
+    "hurt": [
+     22,
+     23
+    ],
+    "faint": [
+     27
+    ]
+   }
+  },
+  "saibaman": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/00_Saiyans/Saibaman/086_Saibaman",
+    "idle": [
+     0,
+     3
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     15
+    ],
+    "attack": [
+     8,
+     9
+    ],
+    "kick": [
+     12,
+     13
+    ],
+    "ki": [
+     25,
+     26
+    ],
+    "pow": [
+     29,
+     30,
+     31
+    ],
+    "hurt": [
+     17,
+     21
+    ],
+    "faint": [
+     24
+    ],
+    "altura": 42
+   }
+  },
+  "a16": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Androides/010_Androide 16",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     7
+    ],
+    "attack": [
+     13,
+     14,
+     16
+    ],
+    "kick": [
+     18,
+     19
+    ],
+    "ki": [
+     54,
+     56
+    ],
+    "pow": [
+     37,
+     38,
+     39
+    ],
+    "hurt": [
+     34,
+     35
+    ],
+    "faint": [
+     36
+    ],
+    "altura": 60
+   }
+  },
+  "a17": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Androides/011_Androide 17",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     3,
+     6,
+     7
+    ],
+    "kick": [
+     8,
+     9,
+     10
+    ],
+    "ki": [
+     18,
+     26
+    ],
+    "pow": [
+     35,
+     36
+    ],
+    "hurt": [
+     20,
+     21
+    ],
+    "faint": [
+     24
+    ]
+   }
+  },
+  "freezer": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/028_Freeza Primeira Forma",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     7,
+     8,
+     9
+    ],
+    "kick": [
+     22,
+     23
+    ],
+    "ki": [
+     37,
+     39
+    ],
+    "pow": [
+     34,
+     35,
+     36
+    ],
+    "hurt": [
+     29,
+     30
+    ],
+    "faint": [
+     33
+    ],
+    "altura": 46
+   },
+   "1": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/029_Freeza Terceira Forma",
+    "idle": [
+     0
+    ],
+    "idleDu": [
+     26
+    ],
+    "move": [
+     1
+    ],
+    "attack": [
+     6,
+     7,
+     10
+    ],
+    "kick": [
+     15,
+     16
+    ],
+    "ki": [
+     26,
+     27
+    ],
+    "pow": [
+     20,
+     21
+    ],
+    "hurt": [
+     11,
+     12
+    ],
+    "faint": [
+     19
+    ],
+    "altura": 62
+   },
+   "2": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/026_Freeza Forma Final",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     10,
+     11,
+     12
+    ],
+    "kick": [
+     28,
+     29
+    ],
+    "ki": [
+     48,
+     49
+    ],
+    "pow": [
+     44,
+     45,
+     46
+    ],
+    "hurt": [
+     34,
+     35
+    ],
+    "faint": [
+     37
+    ],
+    "altura": 46
+   },
+   "3": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/027_Freeza Full Power",
+    "idle": [
+     5,
+     6
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     34
+    ],
+    "attack": [
+     45,
+     46,
+     47
+    ],
+    "kick": [
+     36,
+     39
+    ],
+    "ki": [
+     64,
+     65
+    ],
+    "pow": [
+     61,
+     62,
+     63
+    ],
+    "hurt": [
+     53,
+     54
+    ],
+    "faint": [
+     59
+    ],
+    "altura": 50
+   },
+   "4": {
+    "pack": "01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Freezer/030_Golden Freeza",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     15
+    ],
+    "attack": [
+     21,
+     22,
+     23
+    ],
+    "kick": [
+     24,
+     26
+    ],
+    "ki": [
+     43,
+     38
+    ],
+    "pow": [
+     36,
+     37
+    ],
+    "hurt": [
+     16,
+     17
+    ],
+    "faint": [
+     18
+    ],
+    "altura": 46
+   },
+   "5": {
+    "pack": "01_Dragon_Ball_Super/07_Granola/Freezer/004_BLACK FREEZER, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     48,
+     36
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     8
+    ],
+    "attack": [
+     97,
+     98,
+     99
+    ],
+    "kick": [
+     84,
+     85
+    ],
+    "ki": [
+     66,
+     67
+    ],
+    "pow": [
+     71,
+     72
+    ],
+    "hurt": [
+     100,
+     101
+    ],
+    "faint": [
+     54
+    ],
+    "portrait": 0,
+    "altura": 50
+   }
+  },
+  "cooler": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Cooler/025_Cooler",
+    "idle": [
+     10,
+     11
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     19,
+     20,
+     21
+    ],
+    "kick": [
+     29,
+     32
+    ],
+    "ki": [
+     53,
+     54
+    ],
+    "pow": [
+     49,
+     50,
+     51
+    ],
+    "hurt": [
+     40,
+     41
+    ],
+    "faint": [
+     48
+    ],
+    "altura": 54
+   }
+  },
+  "janemba": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Janemba/068_Janemba",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     8,
+     9,
+     10
+    ],
+    "kick": [
+     13,
+     15
+    ],
+    "ki": [
+     33,
+     34
+    ],
+    "pow": [
+     30,
+     31,
+     32
+    ],
+    "hurt": [
+     22,
+     23
+    ],
+    "faint": [
+     26
+    ],
+    "altura": 56
+   }
+  },
+  "cell": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Cell/021_Cell Imperfeito",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     6,
+     7,
+     8
+    ],
+    "kick": [
+     13,
+     14
+    ],
+    "ki": [
+     30,
+     31
+    ],
+    "pow": [
+     27,
+     28,
+     29
+    ],
+    "hurt": [
+     35,
+     17
+    ],
+    "altura": 54
+   },
+   "1": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Cell/022_Cell Semi Perfeito",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     8,
+     9,
+     10
+    ],
+    "kick": [
+     11,
+     13
+    ],
+    "ki": [
+     38,
+     39
+    ],
+    "pow": [
+     35,
+     36,
+     37
+    ],
+    "hurt": [
+     30,
+     31
+    ],
+    "faint": [
+     33
+    ],
+    "altura": 58
+   },
+   "2": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Cell/023_cell Perfeito",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     6
+    ],
+    "attack": [
+     9,
+     10,
+     12
+    ],
+    "kick": [
+     15,
+     16
+    ],
+    "ki": [
+     32,
+     33
+    ],
+    "pow": [
+     36,
+     37,
+     38
+    ],
+    "hurt": [
+     26,
+     27
+    ],
+    "faint": [
+     30
+    ],
+    "altura": 56,
+    "retrato": [
+     "05_Fanmade_y_alternativos/Cell/154_GOLDEN CELL +KAIOKEN REMASTERIZADO, ANDRÉS GAMEN ANIMATIONS",
+     0
+    ]
+   },
+   "3": {
+    "pack": "05_Fanmade_y_alternativos/Cell/154_GOLDEN CELL +KAIOKEN REMASTERIZADO, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     16,
+     17
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     160
+    ],
+    "attack": [
+     142,
+     143,
+     144
+    ],
+    "kick": [
+     126,
+     128
+    ],
+    "ki": [
+     167,
+     14
+    ],
+    "pow": [
+     94,
+     95,
+     96
+    ],
+    "hurt": [
+     117,
+     118
+    ],
+    "faint": [
+     109
+    ],
+    "portrait": 1,
+    "altura": 56
+   }
+  },
+  "buu": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/077_Majin Buu",
+    "idle": [
+     1,
+     2
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     13
+    ],
+    "attack": [
+     34,
+     35,
+     36
+    ],
+    "kick": [
+     19,
+     20
+    ],
+    "ki": [
+     56,
+     57
+    ],
+    "pow": [
+     39,
+     40,
+     41
+    ],
+    "hurt": [
+     31,
+     32
+    ],
+    "faint": [
+     33
+    ],
+    "altura": 54
+   },
+   "1": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/079_Majin Buu(Flaco)",
+    "idle": [
+     0,
+     2
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     7
+    ],
+    "attack": [
+     27,
+     25,
+     26
+    ],
+    "kick": [
+     34,
+     35
+    ],
+    "ki": [
+     88,
+     89
+    ],
+    "pow": [
+     52,
+     53,
+     54
+    ],
+    "hurt": [
+     43,
+     48
+    ],
+    "faint": [
+     50
+    ],
+    "altura": 54
+   },
+   "2": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/080_Super Buu",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     9
+    ],
+    "attack": [
+     10,
+     11,
+     14
+    ],
+    "kick": [
+     16,
+     17
+    ],
+    "ki": [
+     51,
+     56
+    ],
+    "pow": [
+     40,
+     41,
+     42
+    ],
+    "hurt": [
+     29,
+     30
+    ],
+    "faint": [
+     32
+    ],
+    "altura": 56
+   },
+   "3": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/078_Majin Buu Gohan",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     8,
+     9,
+     12
+    ],
+    "kick": [
+     14,
+     15
+    ],
+    "ki": [
+     33,
+     34
+    ],
+    "pow": [
+     30,
+     31,
+     32
+    ],
+    "hurt": [
+     27,
+     28
+    ],
+    "faint": [
+     29
+    ],
+    "altura": 56
+   },
+   "4": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/076_Kid Buu",
+    "idle": [
+     3,
+     4
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     8
+    ],
+    "attack": [
+     12,
+     13,
+     14
+    ],
+    "kick": [
+     16,
+     17
+    ],
+    "ki": [
+     72,
+     68
+    ],
+    "pow": [
+     32,
+     33,
+     34
+    ],
+    "hurt": [
+     26,
+     27
+    ],
+    "faint": [
+     31
+    ],
+    "altura": 46
+   }
+  }
+ }
+}

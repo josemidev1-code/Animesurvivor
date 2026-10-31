@@ -668,6 +668,19 @@ HDEF.gokusuper={...HDEF.goku,name:'GOKU SUPER',rar:5,hp:120,atk:1.15,desc:'Kaiok
 HDEF.vegetasuper={...HDEF.vegeta,name:'VEGETA SUPER',rar:5,hp:110,atk:1.3,desc:'Orgullo divino. Empieza con Galick Gun.',forms:['BASE','SUPER SAIYAN','SSJ GOD','SSJ BLUE','BLUE FULL POWER'],aura:['gold','gold','red','blue','blue'],majin:99};
 HDEF.trunkscell={...HDEF.trunks,name:'TRUNKS (CELL)',rar:3,hp:115,desc:'Trunks con armadura. Empieza con Burning Attack.',forms:['BASE']};
 HDEF.roshi={...HDEF.krilin,name:'MAESTRO ROSHI',rar:3,hp:100,spd:56,atk:1.1,start:'kame',desc:'El inventor del Kamehameha.',forms:['BASE']};
+// personajes añadidos desde los packs de sprites/ (animaciones en herramientas/animaciones/nuevos.json)
+const NUEVOS={
+ raditz:{name:'RADITZ',rar:3,hp:115,spd:64,atk:1.05,start:'galick',desc:'El hermano de Goku. Empieza con Galick Gun.',forms:['BASE','SUPER SAIYAN'],aura:['white','gold'],sig:['kiblast','punch','galick','kick','renzoku','bigbang']},
+ saibaman:{name:'SAIBAMAN',rar:3,hp:90,spd:72,atk:0.95,start:'kame',desc:'Pequeño y rápido. Explota si hace falta.',forms:['BASE'],aura:['purple'],sig:['kiblast','punch','kick','scatter','finalexp']},
+ a16:{name:'ANDROIDE 16',rar:4,hp:160,spd:56,atk:1.15,start:'eraser',desc:'Enorme y resistente. Empieza con su cañón.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','powerblitz','finalflash','finalexp']},
+ a17:{name:'ANDROIDE 17',rar:4,hp:110,spd:70,atk:1.05,start:'orbs',desc:'Energía infinita y barrera. Muy veloz.',forms:['BASE'],aura:['blue'],sig:['kiblast','kick','punch','a18volley','powerblitz']},
+ freezer:{name:'FREEZER',rar:5,hp:110,spd:66,atk:1.25,start:'kienzan',desc:'El emperador del universo. Empieza con el Disco Mortal.',forms:['1ª FORMA','3ª FORMA','FORMA FINAL','100%','GOLDEN','BLACK'],aura:['purple','purple','purple','purple','gold','purple'],sig:['kiblast','kienzan','punch','lances','kick','omega']},
+ cooler:{name:'COOLER',rar:4,hp:120,spd:62,atk:1.2,start:'kienzan',desc:'El hermano de Freezer. Golpes y rayos.',forms:['FORMA FINAL'],aura:['purple'],sig:['kiblast','kienzan','punch','kick','omega']},
+ janemba:{name:'JANEMBA',rar:5,hp:130,spd:62,atk:1.25,start:'makanko',desc:'El demonio del Más Allá. Espada y portales.',forms:['SUPER JANEMBA'],aura:['purple'],sig:['kiblast','kiblade','punch','kick','hellzone']},
+ cell:{name:'CELL',rar:5,hp:125,spd:62,atk:1.2,start:'kame',desc:'El androide perfecto. Absorbe y crece.',forms:['IMPERFECTO','SEMIPERFECTO','PERFECTO','GOLDEN'],aura:['gold','gold','gold','gold'],sig:['kiblast','punch','kame','kienzan','kick','finalexp']},
+ buu:{name:'MAJIN BUU',rar:5,hp:150,spd:60,atk:1.15,start:'donut',desc:'Se regenera sin parar. Cinco formas.',regen:0.5,forms:['GORDO','MALIGNO','SUPER BUU','BUU GOHAN','KID BUU'],aura:['purple','purple','purple','purple','purple'],sig:['kiblast','punch','kick','renzoku','finalexp','roar']},
+};
+for(const id in NUEVOS){const N=NUEVOS[id];HDEF[id]={...HDEF.goku,...N};delete HDEF[id].sig}
 const HEROES=HDEF;
 function heroPal(id,form){const D=HDEF[id],p={...D.pal};
   if(D.hc){const k=D.hc[Math.min(form,D.hc.length-1)];if(k&&k!=='dark'){Object.assign(p,HAIRC[k]);if(!HAIRC[k].k)p.k=k==='blue'?'#1a6ab8':k==='god'?'#a01a30':'#13786f'}}
@@ -1071,6 +1084,7 @@ const SIGS={goku:['kiblast','punch','kame','kaioken','instant','genki'],vegeta:[
  vegetagt:['kiblast','punch','galick','bigbang','finalshine','kick'],gokusuper:['kiblast','punch','kaioken','kame','godkame','genki'],
  vegetasuper:['renzoku','punch','galick','bigbang','finalflash','gamma'],trunkscell:['kiblast','tsword','burning','finishbuster','kick','heatdome'],
  roshi:['kiblast','punch','kame','mafuba','kick']};
+for(const id in NUEVOS)SIGS[id]=NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
 function sigList(hid=S.hid){if(SIGS[hid])return SIGS[hid];const st=HEROES[hid]&&HEROES[hid].start;return['kiblast','punch',MV[st]&&st!=='kiblast'?st:'kame','kick','renzoku']}
@@ -2456,7 +2470,7 @@ function render(time){
   hud(time)}
 const FLAMES={};
 function auraFlames(kind){if(FLAMES[kind])return FLAMES[kind];
-  const C={gold:['#e8a010','#ffd23f','#fff6a8'],white:['#7ab8e8','#bfe6ff','#ffffff'],orange:['#d0501a','#ff9a3a','#ffe0a0'],red:['#a01030','#ff3a5a','#ffb0c0'],blue:['#1a7ad8','#3ad0f0','#c0f8ff'],green:['#5aa010','#b8f040','#f0ffc0']}[kind];
+  const C={gold:['#e8a010','#ffd23f','#fff6a8'],white:['#7ab8e8','#bfe6ff','#ffffff'],orange:['#d0501a','#ff9a3a','#ffe0a0'],red:['#a01030','#ff3a5a','#ffb0c0'],blue:['#1a7ad8','#3ad0f0','#c0f8ff'],green:['#5aa010','#b8f040','#f0ffc0'],purple:['#5a1a90','#a050ff','#e8c8ff']}[kind];
   const out=[];for(let f=0;f<3;f++){const W=46,H=62,c=mk(W,H),g=c.getContext('2d'),r=srand(77+f*31);
     const layer=(sc,col)=>{g.fillStyle=col;for(let x=-22;x<=22;x++){const k=Math.abs(x)/22;if(k>sc)continue;
       let h=(H-4)*sc*Math.pow(1-(k/sc)**2,0.55);if(x%5===((f*2)%5)-2||x%5===((f*2)%5)+2)h+=4+r()*6;h=Math.round(h*(0.9+r()*0.15));
