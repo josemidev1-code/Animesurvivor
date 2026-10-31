@@ -25,8 +25,9 @@ que funciona abriendo `index.html` con doble clic (sin instalar nada).
 | Gachapón | Banner destacado que rota cada 3 días + permanente, 5★ con probabilidad creciente desde el deseo 50 y seguro en el 70, 4★ cada 10, 50/50 con garantía, repetidos = **despertar** (+8% daño y vida, hasta +5), deseo gratis diario, historial. Tarjetas con fotos de retratos pixel art. |
 | Menú | Portada y selector de personajes con foto/retrato nítido ("con la foto, no el cuerpo"), tarjeta del compañero con retrato destacado, menú principal (barra de zeni/tickets, logo, evento destacado, panel Jugar/Personajes/Mejoras/Tienda/Shenron/Misiones/Ranking/Ajustes, estadísticas); pantallas de Personajes, Tienda de Bulma, Ranking y Ajustes. |
 | Desbloqueos | Todos los personajes con sprites y todos los escenarios abiertos desde el principio. |
-| Animaciones | **25 personajes jugables** (100% de los héroes con sprites disponibles) con fotogramas elegidos a mano y revisados a ojo: Goku, Goku UI, Goku GT, Goku Super, Goku Black, Vegeta, Vegeta Ego, Vegeta GT, Vegeta Super, Vegetto, Gogeta, Gohan niño, Gohan adulto, Trunks (Cell), Trunks del futuro, Krilin, Androide 18, Broly, Gotenks, Caulifla, Kale, Kyabe, Bardock (idle corregido sin bola de ki), Piccolo, Kefla. |
-| Enemigos | **100% sprites reales animados**: todos los enemigos del juego (incluidos Dodoria, Zarbon, Nappa, Burter, Guldo, Dabura, A19, Soldado Red Ribbon y Bolita de Buu) están mapeados a sprite sheets reales con `SCPACK.e` y filtros de paleta en `SCTINT`, eliminando el renderizado procedural por código canvas. |
+| Animaciones | **44 personajes jugables**, fotogramas elegidos a mano y revisados a ojo, todos a la misma altura (nadie encoge al transformarse): Goku (5 formas), Goku UI, Goku GT (4), Goku Super, Goku Black, Vegeta, Vegeta Ego, Vegeta GT (3), Vegeta Super, Vegetto, Gogeta (3), Gohan, Gohan adulto (base, místico, bestia), Trunks, Trunks armadura (2), Krilin, A16, A17, A18, Broly (4), Gotenks, Caulifla, Kale, Kyabe, Kefla (2), Bardock, Piccolo (2), Raditz (2), Saibaman, Freezer (6), Cooler, Janemba, Cell (4), Majin Buu (5), Turles (2), Bills, Frost (2), Hit, Zamasu (2), Jiren (3), Toppo, Moro, Baby Vegeta, Bra (2). |
+| Enemigos | Solo sprites reales. Los enemigos sin sprites propios (Dodoria, Zarbon, Nappa...) están fuera; los mapas usan otros villanos. |
+| Carga | Los sprites se decodifican solo al empezar partida (héroe + enemigos del mapa); el menú abre en ~0,6 s. `index.html` pide los scripts con `?v=N` (súbelo al cambiar archivos). |
 | Muerte | El personaje cae con su animación (1,8 s) antes de la pantalla final (27 formas con fotogramas de muerte; el resto usa los de daño). |
 | Retratos | 100% de cobertura de caras/fotos en todos los héroes y formas. Generación automática desde `montar_animaciones.py` si el pack no incluye retrato grande. Las cartas de selección y el hub muestran las caras nítidas sin dibujar el cuerpo caminando. |
 
@@ -43,6 +44,7 @@ Lee `herramientas/GUIA_ANIMACIONES.md`: reglas y comandos.
 
 ## Lo que queda por hacer (en este orden)
 
+0. **Meter los packs que faltan** (lista en `SPRITES_PENDIENTES.md`, apartado B): sobre todo variantes de Goku, Vegeta y Black.
 1. **Ataques**: usar efectos reales de los sprites (rayos del Kamehameha, bolas de ki con estela, auras) en vez de los dibujados
    por código; iconos de ataques con sprites para la barra de abajo.
 2. **HUD y subida de nivel como las capturas de referencia**: cámara más cerca; arriba a la izquierda nombre, nivel y vida;
