@@ -702,6 +702,10 @@ const NUEVOS={
  gokuxeno:{name:'GOKU XENO',rar:5,hp:125,spd:68,atk:1.3,start:'kame',desc:'El Goku de la Patrulla del Tiempo.',forms:['BASE','SSJ DIOS','SUPER SAIYAN 4'],aura:['white','red','red'],sig:['kiblast','punch','kick','kame','instant','genki']},
  gokumoro:{name:'GOKU SAGA MORO',rar:5,hp:125,spd:68,atk:1.3,start:'kame',desc:'Goku con la ropa rota en la lucha contra Moro.',forms:['BASE','SUPER SAIYAN','SSJ DIOS','SSJ BLUE','ULTRA INSTINTO','MUI'],aura:['white','gold','red','blue','silver','silver'],sig:['kiblast','punch','kick','kame','instant','silver']},
  gokubroly:{name:'GOKU PELÍCULA BROLY',rar:5,hp:125,spd:68,atk:1.3,start:'kame',desc:'Goku frente a Broly: de base a Super Saiyan Blue perfecto.',forms:['BASE','SUPER SAIYAN','SSJ DIOS','SSJ BLUE PERFECTO'],aura:['white','gold','red','blue'],sig:['kiblast','punch','kick','kame','instant','genki']},
+ vegetamanga:{name:'VEGETA BLUE MANGA',rar:5,hp:130,spd:66,atk:1.3,start:'galick',desc:'Vegeta con el traje dañado y el Blue perfeccionado del manga.',forms:['SSJ BLUE','SSJ BLUE PERFECTO'],aura:['blue','blue'],sig:['kiblast','punch','kick','galick','finalflash','bigbang']},
+ vegetabroly:{name:'VEGETA DIOS · BROLY',rar:5,hp:130,spd:66,atk:1.25,start:'galick',desc:'Super Saiyan Dios durante el combate contra Broly.',forms:['SSJ DIOS'],aura:['red'],sig:['kiblast','punch','kick','galick','finalflash','bigbang']},
+ blacktime:{name:'BLACK TIME BREAKER',rar:5,hp:120,spd:68,atk:1.3,start:'blackkame',desc:'El Goku Black enmascarado de Heroes.',forms:['SSJ DIOS','SSJ ROSÉ','SSJ ROSÉ 3'],aura:['red','purple','purple'],sig:['kiblast','punch','kick','blackkame','kiblade','scythe']},
+ blackfan:{name:'GOKU BLACK FANMADE',rar:5,hp:120,spd:68,atk:1.3,start:'blackkame',desc:'Goku Black en formas alternativas creadas por fans.',forms:['SSJ RAGE','ROSÉ KAIOKEN','ROSÉ ULTRA INSTINTO','MUI'],aura:['gold','red','purple','silver'],sig:['kiblast','punch','kick','blackkame','kiblade','scythe']},
 };
 // formas añadidas a personajes que ya estaban
 Object.assign(HDEF.gokugt,{forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 3','SUPER SAIYAN 4'],aura:['white','gold','gold','red']});

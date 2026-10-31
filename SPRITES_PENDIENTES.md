@@ -1,5 +1,6 @@
 # Sprites pendientes
 
+Última revisión de personajes: 31/10/2026 (Codex, sesión 7).
 Última revisión de enemigos: 31/10/2026 (Codex, sesión 6).
 
 El juego solo usa las formas de `herramientas/animaciones.json` y `herramientas/animaciones/*.json`, elegidas a mano
@@ -43,7 +44,7 @@ Recuperados con formas ya revisadas: Vegeta Saiyan/base, Majin Vegeta, Frost fin
 contenido/SSJ/legendario, Kale SSJ y A17 jefe (13 IDs). Kale se llama **Kale Super Saiyan** porque ese es su pack.
 No se han añadido personajes jugables en esta revisión.
 
-## B) Packs de `sprites/` que aún no están en el juego (137)
+## B) Packs de `sprites/` que aún no están en el juego (127)
 
 Casi todos son **versiones alternativas** de personajes que ya son jugables (otro artista, otra ropa, formas fanmade:
 Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos como formas o personajes nuevos
@@ -113,7 +114,7 @@ Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos co
 - `07_Personajes_sin_saga_concreta/Goku/054_Goku SSJ 1(versión 2)`
 - `07_Personajes_sin_saga_concreta/Goku/273_GOKU SSJ FULL POWER SWL+`
 
-### Vegeta (33)
+### Vegeta (30)
 - `00_Dragon_Ball_Z/00_Saiyans/Vegeta/309_Vegeta explorador HD`
 - `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Vegeta/312_vegeta yardrat`
 - `00_Dragon_Ball_Z/03_Majin_Buu/Vegeta/298_Vegeta SSJ2 HD`
@@ -124,12 +125,9 @@ Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos co
 - `01_Dragon_Ball_Super/04_Torneo_del_Poder/Vegeta/299_Vegeta blue evolution`
 - `01_Dragon_Ball_Super/05_Broly/Vegeta/225_VEGETA,BASE,DBS, BROLY,DAMAGED, ANDRÉS GAMEN ANIMATIONS`
 - `01_Dragon_Ball_Super/05_Broly/Vegeta/304_Vegeta com capote HD`
-- `01_Dragon_Ball_Super/05_Broly/Vegeta/305_Vegeta god dbs broly`
 - `01_Dragon_Ball_Super/06_Moro/Vegeta/250_Vegeta ssj Dios patrullero galáctico.Andres Gamen`
 - `01_Dragon_Ball_Super/07_Granola/Vegeta/240_VEGETA MEGA INSTITO, ANDRÉS GAMEN ANIMATIONS`
 - `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/092_Vegeta Blue`
-- `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/243_VEGETA SSJ BLUE,TRAJE,DAÑADO,MANGA VERSION(ANDRES GAMEN ANIMATIONS)`
-- `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/245_VEGETA SSJB PERFECTO, MANGA , MEJORADO, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )`
 - `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/296_Vegeta Blue Ulsw Hd`
 - `02_GT/Vegeta/264_VEGETA SSJ4 GT`
 - `02_GT/Vegeta/308_VEGETA SSJ4 HD`
@@ -148,7 +146,7 @@ Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos co
 - `07_Personajes_sin_saga_concreta/Vegeta/297_Vegeta SSJ1`
 - `07_Personajes_sin_saga_concreta/Vegeta/301_Vegeta Sem Camisa HD`
 
-### Goku Black (23)
+### Goku Black (16)
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/039_Goku Black`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/178_Goku black traje kaioshin.Andres Gamen`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/255_Black Goku Pack de sprites By GohanAnimations`
@@ -156,12 +154,7 @@ Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos co
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/269_GOKU BLACK PITIKOS`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose`
 - `01_Dragon_Ball_Super/09_Generales_y_manga/Goku Black/042_Goku Black SSJ`
-- `04_Heroes_y_videojuegos/Goku Black/124_GOKU BLACK TIME BREAKER SSJ DIOS, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )✓`
-- `04_Heroes_y_videojuegos/Goku Black/126_GOKU BLACK TIME BREAKER SSJR MEJORADO , ANDRÉS GAMEN ANIMATIONS ( SPRITE HD REMASTERIZADO )`
 - `05_Fanmade_y_alternativos/Goku Black/005_BLACKKU SSJ ROSE,BLUE, EVOLUTION,BY ANDRÉS GAMEN ANIMATIONS`
-- `05_Fanmade_y_alternativos/Goku Black/122_GOKU BLACK MUI , ANDRÉS GAMEN ANIMATIONS, Sprites HD`
-- `05_Fanmade_y_alternativos/Goku Black/123_GOKU BLACK SSJ RAGE, ANDRÉS GAMEN ANIMATIONS (SPRITE HD )`
-- `05_Fanmade_y_alternativos/Goku Black/125_GOKU BLACK TIME BREAKER SSJ ROSE 3 SWL, ANDRÉS GAMEN ANIMATIONS`
 - `05_Fanmade_y_alternativos/Goku Black/175_Goku black Ultra instito dominado.Andres Gamen`
 - `05_Fanmade_y_alternativos/Goku Black/176_Goku black ssj Rosen evolution.Andres Gamen`
 - `05_Fanmade_y_alternativos/Goku Black/177_Goku black ssj falso.Andres Gamen`
@@ -170,8 +163,6 @@ Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos co
 - `05_Fanmade_y_alternativos/Goku Black/185_Majin Goku black ssj Rosen.Andres Gamen`
 - `05_Fanmade_y_alternativos/Goku Black/186_Majin Goku black ssj blue.Andres Gamen`
 - `05_Fanmade_y_alternativos/Goku Black/187_Majin Goku black ssj1.Andres Gamen`
-- `05_Fanmade_y_alternativos/Goku Black/212_GOKU BLACK SSJ ROSE KAIOKEN, ANDRÉS GAMEN ANIMATIONS`
-- `05_Fanmade_y_alternativos/Goku Black/213_GOKU BLACK ULTRA INSTITO SSJ ROSE, ANDRÉS GAMEN ANIMATIONS`
 
 ### Gohan (1)
 - `05_Fanmade_y_alternativos/Gohan/195_Gohan del futuro,ssj3, Andrés Gamen`
@@ -219,10 +210,12 @@ Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos co
 ### Bra (1)
 - `05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés`
 
-
-
-
 ## C) Packs revisados pero incompletos
 
 - Goku 217 (traje de invierno): sin combos, patadas, ki ni daño; no se integra como forma completa.
 - Goku 222 (Blue de Broly): no se encontró patada completa; usar el pack 221 para la forma Blue perfecto.
+
+- Vegeta 225 (base dañado de Broly): sin secuencia diferenciada de carga de poder; selección pendiente.
+- Vegeta 304 (abrigo): no tiene todas las acciones de combate y daño.
+- Vegeta 250 (Dios patrullero): solo se identificó un fotograma de daño; descartada la selección que repetía ese fotograma.
+- Majin Black 183–187: no se localizaron todas las secuencias de patada y daño exigidas; no se integran aún.

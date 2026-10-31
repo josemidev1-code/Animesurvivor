@@ -1570,6 +1570,431 @@
     ],
     "portrait": 79
    }
+  },
+  "vegetamanga": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/243_VEGETA SSJ BLUE,TRAJE,DAÑADO,MANGA VERSION(ANDRES GAMEN ANIMATIONS)",
+    "idle": [
+     54,
+     55
+    ],
+    "move": [
+     91
+    ],
+    "attack": [
+     54,
+     79,
+     81,
+     82
+    ],
+    "kick": [
+     75,
+     76,
+     77
+    ],
+    "ki": [
+     31,
+     26
+    ],
+    "pow": [
+     63,
+     64
+    ],
+    "hurt": [
+     58,
+     37
+    ],
+    "faint": [
+     57
+    ],
+    "portrait": 0,
+    "escala": 1,
+    "escalaFrames": {
+     "54": 7.46154,
+     "55": 6.32692,
+     "91": 8.0,
+     "79": 4.79167,
+     "81": 10.34,
+     "82": 11.51923,
+     "75": 6.57143,
+     "76": 7.79545,
+     "77": 7.35556,
+     "31": 5.52083,
+     "26": 6.125,
+     "63": 5.5,
+     "64": 5.3125,
+     "58": 6.34286,
+     "37": 5.71429,
+     "57": 7.66667
+    }
+   },
+   "1": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/245_VEGETA SSJB PERFECTO, MANGA , MEJORADO, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )",
+    "idle": [
+     131,
+     132
+    ],
+    "move": [
+     121,
+     122
+    ],
+    "attack": [
+     110,
+     100,
+     101,
+     104
+    ],
+    "kick": [
+     94,
+     95,
+     96
+    ],
+    "ki": [
+     36,
+     34
+    ],
+    "pow": [
+     134,
+     135
+    ],
+    "hurt": [
+     50,
+     52
+    ],
+    "faint": [
+     48
+    ],
+    "portrait": 1
+   }
+  },
+  "vegetabroly": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/05_Broly/Vegeta/305_Vegeta god dbs broly",
+    "idle": [
+     25,
+     26
+    ],
+    "move": [
+     35
+    ],
+    "attack": [
+     52,
+     53,
+     55,
+     57
+    ],
+    "kick": [
+     63,
+     67,
+     68
+    ],
+    "ki": [
+     79,
+     80
+    ],
+    "pow": [
+     99,
+     100
+    ],
+    "hurt": [
+     90,
+     91
+    ],
+    "faint": [
+     95
+    ],
+    "portrait": 11,
+    "escala": 1,
+    "escalaFrames": {
+     "25": 19.63462,
+     "26": 17.32692,
+     "35": 16.68889,
+     "52": 17.69231,
+     "53": 17.85417,
+     "55": 13.9375,
+     "57": 14.70833,
+     "63": 17.16667,
+     "67": 16.45,
+     "68": 14.775,
+     "79": 14.90698,
+     "80": 16.61538,
+     "99": 9.27273,
+     "100": 9.80303,
+     "90": 15.6,
+     "91": 15.575,
+     "95": 14.4375
+    }
+   }
+  },
+  "blacktime": {
+   "0": {
+    "pack": "04_Heroes_y_videojuegos/Goku Black/124_GOKU BLACK TIME BREAKER SSJ DIOS, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )✓",
+    "idle": [
+     121,
+     122
+    ],
+    "move": [
+     107
+    ],
+    "attack": [
+     97,
+     98,
+     99,
+     100
+    ],
+    "kick": [
+     87,
+     88,
+     89
+    ],
+    "ki": [
+     42,
+     44
+    ],
+    "pow": [
+     61,
+     62
+    ],
+    "hurt": [
+     69,
+     70
+    ],
+    "faint": [
+     66
+    ],
+    "portrait": 0
+   },
+   "1": {
+    "pack": "04_Heroes_y_videojuegos/Goku Black/126_GOKU BLACK TIME BREAKER SSJR MEJORADO , ANDRÉS GAMEN ANIMATIONS ( SPRITE HD REMASTERIZADO )",
+    "idle": [
+     214,
+     215
+    ],
+    "move": [
+     204,
+     205
+    ],
+    "attack": [
+     186,
+     181,
+     182,
+     184
+    ],
+    "kick": [
+     158,
+     160,
+     161
+    ],
+    "ki": [
+     47,
+     48
+    ],
+    "pow": [
+     232,
+     233
+    ],
+    "hurt": [
+     150,
+     151
+    ],
+    "faint": [
+     146
+    ],
+    "portrait": 0
+   },
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Goku Black/125_GOKU BLACK TIME BREAKER SSJ ROSE 3 SWL, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     93,
+     94
+    ],
+    "move": [
+     15,
+     16
+    ],
+    "attack": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "kick": [
+     71,
+     72,
+     73
+    ],
+    "ki": [
+     53,
+     50
+    ],
+    "pow": [
+     104,
+     105
+    ],
+    "hurt": [
+     81,
+     82
+    ],
+    "faint": [
+     80
+    ]
+   }
+  },
+  "blackfan": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku Black/123_GOKU BLACK SSJ RAGE, ANDRÉS GAMEN ANIMATIONS (SPRITE HD )",
+    "idle": [
+     110,
+     111
+    ],
+    "move": [
+     102,
+     103
+    ],
+    "attack": [
+     90,
+     91,
+     78,
+     79
+    ],
+    "kick": [
+     52,
+     53,
+     54
+    ],
+    "ki": [
+     17,
+     15
+    ],
+    "pow": [
+     35,
+     36
+    ],
+    "hurt": [
+     43,
+     44
+    ],
+    "faint": [
+     39
+    ],
+    "portrait": 0
+   },
+   "1": {
+    "pack": "05_Fanmade_y_alternativos/Goku Black/212_GOKU BLACK SSJ ROSE KAIOKEN, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     110
+    ],
+    "move": [
+     93,
+     94
+    ],
+    "attack": [
+     81,
+     82,
+     77,
+     79
+    ],
+    "kick": [
+     68,
+     69,
+     70
+    ],
+    "ki": [
+     26,
+     25
+    ],
+    "pow": [
+     116,
+     117
+    ],
+    "hurt": [
+     54,
+     55
+    ],
+    "faint": [
+     50
+    ],
+    "portrait": 0,
+    "escalaFrames": {
+     "116": 3.5,
+     "117": 4
+    }
+   },
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Goku Black/213_GOKU BLACK ULTRA INSTITO SSJ ROSE, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     126,
+     127
+    ],
+    "move": [
+     118,
+     119
+    ],
+    "attack": [
+     106,
+     101,
+     102,
+     104
+    ],
+    "kick": [
+     87,
+     88,
+     89
+    ],
+    "ki": [
+     62,
+     74
+    ],
+    "pow": [
+     65,
+     66
+    ],
+    "hurt": [
+     78,
+     79
+    ],
+    "faint": [
+     76
+    ],
+    "portrait": 0
+   },
+   "3": {
+    "pack": "05_Fanmade_y_alternativos/Goku Black/122_GOKU BLACK MUI , ANDRÉS GAMEN ANIMATIONS, Sprites HD",
+    "idle": [
+     123,
+     124
+    ],
+    "move": [
+     116
+    ],
+    "attack": [
+     106,
+     107,
+     102,
+     103
+    ],
+    "kick": [
+     70,
+     71,
+     72
+    ],
+    "ki": [
+     31,
+     30
+    ],
+    "pow": [
+     46,
+     47
+    ],
+    "hurt": [
+     53,
+     62
+    ],
+    "faint": [
+     51
+    ],
+    "portrait": 1
+   }
   }
  }
 }

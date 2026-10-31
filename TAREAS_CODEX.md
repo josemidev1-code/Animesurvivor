@@ -2,7 +2,11 @@
 
 Antes: lee `AGENTS.md` y `herramientas/GUIA_ANIMACIONES.md`. Apunta todo en `BITACORA.md` y haz commit tras cada tarea.
 Python: `C:\Users\soyjo\AppData\Local\Programs\Python\Python314\python.exe` con `PYTHONIOENCODING=utf-8`.
-Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=27`).
+Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=29`).
+
+**Prioridad actual (usuario, sesión 7): seguir animando todos los personajes.** Integrados 5 nuevos jugables con
+14 formas (61 en total). Continuar la lista B real de `SPRITES_PENDIENTES.md`; el apartado C explica por qué se
+aparcan ciertos packs incompletos. Las selecciones nuevas están en `variantes.json` y sus altas en `NUEVOS`.
 
 ## 1. Rehacer los ~45 enemigos con recorte viejo (prioridad del usuario)
 
@@ -32,13 +36,14 @@ Cómo (igual que los héroes):
 
 ## 2. Meter los packs pendientes como jugables
 
-Lista en `SPRITES_PENDIENTES.md` (apartado B): 65 de Goku, 34 de Vegeta, 23 de Goku Black. Agrupa 3-6 packs por personaje.
+Lista en `SPRITES_PENDIENTES.md` (apartado B): 62 de Goku, 30 de Vegeta, 16 de Goku Black. Agrupa 3-6 packs por personaje.
 Cada personaje necesita **dos cosas** (si falta la segunda, no sale en el juego):
 - sus formas en `herramientas/animaciones/variantes.json` (con `poner.py`), y
 - su entrada en la tabla `NUEVOS` de `script.js` (copia el formato de `gokumoro`: name, rar, hp, spd, atk, start, desc,
   forms, aura, sig). Auras válidas: white, gold, red, blue, green, purple, orange, silver.
-Siguiente grupo: Goku película Broly (`01_Dragon_Ball_Super/05_Broly/Goku/`: 216, 222, 221, 217).
-Quita de `SPRITES_PENDIENTES.md` los packs usados y actualiza el número de jugables en `README.md` (ahora 56).
+Siguiente grupo propuesto: variantes fanmade de Goku (129 Bestia, 130 Ikari, 131 Místico, 139 SSJ 100), siempre después de mirar sus hojas.
+Goku Broly 216/221 ya están; 217/222 quedan incompletos (ver apartado C).
+Quita de `SPRITES_PENDIENTES.md` los packs usados y actualiza el número de jugables en `README.md` (ahora 61).
 
 ## 3. Sustituir el pixel art dibujado por código
 
