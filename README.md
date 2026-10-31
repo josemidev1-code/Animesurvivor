@@ -25,7 +25,7 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 
 ## Cómo está ahora (31/10/2026)
 
-- **55 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
+- **56 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
 - Enemigos y jefes solo con sprites reales (los recoloreados falsos se quitaron).
 - Logo del menú y esferas del dragón dibujados por ti.
 - Gachapón de Shenron, tienda, misiones, ranking, mejoras; todo desbloqueado de momento.
@@ -33,7 +33,7 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 
 ## Lo que falta (en este orden)
 
-1. Meter los packs que quedan: variantes de Goku (unos 72 packs), Vegeta (34) y Goku Black fanmade (23).
+1. Meter los packs que quedan: variantes de Goku (65 packs), Vegeta (34) y Goku Black fanmade (23).
 2. Ataques con efectos reales de los sprites (Kamehameha, bolas de ki, auras) en vez de dibujados por código.
 3. HUD y subida de nivel como las capturas de PokéSurvivor que mandaste.
 

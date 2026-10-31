@@ -16,7 +16,7 @@ Casi todos son **versiones alternativas** de personajes que ya son jugables (otr
 Goku Xeno, Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: añadirlos como formas o personajes nuevos
 (p. ej. "GOKU XENO", "GOKU FANMADE", "BLACK FANMADE") eligiendo fotogramas con `ver_pack.py`.
 
-### Goku (72)
+### Goku (65)
 - `00_Dragon_Ball_Z/01_Namek_y_Freezer/Goku/060_Goku Ssj (Saga Freeza)`
 - `00_Dragon_Ball_Z/01_Namek_y_Freezer/Goku/128_GOKU GINYU, ANDRÉS GAMEN ANIMATIONS ✓ SPRITE HD`
 - `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/281_GOKU YADRAT BASE`
@@ -42,10 +42,6 @@ Goku Xeno, Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: a�
 - `01_Dragon_Ball_Super/05_Broly/Goku/222_GOKU,SSJ BLUE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS`
 - `01_Dragon_Ball_Super/06_Moro/Goku/144_GOKU SSJ BLUE SAGA,MORO,MANGA,(ANDRÉS GAMEN ANIMACIÓNS)`
 - `01_Dragon_Ball_Super/06_Moro/Goku/174_Goku base.patrullero galáctico.dbs moro.andres Gamen`
-- `01_Dragon_Ball_Super/06_Moro/Goku/199_GOKU SSJ 1 CAMISA MEDIA RASGADA DBS MORO, ANDRÉS GAMEN`
-- `01_Dragon_Ball_Super/06_Moro/Goku/200_GOKU SSJ DIOS CAMISA MEDIA RASGADA,DBS MORO, ANDRÉS GAMEN`
-- `01_Dragon_Ball_Super/06_Moro/Goku/201_GOKU,CAMISA MEDIA RASGADA,DBS MORO, ANDRÉS GAMEN`
-- `01_Dragon_Ball_Super/06_Moro/Goku/251_fases Goku dbs moro, Damaged.Andres Gamen`
 - `01_Dragon_Ball_Super/07_Granola/Goku/132_GOKU MUI ( SAGA GRANOLA ) Andrés Gamen ANIMATIONS ( SPRITE HD )`
 - `01_Dragon_Ball_Super/07_Granola/Goku/136_GOKU MUI SAGA GRANOLA,V2,BY ANDRÉS GAMEN ANIMATIONS`
 - `01_Dragon_Ball_Super/07_Granola/Goku/149_GOKU ULTRA INSTINTO VERDADERO,MANGA,BY ANDRÉS GAMEN ANIMATIONS`
@@ -58,9 +54,6 @@ Goku Xeno, Goku MUI, Black Rosé 3, Vegeta Mega Instinto...). Siguiente paso: a�
 - `02_GT/Goku/058_Goku SSJ 4`
 - `03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍`
 - `03_Daima/Goku/279_GOKU SSJ4 ULSW DBZ DAIMA`
-- `04_Heroes_y_videojuegos/Goku/180_Goku xeno ssj 4 limit brecker HD.andres Gamen`
-- `04_Heroes_y_videojuegos/Goku/253_goku_xeno ssj dios.andres Game`
-- `04_Heroes_y_videojuegos/Goku/266_GOKU BASE XENO ULSW`
 - `05_Fanmade_y_alternativos/Goku/059_Goku SSJ Kaioken`
 - `05_Fanmade_y_alternativos/Goku/127_GOKU EVIL SSJ 2 , ANDRÉS GAMEN ANIMATIONS , SPRITE HD,`
 - `05_Fanmade_y_alternativos/Goku/129_GOKU MODO BESTIA,BY ANDRÉS GAMEN ANIMATIONS`

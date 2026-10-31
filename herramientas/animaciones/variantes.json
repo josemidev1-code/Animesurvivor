@@ -1221,6 +1221,199 @@
     ],
     "portrait": 82
    }
+  },
+  "gokumoro": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/201_GOKU,CAMISA MEDIA RASGADA,DBS MORO, ANDRÉS GAMEN",
+    "idle": [
+     1,
+     2
+    ],
+    "move": [
+     6
+    ],
+    "attack": [
+     13,
+     15,
+     16
+    ],
+    "kick": [
+     10,
+     11
+    ],
+    "ki": [
+     9,
+     16
+    ],
+    "pow": [
+     23
+    ],
+    "hurt": [
+     18,
+     20
+    ],
+    "faint": [
+     21
+    ],
+    "portrait": 25
+   },
+   "1": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/199_GOKU SSJ 1 CAMISA MEDIA RASGADA DBS MORO, ANDRÉS GAMEN",
+    "idle": [
+     5,
+     6
+    ],
+    "move": [
+     10
+    ],
+    "attack": [
+     17,
+     18,
+     19
+    ],
+    "kick": [
+     14,
+     15
+    ],
+    "ki": [
+     30,
+     31
+    ],
+    "pow": [
+     27
+    ],
+    "hurt": [
+     23,
+     24
+    ],
+    "faint": [
+     25
+    ],
+    "portrait": 36
+   },
+   "2": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/200_GOKU SSJ DIOS CAMISA MEDIA RASGADA,DBS MORO, ANDRÉS GAMEN",
+    "idle": [
+     6,
+     7
+    ],
+    "move": [
+     12
+    ],
+    "attack": [
+     19,
+     20,
+     21
+    ],
+    "kick": [
+     16,
+     17
+    ],
+    "ki": [
+     32,
+     33
+    ],
+    "pow": [
+     29
+    ],
+    "hurt": [
+     25,
+     26
+    ],
+    "faint": [
+     27
+    ],
+    "portrait": 41
+   },
+   "3": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/251_fases Goku dbs moro, Damaged.Andres Gamen",
+    "idle": [
+     90,
+     91
+    ],
+    "move": [
+     98
+    ],
+    "attack": [
+     108,
+     109
+    ],
+    "kick": [
+     95,
+     103
+    ],
+    "ki": [
+     100,
+     106
+    ],
+    "pow": [
+     104
+    ],
+    "hurt": [
+     115,
+     116
+    ],
+    "portrait": 102
+   },
+   "4": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/251_fases Goku dbs moro, Damaged.Andres Gamen",
+    "idle": [
+     119,
+     124
+    ],
+    "move": [
+     153
+    ],
+    "attack": [
+     130,
+     131
+    ],
+    "kick": [
+     128,
+     129
+    ],
+    "ki": [
+     134,
+     141
+    ],
+    "pow": [
+     125
+    ],
+    "hurt": [
+     146,
+     147
+    ],
+    "portrait": 136
+   },
+   "5": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/251_fases Goku dbs moro, Damaged.Andres Gamen",
+    "idle": [
+     157,
+     158
+    ],
+    "move": [
+     161
+    ],
+    "attack": [
+     162,
+     163
+    ],
+    "kick": [
+     161,
+     166
+    ],
+    "ki": [
+     165,
+     167
+    ],
+    "pow": [
+     159
+    ],
+    "hurt": [
+     166
+    ],
+    "portrait": 169
+   }
   }
  }
 }
