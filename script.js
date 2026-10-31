@@ -2540,6 +2540,12 @@ SCPACK.h.vegeta[2]='vegeta-grade';SCPACK.h.gokuui[4]='goku-uic';
 const PORTRAIT={};
 if(window.ANIM_SET)for(const id in ANIM_SET.h)for(const f in ANIM_SET.h[id]){const F=ANIM_SET.h[id][f],k='as-'+id+'-'+f;SCPACK.s[k]={};
   for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait}
+// only hand-picked forms stay: missing forms leave the transformation chain, characters with none leave the game
+var FUERA=new Set(['roshi']);
+for(const id in HDEF){const D=HDEF[id],A=window.ANIM_SET&&ANIM_SET.h[id];if(D.npc||D.custom)continue;
+  if(!A){FUERA.add(id);continue}const keep=Object.keys(A).map(Number).sort((a,b)=>a-b);
+  if(keep.length!==D.forms.length||keep.some((f,i)=>f!==i)){for(const k of ['forms','aura','hair','hc','formPal'])if(Array.isArray(D[k]))D[k]=keep.map(f=>D[k][Math.min(f,D[k].length-1)]);
+    const H={};keep.forEach((f,i)=>H[i]='as-'+id+'-'+f);SCPACK.h[id]=H}}
 Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta-buussj',rose:'rose',
   renegA:'enemy1',renegB:'enemy2',renegC:'enemy3',kingvegE:'kingvegeta',raditzssjE:'raditz-ssj',vegsaiE:'vegeta-saiyan',freeza2E:'freeza-2',cellperfE:'cell-perf2',a21E:'a21',
   buuthinE:'buu-thin',gohanpossE:'gohan-poss',frost2E:'frost-2',black2E:'black2',hit2E:'hit2',zamasuhE:'zamasu-half',kalessjE:'kale-ssj',fakegokuE:'goku-fake',
@@ -2911,7 +2917,7 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='p
 // ---------- DragonBall Survivor menu: start screen, side menu hub, companion, event, roster, shop, ranking, settings ----------
 let started=false,hubTimer=0;
 // characters without good sprites are out of the game until they arrive (see SPRITES_PENDIENTES.md)
-function spriteHero(id){return !!(HEROES[id]&&!HEROES[id].npc&&!['roshi'].includes(id)&&(SCPACK.h[id]||HEROES[id].custom))}
+function spriteHero(id){return !!(HEROES[id]&&!HEROES[id].npc&&!FUERA.has(id)&&(SCPACK.h[id]||HEROES[id].custom))}
 function hideMenus(){for(const k of ['#title','#hub','#start','#roster','#shop','#rank','#settings']){const e=$(k);if(e)e.hidden=true}clearInterval(hubTimer)}
 function heroAnim(id,form,anim){const pk=scHero(id,form);return pk&&(pk[anim]||pk.Idle)}
 // visible box of a frame (sprite-pack cells carry a lot of empty margin), cached per frame

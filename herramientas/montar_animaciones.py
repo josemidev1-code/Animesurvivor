@@ -34,14 +34,22 @@ def frames_del_pack(pack):
 
 
 def limpiar(ruta):
+    """Quita el fondo: blanco, o el color liso que rodee al personaje (algunos packs traen fondo azul, verde...)."""
     im = Image.open(ruta).convert('RGBA'); w, h = im.size; px = im.load(); visto = set(); q = deque()
+    borde = [px[x, 0] for x in range(w)] + [px[x, h - 1] for x in range(w)] + [px[0, y] for y in range(h)] + [px[w - 1, y] for y in range(h)]
+    color, n = collections.Counter(c[:3] for c in borde if c[3] >= 20).most_common(1)[0] if any(c[3] >= 20 for c in borde) else ((255, 255, 255), 0)
+    liso = n >= len(borde) * 0.4
+    def fondo(c):
+        if c[3] < 20: return True
+        if c[0] > 232 and c[1] > 232 and c[2] > 232: return True
+        return liso and abs(c[0] - color[0]) + abs(c[1] - color[1]) + abs(c[2] - color[2]) <= 24
     for x in range(w): q.extend([(x, 0), (x, h - 1)])
     for y in range(h): q.extend([(0, y), (w - 1, y)])
     while q:
         x, y = q.popleft()
         if (x, y) in visto or not (0 <= x < w and 0 <= y < h): continue
-        visto.add((x, y)); c = px[x, y]
-        if not (c[3] < 20 or (c[0] > 232 and c[1] > 232 and c[2] > 232)): continue
+        visto.add((x, y))
+        if not fondo(px[x, y]): continue
         px[x, y] = (0, 0, 0, 0); q.extend([(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)])
     return im
 
@@ -106,7 +114,13 @@ def cargar_forma(f):
     medidas = {i: escala_pixel(crudos[i]) for i in usados}
     esc = f.get('escala') or sorted(medidas[i] for i in f.get('idle', usados))[len(f.get('idle', usados)) // 2]
     fija = f.get('escalaFija', False)
+    # si no se detecta el zoom (sale ~1) pero el personaje es enorme, se escala por altura: ~56 px de pie
+    alto_idle = sorted(crudos[i].getbbox()[3] - crudos[i].getbbox()[1] for i in f.get('idle', usados))[0]
+    if not f.get('escala') and alto_idle / max(esc, 1) > 110:
+        esc, fija = alto_idle / 56, True
+    manual = {int(k): v for k, v in f.get('escalaFrames', {}).items()}  # zoom a mano de fotogramas sueltos
     def escala_de(i):
+        if i in manual: return manual[i]
         m = medidas[i]
         if fija or esc <= 1.05 or abs(m - esc) / esc < 0.12: return esc
         return m
@@ -115,6 +129,9 @@ def cargar_forma(f):
     if f.get('espejo'):  # el pack mira a la izquierda: el juego necesita que miren a la derecha
         peq = {i: im.transpose(Image.FLIP_LEFT_RIGHT) for i, im in peq.items()}
     anims = {nombre: [peq[i] for i in f[k]] for k, nombre in CLAVES.items() if f.get(k)}
+    if 'Hurt' in anims:  # nunca tumbado en el suelo: si un fotograma de daño está tumbado se usa el de pie
+        de_pie = [im for im in anims['Hurt'] if (lambda b: (b[2] - b[0]) <= 1.35 * (b[3] - b[1]))(im.getbbox())]
+        if de_pie: anims['Hurt'] = [de_pie[min(k, len(de_pie) - 1)] for k in range(len(anims['Hurt']))]
     ret = peq[f['portrait']] if 'portrait' in f else None
     return anims, (ret.crop(ret.getbbox()) if ret else None), esc
 
