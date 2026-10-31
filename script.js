@@ -1065,7 +1065,8 @@ Object.assign(MV.burning,{pose:'cast'});Object.assign(MV.riot,{pose:'cast'});Obj
 const BEAM=(name,col,cd,d0,d1,len,wid,ch)=>({name,kind:'beam',pose:'beam',sig:1,col,st:l=>({cd:cd-l*0.4,dmg:d0+l*d1,len:len+l*20,wid:wid+l*2.5,dur:0.9+l*0.08,charge:ch})});
 const BIG=(name,col,cd,d0,d1,rad,spd,pose='cast')=>({name,kind:'big',pose,sig:1,col,st:l=>({cd:cd-l*0.2,dmg:d0+l*d1,rad:rad+l*4,spd})});
 const SHOT=(name,col,cd,d0,d1,n0,spd,o={})=>({name,kind:'shot',pose:'cast',sig:1,col,ring:o.ring,home:o.home,st:l=>({cd:cd-l*0.06,dmg:d0+l*d1,count:n0+l,spd,pierce:o.pierce||0})});
-const NOVA=(name,col,cd,d0,d1,rad,stun=0)=>({name,kind:'nova',pose:'cast',sig:1,col,st:l=>({cd:cd-l*0.3,dmg:d0+l*d1,rad:rad+l*6,stun:stun?stun+l*0.2:0})});
+const NOVA=(name,col,cd,d0,d1,rad,stun=0,o={})=>({name,kind:'nova',pose:'cast',sig:1,col,heal:o.heal,shield:o.shield,st:l=>({cd:cd-l*0.3,dmg:d0+l*d1,rad:rad+l*6,stun:stun?stun+l*0.2:0})});
+const BOMB=(name,col,cd,d0,d1,rad)=>({name,kind:'bomb',pose:'up',sig:1,col,st:l=>({cd:cd-l*0.4,dmg:d0+l*d1,rad:rad+l*5})});
 const MELEE=(name,col,pose,cd,d0,d1,hits,reach,rad,o={})=>({name,kind:'melee',pose,sig:1,col,...o,st:l=>({cd:cd-l*0.06,dmg:d0+l*d1,hits:hits+(l>=4?1:0),reach,rad,kb:o.kb||70})});
 const SWORD=(name,col,cd,d0,d1,rad,arc)=>({name,kind:'sword',pose:'atk',sig:1,col,st:l=>({cd:cd-l*0.05,dmg:d0+l*d1,rad:rad+l*3,arc})});
 Object.assign(MV,{
@@ -1114,6 +1115,32 @@ Object.assign(MV,{
  roar:NOVA('Gigantic Roar',['#2a9a20','#8af06a','#f0fff0'],4,40,14,55),
  taiyoken:NOVA('Taiyoken',['#ffffff','#fff8c0','#ffffff'],6,5,2,90,1.6),
  mafuba:NOVA('Mafuba',['#2a9a20','#8af06a','#f0fff0'],7,20,8,70,2.5),
+ // ataques propios de cada personaje (sesión 9)
+ deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
+ deathball:BOMB('Death Ball',['#c83a10','#ff8a3a','#ffd08a','#fff6e0'],7,70,26,40),
+ supernova:BOMB('Supernova',['#c8204a','#ff6a8a','#ffd0e0','#ffffff'],7,74,27,42),
+ sphere:BOMB('Esfera de Destrucción',['#5a1a8a','#b06aff','#f0d0ff','#ffffff'],7.5,80,28,44),
+ revdeathball:BOMB('Revenge Death Ball',['#a01a1a','#ff5a3a','#ffb08a','#ffffff'],7.5,78,28,44),
+ doublesunday:BEAM('Double Sunday',['#7a24d8','#d08aff','#fff0ff'],5.5,34,12,240,16,0.6),
+ saturday:BIG('Saturday Crush',['#7a24d8','#d08aff','#fff0ff','#ffffff'],2.6,30,11,26,170),
+ hellflash:BEAM('Hell Flash',['#c89a10','#ffe066','#ffffff'],6,40,14,270,20,0.8),
+ rocketpunch:BIG('Puño Cohete',['#5a6a7a','#c0d0e0','#ffffff','#ffffff'],2.6,34,12,22,220),
+ barrier:NOVA('Barrera',['#3a8aff','#bfe6ff','#ffffff'],6,18,6,56,0,{shield:1.6}),
+ solarkame:BEAM('Kamehameha Solar',['#1a6ad8','#7ad0ff','#ffffff'],7,50,17,310,26,0.9),
+ choco:SHOT('Rayo Chocolate',['#d02a80','#ff8ad0','#ffe0f0'],1.1,10,4,2,200,{pierce:2,home:1}),
+ vanish:BIG('Bola Desvanecedora',['#d02a80','#ff8ad0','#ffe0f0','#ffffff'],3,40,14,36,110),
+ killdriver:NOVA('Kill Driver',['#8a1a1a','#ff7a3a','#ffffff'],4,36,13,62),
+ calamity:BEAM('Calamity Blaster',['#8a1a1a','#ff7a3a','#ffffff'],6,40,14,260,18,0.8),
+ timeskip:NOVA('Salto Temporal',['#7a3ad8','#d0b0ff','#ffffff'],6,26,9,90,2.2),
+ holywrath:BEAM('Ira Divina',['#2a9a20','#c0ff8a','#ffffff'],6,42,15,270,20,0.8),
+ powerimpact:BIG('Power Impact',['#c8202a','#ff8a6a','#ffd0c0','#ffffff'],3,44,15,38,120),
+ jirenrush:MELEE('Golpe del Orgullo',['#ff5a3a','#ffd0c0'],'atk',1.3,22,8,3,160,28,{kb:200}),
+ justiceflash:SHOT('Justice Flash',['#2a9a20','#8af06a','#f0fff0'],1.3,10,4,4,230,{home:1}),
+ absorb:NOVA('Absorción de Energía',['#2a6a5a','#8af0c0','#f0fff0'],6,30,10,70,0,{heal:0.25}),
+ dimsword:SWORD('Espada Dimensional',['#8a1a2a','#ff5a6a'],1.4,30,10,56,2.6),
+ rakshasa:MELEE('Garra Rakshasa',['#8a1a2a','#ff8a9a'],'atk',2.4,16,6,4,200,30,{tp:1}),
+ evilkame:BEAM('Kamehameha Maligno',['#3a1a5a','#a050d0','#ffd0ff'],6.5,46,16,290,22,0.8),
+ acidspit:SHOT('Ácido Saibaman',['#4a8a1a','#a0f040','#f0ffc0'],1.0,7,3,2,170,{pierce:1}),
 });
 const SIGS={goku:['kiblast','punch','kame','kaioken','instant','genki'],vegeta:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
  piccolo:['kiblast','punch','eyebeam','makanko','hellzone','lightgren'],krilin:['kiblast','kick','kienzan','scatter','taiyoken','kame'],
@@ -1128,7 +1155,20 @@ const SIGS={goku:['kiblast','punch','kame','kaioken','instant','genki'],vegeta:[
  vegetagt:['kiblast','punch','galick','bigbang','finalshine','kick'],gokusuper:['kiblast','punch','kaioken','kame','godkame','genki'],
  vegetasuper:['renzoku','punch','galick','bigbang','finalflash','gamma'],trunkscell:['kiblast','tsword','burning','finishbuster','kick','heatdome'],
  roshi:['kiblast','punch','kame','mafuba','kick']};
-for(const id in NUEVOS)SIGS[id]=NUEVOS[id].sig;
+// villanos y variantes: técnicas propias de la serie (antes casi todos tenían la misma lista)
+const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','renzoku'],saibaman:['acidspit','punch','kick','scatter','finalexp'],
+ a16:['kiblast','punch','rocketpunch','hellflash','kick','finalexp'],a17:['a18volley','kick','barrier','powerblitz','punch'],
+ freezer:['deathbeam','kienzan','punch','lances','deathball','kick'],cooler:['deathbeam','kienzan','punch','kick','supernova'],
+ janemba:['kiblast','dimsword','rakshasa','hellzone','kick'],cell:['kiblast','punch','kame','kienzan','solarkame','finalexp'],
+ buu:['choco','punch','kick','vanish','finalexp','roar'],turles:['kiblast','punch','killdriver','kick','calamity','renzoku'],
+ bills:['kiblast','punch','kick','sphere','hakai'],frost:['deathbeam','punch','lances','kick','kienzan'],
+ hit:['kiblast','instant','timeskip','punch','silver'],zamasu:['kiblast','kiblade','lances','holywrath','kick','scythe'],
+ jiren:['kiblast','jirenrush','powerimpact','kick','roar','omega'],toppo:['justiceflash','punch','kick','powerblitz','hakai'],
+ moro:['kiblast','punch','absorb','kick','omega'],babyvegeta:['kiblast','punch','galick','kick','finalshine','revdeathball'],
+ cumber:['kiblast','punch','evilkame','kick','eraser','roar'],gokuxeno:['kiblast','punch','kame','instant','dragonfist','kame10x'],
+ gohanposeido:['kiblast','punch','kick','masenko','evilkame'],bardockalt:['kiblast','punch','kick','riot','rebellion','finalspirit'],
+ brolyfan:['blaster','lariat','eraser','roar','omega','kick'],zombies:['kiblast','punch','kick','kame','galick','finalexp']};
+for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
 function sigList(hid=S.hid){if(SIGS[hid])return SIGS[hid];const st=HEROES[hid]&&HEROES[hid].start;return['kiblast','punch',MV[st]&&st!=='kiblast'?st:'kame','kick','renzoku']}
@@ -1143,7 +1183,7 @@ function sigUpdate(dt,ps){
   const L=sigOpen();if(P.sel>=L.length)P.sel=0;
   if(L.length>P.sigN){if(P.sigN)P.newSig={t:3.2,i:L.length-1};P.sigN=L.length}
   if(P.newSig&&(P.newSig.t-=dt)<=0)P.newSig=null;
-  if(P.kaioT>0)P.kaioT-=dt;if(P.powT>0)P.powT-=dt;
+  if(P.kaioT>0)P.kaioT-=dt;if(P.powT>0)P.powT-=dt;if(P.shieldT>0)P.shieldT-=dt;
   for(const a of [fxSl,fxRg])for(let i=a.length-1;i>=0;i--)if((a[i].t+=dt)>=a[i].dur)a.splice(i,1);
   if(P.dash){const D=P.dash,k=Math.min(1,dt/Math.max(dt,D.t));parts.push({x:P.x+rnd(-4,4),y:P.y-rnd(4,24),vx:0,vy:-8,t:0.25,c:D.c,s:2});
     if(solidMove(P,(D.x-P.x)*k,(D.y-P.y)*k,5))P.dash=null;else if((D.t-=dt)<=0)P.dash=null}
@@ -1175,7 +1215,10 @@ function fireSig(W,st,dmg,ps){
   if(W.kind==='sword'){let dd=Math.hypot(t.x-P.x,t.y-P.y);const rad=st.rad*ps.area;
     if(dd>rad*0.8){const a0=Math.atan2(t.y-P.y,t.x-P.x),k=(dd-rad*0.6)/dd;P.dash={x:P.x+(t.x-P.x)*k,y:P.y+(t.y-P.y)*k,t:0.1,c:W.col[0]}}
     P.swing={t:0.12,tg:t,rad,arc:st.arc,dmg,col:W.col};return}
-  if(W.kind==='nova'){const rad=st.rad*ps.area;near(P.x,P.y-6,rad+14,e=>{const dx=e.x-P.x,dy=e.y-P.y,dd=Math.hypot(dx,dy)||1;if(dd<rad+e.r){hurt(e,dmg,dx/dd*180,dy/dd*180);if(st.stun)e.stun=st.stun}});
+  if(W.kind==='nova'){const rad=st.rad*ps.area;let hit=0;near(P.x,P.y-6,rad+14,e=>{const dx=e.x-P.x,dy=e.y-P.y,dd=Math.hypot(dx,dy)||1;if(dd<rad+e.r){hurt(e,dmg,dx/dd*180,dy/dd*180);hit++;if(st.stun)e.stun=st.stun}});
+    // barrera: invulnerable un rato; absorción: cura según los enemigos tocados
+    if(W.shield){P.iframe=Math.max(P.iframe,W.shield);P.shieldT=W.shield}
+    if(W.heal&&hit){const mx=stats().maxhp;P.hp=Math.min(mx,P.hp+mx*0.03*Math.min(hit,8)*W.heal*4);fx(P.x,P.y-12,'green',18,0.5)}
     fxRg.push({x:P.x,y:P.y-10,t:0,dur:0.45,rad,col:W.col});if(st.stun)S.flash=Math.max(S.flash,0.25);cam.shake=Math.max(cam.shake||0,5);P.atkT=P.atkD=0.3;P.atkK=1;P.atkA=d>0?0:Math.PI;sfx('charge')}}
 function sigIcon(id){const k='s:'+id;if(ICON_C[k])return ICON_C[k];if(MV0.has(id))return ICON_C[k]=ic(id);
   const W=MV[id],c=mk(16,16),g=c.getContext('2d'),px=(x,y,w,h,col)=>{g.fillStyle=col;g.fillRect(x,y,w,h)},C=W.col;
@@ -2493,6 +2536,7 @@ function render(time){
         left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):P.powT>0&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,wt=P.anim/9,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(P.powT>0||(pd&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?(A.R.length>1?scFrame(A,wt):0):scFrame(A,time),im=(left?A.L:A.R)[i],bob=P.moving&&!P.cast&&!(P.hitT>0)&&A.R.length===1?Math.round(Math.sin(wt*6)*2)-2:0;
         {const TR=P.tr||(P.tr=[]);if(P.moving&&!P.cast&&!(P.hitT>0)){if(!(time-TR.lt<0.045)){TR.lt=time;TR.unshift([P.x,P.y]);if(TR.length>4)TR.length=4}}else TR.length=0;
           for(let k=TR.length-1;k>=1;k--){ctx.globalAlpha=0.34-k*0.08;ctx.drawImage(im,Math.round(x+(TR[k][0]-P.x)*2-im.width/2),Math.round(y+(TR[k][1]-P.y)*2-im.height+1+bob))}ctx.globalAlpha=1}
+        if(P.shieldT>0){ctx.globalAlpha=0.35+0.25*Math.sin(time*20);ctx.strokeStyle='#bfe6ff';ctx.lineWidth=2;ctx.beginPath();ctx.arc(Math.round(x),Math.round(y-im.height/2),Math.max(im.width,im.height)*0.62,0,TAU);ctx.stroke();ctx.globalAlpha=1}
         if(P.kaioT>0){const fl=auraFlames('red')[(time*14|0)%3];ctx.globalAlpha=0.85;ctx.drawImage(fl,Math.round(x-fl.width/2),Math.round(y-fl.height+3));ctx.globalAlpha=1}
         ctx.drawImage(im,Math.round(x-im.width/2),Math.round(y-im.height+1+bob));
         if(pd){const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(x+(up?0:(left?-1:1)*im.width*0.3)-kb.width/2),Math.round(up?y-im.height-kb.height*0.6:y-im.height*0.5-kb.height/2));ctx.globalAlpha=1}
