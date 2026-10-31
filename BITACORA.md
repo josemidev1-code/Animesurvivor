@@ -190,3 +190,12 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
   tienen huecos transparentes); Goku al lanzar bolas de ki hace cosas sin sentido con el cuerpo y no se entiende a
   dónde lo lanza; y quiere **una lista de todo el pixel art hecho por la IA (dibujado por código)** porque no tiene
   el máximo detalle: el usuario los pasará bien hechos.
+- Hecho: 47 enemigos que ya existen como personajes (Turles, Frost, Cooler, Hit, Zamasu, Jiren, Janemba, Cell, Buu,
+  Freezer, A16-18, Raditz, Saibaman, Bills, Moro, Toppo, Baby, Broly SSJ4, Gohan poseído…) usan ahora sus fotogramas
+  elegidos a mano (tabla `ENEMIGO_HEROE` en `script.js`): sin huecos y con su tamaño. Los enemigos que solo tenían
+  una pose de vuelo ahora flotan en guardia (Idle) en vez de deslizarse tumbados.
+- Hecho: Ráfaga de Ki: el personaje se gira hacia el enemigo mientras lanza y la bola sale de la mano (antes podía
+  lanzarla por la espalda desde el pecho). Comprobado que gira hacia el enemigo; el lanzamiento no lo vi en pantalla.
+- Hecho: `PIXEL_ART_POR_CODIGO.md`, la lista de lo dibujado por código para que el usuario pase sus dibujos.
+- Falta: rehacer desde `sprites/` los ~45 enemigos con recorte viejo (Jeice, Ginyu, soldados, Garlic…) metiéndolos
+  en `herramientas/animaciones/enemigos.json` y enlazándolos con `ENEMIGO_HEROE`. Scripts a `?v=25`.

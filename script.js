@@ -1538,10 +1538,12 @@ const SHOUTS={kame:['KA-ME-HA-ME-HA!','#9fe8ff'],galick:['GALICK HO!','#e6a8ff']
 function shout(id,ev){return;const sh=SHOUTS[id];if(!sh||Math.random()<0.4)return;P.shout={s:ev?MV[id].evo.toUpperCase()+'!':sh[0],c:sh[1],t:1.1}}
 function fire(id,m,st,ps){
   const W=MV[id],ev=m.evo,dmg=st.dmg*ps.dmg*(ev?1.7:1);
-  const ox=FO?FO.x:P.x,oy=FO?FO.y:P.y-18;
+  let ox=FO?FO.x:P.x,oy=FO?FO.y:P.y-18;
   const aimAt=t=>t?Math.atan2(t.y-6-oy,t.x-ox):(P.face>0?0:Math.PI);
   switch(W.kind){
    case 'shot':{const n=st.count*(ev?2:1),ts=nearestN(ox,oy,n);
+     // se gira hacia el enemigo y la bola sale de la mano, no del pecho ni por la espalda
+     if(!FO&&!W.ring&&ts[0]){P.atkFace=ts[0].x<P.x?-1:1;P.face=P.atkFace;ox=P.x+P.face*9;oy=P.y-20}
      for(let i=0;i<n;i++){const t=ts[i%Math.max(1,ts.length)];const a=W.ring?i*TAU/n+rnd(-0.05,0.05):aimAt(t)+(ts.length<n?(i-(n-1)/2)*0.18:rnd(-0.05,0.05));
        projs.push({k:'ki',x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:4*ps.area,dmg,pierce:st.pierce+(ev?2:0),life:1.3,hit:new Set(),col:W.col,spr:FO&&KI_REAL.has(id)?heroKi():null})}
      P.atkT=P.atkD=0.24;P.atkK=1;P.atkA=aimAt(ts[0]);sfx('shot');break}
@@ -1705,7 +1707,7 @@ function update(dt){
   let mx=(keys.KeyD||keys.ArrowRight?1:0)-(keys.KeyA||keys.ArrowLeft?1:0),my=(keys.KeyS||keys.ArrowDown?1:0)-(keys.KeyW||keys.ArrowUp?1:0);
   if(joy.on){const dx=joy.x-joy.ox,dy=joy.y-joy.oy,d=Math.hypot(dx,dy);if(d>3){mx=dx/Math.max(d,18);my=dy/Math.max(d,18)}}
   const ml=Math.hypot(mx,my);if(ml>1){mx/=ml;my/=ml}
-  P.moving=ml>0.05;if(mx<-0.1)P.face=-1;else if(mx>0.1)P.face=1;
+  P.moving=ml>0.05;if(P.atkT>0&&P.atkFace)P.face=P.atkFace;else{P.atkFace=0;if(mx<-0.1)P.face=-1;else if(mx>0.1)P.face=1}
   if(P.cast){P.cast.t-=dt;if(P.cast.t<=0)P.cast=null}
   const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.55:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
   if(P.moving){if(Math.abs(mx)>Math.abs(my)*1.1)P.dir='side';else P.dir=my<0?'up':'down'}
@@ -2613,10 +2615,20 @@ function scFrame(A,t){let x=(t*60)%A.tot;for(let i=0;i<A.du.length;i++){x-=A.du[
 function scHero(id,form){const H=SCPACK.h[id];if(!H)return null;for(let f=form;f>=0;f--)if(H[f]){const o=scLoad(H[f]);return o.ok?o:null}return null}
 function scKeyE(id){if(SCPACK.e[id])return SCPACK.e[id];const t=ET[id];if(!t)return null;if(t.alias)return scKeyE(t.alias);
   if(t.hero){const H=SCPACK.h[t.hero[0]];if(H)for(let f=t.hero[1];f>=0;f--)if(H[f])return H[f]}return null}
+// enemigos que ya son personajes jugables: usan sus fotogramas elegidos a mano (las tiras viejas de sprites.js
+// tenían huecos donde el recorte borró el blanco y andaban con una sola pose)
+const ENEMIGO_HEROE={hitB:['hit',0],hitE:['hit',0],hit2E:['hit',0],superbuuB:['buu',2],superbuuE:['buu',2],zamasuB:['zamasu',0],zamasuE:['zamasu',0],
+  zamasufB:['zamasu',1],billsB:['bills',0],turles:['turles',0],turlesE:['turles',0],frost:['frost',1],frostE:['frost',1],coolerB:['cooler',0],coolerE:['cooler',0],
+  freezaF:['freezer',2],frieza:['freezer',2],frieza100:['freezer',3],golden:['freezer',4],freeza1B:['freezer',0],freeza3B:['freezer',1],
+  a16B:['a16',0],a16E:['a16',0],a17e:['a17',0],a18e:['a18',0],janemba:['janemba',0],jiren:['jiren',0],
+  cellimpE:['cell',0],cellsemiE:['cell',1],cell:['cell',2],cellperfE:['cell',2],saiba:['saibaman',0],saibaR:['saibaman',0],saibaB:['saibaman',0],saibaX:['saibaman',0],
+  raditz:['raditz',0],raditzssjE:['raditz',1],fatbuu:['buu',0],buuthinE:['buu',1],buuthinB:['buu',1],buugohanB:['buu',3],buu:['buu',4],
+  gohanpossE:['gohanposeido',0],babyB:['babyvegeta',0],toppoB:['toppo',0],moroB:['moro',0],brolyssj4B:['broly',3]};
+for(const id in ENEMIGO_HEROE){const [h,f]=ENEMIGO_HEROE[id];if(ET[id]&&SCPACK.h[h]&&SCPACK.h[h][f]){ET[id].hero=[h,f];delete SCPACK.e[id]}}
 const SCTINT={saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)'},SCTC={};
 function scTintPk(o,f){const r={ok:1};for(const a in o){if(a==='ok')continue;const A=o[a],tc=c=>{const n=mk(c.width,c.height),g=n.getContext('2d');g.filter=f;g.drawImage(c,0,0);return n};r[a]={...A,R:A.R.map(tc),L:A.L.map(tc)}}return r}
 function scEnemy(id){const k=scKeyE(id);if(!k)return null;const o0=scLoad(k);if(!o0.ok)return null;const o=SCTINT[id]?(SCTC[id]||(SCTC[id]=scTintPk(o0,SCTINT[id]))):o0;
-  const W=o.Walk,wh=W.R.map(c=>tintC(c,'#ffffff')),whf=W.L.map(c=>tintC(c,'#ffffff')),src=SCPACK.s[k].Walk;
+  const an=o.Walk&&o.Walk.R.length>1?'Walk':'Idle',W=o[an],wh=W.R.map(c=>tintC(c,'#ffffff')),whf=W.L.map(c=>tintC(c,'#ffffff')),src=SCPACK.s[k][an];
   const hf=0.5;return{pk:o,fr:W.R,fl:W.L,wh,whf,w:Math.round(src[0]*0.6*hf),h:Math.round((W.R[0].height-6)*hf),big:1,half:hf}}
 // carga perezosa: al arrancar no se decodifica nada; cada partida carga solo su héroe y los enemigos de su mapa
 // (antes se decodificaban todas las tiras de golpe y en PCs modestos el menú tardaba y se comía la memoria)
