@@ -311,3 +311,9 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - La variedad de enemigos sigue limitada: 44 tipos retirados hasta tener secuencias buenas.
 - Siguen por código: suelos y decorados de los mapas, rayos, auras, iconos y chispas (`PIXEL_ART_POR_CODIGO.md`).
 - La antigua carpeta de portadas ya no existe; se usaron fondos de `sprites/06_Escenarios`. Si tienes las portadas originales, cambia los números de `ELEGIDAS` en `herramientas/montar_portadas.py`.
+
+### Sesión 9, segunda parte: «Sí, revísalos» (caminar y atacar de todos)
+- Causa principal de que «moverse y atacar no tuviera sentido»: al huir con un enemigo detrás, cada Ráfaga de Ki daba la vuelta al cuerpo (andaba hacia atrás y se giraba varias veces por segundo). Ahora, si disparas hacia atrás mientras te mueves, el cuerpo sigue mirando hacia donde vas y la bola sale del pecho; parado, se gira hacia el enemigo.
+- Quitada la pose de poder con aura al tirar hacia arriba (parecía cargar, no lanzar): ahora brazo estirado y la bola sale más alta o más baja según el enemigo.
+- Enemigos: lejos usan su pose de impulso hacia ti; cerca, la guardia (antes se deslizaban en guardia).
+- Revisadas a ojo las 168 formas (hojas a escala real) y medidas por tamaño/inclinación. Corregidas: Bardock base (guardia era SSJ Blue, moverse de frente, ki mirando atrás), SSJ3 (patada con imagen residual), UI señal (patada boca abajo), Goku Dios (ki era el aura), Vegeta SSJ y Vegeta Blue dañado (moverse de pie), Black Rosé (ki era solo el rayo), Bardock SSJ DBH (moverse y ki), Goku Ikari (ki fantasma).

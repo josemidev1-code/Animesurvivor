@@ -251,17 +251,16 @@
    "0": {
     "pack": "01_Dragon_Ball_Super/05_Broly/Bardock/003_BARDOCK,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
     "idle": [
-     9,
-     10
+     53,
+     54
     ],
     "move": [
-     123
+     132
     ],
     "attack": [
-     97,
-     98,
-     99,
-     100
+     90,
+     91,
+     99
     ],
     "kick": [
      109,
@@ -274,8 +273,8 @@
      65
     ],
     "pow": [
-     82,
-     83
+     74,
+     75
     ],
     "hurt": [
      84,

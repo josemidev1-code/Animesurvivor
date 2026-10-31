@@ -1137,7 +1137,8 @@ function sigLv(i){return clamp(1+((P.sigB&&P.sigB[i])||0)+Math.floor(P.lvl/12),1
 function sigSelect(n){if(state!=='play'||!P)return;const L=sigOpen();if(n<0||n>=L.length||n===P.sel)return;P.sel=n;P.sigT=Math.min(P.sigT,0.25);sfx('shot')}
 function sigReach(W,st){return W.kind==='melee'?st.reach:W.kind==='sword'?st.rad+70:W.kind==='beam'?Math.min(st.len,300):W.kind==='nova'?st.rad:W.kind==='big'?220:260}
 // hand position: chest height, a little in front of the hero; 'up' attacks come from above the head
-function sigOrigin(pose,a){const f=pose==='beam'?13:8;return pose==='up'?{x:P.x,y:P.y-34}:{x:P.x+Math.cos(a)*f,y:P.y-13+Math.sin(a)*3}}
+// si el enemigo está encima o debajo, la bola sale de la mano por arriba o por abajo
+function sigOrigin(pose,a){const f=pose==='beam'?13:8;return pose==='up'?{x:P.x,y:P.y-34}:{x:P.x+Math.cos(a)*f,y:P.y-13+Math.sin(a)*(pose==='beam'?3:9)}}
 function sigUpdate(dt,ps){
   const L=sigOpen();if(P.sel>=L.length)P.sel=0;
   if(L.length>P.sigN){if(P.sigN)P.newSig={t:3.2,i:L.length-1};P.sigN=L.length}
@@ -1161,9 +1162,8 @@ function sigUpdate(dt,ps){
   const t=nearest(P.x,P.y,sigReach(W,st));if(!t){P.sigT=0.1;return}
   const a=Math.atan2(t.y-6-(P.y-13),t.x-P.x);P.sigT=P.sigCD=Math.max(0.35,st.cd*ps.cd);
   if(W.pose==='up'||W.kind==='nova'||(W.kind!=='beam'&&W.kind!=='melee'&&W.kind!=='sword'&&W.pose==='cast')){
-    // si el enemigo está encima, lanza con los brazos arriba y la bola sale por encima de la cabeza
-    const up=W.pose==='up'||(W.kind!=='nova'&&Math.sin(a)<-0.6),wind=W.pose==='up'?0.5:W.kind==='nova'?0.3:up?0.22:0.12;
-    P.pend={id,m,st,t:wind,T:wind,pose:up?'up':W.pose,a,col:W.col};P.face=Math.cos(a)<0?-1:1;P.dir='side';return}
+    const up=W.pose==='up',wind=up?0.5:W.kind==='nova'?0.3:0.12;
+    P.pend={id,m,st,t:wind,T:wind,pose:up?'up':W.pose,a,col:W.col};{const d=Math.cos(a)<0?-1:1;if(!(P.moving&&d!==P.face)){P.face=d;P.dir='side'}}return}
   FO=sigOrigin(W.pose,a);fire(id,m,st,ps);FO=null}
 function fireSig(W,st,dmg,ps){
   const t=nearest(P.x,P.y,sigReach(W,st)+10);if(!t)return;const d=t.x>=P.x?1:-1;P.face=d;P.dir='side';
@@ -1557,7 +1557,7 @@ function fire(id,m,st,ps){
   switch(W.kind){
    case 'shot':{const n=st.count*(ev?2:1),ts=nearestN(ox,oy,n);
      // se gira hacia el enemigo y la bola sale de la mano, no del pecho ni por la espalda
-     if(!FO&&!W.ring&&ts[0]){P.atkFace=ts[0].x<P.x?-1:1;P.face=P.atkFace;ox=P.x+P.face*9;oy=P.y-20}
+     if(!FO&&!W.ring&&ts[0]){const d=ts[0].x<P.x?-1:1;if(P.moving&&d!==P.face){ox=P.x;oy=P.y-18}else{P.atkFace=d;P.face=d;ox=P.x+d*9;oy=P.y-20}}
      for(let i=0;i<n;i++){const t=ts[i%Math.max(1,ts.length)];const a=W.ring?i*TAU/n+rnd(-0.05,0.05):aimAt(t)+(ts.length<n?(i-(n-1)/2)*0.18:rnd(-0.05,0.05));
        projs.push({k:'ki',x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:4*ps.area,dmg,pierce:st.pierce+(ev?2:0),life:W.home?2.2:1.3,home:W.home?(t||true):null,age:0,hit:new Set(),col:W.col,spr:FO&&KI_REAL.has(id)?heroKi():null})}
      P.atkT=P.atkD=0.24;P.atkK=1;P.atkA=aimAt(ts[0]);sfx('shot');break}
@@ -1722,7 +1722,7 @@ function update(dt){
   let mx=(keys.KeyD||keys.ArrowRight?1:0)-(keys.KeyA||keys.ArrowLeft?1:0),my=(keys.KeyS||keys.ArrowDown?1:0)-(keys.KeyW||keys.ArrowUp?1:0);
   if(joy.on){const dx=joy.x-joy.ox,dy=joy.y-joy.oy,d=Math.hypot(dx,dy);if(d>3){mx=dx/Math.max(d,18);my=dy/Math.max(d,18)}}
   const ml=Math.hypot(mx,my);if(ml>1){mx/=ml;my/=ml}
-  P.moving=ml>0.05;if(P.atkT>0&&P.atkFace)P.face=P.atkFace;else{P.atkFace=0;if(mx<-0.1)P.face=-1;else if(mx>0.1)P.face=1}
+  P.moving=ml>0.05;if(P.atkT>0&&P.atkFace&&!(P.moving&&mx*P.atkFace<-0.1))P.face=P.atkFace;else{P.atkFace=0;if(mx<-0.1)P.face=-1;else if(mx>0.1)P.face=1}
   if(P.cast){P.cast.t-=dt;if(P.cast.t<=0)P.cast=null}
   const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.55:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
   if(P.moving){if(Math.abs(mx)>Math.abs(my)*1.1)P.dir='side';else P.dir=my<0?'up':'down'}
@@ -1825,7 +1825,7 @@ function digits(str,x,y,col){const w=str.length*4;x=Math.round(x-w/2);y=Math.rou
       if(pass===0){ctx.fillStyle=OUTL;ctx.fillRect(px-1,py-1,3,3)}else{ctx.fillStyle=col;ctx.fillRect(px,py,1,1)}}}}
 function text(s,x,y,col,size=8,align='center'){s=s.normalize('NFD').replace(/[\u0300-\u036f]/g,'');ctx.font=size+'px "Press Start 2P", monospace';ctx.textAlign=align;ctx.textBaseline='top';
   ctx.fillStyle=OUTL;for(const [a,b] of [[-1,0],[1,0],[0,-1],[0,1],[1,1]])ctx.fillText(s,x+a,y+b);ctx.fillStyle=col;ctx.fillText(s,x,y)}
-function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypot(P.x-e.x,P.y-e.y),T=ET[e.type]||{};let A=o.Walk&&o.Walk.R.length>1?o.Walk:o.Idle,i=0,bob=0;
+function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypot(P.x-e.x,P.y-e.y),T=ET[e.type]||{};let A=o.Walk&&(o.Walk.R.length>1||(d>48&&!e.stun))?o.Walk:o.Idle,i=0,bob=0;
   const eb=e.boss&&o.Cast?ebeams.find(b=>b.e===e&&b.t<b.dur):null;
   if(e.powT>0&&o.Pow){A=o.Pow;i=(e.anim*1.4|0)%A.R.length}
   else if(eb){A=o.Cast;i=eb.t<0?0:Math.min(1,A.R.length-1)}
@@ -2489,12 +2489,13 @@ function render(time){
         const bobY=P.moving?((P.anim|0)%2):((time*2.5|0)%2),lean=P.moving?(((P.anim|0)%4)<2?1:-1):0;
         ctx.drawImage(im,0,0,im.width,Math.round(im.height*0.6),Math.round(x-w/2+lean),Math.round(y-h+bobY),w,Math.round(h*0.6));
         ctx.drawImage(im,0,Math.round(im.height*0.6),im.width,im.height-Math.round(im.height*0.6),Math.round(x-w/2),Math.round(y-h+bobY+h*0.6),w,h-Math.round(h*0.6))}
-      else if(pk){const left=P.pend?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:P.atkT>0?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&P.atkT>0&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):P.powT>0&&pk.Pow?pk.Pow:P.pend?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,wt=P.anim/9,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(P.powT>0||(P.pend&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):P.pend?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?(A.R.length>1?scFrame(A,wt):0):scFrame(A,time),im=(left?A.L:A.R)[i],bob=P.moving&&!P.cast&&!(P.hitT>0)&&A.R.length===1?Math.round(Math.sin(wt*6)*2)-2:0;
+      else if(pk){const opp=a=>P.moving&&(Math.cos(a)<0)!==(P.face<0),pd=P.pend&&(P.pend.pose==='up'||!opp(P.pend.a)),ak=P.atkT>0&&!opp(P.atkA),
+        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):P.powT>0&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,wt=P.anim/9,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(P.powT>0||(pd&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?(A.R.length>1?scFrame(A,wt):0):scFrame(A,time),im=(left?A.L:A.R)[i],bob=P.moving&&!P.cast&&!(P.hitT>0)&&A.R.length===1?Math.round(Math.sin(wt*6)*2)-2:0;
         {const TR=P.tr||(P.tr=[]);if(P.moving&&!P.cast&&!(P.hitT>0)){if(!(time-TR.lt<0.045)){TR.lt=time;TR.unshift([P.x,P.y]);if(TR.length>4)TR.length=4}}else TR.length=0;
           for(let k=TR.length-1;k>=1;k--){ctx.globalAlpha=0.34-k*0.08;ctx.drawImage(im,Math.round(x+(TR[k][0]-P.x)*2-im.width/2),Math.round(y+(TR[k][1]-P.y)*2-im.height+1+bob))}ctx.globalAlpha=1}
         if(P.kaioT>0){const fl=auraFlames('red')[(time*14|0)%3];ctx.globalAlpha=0.85;ctx.drawImage(fl,Math.round(x-fl.width/2),Math.round(y-fl.height+3));ctx.globalAlpha=1}
         ctx.drawImage(im,Math.round(x-im.width/2),Math.round(y-im.height+1+bob));
-        if(P.pend){const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(x+(up?0:(left?-1:1)*im.width*0.3)-kb.width/2),Math.round(up?y-im.height-kb.height*0.6:y-im.height*0.5-kb.height/2));ctx.globalAlpha=1}
+        if(pd){const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(x+(up?0:(left?-1:1)*im.width*0.3)-kb.width/2),Math.round(up?y-im.height-kb.height*0.6:y-im.height*0.5-kb.height/2));ctx.globalAlpha=1}
         if(chg&&!bm){const r=4+((time*14|0)%3),kb=kiSprite(r,['#1a5ad8','#6ac8ff','#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.9;ctx.drawImage(kb,Math.round(x+(left?-1:1)*im.width*0.12-kb.width/2),Math.round(y-im.height*0.42-kb.height/2));ctx.globalAlpha=1}}
       // mientras carga su pack no se dibuja ningún muñeco hecho por código
       ctx.restore();continue}
