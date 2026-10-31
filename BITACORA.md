@@ -331,3 +331,8 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - 5 técnicas nuevas: Soul Punisher (Gogeta fanmade), Kamehameha Ikari (Goku alternativo), Cañón Especial Bestia (Gohan manga), Ráfaga de Bra y Ruptura del Tiempo (Black Time Breaker y Black fanmade, paraliza).
 - Listas propias para Gohan DBS, Gohan manga, Bra, DLRX, Gogeta y Vegetto fanmade, Goku Moro, Goku y Vegeta de la película Broly, Vegeta Blue manga, Black Time Breaker, Black fanmade y Goku alternativo. Además se diferenciaron las seis parejas que repetían lista (Gohan adulto, Broly fanmade, Black fanmade, Goku Xeno, Goku Broly y Vegeta Dios). Ahora ningún personaje de los 63 tiene la misma lista que otro.
 - Probados 7 personajes: cada una de sus 6 técnicas derrota enemigos, sin errores. `comprobar_personajes.cjs` pasa.
+
+### Sesión 9, cuarta parte: «Más eventos»
+- Seis eventos nuevos (ya son 12, sin repetir el anterior): ¡Una esfera ha caído! (esfera del dragón lejos, a buscarla con el radar), Guerrero de élite (enemigo con aura roja y mucha vida; si lo derrotas en 35 s suelta un cofre), Gravedad x100 (20 s más lento pero el doble de experiencia), Genkidama (cuenta atrás de 10 s con la bola creciendo sobre la cabeza y luego barre la pantalla), Tiempo detenido (6 s los enemigos no se mueven) y Fusión (15 s más velocidad y técnicas más rápidas).
+- Marcas de meteoritos y Genkidama se dibujan ahora en el mundo (antes iban en la capa del HUD y salían desplazadas).
+- Probados los seis forzándolos en partida: sin errores; el élite tarda ~24 s con Goku de nivel bajo.

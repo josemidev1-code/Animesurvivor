@@ -1209,7 +1209,7 @@ function sigUpdate(dt,ps){
     fxSl.push({x:P.x,y:P.y-10,a,arc:G.arc,r:G.rad,t:0,dur:0.22,col:G.col});P.atkT=P.atkD=0.25;P.atkK=0;P.atkA=a;sfx('shot')}
   if(P.pend){const Q=P.pend;if((Q.t-=dt)<=0){P.pend=null;FO=sigOrigin(Q.pose,Q.a);fire(Q.id,Q.m,Q.st,ps);FO=null}return}
   if(P.cast||P.combo||P.dash||P.swing)return;
-  if((P.sigT-=dt)>0)return;
+  if((P.sigT-=dt*(S.ev&&S.ev.k==='fusion'?1.6:1))>0)return;
   const id=L[P.sel];if(!id)return;const W=MV[id],st=W.st(sigLv(P.sel)),m={lv:sigLv(P.sel),evo:false};
   const t=nearest(P.x,P.y,sigReach(W,st));if(!t){P.sigT=0.1;return}
   const a=Math.atan2(t.y-6-(P.y-13),t.x-P.x);P.sigT=P.sigCD=Math.max(0.35,st.cd*ps.cd);
@@ -1579,6 +1579,7 @@ function hurt(e,dmg,kx=0,ky=0){
   sfx('hit');if(fxs.length<40&&Math.random()<0.45)fx(e.x+rnd(-3,3),e.y-e.h*0.5+rnd(-3,3),'spark',crit?'#ffd23f':'#bfe6ff',0.16);
   if(e.hp<=0)kill(e)}
 function kill(e){if(e.crate){e.dead=true;crateLoot(e);return}
+  if(e.evChest)putPickup({k:'chest',x:e.x,y:e.y});
   e.dead=true;S.kills++;S.kt=S.kt||{};S.kt[e.type]=(S.kt[e.type]||0)+1;if(ET[e.type].elite)S.elites=(S.elites||0)+1;if(e.type==='saiba'||e.type==='saibaR')S.saiba++;
   if(e.boss){for(let i=0;i<6;i++)setTimeout(()=>{fx(e.x+rnd(-18,18),e.y-10+rnd(-18,12),i%2?'fire':'gold',16+(i%3)*4,0.6);smoke(e.x,e.y-10,6)},i*140)}
   else fx(e.x,e.y-e.h*0.45,DEATHK[e.type]||"fire",8,0.36);
@@ -1671,7 +1672,7 @@ function pickType(t){
   const pool=MAPS[S.map].pool.filter(p=>t>=p[0]).map(p=>[p[1],p[2]+(p[0]>200&&!ET[p[1]].elite?t/200:0)]);
   let sum=pool.reduce((a,b)=>a+b[1],0),r=rnd(sum);for(const [k,w] of pool){if((r-=w)<=0)return k}return pool[0][0]}
 // ---------- eventos aleatorios: cada partida cambia (sesión 9) ----------
-const EVENTOS=['kaio','meteoros','karin','horda','zeni','furia'];
+const EVENTOS=['kaio','meteoros','karin','horda','zeni','furia','esfera','elite','gravedad','genkidama','tiempo','fusion'];
 function eventos(dt){if(S.boss||S.isl)return;const E=S.ev;
   if(E){E.t-=dt;
     if(E.k==='kaio'){if(S.kills-E.k0>=E.need){S.ev=null;S.pending++;S.zeni+=50;S.banner={t:2.2,text:'¡RETO SUPERADO!',sub:'Kaio te premia: mejora extra y 50 zeni'};sfx('level')}
@@ -1680,6 +1681,10 @@ function eventos(dt){if(S.boss||S.isl)return;const E=S.ev;
       for(let i=E.list.length-1;i>=0;i--){const m=E.list[i];if((m.t-=dt)<=0){explode(m.x,m.y,30,40+P.lvl*4,['#8a2a10','#ff7a3a','#ffd08a','#ffffff']);if(Math.hypot(P.x-m.x,P.y-m.y)<30)hitPlayer(12,true);E.list.splice(i,1)}}
       if(E.t<=0&&!E.list.length)S.ev=null}
     else if(E.k==='furia'){if(E.t<=0){S.ev=null}}
+    else if(E.k==='elite'){if(!E.e||E.e.dead){S.ev=null;if(E.e&&E.e.dead){S.banner={t:2,text:'¡ÉLITE DERROTADO!',sub:'Ha soltado un cofre'}}}else if(E.t<=0){E.e.evChest=0;S.ev=null;S.banner={t:2,text:'EL ÉLITE HUYE',sub:'Demasiado lento'}}}
+    else if(E.k==='genkidama'){if(E.t<=0){S.ev=null;let n=0;for(const e of enemies)if(!e.dead&&!e.boss&&Math.abs(e.x-P.x)<VW/2+20&&Math.abs(e.y-P.y)<VH/2+20){hurt(e,99999);n++}
+        explode(P.x,P.y-10,90,0,['#2a7ad8','#6ab8ff','#bfe6ff','#ffffff']);S.flash=0.6;cam.shake=10;S.banner={t:2.2,text:'¡GENKIDAMA!',sub:n+' enemigos barridos'};sfx('boom')}}
+    else if(E.k==='tiempo'){for(const e of enemies)if(!e.boss&&!e.dead)e.stun=Math.max(e.stun||0,0.1);if(E.t<=0)S.ev=null}
     else if(E.t<=0)S.ev=null;return}
   S.evT=(S.evT===undefined?60:S.evT)-dt;if(S.evT>0)return;S.evT=rnd(65,95);let k=EVENTOS[(Math.random()*EVENTOS.length)|0];if(k===S.lastEv)k=EVENTOS[(EVENTOS.indexOf(k)+1)%EVENTOS.length];S.lastEv=k;
   if(k==='kaio'){S.ev={k,t:25,need:20+Math.floor(S.t/25),k0:S.kills};S.banner={t:2.5,text:'¡RETO DE KAIO!',sub:`Derrota a ${S.ev.need} enemigos en 25 segundos`}}
@@ -1687,6 +1692,12 @@ function eventos(dt){if(S.boss||S.isl)return;const E=S.ev;
   else if(k==='karin'){for(let i=0;i<3;i++){const a=i/3*TAU+rnd(0,1);putPickup({k:'senzu',x:P.x+Math.cos(a)*80,y:P.y+Math.sin(a)*80})}S.banner={t:2.5,text:'¡SEMILLAS DE KARIN!',sub:'Han caído tres senzus cerca de ti'}}
   else if(k==='horda'){const typ=pickType(S.t),r=Math.max(VW,VH)/2+10,side=Math.random()<.5?0:Math.PI;for(let i=0;i<26&&enemies.length<MAXE;i++){const a=side+rnd(-0.6,0.6);spawn(typ,P.x+Math.cos(a)*r,P.y+Math.sin(a)*r)}S.banner={t:2.2,text:'¡ESTAMPIDA!',sub:'Una horda carga por un lado'}}
   else if(k==='zeni'){for(let i=0;i<10;i++)putPickup({k:'zeni',x:P.x+rnd(-110,110),y:P.y+rnd(-80,80)});S.banner={t:2.2,text:'¡LLUVIA DE ZENI!',sub:'Recógelo antes de que se acerquen'}}
+  else if(k==='esfera'){if(S.balls>=7){S.evT=1;return}const a=rnd(TAU);putPickup({k:'dball',n:(S.ballN++%7)+1,x:P.x+Math.cos(a)*320,y:P.y+Math.sin(a)*320});S.banner={t:2.5,text:'¡UNA ESFERA HA CAÍDO!',sub:'Sigue el radar antes de que te alcancen'}}
+  else if(k==='elite'){const a=rnd(TAU),e=spawn(pickType(S.t),P.x+Math.cos(a)*170,P.y+Math.sin(a)*170);if(!e){S.evT=1;return}e.hp=Math.max(e.hp*14,350+S.t*4+P.lvl*25);e.maxhp=e.hp;e.spd*=1.25;e.dmg*=1.6;e.aura='red';e.evChest=1;S.ev={k,t:35,e};S.banner={t:2.5,text:'¡GUERRERO DE ÉLITE!',sub:'Derrótalo en 35 s y suelta un cofre',boss:1};sfx('boss')}
+  else if(k==='gravedad'){S.ev={k,t:20};S.banner={t:2.5,text:'¡GRAVEDAD x100!',sub:'Te mueves más lento, pero ganas el doble de experiencia'}}
+  else if(k==='genkidama'){S.ev={k,t:10};S.banner={t:2.5,text:'¡LEVANTAD LAS MANOS!',sub:'La Genkidama estará lista en 10 segundos'};P.powT=1}
+  else if(k==='tiempo'){S.ev={k,t:6};S.banner={t:2.2,text:'¡TIEMPO DETENIDO!',sub:'Los enemigos no se mueven durante 6 segundos'};S.flash=0.4;sfx('trans')}
+  else if(k==='fusion'){S.ev={k,t:15};S.banner={t:2.5,text:'¡FUSIÓN!',sub:'15 segundos: más velocidad y ataques más rápidos'};P.powT=1.2;sfx('trans')}
   else if(k==='furia'){S.ev={k,t:15};S.banner={t:2.5,text:'¡FURIA SAIYAN!',sub:'15 segundos con el doble de daño'};P.powT=1.2;sfx('trans')}}
 function director(dt){
   S.spawnT-=dt;
@@ -1740,7 +1751,7 @@ function bossAI(e,dt){
   return false}
 
 // ---------- level up / cards ----------
-function gainXP(v){P.xp+=v*stats().xp;while(P.xp>=P.need){P.xp-=P.need;P.lvl++;P.need=need(P.lvl);S.pending++}}
+function gainXP(v){if(S.ev&&S.ev.k==='gravedad')v*=2;P.xp+=v*stats().xp;while(P.xp>=P.need){P.xp-=P.need;P.lvl++;P.need=need(P.lvl);S.pending++}}
 function options(){
   const o=[],hid=S.hid;
   for(const id of P.order){const m=P.moves[id];
@@ -1797,7 +1808,7 @@ function update(dt){
   const ml=Math.hypot(mx,my);if(ml>1){mx/=ml;my/=ml}
   P.moving=ml>0.05;if(P.atkT>0&&P.atkFace&&!(P.moving&&mx*P.atkFace<-0.1))P.face=P.atkFace;else{P.atkFace=0;if(mx<-0.1)P.face=-1;else if(mx>0.1)P.face=1}
   if(P.cast){P.cast.t-=dt;if(P.cast.t<=0)P.cast=null}
-  const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.55:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
+  const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.55:1)*(S.ev&&S.ev.k==='gravedad'?0.65:S.ev&&S.ev.k==='fusion'?1.35:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
   if(P.moving){if(Math.abs(mx)>Math.abs(my)*1.1)P.dir='side';else P.dir=my<0?'up':'down'}
   solidMove(P,mx*ps.spd*dt*slow,my*ps.spd*dt*slow,5);islandTick();solidResolve(P,5);crateTick(dt);if(P.moving)P.anim+=dt*9;
   P.iframe-=dt;P.hitT-=dt;P.atkT=(P.atkT||0)-dt;if(P.mcd)for(let i=0;i<3;i++)P.mcd[i]-=dt;if(P.shout&&(P.shout.t-=dt)<=0)P.shout=null;
@@ -2580,6 +2591,12 @@ function render(time){
     // vida sobre la cabeza de cada enemigo
     if(!e.crate&&e.maxhp>0){const top=Math.round(y-(e.spr.pk?(e.dh||e.h):e.h*sc)-5),el=ET[e.type].elite,bw=e.boss?34:el?20:14;bar(Math.round(x-bw/2),top,bw,e.boss?3:2,Math.max(0,e.hp/e.maxhp),e.boss?'#c83ad8':el?'#ffb020':'#ff4d5e')}
     if(e.ball)drawDBall(x,y-e.h*sc-6+Math.round(Math.sin(time*6)),4)}
+  // eventos en el mundo: marcas de meteoritos y Genkidama sobre la cabeza
+  if(S.ev){const E=S.ev;
+    if(E.k==='meteoros')for(const m of E.list){const x=Math.round(m.x-cam.x),y=Math.round(m.y-cam.y);ctx.globalAlpha=0.35+0.4*((time*10|0)%2);ctx.strokeStyle='#ff4d5e';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(x,y,30,15,0,0,TAU);ctx.stroke();
+      const fy=y-m.t*160;ctx.globalAlpha=1;const kb=kiSprite(5,['#8a2a10','#ff7a3a','#fff3c0'],(time*16|0)%2);ctx.drawImage(kb,x-kb.width/2,Math.round(fy-kb.height/2))}
+    ctx.globalAlpha=1;
+    if(E.k==='genkidama'){const r=Math.round(4+(10-E.t)*1.2),kb=kiSprite(r,['#2a7ad8','#6ab8ff','#ffffff'],(time*12|0)%2);ctx.drawImage(kb,Math.round(P.x-cam.x-kb.width/2),Math.round(P.y-cam.y-22-kb.height))}}
   // sword slashes and shock rings
   for(const f of fxSl){const k=f.t/f.dur,x=X(f.x),y=Y(f.y);ctx.globalAlpha=1-k;for(let j=0;j<3;j++){ctx.fillStyle=j?f.col[0]:'#ffffff';const rr=f.r*(0.55+0.15*j+0.3*k);for(let b=-f.arc/2;b<=f.arc/2;b+=0.06){const c=f.a+b,w=1+((f.arc/2-Math.abs(b))*3|0);ctx.fillRect(Math.round(x+Math.cos(c)*rr),Math.round(y+Math.sin(c)*rr*0.7),w>2?2:1,w>1?2:1)}}ctx.globalAlpha=1}
   for(const f of fxRg){const k=f.t/f.dur,x=X(f.x),y=Y(f.y);ctx.globalAlpha=1-k*0.8;ring(x,y,Math.round(f.rad*(0.25+0.75*k)),f.col[0],2);ring(x,y,Math.round(f.rad*(0.15+0.7*k)),f.col[1],1);ctx.globalAlpha=1}
@@ -2641,11 +2658,13 @@ function hud(time){
   x=4;for(const id in P.cards){ctx.drawImage(ic(id),x,51,12,12);digits(String(P.cards[id]),x+11,58,'#bfe6ff');x+=14}
   // boss bar
   if(S.ev){const E=S.ev;
-    if(E.k==='meteoros')for(const m of E.list){const x=Math.round(m.x-cam.x),y=Math.round(m.y-cam.y);ctx.globalAlpha=0.35+0.4*((time*10|0)%2);ctx.strokeStyle='#ff4d5e';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(x,y,30,15,0,0,TAU);ctx.stroke();
-      const fy=y-m.t*160;ctx.globalAlpha=1;const kb=kiSprite(5,['#8a2a10','#ff7a3a','#fff3c0'],(time*16|0)%2);ctx.drawImage(kb,x-kb.width/2,Math.round(fy-kb.height/2))}
-    ctx.globalAlpha=1;
     if(E.k==='kaio')text(`RETO DE KAIO ${Math.min(E.need,S.kills-E.k0)}/${E.need} · ${Math.ceil(E.t)}s`,VW/2,30,'#ffd23f',8);
-    if(E.k==='furia')text(`FURIA SAIYAN x2 · ${Math.ceil(E.t)}s`,VW/2,30,'#ff7a3a',8)}
+    if(E.k==='furia')text(`FURIA SAIYAN x2 · ${Math.ceil(E.t)}s`,VW/2,30,'#ff7a3a',8);
+    if(E.k==='elite')text(`GUERRERO DE ÉLITE · ${Math.ceil(E.t)}s`,VW/2,30,'#ff4d5e',8);
+    if(E.k==='gravedad')text(`GRAVEDAD x100 · EXP x2 · ${Math.ceil(E.t)}s`,VW/2,30,'#c0a0ff',8);
+    if(E.k==='tiempo')text(`TIEMPO DETENIDO · ${Math.ceil(E.t)}s`,VW/2,30,'#bfe6ff',8);
+    if(E.k==='fusion')text(`FUSIÓN · ${Math.ceil(E.t)}s`,VW/2,30,'#ffd23f',8);
+    if(E.k==='genkidama'){text(`GENKIDAMA ${Math.ceil(E.t)}`,VW/2,30,'#6ab8ff',8);}}
   drawRadar(time);if(S.boss&&!S.boss.dead){const w=Math.min(200,VW-40),bx=Math.round(VW/2-w/2),by=VH-16;bar(bx,by,w,6,S.boss.hp/S.boss.maxhp,'#c83ad8');text(ET[S.boss.type].n,VW/2,by-11,'#ffb0f0',8)}
   else if(S.bossIdx<BOSS_T.length){const left=BOSS_T[S.bossIdx]-S.t;if(left<20)text('SE ACERCA '+ET[MAPS[S.map].bosses[S.bossIdx]].n+' '+Math.ceil(left),VW/2,VH-14,(time*4|0)%2?'#ff4d5e':'#ffffff',8)}
   // banner
