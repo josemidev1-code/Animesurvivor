@@ -199,3 +199,9 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Hecho: `PIXEL_ART_POR_CODIGO.md`, la lista de lo dibujado por código para que el usuario pase sus dibujos.
 - Falta: rehacer desde `sprites/` los ~45 enemigos con recorte viejo (Jeice, Ginyu, soldados, Garlic…) metiéndolos
   en `herramientas/animaciones/enemigos.json` y enlazándolos con `ENEMIGO_HEROE`. Scripts a `?v=25`.
+
+### Cierre de Claude (sesión 5)
+- El usuario pide dejarlo todo commiteado y pasar la tarea a Codex con instrucciones concisas.
+- Instrucciones en `TAREAS_CODEX.md` (enlazado desde `AGENTS.md` y `README.md`). Orden: 1) rehacer los ~45 enemigos
+  con recorte viejo, 2) packs pendientes como jugables, 3) sustituir el pixel art por código con los dibujos del
+  usuario, 4) HUD como PokéSurvivor.

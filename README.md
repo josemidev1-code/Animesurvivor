@@ -17,6 +17,7 @@ Juego de supervivencia (estilo PokéSurvivor / Vampire Survivors) con personajes
 | `sprites/` | Los packs de sprites originales de donde salen los personajes |
 | `herramientas/` | Programas para elegir fotogramas y montar las animaciones (ver `herramientas/GUIA_ANIMACIONES.md`) |
 | `BITACORA.md` | Diario: lo que pediste y lo que se hizo en cada sesión |
+| `TAREAS_CODEX.md` | Lo que queda por hacer, con instrucciones para la siguiente IA |
 | `PIXEL_ART_POR_CODIGO.md` | Lista de lo que está dibujado por código, para que lo sustituyas por tus dibujos |
 | `SPRITES_PENDIENTES.md` | Packs que faltan por meter y personajes que no tienen sprites buenos |
 | `AGENTS.md`, `CLAUDE.md` | Instrucciones para las IAs que trabajan en el proyecto |

@@ -5,7 +5,7 @@ Para que nadie pierda el hilo, **todas las IAs deben cumplir estas reglas**.
 
 ## Al empezar
 
-1. Lee `README.md` (qué es cada archivo, cómo está y lo que queda) y las últimas entradas de `BITACORA.md`.
+1. Lee `TAREAS_CODEX.md` (lo que queda por hacer, en orden), `README.md` y las últimas entradas de `BITACORA.md`.
 2. Si vas a tocar animaciones, lee `herramientas/GUIA_ANIMACIONES.md`.
 3. Si no queda claro qué hacer, sigue la lista «Lo que falta» de `README.md` en orden,
    salvo que el usuario pida otra cosa.
