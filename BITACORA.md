@@ -286,3 +286,16 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 ### Siguiente paso recomendado
 - Probar las cajas y los cuatro objetos: vida con límite, técnica especial lista, atracción de gemas e indicador que se oculta al pausar. Revisar también la pantalla de créditos abriendo index.html con doble clic.
 - Continuar las animaciones de Goku Granola (132, 136, 149) y usar el catálogo para sustituir efectos/escenarios después de comprobar sus condiciones y su estilo.
+
+## 2026-10-31 — Claude (sesión 9)
+
+### Lo que pidió el usuario
+- Todos los personajes con sus propios ataques y cosas especiales; gachapón con los recursos de `sprites/shenron` para que no sea cutre.
+- Eliminar todo lo que dibujé en el pasado sin sprites; buenas animaciones de caminar y atacar para todos, orientadas (si tira la bola arriba, animación hacia arriba; a la izquierda, hacia la izquierda).
+- Ataques de muchas bolas (Broly) teledirigidos; enemigos variados con vida sobre la cabeza; más jugabilidad.
+- Mapas con su portada original (carpeta de escenarios); meter todos los sprites; arreglar los jefes, que al aparecer no se les puede hacer daño.
+- Adjuntó captura del panel de subida de nivel de PokéSurvivor como referencia.
+
+### Lo que hice
+- Jefes: ninguno tenía radio de colisión en `ET` (`r` indefinido), así que ni las bolas ni los golpes los tocaban, y ellos tampoco te dañaban por contacto. Ahora `spawn` les da `r:13` (y 6 a cualquier enemigo sin radio). Probado: Raditz baja de 900 a 779 en 10 s.
+- Barra de vida encima de la cabeza de cada enemigo (roja normal, naranja élite, morada jefe).

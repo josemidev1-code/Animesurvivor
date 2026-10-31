@@ -1602,7 +1602,7 @@ function updateMoves(dt,ps){
 
 // ---------- spawning ----------
 function spawn(type,x,y){
-  let d=ET[type];if(!d)throw new Error('Enemigo sin animaciones revisadas: '+type);if(d.boss)d={...d,...BOSS_SLOT[Math.min(4,S.bossN||0)]};const lv=(P&&P.lvl||1)-1,sc=(1+S.t/170+(S.endless?S.t/300:0))*(1+0.045*lv);
+  let d=ET[type];if(!d)throw new Error('Enemigo sin animaciones revisadas: '+type);if(d.boss)d={r:13,...d,...BOSS_SLOT[Math.max(0,Math.min(4,S.bossN||0))]};else if(d.r==null)d={...d,r:6};const lv=(P&&P.lvl||1)-1,sc=(1+S.t/170+(S.endless?S.t/300:0))*(1+0.045*lv);
   if(x===undefined){const a=rnd(TAU),r=Math.hypot(VW,VH)/2+20;x=P.x+Math.cos(a)*r;y=P.y+Math.sin(a)*r}
   const spr=enemySprite(type);
   const e={type,x,y,hp:d.hp*(d.boss?1:sc),maxhp:0,spd:d.spd*(d.boss?1:rnd(0.9,1.1)),dmg:d.dmg*(1+S.t/500)*(1+0.02*lv),xp:d.xp,r:d.r,boss:!!d.boss,final:!!d.final,ai:d.ai,
@@ -1829,7 +1829,7 @@ function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypo
   else if(d<e.r+18&&o.Attack){A=o.Attack;i=scFrame(A,t)}
   else if(T.shoot&&o.Cast&&(e.shootT<0.35||e.shootT>T.shoot-0.25)){A=o.Cast;i=e.shootT<0.35?0:Math.min(1,A.R.length-1)}
   else if(A.R.length>1)i=scFrame(A,t);else bob=Math.round(Math.sin(t*6+e.x*0.07)*1);
-  const im=(left?A.L:A.R)[i]||A.R[0],z=e.boss?0.62:0.5,w=im.width*z,hh=im.height*z;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-hh+bob),w,hh);
+  const im=(left?A.L:A.R)[i]||A.R[0],z=e.boss?0.62:0.5,w=im.width*z,hh=im.height*z;e.dh=hh;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-hh+bob),w,hh);
   if(e.flash>0){ctx.globalAlpha=0.55;const wi=e.spr.pkw||(e.spr.pkw={});const key=A===o.Hurt?'h'+left:'x';if(!wi[key])wi[key]=tintC(im,'#ffffff');ctx.drawImage(wi[key],Math.round(x-w/2),Math.round(y-hh+bob),w,hh);ctx.globalAlpha=1}}
 function drawSprite(spr,x,y,frame,flip,white,scale=1){
   const arr=white?(flip?spr.whf:spr.wh):(flip?spr.fl:spr.fr),c=arr[((frame*arr.length/4|0)%arr.length+arr.length)%arr.length]||arr[0];if(!c)return;if(spr.half)scale*=spr.half;const w=c.width*scale,h=c.height*scale;
@@ -2509,7 +2509,10 @@ function render(time){
     if(e.spr.pending){e.spr=enemySprite(e.type);if(e.spr.pending)continue;e.h=e.spr.h}
     const sc=e.spr.big?1:e.boss?2:1,x=e.x-cam.x,y=e.y-cam.y;shadow(x,y,e.spr.w*sc*0.6);
     if(e.aura){const fl=auraFlames(e.aura)[(time*10|0)%3];ctx.globalAlpha=0.75;ctx.drawImage(fl,Math.round(x-fl.width/2),Math.round(y-fl.height+2));ctx.globalAlpha=1}
-    if(e.spr.pk)drawPkEnemy(e,x,y);else drawSprite(e.spr,x,y+(e.boss?0:0),e.anim,e.x>P.x,e.flash>0,sc);if(e.ball)drawDBall(x,y-e.h*sc-6+Math.round(Math.sin(time*6)),4)}
+    if(e.spr.pk)drawPkEnemy(e,x,y);else drawSprite(e.spr,x,y+(e.boss?0:0),e.anim,e.x>P.x,e.flash>0,sc);
+    // vida sobre la cabeza de cada enemigo
+    if(!e.crate&&e.maxhp>0){const top=Math.round(y-(e.spr.pk?(e.dh||e.h):e.h*sc)-5),el=ET[e.type].elite,bw=e.boss?34:el?20:14;bar(Math.round(x-bw/2),top,bw,e.boss?3:2,Math.max(0,e.hp/e.maxhp),e.boss?'#c83ad8':el?'#ffb020':'#ff4d5e')}
+    if(e.ball)drawDBall(x,y-e.h*sc-6+Math.round(Math.sin(time*6)),4)}
   // sword slashes and shock rings
   for(const f of fxSl){const k=f.t/f.dur,x=X(f.x),y=Y(f.y);ctx.globalAlpha=1-k;for(let j=0;j<3;j++){ctx.fillStyle=j?f.col[0]:'#ffffff';const rr=f.r*(0.55+0.15*j+0.3*k);for(let b=-f.arc/2;b<=f.arc/2;b+=0.06){const c=f.a+b,w=1+((f.arc/2-Math.abs(b))*3|0);ctx.fillRect(Math.round(x+Math.cos(c)*rr),Math.round(y+Math.sin(c)*rr*0.7),w>2?2:1,w>1?2:1)}}ctx.globalAlpha=1}
   for(const f of fxRg){const k=f.t/f.dur,x=X(f.x),y=Y(f.y);ctx.globalAlpha=1-k*0.8;ring(x,y,Math.round(f.rad*(0.25+0.75*k)),f.col[0],2);ring(x,y,Math.round(f.rad*(0.15+0.7*k)),f.col[1],1);ctx.globalAlpha=1}
