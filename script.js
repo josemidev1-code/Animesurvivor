@@ -1917,7 +1917,7 @@ function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypo
   else if(d<e.r+18&&o.Attack){A=o.Attack;i=scFrame(A,t)}
   else if(T.shoot&&o.Cast&&(e.shootT<0.35||e.shootT>T.shoot-0.25)){A=o.Cast;i=e.shootT<0.35?0:Math.min(1,A.R.length-1)}
   else if(A.R.length>1)i=scFrame(A,t);else bob=Math.round(Math.sin(t*6+e.x*0.07)*1);
-  const im=(left?A.L:A.R)[i]||A.R[0],z=e.boss?0.62:0.5,w=im.width*z,hh=im.height*z;e.dh=hh;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-hh+bob),w,hh);
+  const im=(left?A.L:A.R)[i]||A.R[0],z=e.boss?0.62:(T.z||0.5),w=im.width*z,hh=im.height*z;e.dh=hh;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-hh+bob),w,hh);
   if(e.flash>0){ctx.globalAlpha=0.55;const wi=e.spr.pkw||(e.spr.pkw={});const key=A===o.Hurt?'h'+left:'x';if(!wi[key])wi[key]=tintC(im,'#ffffff');ctx.drawImage(wi[key],Math.round(x-w/2),Math.round(y-hh+bob),w,hh);ctx.globalAlpha=1}}
 function drawSprite(spr,x,y,frame,flip,white,scale=1){
   const arr=white?(flip?spr.whf:spr.wh):(flip?spr.fl:spr.fr),c=arr[((frame*arr.length/4|0)%arr.length+arr.length)%arr.length]||arr[0];if(!c)return;if(spr.half)scale*=spr.half;const w=c.width*scale,h=c.height*scale;
@@ -2761,6 +2761,15 @@ const ENEMIGO_HEROE={hitB:['hit',0],hitE:['hit',0],hit2E:['hit',0],superbuuB:['b
   vegetaSB:['vegeta',0],vegetaE:['vegeta',0],vegsaiE:['vegeta',0],majinv:['vegeta',3],
   frost2E:['frost',1],black2E:['black',0],blackssjB:['black',1],
   broly2B:['broly',0],broly3B:['broly',1],brolyB:['broly',2],kalessjE:['kale',1],kalessjB:['kale',1],a17B:['a17',0]};
+// sesión 9: más variedad de enemigos normales con packs ya revisados (antes solo quedaban saibamen)
+Object.assign(ET,{zombi:{n:'Saiyan zombi',hp:26,spd:26,dmg:9,xp:2,r:7},zombiR:{n:'Saiyan zombi furioso',hp:44,spd:46,dmg:12,xp:4,r:7},
+  zamasuC:{n:'Clon de Zamasu',hp:30,spd:38,dmg:11,xp:3,r:7,shoot:3.2}});
+Object.assign(ENEMIGO_HEROE,{celljr:['cell',2],celljrE:['cell',2],majin:['buu',4],zombi:['zombies',0],zombiR:['zombies',1],zamasuC:['zamasu',0]});
+if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.34],['celljrE',0.4],['majin',0.36]])if(ET[id])ET[id].z=z;
+for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
+  if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);
+  if(saga==='tierra'&&!M.pool.some(p=>p[1]==='celljr'))M.pool.push([150,'celljr',3]);
+  if(saga==='buu'&&!M.pool.some(p=>p[1]==='majin'))M.pool.push([30,'majin',5])}
 for(const id in ENEMIGO_HEROE){const [h,f]=ENEMIGO_HEROE[id];if(ET[id]&&SCPACK.h[h]&&SCPACK.h[h][f]){ET[id].hero=[h,f];delete SCPACK.e[id]}}
 // También los jefes que ya declaraban hero deben saltarse la tira antigua.
 for(const id in ET){const h=ET[id].hero;if(h&&window.ANIM_SET&&ANIM_SET.h[h[0]]&&ANIM_SET.h[h[0]][h[1]])delete SCPACK.e[id]}
@@ -2785,7 +2794,7 @@ const FUERA_ENEMIGOS={};
   }
   for(const saga in WAVES){WAVES[saga]=WAVES[saga].filter(w=>ET[w[0]]);if(!WAVES[saga].length)WAVES[saga]=[['saiba',14]]}
 })();
-const SCTINT={saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)'},SCTC={};
+const SCTINT={celljr:'hue-rotate(150deg) saturate(1.15)',celljrE:'hue-rotate(150deg) saturate(1.3)',saibaR:'hue-rotate(-70deg) saturate(1.6)',saibaB:'hue-rotate(140deg) saturate(1.2)',saibaX:'hue-rotate(200deg) brightness(1.1)'},SCTC={};
 function scTintPk(o,f){const r={ok:1};for(const a in o){if(a==='ok')continue;const A=o[a],tc=c=>{const n=mk(c.width,c.height),g=n.getContext('2d');g.filter=f;g.drawImage(c,0,0);return n};r[a]={...A,R:A.R.map(tc),L:A.L.map(tc)}}return r}
 function scEnemy(id){const k=scKeyE(id);if(!k)return null;const o0=scLoad(k);if(!o0.ok)return null;const o=SCTINT[id]?(SCTC[id]||(SCTC[id]=scTintPk(o0,SCTINT[id]))):o0;
   const an=o.Walk&&o.Walk.R.length>1?'Walk':'Idle',W=o[an],wh=W.R.map(c=>tintC(c,'#ffffff')),whf=W.L.map(c=>tintC(c,'#ffffff')),src=SCPACK.s[k][an];

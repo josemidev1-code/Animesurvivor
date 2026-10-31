@@ -54,14 +54,14 @@ assert.equal(vm.runInContext("enemySprite('kidbuuE').pending",c),1);
 listo=true;
 assert.equal(vm.runInContext("enemySprite('kidbuuE')",c),real);
 assert.equal(vm.runInContext("enemySprite('saiba')",c),real);
-// Un solo frame de vuelo usa guardia; un vuelo de dos frames sí se anima.
+// Lejos del jugador se impulsa hacia él (vuelo); cerca, con un solo frame de vuelo, guarda la guardia.
 let dibujado;
 Object.assign(c,{ctx:{drawImage:im=>{dibujado=im}},ebeams:[],scFrame:()=>0});
 vm.runInContext(tramo('function drawPkEnemy','function drawSprite'),c);
-for(const frames of [1,2]){
+for(const frames of [1,2])for(const x of [200,20]){
   const idle={width:30,height:50,tipo:'guardia'},vuelo={...idle,tipo:'vuelo'};
-  c.e={type:'saiba',x:200,y:0,r:6,anim:0,flash:0,spr:{pk:{Walk:{R:Array(frames).fill(vuelo),L:Array(frames).fill(vuelo)},Idle:{R:[idle],L:[idle]}}}};
-  vm.runInContext('drawPkEnemy(e,0,0)',c);assert.equal(dibujado.tipo,frames===1?'guardia':'vuelo');
+  c.e={type:'saiba',x,y:0,r:6,anim:0,flash:0,spr:{pk:{Walk:{R:Array(frames).fill(vuelo),L:Array(frames).fill(vuelo)},Idle:{R:[idle],L:[idle]}}}};
+  vm.runInContext('drawPkEnemy(e,0,0)',c);assert.equal(dibujado.tipo,frames===1&&x<48?'guardia':'vuelo');
 }
 console.log(`${Object.keys(datos.MAPS).length} mapas · ${jefes} jefes · ${apariciones} apariciones simuladas sin tipos retirados.`);
 console.log(`${Object.keys(datos.ET).length-2} tipos de enemigo con animaciones seleccionadas; ${Object.keys(datos.FUERA_ENEMIGOS).length} retirados.`);

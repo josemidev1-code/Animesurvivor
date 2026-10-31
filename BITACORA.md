@@ -346,3 +346,9 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 ### Sesión 9, sexta parte: capturas de PokéSurvivor (menú y partida) sin texto
 - Interpretado como «la partida debe verse así». HUD rehecho: arriba a la izquierda nombre (y forma), «Nv. N» y barra de vida roja con «vida / máximo»; la experiencia pasa a una línea fina azul bajo la vida. Arriba en el centro el tiempo grande y una línea gris con mapa, derrotados, zeni y dificultad (sin el mapa en pantallas estrechas); debajo las 7 esferas. Abajo el nombre de la técnica en naranja, las casillas y una línea de ayuda de controles. Quitados «KO» y «Z» de la esquina derecha.
 - Probado en 800×600 y 1600×900. El menú ya seguía ese esquema (panel azul a la derecha y carta del personaje en el centro).
+
+### Sesión 9, séptima parte: «Sí, sigue» → enemigos más variados
+- Problema: de los enemigos normales solo quedaban saibamen (los soldados, Cell Jr. y esbirros se retiraron en la sesión 6 por tener tiras malas).
+- Recuperados con packs ya revisados: Cell Jr. y CELL JR. élite (pack de Cell Perfecto, pequeño y teñido de azul) y el antiguo «majin», ahora «Fragmento de Buu» (Kid Buu pequeño).
+- Nuevos: Saiyan zombi y Saiyan zombi furioso (pack de los Saiyans zombi) en todos los mapas, y Clon de Zamasu (dispara) en la saga Super y el Futuro de Trunks. Tamaño propio por tipo (`ET[id].z`).
+- 76 tipos activos (antes 70), 41 retirados (antes 44). `comprobar_enemigos.cjs` actualizado a la regla nueva (lejos se impulsan, cerca guardia) y pasa: 24 mapas, 173.299 apariciones simuladas sin tipos retirados. Vistos en partida sin errores.
