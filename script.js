@@ -1140,6 +1140,11 @@ Object.assign(MV,{
  dimsword:SWORD('Espada Dimensional',['#8a1a2a','#ff5a6a'],1.4,30,10,56,2.6),
  rakshasa:MELEE('Garra Rakshasa',['#8a1a2a','#ff8a9a'],'atk',2.4,16,6,4,200,30,{tp:1}),
  evilkame:BEAM('Kamehameha Maligno',['#3a1a5a','#a050d0','#ffd0ff'],6.5,46,16,290,22,0.8),
+ soulpunisher:NOVA('Soul Punisher',['#a02ad8','#ff6ad0','#ffe0ff'],6,48,17,80),
+ ikarikame:BEAM('Kamehameha Ikari',['#2a9a20','#8af06a','#f0fff0'],6.5,46,16,290,22,0.8),
+ beastcannon:{...BEAM('Cañón Especial Bestia',['#c8c8e0','#ffffff','#ffffff'],5,52,18,320,8,0.9),spiral:1},
+ brablast:SHOT('Ráfaga de Bra',['#d02a80','#ff8ad0','#fff0f8'],1.0,8,3,4,230,{home:1}),
+ timebreak:NOVA('Ruptura del Tiempo',['#5a1a6a','#c060d0','#ffe0ff'],6,30,11,85,1.8),
  acidspit:SHOT('Ácido Saibaman',['#4a8a1a','#a0f040','#f0ffc0'],1.0,7,3,2,170,{pierce:1}),
 });
 const SIGS={goku:['kiblast','punch','kame','kaioken','instant','genki'],vegeta:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
@@ -1151,7 +1156,7 @@ const SIGS={goku:['kiblast','punch','kame','kaioken','instant','genki'],vegeta:[
  gokuui:['kiblast','silver','kick','kame','instant','genki'],vegetaue:['kiblast','punch','galick','finalflash','hakai','bigbang'],
  gotenks:['ghost','punch','donut','victory','kick'],kefla:['blaster','kick','giganticray','punch','roar'],caulifla:['renzoku','kick','crush','punch','roar'],
  kale:['blaster','lariat','eraser','roar','kick'],kyabe:['kiblast','punch','galick','renzoku','kyabecannon','kick'],
- gohanadult:['kiblast','kick','masenko','kame','gekiretsu','fskame'],gokugt:['kiblast','punch','kame','instant','dragonfist','kame10x'],
+ gohanadult:['kiblast','punch','masenko','kame','makanko','fskame'],gokugt:['kiblast','punch','kame','instant','dragonfist','kame10x'],
  vegetagt:['kiblast','punch','galick','bigbang','finalshine','kick'],gokusuper:['kiblast','punch','kaioken','kame','godkame','genki'],
  vegetasuper:['renzoku','punch','galick','bigbang','finalflash','gamma'],trunkscell:['kiblast','tsword','burning','finishbuster','kick','heatdome'],
  roshi:['kiblast','punch','kame','mafuba','kick']};
@@ -1165,9 +1170,16 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  hit:['kiblast','instant','timeskip','punch','silver'],zamasu:['kiblast','kiblade','lances','holywrath','kick','scythe'],
  jiren:['kiblast','jirenrush','powerimpact','kick','roar','omega'],toppo:['justiceflash','punch','kick','powerblitz','hakai'],
  moro:['kiblast','punch','absorb','kick','omega'],babyvegeta:['kiblast','punch','galick','kick','finalshine','revdeathball'],
- cumber:['kiblast','punch','evilkame','kick','eraser','roar'],gokuxeno:['kiblast','punch','kame','instant','dragonfist','kame10x'],
+ cumber:['kiblast','punch','evilkame','kick','eraser','roar'],gokuxeno:['kiblast','punch','kame10x','instant','kaioken','dragonfist'],
  gohanposeido:['kiblast','punch','kick','masenko','evilkame'],bardockalt:['kiblast','punch','kick','riot','rebellion','finalspirit'],
- brolyfan:['blaster','lariat','eraser','roar','omega','kick'],zombies:['kiblast','punch','kick','kame','galick','finalexp']};
+ brolyfan:['eraser','lariat','blaster','omega','roar','kick'],zombies:['kiblast','punch','kick','kame','galick','finalexp'],
+ gohandbs:['kiblast','kick','masenko','gekiretsu','makanko','fskame'],gohanmanga:['kiblast','punch','masenko','makanko','kick','beastcannon'],
+ bra:['brablast','kick','punch','masenko','renzoku'],dlrx:['kiblast','punch','kick','renzoku','finishbuster','kame'],
+ gogetafan:['kiblast','punch','kick','bbkame','stardust','soulpunisher'],vegettofan:['kiblast','spiritsword','punch','finalkame','kick','kiblade'],
+ gokumoro:['kiblast','silver','kick','kame','instant','godkame'],gokubroly:['kiblast','punch','kame','instant','godkame','genki'],
+ vegetamanga:['kiblast','punch','galick','finalflash','gamma','finalexp'],vegetabroly:['renzoku','punch','galick','finalflash','gamma','finalexp'],
+ blacktime:['lances','kiblade','blackkame','timebreak','kick','scythe'],blackfan:['kiblade','lances','scythe','blackkame','timebreak','kick'],
+ gokualt:['kiblast','punch','kaioken','ikarikame','dragonfist','genki']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];

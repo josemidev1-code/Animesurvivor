@@ -326,3 +326,8 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Revisión de animaciones: corregidas las formas con fallos claros; los packs de pocas poses (p. ej. «fases» de Goku Moro) siguen con golpes que no son puñetazos porque el pack no los tiene.
 - Los sprites solo miran a izquierda/derecha: no hay pose real de lanzar hacia arriba/abajo.
 - Las monedas de zeni, auras, rayos y marcas de eventos siguen dibujados por código.
+
+### Sesión 9, tercera parte: «Sí, sigue» (ataques propios para el resto)
+- 5 técnicas nuevas: Soul Punisher (Gogeta fanmade), Kamehameha Ikari (Goku alternativo), Cañón Especial Bestia (Gohan manga), Ráfaga de Bra y Ruptura del Tiempo (Black Time Breaker y Black fanmade, paraliza).
+- Listas propias para Gohan DBS, Gohan manga, Bra, DLRX, Gogeta y Vegetto fanmade, Goku Moro, Goku y Vegeta de la película Broly, Vegeta Blue manga, Black Time Breaker, Black fanmade y Goku alternativo. Además se diferenciaron las seis parejas que repetían lista (Gohan adulto, Broly fanmade, Black fanmade, Goku Xeno, Goku Broly y Vegeta Dios). Ahora ningún personaje de los 63 tiene la misma lista que otro.
+- Probados 7 personajes: cada una de sus 6 técnicas derrota enemigos, sin errores. `comprobar_personajes.cjs` pasa.
