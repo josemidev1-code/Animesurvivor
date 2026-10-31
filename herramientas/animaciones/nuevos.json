@@ -891,6 +891,672 @@
     ],
     "altura": 46
    }
+  },
+  "turles": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Turles/089_Turles",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     12,
+     13
+    ],
+    "kick": [
+     18,
+     22
+    ],
+    "ki": [
+     55,
+     56
+    ],
+    "pow": [
+     50,
+     51,
+     52
+    ],
+    "hurt": [
+     33,
+     34
+    ],
+    "faint": [
+     38
+    ]
+   },
+   "1": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Turles/236_TURLES SSJ MALIGNO, ANDRÉS GAMEN ANIMATIONS ✓",
+    "idle": [
+     9,
+     10
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     77
+    ],
+    "attack": [
+     64,
+     65,
+     66
+    ],
+    "kick": [
+     48,
+     49
+    ],
+    "ki": [
+     17,
+     18
+    ],
+    "pow": [
+     84,
+     85,
+     86
+    ],
+    "hurt": [
+     42,
+     43
+    ],
+    "faint": [
+     39
+    ],
+    "portrait": 0,
+    "altura": 56
+   }
+  },
+  "bills": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/00_Dioses_y_Super_Saiyan_God/Bills/020_Bills",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     13
+    ],
+    "attack": [
+     18,
+     19,
+     20
+    ],
+    "kick": [
+     24,
+     25
+    ],
+    "ki": [
+     54,
+     56
+    ],
+    "pow": [
+     44,
+     45,
+     46
+    ],
+    "hurt": [
+     41,
+     42
+    ],
+    "faint": [
+     43
+    ],
+    "altura": 54,
+    "retrato": [
+     "09_Packs_mixtos_por_revisar/Varios/229_SUPER EXTRA PACK DE SPRITES #2 (POR LOS 33KSUBS) DE ANDRÉS GAMEN ANIMATIONS 👍",
+     112
+    ]
+   }
+  },
+  "frost": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/02_Universo_6/Frost/031_Frost Primeira Forma",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     11,
+     12,
+     13
+    ],
+    "kick": [
+     24,
+     26
+    ],
+    "ki": [
+     42,
+     43
+    ],
+    "pow": [
+     36,
+     37,
+     38
+    ],
+    "hurt": [
+     31,
+     32
+    ],
+    "faint": [
+     35
+    ],
+    "altura": 46
+   },
+   "1": {
+    "pack": "01_Dragon_Ball_Super/02_Universo_6/Frost/032_Frost Ultima Forma",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     9,
+     10,
+     11
+    ],
+    "kick": [
+     24,
+     25
+    ],
+    "ki": [
+     45,
+     46
+    ],
+    "pow": [
+     38,
+     39,
+     40
+    ],
+    "hurt": [
+     33,
+     34
+    ],
+    "faint": [
+     37
+    ],
+    "altura": 48
+   }
+  },
+  "hit": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/02_Universo_6/Hit/066_Hitto",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     13
+    ],
+    "attack": [
+     14,
+     17,
+     18
+    ],
+    "kick": [
+     27,
+     28
+    ],
+    "ki": [
+     50,
+     51
+    ],
+    "pow": [
+     41,
+     42,
+     43
+    ],
+    "hurt": [
+     36,
+     37
+    ],
+    "faint": [
+     40
+    ],
+    "altura": 56
+   }
+  },
+  "zamasu": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/104_Zamasu",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     16,
+     17,
+     22
+    ],
+    "kick": [
+     28,
+     29
+    ],
+    "ki": [
+     36,
+     37
+    ],
+    "pow": [
+     31,
+     32
+    ],
+    "hurt": [
+     43,
+     44
+    ],
+    "faint": [
+     46
+    ],
+    "altura": 52,
+    "retrato": [
+     "09_Packs_mixtos_por_revisar/Varios/109_EXTRA PACK DE SPRITES #3 ESPECIAL 5K ANDRÉS GAMEN ANIMATIONS",
+     161
+    ]
+   },
+   "1": {
+    "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/105_Zamasu e Black Fusion",
+    "idle": [
+     18,
+     19
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     30
+    ],
+    "attack": [
+     32,
+     33,
+     43
+    ],
+    "kick": [
+     42,
+     51
+    ],
+    "ki": [
+     70,
+     72
+    ],
+    "pow": [
+     59,
+     60,
+     61
+    ],
+    "hurt": [
+     54,
+     55
+    ],
+    "faint": [
+     58
+    ],
+    "altura": 52
+   }
+  },
+  "jiren": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Jiren/182_Jiren HD",
+    "idle": [
+     10,
+     11
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     37
+    ],
+    "attack": [
+     43,
+     44,
+     45
+    ],
+    "kick": [
+     50,
+     53
+    ],
+    "ki": [
+     117,
+     119
+    ],
+    "pow": [
+     81,
+     82,
+     83
+    ],
+    "hurt": [
+     75,
+     76
+    ],
+    "faint": [
+     79
+    ],
+    "portrait": 0,
+    "altura": 60
+   },
+   "1": {
+    "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Jiren/209_JIREN FULL POWER,MEJORADO, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     57,
+     58
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     49
+    ],
+    "attack": [
+     36,
+     38,
+     39
+    ],
+    "kick": [
+     24,
+     27
+    ],
+    "ki": [
+     53,
+     40
+    ],
+    "pow": [
+     59,
+     60
+    ],
+    "hurt": [
+     10,
+     20
+    ],
+    "faint": [
+     7
+    ],
+    "portrait": 0,
+    "altura": 62
+   },
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Jiren/181_JIREN HAKAISHIN, ANDRÉS GAMEN ANIMATIONS ✓ (SPRITE HD)",
+    "idle": [
+     66,
+     67
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     64
+    ],
+    "attack": [
+     54,
+     55,
+     56
+    ],
+    "kick": [
+     49,
+     50
+    ],
+    "ki": [
+     18,
+     28
+    ],
+    "pow": [
+     73
+    ],
+    "hurt": [
+     46,
+     45
+    ],
+    "faint": [
+     34
+    ],
+    "portrait": 0,
+    "altura": 62
+   }
+  },
+  "toppo": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Toppo/087_Toppo",
+    "idle": [
+     0,
+     3
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     16
+    ],
+    "attack": [
+     17,
+     19,
+     20
+    ],
+    "kick": [
+     25,
+     26
+    ],
+    "ki": [
+     59,
+     60
+    ],
+    "pow": [
+     52,
+     53,
+     54
+    ],
+    "hurt": [
+     44,
+     38
+    ],
+    "faint": [
+     50
+    ],
+    "altura": 58
+   }
+  },
+  "moro": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Moro/292_moro Ultra instito . Andrés Gamen",
+    "idle": [
+     9,
+     19
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     13
+    ],
+    "attack": [
+     14,
+     15,
+     16
+    ],
+    "kick": [
+     23,
+     24
+    ],
+    "ki": [
+     30,
+     31
+    ],
+    "pow": [
+     44,
+     45,
+     46
+    ],
+    "hurt": [
+     42,
+     43
+    ],
+    "faint": [
+     26
+    ],
+    "portrait": 51,
+    "altura": 58
+   }
+  },
+  "babyvegeta": {
+   "0": {
+    "pack": "02_GT/Vegeta/307_Baby Vegeta",
+    "idle": [
+     17,
+     18
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     20
+    ],
+    "attack": [
+     5,
+     6
+    ],
+    "kick": [
+     10,
+     11
+    ],
+    "ki": [
+     27,
+     28
+    ],
+    "pow": [
+     24,
+     48
+    ],
+    "hurt": [
+     14,
+     47
+    ],
+    "faint": [
+     55
+    ],
+    "portrait": 9,
+    "altura": 54
+   }
+  },
+  "bra": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Bra/190_Son bra multiverse by andresito",
+    "idle": [
+     10,
+     11
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     15
+    ],
+    "attack": [
+     24,
+     26,
+     30
+    ],
+    "kick": [
+     35,
+     36
+    ],
+    "ki": [
+     50,
+     51
+    ],
+    "pow": [
+     59,
+     60
+    ],
+    "hurt": [
+     43,
+     44
+    ],
+    "faint": [
+     47
+    ],
+    "portrait": 110,
+    "altura": 52
+   },
+   "1": {
+    "pack": "05_Fanmade_y_alternativos/Bra/188_Bra ssj1 multiverse by Andrés",
+    "idle": [
+     13,
+     15
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     24
+    ],
+    "attack": [
+     33,
+     35,
+     39
+    ],
+    "kick": [
+     47,
+     48
+    ],
+    "ki": [
+     94,
+     95
+    ],
+    "pow": [
+     66,
+     67
+    ],
+    "hurt": [
+     50,
+     51
+    ],
+    "faint": [
+     54
+    ],
+    "portrait": 105,
+    "altura": 52
+   }
   }
  }
 }

@@ -679,6 +679,16 @@ const NUEVOS={
  janemba:{name:'JANEMBA',rar:5,hp:130,spd:62,atk:1.25,start:'makanko',desc:'El demonio del Más Allá. Espada y portales.',forms:['SUPER JANEMBA'],aura:['purple'],sig:['kiblast','kiblade','punch','kick','hellzone']},
  cell:{name:'CELL',rar:5,hp:125,spd:62,atk:1.2,start:'kame',desc:'El androide perfecto. Absorbe y crece.',forms:['IMPERFECTO','SEMIPERFECTO','PERFECTO','GOLDEN'],aura:['gold','gold','gold','gold'],sig:['kiblast','punch','kame','kienzan','kick','finalexp']},
  buu:{name:'MAJIN BUU',rar:5,hp:150,spd:60,atk:1.15,start:'donut',desc:'Se regenera sin parar. Cinco formas.',regen:0.5,forms:['GORDO','MALIGNO','SUPER BUU','BUU GOHAN','KID BUU'],aura:['purple','purple','purple','purple','purple'],sig:['kiblast','punch','kick','renzoku','finalexp','roar']},
+ turles:{name:'TURLES',rar:4,hp:120,spd:64,atk:1.15,start:'galick',desc:'El Saiyan del Árbol Sagrado.',forms:['BASE','SSJ MALIGNO'],aura:['purple','red'],sig:['kiblast','punch','renzoku','kick','bigbang','finalflash']},
+ bills:{name:'BILLS',rar:5,hp:130,spd:66,atk:1.35,start:'bigbang',desc:'El Dios de la Destrucción. Empieza con Big Bang.',forms:['DIOS DESTRUCTOR'],aura:['purple'],sig:['kiblast','punch','kick','renzoku','hakai']},
+ frost:{name:'FROST',rar:3,hp:110,spd:64,atk:1.1,start:'kienzan',desc:'El tramposo del Universo 6.',forms:['1ª FORMA','FORMA FINAL'],aura:['purple','purple'],sig:['kiblast','punch','lances','kick','kienzan']},
+ hit:{name:'HIT',rar:5,hp:115,spd:70,atk:1.3,start:'kienzan',desc:'El asesino legendario. Salta en el tiempo.',forms:['BASE'],aura:['purple'],sig:['kiblast','punch','kick','instant','silver']},
+ zamasu:{name:'ZAMASU',rar:5,hp:120,spd:64,atk:1.25,start:'makanko',desc:'El Kaioshin que odia a los mortales.',forms:['BASE','FUSIONADO'],aura:['white','purple'],sig:['kiblast','kiblade','punch','lances','kick','scythe']},
+ jiren:{name:'JIREN',rar:5,hp:150,spd:62,atk:1.35,start:'eraser',desc:'El más fuerte del Universo 11.',forms:['BASE','MÁXIMO PODER','HAKAISHIN'],aura:['red','red','purple'],sig:['kiblast','punch','kick','powerblitz','roar','omega']},
+ toppo:{name:'TOPPO',rar:4,hp:150,spd:56,atk:1.2,start:'eraser',desc:'Líder de las Tropas del Orgullo.',forms:['BASE'],aura:['red'],sig:['kiblast','punch','kick','powerblitz','hakai']},
+ moro:{name:'MORO',rar:5,hp:130,spd:62,atk:1.25,start:'orbs',desc:'El devorador de planetas.',forms:['ULTRA INSTINTO'],aura:['white'],sig:['kiblast','punch','kick','finalexp','omega']},
+ babyvegeta:{name:'BABY VEGETA',rar:5,hp:120,spd:66,atk:1.3,start:'galick',desc:'El parásito Tsufur en el cuerpo de Vegeta.',forms:['SUPER BABY'],aura:['gold'],sig:['kiblast','punch','galick','kick','finalshine','bigbang']},
+ bra:{name:'BRA',rar:3,hp:105,spd:70,atk:1.05,start:'masenko',desc:'La hija de Vegeta, del Multiverso.',forms:['BASE','SUPER SAIYAN'],aura:['white','gold'],sig:['kiblast','punch','kick','masenko','renzoku']},
 };
 for(const id in NUEVOS){const N=NUEVOS[id];HDEF[id]={...HDEF.goku,...N};delete HDEF[id].sig}
 const HEROES=HDEF;

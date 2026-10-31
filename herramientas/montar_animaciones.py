@@ -157,7 +157,10 @@ def cargar_forma(f):
         if e > 1.05: ret = ret.resize((max(1, round(ret.width / e)), max(1, round(ret.height / e))), Image.NEAREST)
     if not ret and anims.get('Idle'):
         ret = busto(anims['Idle'][0])
-    return anims, (ret.crop(ret.getbbox()) if ret else None), esc
+    if ret:  # caras gigantes (packs HD sin zoom detectable): se reducen a un tamaño de retrato
+        ret = ret.crop(ret.getbbox()); m = max(ret.size)
+        if m > 64: k = -(-m // 64); ret = ret.resize((max(1, ret.width // k), max(1, ret.height // k)), Image.NEAREST)
+    return anims, ret, esc
 
 
 def montar_forma(f):
