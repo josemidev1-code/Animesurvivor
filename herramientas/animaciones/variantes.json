@@ -839,6 +839,285 @@
     "portrait": 0,
     "altura": 62
    }
+  },
+  "gogetafan": {
+   "0": {
+    "pack": "04_Heroes_y_videojuegos/Gogeta/156_Gogeta ssj blue evolution,DBH, Andrés Gamen animation",
+    "idle": [
+     3,
+     4
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     41
+    ],
+    "attack": [
+     127,
+     128,
+     129
+    ],
+    "kick": [
+     109,
+     110
+    ],
+    "ki": [
+     18,
+     98
+    ],
+    "pow": [
+     73,
+     74
+    ],
+    "hurt": [
+     56,
+     57
+    ],
+    "faint": [
+     67
+    ],
+    "portrait": 181
+   },
+   "1": {
+    "pack": "05_Fanmade_y_alternativos/Gogeta/118_GOGETA SSJ4 BLUE, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )",
+    "idle": [
+     157,
+     158
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     181
+    ],
+    "attack": [
+     166,
+     167,
+     168
+    ],
+    "kick": [
+     172,
+     173
+    ],
+    "ki": [
+     143,
+     146
+    ],
+    "pow": [
+     150,
+     151,
+     152
+    ],
+    "hurt": [
+     160,
+     159
+    ],
+    "faint": [
+     162
+    ],
+    "portrait": 0
+   },
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Gogeta/117_GOGETA MUI+MEGA INSTINTO,BY ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     62,
+     63
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     106
+    ],
+    "attack": [
+     89,
+     90,
+     91
+    ],
+    "kick": [
+     77,
+     78
+    ],
+    "ki": [
+     33,
+     60
+    ],
+    "pow": [
+     25,
+     26
+    ],
+    "hurt": [
+     70,
+     71
+    ],
+    "faint": [
+     69
+    ],
+    "portrait": 124
+   }
+  },
+  "vegettofan": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Vegetto/248_VEGETTO SSJ GOD MEJORADO, ANDRÉS GAMEN ANIMATIONS 🗿👍",
+    "idle": [
+     121,
+     128
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     188
+    ],
+    "attack": [
+     125,
+     126,
+     127
+    ],
+    "kick": [
+     116,
+     121
+    ],
+    "ki": [
+     81,
+     98
+    ],
+    "pow": [
+     119,
+     120
+    ],
+    "hurt": [
+     96,
+     97
+    ],
+    "faint": [
+     20
+    ],
+    "portrait": 2,
+    "escalaFija": true
+   },
+   "1": {
+    "pack": "05_Fanmade_y_alternativos/Vegetto/214_VEGETTO SSJ DIOS KAIOKEN, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     48,
+     49
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     119
+    ],
+    "attack": [
+     107,
+     108,
+     109
+    ],
+    "kick": [
+     79,
+     80
+    ],
+    "ki": [
+     23,
+     21
+    ],
+    "pow": [
+     60,
+     61
+    ],
+    "hurt": [
+     67,
+     68
+    ],
+    "faint": [
+     66
+    ],
+    "portrait": 0
+   },
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Vegetto/265_VEGGITO SSJ4 GT",
+    "idle": [
+     16,
+     17
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     25
+    ],
+    "attack": [
+     29,
+     30,
+     31
+    ],
+    "kick": [
+     45,
+     46
+    ],
+    "ki": [
+     145,
+     146
+    ],
+    "pow": [
+     69,
+     70
+    ],
+    "hurt": [
+     56,
+     57
+    ],
+    "faint": [
+     65
+    ],
+    "portrait": 0
+   },
+   "3": {
+    "pack": "05_Fanmade_y_alternativos/Vegetto/246_VEGETTO MUI+MEGA INSTINTO,BY ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     62,
+     63
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     100
+    ],
+    "attack": [
+     86,
+     87,
+     88
+    ],
+    "kick": [
+     72,
+     73
+    ],
+    "ki": [
+     57,
+     49
+    ],
+    "pow": [
+     59,
+     60
+    ],
+    "hurt": [
+     66,
+     65
+    ],
+    "faint": [
+     64
+    ],
+    "portrait": 123
+   }
   }
  }
 }
