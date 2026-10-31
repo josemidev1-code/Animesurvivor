@@ -184,3 +184,9 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Goku saga de Moro jugable (`gokumoro`, 6 formas): BASE (pack 201), SSJ (199), SSJ DIOS (200) y SSJ BLUE, UI y MUI
   del pack 251 «fases». Entra en partida sin errores, alturas 53-55. Ya hay **56 jugables**. Scripts a `?v=23`.
 - Siguiente grupo recomendado: Goku película Broly (216 SSJ Dios, 222 Blue, 221 Blue perfecto, 217 traje de invierno).
+
+### Petición (sesión 5): jugabilidad
+- «vamos a centrarnos en jugabilidad»: los enemigos que atacan están mal (la forma de caminar no tiene sentido y
+  tienen huecos transparentes); Goku al lanzar bolas de ki hace cosas sin sentido con el cuerpo y no se entiende a
+  dónde lo lanza; y quiere **una lista de todo el pixel art hecho por la IA (dibujado por código)** porque no tiene
+  el máximo detalle: el usuario los pasará bien hechos.
