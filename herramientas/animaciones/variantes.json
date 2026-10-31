@@ -1,0 +1,480 @@
+{
+ "heroes": {
+  "gohandbs": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Gohan/112_GOHAN BASE DBS ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     96,
+     97
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     89
+    ],
+    "attack": [
+     66,
+     67,
+     68
+    ],
+    "kick": [
+     57,
+     58
+    ],
+    "ki": [
+     29,
+     32
+    ],
+    "pow": [
+     26,
+     27
+    ],
+    "hurt": [
+     38,
+     39
+    ],
+    "faint": [
+     36
+    ],
+    "portrait": 0
+   },
+   "1": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Gohan/114_GOHAN MÍSTICO DBS ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     88,
+     89
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     79
+    ],
+    "attack": [
+     61,
+     62,
+     63
+    ],
+    "kick": [
+     53,
+     54
+    ],
+    "ki": [
+     29,
+     27
+    ],
+    "pow": [
+     7,
+     8
+    ],
+    "hurt": [
+     35,
+     36
+    ],
+    "faint": [
+     31
+    ],
+    "portrait": 0
+   },
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Gohan/115_GOHAN ULTRA INSTINTO DBS ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     8,
+     9
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     89
+    ],
+    "attack": [
+     73,
+     74,
+     75
+    ],
+    "kick": [
+     58,
+     59
+    ],
+    "ki": [
+     17,
+     21
+    ],
+    "pow": [
+     39,
+     40
+    ],
+    "hurt": [
+     36,
+     37
+    ],
+    "portrait": 1
+   },
+   "3": {
+    "pack": "05_Fanmade_y_alternativos/Gohan/113_GOHAN MUI DBS ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     27,
+     28
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     141
+    ],
+    "attack": [
+     65,
+     66,
+     74
+    ],
+    "kick": [
+     110,
+     111
+    ],
+    "ki": [
+     49,
+     75
+    ],
+    "pow": [
+     91,
+     92
+    ],
+    "hurt": [
+     99,
+     100
+    ],
+    "faint": [
+     97
+    ],
+    "portrait": 0
+   },
+   "4": {
+    "pack": "05_Fanmade_y_alternativos/Gohan/120_GOHAN MODO BESTIA BY ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     56,
+     57
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     108
+    ],
+    "attack": [
+     91,
+     92,
+     94
+    ],
+    "kick": [
+     79,
+     80
+    ],
+    "ki": [
+     69,
+     74
+    ],
+    "pow": [
+     61,
+     62
+    ],
+    "hurt": [
+     30,
+     31
+    ],
+    "faint": [
+     2
+    ],
+    "portrait": 129
+   }
+  },
+  "gohanposeido": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Gohan/036_Gohan Possuido",
+    "idle": [
+     4,
+     5
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     10
+    ],
+    "attack": [
+     21,
+     22,
+     25
+    ],
+    "kick": [
+     20,
+     54
+    ],
+    "ki": [
+     64,
+     46
+    ],
+    "pow": [
+     43,
+     44,
+     45
+    ],
+    "hurt": [
+     33,
+     34
+    ],
+    "faint": [
+     37
+    ],
+    "altura": 46
+   }
+  },
+  "bardockalt": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Bardock/013_Bardock",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     12,
+     13
+    ],
+    "kick": [
+     22,
+     23
+    ],
+    "ki": [
+     55,
+     57
+    ],
+    "pow": [
+     45,
+     46,
+     47
+    ],
+    "hurt": [
+     33,
+     34
+    ],
+    "faint": [
+     39
+    ]
+   },
+   "1": {
+    "pack": "04_Heroes_y_videojuegos/Bardock/223_BARDOCK SSJ1,DBH,ANDRES GAMEN ANIMATIONS",
+    "idle": [
+     7,
+     8
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     21
+    ],
+    "attack": [
+     55,
+     56,
+     57
+    ],
+    "kick": [
+     46,
+     47
+    ],
+    "ki": [
+     28,
+     25
+    ],
+    "pow": [
+     39,
+     40
+    ],
+    "hurt": [
+     37,
+     38
+    ],
+    "faint": [
+     51
+    ],
+    "portrait": 0
+   },
+   "2": {
+    "pack": "05_Fanmade_y_alternativos/Bardock/210_BARDOCK BLACK, ANDRÉS GAMEN ANIMATIONS ✓",
+    "idle": [
+     11,
+     12
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     73
+    ],
+    "attack": [
+     57,
+     58,
+     59
+    ],
+    "kick": [
+     51,
+     52
+    ],
+    "ki": [
+     37,
+     36
+    ],
+    "pow": [
+     29,
+     30
+    ],
+    "hurt": [
+     41,
+     42
+    ],
+    "faint": [
+     39
+    ],
+    "portrait": 1
+   },
+   "3": {
+    "pack": "05_Fanmade_y_alternativos/Bardock/002_BARDOCK EVOLUCIÓN SAYAYÍN,BY ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     30,
+     31
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     99
+    ],
+    "attack": [
+     80,
+     82,
+     83
+    ],
+    "kick": [
+     68,
+     69
+    ],
+    "ki": [
+     24,
+     22
+    ],
+    "pow": [
+     36,
+     37
+    ],
+    "hurt": [
+     43,
+     42
+    ],
+    "faint": [
+     14
+    ],
+    "portrait": 98
+   }
+  },
+  "cell": {
+   "4": {
+    "pack": "05_Fanmade_y_alternativos/Cell/204_Majin Cell, ANDRÉS GAMEN",
+    "idle": [
+     0,
+     1
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     11
+    ],
+    "attack": [
+     20,
+     21,
+     23
+    ],
+    "kick": [
+     29,
+     30
+    ],
+    "ki": [
+     49,
+     58
+    ],
+    "pow": [
+     37,
+     38
+    ],
+    "hurt": [
+     32,
+     33
+    ],
+    "faint": [
+     35
+    ],
+    "portrait": 67,
+    "altura": 56
+   }
+  },
+  "gohanmanga": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Gohan/121_GOHAN SAGA MORO MANGA,BY ANDRÉS GAMEN ANIMATIONS , SPRITE HD",
+    "idle": [
+     78,
+     79
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     76
+    ],
+    "attack": [
+     64,
+     65,
+     66
+    ],
+    "kick": [
+     58,
+     62
+    ],
+    "ki": [
+     27,
+     31
+    ],
+    "pow": [
+     50,
+     51
+    ],
+    "hurt": [
+     54,
+     56
+    ],
+    "faint": [
+     53
+    ],
+    "portrait": 1
+   }
+  }
+ }
+}
