@@ -41,6 +41,7 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 - Senzu y radar con sprites de Legacy of Goku II; cápsulas de vitalidad (+25% vida), cápsulas de ki
   (técnica especial lista) y radar (atrae toda la experiencia), disponibles al romper cajas.
   El radar de Lady-Pixel aparece animado al atraer experiencia o detectar una esfera; créditos con enlaces y sin conexión.
+- Ataques propios de la serie para cada villano (Death Ball, Esfera de Destrucción, Salto Temporal…), eventos aleatorios en partida (Reto de Kaio, meteoritos, Furia Saiyan…) y ficha animada de cada personaje.
 - Jefes con daño corregido, vida sobre la cabeza de cada enemigo, bolas teledirigidas y panel de nivel azul (sesión 9).
 - Gachapón de Shenron (con su sprite real), tienda, misiones, ranking, mejoras; todo desbloqueado de momento.
 - El menú abre en menos de 1 segundo: los sprites se cargan al empezar la partida.

@@ -1561,7 +1561,7 @@ const DEATHK={saiba:'green',saibaR:'fire',celljr:'green',blob:'pink',majin:'pink
 
 // ---------- combat ----------
 function hurt(e,dmg,kx=0,ky=0){
-  if(e.dead)return;const crit=Math.random()<0.08;if(crit)dmg*=2;
+  if(e.dead)return;if(S.ev&&S.ev.k==='furia')dmg*=2;const crit=Math.random()<0.08;if(crit)dmg*=2;
   e.hp-=dmg;e.flash=0.08;if(!e.boss){e.kx+=kx;e.ky+=ky}
   if(texts.length<70)texts.push({x:e.x+rnd(-3,3),y:e.y-e.h*0.8,v:Math.round(dmg),t:0.6,c:crit?'#ffd23f':'#ffffff'});
   sfx('hit');if(fxs.length<40&&Math.random()<0.45)fx(e.x+rnd(-3,3),e.y-e.h*0.5+rnd(-3,3),'spark',crit?'#ffd23f':'#bfe6ff',0.16);
@@ -1658,6 +1658,24 @@ function spawn(type,x,y){
 function pickType(t){
   const pool=MAPS[S.map].pool.filter(p=>t>=p[0]).map(p=>[p[1],p[2]+(p[0]>200&&!ET[p[1]].elite?t/200:0)]);
   let sum=pool.reduce((a,b)=>a+b[1],0),r=rnd(sum);for(const [k,w] of pool){if((r-=w)<=0)return k}return pool[0][0]}
+// ---------- eventos aleatorios: cada partida cambia (sesión 9) ----------
+const EVENTOS=['kaio','meteoros','karin','horda','zeni','furia'];
+function eventos(dt){if(S.boss||S.isl)return;const E=S.ev;
+  if(E){E.t-=dt;
+    if(E.k==='kaio'){if(S.kills-E.k0>=E.need){S.ev=null;S.pending++;S.zeni+=50;S.banner={t:2.2,text:'¡RETO SUPERADO!',sub:'Kaio te premia: mejora extra y 50 zeni'};sfx('level')}
+      else if(E.t<=0){S.ev=null;S.banner={t:2,text:'RETO FALLIDO',sub:'Kaio no se ríe de tus chistes'}}}
+    else if(E.k==='meteoros'){E.m=(E.m||0)-dt;if(E.t>0&&E.m<=0){E.m=0.4;E.list.push({x:P.x+rnd(-150,150),y:P.y+rnd(-110,110),t:1})}
+      for(let i=E.list.length-1;i>=0;i--){const m=E.list[i];if((m.t-=dt)<=0){explode(m.x,m.y,30,40+P.lvl*4,['#8a2a10','#ff7a3a','#ffd08a','#ffffff']);if(Math.hypot(P.x-m.x,P.y-m.y)<30)hitPlayer(12,true);E.list.splice(i,1)}}
+      if(E.t<=0&&!E.list.length)S.ev=null}
+    else if(E.k==='furia'){if(E.t<=0){S.ev=null}}
+    else if(E.t<=0)S.ev=null;return}
+  S.evT=(S.evT===undefined?60:S.evT)-dt;if(S.evT>0)return;S.evT=rnd(65,95);let k=EVENTOS[(Math.random()*EVENTOS.length)|0];if(k===S.lastEv)k=EVENTOS[(EVENTOS.indexOf(k)+1)%EVENTOS.length];S.lastEv=k;
+  if(k==='kaio'){S.ev={k,t:25,need:20+Math.floor(S.t/25),k0:S.kills};S.banner={t:2.5,text:'¡RETO DE KAIO!',sub:`Derrota a ${S.ev.need} enemigos en 25 segundos`}}
+  else if(k==='meteoros'){S.ev={k,t:12,list:[]};S.banner={t:2.5,text:'¡LLUVIA DE METEORITOS!',sub:'Esquiva las marcas rojas: también dañan a los enemigos',boss:1}}
+  else if(k==='karin'){for(let i=0;i<3;i++){const a=i/3*TAU+rnd(0,1);putPickup({k:'senzu',x:P.x+Math.cos(a)*80,y:P.y+Math.sin(a)*80})}S.banner={t:2.5,text:'¡SEMILLAS DE KARIN!',sub:'Han caído tres senzus cerca de ti'}}
+  else if(k==='horda'){const typ=pickType(S.t),r=Math.max(VW,VH)/2+10,side=Math.random()<.5?0:Math.PI;for(let i=0;i<26&&enemies.length<MAXE;i++){const a=side+rnd(-0.6,0.6);spawn(typ,P.x+Math.cos(a)*r,P.y+Math.sin(a)*r)}S.banner={t:2.2,text:'¡ESTAMPIDA!',sub:'Una horda carga por un lado'}}
+  else if(k==='zeni'){for(let i=0;i<10;i++)putPickup({k:'zeni',x:P.x+rnd(-110,110),y:P.y+rnd(-80,80)});S.banner={t:2.2,text:'¡LLUVIA DE ZENI!',sub:'Recógelo antes de que se acerquen'}}
+  else if(k==='furia'){S.ev={k,t:15};S.banner={t:2.5,text:'¡FURIA SAIYAN!',sub:'15 segundos con el doble de daño'};P.powT=1.2;sfx('trans')}}
 function director(dt){
   S.spawnT-=dt;
   if(S.spawnT<=0){S.spawnT=Math.max(0.12,1.3-S.t/300)/DIFF[S.diff||0].sp;const n=1+Math.floor(S.t/80)+Math.floor((P.lvl||1)/8);
@@ -1774,7 +1792,7 @@ function update(dt){
   if(P.moving&&Math.random()<0.25)parts.push({x:P.x+rnd(-3,3),y:P.y-1,vx:-mx*10,vy:-rnd(2,8),t:0.3,c:MAPK==='namek'?'#a6d8a0':MAPK==='tierra'||MAPK==='kame'?'#e6cfa0':MAPK==='musculo'?'#ffffff':'#d8d4c0',s:1});
   if(ps.regen)P.hp=Math.min(ps.maxhp,P.hp+ps.regen*dt);
   if(P.form>0&&Math.random()<0.5)parts.push({x:P.x+rnd(-7,7),y:P.y-rnd(0,18),vx:0,vy:-rnd(20,45),t:rnd(0.2,0.45),c:S.hid==='piccolo'?(P.form===3?'#ffb060':'#c8f0ff'):(Math.random()<.5?'#ffd23f':'#fff6a8'),s:1});
-  director(dt);gridBuild();updateMoves(dt,ps);sigUpdate(dt,ps);
+  director(dt);eventos(dt);gridBuild();updateMoves(dt,ps);sigUpdate(dt,ps);
   // enemies
   const far=Math.hypot(VW,VH)*0.75;
   for(const e of enemies){if(e.dead)continue;
@@ -2610,6 +2628,12 @@ function hud(time){
   let x=4;for(const id of P.order){const mv=P.moves[id];ctx.fillStyle=mv.evo?'#ffd23f':'#2c3a6e';ctx.fillRect(x-1,30,18,18);ctx.fillStyle='#10162a';ctx.fillRect(x,31,16,16);ctx.drawImage(ic(id),x,31);digits(mv.evo?'9':String(mv.lv),x+14,44,mv.evo?'#ffd23f':'#ffffff');x+=20}
   x=4;for(const id in P.cards){ctx.drawImage(ic(id),x,51,12,12);digits(String(P.cards[id]),x+11,58,'#bfe6ff');x+=14}
   // boss bar
+  if(S.ev){const E=S.ev;
+    if(E.k==='meteoros')for(const m of E.list){const x=Math.round(m.x-cam.x),y=Math.round(m.y-cam.y);ctx.globalAlpha=0.35+0.4*((time*10|0)%2);ctx.strokeStyle='#ff4d5e';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(x,y,30,15,0,0,TAU);ctx.stroke();
+      const fy=y-m.t*160;ctx.globalAlpha=1;const kb=kiSprite(5,['#8a2a10','#ff7a3a','#fff3c0'],(time*16|0)%2);ctx.drawImage(kb,x-kb.width/2,Math.round(fy-kb.height/2))}
+    ctx.globalAlpha=1;
+    if(E.k==='kaio')text(`RETO DE KAIO ${Math.min(E.need,S.kills-E.k0)}/${E.need} · ${Math.ceil(E.t)}s`,VW/2,30,'#ffd23f',8);
+    if(E.k==='furia')text(`FURIA SAIYAN x2 · ${Math.ceil(E.t)}s`,VW/2,30,'#ff7a3a',8)}
   drawRadar(time);if(S.boss&&!S.boss.dead){const w=Math.min(200,VW-40),bx=Math.round(VW/2-w/2),by=VH-16;bar(bx,by,w,6,S.boss.hp/S.boss.maxhp,'#c83ad8');text(ET[S.boss.type].n,VW/2,by-11,'#ffb0f0',8)}
   else if(S.bossIdx<BOSS_T.length){const left=BOSS_T[S.bossIdx]-S.t;if(left<20)text('SE ACERCA '+ET[MAPS[S.map].bosses[S.bossIdx]].n+' '+Math.ceil(left),VW/2,VH-14,(time*4|0)%2?'#ff4d5e':'#ffffff',8)}
   // banner
@@ -3135,8 +3159,19 @@ function evTick(){const b=gBanners()[0];if(!b.f5||!HEROES[b.f5]){$('#hEvent').hi
 function openHub(){hideMenus();state='title';$('#hub').hidden=false;hubRefresh();
   let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;if(++n%8===0)evTick()},120)}
 function enterGame(){if(started)return;started=true;initAudio();sfx('level');openHub()}
+// ficha del personaje: recorre sus formas mostrando guardia, combo, patada y ki con los sprites reales
+const rosterAnim={id:null,t0:0,on:0};
+function drawRosterAnim(){const c=$('#rPrevC'),g=c.getContext('2d'),id=rosterAnim.id,H=HEROES[id];g.clearRect(0,0,c.width,c.height);if(!H)return;
+  const t=(performance.now()-rosterAnim.t0)/1000,nf=(H.forms||[0]).length,form=Math.floor(t/4)%nf,seq=['Idle','Attack','Idle','Kick','Cast','Pow'],an=seq[Math.floor(t/0.67)%seq.length];
+  const o=scHero(id,form);if(!o)return;const A=o[an]||o.Idle;if(!A||!A.R.length)return;const im=A.R[Math.floor(t*8)%A.R.length],k=Math.min(2,(c.height-6)/im.height,(c.width-4)/im.width);
+  g.imageSmoothingEnabled=false;g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-4,22,4,0,0,TAU);g.fill();
+  g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-2-im.height*k),Math.round(im.width*k),Math.round(im.height*k));
+  g.font='8px "Press Start 2P", monospace';g.fillStyle='#ffd23f';g.textAlign='left';g.fillText((H.forms||[])[form]||'',4,10)}
 function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
-  const prev=id=>{const H=HEROES[id],f=faceOf(id,0);$('#rPrevImg').src=f||'';$('#rPrevImg').hidden=!f;$('#rPrevName').textContent=H.name;$('#rPrevForms').textContent=(H.forms||[]).join(' · ');$('#rPrev').dataset.id=id};
+  const prev=id=>{const H=HEROES[id],f=faceOf(id,0);$('#rPrevImg').src=f||'';$('#rPrevImg').hidden=!f;$('#rPrevName').textContent=H.name;$('#rPrevForms').textContent=(H.forms||[]).join(' · ');$('#rPrev').dataset.id=id;
+    // sus técnicas de la serie y el nivel en que se aprenden
+    $('#rPrevMoves').innerHTML=sigList(id).map((m,i)=>MV[m]?`<li><b>Nv ${UNLOCK_LV[i]||1}</b> ${MV[m].name}</li>`:'').join('');rosterAnim.id=id;rosterAnim.t0=performance.now()};
+  if(!rosterAnim.on){rosterAnim.on=1;const loop=()=>{if($('#roster').hidden){rosterAnim.on=0;return}drawRosterAnim();requestAnimationFrame(loop)};loop()}
   $('#chars').querySelectorAll('.card').forEach(b=>{b.onmouseenter=b.onfocus=()=>prev(b.dataset.id)});prev(companion());
   $('#rInfo').innerHTML=`Tienes <b>${all.filter(k=>s.owned[k]).length}</b> de <b>${all.length}</b>. Toca uno tuyo para llevarlo de compañero; los que te faltan se consiguen pidiendo deseos a Shenron.`}
 const SHOP=[{n:'1 TICKET',d:'Un deseo a Shenron',c:120,t:1},{n:'10 TICKETS',d:'Diez deseos con descuento',c:1100,t:10},{n:'50 TICKETS',d:'El pack del guerrero',c:5000,t:50}];
