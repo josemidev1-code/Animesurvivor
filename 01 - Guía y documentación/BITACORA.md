@@ -747,7 +747,9 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Pruebas
 - Capturas de antes y después de Eraser Cannon, Genkidama y Kamehameha a 1280×720, y rayo horizontal con balas enemigas
   sobre la explosión a 800×450. Consola sin errores.
-- Sintaxis de todos los `.js` y comprobaciones de personajes, enemigos y objetos: bien.
+- Sintaxis de todos los `.js`, comprobaciones de personajes, enemigos y objetos y 47 pruebas de herramientas: bien.
+- No probado con doble clic: el panel del navegador abre el `index.html` local como página estática, sin scripts.
+  El cambio no toca la carga de archivos (solo `?v=79`).
 
 ### A medias / pendiente
 - El rayo enemigo de tipo Galick usa una hoja con una silueta de Vegeta dentro del círculo de salida. Es un aviso de peligro y no
