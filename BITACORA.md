@@ -462,3 +462,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   pasan por revisión, propuestas en `herramientas/propuestas/` fuera del montaje, criterios de acierto y objetivo
   (80 %, como mucho 1 de cada 5 packs al usuario) y el script de medición junto al diseño. Esperando aprobación.
 - «Sí, apruebo»: diseño del bloque 1 aprobado por el usuario. Siguiente: plan de trabajo (skill writing-plans).
+- Plan del bloque 1 escrito: `docs/superpowers/plans/2026-11-01-propuesta-fotogramas.md` (9 tareas: medición, quitar
+  polvo, rasgos con caché, reglas, plantillas por autor, validación, hojas para la IA, página de revisión, formas
+  actuales). Pendiente que el usuario lo revise y elija cómo ejecutarlo.
