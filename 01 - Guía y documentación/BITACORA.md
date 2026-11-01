@@ -663,3 +663,37 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Que el usuario juegue unos minutos y diga si el arranque se siente bien; después, HUD más pequeño y escala de píxel entera (nitidez).
+
+## 2026-11-01 — Claude · HUD más pequeño y nítido
+
+### Lo que pidió el usuario
+- «Sí, sigue»: continuar con el HUD más pequeño y la imagen nítida (puntos de «Cambios propuestos por Josemi»).
+
+### Lo que hice
+- Causas de lo borroso: (1) la escala de pantalla iba en medios pasos (x1,5, x2,5 en 1080p), con píxeles desiguales; (2) el HUD usaba
+  letra de 6 y 10 unidades (12 y 20 px), tamaños que no encajan con la rejilla de 8 px de «Press Start 2P» y salen suavizados.
+- `resize()`: escala entera. Si la anterior ya era entera (720p, 768p) no cambia nada; si era media, baja al entero inferior
+  (1080p: x2,5 → x2, se ve algo más de campo).
+- `hud()` reescrito: se dibuja a 1 píxel de imagen por unidad (la mitad que el mundo; el doble si la pantalla va a x1), con letra
+  de 8 o 16 e iconos a su tamaño real (16). Medido en un lienzo de prueba: la palabra del HUD pasa de 51 tonos a 22
+  (los bordes ya no se emborronan). Cambios de colocación:
+  - Arriba a la izquierda: nombre, «Nv.» y vida en dos líneas finas; el nombre se acorta solo si chocaría con el tiempo,
+    y la barra de vida nunca llega a las esferas.
+  - Arriba en el centro: tiempo, esferas e información; debajo, el evento en curso o la vida del jefe (antes la barra del jefe
+    tapaba las casillas de técnicas).
+  - Abajo: casillas de 24 (antes 52 px de imagen); la ayuda de controles solo los primeros 30 s (antes salía cortada).
+  - Aviso central más fino.
+  - En pantallas táctiles las casillas van al doble y por encima de los botones SON/II.
+- `#radarAviso` más pequeño y arriba a la derecha. Versiones: `script.js?v=78`, `style.css?v=67`.
+- Comprobado en el navegador a 1280×720, 1920×1080, 1024×768, 800×600 y móvil 375×812: sin solapes, clic y toque en las casillas
+  seleccionan la técnica, menú de inicio correcto y consola sin errores. Sintaxis, comprobaciones de personajes, enemigos, objetos y 47 pruebas: bien.
+
+### A medias / problemas
+- La letra del navegador aún deja algún tono intermedio en los bordes (22 tonos frente a 51). Para que sea 100 % pura habría que
+  cachear el texto en mapas de bits o usar una fuente de mapa de bits propia.
+- «Press Start 2P» se carga de Google Fonts: sin internet cae a una letra del sistema (borrosa). Se podría incrustar (licencia OFL).
+- En 1080p ahora se ve más campo y los personajes salen un 20 % más pequeños (x2 en vez de x2,5). Falta que el usuario lo valore.
+- Los textos de menús y paneles (HTML) no se han tocado.
+
+### Siguiente paso recomendado
+- Que el usuario juegue y diga si el tamaño le gusta; después, las habilidades y efectos que tapan la pantalla, y el equilibrio del cuerpo a cuerpo.

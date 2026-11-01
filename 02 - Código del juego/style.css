@@ -167,8 +167,8 @@ h2{font-family:var(--pix);font-size:clamp(14px,3.4vw,22px);color:var(--ki);margi
 .logoImg{display:block;margin:0 auto 6px;width:clamp(110px,22vw,230px);height:auto;image-rendering:pixelated;filter:drop-shadow(4px 4px 0 #3a1204)}
 #hub .logoImg{width:clamp(80px,12vw,170px)}
 
-#radarAviso{position:fixed;right:12px;top:90px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:4px;pointer-events:none;padding:5px;background:#10162acc;border:1px solid var(--edge);font-size:16px;color:var(--namek)}
-#radarAviso img{width:48px;height:48px;image-rendering:pixelated}
+#radarAviso{position:fixed;right:10px;top:10px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none;padding:4px;background:#10162acc;border:1px solid var(--edge);font-size:14px;color:var(--namek)}
+#radarAviso img{width:36px;height:36px;image-rendering:pixelated}
 #cList{max-width:750px}
 #cList a{color:var(--namek)}
 /* subida de nivel como el panel azul de PokéSurvivor */
