@@ -455,3 +455,5 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   Presentadas tres formas de construir la herramienta (reglas automáticas, la IA mirando cada pack, o mixta).
 - Elegida la forma mixta (C): reglas con nota de confianza, la IA mira los dudosos y el usuario solo lo que siga dudoso.
   Escribiendo el diseño del bloque 1 en `docs/superpowers/specs/`.
+- Diseño del bloque 1 escrito: `docs/superpowers/specs/2026-11-01-propuesta-fotogramas-design.md`. Pendiente la
+  revisión de un constructor y la aprobación del usuario.
