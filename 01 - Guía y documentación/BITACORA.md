@@ -627,3 +627,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Decidir fusiones y `git push`; luego seguir el orden de «Cambios propuestos por Josemi»: HUD y nitidez, equilibrio de combate, personajes, menús.
+- Arreglado `.gitignore` (`/ESCENARIOS/` solo en la raíz) y fusionado `bloque1-fotogramas` en `main` por avance rápido; subido a GitHub.

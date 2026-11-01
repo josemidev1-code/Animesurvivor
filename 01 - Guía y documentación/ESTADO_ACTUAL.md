@@ -8,7 +8,7 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - Lee `AGENTS.md` para las reglas completas. La petición actual del usuario tiene prioridad sobre planes antiguos.
 
 ## Último relevo documentado
-- Rama observada: `bloque1-fotogramas`; la reorganización en carpetas ya está en un commit (1 nov., revisión de Claude). Nada subido a GitHub todavía; confirma la rama antes de actuar.
+- Rama de trabajo: `main` (el bloque 1 y la reorganización se fusionaron y se subieron a GitHub el 1 de noviembre). La rama `claude/quizzical-gates-9cf9c0` con 7 personajes nuevos sigue sin fusionar.
 - La bitácora indica que se usa una pose fija para moverse y que se cambió la guardia de Trunks con armadura. Falta que el usuario valore el movimiento jugando y decida qué otras guardias revisar.
 - `trunks/2` conserva polvo junto al pie, pendiente de revisión. La rama del bloque 1 estaba pendiente de decisión de fusión; no la fusiones sin verificar el estado y la decisión del usuario.
 - Existe una rama separada con siete personajes nuevos; no des por fusionados esos cambios. `README.md` y `01 - Guía y documentación/TAREAS_CODEX.md` incluyen contexto histórico que puede estar desfasado.
