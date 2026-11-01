@@ -393,3 +393,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 1. Preguntar al usuario si fusionar la rama de los 7 personajes y hacerlo si dice que sí.
 2. Seguir metiendo personajes de la serie desde `sprites/` o DeviantArt (con créditos), con `recortar_hoja.py`.
 3. Sustituir lo que queda dibujado por código (agua, lava, auras…).
+
+### Sesión 10: «instala esta skill https://github.com/obra/superpowers.git»
+- Instalado el plugin Superpowers (obra) para Claude Code a nivel de usuario: `claude plugin marketplace add obra/superpowers-marketplace`
+  y `claude plugin install superpowers@superpowers-marketplace`. No toca el código del juego; sus skills aparecen al abrir una sesión nueva.
