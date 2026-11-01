@@ -431,3 +431,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   patada, ki (2: cargar y lanzar), poder y daño; la mayoría, muerte. Ninguna tiene ciclo de andar: los packs son de juegos
   de lucha y «moverse» es 1 fotograma (casi todas) o 2. No hay ninguna selección de fotogramas de efectos (rayos, bolas)
   del propio pack. Ofrecido revisar todos los packs para saber cuáles traen su técnica dibujada.
+- «Sí, revísalos»: revisando todos los packs de los jugables (tamaño de píxel por fotograma y fotogramas de técnicas).
