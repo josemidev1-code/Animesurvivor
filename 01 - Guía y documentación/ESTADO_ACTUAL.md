@@ -10,7 +10,8 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 ## Último relevo documentado
 - Rama de trabajo: `main` (el bloque 1 y la reorganización se fusionaron y se subieron a GitHub el 1 de noviembre). La rama `claude/quizzical-gates-9cf9c0` con 7 personajes nuevos sigue sin fusionar.
 - La bitácora indica que se usa una pose fija para moverse y que se cambió la guardia de Trunks con armadura. Falta que el usuario valore el movimiento jugando y decida qué otras guardias revisar.
-- `trunks/2` conserva polvo junto al pie, pendiente de revisión. La rama del bloque 1 estaba pendiente de decisión de fusión; no la fusiones sin verificar el estado y la decisión del usuario.
+- `trunks/2` conserva polvo junto al pie, pendiente de revisión.
+- 1 nov.: corregido el error de dibujo del jugador (fotograma inexistente) y suavizados los primeros 3 minutos de partida. Con un jugador automático, la supervivencia media pasa de 1:42 a 2:40 en 20 partidas iguales. Detalle y cifras en la bitácora. Falta que el usuario lo valore jugando.
 - Existe una rama separada con siete personajes nuevos; no des por fusionados esos cambios. `README.md` y `01 - Guía y documentación/TAREAS_CODEX.md` incluyen contexto histórico que puede estar desfasado.
 
 ## Mapa rápido

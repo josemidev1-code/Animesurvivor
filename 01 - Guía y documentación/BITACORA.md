@@ -628,3 +628,38 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Siguiente paso recomendado
 - Decidir fusiones y `git push`; luego seguir el orden de «Cambios propuestos por Josemi»: HUD y nitidez, equilibrio de combate, personajes, menús.
 - Arreglado `.gitignore` (`/ESCENARIOS/` solo en la raíz) y fusionado `bloque1-fotogramas` en `main` por avance rápido; subido a GitHub.
+
+## 2026-11-01 — Claude · Error de dibujo y dificultad de los primeros minutos
+
+### Lo que pidió el usuario
+- «Sí, corrígelo»: corregir el error de dibujo visto en la prueba y bajar la dificultad del primer mapa.
+
+### Lo que hice
+- Error de dibujo (`render`, «Cannot read properties of undefined (reading 'width')»): el jugador pedía un fotograma que no existe. Caso
+  confirmado en los datos: `gokumoro/5` (MUI) tiene un solo fotograma de daño y el juego pide el segundo. Ahora el índice se limita a los
+  fotogramas que existen. Revisado el pack 251: no tiene ninguna pose de daño real, así que no se inventa un segundo fotograma (sigue pendiente).
+  Además, `present()` ya no dibuja si la ventana mide 0 (error repetido al minimizar).
+- Dificultad: medida con un jugador automático (huye de los enemigos, recoge gemas, elige siempre la primera mejora) en 20 partidas
+  iguales (Kame House, Tierra y Desierto con Goku, Vegeta, Krilin y Piccolo). Causas encontradas: estampida del minuto 1 (17 enemigos
+  un 25 % más rápidos), emboscada de 36 enemigos en anillo al segundo 90, primer evento al segundo 60, vida de los enemigos ×2,3 a los
+  2 minutos y el agua frenando al jugador al 55 % (en la isla de Kame House huir te mete en el agua). El 72 % del daño era por contacto.
+- Cambios (`02 - Código del juego/script.js`):
+  - Estampidas de los minutos 1 y 2 con 9 y 14 enemigos (antes 17 y 22) y sin el +25 % de velocidad; desde el minuto 3, igual que antes.
+  - Emboscadas con 18 enemigos antes del segundo 200 (antes 36).
+  - El primer evento aleatorio llega al segundo 140 (antes 60).
+  - Daño de los enemigos al 60 % al empezar, subiendo hasta el 100 % en el minuto 3.
+  - La vida de los enemigos empieza a crecer con el tiempo a partir del minuto 1 y tu nivel pesa menos (+3 % por nivel en vez de +4,5 %).
+  - El agua frena al 85 % (antes al 55 %).
+  - Imán de gemas de 55 (antes 40).
+  - Al recibir un golpe, los enemigos pegados (no los jefes) salen despedidos y dejan un hueco.
+  - Probado y descartado: reducir los enemigos normales (daba menos experiencia y se moría antes).
+- Resultado con las mismas 20 partidas: media 1:42 → 2:40, mediana 1:41 → 2:30, peor partida 0:42 → 1:49.
+- Comprobado: sintaxis, `comprobar_personajes`, `comprobar_enemigos`, `comprobar_objetos` y 47 pruebas; partida en el navegador sin errores de consola. `script.js?v=74`.
+
+### A medias / problemas
+- El jugador automático juega peor que una persona: las cifras sirven para comparar, no como duración real. Falta que el usuario lo juegue.
+- Siguen picos en 2:10-3:20: oleada de Cell Jr. (rápidos) al segundo 130, minuto 3 con estampida rápida a la vez que el primer jefe (3:00).
+- El cuerpo a cuerpo sigue sin probarse a fondo.
+
+### Siguiente paso recomendado
+- Que el usuario juegue unos minutos y diga si el arranque se siente bien; después, HUD más pequeño y escala de píxel entera (nitidez).

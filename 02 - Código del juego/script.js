@@ -1504,7 +1504,7 @@ function stats(){
     maxhp:Math.round((H.hp+20*(c.hp||0)+15*f+M.hp)*(1+0.08*(S.aw||0))),
     spd:1.3*H.spd*(1+0.08*(c.speed||0))*(1+0.06*f)*M.spd,
     cd:Math.pow(0.92,c.cd||0)*(1-0.05*f)*M.cd,
-    mag:40*(1+0.35*(c.magnet||0))*M.mag,
+    mag:55*(1+0.35*(c.magnet||0))*M.mag,
     regen:0.25+(H.regen||0)+0.5*(c.regen||0)+M.regen,
     area:1+0.1*(c.area||0),
     armor:(c.armor||0)+M.armor,
@@ -1596,6 +1596,8 @@ function explode(x,y,rad,dmg,cols){
 function hitPlayer(d,big){
   if(P.iframe>0||state!=='play')return;const st=stats();d=Math.max(1,d-st.armor);
   P.hp-=d;P.iframe=big?1.0:0.6;P.hitT=0.2;cam.shake=Math.max(cam.shake,3);sfx('hurt');
+  // al recibir un golpe, los enemigos pegados salen despedidos y dejan un hueco para escapar
+  for(const e of enemies)if(!e.boss&&!e.crate){const dx=e.x-P.x,dy=e.y-P.y,dd=Math.hypot(dx,dy);if(dd<30){e.kx+=dx/(dd||1)*150;e.ky+=dy/(dd||1)*150}}
   if(P.hp<=0){if(S.revives>0){S.revives--;P.hp=stats().maxhp;P.iframe=2.5;S.flash=0.4;S.banner={t:2,text:'¡SEMILLA SENZU!',sub:'Vuelves a la carga'};fx(P.x,P.y-10,'green',24,0.6);for(const e of enemies)if(!e.boss&&Math.hypot(e.x-P.x,e.y-P.y)<90)hurt(e,9999);sfx('trans');return}
     P.hp=0;P.dead=0.001;P.moving=false;P.cast=null;P.pend=null;state='dying';sfx('boom')}}
 
@@ -1656,10 +1658,10 @@ function updateMoves(dt,ps){
 
 // ---------- spawning ----------
 function spawn(type,x,y){
-  let d=ET[type];if(!d)throw new Error('Enemigo sin animaciones revisadas: '+type);if(d.boss)d={r:13,...d,...BOSS_SLOT[Math.max(0,Math.min(4,S.bossN||0))]};else if(d.r==null)d={...d,r:6};const lv=(P&&P.lvl||1)-1,sc=(1+S.t/170+(S.endless?S.t/300:0))*(1+0.045*lv);
+  let d=ET[type];if(!d)throw new Error('Enemigo sin animaciones revisadas: '+type);if(d.boss)d={r:13,...d,...BOSS_SLOT[Math.max(0,Math.min(4,S.bossN||0))]};else if(d.r==null)d={...d,r:6};const lv=(P&&P.lvl||1)-1,sc=(1+Math.max(0,S.t-60)/170+(S.endless?S.t/300:0))*(1+0.03*lv);
   if(x===undefined){const a=rnd(TAU),r=Math.hypot(VW,VH)/2+20;x=P.x+Math.cos(a)*r;y=P.y+Math.sin(a)*r}
   const spr=enemySprite(type);
-  const e={type,x,y,hp:d.hp*(d.boss?1:sc),maxhp:0,spd:d.spd*(d.boss?1:rnd(0.9,1.1)),dmg:d.dmg*(1+S.t/500)*(1+0.02*lv),xp:d.xp,r:d.r,boss:!!d.boss,final:!!d.final,ai:d.ai,
+  const e={type,x,y,hp:d.hp*(d.boss?1:sc),maxhp:0,spd:d.spd*(d.boss?1:rnd(0.9,1.1)),dmg:d.dmg*(1+S.t/500)*(1+0.02*lv)*(S.t<180?0.6+0.4*S.t/180:1),xp:d.xp,r:d.r,boss:!!d.boss,final:!!d.final,ai:d.ai,
     kx:0,ky:0,flash:0,anim:rnd(4),spr,h:spr.h*(spr.big?1:d.boss?2:1),shootT:d.shoot?rnd(1,d.shoot):0,aiT:2,aiS:0,pc:(PAL[type]||{}).g||(PAL[type]||{}).p||(PAL[type]||{}).s,aura:d.aura};
   if(d.boss)e.hp*=1+0.03*lv;if(d.boss&&S.endless)e.hp*=1+S.t/600;
   {const D=DIFF[S.diff||0];e.hp*=D.hp;e.dmg*=D.dmg;if(!d.boss)e.spd*=Math.min(1.25,1+(D.hp-1)*0.05)}
@@ -1682,7 +1684,7 @@ function eventos(dt){if(S.boss||S.isl)return;const E=S.ev;
         explode(P.x,P.y-10,90,0,['#2a7ad8','#6ab8ff','#bfe6ff','#ffffff']);S.flash=0.6;cam.shake=10;S.banner={t:2.2,text:'¡GENKIDAMA!',sub:n+' enemigos barridos'};sfx('boom')}}
     else if(E.k==='tiempo'){for(const e of enemies)if(!e.boss&&!e.dead)e.stun=Math.max(e.stun||0,0.1);if(E.t<=0)S.ev=null}
     else if(E.t<=0)S.ev=null;return}
-  S.evT=(S.evT===undefined?60:S.evT)-dt;if(S.evT>0)return;S.evT=rnd(65,95);let k=EVENTOS[(Math.random()*EVENTOS.length)|0];if(k===S.lastEv)k=EVENTOS[(EVENTOS.indexOf(k)+1)%EVENTOS.length];S.lastEv=k;
+  S.evT=(S.evT===undefined?140:S.evT)-dt;if(S.evT>0)return;S.evT=rnd(65,95);let k=EVENTOS[(Math.random()*EVENTOS.length)|0];if(k===S.lastEv)k=EVENTOS[(EVENTOS.indexOf(k)+1)%EVENTOS.length];S.lastEv=k;
   if(k==='kaio'){S.ev={k,t:25,need:20+Math.floor(S.t/25),k0:S.kills};S.banner={t:2.5,text:'¡RETO DE KAIO!',sub:`Derrota a ${S.ev.need} enemigos en 25 segundos`}}
   else if(k==='meteoros'){S.ev={k,t:12,list:[]};S.banner={t:2.5,text:'¡LLUVIA DE METEORITOS!',sub:'Esquiva las marcas rojas: también dañan a los enemigos',boss:1}}
   else if(k==='karin'){for(let i=0;i<3;i++){const a=i/3*TAU+rnd(0,1);putPickup({k:'senzu',x:P.x+Math.cos(a)*80,y:P.y+Math.sin(a)*80})}S.banner={t:2.5,text:'¡SEMILLAS DE KARIN!',sub:'Han caído tres senzus cerca de ti'}}
@@ -1699,7 +1701,7 @@ function director(dt){
   S.spawnT-=dt;
   if(S.spawnT<=0){S.spawnT=Math.max(0.12,1.3-S.t/300)/DIFF[S.diff||0].sp;const n=1+Math.floor(S.t/80)+Math.floor((P.lvl||1)/8);
     for(let i=0;i<n&&enemies.length<MAXE;i++)spawn(pickType(S.t))}
-  if(S.ringIdx<RINGS.length&&S.t>=RINGS[S.ringIdx]){S.ringIdx++;const n=36,r=Math.max(VW,VH)/2+10,typ=MAPS[S.map].ring[S.t>400?1:0];
+  if(S.ringIdx<RINGS.length&&S.t>=RINGS[S.ringIdx]){S.ringIdx++;const n=S.t<200?18:36,r=Math.max(VW,VH)/2+10,typ=MAPS[S.map].ring[S.t>400?1:0];
     const bi=(Math.random()*n)|0;for(let i=0;i<n;i++){const a=i/n*TAU,e=spawn(typ,P.x+Math.cos(a)*r,P.y+Math.sin(a)*r);if(e&&i===bi)e.ball=1}
     S.banner={t:2,text:'¡EMBOSCADA!',sub:'Te están rodeando'}}
   {const Q=MAPS[S.map].squad;if(Q&&!S.squadDone&&S.t>=Q[0]){S.squadDone=1;Q[1].forEach((id,i)=>{const a=i/Q[1].length*TAU,e=spawn(id,P.x+Math.cos(a)*140,P.y+Math.sin(a)*140);if(e&&i===0)e.ball=1});
@@ -1708,8 +1710,8 @@ function director(dt){
     const [typ,cnt]=w,a0=rnd(TAU),r=Math.max(VW,VH)/2+16;for(let i=0;i<cnt&&enemies.length<MAXE;i++){const a=a0+(cnt>1?(i/(cnt-1)-0.5)*1.3:0),e=spawn(typ,P.x+Math.cos(a)*(r+rnd(0,24)),P.y+Math.sin(a)*(r+rnd(0,24)));if(e&&ET[typ].elite&&cnt===1)e.ball=1}
     S.banner={t:2,text:'¡OLEADA!',sub:ET[typ].n,boss:ET[typ].elite?1:0}}}
   {const mi=Math.floor(S.t/60);if(mi>(S.minute||0)){S.minute=mi;const L=MAPS[S.map].pool.filter(p=>S.t>=p[0]&&!ET[p[1]].elite).map(p=>p[1]),typ=L[(Math.random()*L.length)|0]||'saiba',
-      n=Math.min(64,12+mi*5),kind=mi%3,r=Math.max(VW,VH)/2+14,a0=rnd(TAU);
-      for(let i=0;i<n&&enemies.length<MAXE;i++){const a=kind===1?i/n*TAU:a0+(kind===2&&i%2?Math.PI:0)+rnd(-0.35,0.35),rr=r+(kind===1?0:rnd(0,60)),e=spawn(typ,P.x+Math.cos(a)*rr,P.y+Math.sin(a)*rr);if(e&&kind!==1)e.spd*=1.25}
+      n=Math.min(64,mi<3?4+mi*5:12+mi*5),kind=mi%3,r=Math.max(VW,VH)/2+14,a0=rnd(TAU);
+      for(let i=0;i<n&&enemies.length<MAXE;i++){const a=kind===1?i/n*TAU:a0+(kind===2&&i%2?Math.PI:0)+rnd(-0.35,0.35),rr=r+(kind===1?0:rnd(0,60)),e=spawn(typ,P.x+Math.cos(a)*rr,P.y+Math.sin(a)*rr);if(e&&kind!==1&&mi>=3)e.spd*=1.25}
       S.banner={t:2,text:'MINUTO '+mi,sub:['¡ESTAMPIDA!','¡TE RODEAN!','¡ATAQUE EN PINZA!'][kind]}}}
   if(S.bossIdx<BOSS_T.length&&S.t>=BOSS_T[S.bossIdx]){const id=MAPS[S.map].bosses[S.bossIdx];S.bossIdx++;spawnBoss(id,S.bossIdx===5)}
   if(S.endless&&S.t>=S.nextEndless){S.nextEndless=S.t+90;const b=MAPS[S.map].bosses;spawnBoss(b[(Math.random()*b.length)|0])}}
@@ -1804,7 +1806,7 @@ function update(dt){
   const ml=Math.hypot(mx,my);if(ml>1){mx/=ml;my/=ml}
   P.moving=ml>0.05;if(!P.moving&&P.atkT>0&&P.atkFace)P.face=P.atkFace;else{P.atkFace=0;if(mx<-0.1)P.face=-1;else if(mx>0.1)P.face=1}
   if(P.cast){P.cast.t-=dt;if(P.cast.t<=0)P.cast=null}
-  const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.55:1)*(S.ev&&S.ev.k==='gravedad'?0.65:S.ev&&S.ev.k==='fusion'?1.35:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
+  const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.85:1)*(S.ev&&S.ev.k==='gravedad'?0.65:S.ev&&S.ev.k==='fusion'?1.35:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
   if(P.moving){if(Math.abs(mx)>Math.abs(my)*1.1)P.dir='side';else P.dir=my<0?'up':'down'}
   solidMove(P,mx*ps.spd*dt*slow,my*ps.spd*dt*slow,5);islandTick();solidResolve(P,5);crateTick(dt);if(P.moving)P.anim+=dt*9;
   P.iframe-=dt;P.hitT-=dt;P.atkT=(P.atkT||0)-dt;if(P.mcd)for(let i=0;i<3;i++)P.mcd[i]-=dt;if(P.shout&&(P.shout.t-=dt)<=0)P.shout=null;
@@ -2575,7 +2577,7 @@ function render(time){
         ctx.drawImage(im,0,0,im.width,Math.round(im.height*0.6),Math.round(x-w/2+lean),Math.round(y-h+bobY),w,Math.round(h*0.6));
         ctx.drawImage(im,0,Math.round(im.height*0.6),im.width,im.height-Math.round(im.height*0.6),Math.round(x-w/2),Math.round(y-h+bobY+h*0.6),w,h-Math.round(h*0.6))}
       else if(pk){const mv=P.moving&&!P.cast&&!P.dead,pw=!mv&&P.powT>0,pd=!mv&&P.pend,ak=!mv&&P.atkT>0,
-        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,wt=P.anim/9,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[i],bob=P.moving&&!P.cast&&!(P.hitT>0)&&A.R.length===1?Math.round(Math.sin(wt*6)*2)-2:0;
+        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,wt=P.anim/9,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],bob=P.moving&&!P.cast&&!(P.hitT>0)&&A.R.length===1?Math.round(Math.sin(wt*6)*2)-2:0;
         {const TR=P.tr||(P.tr=[]);if(P.moving&&!P.cast&&!(P.hitT>0)){if(!(time-TR.lt<0.045)){TR.lt=time;TR.unshift([P.x,P.y]);if(TR.length>4)TR.length=4}}else TR.length=0;
           for(let k=TR.length-1;k>=1;k--){ctx.globalAlpha=0.34-k*0.08;ctx.drawImage(im,Math.round(x+(TR[k][0]-P.x)*2-im.width/2),Math.round(y+(TR[k][1]-P.y)*2-im.height+1+bob))}ctx.globalAlpha=1}
         if(P.shieldT>0){ctx.globalAlpha=0.35+0.25*Math.sin(time*20);ctx.strokeStyle='#bfe6ff';ctx.lineWidth=2;ctx.beginPath();ctx.arc(Math.round(x),Math.round(y-im.height/2),Math.max(im.width,im.height)*0.62,0,TAU);ctx.stroke();ctx.globalAlpha=1}
@@ -2679,7 +2681,7 @@ function hud(time){
   if(joy.on){ring(Math.round(joy.ox),Math.round(joy.oy),18,'rgba(255,255,255,.5)',2);const dx=joy.x-joy.ox,dy=joy.y-joy.oy,d=Math.hypot(dx,dy),k=d>18?18/d:1;circ(Math.round(joy.ox+dx*k),Math.round(joy.oy+dy*k),6,'rgba(255,255,255,.6)')}
 
 }
-function present(){sctx.imageSmoothingEnabled=false;sctx.drawImage(view,0,0,VW*2,VH*2,0,0,VW*SC*DPR,VH*SC*DPR)}
+function present(){if(!view.width||!view.height)return;sctx.imageSmoothingEnabled=false;sctx.drawImage(view,0,0,VW*2,VH*2,0,0,VW*SC*DPR,VH*SC*DPR)}
 
 // ---------- custom sprites (player's own images, stored only in this browser) ----------
 const MY={heroes:{},enemies:{}};const MYC={};
