@@ -423,3 +423,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   sola. Enseñada al usuario la A corregida (tamaño de píxel igualado y sin polvo) junto a la original. Ninguna de las
   dos cosas está aún en el juego.
 - «Sí, así»: aprobada la A corregida (pose de impulso del pack, mismo tamaño de píxel que la guardia, sin polvo).
+- Técnicas hoy: la pose de lanzar sí sale del pack (`ki`), pero la bola de carga y el rayo son genéricos (`kiOrb`/`kiShot`
+  a partir de `ki-goku`, teñidos con los colores de cada técnica), no el rayo propio que trae cada pack (Goku: 38-39).
+  Preguntado al usuario si cada técnica debe usar el efecto de su propio pack.
