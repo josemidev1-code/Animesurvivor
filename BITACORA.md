@@ -418,3 +418,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   C vuelo con postimágenes, D guardia en vuelo con destello de velocidad. Descubierto que Goku usa ahora el fotograma 7,
   que es un salto hacia atrás: avanza de espaldas a donde va. Esperando a que el usuario elija.
 - Elección: «me parece mejor la A, pero cuando gira se hace más pequeño y el polvo que le sigue parece irreal».
+- Causa de que encoja: en el pack, la guardia está exportada a 9 px por píxel de dibujo y la pose de moverse (fotograma 7)
+  a 7 px; el 8 a 6 px. Se ve un 22 % más pequeño al moverse. El polvo es una mancha separada del cuerpo y se puede quitar
+  sola. Enseñada al usuario la A corregida (tamaño de píxel igualado y sin polvo) junto a la original. Ninguna de las
+  dos cosas está aún en el juego.
