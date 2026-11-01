@@ -443,3 +443,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   168 sin usar (unos 17.000 fotogramas): 65 de Super, 44 fanmade, 27 de Z, 12 sin saga… En `SPRITES_PENDIENTES.md` (B) la
   mayoría son más versiones de Goku (59) y Vegeta (30). Preguntado al usuario si quiere decir más packs o más fotogramas
   de los packs que ya se usan.
+- Objetivo del usuario: «meter el máximo de personajes jugables posibles, mejores enemigos, mecánicas y todo». Propuesto
+  un orden: 1) herramienta que propone fotogramas sola (con movimiento A corregido), 2) técnicas desde el pack,
+  3) packs que faltan, 4) enemigos, 5) experiencia y HUD, 6) mecánicas nuevas.
