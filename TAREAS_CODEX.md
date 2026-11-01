@@ -16,7 +16,8 @@ Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los recurso
   horizontal y auras que engañan a la medida); revisadas a ojo, ver la bitácora.
 - **Pendiente del usuario:** el movimiento por el mapa todavía no le convence. Antes de seguir, pregúntale qué le
   chirría y enséñale opciones animadas (como las maquetas de la sesión 10).
-- Pendiente: revisión final del bloque 1 y decidir con el usuario si se fusiona `bloque1-fotogramas` en main.
+- Revisión final del bloque 1 hecha y arreglada (47 pruebas). Falta decidir con el usuario si se fusiona
+  `bloque1-fotogramas` en main. trunks/2 sigue con polvo al moverse (toca el pie); verlo junto con el movimiento.
 - Siguiente: bloque 2 (técnicas de la serie con el efecto de su propio pack).
 
 ## Relevo anterior (fin de la sesión 9 de Claude)
