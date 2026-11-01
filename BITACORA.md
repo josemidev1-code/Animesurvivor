@@ -453,3 +453,5 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   (Herramientas de la revisión en el scratchpad de la sesión, no en el proyecto.)
 - Revisión: «solo los dudosos» (el usuario aprueba solo los packs que la herramienta marque como dudosos).
   Presentadas tres formas de construir la herramienta (reglas automáticas, la IA mirando cada pack, o mixta).
+- Elegida la forma mixta (C): reglas con nota de confianza, la IA mira los dudosos y el usuario solo lo que siga dudoso.
+  Escribiendo el diseño del bloque 1 en `docs/superpowers/specs/`.
