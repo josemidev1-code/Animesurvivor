@@ -447,3 +447,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   un orden: 1) herramienta que propone fotogramas sola (con movimiento A corregido), 2) técnicas desde el pack,
   3) packs que faltan, 4) enemigos, 5) experiencia y HUD, 6) mecánicas nuevas.
 - «Sí, ese orden». Empieza el bloque 1: herramienta que propone los fotogramas de cada pack (con el movimiento corregido).
+- Búsqueda de técnicas terminada (162 packs de los jugables, 15.419 fotogramas, el juego usa 2.661): 150 packs traen
+  efectos dibujados sin usar (rayos, bolas, auras, barreras…) y 128 tienen algún rayo alargado. Sin efecto propio claro:
+  goku/1, vegeta/2, vegetaue/1, babyvegeta/0, broly/3, trunkscell/1 y /2, a18/0, gokuxeno/1, gokumoro/0 y /1, e_soldado/0.
+  (Herramientas de la revisión en el scratchpad de la sesión, no en el proyecto.)
