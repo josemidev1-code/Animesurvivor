@@ -475,3 +475,5 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Tarea 3 hecha: `herramientas/rasgos.py` (alto, ancho, inclinación, polvo y su lado, paleta y silueta de cada
   fotograma, con caché en `_revisar/medidas/`). Confirmado con datos: en Goku base el polvo del fotograma 7 está
   delante (retroceso) y el del 8 detrás (impulso).
+- Tarea 4 hecha: `herramientas/proponer_fotogramas.py` con las primeras reglas (guardia, impulso, golpes, ki, poder,
+  daño, muerte, retrato y efectos) y los motivos de duda. Las reglas son aún bastos: se ajustan en la tarea 6.
