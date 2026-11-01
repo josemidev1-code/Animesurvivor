@@ -432,3 +432,9 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   de lucha y «moverse» es 1 fotograma (casi todas) o 2. No hay ninguna selección de fotogramas de efectos (rayos, bolas)
   del propio pack. Ofrecido revisar todos los packs para saber cuáles traen su técnica dibujada.
 - «Sí, revísalos»: revisando todos los packs de los jugables (tamaño de píxel por fotograma y fotogramas de técnicas).
+- Medición de los fotogramas tal como están en el juego (171 formas): `montar_animaciones.py` ya iguala el tamaño del
+  píxel de cada fotograma, así que en el juego Goku base NO encoge al moverse (la maqueta «A como estaba» no aplicaba esa
+  corrección y lo exageró). Problemas reales: polvo o chispas sueltas en la pose de moverse en 21 formas (goku/0 y /1,
+  gokuui, gokumoro, gokubroly, vegeta/1, vegetaue/2, black/2, cell/4, kefla/1, trunks/0, e_ginyu, e_jeice); pose de
+  moverse muy agachada (menos del 70 % de la guardia) en 16; tamaño de píxel desigual en 4 (vegetasuper/2 entera,
+  gohanmanga/0 patada, blackfan/0 puñetazos, e_ginyu/0 poder). Buscando ahora fotogramas de técnicas en todos los packs.
