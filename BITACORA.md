@@ -417,3 +417,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   cuatro propuestas de movimiento de Goku animadas con fotogramas reales del pack: A lo actual, B impulso con polvo,
   C vuelo con postimágenes, D guardia en vuelo con destello de velocidad. Descubierto que Goku usa ahora el fotograma 7,
   que es un salto hacia atrás: avanza de espaldas a donde va. Esperando a que el usuario elija.
+- Elección: «me parece mejor la A, pero cuando gira se hace más pequeño y el polvo que le sigue parece irreal».
