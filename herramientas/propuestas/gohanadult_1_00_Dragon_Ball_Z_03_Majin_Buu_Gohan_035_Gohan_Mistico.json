@@ -61,5 +61,6 @@
  "dudoso": true,
  "revisadoIA": true,
  "sigueDudoso": false,
- "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse",
+ "nombre": "gohanadult_1_00_Dragon_Ball_Z_03_Majin_Buu_Gohan_035_Gohan_Mistico"
 }

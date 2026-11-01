@@ -28,7 +28,7 @@ def densidad(r):
 def elegir_guardia(rs):
     """El primer fotograma de pie del sprite de juego. Los packs traen al principio arte oficial, caras, escenas o
     versiones grandes: se descartan por no tener el tamaño de píxel ni el alto habituales del pack."""
-    us = [r for r in utiles(rs) if r['alto'] >= 8]
+    us = [r for r in utiles(rs) if r['alto'] >= 8] or utiles(rs)
     if not us: return 0
     E = statistics.median(r['escala'] for r in us)
     mismo = [r for r in us if abs(r['escala'] / E - 1) < 0.15] or us
@@ -54,7 +54,9 @@ def clasificar(rs, espejo=False):
     res = dict(vacia, portrait=None, guardia=0, espejo=espejo, confianza={},
                efectos={'rayo': [], 'bola': [], 'aura': [], 'estela': []})
     if not us: return res
-    g = elegir_guardia(rs); G = rs[g]; H = G['alto']; W = G['ancho']; res['guardia'] = g
+    g = elegir_guardia(rs); G = rs[g]
+    if G.get('vacio'): return res
+    H = G['alto']; W = G['ancho']; res['guardia'] = g
     c = {r['i']: comun(r['paleta'], G['paleta']) for r in us}
     rel = {r['i']: r['alto'] / H for r in us}
     cuerpo = [r for r in us if c[r['i']] >= 0.45 and r['escala'] < 2.5 * G['escala']]
@@ -124,6 +126,8 @@ def motivos_dudoso(prop, rs):
     s = -1 if prop.get('espejo') else 1
     g = rs[prop.get('guardia', 0)] if not rs[prop.get('guardia', 0)].get('vacio') else None
     out = []
+    if prop.get('espejo', False) is None:
+        out.append('no se sabe hacia dónde mira el pack: compruébalo (y pon "espejo" si mira a la izquierda)')
     if len(utiles(rs)) < 8: out.append('el pack tiene pocos fotogramas útiles')
     for k in OBLIGATORIAS:
         if not prop.get(k): out.append(f'falta la animación de {NOMBRES[k]}')
@@ -204,18 +208,24 @@ def plantilla(pack, rs, excluir=frozenset(), minimo=0.8):
     return t
 
 
-def proponer(pack, espejo=False, guardar=True, excluir=frozenset()):
+def nombre_propuesta(p):
+    """Nombre del archivo de una propuesta: el del pack, o forma + pack si arregla una forma del juego."""
+    return nombre_pack(p['forma'] + '_' + p['pack']) if p.get('forma') else nombre_pack(p['pack'])
+
+
+def proponer(pack, espejo=None, guardar=True, excluir=frozenset()):
     rs = rasgos_pack(pack)
     p = clasificar(rs, espejo)
     t = plantilla(pack, rs, excluir)
     if t:
         p['confianza'].update(t.pop('confianza')); p.update(t)
     p.update(pack=pack, autor=autor_de(pack), origen='plantilla' if t else 'reglas')
+    p['nombre'] = nombre_propuesta(p)
     p['motivos'] = motivos_dudoso(p, rs)
     p['dudoso'] = bool(p['motivos'])
     if guardar:
         os.makedirs(PROPUESTAS, exist_ok=True)
-        with open(os.path.join(PROPUESTAS, nombre_pack(pack) + '.json'), 'w', encoding='utf-8') as fh:
+        with open(os.path.join(PROPUESTAS, p['nombre'] + '.json'), 'w', encoding='utf-8') as fh:
             json.dump(p, fh, ensure_ascii=False, indent=1)
     return p
 
@@ -271,10 +281,10 @@ def proponer_forma(id_forma, guardar=True):
             ef[str(i)] = round(usada * r, 2)
     if ef:
         p['escalaFrames'] = ef; p['motivos'].append(f'tamaño de píxel desigual: se propone escalaFrames {ef}')
-    p['dudoso'] = True
+    p['dudoso'] = True; p['nombre'] = nombre_propuesta(p)
     if guardar:
         os.makedirs(PROPUESTAS, exist_ok=True)
-        with open(os.path.join(PROPUESTAS, nombre_pack(id_forma + '_' + pack) + '.json'), 'w', encoding='utf-8') as fh:
+        with open(os.path.join(PROPUESTAS, p['nombre'] + '.json'), 'w', encoding='utf-8') as fh:
             json.dump(p, fh, ensure_ascii=False, indent=1)
     return p
 
@@ -295,5 +305,7 @@ if __name__ == '__main__':
             print(idf, *proponer_forma(idf)['motivos'], sep='\n  ')
         sys.exit()
     for pk in (todos_los_packs() if sys.argv[1:] == ['--todos'] else sys.argv[1:]):
-        p = proponer(pk)
+        try: p = proponer(pk)
+        except Exception as e:  # un pack raro no debe parar la tanda entera
+            print(pk, '· ERROR', e); continue
         print(pk, '· dudoso' if p['dudoso'] else '· seguro', *p['motivos'], sep='\n  ')

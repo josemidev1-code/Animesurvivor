@@ -509,3 +509,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   acaba de convencer cómo se mueven, pero por lo demás muy bien hecho todo». **Pendiente:** el movimiento por el mapa
   (pose de impulso de un fotograma con balanceo) sigue sin convencerle; preguntarle qué le chirría antes de tocarlo.
   La revisión final del bloque 1 (revisor nuevo) estaba en marcha; la rama `bloque1-fotogramas` no está fusionada.
+- Revisión final del bloque 1 (revisor nuevo): arreglados 1 fallo crítico (la página de revisión y `aplicar_decisiones`
+  no coincidían en el nombre de las propuestas de formas del juego) y 3 importantes (forma borrada en decisiones viejas,
+  pack de solo chispas, packs nuevos sin orientación comprobada). 47 pruebas en verde. **Queda con polvo trunks/2** al
+  moverse (el polvo toca el pie); se verá con el movimiento. 7 detalles menores apuntados para más adelante.

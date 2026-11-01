@@ -59,5 +59,6 @@
  "dudoso": true,
  "revisadoIA": true,
  "sigueDudoso": false,
- "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse",
+ "nombre": "bardock_0_01_Dragon_Ball_Super_05_Broly_Bardock_003_BARDOCK_DBS_BROLY_ANDRES_GAMEN_ANIMATIONS"
 }

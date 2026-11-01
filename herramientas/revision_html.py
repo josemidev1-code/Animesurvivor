@@ -10,8 +10,7 @@ import glob, json, os, sys
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import montar_animaciones as m
-from proponer_fotogramas import NOMBRES, PROPUESTAS
-from rasgos import nombre_pack
+from proponer_fotogramas import NOMBRES, PROPUESTAS, nombre_propuesta
 
 SALIDA = os.path.join(m.RAIZ, 'herramientas', '_revisar', 'revision.html')
 
@@ -37,7 +36,7 @@ def generar(propuestas, salida=SALIDA):
     datos = []
     for p in propuestas:
         rutas = m.frames_del_pack(p['pack'])
-        datos.append({'nombre': nombre_pack(p['pack']), 'pack': p['pack'], 'motivos': p.get('motivos', []),
+        datos.append({'nombre': p.get('nombre') or nombre_propuesta(p), 'pack': p['pack'], 'motivos': p.get('motivos', []),
                       'anims': {k: list(p.get(k) or []) for k in NOMBRES},
                       'frames': [fotograma(r) for r in rutas]})
     html = PLANTILLA.replace('/*DATOS*/', json.dumps(datos, ensure_ascii=False)) \

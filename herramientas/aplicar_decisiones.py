@@ -22,14 +22,23 @@ def _escribir(ruta, datos):
 
 def aplicar(decisiones):
     """Aplica las decisiones y devuelve los avisos (packs desconocidos o sin aprobar)."""
-    avisos = []
+    avisos, validas = [], []
+    # primero se comprueba todo; así una entrada vieja no deja el resto a medio aplicar
     for nombre, dec in decisiones.items():
         ruta = os.path.join(pf.PROPUESTAS, nombre + '.json')
         if not os.path.exists(ruta):
             avisos.append(f'{nombre}: no hay propuesta con ese nombre; se ignora'); continue
         if not dec.get('vale'):
             avisos.append(f'{nombre}: sin «Vale»; no se aplica'); continue
-        prop = _leer(ruta); anims = dec.get('anims', {})
+        prop = _leer(ruta)
+        if prop.get('forma') and prop.get('grupo'):
+            h, f = prop['forma'].split('/')
+            ruta_grupo = os.path.join(m.RAIZ, prop['grupo'])
+            if not os.path.exists(ruta_grupo) or f not in _leer(ruta_grupo).get('heroes', {}).get(h, {}):
+                avisos.append(f"{nombre}: la forma {prop['forma']} ya no está en {prop['grupo']}; se ignora"); continue
+        validas.append((ruta, prop, dec))
+    for ruta, prop, dec in validas:
+        anims = dec.get('anims', {})
         if prop.get('forma') and prop.get('grupo'):
             h, f = prop['forma'].split('/')
             ruta_grupo = os.path.join(m.RAIZ, prop['grupo'])

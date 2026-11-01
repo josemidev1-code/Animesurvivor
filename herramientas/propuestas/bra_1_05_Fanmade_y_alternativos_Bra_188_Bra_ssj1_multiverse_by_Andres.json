@@ -65,5 +65,6 @@
  "dudoso": true,
  "revisadoIA": true,
  "sigueDudoso": false,
- "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse",
+ "nombre": "bra_1_05_Fanmade_y_alternativos_Bra_188_Bra_ssj1_multiverse_by_Andres"
 }
