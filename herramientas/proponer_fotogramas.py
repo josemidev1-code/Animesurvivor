@@ -4,7 +4,7 @@
 Uso:  python herramientas/proponer_fotogramas.py "<pack dentro de sprites/>" [...]
 Salida: herramientas/propuestas/<pack>.json (ver docs/superpowers/specs/2026-11-01-propuesta-fotogramas-design.md)
 """
-import json, os, re, statistics, sys, unicodedata
+import glob, json, os, re, statistics, sys, unicodedata
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import montar_animaciones as m
 from rasgos import rasgos_pack, comun, parecido, nombre_pack
@@ -220,6 +220,65 @@ def proponer(pack, espejo=False, guardar=True, excluir=frozenset()):
     return p
 
 
+def grupo_de(h, f, clave='move'):
+    """Archivo de selección (ruta relativa al proyecto) donde está definida `clave` de la forma h/f."""
+    rutas = [os.path.join(m.RAIZ, 'herramientas', 'animaciones.json')] + \
+        sorted(glob.glob(os.path.join(m.RAIZ, 'herramientas', 'animaciones', '*.json')))
+    hallado = None
+    for r in rutas:
+        if not os.path.exists(r): continue
+        with open(r, encoding='utf-8') as fh: forma = json.load(fh).get('heroes', {}).get(h, {}).get(f, {})
+        if clave in forma or (hallado is None and 'pack' in forma): hallado = r
+    return os.path.relpath(hallado, m.RAIZ).replace('\\', '/') if hallado else None
+
+
+def proponer_forma(id_forma, guardar=True):
+    """Arreglo para una forma que ya está en el juego: otro `move` si la pose está muy agachada y `escalaFrames`
+    para los fotogramas cuyo tamaño de píxel no cuadra con la guardia. Siempre pasa por revisión."""
+    from medir_formas import frames
+    from montar_animaciones import escala_pixel
+    h, f = id_forma.split('/'); F = m.leer_config()[h][f]; pack = F['pack']
+    rs = rasgos_pack(pack); s = -1 if F.get('espejo') else 1; G = rs[F['idle'][0]]
+    p = {'pack': pack, 'forma': id_forma, 'grupo': grupo_de(h, f), 'espejo': bool(F.get('espejo')), 'motivos': [],
+         'efectos': clasificar(rs, F.get('espejo', False))['efectos']}
+    for k in NOMBRES: p[k] = list(F.get(k, []))
+    p['portrait'] = F.get('portrait')
+    # moverse: si la pose actual mide menos del 70 % de la guardia, el impulso más alto del pack
+    if F.get('move') and all(rs[i]['alto'] < 0.7 * G['alto'] for i in F['move'] if not rs[i].get('vacio')):
+        usados = {i for k in NOMBRES for i in F.get(k, []) if k != 'move'}
+        cand = [r for r in utiles(rs) if r['i'] not in usados and r['alto'] >= 0.7 * G['alto']
+                and r['incl'] * s > 0.05 and comun(r['paleta'], G['paleta']) >= 0.45
+                and abs(r['escala'] / G['escala'] - 1) < 0.15 and not (r['sueltoX'] is not None and r['sueltoX'] * s > 0)]
+        if cand:
+            p['move'] = [max(cand, key=lambda r: r['incl'] * s + r['alto'] / G['alto'])['i']]
+            p['motivos'].append(f"pose de moverse agachada: se propone {p['move']} en vez de {F['move']}")
+        else:
+            p['motivos'].append('pose de moverse agachada y no hay impulso más alto en el pack')
+    # tamaño de píxel: se corrige cada fotograma con la proporción medida en el juego
+    src = open(os.path.join(m.RAIZ, 'animaciones_juego.js'), encoding='utf-8').read()
+    A = json.loads(src[src.index('{'):src.rindex('}') + 1])['h'][h][f]['anims']
+    base = escala_pixel(frames(A['Idle'])[0]); _, _, esc = m.cargar_forma(F)
+    manual = {int(k): v for k, v in F.get('escalaFrames', {}).items()}
+    medir = lambda i: escala_pixel(m.limpiar(m.frames_del_pack(pack)[i]))
+    ef = {}
+    for k, nom in m.CLAVES.items():
+        if nom not in A or not F.get(k): continue
+        for i, im in zip(F[k], frames(A[nom])):
+            r = escala_pixel(im) / base
+            if abs(r - 1) <= 0.15: continue
+            mi = medir(i)
+            usada = manual.get(i) or (esc if F.get('escalaFija') or esc <= 1.05 or abs(mi - esc) / esc < 0.12 else mi)
+            ef[str(i)] = round(usada * r, 2)
+    if ef:
+        p['escalaFrames'] = ef; p['motivos'].append(f'tamaño de píxel desigual: se propone escalaFrames {ef}')
+    p['dudoso'] = True
+    if guardar:
+        os.makedirs(PROPUESTAS, exist_ok=True)
+        with open(os.path.join(PROPUESTAS, nombre_pack(id_forma + '_' + pack) + '.json'), 'w', encoding='utf-8') as fh:
+            json.dump(p, fh, ensure_ascii=False, indent=1)
+    return p
+
+
 def todos_los_packs():
     """Carpetas de sprites/ que tienen PNG."""
     out = []
@@ -229,6 +288,12 @@ def todos_los_packs():
 
 
 if __name__ == '__main__':
+    if sys.argv[1:] == ['--formas-actuales']:
+        from medir_formas import medir, problemas
+        pr = problemas(medir(os.path.join(m.RAIZ, 'animaciones_juego.js')))
+        for idf in dict.fromkeys(pr['agachadas'] + pr['desiguales']):
+            print(idf, *proponer_forma(idf)['motivos'], sep='\n  ')
+        sys.exit()
     for pk in (todos_los_packs() if sys.argv[1:] == ['--todos'] else sys.argv[1:]):
         p = proponer(pk)
         print(pk, '· dudoso' if p['dudoso'] else '· seguro', *p['motivos'], sep='\n  ')

@@ -38,6 +38,9 @@ def aplicar(decisiones):
                 if forma.get(k) != v:
                     if k in forma: forma[k + 'Antes'] = forma[k]
                     forma[k] = v
+            if prop.get('escalaFrames'):
+                forma['escalaFramesAntes'] = dict(forma.get('escalaFrames', {}))
+                forma['escalaFrames'] = dict(forma.get('escalaFrames', {}), **prop['escalaFrames'])
             _escribir(ruta_grupo, grupo)
         else:
             prop.update(anims)
