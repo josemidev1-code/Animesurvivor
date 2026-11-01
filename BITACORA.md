@@ -439,3 +439,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   moverse muy agachada (menos del 70 % de la guardia) en 16; tamaño de píxel desigual en 4 (vegetasuper/2 entera,
   gohanmanga/0 patada, blackfan/0 puñetazos, e_ginyu/0 poder). Buscando ahora fotogramas de técnicas en todos los packs.
 - Pregunta: «quiero usar todos los sprites del juego, ¿se podría?».
+- Recuento: `sprites/` tiene 333 carpetas con imágenes (33.007 fotogramas). Las selecciones de animación usan 165; quedan
+  168 sin usar (unos 17.000 fotogramas): 65 de Super, 44 fanmade, 27 de Z, 12 sin saga… En `SPRITES_PENDIENTES.md` (B) la
+  mayoría son más versiones de Goku (59) y Vegeta (30). Preguntado al usuario si quiere decir más packs o más fotogramas
+  de los packs que ya se usan.
