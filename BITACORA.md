@@ -505,3 +505,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   README y TAREAS_CODEX al día. Todo en la rama `bloque1-fotogramas`, sin fusionar en main ni subir.
 - Aprendido: con medidas simples las reglas solo aciertan un 25-35 %; la revisión de la IA es la que decide.
 - Siguiente: revisión final del bloque y preguntar al usuario si fusionar la rama en main; luego el bloque 2.
+- Usuario, al cerrar el día: «mañana vemos lo que queda; lo de la animación de caminar queda pendiente porque no me
+  acaba de convencer cómo se mueven, pero por lo demás muy bien hecho todo». **Pendiente:** el movimiento por el mapa
+  (pose de impulso de un fotograma con balanceo) sigue sin convencerle; preguntarle qué le chirría antes de tocarlo.
+  La revisión final del bloque 1 (revisor nuevo) estaba en marcha; la rama `bloque1-fotogramas` no está fusionada.

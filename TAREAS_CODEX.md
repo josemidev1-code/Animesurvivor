@@ -14,6 +14,9 @@ Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los recurso
   (decisión del usuario). Al usuario solo le llega lo dudoso, en la página de revisión.
 - Las 16 formas «agachadas» y las 4 «de tamaño desigual» que marca `medir_formas.py` están bien a propósito (vuelo
   horizontal y auras que engañan a la medida); revisadas a ojo, ver la bitácora.
+- **Pendiente del usuario:** el movimiento por el mapa todavía no le convence. Antes de seguir, pregúntale qué le
+  chirría y enséñale opciones animadas (como las maquetas de la sesión 10).
+- Pendiente: revisión final del bloque 1 y decidir con el usuario si se fusiona `bloque1-fotogramas` en main.
 - Siguiente: bloque 2 (técnicas de la serie con el efecto de su propio pack).
 
 ## Relevo anterior (fin de la sesión 9 de Claude)
