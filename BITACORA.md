@@ -426,3 +426,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Técnicas hoy: la pose de lanzar sí sale del pack (`ki`), pero la bola de carga y el rayo son genéricos (`kiOrb`/`kiShot`
   a partir de `ki-goku`, teñidos con los colores de cada técnica), no el rayo propio que trae cada pack (Goku: 38-39).
   Preguntado al usuario si cada técnica debe usar el efecto de su propio pack.
+- «Sí» (cada técnica con el efecto de su propio pack) y pregunta: «¿todos los sprites tienen animación de andar y de ataques?».
