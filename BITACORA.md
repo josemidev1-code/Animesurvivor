@@ -405,3 +405,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Petición: «se jugará en una web publicada. Los sprites son de juegos tipo Street Fighter y la animación de caminar por
   el mapa a veces queda rara; quiero cambiar la experiencia y el HUD (me parece horroroso), poner a cada personaje su ataque
   de la serie y tener todos los sprites funcionando. ¿Me ayudas?». Investigando cómo funciona hoy antes de proponer orden.
+- Hallazgo: de 171 formas, 159 tienen 1 solo fotograma de «move» y 12 tienen 2; al moverse se dibuja esa pose fija con un
+  balanceo por código, y siempre de perfil (los packs de lucha solo miran a izquierda/derecha), también al ir arriba o abajo.
+  Propuesto al usuario separar en proyectos (movimiento → experiencia → HUD → técnicas de la serie → sprites pendientes).
