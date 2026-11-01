@@ -408,3 +408,5 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Hallazgo: de 171 formas, 159 tienen 1 solo fotograma de «move» y 12 tienen 2; al moverse se dibuja esa pose fija con un
   balanceo por código, y siempre de perfil (los packs de lucha solo miran a izquierda/derecha), también al ir arriba o abajo.
   Propuesto al usuario separar en proyectos (movimiento → experiencia → HUD → técnicas de la serie → sprites pendientes).
+- Respuesta: «quiero ver una animación coherente, solo eso, en todos los personajes; la animación de los sprites pero metida
+  de forma coherente, y que cada personaje tenga sus ataques de la serie, que también están en los sprites».
