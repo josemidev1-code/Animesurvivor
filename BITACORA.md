@@ -402,3 +402,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Respuesta del usuario: «es un proyecto personal mío, fanmade sin ánimo de lucro, pero ¿se podría poner algún anuncio en el
   gachapón y un Ko-fi para donaciones, como PokéSurvivor?». Explicado en el chat: riesgos de derechos al ganar dinero con
   Dragon Ball, licencias de los sprites de terceros y que los anuncios exigen publicar el juego en una web. Sin cambios de código.
+- Petición: «se jugará en una web publicada. Los sprites son de juegos tipo Street Fighter y la animación de caminar por
+  el mapa a veces queda rara; quiero cambiar la experiencia y el HUD (me parece horroroso), poner a cada personaje su ataque
+  de la serie y tener todos los sprites funcionando. ¿Me ayudas?». Investigando cómo funciona hoy antes de proponer orden.
