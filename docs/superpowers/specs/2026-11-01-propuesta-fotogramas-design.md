@@ -174,8 +174,8 @@ de selección.
   - Objetivo: al menos un 80 % de aciertos en las obligatorias, y que tras la revisión de la IA lleguen al usuario
     como mucho 1 de cada 5 packs. Si no se alcanza, se ajustan las reglas antes de seguir.
 - **Las tres listas del objetivo 3** deben quedar a cero, salvo las formas que la IA o el usuario marquen como
-  correctas a propósito. El script de medición está junto a este documento
-  (`2026-11-01-medicion-formas.py`, pasarlo a `herramientas/`). Definiciones exactas:
+  correctas a propósito. El script de medición es
+  `herramientas/medir_formas.py`. Definiciones exactas:
   - *Mancha suelta:* píxeles opacos no unidos (vecindad de 8) a la mancha más grande; problema si son más del 5 %
     de los píxeles opacos de algún fotograma de `Walk`.
   - *Agachada:* el alto máximo (caja de píxeles opacos) de los fotogramas de `Walk` en `animaciones_juego.js` es

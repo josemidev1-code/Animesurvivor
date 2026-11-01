@@ -466,3 +466,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   polvo, rasgos con caché, reglas, plantillas por autor, validación, hojas para la IA, página de revisión, formas
   actuales). Pendiente que el usuario lo revise y elija cómo ejecutarlo.
 - «Tú en esta sesión»: el plan del bloque 1 lo ejecuta Claude en esta misma sesión, con revisión final de todo.
+- Ejecución del plan del bloque 1 en la rama `bloque1-fotogramas` (no en main: el plan pide rama propia; `sprites/`
+  no está en git, por eso rama y no worktree). Pruebas: `python -m unittest discover -s herramientas/pruebas -v`.
+- Tarea 1 hecha: `herramientas/medir_formas.py` (polvo, agachadas, tamaños desiguales) con sus pruebas.
