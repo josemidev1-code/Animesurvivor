@@ -722,3 +722,37 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Fusionar la rama de los siete personajes antes de que se separe más de `main`; después, efectos más pequeños y cuerpo a cuerpo.
+
+## 2026-11-01 — Claude · Efectos de técnicas más pequeños
+
+### Lo que pidió el usuario
+- «Efectos más pequeños»: que las técnicas y sus efectos no tapen la pantalla y sigan leyéndose bien (punto de «Cambios propuestos por Josemi»).
+
+### Lo que hice
+- Medido en el navegador a 1280×720 (180 unidades de alto), con las técnicas al máximo y 36 enemigos alrededor:
+  - La explosión del Eraser Cannon de Broly medía 187 unidades: más que la pantalla, y tapaba al propio Broly. La de la Genkidama, 169.
+  - El fogonazo de las manos del Kamehameha medía unas 84×56 unidades y tapaba a Goku.
+  - Las explosiones propias se pintaban encima de las balas enemigas, y los números de daño, con su recuadro negro, llenaban la zona.
+- Cambios en `script.js`, solo de dibujo (daño, alcance y colisiones iguales):
+  - `boomFrames()`: la explosión se dibuja a 1,5 veces su radio y como mucho a 64 unidades (antes a 2,2 y sin tope).
+    El anillo fino de `explode()` sigue marcando todo el alcance.
+  - `render()`: las explosiones de más de 40 unidades, al 85 % de opacidad.
+  - `drawBeam()`: el fogonazo de las manos de los rayos, al 60 %; el cuerpo del rayo no cambia.
+  - Números de daño a la mitad (un píxel de imagen por píxel del número, como el HUD); con la pantalla a x1, como antes.
+    El «!» de aviso no cambia.
+  - Rayos y balas enemigos se dibujan después de los efectos propios y de los números: nunca quedan tapados.
+  - Destello de pantalla: como mucho 0,35 de opacidad (antes 0,8 al transformarse o con la Genkidama).
+- `script.js?v=79`. Hecho en la rama `claude/efectos-pequenos`, sacada de `main` en el worktree, y llevado a `main` por avance rápido.
+
+### Pruebas
+- Capturas de antes y después de Eraser Cannon, Genkidama y Kamehameha a 1280×720, y rayo horizontal con balas enemigas
+  sobre la explosión a 800×450. Consola sin errores.
+- Sintaxis de todos los `.js` y comprobaciones de personajes, enemigos y objetos: bien.
+
+### A medias / pendiente
+- El rayo enemigo de tipo Galick usa una hoja con una silueta de Vegeta dentro del círculo de salida. Es un aviso de peligro y no
+  se ha tocado, pero conviene revisarlo.
+- Falta que el usuario lo valore jugando. Cada valor (1,5, 64, 60 %, mitad, 0,35) está en un solo sitio y se cambia fácil.
+
+### Siguiente paso recomendado
+- Que el usuario lo pruebe; después, el cuerpo a cuerpo o fusionar la rama de los siete personajes.

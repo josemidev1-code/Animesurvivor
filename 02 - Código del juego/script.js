@@ -2464,9 +2464,11 @@ function drawBeam(b){
     for(let x=0;x<L;x+=2){const s=Math.sin(x*0.25-t*30)*(W/2+5);ctx.fillStyle=s>0?'#ff6ad0':'#ffb0ea';ctx.fillRect(x,Math.round(s)-1,2,3);ctx.fillRect(x,Math.round(-s)-1,2,3)}
     ctx.restore();return}
   if((b.hero||b.e)&&FXI.kame&&FXI.galick){const sh=b.e?(/GALICK|FLASH|SUPERNOVA/.test(b.name)?'galick':'kame'):GALICK_SET.has(b.mv)?'galick':'kame',fi=(t*14|0)%FXI[sh].length,im=fxTint(FXI[sh][fi],C,sh+fi+C.join()),sw=im.width,shh=im.height,
-      k=Math.max(0.3,W*1.9/shh),H=Math.round(shh*k),hx=Math.round(sw*0.3*k),tx=Math.round(sw*0.14*k),back=-2,bl=Math.max(0,L-tx-hx+back);
-    ctx.globalAlpha=Math.max(0.2,fade);ctx.drawImage(im,Math.round(sw*0.5),0,2,shh,hx-back-1,-H>>1,bl+2,H);ctx.drawImage(im,sw-Math.round(sw*0.14),0,Math.round(sw*0.14),shh,hx-back+bl,-H>>1,tx,H);
-    ctx.drawImage(im,0,0,Math.round(sw*0.3),shh,-back,-H>>1,hx,H);ctx.globalAlpha=1;ctx.restore();return}
+      k=Math.max(0.3,W*1.9/shh),H=Math.round(shh*k),tx=Math.round(sw*0.14*k),back=-2,
+      // el fogonazo de las manos va al 60 %: entero medía casi el doble de alto que el rayo y tapaba al personaje
+      hm=Math.round(sw*0.3*k*0.6),Hm=Math.round(H*0.6),b0=hm>>1,bl=Math.max(0,L-tx-b0);
+    ctx.globalAlpha=Math.max(0.2,fade);ctx.drawImage(im,Math.round(sw*0.5),0,2,shh,b0-1,-H>>1,bl+2,H);ctx.drawImage(im,sw-Math.round(sw*0.14),0,Math.round(sw*0.14),shh,b0+bl,-H>>1,tx,H);
+    ctx.drawImage(im,0,0,Math.round(sw*0.3),shh,-back,-Hm>>1,hm,Hm);ctx.globalAlpha=1;ctx.restore();return}
   {ctx.globalAlpha=0.18+0.08*Math.sin(t*30);ctx.fillStyle=C[1];ctx.fillRect(0,-W-5,L,W*2+10);ctx.globalAlpha=0.12;ctx.fillRect(0,-W-10,L,W*2+20);ctx.globalAlpha=1}
   // jagged outer flame, layered like hama-bead pixel art
   for(let x=0;x<L;x+=2){const n=Math.sin(x*0.7+t*40)*0.5+Math.sin(x*0.23-t*25)*0.5,j=Math.round(n*W*0.12);
@@ -2611,22 +2613,27 @@ function render(time){
       ring(x,y,r+1+((time*12|0)%3),p.col[0],1)}
     else if(p.k==='disc'){const im=discSprite(Math.round(p.r)+2,p.col,(time*24|0)%4);ctx.globalAlpha=0.35;ctx.drawImage(im,x-(im.width>>1)-Math.round(p.vx*0.02),y-(im.height>>1)-Math.round(p.vy*0.02));ctx.globalAlpha=1;ctx.drawImage(im,x-(im.width>>1),y-(im.height>>1))}}
   for(const b of beams)drawBeam(b);
-  for(const b of ebeams){if(b.t<0){const on=((b.t*12)|0)%2===0;if(on){ctx.save();ctx.translate(Math.round(b.x-cam.x),Math.round(b.y-cam.y));ctx.rotate(b.a);ctx.fillStyle='rgba(255,40,60,.75)';
-      for(let x=10;x<b.len;x+=8)ctx.fillRect(x,-1,5,2);ctx.fillStyle='rgba(255,40,60,.25)';ctx.fillRect(10,-b.wid/2,b.len,b.wid);ctx.restore()}
-      }
-    drawBeam(b)}
   for(const b of bombs){const k=b.t/b.fall,r=Math.round(b.rad*0.45),x=X(b.x),y=Y(b.y)-Math.round((1-k)*160);
     ring(X(b.x),Y(b.y),Math.round(b.rad*k),'rgba(150,210,255,.7)');const im=kiSprite(Math.min(16,r),[b.col[0],b.col[1],b.col[2]],(time*10|0)%2);ctx.drawImage(im,x-(im.width>>1),y-(im.height>>1));for(let i=0;i<6;i++){const q=time*3+i*1.05,d=r+6+((i*5+time*20|0)%5);ctx.fillStyle=b.col[3];ctx.fillRect(Math.round(x+Math.cos(q)*d),Math.round(y+Math.sin(q)*d*0.8),1,2)}}
   // orbs
   if(P.moves.orbs){const m=P.moves.orbs,st=MV.orbs.st(m.lv),n=st.count+(m.evo?2:0),rad=st.rad*stats().area;
     for(let i=0;i<n;i++){const a=P.orbA+i*TAU/n,x=X(P.x+Math.cos(a)*rad),y=Y(P.y-8+Math.sin(a)*rad);circ(x,y,4,OUTL);circ(x,y,3,m.evo?'#ffe066':'#f2911a');ctx.fillStyle='#d81e1e';ctx.fillRect(x-1,y-1,2,2);ctx.fillStyle='#fff0b0';ctx.fillRect(x-2,y-2,1,1)}}
-  for(const s of eshots){const x=X(s.x),y=Y(s.y);circ(x,y,s.r+1,OUTL);circ(x,y,s.r,s.col);ctx.fillStyle='#fff';ctx.fillRect(x-1,y-1,1,1)}
   for(const p of parts){if(p.ring){ring(X(p.x),Y(p.y),Math.round(p.r*(1-p.t/p.T)),p.c,2);continue}ctx.fillStyle=p.c;ctx.fillRect(X(p.x),Y(p.y),p.s,p.s)}
-  for(const f of fxs){const c=f.fr[Math.min(f.fr.length-1,f.t/f.T*f.fr.length|0)];ctx.drawImage(c,X(f.x)-(c.width>>1),Y(f.y)-(c.height>>1))}
-  for(const t of texts){if(typeof t.v==='string')text(t.v,X(t.x),Y(t.y),t.c,8);else digits(String(t.v),X(t.x),Y(t.y),t.c)}
+  // las explosiones grandes, algo transparentes para que se vea lo que pasa debajo
+  for(const f of fxs){const c=f.fr[Math.min(f.fr.length-1,f.t/f.T*f.fr.length|0)];if(c.width>40)ctx.globalAlpha=0.85;ctx.drawImage(c,X(f.x)-(c.width>>1),Y(f.y)-(c.height>>1));ctx.globalAlpha=1}
+  // números de daño a la mitad: un píxel de la imagen por píxel del número, como el HUD (si la pantalla va a x1, como antes)
+  {const hk=SC*DPR/2>1?1:2;ctx.save();ctx.scale(hk/2,hk/2);for(const t of texts)if(typeof t.v!=='string')digits(String(t.v),X(t.x)*2/hk,Y(t.y)*2/hk,t.c);ctx.restore()}
+  for(const t of texts)if(typeof t.v==='string')text(t.v,X(t.x),Y(t.y),t.c,8);
+  // lo peligroso va encima de los efectos propios, para que nunca quede tapado: rayos y balas de los enemigos
+  for(const b of ebeams){if(b.t<0){const on=((b.t*12)|0)%2===0;if(on){ctx.save();ctx.translate(Math.round(b.x-cam.x),Math.round(b.y-cam.y));ctx.rotate(b.a);ctx.fillStyle='rgba(255,40,60,.75)';
+      for(let x=10;x<b.len;x+=8)ctx.fillRect(x,-1,5,2);ctx.fillStyle='rgba(255,40,60,.25)';ctx.fillRect(10,-b.wid/2,b.len,b.wid);ctx.restore()}
+      }
+    drawBeam(b)}
+  for(const s of eshots){const x=X(s.x),y=Y(s.y);circ(x,y,s.r+1,OUTL);circ(x,y,s.r,s.col);ctx.fillStyle='#fff';ctx.fillRect(x-1,y-1,1,1)}
   cam.x=ox;cam.y=oy;
   {const lo=P.hp/stats().maxhp;if(lo<0.3&&state==='play'){const a=(0.3-lo)/0.3*(0.35+0.25*Math.sin(time*8));ctx.fillStyle=`rgba(200,20,30,${a.toFixed(3)})`;ctx.fillRect(0,0,VW,4);ctx.fillRect(0,VH-4,VW,4);ctx.fillRect(0,0,4,VH);ctx.fillRect(VW-4,0,4,VH);ctx.fillStyle=`rgba(200,20,30,${(a*0.5).toFixed(3)})`;ctx.fillRect(4,4,VW-8,3);ctx.fillRect(4,VH-7,VW-8,3);ctx.fillRect(4,4,3,VH-8);ctx.fillRect(VW-7,4,3,VH-8)}}
-  if(S.flash>0){ctx.fillStyle=`rgba(255,255,230,${Math.min(0.8,S.flash*1.6)})`;ctx.fillRect(0,0,VW,VH)}
+  // destello de pantalla suave: antes llegaba a un blanco casi opaco (0,8) al transformarse o con la Genkidama
+  if(S.flash>0){ctx.fillStyle=`rgba(255,255,230,${Math.min(0.35,S.flash*0.7)})`;ctx.fillRect(0,0,VW,VH)}
   hud(time)}
 const FLAMES={};
 function auraFlames(kind){if(FLAMES[kind])return FLAMES[kind];
@@ -2721,7 +2728,9 @@ function fxTint(c,C,key){if(FXT[key])return FXT[key];const n=mk(c.width,c.height
   for(let i=0;i<p.length;i+=4){if(!p[i+3])continue;const l=(p[i]*0.3+p[i+1]*0.59+p[i+2]*0.11)/255;if(l>0.86)continue;const q=l>0.62?h[1]:h[0],m=l>0.62?0.9+(l-0.62):0.55+0.7*l;p[i]=Math.min(255,q[0]*m);p[i+1]=Math.min(255,q[1]*m);p[i+2]=Math.min(255,q[2]*m)}
   g.putImageData(d,0,0);return FXT[key]=n}
 function heroKi(){const H=SCPACK.h[S.hid];if(H)for(let f=P.form;f>=0;f--)if(H[f]&&FXI['ki-'+H[f]])return FXI['ki-'+H[f]][0];return FXI['ki-goku']?FXI['ki-goku'][0]:null}
-function boomFrames(rad,C){const s=Math.max(12,Math.round(rad*2.2/4)*4),warm=fxKind(C[1])==='fire'||fxKind(C[1])==='gold',key='b'+s+(warm?'':C.join());if(FXT[key])return FXT[key];
+// la explosión se dibuja a 1,5 veces su radio y como mucho a 64 (antes a 2,2 y sin tope: la de Broly tapaba media pantalla
+// y al propio Broly); el daño no cambia y el anillo fino de explode() sigue marcando todo el alcance
+function boomFrames(rad,C){const s=Math.max(12,Math.min(64,Math.round(rad*1.5/4)*4)),warm=fxKind(C[1])==='fire'||fxKind(C[1])==='gold',key='b'+s+(warm?'':C.join());if(FXT[key])return FXT[key];
   return FXT[key]=FXI.boom.map((c,i)=>{const n=mk(s,s),g=n.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(warm?c:fxTint(c,C,'bt'+i+C.join()),0,0,s,s);return n})}
 const GALICK_SET=new Set(),KI_REAL=new Set(['kiblast','renzoku','gekiretsu','scatter']);
 Object.assign(SCPACK.h,{trunks:{0:'mtrunks',1:'trunks-ssj',2:'smtrunks'},gohan:{0:'gohan-kid',1:'gohan-ssj',2:'gohan-ssj2',3:'gohan-mystic'},krilin:{0:'kuririn2'},

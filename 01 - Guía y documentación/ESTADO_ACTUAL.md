@@ -13,6 +13,7 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - `trunks/2` conserva polvo junto al pie, pendiente de revisión.
 - 1 nov.: corregido el error de dibujo del jugador (fotograma inexistente) y suavizados los primeros 3 minutos de partida. Con un jugador automático, la supervivencia media pasa de 1:42 a 2:40 en 20 partidas iguales. Detalle y cifras en la bitácora. Falta que el usuario lo valore jugando.
 - 1 nov.: HUD más pequeño y nítido (se dibuja a 1 píxel de imagen por unidad, letra a 8/16 px) y escala de pantalla entera. Casillas de técnicas al doble en pantallas táctiles. Falta la valoración del usuario.
+- 1 nov.: efectos de técnicas más pequeños (explosiones a 1,5 veces su radio y como mucho 64 unidades, fogonazo de los rayos al 60 %, números de daño a la mitad, destello de pantalla suave) y balas enemigas por encima de los efectos propios. Daño y alcance iguales. Falta la valoración del usuario.
 - Existe una rama separada con siete personajes nuevos; no des por fusionados esos cambios. `README.md` y `01 - Guía y documentación/TAREAS_CODEX.md` incluyen contexto histórico que puede estar desfasado.
 
 ## Mapa rápido
