@@ -1,0 +1,75 @@
+{
+ "pack": "01_Dragon_Ball_Super/06_Moro/Gohan/121_GOHAN SAGA MORO MANGA,BY ANDRÉS GAMEN ANIMATIONS , SPRITE HD",
+ "forma": "gohanmanga/0",
+ "grupo": "herramientas/animaciones/variantes.json",
+ "espejo": false,
+ "motivos": [
+  "tamaño de píxel desigual: se propone escalaFrames {'58': 13.18}"
+ ],
+ "efectos": {
+  "rayo": [
+   2,
+   5,
+   9,
+   10,
+   17,
+   18,
+   38
+  ],
+  "bola": [
+   6,
+   11,
+   39,
+   43,
+   44,
+   45,
+   46
+  ],
+  "aura": [],
+  "estela": [
+   13,
+   29,
+   74,
+   75
+  ]
+ },
+ "idle": [
+  78,
+  79
+ ],
+ "move": [
+  76
+ ],
+ "attack": [
+  64,
+  65,
+  66
+ ],
+ "kick": [
+  58,
+  62
+ ],
+ "ki": [
+  27,
+  31
+ ],
+ "pow": [
+  50,
+  51
+ ],
+ "hurt": [
+  54,
+  56
+ ],
+ "faint": [
+  53
+ ],
+ "portrait": 1,
+ "escalaFrames": {
+  "58": 13.18
+ },
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: en el juego todos los fotogramas miden igual que la guardia; el aura o las estelas engañan a la medida del píxel"
+}

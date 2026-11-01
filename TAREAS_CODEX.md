@@ -2,9 +2,21 @@
 
 Antes: lee `AGENTS.md` y `herramientas/GUIA_ANIMACIONES.md`. Apunta todo en `BITACORA.md` y haz commit tras cada tarea.
 Python: `C:\Users\soyjo\AppData\Local\Programs\Python\Python314\python.exe` con `PYTHONIOENCODING=utf-8`.
-Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los recursos de `index.html` (ahora `?v=63`).
+Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los recursos de `index.html` (ahora `?v=64`).
 
-## Empieza aquí (relevo del 01/11/2026, fin de la sesión 9 de Claude)
+## Empieza aquí (sesión 10 de Claude, 01/11/2026)
+
+- El usuario acordó seis bloques en orden (ver «Lo que falta» del README). **Bloque 1 hecho** en la rama
+  `bloque1-fotogramas`: polvo quitado al moverse, herramienta de propuestas (`proponer_fotogramas.py`,
+  `hoja_dudosos.py`, `revision_html.py`, `aplicar_decisiones.py`, `validar_propuestas.py`, `medir_formas.py`) y pruebas
+  en `herramientas/pruebas/`. Diseño y plan en `docs/superpowers/`.
+- Las reglas de la herramienta solo aciertan un 25-35 %: **la IA revisa todas las propuestas** mirando las hojas
+  (decisión del usuario). Al usuario solo le llega lo dudoso, en la página de revisión.
+- Las 16 formas «agachadas» y las 4 «de tamaño desigual» que marca `medir_formas.py` están bien a propósito (vuelo
+  horizontal y auras que engañan a la medida); revisadas a ojo, ver la bitácora.
+- Siguiente: bloque 2 (técnicas de la serie con el efecto de su propio pack).
+
+## Relevo anterior (fin de la sesión 9 de Claude)
 
 - main está limpio y subido (ebc1b50). Lo último: escenarios con tiles reales del pack Ninja Adventure.
 - **Pendiente de decisión del usuario:** la rama `refs/heads/claude/quizzical-gates-9cf9c0` (commit ae765b9) trae 7 jugables

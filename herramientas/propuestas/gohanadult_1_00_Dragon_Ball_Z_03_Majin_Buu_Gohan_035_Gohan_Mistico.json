@@ -1,0 +1,65 @@
+{
+ "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico",
+ "forma": "gohanadult/1",
+ "grupo": "herramientas/animaciones/resto.json",
+ "espejo": false,
+ "motivos": [
+  "pose de moverse agachada: se propone [58] en vez de [24]"
+ ],
+ "efectos": {
+  "rayo": [
+   21,
+   23,
+   81,
+   94
+  ],
+  "bola": [
+   7,
+   78
+  ],
+  "aura": [
+   8,
+   9
+  ],
+  "estela": [
+   25
+  ]
+ },
+ "idle": [
+  12,
+  13
+ ],
+ "move": [
+  58
+ ],
+ "attack": [
+  40,
+  41,
+  42,
+  43
+ ],
+ "kick": [
+  49,
+  50,
+  51
+ ],
+ "ki": [
+  75,
+  77
+ ],
+ "pow": [
+  71,
+  72,
+  73
+ ],
+ "hurt": [
+  62,
+  63
+ ],
+ "faint": [],
+ "portrait": null,
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+}

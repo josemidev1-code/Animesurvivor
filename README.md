@@ -50,15 +50,25 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 - Jefes con daño corregido, vida sobre la cabeza de cada enemigo, bolas teledirigidas y panel de nivel azul (sesión 9).
 - Gachapón de Shenron (con su sprite real), tienda, misiones, ranking, mejoras; todo desbloqueado de momento.
 - El menú abre en menos de 1 segundo: los sprites se cargan al empezar la partida.
+- Sesión 10, bloque 1: al moverse, ningún personaje lleva ya polvo ni chispas pegadas (21 formas arregladas al montar).
+  Herramienta que propone los fotogramas de cada pack y localiza sus efectos (rayos, bolas, auras); como sus reglas
+  solo aciertan un 25-35 %, la IA revisa todas las propuestas y el usuario solo lo que quede dudoso
+  (ver «Proponer fotogramas» en `herramientas/GUIA_ANIMACIONES.md`). Pruebas: `python -m unittest discover -s herramientas/pruebas -t .`
 
 ## Lo que falta (en este orden)
 
-1. Decidir si se fusiona en main la rama `claude/quizzical-gates-9cf9c0` (7 personajes nuevos) y fusionarla.
-2. Meter más personajes de la serie desde `sprites/` o DeviantArt, con créditos (`herramientas/recortar_hoja.py` trocea hojas sueltas).
-3. Recuperar enemigos retirados (Burter, Recoome…) cuando haya secuencias buenas.
-4. Sustituir lo que queda dibujado por código: agua, lava, cielo, relieves, edificios, auras, Makankosappo,
-   disparos de enemigos y monedas (ver `PIXEL_ART_POR_CODIGO.md`).
-5. Seguir animando los packs pendientes de la lista B de `SPRITES_PENDIENTES.md`.
+Plan acordado con el usuario en la sesión 10 (bloque 1 hecho; diseño en `docs/superpowers/specs/`):
+
+1. **Bloque 2 · Técnicas de la serie** con el efecto dibujado en su propio pack (150 de 162 packs traen rayos, bolas
+   o auras sin usar; ninguno genérico).
+2. **Bloque 3 · Más personajes jugables** con los 168 packs de `sprites/` que no se usan (incluye decidir la rama
+   `claude/quizzical-gates-9cf9c0` con 7 personajes nuevos).
+3. **Bloque 4 · Enemigos**: recuperar los 35 retirados (Burter, Recoome…) con ataques propios.
+4. **Bloque 5 · Experiencia y HUD** nuevos (al usuario el HUD actual le parece horroroso).
+5. **Bloque 6 · Mecánicas nuevas.**
+
+Entre bloque y bloque, jugar una partida para comprobar que sigue siendo divertido. Sigue pendiente sustituir lo
+dibujado por código (`PIXEL_ART_POR_CODIGO.md`).
 
 Comprobación de personajes: `node herramientas/comprobar_personajes.cjs`. Para aplicar las reglas de fotogramas y muerte a las incorporaciones de esta sesión:
 `node herramientas/comprobar_personajes.cjs gokubroly vegetamanga vegetabroly blacktime blackfan gokualt`.

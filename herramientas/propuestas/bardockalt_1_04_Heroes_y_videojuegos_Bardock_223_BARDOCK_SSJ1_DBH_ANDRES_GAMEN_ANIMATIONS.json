@@ -1,0 +1,65 @@
+{
+ "pack": "04_Heroes_y_videojuegos/Bardock/223_BARDOCK SSJ1,DBH,ANDRES GAMEN ANIMATIONS",
+ "forma": "bardockalt/1",
+ "grupo": "herramientas/animaciones/variantes.json",
+ "espejo": false,
+ "motivos": [],
+ "efectos": {
+  "rayo": [
+   9,
+   10,
+   17,
+   18
+  ],
+  "bola": [
+   26,
+   27,
+   32,
+   33
+  ],
+  "aura": [],
+  "estela": [
+   5,
+   6,
+   13,
+   43,
+   44
+  ]
+ },
+ "idle": [
+  7,
+  8
+ ],
+ "move": [
+  52
+ ],
+ "attack": [
+  55,
+  56,
+  57
+ ],
+ "kick": [
+  46,
+  47
+ ],
+ "ki": [
+  42,
+  45
+ ],
+ "pow": [
+  39,
+  40
+ ],
+ "hurt": [
+  37,
+  38
+ ],
+ "faint": [
+  51
+ ],
+ "portrait": 0,
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+}

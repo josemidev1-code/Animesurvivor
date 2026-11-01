@@ -1,0 +1,68 @@
+{
+ "pack": "05_Fanmade_y_alternativos/Vegetto/103_Vegito Ssj2",
+ "forma": "vegetto/2",
+ "grupo": "herramientas/animaciones/vegeta_linea.json",
+ "espejo": false,
+ "motivos": [
+  "pose de moverse agachada: se propone [110] en vez de [25]"
+ ],
+ "efectos": {
+  "rayo": [
+   96,
+   97,
+   101,
+   114,
+   117,
+   129
+  ],
+  "bola": [
+   87,
+   88,
+   89,
+   90,
+   91,
+   92,
+   107
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "idle": [
+  9,
+  10
+ ],
+ "move": [
+  110
+ ],
+ "attack": [
+  37,
+  38,
+  39,
+  40
+ ],
+ "kick": [
+  75,
+  76,
+  77,
+  78
+ ],
+ "ki": [
+  113,
+  112
+ ],
+ "pow": [
+  87,
+  88,
+  89
+ ],
+ "hurt": [
+  81,
+  82
+ ],
+ "faint": [],
+ "portrait": null,
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+}

@@ -1,0 +1,79 @@
+{
+ "pack": "05_Fanmade_y_alternativos/Broly/211_BROLY SSJ FALSO,DBZ, ANDRÉS GAMEN ANIMATIONS",
+ "forma": "brolyfan/0",
+ "grupo": "herramientas/animaciones/variantes.json",
+ "espejo": false,
+ "motivos": [
+  "pose de moverse agachada y no hay impulso más alto en el pack"
+ ],
+ "efectos": {
+  "rayo": [
+   7,
+   61,
+   62
+  ],
+  "bola": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   16,
+   17,
+   18,
+   25,
+   26,
+   28,
+   36,
+   37,
+   38,
+   75,
+   76,
+   77,
+   80,
+   81
+  ],
+  "aura": [
+   63,
+   64
+  ],
+  "estela": []
+ },
+ "idle": [
+  67,
+  68
+ ],
+ "move": [
+  55
+ ],
+ "attack": [
+  47,
+  49,
+  50
+ ],
+ "kick": [
+  52,
+  53
+ ],
+ "ki": [
+  12,
+  19
+ ],
+ "pow": [
+  36,
+  37,
+  38
+ ],
+ "hurt": [
+  44,
+  45
+ ],
+ "faint": [
+  43
+ ],
+ "portrait": 0,
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+}

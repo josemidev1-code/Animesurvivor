@@ -1,0 +1,69 @@
+{
+ "pack": "05_Fanmade_y_alternativos/Bra/188_Bra ssj1 multiverse by Andrés",
+ "forma": "bra/1",
+ "grupo": "herramientas/animaciones/nuevos.json",
+ "espejo": false,
+ "motivos": [
+  "pose de moverse agachada: se propone [14] en vez de [24]"
+ ],
+ "efectos": {
+  "rayo": [
+   58,
+   59
+  ],
+  "bola": [
+   60,
+   61,
+   62,
+   66,
+   67,
+   76,
+   77,
+   78,
+   79,
+   91,
+   92,
+   95
+  ],
+  "aura": [
+   100
+  ],
+  "estela": []
+ },
+ "idle": [
+  13,
+  15
+ ],
+ "move": [
+  14
+ ],
+ "attack": [
+  33,
+  35,
+  39
+ ],
+ "kick": [
+  47,
+  48
+ ],
+ "ki": [
+  94,
+  95
+ ],
+ "pow": [
+  66,
+  67
+ ],
+ "hurt": [
+  50,
+  51
+ ],
+ "faint": [
+  54
+ ],
+ "portrait": 105,
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+}

@@ -1,0 +1,63 @@
+{
+ "pack": "01_Dragon_Ball_Super/05_Broly/Bardock/003_BARDOCK,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+ "forma": "bardock/0",
+ "grupo": "herramientas/animaciones/resto.json",
+ "espejo": false,
+ "motivos": [],
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   23,
+   36,
+   141,
+   142,
+   143
+  ],
+  "aura": [
+   17,
+   18,
+   25,
+   149
+  ],
+  "estela": [
+   130,
+   131
+  ]
+ },
+ "idle": [
+  53,
+  54
+ ],
+ "move": [
+  132
+ ],
+ "attack": [
+  90,
+  91,
+  99
+ ],
+ "kick": [
+  109,
+  110,
+  111,
+  112
+ ],
+ "ki": [
+  59,
+  65
+ ],
+ "pow": [
+  74,
+  75
+ ],
+ "hurt": [
+  84,
+  85
+ ],
+ "faint": [],
+ "portrait": 0,
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+}

@@ -1,0 +1,60 @@
+{
+ "pack": "05_Fanmade_y_alternativos/Goku/218_GOKU, ULTRA INSTINTO DOMINADO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+ "forma": "gokuui/4",
+ "grupo": "herramientas/animaciones/goku_linea.json",
+ "espejo": false,
+ "motivos": [],
+ "efectos": {
+  "rayo": [
+   54,
+   59
+  ],
+  "bola": [
+   40,
+   41,
+   60
+  ],
+  "aura": [],
+  "estela": [
+   19,
+   20,
+   42
+  ]
+ },
+ "idle": [
+  12,
+  13
+ ],
+ "move": [
+  18
+ ],
+ "attack": [
+  27,
+  28,
+  29
+ ],
+ "kick": [
+  32,
+  33
+ ],
+ "ki": [
+  51,
+  50
+ ],
+ "pow": [
+  61,
+  62
+ ],
+ "hurt": [
+  34,
+  36
+ ],
+ "faint": [
+  54
+ ],
+ "portrait": 68,
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+}

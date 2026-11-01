@@ -1,0 +1,54 @@
+{
+ "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Androides/012_Androide 18",
+ "forma": "a18/0",
+ "grupo": "herramientas/animaciones/recuperados.json",
+ "espejo": false,
+ "motivos": [
+  "pose de moverse agachada: se propone [26] en vez de [6]"
+ ],
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": [
+   7,
+   45
+  ]
+ },
+ "idle": [
+  0,
+  1
+ ],
+ "move": [
+  26
+ ],
+ "attack": [
+  9,
+  10,
+  11
+ ],
+ "kick": [
+  18,
+  19
+ ],
+ "ki": [
+  37,
+  38
+ ],
+ "pow": [
+  40,
+  41
+ ],
+ "hurt": [
+  32,
+  33
+ ],
+ "faint": [
+  35
+ ],
+ "portrait": null,
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+}

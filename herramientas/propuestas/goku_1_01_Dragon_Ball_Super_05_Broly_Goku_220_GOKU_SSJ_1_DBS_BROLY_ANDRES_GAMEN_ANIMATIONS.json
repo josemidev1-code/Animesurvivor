@@ -1,0 +1,56 @@
+{
+ "pack": "01_Dragon_Ball_Super/05_Broly/Goku/220_GOKU,SSJ 1,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+ "forma": "goku/1",
+ "grupo": "herramientas/animaciones/goku_linea.json",
+ "espejo": false,
+ "motivos": [
+  "pose de moverse agachada: se propone [14] en vez de [11]"
+ ],
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   3,
+   28,
+   29
+  ],
+  "aura": [],
+  "estela": [
+   12,
+   33
+  ]
+ },
+ "idle": [
+  5,
+  6
+ ],
+ "move": [
+  14
+ ],
+ "attack": [
+  15,
+  16,
+  17
+ ],
+ "kick": [
+  18,
+  19
+ ],
+ "ki": [
+  34,
+  35
+ ],
+ "pow": [
+  28,
+  29
+ ],
+ "hurt": [
+  24,
+  26
+ ],
+ "faint": [],
+ "portrait": 41,
+ "dudoso": true,
+ "revisadoIA": true,
+ "sigueDudoso": false,
+ "decisionIA": "rechazada: la pose actual es un vuelo o impulso horizontal, coherente con la A corregida; la regla del 70 % confunde volar con agacharse"
+}

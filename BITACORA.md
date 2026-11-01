@@ -494,3 +494,14 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   guía. Probada con Goku SSJ: la hoja deja ver de un vistazo qué falla (p. ej. la estela 12 propuesta como impulso).
 - Tarea 8 hecha: `herramientas/revision_html.py` (página para el usuario, doble clic, con cada animación en movimiento
   sobre la hierba del juego) y `herramientas/aplicar_decisiones.py`. Probada en el navegador con Goku SSJ y el soldado.
+- Tarea 9 hecha: `proponer_forma` y `--formas-actuales` proponen arreglos para las 16 formas «agachadas» y las 4 «de
+  tamaño desigual». Revisión de la IA a ojo: **todas rechazadas**. Las «agachadas» son vuelos o impulsos horizontales,
+  del mismo tipo que la A corregida (las propuestas eran poses de pie o disparando); los «desiguales» miden igual que
+  su guardia en pantalla (las auras y estelas engañan a la medida del píxel). Quedan aceptadas a propósito; no hay nada
+  dudoso para el usuario esta vez. Probado en el navegador: Goku vuela sin polvo y del tamaño de su guardia.
+
+### Cierre del bloque 1 (sesión 10)
+- Hecho: polvo quitado al moverse (21 formas), herramienta de propuestas con pruebas (41), página de revisión, guía,
+  README y TAREAS_CODEX al día. Todo en la rama `bloque1-fotogramas`, sin fusionar en main ni subir.
+- Aprendido: con medidas simples las reglas solo aciertan un 25-35 %; la revisión de la IA es la que decide.
+- Siguiente: revisión final del bloque y preguntar al usuario si fusionar la rama en main; luego el bloque 2.
