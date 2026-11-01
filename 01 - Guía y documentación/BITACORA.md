@@ -758,3 +758,26 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Que el usuario lo pruebe; después, el cuerpo a cuerpo o fusionar la rama de los siete personajes.
+
+## 2026-11-01 — Claude · Vuelo bajo al moverse
+
+### Lo que pidió el usuario
+- «Lo que le falta son animaciones de caminar bien hechas... ¿con Piskel?». Después: «busca hojas con andar, pero no creo
+  que haya; tenemos que sacar nosotros un método que se vea bien con lo que tenemos». Eligió la **C: vuelo bajo**.
+
+### Lo que hice
+- Búsqueda web: no hay hojas de Dragon Ball con ciclo de andar en nuestro estilo. Lo más cercano son los sprites de
+  Legacy of Goku II: vista cenital, unos 18×32 px y otro estilo.
+- Datos: Goku base (pack 215) está ampliado ×9; el dibujo real mide unos 33×56 px con 24 colores.
+- Maquetas animadas (GIF) con píxeles reales de Goku, Vegeta y Piccolo: pose fija, A piernas alternas (recortadas de la
+  guardia), B rebote y C vuelo bajo.
+- `script.js`: al moverse, la pose de impulso se despega 3 px de la sombra y flota 0, 1, 2 y 1 px a 8 pasos por segundo.
+  Sube y baja poco a poco al arrancar y al pararse (`P.hov`); la sombra se queda en el suelo. Sustituye al balanceo
+  anterior (seno de ±2 px). Solo el jugador; los enemigos no cambian. `script.js?v=80`.
+
+### Pruebas
+- En el navegador con Goku, Vegeta y Piccolo: moviéndose flota a 3-5 px y al pararse vuelve a 0. Consola sin errores.
+- No probado con doble clic ni jugando de verdad: falta la valoración del usuario.
+
+### Siguiente paso recomendado
+- Que el usuario lo pruebe. Si gusta, valorar si los enemigos voladores deberían flotar igual.
