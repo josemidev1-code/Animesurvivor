@@ -77,6 +77,6 @@ def problemas(filas):
 
 
 if __name__ == '__main__':
-    p = problemas(medir(os.path.join(RAIZ, 'animaciones_juego.js')))
+    p = problemas(medir(os.path.join(RAIZ, '02 - Código del juego/animaciones_juego.js')))
     for k, v in p.items():
         print(f'{k} ({len(v)}):', ' '.join(v))

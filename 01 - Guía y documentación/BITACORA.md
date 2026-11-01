@@ -533,3 +533,97 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Hoja de todas las guardias y movimientos y medida de cuánto cambia cada guardia entre fotogramas: las que más
   cambian son bills/0, freezer/4, saibaman/0, freezer/5, trunks/2, zombies/1, vegettofan/1, brolyfan/0 y vegetaue/0.
   Pendiente: preguntar al usuario si alguna más le parece fea antes de tocarlas.
+
+## 2026-11-01 — Codex · Organización del contexto
+
+### Lo que pidió el usuario
+- Organizar la carpeta para que las próximas sesiones de Claude utilicen el contexto de forma más eficiente.
+
+### Lo que hice
+- Preparé `ESTADO_ACTUAL.md` como relevo breve y mapa de archivos. Ajusté las instrucciones de entrada para consultar la documentación histórica y los archivos grandes según la tarea, conservando las reglas y el historial.
+- No moví recursos ni modifiqué el juego. Comprobé previamente la sintaxis de `script.js`, `animaciones_juego.js` y `sprites.js`.
+
+### A medias / problemas
+- No se ha realizado una prueba de partida. El estado de cambios de Git no pudo consultarse en este entorno; verificarlo antes de hacer commits.
+
+### Siguiente paso recomendado
+- Confirmar el estado de Git y mantener actualizado el resumen al cambiar el proyecto. Revisar con el usuario el movimiento y las guardias pendientes.
+
+
+## 2026-11-01 — Codex · Organización del proyecto
+
+### Lo que pidió el usuario
+- Aplicar las mejoras propuestas: relevo breve, separación gradual de código, índice de sprites, prioridades y guía de pruebas.
+
+### Lo que hice
+- Extraje las utilidades generales a `utilidades.js`, cargado antes de `script.js` desde `index.html`. Actualicé la versión de caché de `script.js` a 67.
+- Creé `INDICE_SPRITES.md` y `herramientas/indice_sprites.py`, `PRUEBAS_RAPIDAS.md`, un archivo de prioridades corto y `TAREAS_CODEX_HISTORICO.md` conservando el documento anterior. Actualicé README, AGENTS y el resumen.
+- Comprobé sintaxis, extracción idéntica del bloque y pruebas existentes de personajes, enemigos y objetos en una copia preparada.
+
+### A medias / problemas
+- El índice registra 170 formas con pack explícito, una ruta no encontrada (jiren/2). No implica que la forma no funcione: revisar la selección antes de modificarla.
+- La prueba de navegador local no se pudo abrir desde el navegador de pruebas; falta comprobar el juego abriendo `index.html` y jugar una partida. La extracción es solo un primer paso, no una modularización completa.
+- El estado de Git no pudo verificarse en este entorno; no se hizo commit.
+
+### Siguiente paso recomendado
+- Probar apertura y partida; investigar la ruta de Jiren y continuar separando sistemas solo cuando exista una tarea concreta y pruebas adecuadas.
+
+
+## 2026-11-01 — Codex · Carpeta más fácil de recorrer
+
+### Lo que pidió el usuario
+- Organizar la carpeta con nombres claros y una guía visual.
+
+### Lo que hice
+- Reuní la documentación en `01 - GUIA Y DOCUMENTACION` y creé `ABREME - GUIA DEL PROYECTO.html`. Actualicé instrucciones, referencias y la salida del índice de sprites. Los recursos y código del juego mantienen sus rutas.
+
+### A medias / problemas
+- Falta la comprobación visual de una partida. Los documentos históricos conservan referencias originales, que pueden apuntar a rutas anteriores.
+
+### Siguiente paso recomendado
+- Abrir la guía y comprobar el juego; mantener actualizado el estado y el índice.
+
+## 2026-11-01 — Codex · Nombres de carpetas
+
+- El usuario pidió nombres más claros y una mejor organización visual.
+- Renombradas las carpetas de guía, planes, recursos pendientes y dibujos propios; se actualizaron referencias activas y la guía visual. Las rutas antiguas en el historial se conservan como registro.
+- Las carpetas técnicas `sprites`, `ui` y `herramientas` conservan sus nombres porque el juego y las herramientas dependen de ellas.
+
+## 2026-11-01 — Codex · Organización visual de la carpeta
+
+### Lo que pidió el usuario
+- Organizar visualmente la carpeta principal, cambiar las rutas necesarias y documentarlo.
+
+### Lo que hice
+- Reuní los nueve archivos de código, estilos y recursos preparados en `02 - Código del juego`. Actualicé las rutas en `index.html`, las herramientas, las pruebas y la documentación activa. Los sprites originales y las herramientas conservan sus carpetas.
+- Comprobé en una copia las rutas locales, sintaxis, pruebas de personajes, enemigos y objetos, y 18 pruebas de herramientas.
+
+### Pendiente
+- Abrir `index.html` con doble clic y jugar para comprobar visualmente. La política del navegador de pruebas impidió abrir archivos locales. No se comprobó ni modificó el estado de Git.
+
+## 2026-11-01 — Codex · Ideas para Claude
+
+- El usuario describió cambios deseados para personajes, ataques, equilibrio, interfaz, menús y música, y pidió reunirlos en un Markdown para Claude.
+- Preparado `01 - Guía y documentación/Cambios propuestos por Josemi.md` con los objetivos, preguntas pendientes y recursos que aportará el usuario. Son propuestas; no se han implementado cambios en el juego.
+- Siguiente paso: revisar el documento con el usuario y acordar con Claude las prioridades y decisiones creativas antes de implementar.
+
+## 2026-11-01 — Claude · Revisión general y commit de la reorganización
+
+### Lo que pidió el usuario
+- «Vuelve a revisar todo el proyecto y dime»; después, «sí, haz el commit» de la reorganización de carpetas que estaba sin guardar.
+
+### Lo que hice
+- Revisión: sintaxis de los 9 JavaScript, `comprobar_personajes` (37 personajes, 90 formas), `comprobar_enemigos` (82 activos, 35 retirados), `comprobar_objetos` y 47 pruebas de herramientas: todo correcto.
+- Juego servido en local tras la reorganización: menú, 62/62 guerreros y partida en Kame House sin errores de carga. Falta la prueba con doble clic.
+- Commit de la reorganización en `bloque1-fotogramas` (git la registra como renombrados, se conserva el historial). `Recursos pendientes/escenarios` se añadió a la fuerza porque `.gitignore` tiene `ESCENARIOS/` y en Windows no distingue mayúsculas.
+
+### A medias / problemas
+- Nada subido a GitHub: `main` va 28 commits por delante de `origin/main` y `bloque1-fotogramas` 17 por delante de `main`.
+- Los 7 personajes de DeviantArt (Nappa, Ginyu, Jeice, Guldo, Uub, Mr. Satán, A21) siguen en la rama `claude/quizzical-gates-9cf9c0`, que parte de 47 commits atrás: fusionarla tendrá conflictos (`script.js` cambió de carpeta).
+- Quieto, Goku pasa de 103 a 0 de vida en ~14 s al minuto 1:14 (encaja con la queja del cuerpo a cuerpo).
+- Letras borrosas: `resize()` ajusta la escala en medios pasos (x1,5, x2,5…), que dan píxeles desiguales.
+- Con la ventana a tamaño 0, `present()` lanza un error de `drawImage` en cada fotograma.
+- Gemas de experiencia dibujadas como rectángulos azules por código.
+
+### Siguiente paso recomendado
+- Decidir fusiones y `git push`; luego seguir el orden de «Cambios propuestos por Josemi»: HUD y nitidez, equilibrio de combate, personajes, menús.

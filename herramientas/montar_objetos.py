@@ -61,7 +61,7 @@ def main():
     texto = "// Generado por herramientas/montar_objetos.py; imágenes y créditos sin fetch.\n"
     texto += "window.UI_IMG=" + json.dumps(imagenes, ensure_ascii=False, separators=(",", ":")) + ";\n"
     texto += "window.RECURSOS_CREDITOS=" + json.dumps(creditos, ensure_ascii=False, separators=(",", ":")) + ";\n"
-    (RAIZ / "ui_imagenes.js").write_text(texto, encoding="utf-8")
+    (RAIZ / "02 - Código del juego/ui_imagenes.js").write_text(texto, encoding="utf-8")
     print(f"{len(imagenes)} imágenes incrustadas, {len(creditos)} fuentes acreditadas.")
 
 

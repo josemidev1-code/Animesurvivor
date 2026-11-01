@@ -217,7 +217,7 @@ def leer_config():
 def main():
     heroes = leer_config()
     solo = set(sys.argv[1:])
-    destino = os.path.join(RAIZ, 'animaciones_juego.js')
+    destino = os.path.join(RAIZ, '02 - Código del juego/animaciones_juego.js')
     previo = {}
     if solo and os.path.exists(destino):
         t = open(destino, encoding='utf-8').read(); previo = json.loads(t[t.index('{'):t.rindex('}') + 1])['h']

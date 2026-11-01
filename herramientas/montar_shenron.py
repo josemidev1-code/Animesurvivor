@@ -28,6 +28,6 @@ for x in range(int(W*0.84),W):
     if c[3] and min(c[:3])>110:px[x,y]=(0,0,0,0)
 sm.save('ui/shenron.png')
 b=io.BytesIO();sm.save(b,'PNG')
-open('shenron_imagen.js','w',encoding='utf-8').write('// Generado por herramientas/montar_shenron.py desde sprites/shenron/shenron.jpg\nwindow.SHENRON_IMG="data:image/png;base64,'+base64.b64encode(b.getvalue()).decode()+'";\n')
+open('02 - Código del juego/shenron_imagen.js','w',encoding='utf-8').write('// Generado por herramientas/montar_shenron.py desde sprites/shenron/shenron.jpg\nwindow.SHENRON_IMG="data:image/png;base64,'+base64.b64encode(b.getvalue()).decode()+'";\n')
 sm.resize((W*6,H*6),Image.NEAREST).save(os.environ.get('VISTA','_vista_shenron.png'))
 print('ok')

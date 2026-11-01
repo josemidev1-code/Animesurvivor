@@ -14,5 +14,5 @@ for k,i in ELEGIDAS.items():
   im=im.resize((round(im.width*r),round(im.height*r)),Image.LANCZOS);x=(im.width-W)//2;y=(im.height-H)//2;im=im.crop((x,y,x+W,y+H))
   b=io.BytesIO();im.save(b,'JPEG',quality=82);out[k]='data:image/jpeg;base64,'+base64.b64encode(b.getvalue()).decode()
   fuentes[k]=fs[i].replace(chr(92),'/')
-open('portadas_mapas.js','w',encoding='utf-8').write('// Generado por herramientas/montar_portadas.py\nwindow.MAP_COVER='+json.dumps(out)+';\nwindow.MAP_COVER_SRC='+json.dumps(fuentes,ensure_ascii=False,indent=0)+';\n')
-print(len(out),os.path.getsize('portadas_mapas.js'))
+open('02 - Código del juego/portadas_mapas.js','w',encoding='utf-8').write('// Generado por herramientas/montar_portadas.py\nwindow.MAP_COVER='+json.dumps(out)+';\nwindow.MAP_COVER_SRC='+json.dumps(fuentes,ensure_ascii=False,indent=0)+';\n')
+print(len(out),os.path.getsize('02 - Código del juego/portadas_mapas.js'))

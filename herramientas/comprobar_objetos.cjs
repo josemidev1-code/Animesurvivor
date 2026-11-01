@@ -1,8 +1,8 @@
 // Comprueba recursos incrustados y la lógica real de recogida y botín, sin navegador.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
-const raiz=path.resolve(__dirname,'..'),src=fs.readFileSync(path.join(raiz,'script.js'),'utf8');
+const raiz=path.resolve(__dirname,'..'),src=fs.readFileSync(path.join(raiz,'02 - Código del juego/script.js'),'utf8');
 const c=vm.createContext({window:{},console});
-vm.runInContext(fs.readFileSync(path.join(raiz,'ui_imagenes.js'),'utf8'),c);
+vm.runInContext(fs.readFileSync(path.join(raiz,'02 - Código del juego/ui_imagenes.js'),'utf8'),c);
 for(const id of ['senzu','capsulaVida','capsulaKi','radar']){
   const bytes=Buffer.from(c.window.UI_IMG[id].split(',')[1],'base64');
   assert(bytes.equals(fs.readFileSync(path.join(raiz,'ui/objetos',id+'.png'))),id);

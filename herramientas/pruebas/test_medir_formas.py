@@ -16,7 +16,7 @@ class MedirFormas(unittest.TestCase):
         self.assertAlmostEqual(medir_formas.manchas(im), 4 / 104)
 
     def test_linea_base(self):
-        p = medir_formas.problemas(medir_formas.medir(os.path.join(RAIZ, 'animaciones_juego.js')))
+        p = medir_formas.problemas(medir_formas.medir(os.path.join(RAIZ, '02 - Código del juego/animaciones_juego.js')))
         # antes de quitar el polvo al montar (tarea 2) había 21 formas con manchas sueltas
         self.assertEqual(p['sueltos'], [])
         self.assertEqual(len(p['agachadas']), 16)

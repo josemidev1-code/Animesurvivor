@@ -2,10 +2,10 @@
 // Uso: node herramientas/comprobar_personajes.cjs gokubroly vegetamanga ...
 // Sin argumentos revisa el registro de todos los personajes de NUEVOS.
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
-const raiz=path.resolve(__dirname,'..'),src=fs.readFileSync(path.join(raiz,'script.js'),'utf8');
+const raiz=path.resolve(__dirname,'..'),src=fs.readFileSync(path.join(raiz,'02 - Código del juego/script.js'),'utf8');
 function tramo(a,b){const i=src.indexOf(a),j=src.indexOf(b,i);assert(i>=0&&j>i,a);return src.slice(i,j)}
 const c=vm.createContext({window:{}});
-vm.runInContext(fs.readFileSync(path.join(raiz,'animaciones_juego.js'),'utf8'),c);
+vm.runInContext(fs.readFileSync(path.join(raiz,'02 - Código del juego/animaciones_juego.js'),'utf8'),c);
 vm.runInContext(tramo('const NUEVOS={','// formas añadidas'),c);
 vm.runInContext(tramo('const MV={','const UNLOCK_LV='),c);
 const {NUEVOS,MV,SIGS,A}=vm.runInContext('({NUEVOS,MV,SIGS,A:window.ANIM_SET.h})',c);

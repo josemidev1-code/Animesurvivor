@@ -2,7 +2,7 @@
 (rayos, bolas, auras, estelas). Marca el pack como dudoso, con motivos, cuando no está claro.
 
 Uso:  python herramientas/proponer_fotogramas.py "<pack dentro de sprites/>" [...]
-Salida: herramientas/propuestas/<pack>.json (ver docs/superpowers/specs/2026-11-01-propuesta-fotogramas-design.md)
+Salida: herramientas/propuestas/<pack>.json (ver Planes y diseños/superpowers/specs/2026-11-01-propuesta-fotogramas-design.md)
 """
 import glob, json, os, re, statistics, sys, unicodedata
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -265,7 +265,7 @@ def proponer_forma(id_forma, guardar=True):
         else:
             p['motivos'].append('pose de moverse agachada y no hay impulso más alto en el pack')
     # tamaño de píxel: se corrige cada fotograma con la proporción medida en el juego
-    src = open(os.path.join(m.RAIZ, 'animaciones_juego.js'), encoding='utf-8').read()
+    src = open(os.path.join(m.RAIZ, '02 - Código del juego/animaciones_juego.js'), encoding='utf-8').read()
     A = json.loads(src[src.index('{'):src.rindex('}') + 1])['h'][h][f]['anims']
     base = escala_pixel(frames(A['Idle'])[0]); _, _, esc = m.cargar_forma(F)
     manual = {int(k): v for k, v in F.get('escalaFrames', {}).items()}
@@ -300,7 +300,7 @@ def todos_los_packs():
 if __name__ == '__main__':
     if sys.argv[1:] == ['--formas-actuales']:
         from medir_formas import medir, problemas
-        pr = problemas(medir(os.path.join(m.RAIZ, 'animaciones_juego.js')))
+        pr = problemas(medir(os.path.join(m.RAIZ, '02 - Código del juego/animaciones_juego.js')))
         for idf in dict.fromkeys(pr['agachadas'] + pr['desiguales']):
             print(idf, *proponer_forma(idf)['motivos'], sep='\n  ')
         sys.exit()

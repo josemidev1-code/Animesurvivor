@@ -12,7 +12,7 @@ Python: `C:\Users\soyjo\AppData\Local\Programs\Python\Python314\python.exe` (pon
 | Ver un pack entero, numerado | `python herramientas/ver_pack.py "<pack dentro de sprites/>"` | `herramientas/_revisar/pack_<nombre>.png` |
 | Ver unos fotogramas en grande | `python herramientas/ver_pack.py "<pack>" 4 10,11,12` | `..._sel.png` |
 | Revisar una forma elegida | `python herramientas/previsualizar.py <heroe> <forma>` | `herramientas/_revisar/<heroe>_<forma>.png` y `.gif` |
-| Meterlo en el juego | `python herramientas/montar_animaciones.py [heroe ...]` | `animaciones_juego.js` |
+| Meterlo en el juego | `python herramientas/montar_animaciones.py [heroe ...]` | `02 - Código del juego/animaciones_juego.js` |
 
 Para encontrar packs: la carpeta `sprites/` (categoría/saga/personaje/pack).
 Los números de fotograma son el orden natural de los nombres de archivo del pack (los que imprime `ver_pack.py`).

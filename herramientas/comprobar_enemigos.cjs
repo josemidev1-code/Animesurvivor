@@ -1,10 +1,10 @@
 // Auditoría sin navegador: ejecuta las tablas y el director reales, con dibujo/sonido simulados.
 // Uso: node herramientas/comprobar_enemigos.cjs
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
-const raiz=path.resolve(__dirname,'..'),src=fs.readFileSync(path.join(raiz,'script.js'),'utf8');
+const raiz=path.resolve(__dirname,'..'),src=fs.readFileSync(path.join(raiz,'02 - Código del juego/script.js'),'utf8');
 function tramo(desde,hasta){const a=src.indexOf(desde),b=src.indexOf(hasta,a);assert(a>=0&&b>a,`No se encuentra ${desde}`);return src.slice(a,b)}
 const c=vm.createContext({window:{},SPRITES_DATA:[],SPR:{},console,Set,Math});
-vm.runInContext(fs.readFileSync(path.join(raiz,'animaciones_juego.js'),'utf8'),c);
+vm.runInContext(fs.readFileSync(path.join(raiz,'02 - Código del juego/animaciones_juego.js'),'utf8'),c);
 vm.runInContext(`var ANIM_SET=window.ANIM_SET,HDEF={};
   for(const id in ANIM_SET.h){const f=Object.keys(ANIM_SET.h[id]).map(Number);HDEF[id]={forms:Array(Math.max(...f)+1)}}`,c);
 vm.runInContext(tramo('const ET={','// ---------- audio ----------'),c);

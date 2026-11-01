@@ -8,21 +8,26 @@ Juego de supervivencia (estilo PokéSurvivor / Vampire Survivors) con personajes
 | Archivo / carpeta | Para qué sirve |
 |---|---|
 | `index.html` | El juego (ábrelo con doble clic) |
-| `script.js` | Todo el código del juego |
-| `style.css` | El aspecto de menús y pantallas |
-| `animaciones_juego.js` | Las animaciones de los personajes (se genera solo con `herramientas/montar_animaciones.py`) |
-| `sprites.js` | Enemigos, escenarios y efectos ya metidos en el juego |
-| `ui_imagenes.js` | Tu logo y tus 7 esferas, metidos en el juego |
-| `portadas_mapas.js`, `shenron_imagen.js` | Portadas de los mapas y Shenron del gachapón (se generan con `herramientas/montar_portadas.py` y `montar_shenron.py`) |
+| `02 - Código del juego/script.js` | Lógica principal del juego |
+| `02 - Código del juego/utilidades.js` | Utilidades generales compartidas; se carga antes de `02 - Código del juego/script.js` |
+| `02 - Código del juego/style.css` | El aspecto de menús y pantallas |
+| `02 - Código del juego/animaciones_juego.js` | Las animaciones de los personajes (se genera solo con `herramientas/montar_animaciones.py`) |
+| `02 - Código del juego/sprites.js` | Enemigos, escenarios y efectos ya metidos en el juego |
+| `02 - Código del juego/ui_imagenes.js` | Tu logo y tus 7 esferas, metidos en el juego |
+| `02 - Código del juego/portadas_mapas.js`, `02 - Código del juego/shenron_imagen.js` | Portadas de los mapas y Shenron del gachapón (se generan con `herramientas/montar_portadas.py` y `montar_shenron.py`) |
 | `ui/` | Tu logo y tus esferas en PNG (si los cambias, hay que volver a meterlos) |
 | `ui/objetos/` | Senzu, cápsulas, radares, originales y procedencia de cada recurso |
-| `CREDITOS_RECURSOS.md` | Autores de los recursos incorporados y catálogo de fuentes revisadas |
+| `01 - Guía y documentación/CREDITOS_RECURSOS.md` | Autores de los recursos incorporados y catálogo de fuentes revisadas |
 | `sprites/` | Los packs de sprites originales de donde salen los personajes |
 | `herramientas/` | Programas para elegir fotogramas y montar las animaciones (ver `herramientas/GUIA_ANIMACIONES.md`) |
-| `BITACORA.md` | Diario: lo que pediste y lo que se hizo en cada sesión |
-| `TAREAS_CODEX.md` | Lo que queda por hacer, con instrucciones para la siguiente IA |
-| `PIXEL_ART_POR_CODIGO.md` | Lista de lo que está dibujado por código, para que lo sustituyas por tus dibujos |
-| `SPRITES_PENDIENTES.md` | Packs que faltan por meter y personajes que no tienen sprites buenos |
+| `01 - Guía y documentación/BITACORA.md` | Diario: lo que pediste y lo que se hizo en cada sesión |
+| `01 - Guía y documentación/TAREAS_CODEX.md` | Prioridades actuales para la siguiente IA |
+| `01 - Guía y documentación/TAREAS_CODEX_HISTORICO.md` | Relevos y procedimientos anteriores |
+| `01 - Guía y documentación/ESTADO_ACTUAL.md` | Resumen breve y mapa del proyecto |
+| `01 - Guía y documentación/INDICE_SPRITES.md` | Índice regenerable de selecciones de packs de animación |
+| `01 - Guía y documentación/PRUEBAS_RAPIDAS.md` | Pruebas recomendadas según el cambio |
+| `01 - Guía y documentación/PIXEL_ART_POR_CODIGO.md` | Lista de lo que está dibujado por código, para que lo sustituyas por tus dibujos |
+| `01 - Guía y documentación/SPRITES_PENDIENTES.md` | Packs que faltan por meter y personajes que no tienen sprites buenos |
 | `AGENTS.md`, `CLAUDE.md` | Instrucciones para las IAs que trabajan en el proyecto |
 
 Lo viejo que no usa el juego (copias antiguas, capturas, fondos sueltos, la importación de Gemini/Codex y la
@@ -35,11 +40,11 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
   Black Time Breaker (3), Goku Black fanmade (4) y Goku alternativo (Místico, Ikari y Bestia). Las 17 formas tienen guardia, impulso, combo, patada, ki, aura, daño, muerte y retrato.
 - Sesión 9: 31 técnicas nuevas (cada personaje tiene su lista propia), 12 eventos en partida, HUD y subida de nivel como
   PokéSurvivor, rayos y bolas de ki sacados de los packs, portadas de los mapas, y suelos, árboles y rocas reales
-  (pack Ninja Adventure, CC0, generados con `herramientas/montar_escenarios.py` en `escenarios_tiles.js`).
+  (pack Ninja Adventure, CC0, generados con `herramientas/montar_escenarios.py` en `02 - Código del juego/escenarios_tiles.js`).
 - 7 jugables más (Nappa, Ginyu, Jeice, Guldo, Uub, Mr. Satán, Androide 21) esperan en la rama
   `claude/quizzical-gates-9cf9c0`, sin fusionar todavía.
 - **82 tipos de enemigo** con animaciones seleccionadas de sus propios personajes; además, la sombra del jugador.
-- **35 tipos retirados temporalmente** por no tener secuencias completas revisadas (lista en `SPRITES_PENDIENTES.md`).
+- **35 tipos retirados temporalmente** por no tener secuencias completas revisadas (lista en `01 - Guía y documentación/SPRITES_PENDIENTES.md`).
   Los 24 mapas conservan cinco encuentros con jefes. Hay menos variedad de enemigos normales mientras se recuperan sus packs.
 - Los enemigos con un único fotograma de vuelo flotan en guardia; durante la carga ya no se dibujan cuerpos por código.
 - Logo del menú y esferas del dragón dibujados por ti.
@@ -57,7 +62,7 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 
 ## Lo que falta (en este orden)
 
-Plan acordado con el usuario en la sesión 10 (bloque 1 hecho; diseño en `docs/superpowers/specs/`):
+Plan acordado con el usuario en la sesión 10 (bloque 1 hecho; diseño en `Planes y diseños/superpowers/specs/`):
 
 1. **Bloque 2 · Técnicas de la serie** con el efecto dibujado en su propio pack (150 de 162 packs traen rayos, bolas
    o auras sin usar; ninguno genérico).
@@ -68,7 +73,7 @@ Plan acordado con el usuario en la sesión 10 (bloque 1 hecho; diseño en `docs/
 5. **Bloque 6 · Mecánicas nuevas.**
 
 Entre bloque y bloque, jugar una partida para comprobar que sigue siendo divertido. Sigue pendiente sustituir lo
-dibujado por código (`PIXEL_ART_POR_CODIGO.md`).
+dibujado por código (`01 - Guía y documentación/PIXEL_ART_POR_CODIGO.md`).
 
 Comprobación de personajes: `node herramientas/comprobar_personajes.cjs`. Para aplicar las reglas de fotogramas y muerte a las incorporaciones de esta sesión:
 `node herramientas/comprobar_personajes.cjs gokubroly vegetamanga vegetabroly blacktime blackfan gokualt`.
@@ -83,6 +88,6 @@ el GIF de Lady-Pixel se conserva íntegro. Falta revisar estos objetos en una pa
 
 ## Reglas
 
-- Solo sprites de `sprites/`, nada dibujado por código. Lo que no tenga sprites buenos se quita y se apunta en `SPRITES_PENDIENTES.md`.
+- Solo sprites de `sprites/`, nada dibujado por código. Lo que no tenga sprites buenos se quita y se apunta en `01 - Guía y documentación/SPRITES_PENDIENTES.md`.
 - Al moverse, los personajes vuelan o se impulsan (no caminan).
 - Todo tiene que funcionar con doble clic en `index.html`.

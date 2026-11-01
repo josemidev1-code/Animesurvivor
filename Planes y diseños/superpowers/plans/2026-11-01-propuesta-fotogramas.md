@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.14 + Pillow 13 (sin numpy ni pytest: pruebas con `unittest` de la biblioteca estándar), HTML/JS sin dependencias para la página de revisión, Node para las comprobaciones existentes.
 
-**Spec:** `docs/superpowers/specs/2026-11-01-propuesta-fotogramas-design.md`
+**Spec:** `Planes y diseños/superpowers/specs/2026-11-01-propuesta-fotogramas-design.md`
 
 ## Global Constraints
 
@@ -38,7 +38,7 @@
 ### Task 1: Medición de las formas del juego en el proyecto
 
 **Files:**
-- Create: `herramientas/medir_formas.py` (a partir de `docs/superpowers/specs/2026-11-01-medicion-formas.py`)
+- Create: `herramientas/medir_formas.py` (a partir de `Planes y diseños/superpowers/specs/2026-11-01-medicion-formas.py`)
 - Create: `herramientas/pruebas/__init__.py` (vacío), `herramientas/pruebas/test_medir_formas.py`
 
 **Interfaces:**
@@ -46,9 +46,9 @@
 
 - [ ] **Step 1: Write the failing test** — `test_linea_base`: con el `animaciones_juego.js` actual, `len(problemas(medir(...))['sueltos']) == 21`, `'agachadas' == 16`, `'desiguales' == 4`, y `'goku/0' in sueltos`, `'vegetasuper/2' in desiguales`. `test_mancha_sintetica`: una imagen 20×20 con un bloque de 10×10 y un punto suelto de 2×2 da `suelto ≈ 4/104`.
 - [ ] **Step 2:** Run `"$PY" -m unittest herramientas.pruebas.test_medir_formas -v` → FAIL (módulo no existe).
-- [ ] **Step 3:** Copiar el script del spec a `herramientas/medir_formas.py`, convertir el cuerpo en `medir()` y `problemas()` (definiciones exactas del spec: vecindad 8, umbrales 5 %, 70 %, 15 %) y dejar la impresión en `if __name__ == '__main__'`. Borrar la copia de `docs/superpowers/specs/` y cambiar la referencia del spec a `herramientas/medir_formas.py`.
+- [ ] **Step 3:** Copiar el script del spec a `herramientas/medir_formas.py`, convertir el cuerpo en `medir()` y `problemas()` (definiciones exactas del spec: vecindad 8, umbrales 5 %, 70 %, 15 %) y dejar la impresión en `if __name__ == '__main__'`. Borrar la copia de `Planes y diseños/superpowers/specs/` y cambiar la referencia del spec a `herramientas/medir_formas.py`.
 - [ ] **Step 4:** Run the test → PASS (tarda unos minutos: decodifica las 171 formas).
-- [ ] **Step 5: Commit** — `git add herramientas/medir_formas.py herramientas/pruebas docs BITACORA.md && git commit -m "Medición de polvo, poses agachadas y tamaños de las formas del juego"`
+- [ ] **Step 5: Commit** — `git add herramientas/medir_formas.py herramientas/pruebas Planes y diseños BITACORA.md && git commit -m "Medición de polvo, poses agachadas y tamaños de las formas del juego"`
 
 ### Task 2: Quitar polvo y chispas sueltas al montar
 

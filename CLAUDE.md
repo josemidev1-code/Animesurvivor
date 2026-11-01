@@ -1,4 +1,3 @@
 # CLAUDE.md
 
-Lee y cumple `AGENTS.md`: son las instrucciones comunes para todas las IAs de este proyecto
-(documentar en `BITACORA.md` lo que pide el usuario y lo que haces, commits frecuentes y dejar el relevo preparado).
+Lee `AGENTS.md` y `01 - Guía y documentación/ESTADO_ACTUAL.md` al empezar. Consulta otros documentos y archivos solo cuando sean relevantes para la tarea. No leas completos los archivos generados de recursos grandes si basta con buscar fragmentos o revisar su origen.

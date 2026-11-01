@@ -56,7 +56,7 @@ for k, (im, cel, f) in SUELOS.items():
 for k, (base, f) in ALIAS.items():
     suelos[k] = {**suelos[base], 'f': ' '.join(x for x in (suelos[base]['f'], f) if x)}
 decor = {k: {'src': a_url(VI.crop(r)), 'f': f} for k, (r, f) in DECORADOS.items()}
-with open(os.path.join(RAIZ, 'escenarios_tiles.js'), 'w', encoding='utf-8') as fh:
+with open(os.path.join(RAIZ, '02 - Código del juego/escenarios_tiles.js'), 'w', encoding='utf-8') as fh:
     fh.write('// Generado por herramientas/montar_escenarios.py: suelos y decorados del pack Ninja Adventure (CC0, Pixel-Boy y AAA)\n')
     fh.write('window.ESC_TILES=' + json.dumps(suelos) + ';\nwindow.ESC_DECOR=' + json.dumps(decor) + ';\n')
 print(len(suelos), 'suelos y', len(decor), 'decorados')

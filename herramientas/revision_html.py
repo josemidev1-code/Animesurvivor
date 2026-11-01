@@ -26,7 +26,7 @@ def fotograma(ruta):
 
 def hierba():
     try:
-        with open(os.path.join(m.RAIZ, 'escenarios_tiles.js'), encoding='utf-8') as fh: t = fh.read()
+        with open(os.path.join(m.RAIZ, '02 - Código del juego/escenarios_tiles.js'), encoding='utf-8') as fh: t = fh.read()
         return json.loads(t[t.index('{'):t.rindex('}') + 1])['grass']['src']
     except (OSError, ValueError, KeyError):
         return ''
