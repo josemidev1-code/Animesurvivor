@@ -492,3 +492,5 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   Spec actualizado con el cambio del usuario (la IA revisa todas las propuestas).
 - Tarea 7 hecha: `herramientas/hoja_dudosos.py` (hoja por propuesta para la IA, con ñ y tildes) y sección nueva en la
   guía. Probada con Goku SSJ: la hoja deja ver de un vistazo qué falla (p. ej. la estela 12 propuesta como impulso).
+- Tarea 8 hecha: `herramientas/revision_html.py` (página para el usuario, doble clic, con cada animación en movimiento
+  sobre la hierba del juego) y `herramientas/aplicar_decisiones.py`. Probada en el navegador con Goku SSJ y el soldado.
