@@ -446,3 +446,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Objetivo del usuario: «meter el máximo de personajes jugables posibles, mejores enemigos, mecánicas y todo». Propuesto
   un orden: 1) herramienta que propone fotogramas sola (con movimiento A corregido), 2) técnicas desde el pack,
   3) packs que faltan, 4) enemigos, 5) experiencia y HUD, 6) mecánicas nuevas.
+- «Sí, ese orden». Empieza el bloque 1: herramienta que propone los fotogramas de cada pack (con el movimiento corregido).
