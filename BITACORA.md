@@ -410,3 +410,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   Propuesto al usuario separar en proyectos (movimiento → experiencia → HUD → técnicas de la serie → sprites pendientes).
 - Respuesta: «quiero ver una animación coherente, solo eso, en todos los personajes; la animación de los sprites pero metida
   de forma coherente, y que cada personaje tenga sus ataques de la serie, que también están en los sprites».
+- Revisado el pack de Goku base (DBS Broly, 67 fotogramas): no tiene ciclo de caminar; sí impulso con polvo (7-8), estela de
+  velocidad (9-10), golpes, carga y rayo del Kamehameha (35-39), aura, transformación y Genkidama. Ofrecido al usuario
+  enseñarle propuestas de movimiento en el navegador.
