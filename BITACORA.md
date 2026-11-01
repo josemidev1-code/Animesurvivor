@@ -480,3 +480,8 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Tarea 5 hecha: plantillas por autor (`autor_de`, `manuales`, `plantilla`) y archivos en `herramientas/propuestas/`.
   Descubierto: los packs de Andrés Gamen no comparten orden ni número de fotogramas, así que la plantilla busca cada
   fotograma por silueta y por posición aproximada. Con Goku SSJ acierta guardia, impulso y ki exactos.
+- Tarea 6 (validación) a medias: comparando con lo elegido a mano, las reglas aciertan un 25 % y un clasificador por
+  vecinos entrenado con las 162 selecciones, un 35 %. Lejos del 80 %. Causa: cada pack mezcla arte oficial, caras,
+  escenas con otros personajes y varias tandas de golpes parecidos; con medidas simples no se distingue cuál eligió
+  la persona. Consecuencia: casi todos los packs serían dudosos y la IA tendría que revisarlos casi todos.
+  Preguntado al usuario cómo seguir.
