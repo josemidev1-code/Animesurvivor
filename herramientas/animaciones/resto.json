@@ -210,8 +210,8 @@
    "0": {
     "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/233_TRUNKS CON ARMADURA,BASE, ANDRÉS GAMEN ANIMATIONS",
     "idle": [
-     26,
-     27
+     1,
+     33
     ],
     "idleDu": [
      26,
@@ -244,7 +244,11 @@
     "faint": [
      25
     ],
-    "portrait": 55
+    "portrait": 55,
+    "idleAntes": [
+     26,
+     27
+    ]
    }
   },
   "bardock": {

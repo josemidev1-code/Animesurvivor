@@ -524,3 +524,12 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Probado en el navegador con Goku y enemigos a la derecha yendo a la izquierda: mira a la izquierda todo el rato
   mientras ataca. No se pudo ver en movimiento real (el panel de pruebas estaba en segundo plano): falta que el
   usuario lo vea jugando. Sigue pendiente decidir si se fusiona `bloque1-fotogramas` en main.
+- Usuario: «falta hacerlo en todos los personajes, que la animación de moverse sea unidireccional, y en algunos la
+  pose de estar quieto que se mueve queda mal, por ejemplo con el Trunks sin espada». Aclarado con preguntas:
+  «unidireccional» = **sin cambiar de pose** al moverse; a Trunks le pasa que **la pose es fea**.
+- Hecho: al moverse, todos los personajes usan **una sola pose fija** (el primer fotograma de `move`; los 12 que
+  tenían 2 ya no alternan). Trunks con armadura base (`trunkscell/0`): guardia de pie con las manos en la cintura
+  (fotogramas 1 y 33 del pack 233; antes 26 y 27, postura agachada de pelea, guardada en `idleAntes`). `?v=66`.
+- Hoja de todas las guardias y movimientos y medida de cuánto cambia cada guardia entre fotogramas: las que más
+  cambian son bills/0, freezer/4, saibaman/0, freezer/5, trunks/2, zombies/1, vegettofan/1, brolyfan/0 y vegetaue/0.
+  Pendiente: preguntar al usuario si alguna más le parece fea antes de tocarlas.
