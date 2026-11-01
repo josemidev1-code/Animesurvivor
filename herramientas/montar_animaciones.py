@@ -84,6 +84,30 @@ def ancla(im):
     return cx, b[3]
 
 
+def quitar_sueltos(im, max_parte=0.25):
+    """Borra el polvo y las chispas separadas del cuerpo: manchas no unidas (vecindad de 8) a la principal y más
+    pequeñas que max_parte de ella. Las grandes se quedan (espadas, colas o auras que vienen separadas)."""
+    w, h = im.size; px = im.load(); visto = set(); comps = []
+    for y in range(h):
+        for x in range(w):
+            if px[x, y][3] > 0 and (x, y) not in visto:
+                pila = [(x, y)]; visto.add((x, y)); puntos = []
+                while pila:
+                    a, b = pila.pop(); puntos.append((a, b))
+                    for da in (-1, 0, 1):
+                        for db in (-1, 0, 1):
+                            q = (a + da, b + db)
+                            if 0 <= q[0] < w and 0 <= q[1] < h and q not in visto and px[q][3] > 0:
+                                visto.add(q); pila.append(q)
+                comps.append(puntos)
+    if len(comps) < 2: return im
+    mayor = max(len(c) for c in comps); out = im.copy(); po = out.load()
+    for c in comps:
+        if len(c) < max_parte * mayor:
+            for q in c: po[q] = (0, 0, 0, 0)
+    return out
+
+
 def tira(imgs):
     """Une fotogramas en una tira de celdas iguales, alineados por los pies."""
     an = [ancla(i) for i in imgs]
@@ -136,6 +160,8 @@ def cargar_forma(f):
         return m
     red = lambda i: crudos[i].resize((max(1, round(crudos[i].width / escala_de(i))), max(1, round(crudos[i].height / escala_de(i)))), Image.NEAREST) if escala_de(i) > 1.05 else crudos[i]
     peq = {i: red(i) for i in usados}
+    if not f.get('conservarSueltos'):  # al moverse, sin polvo ni chispas pegadas al fotograma
+        for i in f.get('move', []): peq[i] = quitar_sueltos(peq[i])
     if f.get('espejo'):  # el pack mira a la izquierda: el juego necesita que miren a la derecha
         peq = {i: im.transpose(Image.FLIP_LEFT_RIGHT) for i, im in peq.items()}
     # mismo tamaño en todas las formas: la postura de guardia se lleva a la altura del personaje (ALTO_BASE

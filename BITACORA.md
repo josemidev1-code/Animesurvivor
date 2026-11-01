@@ -469,3 +469,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Ejecución del plan del bloque 1 en la rama `bloque1-fotogramas` (no en main: el plan pide rama propia; `sprites/`
   no está en git, por eso rama y no worktree). Pruebas: `python -m unittest discover -s herramientas/pruebas -v`.
 - Tarea 1 hecha: `herramientas/medir_formas.py` (polvo, agachadas, tamaños desiguales) con sus pruebas.
+- Tarea 2 hecha: `quitar_sueltos` en `montar_animaciones.py` (solo en `move`; opción `conservarSueltos`). Montado de
+  nuevo: 0 formas con polvo (antes 21), revisadas a ojo sin perder partes del cuerpo. Comprobaciones de personajes y
+  enemigos sin errores. `?v=64`.

@@ -17,10 +17,11 @@ class MedirFormas(unittest.TestCase):
 
     def test_linea_base(self):
         p = medir_formas.problemas(medir_formas.medir(os.path.join(RAIZ, 'animaciones_juego.js')))
-        self.assertEqual(len(p['sueltos']), 21)
+        # antes de quitar el polvo al montar (tarea 2) había 21 formas con manchas sueltas
+        self.assertEqual(p['sueltos'], [])
         self.assertEqual(len(p['agachadas']), 16)
         self.assertEqual(len(p['desiguales']), 4)
-        self.assertIn('goku/0', p['sueltos'])
+        self.assertIn('goku/1', p['agachadas'])
         self.assertIn('vegetasuper/2', p['desiguales'])
 
 

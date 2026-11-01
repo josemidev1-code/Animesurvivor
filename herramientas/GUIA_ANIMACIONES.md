@@ -35,6 +35,8 @@ Los números de fotograma son el orden natural de los nombres de archivo del pac
 
 Opcionales: `<anim>Du` (duración de cada fotograma, en ticks de 1/60 s), `"espejo": true` si el pack mira a la
 izquierda, `"escala": 8.8` para forzar el zoom del pack, `"escalaFija": true` si el tamaño baila entre animaciones.
+Al montar, la animación `move` pierde el polvo y las chispas sueltas (manchas separadas del cuerpo y menores que una
+cuarta parte de él); `"conservarSueltos": true` lo desactiva si el cuerpo viene partido en trozos pequeños.
 
 ## Reglas (todas obligatorias)
 
