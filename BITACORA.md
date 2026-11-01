@@ -438,3 +438,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   gokuui, gokumoro, gokubroly, vegeta/1, vegetaue/2, black/2, cell/4, kefla/1, trunks/0, e_ginyu, e_jeice); pose de
   moverse muy agachada (menos del 70 % de la guardia) en 16; tamaño de píxel desigual en 4 (vegetasuper/2 entera,
   gohanmanga/0 patada, blackfan/0 puñetazos, e_ginyu/0 poder). Buscando ahora fotogramas de técnicas en todos los packs.
+- Pregunta: «quiero usar todos los sprites del juego, ¿se podría?».
