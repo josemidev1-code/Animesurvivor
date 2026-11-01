@@ -697,3 +697,28 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Que el usuario juegue y diga si el tamaño le gusta; después, las habilidades y efectos que tapan la pantalla, y el equilibrio del cuerpo a cuerpo.
+
+## 2026-11-01 — Claude · Qué le queda al juego
+
+### Lo que pidió el usuario
+- «¿Qué le queda al juego?», mientras prueba el HUD y la dificultad nuevos.
+
+### Lo que hice
+- Repasé `ESTADO_ACTUAL`, «Cambios propuestos por Josemi», `SPRITES_PENDIENTES`, `PIXEL_ART_POR_CODIGO` y el código, sin tocar el juego.
+  Pendientes por bloques:
+  - Valoración del usuario: HUD, zoom en 1080p, primeros minutos, movimiento y guardias (`trunks/2` con polvo junto al pie).
+  - Personajes: 37 jugables con 90 formas en `main`. La rama `claude/quizzical-gates-9cf9c0` (7 más) sigue sin fusionar.
+    Tanda 2 de DeviantArt: Tenshinhan, Dabura, Videl, Burter, Recoome, Zarbon, Dodoria y A19. Quedan 124 packs de `sprites/` sin usar
+    (sobre todo variantes de Goku, Vegeta y Goku Black); falta acordar con el usuario qué hacer con los incompletos.
+  - Enemigos: 82 activos y 35 retirados por falta de sprites buenos; Nappa, Guldo y A21 pueden volver con los packs de la rama.
+  - Combate: ataques y comportamientos distintos por enemigo y un cuerpo a cuerpo que compense. Picos de dificultad: la oleada
+    de Cell Jr. (~2:10) y el minuto 3 (estampida y primer jefe).
+  - Pantalla: efectos de técnicas demasiado grandes. «Press Start 2P» sin incrustar (sin internet se ve borrosa). La selección
+    no colorea las estadísticas (vida verde, velocidad azul, ataque rojo) ni muestra el personaje entero bajo la cara.
+  - Dibujado por código: suelos y decorados de los 24 mapas (los lleva otra sesión), disparos de enemigos, Kienzan, Genkidama,
+    auras, chispas, gemas, zeni, cajas, iconos de ataques y flecha del radar.
+  - Menú: iconos (los aporta el usuario), noticias, enlace al rap de Porta y música con aire de Dragon Ball (hoy es un chiptune
+    generado por código). Todo esto necesita que el usuario elija antes.
+
+### Siguiente paso recomendado
+- Fusionar la rama de los siete personajes antes de que se separe más de `main`; después, efectos más pequeños y cuerpo a cuerpo.
