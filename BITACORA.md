@@ -472,3 +472,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Tarea 2 hecha: `quitar_sueltos` en `montar_animaciones.py` (solo en `move`; opción `conservarSueltos`). Montado de
   nuevo: 0 formas con polvo (antes 21), revisadas a ojo sin perder partes del cuerpo. Comprobaciones de personajes y
   enemigos sin errores. `?v=64`.
+- Tarea 3 hecha: `herramientas/rasgos.py` (alto, ancho, inclinación, polvo y su lado, paleta y silueta de cada
+  fotograma, con caché en `_revisar/medidas/`). Confirmado con datos: en Goku base el polvo del fotograma 7 está
+  delante (retroceso) y el del 8 detrás (impulso).
