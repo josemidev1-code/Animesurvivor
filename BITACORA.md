@@ -465,3 +465,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Plan del bloque 1 escrito: `docs/superpowers/plans/2026-11-01-propuesta-fotogramas.md` (9 tareas: medición, quitar
   polvo, rasgos con caché, reglas, plantillas por autor, validación, hojas para la IA, página de revisión, formas
   actuales). Pendiente que el usuario lo revise y elija cómo ejecutarlo.
+- «Tú en esta sesión»: el plan del bloque 1 lo ejecuta Claude en esta misma sesión, con revisión final de todo.
