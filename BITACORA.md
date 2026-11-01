@@ -365,3 +365,31 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
 - Pack Ninja Adventure de Pixel-Boy y AAA (CC0), tilesets bajados de su GitHub a `sprites/06_Escenarios/Tiles/`. `herramientas/montar_escenarios.py` genera `escenarios_tiles.js` con 32 suelos (hierba, estepa, arena, tierra, nieve, ladrillo… con tintes por mapa) y 9 decorados (árboles grandes y pequeños, árboles de Namek teñidos, rocas). Se cargan al iniciar y sustituyen a los dibujados por código; si no cargan, queda el dibujo anterior.
 - Probados Praderas, Desierto, Infierno y Budokai sin errores. Créditos en el juego y en `CREDITOS_RECURSOS.md`.
 - Quedan por código: agua, lava, cielo, relieves (mesetas, cañones) y edificios propios de cada mapa.
+
+### Sesión 9, décima parte: «Pon a todos los personajes de Dragon Ball, seguro que están en DeviantArt»
+- Lanzada una sesión aparte («Personajes de Dragon Ball desde DeviantArt»). Su resultado: commit ae765b9 con 7 jugables
+  nuevos (Nappa, Ginyu, Jeice, Guldo, Uub, Mr. Satán y Androide 21), 13 técnicas propias y créditos en el juego.
+- **Está en la rama `refs/heads/claude/quizzical-gates-9cf9c0`, NO fusionada en main ni subida.** El usuario no ha
+  decidido aún si fusionarla.
+
+### Cierre de la sesión 9: «déjalo todo preparado, que sigo en un chat nuevo»
+- Relevo escrito: este cierre, «Empieza aquí» al principio de `TAREAS_CODEX.md` y «Cómo está ahora» / «Lo que falta» del README.
+
+### Qué quedó hecho (sesión 9 entera)
+Jefes con daño, vida sobre los enemigos, bolas teledirigidas, cuerpo orientado al atacar, 31 técnicas nuevas y lista
+propia para cada personaje, ficha animada, 12 eventos, gachapón con Shenron real, portadas de mapas, HUD y subida de
+nivel como PokéSurvivor, rayos y bolas de ki de los packs, enemigos variados (82 activos, 35 retirados), soldados,
+Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure, CC0). Todo en main y subido (ebc1b50).
+
+### A medias / pendiente
+- Fusionar (o no) la rama de los 7 personajes nuevos: preguntar al usuario. Si dice que sí: `git merge` en main;
+  conflictos probables en `script.js` (`NUEVOS`, `SIGS_SERIE`, `PACK_CREDITS`) y `animaciones_juego.js` → conservar las
+  dos partes, regenerar con `montar_animaciones.py`, pasar `comprobar_personajes.cjs` y `comprobar_enemigos.cjs`, subir `?v`, probar y subir main.
+- Siguen dibujados por código: agua, lava, cielo, relieves y edificios de cada mapa, auras, Makankosappo, disparos de
+  enemigos y monedas de zeni (lista en `PIXEL_ART_POR_CODIGO.md`).
+- Burter y Recoome: en DeviantArt piden cuenta para bajar el original. Spriters Resource tiene verificación anti-bots (no forzarla).
+
+### Siguiente paso recomendado
+1. Preguntar al usuario si fusionar la rama de los 7 personajes y hacerlo si dice que sí.
+2. Seguir metiendo personajes de la serie desde `sprites/` o DeviantArt (con créditos), con `recortar_hoja.py`.
+3. Sustituir lo que queda dibujado por código (agua, lava, auras…).

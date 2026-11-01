@@ -28,11 +28,16 @@ Juego de supervivencia (estilo PokéSurvivor / Vampire Survivors) con personajes
 Lo viejo que no usa el juego (copias antiguas, capturas, fondos sueltos, la importación de Gemini/Codex y la
 carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por si algún día hace falta.
 
-## Cómo está ahora (31/10/2026)
+## Cómo está ahora (01/11/2026)
 
 - **62 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
 - Nuevos de la sesión 7: Goku película Broly (4 formas), Vegeta Blue manga (2), Vegeta Dios de Broly (1),
   Black Time Breaker (3), Goku Black fanmade (4) y Goku alternativo (Místico, Ikari y Bestia). Las 17 formas tienen guardia, impulso, combo, patada, ki, aura, daño, muerte y retrato.
+- Sesión 9: 31 técnicas nuevas (cada personaje tiene su lista propia), 12 eventos en partida, HUD y subida de nivel como
+  PokéSurvivor, rayos y bolas de ki sacados de los packs, portadas de los mapas, y suelos, árboles y rocas reales
+  (pack Ninja Adventure, CC0, generados con `herramientas/montar_escenarios.py` en `escenarios_tiles.js`).
+- 7 jugables más (Nappa, Ginyu, Jeice, Guldo, Uub, Mr. Satán, Androide 21) esperan en la rama
+  `claude/quizzical-gates-9cf9c0`, sin fusionar todavía.
 - **82 tipos de enemigo** con animaciones seleccionadas de sus propios personajes; además, la sombra del jugador.
 - **35 tipos retirados temporalmente** por no tener secuencias completas revisadas (lista en `SPRITES_PENDIENTES.md`).
   Los 24 mapas conservan cinco encuentros con jefes. Hay menos variedad de enemigos normales mientras se recuperan sus packs.
@@ -48,13 +53,12 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 
 ## Lo que falta (en este orden)
 
-1. Seguir animando los packs pendientes: Goku (59), Vegeta (30) y Goku Black (16); 124 packs en total en la lista B de `SPRITES_PENDIENTES.md` (incluye incompletos).
-2. Probar una partida con los personajes nuevos, los enemigos corregidos, Ráfaga de Ki y una transformación. Recuperar los enemigos retirados solo con secuencias buenas.
-3. Ataques con efectos reales de los sprites (Kamehameha, bolas de ki, auras) en vez de dibujados por código.
-   Fuentes nuevas revisadas en `CREDITOS_RECURSOS.md` (efecto de impulso de LyanCv505, hojas de qsab101).
-4. HUD y subida de nivel como las capturas de PokéSurvivor que mandaste.
-5. Pulir los escenarios, como señaló el usuario en la sesión 7. Tileset de LorisC93 descargado y acreditado
-   en `recursos_pendientes/escenarios/`, pendiente de comprobar estilo y colisiones antes de usarlo.
+1. Decidir si se fusiona en main la rama `claude/quizzical-gates-9cf9c0` (7 personajes nuevos) y fusionarla.
+2. Meter más personajes de la serie desde `sprites/` o DeviantArt, con créditos (`herramientas/recortar_hoja.py` trocea hojas sueltas).
+3. Recuperar enemigos retirados (Burter, Recoome…) cuando haya secuencias buenas.
+4. Sustituir lo que queda dibujado por código: agua, lava, cielo, relieves, edificios, auras, Makankosappo,
+   disparos de enemigos y monedas (ver `PIXEL_ART_POR_CODIGO.md`).
+5. Seguir animando los packs pendientes de la lista B de `SPRITES_PENDIENTES.md`.
 
 Comprobación de personajes: `node herramientas/comprobar_personajes.cjs`. Para aplicar las reglas de fotogramas y muerte a las incorporaciones de esta sesión:
 `node herramientas/comprobar_personajes.cjs gokubroly vegetamanga vegetabroly blacktime blackfan gokualt`.

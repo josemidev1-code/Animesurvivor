@@ -2,7 +2,20 @@
 
 Antes: lee `AGENTS.md` y `herramientas/GUIA_ANIMACIONES.md`. Apunta todo en `BITACORA.md` y haz commit tras cada tarea.
 Python: `C:\Users\soyjo\AppData\Local\Programs\Python\Python314\python.exe` con `PYTHONIOENCODING=utf-8`.
-Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los 5 recursos de `index.html` (ahora `?v=58`).
+Tras cambiar `script.js` o `animaciones_juego.js`, sube el `?v=N` de los recursos de `index.html` (ahora `?v=63`).
+
+## Empieza aquí (relevo del 01/11/2026, fin de la sesión 9 de Claude)
+
+- main está limpio y subido (ebc1b50). Lo último: escenarios con tiles reales del pack Ninja Adventure.
+- **Pendiente de decisión del usuario:** la rama `refs/heads/claude/quizzical-gates-9cf9c0` (commit ae765b9) trae 7 jugables
+  nuevos de DeviantArt (Nappa, Ginyu, Jeice, Guldo, Uub, Mr. Satán, Androide 21). No está en main. Pregunta antes de fusionar;
+  si dice que sí, mira el cierre de la sesión 9 en `BITACORA.md` (conflictos esperados y pasos).
+- Probar en el navegador: `python -m http.server 8765` en la carpeta (en `.claude/launch.json` como «animesurvivor») y en la
+  consola `AS.start(idPersonaje, idMapa)` (mapas con `AS.maps()`), `AS.tick(5)`, `AS.spawnBoss()`, `AS.enemies()`. Elegir carta de nivel:
+  `#levelup:not([hidden]) #ups button`.
+- Sprites de fuera: DeviantArt sí (descargar el original de la ficha y poner autor y enlace en `PACK_CREDITS` de script.js
+  y en `CREDITOS_RECURSOS.md`). Spriters Resource tiene verificación anti-bots: no forzarla.
+- En bash de Windows, `python3` se cuelga: usa la ruta completa de Python de arriba.
 
 **Prioridad actual (usuario, sesión 7): seguir animando todos los personajes.** Integrados 6 nuevos jugables con
 17 formas (62 en total). Continuar la lista B real de `SPRITES_PENDIENTES.md`; el apartado C explica por qué se
