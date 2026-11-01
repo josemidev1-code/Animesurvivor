@@ -4,7 +4,7 @@
 Uso:  python herramientas/proponer_fotogramas.py "<pack dentro de sprites/>" [...]
 Salida: herramientas/propuestas/<pack>.json (ver docs/superpowers/specs/2026-11-01-propuesta-fotogramas-design.md)
 """
-import json, os, re, sys, unicodedata
+import json, os, re, statistics, sys, unicodedata
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import montar_animaciones as m
 from rasgos import rasgos_pack, comun, parecido, nombre_pack
@@ -26,11 +26,16 @@ def densidad(r):
 
 
 def elegir_guardia(rs):
-    """Entre los 8 primeros fotogramas útiles, el más alto de pie (estrecho y sin inclinarse)."""
-    prim = utiles(rs)[:8]
-    if not prim: return 0
-    de_pie = [r for r in prim if r['prop'] < 0.9 and abs(r['incl']) < 0.08 and r['sueltos'] < 0.05] or prim
-    return max(de_pie, key=lambda r: r['alto'])['i']
+    """El primer fotograma de pie del sprite de juego. Los packs traen al principio arte oficial, caras, escenas o
+    versiones grandes: se descartan por no tener el tamaño de píxel ni el alto habituales del pack."""
+    us = [r for r in utiles(rs) if r['alto'] >= 8]
+    if not us: return 0
+    E = statistics.median(r['escala'] for r in us)
+    mismo = [r for r in us if abs(r['escala'] / E - 1) < 0.15] or us
+    H = statistics.median(r['alto'] for r in mismo)
+    de_pie = [r for r in mismo if r['prop'] < 0.9 and abs(r['incl']) < 0.06 and r['sueltos'] < 0.05
+              and 0.9 * H <= r['alto'] <= 1.3 * H]
+    return (de_pie or mismo)[0]['i']
 
 
 def tramos(idx):

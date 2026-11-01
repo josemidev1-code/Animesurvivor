@@ -51,6 +51,11 @@ class Proponer(unittest.TestCase):
         rs = pack_sintetico(); rs[1] = fot(1, escala=5.0)
         self.assertTrue(any('píxel' in t for t in pf.motivos_dudoso(self.propuesta(), rs)))
 
+    def test_guardia_ignora_arte_de_otro_tamano(self):
+        # el fotograma 0 es arte oficial (otro tamaño de píxel y más alto): la guardia es el primer sprite de pie
+        rs = pack_sintetico(12); rs[0] = fot(0, alto=90, escala=2.0)
+        self.assertEqual(pf.elegir_guardia(rs), 1)
+
     def test_pack_corto(self):
         rs = pack_sintetico(5)
         p = pf.clasificar(rs)

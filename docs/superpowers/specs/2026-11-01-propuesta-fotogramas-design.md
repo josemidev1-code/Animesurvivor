@@ -134,9 +134,14 @@ En la animación de moverse, quedarse solo con la mancha principal del cuerpo y 
 separadas (polvo, chispas, estelas) se eliminan. Con la opción de forma `"conservarSueltos": true` se desactiva para
 personajes cuyo cuerpo venga partido (por ejemplo, armas o colas sueltas). Se aplica solo a `move`, no al resto.
 
-### 5. La IA revisa los dudosos
+### 5. La IA revisa todas las propuestas
 
-La herramienta genera, por cada pack dudoso, una hoja con los fotogramas propuestos por animación y las
+**Cambio del 01/11/2026, decidido por el usuario:** la validación mostró que las reglas solo aciertan un 25-35 %
+frente a lo elegido a mano, así que casi todo saldría dudoso. Por eso la IA revisa **todas** las propuestas, no solo
+las dudosas; la herramienta las prepara (efectos, polvo, avisos y hojas) y al usuario solo le llega lo que la IA no
+tenga claro.
+
+La herramienta genera, por cada pack, una hoja con los fotogramas propuestos por animación y las
 alternativas cercanas (`herramientas/_revisar/dudosos/<pack>.png`) y un resumen en texto. La IA de turno (Claude,
 Codex…) las mira, corrige lo que vea claro y deja marcado lo que siga dudoso. No se usa ninguna API de pago: lo hace
 la IA que esté trabajando en la sesión, como hasta ahora.
@@ -171,8 +176,9 @@ de selección.
     mismo número exacto).
   - Obligatorias: `idle`, `move`, `attack`, `kick`, `ki`, `hurt`. `pow`, `faint` y `portrait` no lo son (el montaje
     ya tiene respaldo para el retrato).
-  - Objetivo: al menos un 80 % de aciertos en las obligatorias, y que tras la revisión de la IA lleguen al usuario
-    como mucho 1 de cada 5 packs. Si no se alcanza, se ajustan las reglas antes de seguir.
+  - ~~Objetivo: al menos un 80 % de aciertos~~ (retirado el 01/11/2026: se quedó en un 35 %; ver §5). La validación
+    queda como informe para mejorar las reglas más adelante. Sigue en pie que al usuario le llegue como mucho 1 de
+    cada 5 packs tras la revisión de la IA.
 - **Las tres listas del objetivo 3** deben quedar a cero, salvo las formas que la IA o el usuario marquen como
   correctas a propósito. El script de medición es
   `herramientas/medir_formas.py`. Definiciones exactas:

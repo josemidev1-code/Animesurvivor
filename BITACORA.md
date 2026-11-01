@@ -485,3 +485,8 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   escenas con otros personajes y varias tandas de golpes parecidos; con medidas simples no se distingue cuál eligió
   la persona. Consecuencia: casi todos los packs serían dudosos y la IA tendría que revisarlos casi todos.
   Preguntado al usuario cómo seguir.
+- Decisión del usuario: «La IA revisa todos». La herramienta prepara (efectos, polvo, avisos, hojas y página) y la IA
+  revisa todos los packs; al usuario solo le llega lo que la IA no tenga claro. El 80 % deja de ser condición.
+- Tarea 6 cerrada como informe: `herramientas/validar_propuestas.py` (escribe `_revisar/validacion.md`). Mejorada la
+  elección de la guardia (descarta arte oficial, caras y versiones grandes por su tamaño de píxel): 76/162. Total 27 %.
+  Spec actualizado con el cambio del usuario (la IA revisa todas las propuestas).
