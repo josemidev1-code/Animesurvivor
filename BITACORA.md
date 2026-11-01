@@ -513,3 +513,14 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   no coincidían en el nombre de las propuestas de formas del juego) y 3 importantes (forma borrada en decisiones viejas,
   pack de solo chispas, packs nuevos sin orientación comprobada). 47 pruebas en verde. **Queda con polvo trunks/2** al
   moverse (el polvo toca el pie); se verá con el movimiento. 7 detalles menores apuntados para más adelante.
+
+### Sesión 11 (Claude, 01/11/2026) · Movimiento según la tecla
+- Usuario: «quiero que todos los personajes se muevan igual al sprite... si aprietas la A para la izquierda el
+  personaje se mueve hacia esa conforme a la animación que tiene, y a la derecha igual».
+- Hecho en `script.js`: mientras se mueve, el personaje **mira hacia donde va** (A izquierda, D derecha; con W/S
+  conserva el lado) y dibuja **siempre su animación de moverse**. Los ataques automáticos, las cargas de ki y las
+  técnicas siguen saliendo hacia el enemigo, pero ya no le giran ni le cambian la pose mientras se mueve. Parado, se
+  gira y ataca como antes. Los rayos largos (Kamehameha) sí mantienen su pose de disparo. `?v=65`.
+- Probado en el navegador con Goku y enemigos a la derecha yendo a la izquierda: mira a la izquierda todo el rato
+  mientras ataca. No se pudo ver en movimiento real (el panel de pruebas estaba en segundo plano): falta que el
+  usuario lo vea jugando. Sigue pendiente decidir si se fusiona `bloque1-fotogramas` en main.
