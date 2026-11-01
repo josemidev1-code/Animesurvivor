@@ -422,3 +422,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   a 7 px; el 8 a 6 px. Se ve un 22 % más pequeño al moverse. El polvo es una mancha separada del cuerpo y se puede quitar
   sola. Enseñada al usuario la A corregida (tamaño de píxel igualado y sin polvo) junto a la original. Ninguna de las
   dos cosas está aún en el juego.
+- «Sí, así»: aprobada la A corregida (pose de impulso del pack, mismo tamaño de píxel que la guardia, sin polvo).
