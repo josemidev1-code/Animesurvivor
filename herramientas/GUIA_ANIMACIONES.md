@@ -72,3 +72,16 @@ Ejecuta `previsualizar.py` y **mira el PNG**. Corrige y repite hasta que se cump
 - Ningún fotograma desentona: si al poner la fila en bucle algo "salta", sobra.
 
 Ejemplo de referencia ya revisado: `goku` forma `0` (míralo con `previsualizar.py goku 0`).
+
+## Proponer fotogramas y revisarlos (bloque 1, 01/11/2026)
+
+Para packs nuevos o para repasar los que hay, en este orden:
+
+1. `python herramientas/proponer_fotogramas.py "<pack>"` (o `--todos`): escribe `herramientas/propuestas/<pack>.json`
+   con la selección propuesta, su confianza, los efectos (rayo, bola, aura, estela) y los motivos de duda.
+2. `python herramientas/hoja_dudosos.py`: una hoja por propuesta sin revisar en `herramientas/_revisar/dudosos/`
+   (propuestos con marco amarillo y vecinos ±3). **La IA revisa todas** (las reglas solo aciertan un 25-35 %):
+   corrige el JSON de la propuesta y pone `"revisadoIA": true` y `"sigueDudoso": true|false`.
+3. Lo que siga dudoso lo revisa el usuario en la página de revisión (ver abajo cuando exista).
+4. `python herramientas/validar_propuestas.py` mide las reglas frente a lo elegido a mano (`_revisar/validacion.md`).
+5. `python herramientas/medir_formas.py` lista polvo, poses agachadas y tamaños desiguales en el juego.

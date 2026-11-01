@@ -490,3 +490,5 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Tarea 6 cerrada como informe: `herramientas/validar_propuestas.py` (escribe `_revisar/validacion.md`). Mejorada la
   elección de la guardia (descarta arte oficial, caras y versiones grandes por su tamaño de píxel): 76/162. Total 27 %.
   Spec actualizado con el cambio del usuario (la IA revisa todas las propuestas).
+- Tarea 7 hecha: `herramientas/hoja_dudosos.py` (hoja por propuesta para la IA, con ñ y tildes) y sección nueva en la
+  guía. Probada con Goku SSJ: la hoja deja ver de un vistazo qué falla (p. ej. la estela 12 propuesta como impulso).
