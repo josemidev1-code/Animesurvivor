@@ -399,3 +399,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   y `claude plugin install superpowers@superpowers-marketplace`. No toca el código del juego; sus skills aparecen al abrir una sesión nueva.
 - Petición: «mira este proyecto y dime qué opinas» (con la skill de brainstorming de Superpowers). Revisado README, AGENTS,
   TAREAS_CODEX y el código; opinión dada en el chat y pregunta abierta al usuario sobre el objetivo del juego. Sin cambios de código.
+- Respuesta del usuario: «es un proyecto personal mío, fanmade sin ánimo de lucro, pero ¿se podría poner algún anuncio en el
+  gachapón y un Ko-fi para donaciones, como PokéSurvivor?». Explicado en el chat: riesgos de derechos al ganar dinero con
+  Dragon Ball, licencias de los sprites de terceros y que los anuncios exigen publicar el juego en una web. Sin cambios de código.
