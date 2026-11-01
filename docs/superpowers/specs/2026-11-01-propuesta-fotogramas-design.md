@@ -32,6 +32,11 @@ Entre bloque y bloque se juega una partida para comprobar que el juego sigue sie
 - **Forma de construirla:** la mixta (C): reglas automáticas con nota de confianza → la IA de turno revisa los
   dudosos → lo que siga dudoso pasa al usuario.
 
+## Alcance de este bloque
+
+Termina con: la herramienta, la página de revisión, las 171 formas actuales arregladas y la validación contra lo
+hecho a mano. **Pasarla por los 168 packs que faltan es el bloque 3** (más personajes), no este.
+
 ## Objetivos
 
 1. Para cualquier pack de `sprites/`, proponer qué fotogramas forman cada animación del formato actual
@@ -103,7 +108,10 @@ Rasgos que ya se vieron fiables en la revisión del 01/11:
 - **Guardia:** de pie, alto parecido al máximo del pack, poca inclinación, los primeros fotogramas del pack.
 - **Impulso (`move`):** silueta inclinada hacia delante, mirando en el mismo sentido que la guardia; nunca el salto
   hacia atrás (en Goku base el actual `move: [7]` lleva el polvo delante de los pies: señal de retroceso).
-  Si no hay ninguno claro, se usa la pose de flotar o la guardia.
+  Si no hay ninguno claro, se usa la pose de flotar o la guardia. *Decisión de Claude:* esta regla solo vale para
+  propuestas nuevas y, si salta, marca el pack como dudoso; nunca sustituye una selección hecha a mano. En Goku base
+  (goku/0 y gokuui/0, mismo pack) **`move` sigue siendo el fotograma 7**: es el que el usuario vio y aprobó en la «A
+  corregida»; solo se le quita el polvo.
 - **Golpes, patada, ki, poder, daño, muerte, retrato:** por silueta (brazo o pierna extendida, manos juntas con
   bola, aura alrededor, cuerpo hacia atrás, tumbado, cara grande) y por orden en el pack (los autores agrupan cada
   animación en fotogramas seguidos).
@@ -143,19 +151,37 @@ de selección.
 
 ### 7. Dónde se escribe
 
-- Propuestas nuevas: `herramientas/animaciones/propuestas.json` (mismo formato que los demás, más `"confianza"` y
-  `"efectos": {"rayo": [...], "bola": [...], "aura": [...], "estela": [...]}` por forma). `montar_animaciones.py`
-  ignora `confianza` y `efectos` hasta el bloque 2.
-- Formas actuales: **no se reescriben sus selecciones a mano**. La herramienta solo propone cambios para `move`
-  (y los casos de tamaño desigual) y los aplica en el archivo de cada grupo, dejando la selección anterior en un
-  campo `"moveAntes"` para poder volver atrás.
+- Propuestas: `herramientas/propuestas/<pack>.json`, **fuera** de `herramientas/animaciones/`, para que
+  `leer_config()` no las meta en el juego. Una por pack, identificada por la ruta del pack (los packs nuevos aún no
+  tienen nombre de personaje; se lo da el bloque 3). Mismos campos que una forma (`idle`, `move`…) más `"confianza"`
+  por animación y `"efectos": {"rayo": [...], "bola": [...], "aura": [...], "estela": [...]}`.
+- Formas actuales (*decisión de Claude*): **no se reescriben sus selecciones a mano**.
+  - El polvo de las 21 formas se quita en el montaje, sin tocar su selección.
+  - Para las 16 agachadas y los 4 tamaños desiguales la herramienta propone un cambio, que pasa por el mismo camino
+    que un dudoso: la IA lo revisa y, si sigue dudoso, lo ve el usuario en la página. Solo después se escribe en el
+    archivo de su grupo, guardando la selección anterior en `"moveAntes"` (o `"<anim>Antes"`).
+  - En el resto de formas, si la herramienta no coincide con lo hecho a mano, solo lo apunta en el informe de
+    validación; no cambia nada.
 
 ## Validación
 
 - **Contra lo hecho a mano:** pasar la herramienta por los 162 packs ya elegidos y comparar con la selección
-  actual. Medir aciertos por animación. Así se ajustan reglas y umbral antes de tocar packs nuevos.
-- **Las tres listas del objetivo 3** deben quedar a cero según el mismo script de medición usado el 01/11
-  (en la bitácora de esa fecha), salvo las formas que la IA o el usuario marquen como correctas a propósito.
+  actual. Así se ajustan reglas y umbral antes de tocar packs nuevos. *Decisiones de Claude* para medirlo:
+  - Cuenta como acierto un fotograma del mismo grupo de fotogramas seguidos que el elegido a mano (no hace falta el
+    mismo número exacto).
+  - Obligatorias: `idle`, `move`, `attack`, `kick`, `ki`, `hurt`. `pow`, `faint` y `portrait` no lo son (el montaje
+    ya tiene respaldo para el retrato).
+  - Objetivo: al menos un 80 % de aciertos en las obligatorias, y que tras la revisión de la IA lleguen al usuario
+    como mucho 1 de cada 5 packs. Si no se alcanza, se ajustan las reglas antes de seguir.
+- **Las tres listas del objetivo 3** deben quedar a cero, salvo las formas que la IA o el usuario marquen como
+  correctas a propósito. El script de medición está junto a este documento
+  (`2026-11-01-medicion-formas.py`, pasarlo a `herramientas/`). Definiciones exactas:
+  - *Mancha suelta:* píxeles opacos no unidos (vecindad de 8) a la mancha más grande; problema si son más del 5 %
+    de los píxeles opacos de algún fotograma de `Walk`.
+  - *Agachada:* el alto máximo (caja de píxeles opacos) de los fotogramas de `Walk` en `animaciones_juego.js` es
+    menor que el 70 % del alto del primer fotograma de `Idle`.
+  - *Tamaño desigual:* `escala_pixel` de algún fotograma de una animación difiere más de un 15 % de la del primer
+    fotograma de `Idle`, medido sobre los fotogramas ya montados.
 - `node herramientas/comprobar_personajes.cjs` y `node herramientas/comprobar_enemigos.cjs` siguen pasando.
 - Jugar una partida corta con Goku base y dos formas de las listas en el navegador (`AS.start(id, mapa)`), y
   enseñar al usuario una captura o GIF del movimiento.

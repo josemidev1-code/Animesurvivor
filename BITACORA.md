@@ -457,3 +457,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   Escribiendo el diseño del bloque 1 en `docs/superpowers/specs/`.
 - Diseño del bloque 1 escrito: `docs/superpowers/specs/2026-11-01-propuesta-fotogramas-design.md`. Pendiente la
   revisión de un constructor y la aprobación del usuario.
+- Revisión del diseño por un constructor (subagente): 6 preguntas, ninguna exclusiva del usuario. Añadido al diseño:
+  alcance (los 168 packs nuevos son el bloque 3), Goku base mantiene `move: [7]` sin polvo, cambios en formas actuales
+  pasan por revisión, propuestas en `herramientas/propuestas/` fuera del montaje, criterios de acierto y objetivo
+  (80 %, como mucho 1 de cada 5 packs al usuario) y el script de medición junto al diseño. Esperando aprobación.
