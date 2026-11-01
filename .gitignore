@@ -12,3 +12,6 @@ personajes/
 .personajes_importando/
 herramientas/_revisar/
 herramientas/__pycache__/
+
+# Bocetos del acompañante visual (Superpowers)
+.superpowers/

@@ -413,3 +413,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Revisado el pack de Goku base (DBS Broly, 67 fotogramas): no tiene ciclo de caminar; sí impulso con polvo (7-8), estela de
   velocidad (9-10), golpes, carga y rayo del Kamehameha (35-39), aura, transformación y Genkidama. Ofrecido al usuario
   enseñarle propuestas de movimiento en el navegador.
+- «Sí, enséñamelas»: abierto el acompañante visual de Superpowers (carpeta `.superpowers/`, añadida a `.gitignore`) con
+  cuatro propuestas de movimiento de Goku animadas con fotogramas reales del pack: A lo actual, B impulso con polvo,
+  C vuelo con postimágenes, D guardia en vuelo con destello de velocidad. Descubierto que Goku usa ahora el fotograma 7,
+  que es un salto hacia atrás: avanza de espaldas a donde va. Esperando a que el usuario elija.
