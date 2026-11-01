@@ -477,3 +477,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   delante (retroceso) y el del 8 detrás (impulso).
 - Tarea 4 hecha: `herramientas/proponer_fotogramas.py` con las primeras reglas (guardia, impulso, golpes, ki, poder,
   daño, muerte, retrato y efectos) y los motivos de duda. Las reglas son aún bastos: se ajustan en la tarea 6.
+- Tarea 5 hecha: plantillas por autor (`autor_de`, `manuales`, `plantilla`) y archivos en `herramientas/propuestas/`.
+  Descubierto: los packs de Andrés Gamen no comparten orden ni número de fotogramas, así que la plantilla busca cada
+  fotograma por silueta y por posición aproximada. Con Goku SSJ acierta guardia, impulso y ki exactos.

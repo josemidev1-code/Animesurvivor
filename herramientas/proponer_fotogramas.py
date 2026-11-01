@@ -4,7 +4,7 @@
 Uso:  python herramientas/proponer_fotogramas.py "<pack dentro de sprites/>" [...]
 Salida: herramientas/propuestas/<pack>.json (ver docs/superpowers/specs/2026-11-01-propuesta-fotogramas-design.md)
 """
-import json, os, sys
+import json, os, re, sys, unicodedata
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import montar_animaciones as m
 from rasgos import rasgos_pack, comun, parecido, nombre_pack
@@ -13,6 +13,7 @@ OBLIGATORIAS = ('idle', 'move', 'attack', 'kick', 'ki', 'hurt')
 NOMBRES = {'idle': 'guardia', 'move': 'moverse', 'attack': 'puñetazos', 'kick': 'patada', 'ki': 'ki',
            'pow': 'poder', 'hurt': 'daño', 'faint': 'muerte'}
 UMBRAL = 0.6
+PESO_ORDEN = 0.5
 PROPUESTAS = os.path.join(m.RAIZ, 'herramientas', 'propuestas')
 
 
@@ -134,10 +135,78 @@ def motivos_dudoso(prop, rs):
     return out
 
 
-def proponer(pack, espejo=False, guardar=True):
+def _sin_tildes(s):
+    return unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode().upper()
+
+
+def autor_de(pack):
+    """Autor del pack según su carpeta original (_ORIGEN_Y_CREDITOS.md) o el nombre de la carpeta."""
+    texto = os.path.basename(pack.rstrip('/\\'))
+    nota = os.path.join(m.SPRITES, pack, '_ORIGEN_Y_CREDITOS.md')
+    if os.path.exists(nota):
+        with open(nota, encoding='utf-8', errors='ignore') as fh:
+            texto += ' ' + ' '.join(l for l in fh if 'Carpeta original' in l)
+    t = _sin_tildes(texto)
+    if 'ANDRES GAMEN' in t: return 'ANDRES GAMEN'
+    par = re.search(r'\(([^()]+)\)\s*$', os.path.basename(pack.rstrip('/\\')))
+    return re.sub(r'[^0-9A-Z]', '', _sin_tildes(par.group(1))) if par else None
+
+
+_MANUALES = None
+
+
+def manuales():
+    """Selecciones hechas a mano, agrupadas por pack: {pack: [('goku/0', forma), ...]}."""
+    global _MANUALES
+    if _MANUALES is None:
+        _MANUALES = {}
+        for h, formas in m.leer_config().items():
+            for f, forma in formas.items():
+                if forma.get('pack'): _MANUALES.setdefault(forma['pack'], []).append((f'{h}/{f}', forma))
+    return _MANUALES
+
+
+def plantilla(pack, rs, excluir=frozenset(), minimo=0.8):
+    """Usa como plantilla las selecciones a mano de otros packs del mismo autor: cada fotograma elegido allí se busca
+    en este pack por parecido de silueta (los autores no siempre ordenan igual). Se quedan las animaciones cuyo
+    parecido medio llega a `minimo`, con confianza 0,9."""
+    autor = autor_de(pack)
+    if not autor: return None
+    us = utiles(rs); mejor, nota_mejor = None, 0
+    for q, formas in manuales().items():
+        if q == pack or autor_de(q) != autor: continue
+        formas = [(i, f) for i, f in formas if i not in excluir]
+        if not formas: continue
+        f = formas[0][1]
+        try: rq = rasgos_pack(q)
+        except SystemExit: continue
+        t, sims = {}, []
+        for k in NOMBRES:
+            idx = [j for j in f.get(k, []) if j < len(rq) and not rq[j].get('vacio')]
+            if not idx: continue
+            # parecido de silueta, penalizado si el fotograma está en otra parte del pack (los autores suelen
+            # mantener el orden de las animaciones aunque cambie el número de fotogramas)
+            pares = [max(((parecido(rq[j]['silueta'], r['silueta']) - PESO_ORDEN * abs(r['i'] / len(rs) - j / len(rq)),
+                           r['i']) for r in us)) for j in idx]
+            sim = sum(s for s, _ in pares) / len(pares)
+            if sim >= minimo: t[k] = [i for _, i in pares]; sims.append(sim)
+        nota = sum(sims)
+        if t and nota > nota_mejor: mejor, nota_mejor = (q, t), nota
+    if not mejor: return None
+    q, t = mejor
+    t['confianza'] = {k: 0.9 for k in t}
+    t['plantilla'] = q
+    return t
+
+
+def proponer(pack, espejo=False, guardar=True, excluir=frozenset()):
     rs = rasgos_pack(pack)
     p = clasificar(rs, espejo)
-    p.update(pack=pack, motivos=motivos_dudoso(p, rs))
+    t = plantilla(pack, rs, excluir)
+    if t:
+        p['confianza'].update(t.pop('confianza')); p.update(t)
+    p.update(pack=pack, autor=autor_de(pack), origen='plantilla' if t else 'reglas')
+    p['motivos'] = motivos_dudoso(p, rs)
     p['dudoso'] = bool(p['motivos'])
     if guardar:
         os.makedirs(PROPUESTAS, exist_ok=True)
@@ -146,7 +215,15 @@ def proponer(pack, espejo=False, guardar=True):
     return p
 
 
+def todos_los_packs():
+    """Carpetas de sprites/ que tienen PNG."""
+    out = []
+    for d, _, fs in os.walk(m.SPRITES):
+        if any(f.lower().endswith('.png') for f in fs): out.append(os.path.relpath(d, m.SPRITES).replace('\\', '/'))
+    return sorted(out)
+
+
 if __name__ == '__main__':
-    for pk in sys.argv[1:]:
+    for pk in (todos_los_packs() if sys.argv[1:] == ['--todos'] else sys.argv[1:]):
         p = proponer(pk)
         print(pk, '· dudoso' if p['dudoso'] else '· seguro', *p['motivos'], sep='\n  ')
