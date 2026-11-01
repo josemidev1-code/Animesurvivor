@@ -427,3 +427,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   a partir de `ki-goku`, teñidos con los colores de cada técnica), no el rayo propio que trae cada pack (Goku: 38-39).
   Preguntado al usuario si cada técnica debe usar el efecto de su propio pack.
 - «Sí» (cada técnica con el efecto de su propio pack) y pregunta: «¿todos los sprites tienen animación de andar y de ataques?».
+- Datos (formas jugables en `herramientas/animaciones/*.json`): todas tienen guardia, moverse, puñetazos (2-4 fotogramas),
+  patada, ki (2: cargar y lanzar), poder y daño; la mayoría, muerte. Ninguna tiene ciclo de andar: los packs son de juegos
+  de lucha y «moverse» es 1 fotograma (casi todas) o 2. No hay ninguna selección de fotogramas de efectos (rayos, bolas)
+  del propio pack. Ofrecido revisar todos los packs para saber cuáles traen su técnica dibujada.
