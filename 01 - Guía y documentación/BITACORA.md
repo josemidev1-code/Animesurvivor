@@ -909,3 +909,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Seguir `PERSONAJES_POR_METER.md` por tandas de 3-5, eligiendo los fotogramas a mano y revisando cada uno con `previsualizar.py`. `animaciones_juego.js?v=69`, `script.js?v=93`.
 - Tanda 3 hecha: Goku Black Kaioshin (178), Black SSJ falso (177), Black Rosé Evolution (176) y Majin Black Dios (184). Nuevo atajo `herramientas/meter.py`. 76 personajes. `animaciones_juego.js?v=70`, `script.js?v=94`.
 - Tanda 4 hecha: Goku Yardrat base, SSJ y SSJ SWL, y Vegeta Yardrat. 80 personajes. `animaciones_juego.js?v=71`, `script.js?v=95`.
+- Tanda 5 hecha: Goku SSJ4 GT y Vegeta SSJ4 GT. 82 personajes. Goku SSJ4 Daima (140) a medias (pack de 281 fotogramas). `animaciones_juego.js?v=72`, `script.js?v=96`.
