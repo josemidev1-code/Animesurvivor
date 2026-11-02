@@ -3182,7 +3182,7 @@ function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(
     const img=document.createElement('img');img.className='cardFace';
     const fTop=topForm(id),f0=faceExact(id,fTop)||(MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():'');
     img.src=f0||'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA=';img.alt=f0?H.name:'';if(!f0)img.classList.add('noFace');
-    b.appendChild(img);const spr=mk(150,120);spr.className='cardSpr';spr.dataset.id=id;spr.dataset.f=fTop;b.appendChild(spr);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
+    b.appendChild(img);const spr=mk(150,170);spr.className='cardSpr';spr.dataset.id=id;spr.dataset.f=fTop;b.appendChild(spr);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
     b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p>${statBars(H)}${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
     b.dataset.id=id;b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
     }

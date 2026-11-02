@@ -257,3 +257,7 @@ h2{font-family:var(--pix);font-size:clamp(14px,3.4vw,22px);color:var(--ki);margi
 #roster .sb.hp em{background-color:var(--hp)}#roster .sb.spd em{background-color:var(--spd)}#roster .sb.atk em{background-color:var(--atk)}
 #roster .btn{border-radius:0}
 #roster .cardFace.noFace{background:repeating-linear-gradient(45deg,var(--w16d) 0 6px,#101c60 6px 12px)}
+/* no todos los personajes tienen cara grande: para que todas las tarjetas sean iguales se enseña al personaje
+   de lado, como en partida, y no el retrato (decisión de Josemi, 2 nov.) */
+#roster .cardFace,#roster .rFace{display:none}
+#roster .card canvas.cardSpr{width:150px;height:170px}
