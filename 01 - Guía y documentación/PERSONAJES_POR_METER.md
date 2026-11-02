@@ -29,6 +29,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 14: Goku SSJ Kaioken (059), Goku maligno SSJ2 (127), Goku UI Blue Evolution (133).
 - Tanda 15: Goku UI Blue (134), Goku UI Dios (135; versión con gi), Goku Ultra SSJ Dios (150; aura con `escalaFrames`). Ninguno tiene fotograma de muerte.
 - Tanda 16: Goku SSJ Supremo (151), Goku SSJ4 Dios (206), Goku Dios Berserker (207; aura con `escalaFrames` estimada a ojo, el pack no deja medirla).
+- Tanda 17: Goku SSJ Legendario (208), Goku SSJ Kaioken con halo (274; sin muerte).
 
 ## A medias
 
@@ -37,16 +38,14 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Bra Majin (189): la propuesta mezcla caras y otros personajes; hay que elegir todos los fotogramas a mano (pack de casi 300).
 - Fusión de Zamasu deshaciéndose (106): pocos golpes; comprobar si de verdad está completo.
 - Vegeta MUI (303): el pack viene reescalado y borroso; cada fotograma a otra escala y no se puede medir el píxel. Haría falta fijar la escala a mano fotograma a fotograma (`escalaFrames`) o buscar el pack original.
+- Goku Rey Mono (138): mismo problema que Vegeta MUI (303): fotogramas reescalados a tamaños distintos, sin píxel medible.
 
-## Completos por meter (13)
+## Completos por meter (10)
 
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/106_Zamasu e Black Fusão Desmanchando`
 - `03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍`
 - `05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés`
-- `05_Fanmade_y_alternativos/Goku/138_GOKU REY MONO,DB TALE, HECHO POR ANDRÉSITO GAMEN ANIMATIONS`
-- `05_Fanmade_y_alternativos/Goku/208_GOKU SSJ LEGENDARIO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS ✓`
-- `05_Fanmade_y_alternativos/Goku/274_GOKU SSJ KAIO KEN`
 - `07_Personajes_sin_saga_concreta/Goku/044_Goku`
 - `07_Personajes_sin_saga_concreta/Goku/045_Goku (versión2)`
 - `07_Personajes_sin_saga_concreta/Goku/053_Goku SSJ 1`

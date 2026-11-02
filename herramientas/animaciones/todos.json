@@ -1712,6 +1712,75 @@
      "39": 5.8
     }
    }
+  },
+  "gokussjlegend": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/208_GOKU SSJ LEGENDARIO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS ✓",
+    "idle": [
+     115,
+     116
+    ],
+    "move": [
+     107
+    ],
+    "attack": [
+     90,
+     91,
+     92
+    ],
+    "kick": [
+     75,
+     76
+    ],
+    "ki": [
+     34,
+     36
+    ],
+    "pow": [
+     56,
+     53
+    ],
+    "hurt": [
+     66,
+     112
+    ],
+    "faint": [
+     65
+    ]
+   }
+  },
+  "gokussjkaioken2": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/274_GOKU SSJ KAIO KEN",
+    "idle": [
+     40,
+     42
+    ],
+    "move": [
+     27
+    ],
+    "attack": [
+     44,
+     45,
+     94
+    ],
+    "kick": [
+     51,
+     50
+    ],
+    "ki": [
+     97,
+     98
+    ],
+    "pow": [
+     10,
+     11
+    ],
+    "hurt": [
+     63,
+     62
+    ]
+   }
   }
  }
 }

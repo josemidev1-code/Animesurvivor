@@ -708,6 +708,8 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ gokussjkaioken2:{name:'GOKU SSJ KAIOKEN (HALO)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en el Más Allá, con halo, combinando Super Saiyan y Kaioken.',forms:['SSJ KAIOKEN'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussjlegend:{name:'GOKU SSJ LEGENDARIO',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con el poder del Super Saiyan Legendario, versión fanmade.',forms:['SSJ LEGENDARIO'],aura:['green'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokudiosberserk:{name:'GOKU DIOS BERSERKER',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku Super Saiyan Dios desatado con aura oscura, versión fanmade.',forms:['DIOS BERSERKER'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokussj4dios:{name:'GOKU SSJ4 DIOS',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku en Super Saiyan 4 con el poder de un dios, versión fanmade.',forms:['SSJ4 DIOS'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokussjsupremo:{name:'GOKU SSJ SUPREMO',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en un Super Saiyan supremo con chispas, versión fanmade.',forms:['SSJ SUPREMO'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
@@ -1300,7 +1302,9 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  gokuultradios:['kiblast','punch','kame','kaioken','instant','genki'],
  gokussjsupremo:['kiblast','punch','kame','kaioken','instant','genki'],
  gokussj4dios:['kiblast','punch','kame','kaioken','instant','genki'],
- gokudiosberserk:['kiblast','punch','kame','kaioken','instant','genki']};
+ gokudiosberserk:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussjlegend:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussjkaioken2:['kiblast','punch','kame','kaioken','instant','genki']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
