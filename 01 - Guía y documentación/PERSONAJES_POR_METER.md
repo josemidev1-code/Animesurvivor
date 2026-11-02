@@ -32,20 +32,16 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 17: Goku SSJ Legendario (208), Goku SSJ Kaioken con halo (274; sin muerte).
 - Tanda 18: Goku clásico (044), Goku clásico 2 (045), Goku SSJ clásico (053).
 - Tanda 19: Goku SSJ Full Power (273), Black Rosé HD (290; megapack de 300 fotogramas revisado por tramos).
+- Tanda 20: Goku SSJ4 Daima (140; pack de 281 revisado por tramos, aura con `escalaFrames`), Zamasu fusionado deshaciéndose (106 + daño y muerte del pack hermano 107 con la opción nueva `pack2`, fotogramas desde 1000).
 
 ## A medias
 
-- Goku SSJ4 Daima (140): 281 fotogramas, la hoja numerada no se lee; ampliar por tramos con `ver_pack.py "<pack>" 4 <índices>` y elegir a mano.
-
 - Bra Majin (189): la propuesta mezcla caras y otros personajes; hay que elegir todos los fotogramas a mano (pack de casi 300).
-- Fusión de Zamasu deshaciéndose (106): pocos golpes; comprobar si de verdad está completo.
 - Vegeta MUI (303): el pack viene reescalado y borroso; cada fotograma a otra escala y no se puede medir el píxel. Haría falta fijar la escala a mano fotograma a fotograma (`escalaFrames`) o buscar el pack original.
 - Goku Rey Mono (138): mismo problema que Vegeta MUI (303): fotogramas reescalados a tamaños distintos, sin píxel medible.
 
-## Completos por meter (5)
+## Completos por meter (3)
 
-- `01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/106_Zamasu e Black Fusão Desmanchando`
-- `03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍`
 - `05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés`
 - `09_Packs_mixtos_por_revisar/Varios/254_SPRITESEXTRA`
 - `09_Packs_mixtos_por_revisar/Varios/291_SUPER EXTRA PACK DE SPRITES #3 (ESPECIAL 38K) ANDRÉS GAMEN ANIMATIONS 👍`

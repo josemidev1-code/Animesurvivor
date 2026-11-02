@@ -2,7 +2,7 @@
 
   python herramientas/meter.py ver "<pack>"
       Hoja numerada del pack (ver_pack.py) en herramientas/_revisar/pack_<nombre>.png.
-  python herramientas/meter.py poner <id> "<pack>" idle=0,1 move=7 attack=29,30,31 kick=47,48 ki=61,63 pow=70,71 hurt=17,18 [faint=60] [espejo]
+  python herramientas/meter.py poner <id> "<pack>" idle=0,1 move=7 attack=29,30,31 kick=47,48 ki=61,63 pow=70,71 hurt=17,18 [faint=60] [espejo] [pack2="<pack>" (sus fotogramas se numeran desde 1000)]
       Apunta la forma en herramientas/animaciones/todos.json, monta el personaje y saca su previsualización.
   python herramientas/meter.py alta <id> "<NOMBRE>" <familia> <potencia> "<descripción>" "<FORMA>" <aura>
       Lo da de alta en script.js (NUEVOS y SIGS_SERIE). Familias: goku, vegeta, black, otro.
@@ -47,6 +47,7 @@ def poner(hid, pack, args):
     f = {'pack': pack}
     for a in args:
         if a == 'espejo': f['espejo'] = True; continue
+        if a.startswith('pack2='): f['pack2'] = a[6:]; continue  # pack hermano: sus fotogramas van desde 1000
         k, v = a.split('=')
         f[k] = [int(x) for x in v.split(',') if x != '']
     T = cargar(); T['heroes'][hid] = {'0': f}; guardar(T)

@@ -1961,6 +1961,82 @@
      276
     ]
    }
+  },
+  "gokussj4daima": {
+   "0": {
+    "pack": "03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍",
+    "idle": [
+     194,
+     195
+    ],
+    "move": [
+     190
+    ],
+    "attack": [
+     170,
+     169,
+     172
+    ],
+    "kick": [
+     173,
+     174
+    ],
+    "ki": [
+     32,
+     33
+    ],
+    "pow": [
+     128,
+     129
+    ],
+    "hurt": [
+     64
+    ],
+    "faint": [
+     86
+    ],
+    "escalaFrames": {
+     "128": 7,
+     "129": 7
+    }
+   }
+  },
+  "zamasufusion": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/106_Zamasu e Black Fusão Desmanchando",
+    "idle": [
+     2,
+     3
+    ],
+    "move": [
+     31
+    ],
+    "attack": [
+     44,
+     84,
+     79
+    ],
+    "kick": [
+     47,
+     48
+    ],
+    "ki": [
+     65,
+     69
+    ],
+    "pow": [
+     112,
+     113
+    ],
+    "hurt": [
+     1001,
+     1002
+    ],
+    "faint": [
+     1008
+    ],
+    "pack2": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/107_Zamasu e Black Fusão Desmanchando - Damage"
+   }
   }
  }
 }

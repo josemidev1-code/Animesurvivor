@@ -708,6 +708,8 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ zamasufusion:{name:'ZAMASU FUSIONADO (DESHACIÉNDOSE)',rar:5,hp:130,spd:72,atk:1.4,start:'blackkame',desc:'Zamasu fusionado mientras su cuerpo inmortal se deshace.',forms:['FUSIÓN'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ gokussj4daima:{name:'GOKU SSJ4 (DAIMA)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 4, versión de Dragon Ball Daima.',forms:['SSJ4'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  blackrose290:{name:'BLACK ROSÉ (HD)',rar:5,hp:125,spd:69,atk:1.3,start:'blackkame',desc:'Goku Black en Super Saiyan Rosé, megapack de sprites HD.',forms:['SSJ ROSÉ'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
  gokussjfp:{name:'GOKU SSJ FULL POWER',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku en Super Saiyan a pleno poder, sprite HD de estilo SWL.',forms:['SSJ FULL POWER'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokussj053:{name:'GOKU SSJ (CLÁSICO)',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku en Super Saiyan, sprite clásico de Dragon Ball Z.',forms:['SSJ'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
@@ -1314,7 +1316,9 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  goku045:['kiblast','punch','kame','kaioken','instant','genki'],
  gokussj053:['kiblast','punch','kame','kaioken','instant','genki'],
  gokussjfp:['kiblast','punch','kame','kaioken','instant','genki'],
- blackrose290:['kiblast','kiblade','blackkame','lances','scythe','kick']};
+ blackrose290:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ gokussj4daima:['kiblast','punch','kame','kaioken','instant','genki'],
+ zamasufusion:['kiblast','kiblade','blackkame','lances','scythe','kick']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
