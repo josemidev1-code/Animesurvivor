@@ -845,7 +845,13 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Recuadro «NOTICIAS» arriba a la izquierda del menú principal (`#hub`, `index.html`) con tres novedades del combate y debajo el enlace al rap de Porta (https://www.youtube.com/watch?v=HunKXh1ikes, se abre en otra pestaña). Estilos `.hubNews`/`.hubRap` en `style.css?v=69`. En pantallas bajas (<700 px) solo título y enlace; en móvil va debajo de las estadísticas. Comprobado a 1366×768, 800×600 y 375×812 sin solaparse ni desbordar.
 - El texto de las noticias es una propuesta mía: Josemi decide qué contar ahí y si se actualiza a mano.
 
+### Transformaciones con un deseo a Shenron
+- Josemi: Super Saiyan desbloqueable «con un deseo a Shenron», el del menú (permanente), no el de las bolas en partida.
+- Hecho: en la pantalla de Shenron, botón «DESEO: DESPERTAR <forma> DE <compañero> · N TICKETS» (`#gForma`). Cada deseo despierta la siguiente forma del compañero del menú; cuesta 5 tickets × número de forma (5, 10, 15, 20…). Guardado en `formas[héroe]`. En partida el nivel solo transforma hasta las formas despertadas; si llegas al nivel sin el deseo sale una vez «FORMA BLOQUEADA · Pídesela a Shenron en el menú».
+- Decisiones mías: se aplica a todas las transformaciones de todos los personajes (no solo Super Saiyan), de una en una; las partidas guardadas no conservan formas (todos empiezan en base); el coste es una propuesta.
+- `herramientas/comprobar_formas.cjs` (lógica real con `vm`). `script.js?v=86`. Probado en el navegador: botón, cobro, siguiente forma, aviso en partida y transformación con el deseo; consola limpia.
+
 ### Pendiente que necesita a Josemi
 - Jugar la rama y valorar el combate; decidir si se fusiona en `main`.
-- Super Saiyan desbloqueable: cómo se desbloquea (nivel, tienda, Shenron…).
+- Valorar el coste de las formas y si deben bloquearse también las de Freezer, Cell, Buu… o solo las de Super Saiyan.
 - Música del juego, iconos del menú (los aporta él), retrato fijo en la selección (¿cambia con la transformación?), packs incompletos, rama de los 7 personajes.

@@ -1796,7 +1796,23 @@ function openLevelUp(title){
     b.onclick=()=>{applyOpt(op);sfx('gem');$('#levelup').hidden=true;S.pending=Math.max(0,S.pending-1);state='play';last=performance.now()};
     box.appendChild(b)});
   $('#levelup').hidden=false;setTimeout(()=>{const f=box.querySelector('button');f&&f.focus({preventScroll:true})},30);sfx('level')}
-function checkForm(){const f=Math.min(HEROES[S.hid].forms.length-1,FORM_LV.filter(l=>P.lvl>=l).length-1);if(f>P.form){S.forms+=f-P.form;P.form=f;P.hp=stats().maxhp;
+// ---------- deseo de transformación ----------
+// las formas se piden a Shenron en el menú (guardado: formas[héroe] = cuántas hay despertadas); cuesta FORMA_TK × número de la forma
+const FORMA_TK=5;
+function formasAbiertas(hid){const H=HEROES[hid];return H?clamp(((loadSave().formas||{})[hid])||0,0,H.forms.length-1):0}
+function costeForma(hid){return FORMA_TK*(formasAbiertas(hid)+1)}
+function pedirForma(hid){const s=loadSave(),H=HEROES[hid],n=formasAbiertas(hid)+1;if(!H||n>=H.forms.length)return 'todas';
+  const c=FORMA_TK*n;if((s.tickets||0)<c)return 'faltan';s.tickets-=c;(s.formas||(s.formas={}))[hid]=n;writeSave();return 'ok'}
+function formaUI(){const b=$('#gForma');if(!b)return;const hid=companion(),H=HEROES[hid];if(!H||H.forms.length<2){b.hidden=true;return}
+  const n=formasAbiertas(hid)+1;b.hidden=false;b.disabled=n>=H.forms.length;
+  if(b.disabled){b.textContent=`${H.name}: TODAS SUS FORMAS DESPERTADAS`;return}
+  b.textContent=`DESEO: DESPERTAR ${H.forms[n]} DE ${H.name} · ${FORMA_TK*n} TICKETS`;
+  b.onclick=()=>{const r=pedirForma(hid);gachaInfo();formaUI();
+    $('#gInfo').textContent=r==='ok'?`¡Deseo cumplido! ${H.name} ya puede transformarse en ${H.forms[n]} al subir de nivel.`:`Te faltan tickets: necesitas ${FORMA_TK*n}. Gana más jugando partidas.`;if(r==='ok')sfx('trans')}}
+// ---------- fin del deseo de transformación
+function checkForm(){const lv=FORM_LV.filter(l=>P.lvl>=l).length-1,f=Math.min(HEROES[S.hid].forms.length-1,formasAbiertas(S.hid),lv);
+  if(lv>f&&f<HEROES[S.hid].forms.length-1&&!S.formAviso){S.formAviso=1;S.banner={t:2.6,text:'FORMA BLOQUEADA',sub:'Pídesela a Shenron en el menú'}}
+  if(f>P.form){S.forms+=f-P.form;P.form=f;P.hp=stats().maxhp;
   S.banner={t:2.6,text:HEROES[S.hid].forms[f]+'!',sub:'¡Transformación!',trans:1};S.flash=0.5;S.freeze=0.6;P.powT=1.6;cam.shake=8;sfx('trans');
   burst(P.x,P.y-10,60,['#ffd23f','#ffffff','#fff6a8'])}}
 
@@ -3093,7 +3109,7 @@ function drawBanner(){const c=$('#gBanner'),g=c.getContext('2d'),bn=gBanner();g.
   if(bn.id==='feat'&&bn.f5){bn.f4.forEach((id,i)=>put(fr(id,0),i?136:24,42));
     const fl=auraFlames(heroAura(bn.f5,1))[(bannerT>>2)%3];g.globalAlpha=0.8;g.drawImage(fl,80-fl.width/2,60-fl.height);g.globalAlpha=1;put(fr(bn.f5,Math.min(1,HDEF[bn.f5].forms.length-1)),80,56);return}
   const ids=GPOOL[5];ids.forEach((id,i)=>put(fr(id,1),14+i*Math.min(26,132/Math.max(1,ids.length-1)),40))}
-function openGacha(){initAudio();state='gacha';$('#gFree').onclick=()=>wish(1,true);$('#gHist').onclick=()=>{const h=$('#gHistBox');h.hidden=!h.hidden};hideMenus();$('#gacha').hidden=false;$('#gRes').innerHTML='';gachaInfo();
+function openGacha(){initAudio();state='gacha';$('#gFree').onclick=()=>wish(1,true);$('#gHist').onclick=()=>{const h=$('#gHistBox');h.hidden=!h.hidden};hideMenus();$('#gacha').hidden=false;$('#gRes').innerHTML='';gachaInfo();formaUI();
   const tick=()=>{if(state!=='gacha')return;drawBanner();requestAnimationFrame(tick)};tick()}
 // Manifest opcional incrustado por quien personalice el juego; nunca se pide JSON por red.
 let PACK_CREDITS=window.RECURSOS_CREDITOS||[];
