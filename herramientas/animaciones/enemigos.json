@@ -297,6 +297,148 @@
      19
     ]
    }
+  },
+  "e_burter": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/418_BURTER (marcowwwww)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     12
+    ],
+    "attack": [
+     27,
+     28,
+     26
+    ],
+    "kick": [
+     29,
+     30
+    ],
+    "ki": [
+     41,
+     45
+    ],
+    "pow": [
+     34,
+     35
+    ],
+    "hurt": [
+     22,
+     15
+    ],
+    "faint": [
+     24
+    ]
+   }
+  },
+  "e_whis": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/00_Dioses_y_Super_Saiyan_God/DeviantArt/419_WHIS (contadodavid)",
+    "idle": [
+     13,
+     15
+    ],
+    "move": [
+     9
+    ],
+    "attack": [
+     6,
+     8,
+     12
+    ],
+    "kick": [
+     19,
+     20
+    ],
+    "ki": [
+     14,
+     36
+    ],
+    "pow": [
+     17,
+     48
+    ],
+    "hurt": [
+     11,
+     21
+    ],
+    "faint": [
+     23
+    ]
+   }
+  },
+  "e_a19": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/420_ANDROIDE 19 (Pedrocarlos8772)",
+    "idle": [
+     28,
+     30
+    ],
+    "move": [
+     39
+    ],
+    "attack": [
+     40,
+     41,
+     54
+    ],
+    "kick": [
+     52,
+     53
+    ],
+    "ki": [
+     133,
+     135
+    ],
+    "pow": [
+     118,
+     119
+    ],
+    "hurt": [
+     47,
+     57
+    ]
+   }
+  },
+  "e_dabura": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/422_DABURA (deviantarter1236)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     8,
+     11,
+     4
+    ],
+    "kick": [
+     12,
+     16
+    ],
+    "ki": [
+     3,
+     25
+    ],
+    "pow": [
+     23,
+     20
+    ],
+    "hurt": [
+     14,
+     15
+    ],
+    "faint": [
+     22
+    ],
+    "espejo": true
+   }
   }
  }
 }

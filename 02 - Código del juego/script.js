@@ -1525,7 +1525,7 @@ const BOSS_SLOT=[{hp:900,spd:38,dmg:11,xp:80},{hp:2600,spd:36,dmg:16,xp:120},{hp
 const MAPS={
  namek:{name:'PLANETA NAMEK',sub:'Saga de Freezer',
    pool:[[0,'saiba',10],[45,'soldier',4],[240,'soldier',3],[330,'saibaR',5],[420,'saibaX',3],[500,'soldierE',6]],
-   bosses:['freeza1B','freeza2B','ginyu','frieza','golden'],ring:['saiba','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
+   bosses:['freeza1B','freeza2B','ginyu','frieza','golden'],ring:['saiba','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
  tierra:{name:'TIERRA · YERMO',sub:'Sagas Saiyan y Androides',
    pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'celljr',4]],
    bosses:['raditz','turles','mecha','a16B','cell'],ring:['saiba','saibaR'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
@@ -1549,16 +1549,16 @@ const MAPS={
  redribbon:{name:'BASE RED RIBBON',sub:'Saga del Ejército Red Ribbon',req:1,cam:[-44,-60],pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['a16B','mecha','a17B','trunksB','cell'],ring:['soldier','celljr'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
  musculo:{name:'TORRE MÚSCULO',sub:'Aldea Jingle',req:1,cam:[-44,-110],pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['raditz','a16B','turles','mecha','cell'],ring:['soldier','saiba'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
  capsule:{name:'CIUDAD DEL OESTE',sub:'Corporación Cápsula',req:1,cam:[90,-130],pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['a16B','frieza','cell','trunksB','black'],ring:['soldier','celljr'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
- yardrat:{name:'PLANETA YARDRAT',sub:'El refugio de Goku',req:1,cam:[-120,-80],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['ginyu','freeza2B','freeza1B','frieza','frieza100'],ring:['soldier','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
+ yardrat:{name:'PLANETA YARDRAT',sub:'El refugio de Goku',req:1,cam:[-120,-80],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['ginyu','freeza2B','freeza1B','frieza','frieza100'],ring:['soldier','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
  kaioshin:{name:'MUNDO KAIOSHIN',sub:'Saga de Majin Buu',req:1,cam:[-44,-100],pool:[[0,'majin',9],[40,'majin',4],[150,'celljr',4],[330,'soldierE',5],[480,'saibaR',5]],bosses:['janemba','majinv','fatbuu','gokuB','buu'],ring:['majin','majin'],squad:[600,['celljrE','celljrE','celljrE','celljrE','celljrE','celljrE','celljrE'],'¡LOS CELL JR.!']},
- infierno:{name:'INFIERNO',sub:'Saga del Más Allá',req:1,cam:[-110,-90],pool:[[0,'majin',9],[40,'majin',4],[150,'celljr',4],[330,'soldierE',5],[480,'saibaR',5]],bosses:['frieza','cell','janemba','fatbuu','buu'],ring:['majin','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
- bills:{name:'PLANETA DE BILLS',sub:'La batalla de los dioses',req:1,cam:[-44,-120],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['frieza','golden','vegetaB','majinv','black'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
+ infierno:{name:'INFIERNO',sub:'Saga del Más Allá',req:1,cam:[-110,-90],pool:[[0,'majin',9],[40,'majin',4],[150,'celljr',4],[330,'soldierE',5],[480,'saibaR',5]],bosses:['frieza','cell','janemba','fatbuu','buu'],ring:['majin','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
+ bills:{name:'PLANETA DE BILLS',sub:'La batalla de los dioses',req:1,cam:[-44,-120],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['frieza','golden','vegetaB','majinv','black'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
  poder:{name:'TORNEO DEL PODER',sub:'Supervivencia universal',req:1,cam:[-44,-28],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['a17B','frieza','brolyB','golden','gokuB'],ring:['soldierE','celljr'],squad:[600,['shadow'],'¡TU SOMBRA!']},
  pradera:{name:'PRADERAS',sub:'Campo de batalla Saiyan',req:1,pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'soldierE',5]],bosses:['raditz','turles','vegetaB','piccoloB','frieza'],ring:['saiba','saibaR'],squad:[630,['raditzE','vegsaiE'],'¡SAIYANS DE ÉLITE!']},
  bosque:{name:'BOSQUE PROFUNDO',sub:'Entrenamiento en la naturaleza',req:1,pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'soldierE',5]],bosses:['raditz','turles','a16B','piccoloB','cell'],ring:['saiba','saibaR'],squad:[630,['raditzE','vegsaiE'],'¡SAIYANS DE ÉLITE!']},
  desierto:{name:'DESIERTO',sub:'Guarida de Yamcha',req:1,pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['raditz','a16B','turles','mecha','cell'],ring:['soldier','saiba'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
  gizard:{name:'YERMO DE GIZARD',sub:'Llegada de los Saiyans',req:1,pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'soldierE',5]],bosses:['turles','raditz','vegetaB','ginyu','frieza'],ring:['saiba','saibaX'],squad:[630,['raditzE','vegsaiE'],'¡SAIYANS DE ÉLITE!']},
- volcan:{name:'TIERRA VOLCÁNICA',sub:'Planeta en llamas',req:1,pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['freeza2B','freeza1B','ginyu','frieza100','golden'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
+ volcan:{name:'TIERRA VOLCÁNICA',sub:'Planeta en llamas',req:1,pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['freeza2B','freeza1B','ginyu','frieza100','golden'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
 };
 const BOSS_T=[180,360,540,720,900];
 const WAVE_T=[130,230,310,410,490,590,670,770,850];
@@ -1571,7 +1571,7 @@ const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SE
   if(MAPS.futuro)MAPS.futuro.bosses=['a16B','black','zamasuB','rose','brolyB'];
   if(MAPS.kaioshin)MAPS.kaioshin.bosses[3]='superbuuB';
   if(MAPS.bills)MAPS.bills.bosses[4]='billsB';
-  const EL={freezer:['kingvegE','raditzssjE','turlesE','frostE','vegsaiE','freeza2E','coolerE'],tierra:['raditzssjE','cellimpE','a16E','cellsemiE','a21E','cellperfE'],
+  const EL={freezer:['burter','kingvegE','raditzssjE','turlesE','frostE','vegsaiE','freeza2E','coolerE'],tierra:['raditzssjE','cellimpE','a16E','cellsemiE','a21E','cellperfE'],
     buu:['garlicE','majinvE','fatbuuE','gohanpossE','buuthinE','demonE','superbuuE'],super:['frost2E','black2E','hitE','zamasuE','hit2E','zamasuhE','vegetaE','fakegokuE','kalessjE']};
   // elites come in one by one, weakest first; renegade saiyans fill the mid game
   for(const k in MAPS){const L=EL[WSAGA[k]||'tierra'];L.forEach((id,i)=>MAPS[k].pool.push([240+i*Math.round(600/L.length),id,0.25]));
@@ -1579,8 +1579,8 @@ const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SE
     const R={freezer:[[0,'frzS2',4],[120,'frzS4',3],[260,'saiyanLow',2]],tierra:[[60,'frzS2',2],[260,'saiyanLow',2]],buu:[[90,'garlicH1',3],[200,'demonS',3],[320,'garlicH2',2],[420,'demonS2',3]],super:[[0,'frzS2',3],[200,'demonS',2],[360,'demonS2',2]]}[WSAGA[k]||'tierra'];
     R.forEach(p=>MAPS[k].pool.push(p.slice()))}
   const B={namek:['dodoria','zarbon','ginyu','freeza3B','frieza100'],vegetasei:['freeza1B','coolerB','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
-    tierra:['raditz','turles','mecha','a21B','cell'],redribbon:['a16B','mecha','a21B','a21mB','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
-    kaioshin:['janemba','majinv','buuthinB','buugohanB','buu'],infierno:['garlicB','cell','superbuuB','ozarugB','janemba'],time:['coolerB','babyB','ozarugB','moroB','shenronB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
+    tierra:['raditz','turles','mecha','a21B','cell'],redribbon:['a16B','a19','mecha','a21B','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
+    kaioshin:['dabura','janemba','majinv','buugohanB','buu'],infierno:['garlicB','cell','superbuuB','ozarugB','janemba'],time:['coolerB','babyB','ozarugB','moroB','shenronB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
     bills:['golden','toppoB','whisB','billsB','zenoB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a16B','broly2B','mecha','cell'],
     pradera:['raditz','turles','vegetaB','broly3B','frieza'],bosque:['raditz','ozaruB','a16B','piccoloB','cell']};
   for(const k in B)if(MAPS[k])MAPS[k].bosses=B[k].map(f);
@@ -2993,6 +2993,11 @@ if(ET.zarbon)Object.assign(ET.zarbon,{col:'#7af0e0',col2:'#c8fff6'}); // ráfaga
 if(ET.mecha)Object.assign(ET.mecha,{ai:'frieza',col:'#c58af0',col2:'#ff5aa0'}); // rayo mortal y Death Ball
 if(ET.garlicE)Object.assign(ET.garlicE,{col:'#5ab0ff'});if(ET.garlicB)Object.assign(ET.garlicB,{col:'#5ab0ff'}); // ki azul de la Zona Muerta
 if(ET.kingvegE)Object.assign(ET.kingvegE,{col:'#b48aff'}); // esferas moradas del Rey Vegeta
+Object.assign(ENEMIGO_HEROE,{burter:['e_burter',0],whisB:['e_whis',0],a19:['e_a19',0],dabura:['e_dabura',0]});
+if(ET.burter)Object.assign(ET.burter,{shoot:1.8,col:'#4a7ad8'}); // el más rápido del universo; Space Mach Attack azul
+if(ET.whisB)Object.assign(ET.whisB,{col:'#7ad8ff'}); // ráfagas del bastón
+if(ET.a19)Object.assign(ET.a19,{col:'#ff7ad0'}); // rayos de los ojos y absorción de energía
+if(ET.dabura)Object.assign(ET.dabura,{col:'#ff5a2a',col2:'#ffb02a'}); // aliento de fuego y saliva de piedra
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);

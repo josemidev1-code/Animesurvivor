@@ -106,3 +106,15 @@ Hojas que Josemi ya tenía en Descargas; fichas leídas en DeviantArt. Todas pid
 | Dr. Gero | **SonIsaki** (Dragon Ball Rebirth) | [Dr. Gero ULSW](https://www.deviantart.com/sonisaki/art/Dr.-Gero-ULSW-862625720) | Troceado en `sprites/`, aún sin usar (no hay enemigo Dr. Gero). CC BY-NC-ND; pide crédito |
 | Maestro Roshi | **Xxspartan1235xX**; créditos a orumaitoobeso, faceset de charlotteson | [Master roshi sprite sheet Swlplus](https://www.deviantart.com/xxspartan1235xx/art/Master-roshi-sprite-sheet-Swlplus-1001776947) | Personaje jugable. Pide sus créditos |
 | Zeno | AnimaPivotersZ (sprite de Qsab101) | [Zeno Sprite Sheet](https://www.deviantart.com/animapivotersz/art/Zeno-Sprite-Sheet-744045955) | No usado: solo unas poses |
+
+Bajadas de DeviantArt el 3 nov. (originales en `Recursos pendientes/deviantart_originales/`):
+
+| Personaje | Autor y créditos | Ficha | Uso / condiciones |
+|---|---|---|---|
+| Burter | **marcowwwww**; créditos a AlexKX29, orumaitoobeso y Dryy7 | [Burter ULSW](https://www.deviantart.com/marcowwwww/art/Burter-ULSW-932429522) | Élite y escuadrón de las Fuerzas Especiales. Descargable; se acredita |
+| Whis | **contadodavid**; créditos a qsab, DarkSheep123, kaivo2003, dyandisel, bite035, omegasuper | [Whis ulsw](https://www.deviantart.com/contadodavid/art/Whis-ulsw-836412178) | Jefe del Planeta de Bills. Descargable; se acredita |
+| Androide 19 | **Pedrocarlos8772** (subida por johnarlspringting); la ficha acredita estilo, efectos, aura, faceta y banner a otros spriters | [Android_19_Ulsw_By_Pedrocarlos8772](https://www.deviantart.com/johnarlspringting/art/Android_19_Ulsw_By_Pedrocarlos8772-1251073180) | Jefe de la Base Red Ribbon |
+| Dabura | **deviantarter1236** (ripeo de un juego de lucha, no es pixel art propio) | [Dabura Sprite Sheet](https://www.deviantart.com/deviantarter1236/art/Dabura-Sprite-Sheet-812167859) | Jefe del Mundo Kaioshin. JPEG: bordes algo sucios y aspecto menos nítido |
+| Freezer (formas) | **qsab101 / Que** | [Frieza - Ultimate LSW Sheet](https://www.deviantart.com/qsab101/art/Frieza---Ultimate-LSW-Sheet-752959651) | «If used, please give credit to Que». Troceado; la 2ª forma solo trae la transformación y unas poses: no está completa, sin usar |
+
+Descartados: Ozaru y Ozaru dorado de phyetro (marca de agua, sin original descargable); Dabura y Dr. Gero de arisrad (de pago).
