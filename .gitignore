@@ -9,7 +9,7 @@ __pycache__/
 # salidas regenerables
 personajes/
 .personajes_importando/
-herramientas/_revisar/
+# herramientas/_revisar/ se sube desde el 2 nov. 2026 (contiene revisiones de fotogramas)
 herramientas/__pycache__/
 
 # Bocetos del acompañante visual (Superpowers)
