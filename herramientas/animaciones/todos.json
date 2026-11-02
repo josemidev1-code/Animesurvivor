@@ -563,6 +563,152 @@
      70
     ]
    }
+  },
+  "vegetablueulsw": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/296_Vegeta Blue Ulsw Hd",
+    "idle": [
+     21,
+     23
+    ],
+    "move": [
+     104
+    ],
+    "attack": [
+     86,
+     87,
+     88
+    ],
+    "kick": [
+     77,
+     78
+    ],
+    "ki": [
+     33,
+     39
+    ],
+    "pow": [
+     47,
+     48
+    ],
+    "hurt": [
+     53,
+     55
+    ],
+    "faint": [
+     51
+    ],
+    "escalaFrames": {
+     "47": 8.3
+    }
+   }
+  },
+  "vegetabluefp": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Vegeta/093_Vegeta Blue Full Power",
+    "idle": [
+     12,
+     13
+    ],
+    "move": [
+     19
+    ],
+    "attack": [
+     22,
+     24,
+     26
+    ],
+    "kick": [
+     29,
+     40
+    ],
+    "ki": [
+     61,
+     64
+    ],
+    "pow": [
+     59,
+     60
+    ],
+    "hurt": [
+     54,
+     55
+    ],
+    "faint": [
+     57
+    ]
+   }
+  },
+  "vegetablueevo": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Vegeta/299_Vegeta blue evolution",
+    "idle": [
+     38,
+     41
+    ],
+    "move": [
+     53
+    ],
+    "attack": [
+     55,
+     57,
+     58
+    ],
+    "kick": [
+     72,
+     73
+    ],
+    "ki": [
+     111,
+     112
+    ],
+    "pow": [
+     106,
+     122
+    ],
+    "hurt": [
+     97,
+     98
+    ],
+    "faint": [
+     102
+    ]
+   }
+  },
+  "vegetabaseulsw": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/Vegeta/295_Vegeta Base Ulsw HD",
+    "idle": [
+     26,
+     27
+    ],
+    "move": [
+     18
+    ],
+    "attack": [
+     33,
+     36,
+     35
+    ],
+    "kick": [
+     46,
+     45
+    ],
+    "ki": [
+     84
+    ],
+    "pow": [
+     94,
+     95
+    ],
+    "hurt": [
+     70,
+     71
+    ],
+    "faint": [
+     73
+    ]
+   }
   }
  }
 }

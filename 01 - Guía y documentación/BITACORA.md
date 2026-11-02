@@ -914,3 +914,11 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Tanda 6 (sigue): Vegeta Blue de Super (092). 85 personajes. `animaciones_juego.js?v=74`, `script.js?v=98`.
 - Josemi (19:13): «publica en github pages». Repositorio público; Josemi activó Pages (main, raíz). Añadido `.nojekyll`. Publicado bien (despliegue del 2 nov., 19:17): https://josemidev1-code.github.io/Animesurvivor/ — se actualiza con cada subida a `main`.
 - Josemi (19:22): «¿podemos hacer que mientras se mueven los personajes también ataquen?». Los ataques ya ocurrían en movimiento, pero el dibujo los tapaba con la pose de vuelo. Ahora puñetazos, patadas, ki y la preparación de técnicas se ven también moviéndose (el aura de poder, solo quieto). Probado: 32 de 120 fotogramas de una carrera con Goku salen atacando, sin errores. `script.js?v=99`.
+
+## 2026-11-02 — Claude (Opus) · Todos los personajes, tandas 7 en adelante
+
+### Lo que pidió el usuario
+- Josemi (19:28): seguir metiendo todos los personajes desde GitHub (`main`). Siguiente Vegeta Blue Ulsw HD (296), luego el resto de Vegeta y después las versiones de Goku. Elegir los fotogramas a mano, revisar con `previsualizar.py`, pasar `comprobar_*.cjs`, probar una partida, tandas de 3-5 con bitácora, `PERSONAJES_POR_METER.md`, versiones `?v=`, commit y push a `main`. No parar entre tandas.
+
+### Lo que hice
+- Tanda 7 hecha: Vegeta Blue HD (296), Vegeta Blue Full Power (093), Vegeta Blue Evolution (299) y Vegeta base HD (295), fotogramas a mano, revisados con `previsualizar.py`, `comprobar_*.cjs` correctos y una partida de 25 s con cada uno sin errores. 89 personajes. `animaciones_juego.js?v=75`, `script.js?v=100`.
