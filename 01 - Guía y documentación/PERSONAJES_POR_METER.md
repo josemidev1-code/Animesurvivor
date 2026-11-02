@@ -33,16 +33,15 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 18: Goku clásico (044), Goku clásico 2 (045), Goku SSJ clásico (053).
 - Tanda 19: Goku SSJ Full Power (273), Black Rosé HD (290; megapack de 300 fotogramas revisado por tramos).
 - Tanda 20: Goku SSJ4 Daima (140; pack de 281 revisado por tramos, aura con `escalaFrames`), Zamasu fusionado deshaciéndose (106 + daño y muerte del pack hermano 107 con la opción nueva `pack2`, fotogramas desde 1000).
+- Tanda 21: Bra Majin SSJ (189; cada fotograma viene a un zoom distinto: `escala` 14,2 fija y `escalaFrames` a mano).
 
 ## A medias
 
-- Bra Majin (189): la propuesta mezcla caras y otros personajes; hay que elegir todos los fotogramas a mano (pack de casi 300).
 - Vegeta MUI (303): el pack viene reescalado y borroso; cada fotograma a otra escala y no se puede medir el píxel. Haría falta fijar la escala a mano fotograma a fotograma (`escalaFrames`) o buscar el pack original.
 - Goku Rey Mono (138): mismo problema que Vegeta MUI (303): fotogramas reescalados a tamaños distintos, sin píxel medible.
 
-## Completos por meter (3)
+## Completos por meter (2)
 
-- `05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés`
 - `09_Packs_mixtos_por_revisar/Varios/254_SPRITESEXTRA`
 - `09_Packs_mixtos_por_revisar/Varios/291_SUPER EXTRA PACK DE SPRITES #3 (ESPECIAL 38K) ANDRÉS GAMEN ANIMATIONS 👍`
 

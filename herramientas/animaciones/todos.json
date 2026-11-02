@@ -2037,6 +2037,53 @@
     ],
     "pack2": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/107_Zamasu e Black Fusão Desmanchando - Damage"
    }
+  },
+  "bramajin": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés",
+    "idle": [
+     42,
+     48
+    ],
+    "move": [
+     41
+    ],
+    "attack": [
+     61,
+     62,
+     66
+    ],
+    "kick": [
+     99,
+     102
+    ],
+    "ki": [
+     148,
+     149
+    ],
+    "pow": [
+     128,
+     129
+    ],
+    "hurt": [
+     70,
+     71
+    ],
+    "faint": [
+     122
+    ],
+    "escalaFrames": {
+     "42": 7.1,
+     "99": 8.9,
+     "102": 8.9,
+     "128": 8.5,
+     "129": 8.5,
+     "70": 9,
+     "71": 9
+    },
+    "escala": 14.2,
+    "escalaFija": true
+   }
   }
  }
 }

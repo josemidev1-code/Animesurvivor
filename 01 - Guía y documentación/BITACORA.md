@@ -953,3 +953,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Lo que hice
 - Tanda 19 hecha: Goku SSJ Full Power (273) y Black Rosé HD (290); comprobaciones y partida de prueba correctas. 124 personajes. `animaciones_juego.js?v=87`, `script.js?v=112`.
 - Tanda 20 hecha: Goku SSJ4 Daima (140) y Zamasu fusionado deshaciéndose (106; el daño y la muerte vienen del pack 107). Nueva opción `pack2` en `montar_animaciones.py` y `meter.py` para usar un pack hermano (sus fotogramas se numeran desde 1000). Comprobaciones y partida de prueba correctas. 126 personajes. `animaciones_juego.js?v=88`, `script.js?v=113`.
+- Tanda 21 hecha: Bra Majin SSJ (189), escalas fijadas a mano porque el pack mezcla zooms; comprobaciones y partida de prueba correctas. 127 personajes. `animaciones_juego.js?v=89`, `script.js?v=114`.
