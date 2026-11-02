@@ -1889,6 +1889,78 @@
      32
     ]
    }
+  },
+  "gokussjfp": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/Goku/273_GOKU SSJ FULL POWER SWL+",
+    "idle": [
+     16,
+     17
+    ],
+    "move": [
+     29
+    ],
+    "attack": [
+     43,
+     44,
+     45
+    ],
+    "kick": [
+     53,
+     54
+    ],
+    "ki": [
+     96,
+     97
+    ],
+    "pow": [
+     75,
+     76
+    ],
+    "hurt": [
+     49,
+     48
+    ],
+    "faint": [
+     72
+    ]
+   }
+  },
+  "blackrose290": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose",
+    "idle": [
+     265,
+     266
+    ],
+    "move": [
+     58
+    ],
+    "attack": [
+     69,
+     70,
+     71
+    ],
+    "kick": [
+     87,
+     90
+    ],
+    "ki": [
+     128,
+     130
+    ],
+    "pow": [
+     118,
+     119
+    ],
+    "hurt": [
+     270,
+     271
+    ],
+    "faint": [
+     276
+    ]
+   }
   }
  }
 }

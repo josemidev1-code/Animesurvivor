@@ -944,3 +944,11 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Siguiente paso recomendado
 - Ataques personalizados por personaje, usar sus animaciones propias en partida y cuadrar ataques con animaciones (petición de Josemi).
 - Terminar los 7 packs completos que quedan en `PERSONAJES_POR_METER.md` (empezar por Goku SSJ Full Power 273, hoja ya lista en `_revisar/`).
+
+## 2026-11-02 — Claude (Opus) · Todos los personajes, continuación (23:15)
+
+### Lo que pidió el usuario
+- Josemi (23:15): «seguimos con meter a todos los personajes».
+
+### Lo que hice
+- Tanda 19 hecha: Goku SSJ Full Power (273) y Black Rosé HD (290); comprobaciones y partida de prueba correctas. 124 personajes. `animaciones_juego.js?v=87`, `script.js?v=112`.
