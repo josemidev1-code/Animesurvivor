@@ -17,7 +17,7 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - 1 nov.: HUD más pequeño y nítido (se dibuja a 1 píxel de imagen por unidad, letra a 8/16 px) y escala de pantalla entera. Casillas de técnicas al doble en pantallas táctiles. Falta la valoración del usuario.
 - 1 nov.: al moverse, el jugador va en vuelo bajo (pose de impulso flotando sobre su sombra). Falta la valoración del usuario.
 - 1 nov.: efectos de técnicas más pequeños (explosiones a 1,5 veces su radio y como mucho 64 unidades, fogonazo de los rayos al 60 %, números de daño a la mitad, destello de pantalla suave) y balas enemigas por encima de los efectos propios. Daño y alcance iguales. Falta la valoración del usuario.
-- 2 nov.: rama `claude/cuerpo-a-cuerpo` con la parte A del cuerpo a cuerpo (`MELEE_AJ`). Con el bot no mejora: el ~95 % del daño cerca es por contacto. Falta que Josemi la juegue; después, parte B (enemigos que avisan antes de golpear). Super Saiyan debe ser desbloqueable. Rap de Porta: https://www.youtube.com/watch?v=HunKXh1ikes
+- 2 nov.: rama `claude/cuerpo-a-cuerpo`: parte A (`MELEE_AJ`) y parte B, tipos de enemigo (`ROL_AJ`: pegador, embestidor, tirador, élite con avisos «!», roce por enemigo, tope de 6 balas). Bot: cuerpo a cuerpo 100 → ~151 s, distancia 123 → ~130 s. Falta que Josemi lo juegue y decidir si se fusiona en `main`. Super Saiyan debe ser desbloqueable. Rap de Porta: https://www.youtube.com/watch?v=HunKXh1ikes
 - Existe una rama separada con siete personajes nuevos; no des por fusionados esos cambios. `README.md` y `01 - Guía y documentación/TAREAS_CODEX.md` incluyen contexto histórico que puede estar desfasado.
 
 ## Mapa rápido

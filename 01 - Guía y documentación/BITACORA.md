@@ -822,3 +822,21 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Que Josemi juegue la rama y diga si nota diferencia; después, diseño breve de la parte B centrado en el contacto.
+
+## 2026-11-02 — Claude (Opus) · Parte B: tipos de enemigo
+
+### Lo que pidió el usuario
+- «Aquí la cosa es que sepas cuándo utilizar el ataque cuerpo a cuerpo: si hay 20 mil enemigos no renta porque te matarán, pero tácticamente sí». Los élites también deben ser peligrosos de cerca.
+- Eligió la opción 3 (varios tipos de enemigo) «y haz lo que queda pendiente también, no pares».
+
+### Lo que hice
+- Tipos con las poses que ya existen (Attack, Kick, Pow, Walk): pegador (avisa 0,5 s y golpea), embestidor (se carga y embiste en línea recta), tirador (mantiene distancia y retrocede), élite (avisa menos, encadena 3 golpes, un solo golpe tuyo no lo para). El roce pasa a ser daño continuo por enemigo, así que rodearte de muchos mata y uno suelto apenas hace daño. Escudos o agarres no: no hay animaciones.
+- Código (`script.js`, commit 122dc67): `ROL_AJ` y `rolE`/`rolAI`/`rolCancel` antes de `update`; tipo deducido de `ET` (jefe, kami, élite, tirador si `shoot`, embestidor si `spd>=44`, si no pegador). Tu golpe aturde y cancela su ataque; a los élites solo cada segundo golpe. Roce `roce()` = 0,5×daño por segundo y por enemigo, sin invulnerabilidad (jefes igual que antes). Dibujo: pose Attack al avisar, Attack/Kick al golpear, Pow al cargar; «!» amarilla (roja en élites) y línea roja de la embestida. La pose de ataque «de adorno» al estar cerca queda solo para jefes.
+- Tope de 6 balas enemigas en pantalla (`ROL_AJ.maxBalas`): con los tiradores guardando distancia, el 72 % del daño a distancia eran balas.
+- Corregido durante la prueba: el aviso usaba `time`, que no existe en `drawPkEnemy`, y rompía el dibujo. Prueba añadida.
+- `herramientas/comprobar_roles.cjs`: prueba la lógica real de cada tipo con `vm`. `AS.rol` expone `ROL_AJ`. `script.js?v=84`.
+
+### Medición (bot, Goku, Tierra, 6-8 partidas)
+- Cuerpo a cuerpo: 100 s → ~151 s. A distancia: 123 s → 124-136 s. Ruido grande entre partidas.
+- Comprobaciones: sintaxis, roles, combate, enemigos, personajes, objetos y pruebas de Python correctas; consola sin errores en v=84; captura con los avisos vista.
+- No probado: abrir con doble clic (el panel muestra los archivos locales como imagen fija) ni jugar una persona.
