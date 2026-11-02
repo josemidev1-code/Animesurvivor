@@ -1069,6 +1069,109 @@
      4
     ]
    }
+  },
+  "gokupatrulla": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/174_Goku base.patrullero galáctico.dbs moro.andres Gamen",
+    "idle": [
+     22,
+     23
+    ],
+    "move": [
+     8
+    ],
+    "attack": [
+     30,
+     28,
+     27
+    ],
+    "kick": [
+     38,
+     37
+    ],
+    "ki": [
+     45
+    ],
+    "pow": [
+     50,
+     51
+    ],
+    "hurt": [
+     40,
+     42
+    ],
+    "faint": [
+     43
+    ]
+   }
+  },
+  "gokussjchaqueta": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/08_Super_Hero/Goku/205_GOKU SSJ 1,ROPA,ORANGE JACKET, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     40,
+     41
+    ],
+    "move": [
+     60
+    ],
+    "attack": [
+     29,
+     25,
+     26
+    ],
+    "kick": [
+     51,
+     52
+    ],
+    "ki": [
+     18,
+     19
+    ],
+    "pow": [
+     71
+    ],
+    "hurt": [
+     36,
+     37
+    ],
+    "faint": [
+     33
+    ]
+   }
+  },
+  "gokumuigranola": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/07_Granola/Goku/132_GOKU MUI ( SAGA GRANOLA ) Andrés Gamen ANIMATIONS ( SPRITE HD )",
+    "idle": [
+     62,
+     63
+    ],
+    "move": [
+     11
+    ],
+    "attack": [
+     47,
+     48,
+     49
+    ],
+    "kick": [
+     31,
+     32
+    ],
+    "ki": [
+     17,
+     18
+    ],
+    "pow": [
+     66,
+     69
+    ],
+    "hurt": [
+     9,
+     73
+    ]
+   }
   }
  }
 }
