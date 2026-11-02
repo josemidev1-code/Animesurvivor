@@ -8,6 +8,13 @@ Lee `Cambios propuestos por Josemi.md` en esta misma carpeta: es el documento co
 
 **Prioridad actual (2 nov.):** resolver primero los puntos de `Cambios propuestos por Josemi.md` y **después** volver a la jugabilidad. La última pregunta que quedó abierta fue por qué bloque empezar: «Selección y estadísticas» (puntos 4 y 5) o «Inventario de sprites» (punto 1).
 
+
+## Estado (2 nov., noche)
+
+- Selección: personajes de lado (sin retratos), ventanas azules 16 bits, estadísticas con colores. Letra Press Start 2P en todo. **No volver a proponer la recreativa ni el efecto CRT** (Josemi los rechazó).
+- Josemi quiere **todos los packs completos como personajes jugables propios**; los incompletos fuera. En marcha: 72 personajes; lista y procedimiento en `PERSONAJES_POR_METER.md`.
+- Pendiente de Josemi: permiso para incluir la letra en el proyecto (ahora se carga de Google Fonts y sin internet no se ve).
+
 ## Estado de Git
 
 - **`main` tiene todo lo del 2 nov.** (avance directo desde `claude/cuerpo-a-cuerpo`) y está **subido a GitHub** (`josemidev1-code/Animesurvivor`, privado), junto con todas las ramas locales.

@@ -4,6 +4,8 @@
 
 Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 entradas, una ruta no localizada al generarlo), pruebas rápidas y extracción inicial de utilidades. Comprueba el estado real de Git y los archivos antes de trabajar; este resumen puede quedar desfasado.
 
+> **2 nov., noche:** 72 personajes jugables; meter el resto de packs completos siguiendo `PERSONAJES_POR_METER.md`. Selección con personajes de lado y letra Press Start 2P en todo.
+
 ## Proyecto y reglas
 - Juego de supervivencia Dragon Ball para navegador. Debe funcionar abriendo `index.html` con doble clic.
 - Personajes y enemigos: usar sprites de `sprites/`, no dibujarlos por código. Revisar animaciones visualmente; anotar recursos pendientes en `01 - Guía y documentación/SPRITES_PENDIENTES.md`.

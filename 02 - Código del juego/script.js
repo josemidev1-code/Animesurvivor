@@ -707,6 +707,10 @@ const NUEVOS={
  uub:{name:'UUB',rar:4,hp:120,spd:68,atk:1.15,start:'kame',desc:'La reencarnación de Kid Buu y alumno de Goku.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kiai','kame','renzoku']},
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
+ // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ jirengray:{name:'JIREN (TORNEO)',rar:5,hp:150,spd:62,atk:1.35,start:'eraser',desc:'Jiren del Torneo del Poder, otro estilo de sprite.',forms:['BASE'],aura:['red'],sig:['kiblast','jirenrush','powerimpact','kick','roar','omega']},
+ vegettofalso:{name:'VEGETTO SSJ FALSO',rar:5,hp:130,spd:68,atk:1.3,start:'finalkame',desc:'Vegetto en su forma de Super Saiyan falso.',forms:['SSJ FALSO'],aura:['gold'],sig:['kiblast','punch','finalkame','spiritsword','bigbang','kick']},
+ trunksarmor:{name:'TRUNKS ARMADURA',rar:4,hp:110,spd:66,atk:1.12,start:'burning',desc:'Trunks del futuro con la armadura Saiyan.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','burning','kick','finishbuster','renzoku']},
 };
 // formas añadidas a personajes que ya estaban
 Object.assign(HDEF.gokugt,{forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 3','SUPER SAIYAN 4'],aura:['white','gold','gold','red']});
@@ -1204,7 +1208,9 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  nappa:['kiblast','punch','breakcannon','kick','bomberdx','lariat'],ginyu:['kiblast','punch','kick','milky','bodychange','renzoku'],
  jeice:['kiblast','punch','kick','crusherball','renzoku'],guldo:['kiblast','punch','kick','psychorock','timefreeze'],
  uub:['kiblast','punch','kick','kiai','kame','renzoku'],mrsatan:['punch','kick','megaton','dynamite','presentbomb'],
- a21:['kiblast','punch','kick','choco','photonwave','fullcourse']};
+ a21:['kiblast','punch','kick','choco','photonwave','fullcourse'],
+ jirengray:['kiblast','jirenrush','powerimpact','kick','roar','omega'],
+ vegettofalso:['kiblast','punch','finalkame','spiritsword','bigbang','kick'],trunksarmor:['kiblast','punch','burning','kick','finishbuster','renzoku']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
