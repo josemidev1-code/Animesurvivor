@@ -805,4 +805,20 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Preguntó qué son los «packs incompletos» y qué es la rama de los 7 personajes.
 
 ### Lo que hice
-- Revisado el código del cuerpo a cuerpo y de los enemigos (`script.js`: `fireSig`, combo, `hitPlayer`, bucle de enemigos, `director`). Sin cambios en el juego todavía.
+- Revisado el código del cuerpo a cuerpo y de los enemigos (`script.js`: `fireSig`, combo, `hitPlayer`, bucle de enemigos, `director`).
+- Diseño y plan (Superpowers): `Planes y diseños/superpowers/specs/2026-11-02-cuerpo-a-cuerpo-design.md` y `plans/2026-11-02-cuerpo-a-cuerpo.md`. Josemi eligió «A y luego B». Rama `claude/cuerpo-a-cuerpo`.
+- Parte A aplicada (commit b9b063e): constante `MELEE_AJ` junto a `MELEE`. De cerca (<60 px) no disparan; el combo protege golpes×0,09 s + 0,25 s; cada golpe empuja al 60 % y aturde 0,2 s (no a jefes); el impulso para a 20 px. Nueva comprobación `herramientas/comprobar_combate.cjs`. `script.js?v=81`. `window.AS.aj` expone `MELEE_AJ` para medir.
+
+### Pruebas y medición (jugador automático en el navegador, Goku, mapa Tierra)
+- Bot que va a por el enemigo más cercano con el Combo de golpes. Antes (valores antiguos puestos en `AS.aj`) 99 s de media; después 101 s. Sin diferencia real.
+- Origen del daño al ir cuerpo a cuerpo: **~95 % por contacto**, casi nada de balas. Los golpes llegan en el hueco entre combos y de enemigos a los lados y detrás.
+- Probado y descartado (sin mejora fuera del ruido, revertido): protección del combo más larga (0,6 s extra), aturdimiento 0,4-0,6 s, enemigos aturdidos sin daño por contacto, combo que golpea alrededor y no solo al frente.
+- Referencia: bot que se queda a distancia con bolas de ki, 123 s de media. Ir cuerpo a cuerpo penaliza (~100 frente a ~123 s), pero el bot embiste en línea recta y no es fiable para medir la sensación del cuerpo a cuerpo.
+- Sintaxis, `comprobar_combate`, `comprobar_enemigos`, `comprobar_personajes` correctos; consola sin errores. No probado con doble clic ni jugando de verdad.
+
+### A medias / problemas
+- La parte A no demuestra mejora con el bot. Falta que Josemi lo juegue. La causa de fondo es el daño por contacto pasivo de la masa de enemigos: la parte B (enemigos que avisan antes de golpear) ataca justo eso.
+- Revisión final hecha por mí mismo (sin revisor aparte) para ahorrar uso de Claude Pro.
+
+### Siguiente paso recomendado
+- Que Josemi juegue la rama y diga si nota diferencia; después, diseño breve de la parte B centrado en el contacto.
