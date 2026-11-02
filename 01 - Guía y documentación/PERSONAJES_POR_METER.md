@@ -15,6 +15,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 
 - Tanda 1: Nappa, Capitán Ginyu, Jeice, Guldo, Uub, Mr. Satán, Androide 21 (de la rama `claude/quizzical-gates-9cf9c0`).
 - Tanda 2: Jiren (Torneo, pack 069), Vegetto SSJ falso (247), Trunks con armadura (088).
+- Tanda 3: Goku Black Kaioshin (178), Black SSJ falso (177), Black Rosé Evolution (176), Majin Black Dios (184). Atajo nuevo: `herramientas/meter.py` (ver, poner, alta, quitar).
 
 ## A medias
 
@@ -33,7 +34,6 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Goku/049_Goku Blue Whis Gi`
 - `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Vegeta/314_Vegeta blue`
 - `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Vegeta/315_Vegeta ssj`
-- `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/178_Goku black traje kaioshin.Andres Gamen`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/106_Zamasu e Black Fusão Desmanchando`
 - `01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/051_Goku Instinto Superior`
@@ -56,9 +56,6 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - `03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍`
 - `04_Heroes_y_videojuegos/Vegeta/267_VEGETA BASE XENO ULSW`
 - `05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés`
-- `05_Fanmade_y_alternativos/Goku Black/176_Goku black ssj Rosen evolution.Andres Gamen`
-- `05_Fanmade_y_alternativos/Goku Black/177_Goku black ssj falso.Andres Gamen`
-- `05_Fanmade_y_alternativos/Goku Black/184_Majin Goku black ssj Díos.Andres Gamen`
 - `05_Fanmade_y_alternativos/Goku/059_Goku SSJ Kaioken`
 - `05_Fanmade_y_alternativos/Goku/127_GOKU EVIL SSJ 2 , ANDRÉS GAMEN ANIMATIONS , SPRITE HD,`
 - `05_Fanmade_y_alternativos/Goku/133_GOKU MUI BLUE EVOLUTION, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )`

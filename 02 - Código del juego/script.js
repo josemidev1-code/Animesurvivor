@@ -708,6 +708,10 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ blackmajin:{name:'MAJIN BLACK DIOS',rar:5,hp:125,spd:69,atk:1.3,start:'blackkame',desc:'Goku Black Majin en Super Saiyan Dios, de los fans.',forms:['SSJ DIOS'],aura:['red'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ blackrosen:{name:'BLACK ROSÉ EVOLUTION',rar:5,hp:125,spd:69,atk:1.3,start:'blackkame',desc:'Goku Black Rosé evolucionado, de los fans.',forms:['ROSÉ EVOLUTION'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ blackfalso:{name:'GOKU BLACK SSJ FALSO',rar:4,hp:120,spd:68,atk:1.17,start:'blackkame',desc:'Goku Black en Super Saiyan falso, de los fans.',forms:['SSJ FALSO'],aura:['gold'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ blackkaioshin:{name:'GOKU BLACK KAIOSHIN',rar:3,hp:115,spd:66,atk:1.05,start:'blackkame',desc:'Goku Black con el traje de Kaioshin.',forms:['BASE'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
  jirengray:{name:'JIREN (TORNEO)',rar:5,hp:150,spd:62,atk:1.35,start:'eraser',desc:'Jiren del Torneo del Poder, otro estilo de sprite.',forms:['BASE'],aura:['red'],sig:['kiblast','jirenrush','powerimpact','kick','roar','omega']},
  vegettofalso:{name:'VEGETTO SSJ FALSO',rar:5,hp:130,spd:68,atk:1.3,start:'finalkame',desc:'Vegetto en su forma de Super Saiyan falso.',forms:['SSJ FALSO'],aura:['gold'],sig:['kiblast','punch','finalkame','spiritsword','bigbang','kick']},
  trunksarmor:{name:'TRUNKS ARMADURA',rar:4,hp:110,spd:66,atk:1.12,start:'burning',desc:'Trunks del futuro con la armadura Saiyan.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','burning','kick','finishbuster','renzoku']},
@@ -1210,7 +1214,11 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  uub:['kiblast','punch','kick','kiai','kame','renzoku'],mrsatan:['punch','kick','megaton','dynamite','presentbomb'],
  a21:['kiblast','punch','kick','choco','photonwave','fullcourse'],
  jirengray:['kiblast','jirenrush','powerimpact','kick','roar','omega'],
- vegettofalso:['kiblast','punch','finalkame','spiritsword','bigbang','kick'],trunksarmor:['kiblast','punch','burning','kick','finishbuster','renzoku']};
+ vegettofalso:['kiblast','punch','finalkame','spiritsword','bigbang','kick'],trunksarmor:['kiblast','punch','burning','kick','finishbuster','renzoku'],
+ blackkaioshin:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ blackfalso:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ blackrosen:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ blackmajin:['kiblast','kiblade','blackkame','lances','scythe','kick']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];

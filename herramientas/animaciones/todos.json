@@ -107,6 +107,140 @@
      9
     ]
    }
+  },
+  "blackkaioshin": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/178_Goku black traje kaioshin.Andres Gamen",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     6
+    ],
+    "attack": [
+     7,
+     8,
+     9
+    ],
+    "kick": [
+     5,
+     4
+    ],
+    "ki": [
+     34,
+     35
+    ],
+    "pow": [
+     26,
+     27
+    ],
+    "hurt": [
+     39,
+     40
+    ]
+   }
+  },
+  "blackfalso": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku Black/177_Goku black ssj falso.Andres Gamen",
+    "idle": [
+     7,
+     8
+    ],
+    "move": [
+     11
+    ],
+    "attack": [
+     13,
+     14,
+     15,
+     16
+    ],
+    "kick": [
+     18,
+     19,
+     20
+    ],
+    "ki": [
+     27,
+     31
+    ],
+    "pow": [
+     25,
+     26
+    ],
+    "hurt": [
+     22,
+     21
+    ]
+   }
+  },
+  "blackrosen": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku Black/176_Goku black ssj Rosen evolution.Andres Gamen",
+    "idle": [
+     8,
+     9
+    ],
+    "move": [
+     13
+    ],
+    "attack": [
+     20,
+     21,
+     22
+    ],
+    "kick": [
+     24,
+     25
+    ],
+    "ki": [
+     38,
+     37
+    ],
+    "pow": [
+     30,
+     31
+    ],
+    "hurt": [
+     28,
+     29
+    ]
+   }
+  },
+  "blackmajin": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku Black/184_Majin Goku black ssj Díos.Andres Gamen",
+    "idle": [
+     7,
+     8
+    ],
+    "move": [
+     13
+    ],
+    "attack": [
+     18,
+     19,
+     20
+    ],
+    "kick": [
+     22,
+     26
+    ],
+    "ki": [
+     33,
+     34
+    ],
+    "pow": [
+     28,
+     29
+    ],
+    "hurt": [
+     24,
+     25
+    ]
+   }
   }
  }
 }
