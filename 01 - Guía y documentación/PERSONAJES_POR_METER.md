@@ -16,6 +16,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 1: Nappa, Capitán Ginyu, Jeice, Guldo, Uub, Mr. Satán, Androide 21 (de la rama `claude/quizzical-gates-9cf9c0`).
 - Tanda 2: Jiren (Torneo, pack 069), Vegetto SSJ falso (247), Trunks con armadura (088).
 - Tanda 3: Goku Black Kaioshin (178), Black SSJ falso (177), Black Rosé Evolution (176), Majin Black Dios (184). Atajo nuevo: `herramientas/meter.py` (ver, poner, alta, quitar).
+- Tanda 4: Goku Yardrat (281), Goku Yardrat SSJ (282), Goku Yardrat SSJ SWL (283), Vegeta Yardrat (312). Ojo: en el 312 los fotogramas vienen a tamaños distintos; elegir los que midan parecido.
 
 ## A medias
 
@@ -24,10 +25,6 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 
 ## Completos por meter (60)
 
-- `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/281_GOKU YADRAT BASE`
-- `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/282_GOKU YADRAT SSJ`
-- `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/283_GOKU YADRAT SSJ SWL +`
-- `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Vegeta/312_vegeta yardrat`
 - `00_Dragon_Ball_Z/03_Majin_Buu/Goku/057_Goku SSJ 3 Mais Sprites`
 - `00_Dragon_Ball_Z/03_Majin_Buu/Goku/277_GOKU SSJ3 SWL+`
 - `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/276_GOKU SSJ2 SAGA BUU SWL+`

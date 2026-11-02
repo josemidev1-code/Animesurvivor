@@ -241,6 +241,147 @@
      25
     ]
    }
+  },
+  "gokuyardrat": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/281_GOKU YADRAT BASE",
+    "idle": [
+     14,
+     15
+    ],
+    "move": [
+     18
+    ],
+    "attack": [
+     25,
+     26,
+     27
+    ],
+    "kick": [
+     38,
+     39
+    ],
+    "ki": [
+     76,
+     77
+    ],
+    "pow": [
+     50,
+     51
+    ],
+    "hurt": [
+     46,
+     47
+    ],
+    "faint": [
+     48
+    ]
+   }
+  },
+  "gokuyardratssj": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/282_GOKU YADRAT SSJ",
+    "idle": [
+     18,
+     19
+    ],
+    "move": [
+     21
+    ],
+    "attack": [
+     40,
+     41,
+     42
+    ],
+    "kick": [
+     38,
+     39
+    ],
+    "ki": [
+     63,
+     64
+    ],
+    "pow": [
+     53,
+     54,
+     55
+    ],
+    "hurt": [
+     49,
+     50
+    ]
+   }
+  },
+  "gokuyardratswl": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/283_GOKU YADRAT SSJ SWL +",
+    "idle": [
+     40,
+     41
+    ],
+    "move": [
+     26
+    ],
+    "attack": [
+     65,
+     66,
+     67
+    ],
+    "kick": [
+     74,
+     75
+    ],
+    "ki": [
+     49,
+     50
+    ],
+    "pow": [
+     86,
+     87
+    ],
+    "hurt": [
+     81,
+     82
+    ],
+    "faint": [
+     83
+    ]
+   }
+  },
+  "vegetayardrat": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Vegeta/312_vegeta yardrat",
+    "idle": [
+     4
+    ],
+    "move": [
+     19
+    ],
+    "attack": [
+     46,
+     47,
+     48
+    ],
+    "kick": [
+     51,
+     53
+    ],
+    "ki": [
+     70,
+     69
+    ],
+    "pow": [
+     71,
+     72
+    ],
+    "hurt": [
+     66,
+     67
+    ],
+    "faint": [
+     65
+    ]
+   }
   }
  }
 }

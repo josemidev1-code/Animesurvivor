@@ -708,6 +708,10 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ vegetayardrat:{name:'VEGETA YARDRAT',rar:3,hp:100,spd:66,atk:1.1,start:'galick',desc:'Vegeta con la ropa de Yardrat.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ gokuyardratswl:{name:'GOKU YARDRAT SSJ SWL',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku de Yardrat en Super Saiyan, otro estilo de sprite.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuyardratssj:{name:'GOKU YARDRAT SSJ',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku de Yardrat en Super Saiyan.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuyardrat:{name:'GOKU YARDRAT',rar:3,hp:115,spd:64,atk:1.0,start:'kame',desc:'Goku con la ropa de Yardrat, tras Namek.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  blackmajin:{name:'MAJIN BLACK DIOS',rar:5,hp:125,spd:69,atk:1.3,start:'blackkame',desc:'Goku Black Majin en Super Saiyan Dios, de los fans.',forms:['SSJ DIOS'],aura:['red'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
  blackrosen:{name:'BLACK ROSÉ EVOLUTION',rar:5,hp:125,spd:69,atk:1.3,start:'blackkame',desc:'Goku Black Rosé evolucionado, de los fans.',forms:['ROSÉ EVOLUTION'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
  blackfalso:{name:'GOKU BLACK SSJ FALSO',rar:4,hp:120,spd:68,atk:1.17,start:'blackkame',desc:'Goku Black en Super Saiyan falso, de los fans.',forms:['SSJ FALSO'],aura:['gold'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
@@ -1218,7 +1222,11 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  blackkaioshin:['kiblast','kiblade','blackkame','lances','scythe','kick'],
  blackfalso:['kiblast','kiblade','blackkame','lances','scythe','kick'],
  blackrosen:['kiblast','kiblade','blackkame','lances','scythe','kick'],
- blackmajin:['kiblast','kiblade','blackkame','lances','scythe','kick']};
+ blackmajin:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ gokuyardrat:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuyardratssj:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuyardratswl:['kiblast','punch','kame','kaioken','instant','genki'],
+ vegetayardrat:['kiblast','punch','galick','bigbang','finalflash','finalexp']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
