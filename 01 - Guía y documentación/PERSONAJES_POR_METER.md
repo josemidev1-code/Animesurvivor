@@ -18,7 +18,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 3: Goku Black Kaioshin (178), Black SSJ falso (177), Black Rosé Evolution (176), Majin Black Dios (184). Atajo nuevo: `herramientas/meter.py` (ver, poner, alta, quitar).
 - Tanda 4: Goku Yardrat (281), Goku Yardrat SSJ (282), Goku Yardrat SSJ SWL (283), Vegeta Yardrat (312). Ojo: en el 312 los fotogramas vienen a tamaños distintos; elegir los que midan parecido.
 - Tanda 5: Goku SSJ4 GT (058), Vegeta SSJ4 GT (264).
-- Tanda 6: Vegeta SSJ (Whis, 315), Vegeta Blue (Whis, 314).
+- Tanda 6: Vegeta SSJ (Whis, 315), Vegeta Blue (Whis, 314), Vegeta Blue (Super, 092).
 
 ## A medias
 
@@ -48,7 +48,6 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - `01_Dragon_Ball_Super/08_Super_Hero/Goku/205_GOKU SSJ 1,ROPA,ORANGE JACKET, ANDRÉS GAMEN ANIMATIONS`
 - `01_Dragon_Ball_Super/09_Generales_y_manga/Goku/271_GOKU SSJ BLUE DBFZ V3`
 - `01_Dragon_Ball_Super/09_Generales_y_manga/Goku/280_GOKU UI SEÑAL DEL MANGA V1 SWL+ DBS MANGA`
-- `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/092_Vegeta Blue`
 - `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/296_Vegeta Blue Ulsw Hd`
 - `03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍`
 - `04_Heroes_y_videojuegos/Vegeta/267_VEGETA BASE XENO ULSW`

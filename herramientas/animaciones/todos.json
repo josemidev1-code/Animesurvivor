@@ -526,6 +526,43 @@
      39
     ]
    }
+  },
+  "vegetablue092": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/092_Vegeta Blue",
+    "idle": [
+     16,
+     17
+    ],
+    "move": [
+     21
+    ],
+    "attack": [
+     57,
+     58,
+     59
+    ],
+    "kick": [
+     36,
+     38
+    ],
+    "ki": [
+     93,
+     97
+    ],
+    "pow": [
+     73,
+     74,
+     75
+    ],
+    "hurt": [
+     66,
+     67
+    ],
+    "faint": [
+     70
+    ]
+   }
   }
  }
 }
