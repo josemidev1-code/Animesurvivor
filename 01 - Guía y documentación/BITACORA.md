@@ -854,4 +854,10 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Pendiente que necesita a Josemi
 - Jugar la rama y valorar el combate; decidir si se fusiona en `main`.
 - Valorar el coste de las formas jugando. (Confirmado por Josemi: se bloquean **todas** las transformaciones, como está.)
+
+### Valoración de Josemi tras jugar (2 nov.) — para el bloque de jugabilidad, más adelante
+- «Está bien, pero lo que mola es que los enemigos te vengan ya de primeras y que no se esperen»: quitar las esperas (avisos que paran al enemigo, tiradores que guardan distancia) o reducirlas mucho.
+- «Los ataques cuerpo a cuerpo deben ser útiles, pero solo en algunas situaciones».
+- Kaioken: algo que se consigue si duras X tiempo y que aumente todas las estadísticas (fuerza y todo), como en la serie.
+- Prioridad ahora: resolver primero los cambios de `Cambios propuestos por Josemi.md` y después volver a la jugabilidad. La rama `claude/cuerpo-a-cuerpo` sigue sin fusionar.
 - Música del juego, iconos del menú (los aporta él), retrato fijo en la selección (¿cambia con la transformación?), packs incompletos, rama de los 7 personajes.
