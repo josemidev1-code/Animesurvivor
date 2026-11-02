@@ -853,5 +853,5 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Pendiente que necesita a Josemi
 - Jugar la rama y valorar el combate; decidir si se fusiona en `main`.
-- Valorar el coste de las formas y si deben bloquearse también las de Freezer, Cell, Buu… o solo las de Super Saiyan.
+- Valorar el coste de las formas jugando. (Confirmado por Josemi: se bloquean **todas** las transformaciones, como está.)
 - Música del juego, iconos del menú (los aporta él), retrato fijo en la selección (¿cambia con la transformación?), packs incompletos, rama de los 7 personajes.
