@@ -708,6 +708,8 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ vegetabluewhis:{name:'VEGETA BLUE (WHIS)',rar:5,hp:110,spd:69,atk:1.35,start:'galick',desc:'Vegeta en Super Saiyan Blue, saga de Freezer resucitado.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetassjwhis:{name:'VEGETA SSJ (WHIS)',rar:4,hp:105,spd:68,atk:1.22,start:'galick',desc:'Vegeta en Super Saiyan con la armadura de la saga de Freezer resucitado.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  vegetassj4gt:{name:'VEGETA SSJ4 GT',rar:5,hp:110,spd:69,atk:1.35,start:'galick',desc:'Vegeta en Super Saiyan 4, de Dragon Ball GT.',forms:['SUPER SAIYAN 4'],aura:['red'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  gokussj4gt:{name:'GOKU SSJ4 GT',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 4, de Dragon Ball GT.',forms:['SUPER SAIYAN 4'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  vegetayardrat:{name:'VEGETA YARDRAT',rar:3,hp:100,spd:66,atk:1.1,start:'galick',desc:'Vegeta con la ropa de Yardrat.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
@@ -1230,7 +1232,9 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  gokuyardratswl:['kiblast','punch','kame','kaioken','instant','genki'],
  vegetayardrat:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
  gokussj4gt:['kiblast','punch','kame','kaioken','instant','genki'],
- vegetassj4gt:['kiblast','punch','galick','bigbang','finalflash','finalexp']};
+ vegetassj4gt:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetassjwhis:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetabluewhis:['kiblast','punch','galick','bigbang','finalflash','finalexp']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];

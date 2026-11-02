@@ -18,6 +18,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 3: Goku Black Kaioshin (178), Black SSJ falso (177), Black Rosé Evolution (176), Majin Black Dios (184). Atajo nuevo: `herramientas/meter.py` (ver, poner, alta, quitar).
 - Tanda 4: Goku Yardrat (281), Goku Yardrat SSJ (282), Goku Yardrat SSJ SWL (283), Vegeta Yardrat (312). Ojo: en el 312 los fotogramas vienen a tamaños distintos; elegir los que midan parecido.
 - Tanda 5: Goku SSJ4 GT (058), Vegeta SSJ4 GT (264).
+- Tanda 6: Vegeta SSJ (Whis, 315), Vegeta Blue (Whis, 314).
 
 ## A medias
 
@@ -32,8 +33,6 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - `00_Dragon_Ball_Z/03_Majin_Buu/Goku/277_GOKU SSJ3 SWL+`
 - `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/276_GOKU SSJ2 SAGA BUU SWL+`
 - `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Goku/049_Goku Blue Whis Gi`
-- `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Vegeta/314_Vegeta blue`
-- `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Vegeta/315_Vegeta ssj`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/106_Zamasu e Black Fusão Desmanchando`
 - `01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/051_Goku Instinto Superior`
