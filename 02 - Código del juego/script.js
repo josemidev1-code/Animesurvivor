@@ -2477,7 +2477,7 @@ function edges(tx,ty,x,y,f,c1,c2){const n=f(tx,ty-1),s=f(tx,ty+1),w=f(tx-1,ty),e
   ctx.fillStyle=c2;if(n)ctx.fillRect(x,y+3,T,1);if(s)ctx.fillRect(x,y+T-4,T,1);if(w)ctx.fillRect(x+3,y,1,T);if(e)ctx.fillRect(x+T-4,y,1,T)}
 function drawWorld(time){
   if(S&&S.isl&&!['title','maps','mine','gacha','credits','train','forge'].includes(state)){drawIsland(time);return}
-  const W=WORLD[MAPK],cx=Math.floor(cam.x),cy=Math.floor(cam.y);
+  const W=WORLD[MAPK];if(!W)return;const cx=Math.floor(cam.x),cy=Math.floor(cam.y);
   const tx0=Math.floor(cx/T)-1,ty0=Math.floor(cy/T)-1,tx1=Math.floor((cx+VW)/T)+1,ty1=Math.floor((cy+VH)/T)+1;
   const wf=Math.floor(time*3)%4;
   for(let ty=ty0;ty<=ty1;ty++)for(let tx=tx0;tx<=tx1;tx++)W.tile(tx,ty,tx*T-cx,ty*T-cy,wf);
@@ -2946,7 +2946,7 @@ function loop(now){
   try{
   if(state==='play')update(dt);
   if(state==='dying'){P.dead+=dt;cam.shake=Math.max(cam.shake||0,P.dead<0.3?3:0);if(P.dead>1.8){P.dead=0;endGame(false)}}
-  if(state==='title'||state==='maps'||state==='mine'||state==='gacha'||state==='credits'||state==='train'||state==='forge'){demoT+=dt;MAPK=Object.keys(WORLD)[Math.floor(demoT/12)%Object.keys(WORLD).length];cam.x=Math.sin(demoT*0.05)*400+demoT*12;cam.y=Math.cos(demoT*0.04)*300;ctx.fillStyle='#000';ctx.fillRect(0,0,VW,VH);drawWorld(now/1000);drawTitleDemo(now/1000)}
+  if(state==='title'||state==='maps'||state==='mine'||state==='gacha'||state==='credits'||state==='train'||state==='forge'){demoT+=dt||0;if(!isFinite(demoT))demoT=0;MAPK=Object.keys(WORLD)[Math.floor(demoT/12)%Object.keys(WORLD).length];cam.x=Math.sin(demoT*0.05)*400+demoT*12;cam.y=Math.cos(demoT*0.04)*300;ctx.fillStyle='#000';ctx.fillRect(0,0,VW,VH);drawWorld(now/1000);drawTitleDemo(now/1000)}
   else if(S)render(now/1000);
   actualizarRadarAnimado();present()}catch(err){console.error(err)}
   requestAnimationFrame(loop)}
@@ -3283,7 +3283,7 @@ function buildHub(){const nav=$('#hubMenu');nav.innerHTML='';
     const c=icon(ic),z=mk(32,32),g=z.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(c,0,0,32,32);b.appendChild(z);
     b.insertAdjacentHTML('beforeend',`<span><b>${t}</b><small>${typeof sub==='function'?sub():sub}</small></span>`);b.onclick=()=>{initAudio();sfx('shot');fn()};nav.appendChild(b)}}
 function hubRefresh(){const s=loadSave(),best=loadBest(),id=companion(),H=HEROES[id],all=Object.keys(HEROES).filter(spriteHero);
-  $('#cZeni').textContent='ZENI '+s.zeni;$('#cTix').textContent='TICKETS '+s.tickets;$('#cHeroes').textContent='GUERREROS '+all.filter(k=>s.owned[k]).length+'/'+all.length;
+  $('#cZeni').textContent='ZENI '+s.zeni;$('#cTix').textContent='TICKETS '+s.tickets;$('#cabCred').textContent='CRÉDITOS '+s.tickets;$('#cHeroes').textContent='GUERREROS '+all.filter(k=>s.owned[k]).length+'/'+all.length;
   $('#hCompName').textContent=H.name;{const f=faceOf(id,0);$('#hFace').src=f||'';$('#hFace').hidden=!f}const aw=awaken(id),mr=mastRank(id);
   $('#hCompTags').innerHTML=(H.rar?`<span class="pill r${H.rar}">${'★'.repeat(H.rar)}</span>`:'')+(aw?`<span class="pill">DESPERTAR +${aw}</span>`:'')+(mr?`<span class="pill">MAESTRÍA ${mr}</span>`:'');
   const bt=Object.values(best).reduce((m,b)=>Math.max(m,b.t||0),0),st=s.st||{};
@@ -3291,7 +3291,12 @@ function hubRefresh(){const s=loadSave(),best=loadBest(),id=companion(),H=HEROES
   buildHub();evTick()}
 function evTick(){const b=gBanners()[0];if(!b.f5||!HEROES[b.f5]){$('#hEvent').hidden=true;return}$('#hEvent').hidden=false;$('#hEvent').innerHTML=`<b>¡DESEO DESTACADO: ${HEROES[b.f5].name}!</b> Termina en ${countdown(b.ends-Date.now())}`}
 function openHub(){hideMenus();state='title';$('#hub').hidden=false;hubRefresh();
-  let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;if(++n%8===0)evTick()},120)}
+  let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;drawHubComp();if(++n%8===0)evTick()},120)}
+// compañero del menú de lado, como en partida (igual que la selección)
+function drawHubComp(){const c=$('#hCompC');if(!c)return;const id=companion(),g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);g.imageSmoothingEnabled=false;
+  const o=scHero(id,topForm(id));let im=null;if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[Math.floor(performance.now()/160)%A.R.length]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
+  if(!im)return;const fit=Math.min((c.height-8)/im.height,(c.width-8)/im.width),k=fit>=2?2:fit>=1.5?1.5:Math.min(1,fit);
+  g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-5,30,5,0,0,TAU);g.fill();g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-3-im.height*k),Math.round(im.width*k),Math.round(im.height*k))}
 function enterGame(){if(started)return;started=true;initAudio();sfx('level');openHub()}
 // ficha del personaje: recorre sus formas mostrando guardia, combo, patada y ki con los sprites reales
 const rosterAnim={id:null,t0:0,on:0};
