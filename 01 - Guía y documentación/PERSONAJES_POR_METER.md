@@ -30,6 +30,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 15: Goku UI Blue (134), Goku UI Dios (135; versión con gi), Goku Ultra SSJ Dios (150; aura con `escalaFrames`). Ninguno tiene fotograma de muerte.
 - Tanda 16: Goku SSJ Supremo (151), Goku SSJ4 Dios (206), Goku Dios Berserker (207; aura con `escalaFrames` estimada a ojo, el pack no deja medirla).
 - Tanda 17: Goku SSJ Legendario (208), Goku SSJ Kaioken con halo (274; sin muerte).
+- Tanda 18: Goku clásico (044), Goku clásico 2 (045), Goku SSJ clásico (053).
 
 ## A medias
 
@@ -40,15 +41,12 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Vegeta MUI (303): el pack viene reescalado y borroso; cada fotograma a otra escala y no se puede medir el píxel. Haría falta fijar la escala a mano fotograma a fotograma (`escalaFrames`) o buscar el pack original.
 - Goku Rey Mono (138): mismo problema que Vegeta MUI (303): fotogramas reescalados a tamaños distintos, sin píxel medible.
 
-## Completos por meter (10)
+## Completos por meter (7)
 
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/106_Zamasu e Black Fusão Desmanchando`
 - `03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍`
 - `05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés`
-- `07_Personajes_sin_saga_concreta/Goku/044_Goku`
-- `07_Personajes_sin_saga_concreta/Goku/045_Goku (versión2)`
-- `07_Personajes_sin_saga_concreta/Goku/053_Goku SSJ 1`
 - `07_Personajes_sin_saga_concreta/Goku/273_GOKU SSJ FULL POWER SWL+`
 - `09_Packs_mixtos_por_revisar/Varios/254_SPRITESEXTRA`
 - `09_Packs_mixtos_por_revisar/Varios/291_SUPER EXTRA PACK DE SPRITES #3 (ESPECIAL 38K) ANDRÉS GAMEN ANIMATIONS 👍`

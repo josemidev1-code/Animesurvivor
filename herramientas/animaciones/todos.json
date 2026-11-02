@@ -1781,6 +1781,114 @@
      62
     ]
    }
+  },
+  "goku044": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/Goku/044_Goku",
+    "idle": [
+     6,
+     27
+    ],
+    "move": [
+     10
+    ],
+    "attack": [
+     16,
+     17,
+     24
+    ],
+    "kick": [
+     21,
+     22
+    ],
+    "ki": [
+     43,
+     57
+    ],
+    "pow": [
+     41,
+     42
+    ],
+    "hurt": [
+     29,
+     33
+    ],
+    "faint": [
+     35
+    ]
+   }
+  },
+  "goku045": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/Goku/045_Goku (versión2)",
+    "idle": [
+     62,
+     92
+    ],
+    "move": [
+     23
+    ],
+    "attack": [
+     51,
+     52,
+     53
+    ],
+    "kick": [
+     57,
+     58
+    ],
+    "ki": [
+     106,
+     107
+    ],
+    "pow": [
+     84,
+     85
+    ],
+    "hurt": [
+     65,
+     63
+    ],
+    "faint": [
+     69
+    ]
+   }
+  },
+  "gokussj053": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/Goku/053_Goku SSJ 1",
+    "idle": [
+     1,
+     30
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     9,
+     10,
+     17
+    ],
+    "kick": [
+     14,
+     15
+    ],
+    "ki": [
+     33,
+     34
+    ],
+    "pow": [
+     7,
+     8
+    ],
+    "hurt": [
+     26,
+     28
+    ],
+    "faint": [
+     32
+    ]
+   }
   }
  }
 }

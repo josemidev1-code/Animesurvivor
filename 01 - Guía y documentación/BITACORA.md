@@ -932,3 +932,15 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Tanda 15 hecha: Goku UI Blue (134), Goku UI Dios (135) y Goku Ultra SSJ Dios (150); comprobaciones y partida de prueba correctas. 114 personajes. `animaciones_juego.js?v=83`, `script.js?v=108`.
 - Tanda 16 hecha: Goku SSJ Supremo (151), Goku SSJ4 Dios (206) y Goku Dios Berserker (207); comprobaciones y partida de prueba correctas. 117 personajes. `animaciones_juego.js?v=84`, `script.js?v=109`.
 - Tanda 17 hecha: Goku SSJ Legendario (208) y Goku SSJ Kaioken con halo (274); comprobaciones y partida de prueba correctas. 119 personajes. Goku Rey Mono (138) a medias: pack reescalado, cada fotograma a otro tamaño y sin píxel medible (como Vegeta MUI 303). `animaciones_juego.js?v=85`, `script.js?v=110`.
+- Tanda 18 hecha: Goku clásico (044), Goku clásico 2 (045) y Goku SSJ clásico (053); comprobaciones y partida de prueba correctas. 122 personajes. `animaciones_juego.js?v=86`, `script.js?v=111`.
+- Josemi (20:33): «te queda poco ya has hecho mucho, deja un commit con lo que has hecho y lo que te queda y pon en cosas que hacer que debemos hacer ataques personalizados a cada personajes y usar las animaciones de los personajes ingame y también hay que cuadrar ataques estéticamente con las animaciones». Apuntado en `README.md` («Lo que falta»), relevo y `ESTADO_ACTUAL.md`.
+
+### A medias / problemas
+- Vegeta MUI (303) y Goku Rey Mono (138): packs reescalados, cada fotograma a otro tamaño; no se pueden montar sin fijar la escala a mano.
+- Siguen a medias Goku SSJ4 Daima (140), Bra Majin (189) y la fusión de Zamasu (106).
+- Vegeta Omni God (249) resultó incompleto (sin patada ni daño); pasado a la lista de incompletos.
+- Sin probar el doble clic en Windows; las partidas de prueba se hicieron en Chromium con servidor local (25 s por personaje, sin errores del juego).
+
+### Siguiente paso recomendado
+- Ataques personalizados por personaje, usar sus animaciones propias en partida y cuadrar ataques con animaciones (petición de Josemi).
+- Terminar los 7 packs completos que quedan en `PERSONAJES_POR_METER.md` (empezar por Goku SSJ Full Power 273, hoja ya lista en `_revisar/`).

@@ -67,6 +67,12 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 
 ## Lo que falta (en este orden)
 
+**Pendiente pedido por Josemi (2 nov., 20:33):**
+1. **Ataques personalizados para cada personaje**: hoy los nuevos usan las técnicas comunes de su familia (`FAMILIAS` en `herramientas/meter.py`); cada uno debe tener las suyas.
+2. **Usar en partida las animaciones propias de cada personaje** (los ataques y efectos de su pack), no solo las poses comunes.
+3. **Cuadrar los ataques estéticamente con las animaciones**: que el golpe, el ki y la técnica coincidan con el fotograma que se ve.
+
+
 > **Prioridad actual (2 nov.):** los puntos de `01 - Guía y documentación/Cambios propuestos por Josemi.md` primero
 > (selección con retrato fijo, estadísticas con colores, inventario de sprites, ataques fieles…) y después la
 > jugabilidad (enemigos que vengan de primeras sin esperar, cuerpo a cuerpo útil solo en algunas situaciones, Kaioken
