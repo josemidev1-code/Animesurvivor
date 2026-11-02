@@ -22,6 +22,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 7: Vegeta Blue HD (296), Vegeta Blue Full Power (093), Vegeta Blue Evolution (299), Vegeta base HD (295). Ojo: en el 296 el fotograma 47 no mide su zoom; se fija con `escalaFrames`.
 - Tanda 8: Vegeta Ultra Ego (240), Vegeta Xeno (267), Vegeta SSJ HD (297), Vegeta Ultra Instinto HD (302). En el 297 el fotograma 33 se fija con `escalaFrames`.
 - Tanda 9: Vegeta Blue Maligno (241), Goku SSJ3 clásico (057), Goku SSJ3 HD (277).
+- Tanda 10: Goku Blue con gi (049), Goku UI señal (051), Goku UI dominado (148).
 
 ## A medias
 
@@ -31,14 +32,11 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Fusión de Zamasu deshaciéndose (106): pocos golpes; comprobar si de verdad está completo.
 - Vegeta MUI (303): el pack viene reescalado y borroso; cada fotograma a otra escala y no se puede medir el píxel. Haría falta fijar la escala a mano fotograma a fotograma (`escalaFrames`) o buscar el pack original.
 
-## Completos por meter (34)
+## Completos por meter (31)
 
 - `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/276_GOKU SSJ2 SAGA BUU SWL+`
-- `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Goku/049_Goku Blue Whis Gi`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/106_Zamasu e Black Fusão Desmanchando`
-- `01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/051_Goku Instinto Superior`
-- `01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/148_GOKU ULTRA INSTINTO FULL POWER,NEW VERSIÓN BY ANDRÉS GAMEN ANIMATIONS`
 - `01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/270_GOKU MUI TDP MANGA`
 - `01_Dragon_Ball_Super/06_Moro/Goku/144_GOKU SSJ BLUE SAGA,MORO,MANGA,(ANDRÉS GAMEN ANIMACIÓNS)`
 - `01_Dragon_Ball_Super/06_Moro/Goku/174_Goku base.patrullero galáctico.dbs moro.andres Gamen`
