@@ -60,7 +60,7 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
   solo aciertan un 25-35 %, la IA revisa todas las propuestas y el usuario solo lo que quede dudoso
   (ver «Proponer fotogramas» en `herramientas/GUIA_ANIMACIONES.md`). Pruebas: `python -m unittest discover -s herramientas/pruebas -t .`
 
-- **2 nov. (rama `claude/cuerpo-a-cuerpo`, sin fusionar):** tipos de enemigo (pegador, embestidor, tirador, élite) con
+- **2 nov. (ya en `main` y en GitHub):** tipos de enemigo (pegador, embestidor, tirador, élite) con
   avisos «!», roce por enemigo y tope de 6 balas; ajustes del cuerpo a cuerpo; noticias y enlace al rap de Porta en el
   menú; las transformaciones se despiertan con un deseo a Shenron (5 tickets × nº de forma). Detalle en
   `01 - Guía y documentación/00 - EMPIEZA AQUÍ - RELEVO CLAUDE.md`.

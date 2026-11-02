@@ -10,7 +10,8 @@ Lee `Cambios propuestos por Josemi.md` en esta misma carpeta: es el documento co
 
 ## Estado de Git
 
-- Rama de trabajo: **`claude/cuerpo-a-cuerpo`** (la carpeta está en ella). **Sin fusionar en `main` y sin subir.** Josemi la ha jugado y le parece bien en general; la fusión queda a su decisión.
+- **`main` tiene todo lo del 2 nov.** (avance directo desde `claude/cuerpo-a-cuerpo`) y está **subido a GitHub** (`josemidev1-code/Animesurvivor`, privado), junto con todas las ramas locales.
+- Desde el 2 nov. **`sprites/` también está en el repositorio** (420 MB, lo pidió Josemi). Siguen fuera `herramientas/_revisar/` y las cachés, que se regeneran.
 - `claude/quizzical-gates-9cf9c0`: 7 personajes nuevos (Nappa, Ginyu, Jeice, Guldo, Uub, Mr. Satán, Androide 21), separada de `main` antes del HUD nuevo; fusionarla tendrá conflictos. Consultar antes.
 - No borres ni fusiones ramas por tu cuenta.
 
