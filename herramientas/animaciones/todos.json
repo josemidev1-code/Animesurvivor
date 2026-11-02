@@ -1172,6 +1172,122 @@
      73
     ]
    }
+  },
+  "gokuuiverdadero": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/07_Granola/Goku/149_GOKU ULTRA INSTINTO VERDADERO,MANGA,BY ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     99,
+     100
+    ],
+    "move": [
+     115
+    ],
+    "attack": [
+     102,
+     103,
+     104
+    ],
+    "kick": [
+     84,
+     85
+    ],
+    "ki": [
+     61,
+     62
+    ],
+    "pow": [
+     70,
+     71
+    ],
+    "hurt": [
+     49,
+     50
+    ],
+    "faint": [
+     2
+    ],
+    "escalaFrames": {
+     "70": 5.15,
+     "71": 5.15
+    }
+   }
+  },
+  "gokubluemoro": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/144_GOKU SSJ BLUE SAGA,MORO,MANGA,(ANDRÉS GAMEN ANIMACIÓNS)",
+    "idle": [
+     30,
+     31
+    ],
+    "move": [
+     21
+    ],
+    "attack": [
+     70,
+     86,
+     87
+    ],
+    "kick": [
+     17,
+     63
+    ],
+    "ki": [
+     93,
+     94
+    ],
+    "pow": [
+     160,
+     161
+    ],
+    "hurt": [
+     113,
+     114
+    ],
+    "faint": [
+     109
+    ],
+    "escalaFrames": {
+     "160": 5.2,
+     "161": 5.2
+    }
+   }
+  },
+  "gokubluedbfz": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Goku/271_GOKU SSJ BLUE DBFZ V3",
+    "idle": [
+     113,
+     114
+    ],
+    "move": [
+     120
+    ],
+    "attack": [
+     144,
+     145,
+     146
+    ],
+    "kick": [
+     175,
+     176
+    ],
+    "ki": [
+     212,
+     213
+    ],
+    "pow": [
+     76,
+     77
+    ],
+    "hurt": [
+     255,
+     253
+    ],
+    "faint": [
+     259
+    ]
+   }
   }
  }
 }

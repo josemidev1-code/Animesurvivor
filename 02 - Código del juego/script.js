@@ -708,6 +708,9 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ gokubluedbfz:{name:'GOKU BLUE (FIGHTERZ)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan Blue, estilo Dragon Ball FighterZ.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokubluemoro:{name:'GOKU BLUE (MORO)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan Blue, manga de la saga de Moro.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuuiverdadero:{name:'GOKU UI VERDADERO',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con el Ultra Instinto a su manera, manga de Granola.',forms:['UI VERDADERO'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokumuigranola:{name:'GOKU UI (GRANOLA)',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con el Ultra Instinto dominado, saga de Granola.',forms:['UI DOMINADO'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokussjchaqueta:{name:'GOKU SSJ CHAQUETA',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku en Super Saiyan con su chaqueta naranja, saga de Super Hero.',forms:['SSJ'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokupatrulla:{name:'GOKU PATRULLERO',rar:3,hp:115,spd:64,atk:1.0,start:'kame',desc:'Goku con el uniforme de la Patrulla Galáctica, saga de Moro.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
@@ -1270,7 +1273,10 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  gokumuifp:['kiblast','punch','kame','kaioken','instant','genki'],
  gokupatrulla:['kiblast','punch','kame','kaioken','instant','genki'],
  gokussjchaqueta:['kiblast','punch','kame','kaioken','instant','genki'],
- gokumuigranola:['kiblast','punch','kame','kaioken','instant','genki']};
+ gokumuigranola:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuuiverdadero:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokubluemoro:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokubluedbfz:['kiblast','punch','kame','kaioken','instant','genki']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
