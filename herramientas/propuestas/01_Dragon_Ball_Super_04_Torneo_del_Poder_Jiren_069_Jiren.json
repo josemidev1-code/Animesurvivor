@@ -1,0 +1,67 @@
+{
+ "idle": [
+  0,
+  2
+ ],
+ "move": [
+  62
+ ],
+ "attack": [
+  1
+ ],
+ "kick": [
+  4,
+  5,
+  6
+ ],
+ "ki": [
+  61
+ ],
+ "pow": [
+  68
+ ],
+ "hurt": [
+  17
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 1.0,
+  "hurt": 0.5,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   66,
+   72
+  ],
+  "bola": [
+   64,
+   65,
+   67,
+   69,
+   71
+  ],
+  "aura": [],
+  "estela": [
+   11,
+   12
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Jiren/069_Jiren",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_04_Torneo_del_Poder_Jiren_069_Jiren",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

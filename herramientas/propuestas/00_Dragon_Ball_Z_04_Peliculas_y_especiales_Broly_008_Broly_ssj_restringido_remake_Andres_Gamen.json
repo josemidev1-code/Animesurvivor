@@ -1,0 +1,59 @@
+{
+ "idle": [
+  5
+ ],
+ "move": [
+  13
+ ],
+ "attack": [
+  15,
+  14,
+  14
+ ],
+ "kick": [],
+ "ki": [
+  17,
+  18
+ ],
+ "pow": [
+  20
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": 29,
+ "guardia": 5,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.83,
+  "ki": 0.7,
+  "pow": 0.9,
+  "attack": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   11,
+   21
+  ],
+  "bola": [
+   19,
+   20
+  ],
+  "aura": [],
+  "estela": [
+   22
+  ]
+ },
+ "plantilla": "01_Dragon_Ball_Super/06_Moro/Goku/200_GOKU SSJ DIOS CAMISA MEDIA RASGADA,DBS MORO, ANDRÉS GAMEN",
+ "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/008_Broly ssj restringido,remake, Andrés Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "00_Dragon_Ball_Z_04_Peliculas_y_especiales_Broly_008_Broly_ssj_restringido_remake_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de patada",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

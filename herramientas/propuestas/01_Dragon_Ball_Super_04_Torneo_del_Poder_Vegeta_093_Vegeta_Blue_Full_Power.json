@@ -1,0 +1,92 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  45
+ ],
+ "attack": [
+  19
+ ],
+ "kick": [
+  24
+ ],
+ "ki": [
+  1
+ ],
+ "pow": [
+  74,
+  75
+ ],
+ "hurt": [
+  35
+ ],
+ "faint": [
+  57
+ ],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.93,
+  "faint": 0.6,
+  "hurt": 0.5,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   62,
+   65,
+   77,
+   85
+  ],
+  "bola": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   59,
+   60,
+   63,
+   68,
+   69,
+   70,
+   76,
+   79,
+   80,
+   81,
+   82,
+   83,
+   86,
+   87,
+   88,
+   89,
+   90,
+   95,
+   96,
+   97,
+   98
+  ],
+  "aura": [],
+  "estela": [
+   21
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Vegeta/093_Vegeta Blue Full Power",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_04_Torneo_del_Poder_Vegeta_093_Vegeta_Blue_Full_Power",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki",
+  "poca confianza en daño",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

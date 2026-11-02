@@ -1,0 +1,69 @@
+{
+ "idle": [
+  0,
+  2
+ ],
+ "move": [
+  6
+ ],
+ "attack": [
+  1
+ ],
+ "kick": [
+  4,
+  5
+ ],
+ "ki": [
+  51,
+  52
+ ],
+ "pow": [
+  44,
+  45,
+  46
+ ],
+ "hurt": [
+  34
+ ],
+ "faint": [
+  43
+ ],
+ "portrait": 59,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   53,
+   54,
+   55
+  ],
+  "bola": [
+   56,
+   57,
+   58
+  ],
+  "aura": [],
+  "estela": [
+   75
+  ]
+ },
+ "pack": "05_Fanmade_y_alternativos/Goku/059_Goku SSJ Kaioken",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "05_Fanmade_y_alternativos_Goku_059_Goku_SSJ_Kaioken",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

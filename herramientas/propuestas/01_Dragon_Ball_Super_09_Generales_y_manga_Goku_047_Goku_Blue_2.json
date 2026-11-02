@@ -1,0 +1,66 @@
+{
+ "idle": [
+  3
+ ],
+ "move": [
+  113
+ ],
+ "attack": [
+  114
+ ],
+ "kick": [],
+ "ki": [
+  87,
+  88
+ ],
+ "pow": [
+  108
+ ],
+ "hurt": [
+  56
+ ],
+ "faint": [
+  83
+ ],
+ "portrait": 4,
+ "guardia": 3,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   89,
+   90,
+   94,
+   95,
+   101
+  ],
+  "bola": [
+   107,
+   109
+  ],
+  "aura": [
+   5,
+   7,
+   8
+  ],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Goku/047_Goku Blue 2",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_09_Generales_y_manga_Goku_047_Goku_Blue_2",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de patada",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

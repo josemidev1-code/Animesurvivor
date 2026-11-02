@@ -1,0 +1,64 @@
+{
+ "idle": [
+  4
+ ],
+ "move": [
+  68
+ ],
+ "attack": [
+  1,
+  2
+ ],
+ "kick": [
+  8,
+  9
+ ],
+ "ki": [
+  5,
+  6
+ ],
+ "pow": [],
+ "hurt": [
+  34,
+  35
+ ],
+ "faint": [
+  16
+ ],
+ "portrait": 80,
+ "guardia": 4,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "attack": 0.7,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   7
+  ],
+  "bola": [
+   22,
+   23
+  ],
+  "aura": [],
+  "estela": [
+   66
+  ]
+ },
+ "pack": "07_Personajes_sin_saga_concreta/Vegeta/301_Vegeta Sem Camisa HD",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "07_Personajes_sin_saga_concreta_Vegeta_301_Vegeta_Sem_Camisa_HD",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en patada"
+ ],
+ "dudoso": true
+}

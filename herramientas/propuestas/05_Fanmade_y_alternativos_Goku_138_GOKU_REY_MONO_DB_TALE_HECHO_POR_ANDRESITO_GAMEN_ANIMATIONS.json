@@ -1,0 +1,82 @@
+{
+ "idle": [
+  2
+ ],
+ "move": [
+  96
+ ],
+ "attack": [
+  34
+ ],
+ "kick": [
+  38
+ ],
+ "ki": [
+  22,
+  23
+ ],
+ "pow": [
+  103,
+  104,
+  105
+ ],
+ "hurt": [
+  85
+ ],
+ "faint": [],
+ "portrait": 1,
+ "guardia": 2,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.98,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   14,
+   15,
+   24,
+   25,
+   26,
+   29,
+   53,
+   54,
+   55,
+   56,
+   76
+  ],
+  "bola": [
+   12
+  ],
+  "aura": [
+   13,
+   21
+  ],
+  "estela": [
+   16,
+   17,
+   67,
+   68,
+   69,
+   70,
+   77,
+   78
+  ]
+ },
+ "pack": "05_Fanmade_y_alternativos/Goku/138_GOKU REY MONO,DB TALE, HECHO POR ANDRÉSITO GAMEN ANIMATIONS",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "05_Fanmade_y_alternativos_Goku_138_GOKU_REY_MONO_DB_TALE_HECHO_POR_ANDRESITO_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse"
+ ],
+ "dudoso": true
+}

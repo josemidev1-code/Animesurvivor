@@ -1,0 +1,102 @@
+{
+ "idle": [
+  15,
+  15
+ ],
+ "move": [
+  116
+ ],
+ "attack": [
+  63,
+  94,
+  64
+ ],
+ "kick": [
+  25
+ ],
+ "ki": [
+  56,
+  63
+ ],
+ "pow": [
+  7,
+  8,
+  9
+ ],
+ "hurt": [],
+ "faint": [
+  70
+ ],
+ "portrait": null,
+ "guardia": 15,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "ki": 0.9,
+  "pow": 0.6,
+  "attack": 0.9,
+  "kick": 0.6,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   4,
+   5,
+   6,
+   65,
+   66,
+   78,
+   79,
+   102,
+   103,
+   104,
+   111,
+   126,
+   127
+  ],
+  "bola": [
+   73,
+   74,
+   80,
+   83,
+   89,
+   90,
+   96,
+   98,
+   110,
+   112,
+   113,
+   114,
+   130,
+   131,
+   141,
+   143,
+   144
+  ],
+  "aura": [
+   88,
+   138
+  ],
+  "estela": [
+   13,
+   14,
+   40,
+   48,
+   70
+  ]
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Bardock/210_BARDOCK BLACK, ANDRÉS GAMEN ANIMATIONS ✓",
+ "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/153_GOKU,MUI,TORNEO DEL PODER (ANIME) ANDRES GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_04_Torneo_del_Poder_Goku_153_GOKU_MUI_TORNEO_DEL_PODER_ANIME_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de daño",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

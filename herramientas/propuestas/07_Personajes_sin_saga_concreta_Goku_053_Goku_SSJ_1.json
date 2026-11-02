@@ -1,0 +1,67 @@
+{
+ "idle": [
+  0,
+  2
+ ],
+ "move": [
+  4
+ ],
+ "attack": [
+  1
+ ],
+ "kick": [
+  5
+ ],
+ "ki": [
+  33,
+  34
+ ],
+ "pow": [
+  6,
+  7,
+  8
+ ],
+ "hurt": [
+  19
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 0.98,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   36,
+   37,
+   42,
+   43,
+   52
+  ],
+  "bola": [
+   35,
+   53,
+   54
+  ],
+  "aura": [
+   41
+  ],
+  "estela": []
+ },
+ "pack": "07_Personajes_sin_saga_concreta/Goku/053_Goku SSJ 1",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "07_Personajes_sin_saga_concreta_Goku_053_Goku_SSJ_1",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,63 @@
+{
+ "idle": [
+  29,
+  28
+ ],
+ "move": [],
+ "attack": [
+  8
+ ],
+ "kick": [
+  29,
+  29
+ ],
+ "ki": [
+  36
+ ],
+ "pow": [
+  25,
+  25,
+  25
+ ],
+ "hurt": [
+  18
+ ],
+ "faint": [],
+ "portrait": 45,
+ "guardia": 7,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "hurt": 0.5,
+  "ki": 0.5,
+  "pow": 0.9,
+  "attack": 0.6,
+  "kick": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   37
+  ],
+  "aura": [
+   24
+  ],
+  "estela": []
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Gogeta/118_GOGETA SSJ4 BLUE, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )",
+ "pack": "04_Heroes_y_videojuegos/Vegetto/294_veggeto xeno.ssj2.ssj3.ssj5.mini pack.andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "04_Heroes_y_videojuegos_Vegetto_294_veggeto_xeno_ssj2_ssj3_ssj5_mini_pack_andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "poca confianza en ki",
+  "poca confianza en daño",
+  "tamaño de píxel distinto en guardia",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

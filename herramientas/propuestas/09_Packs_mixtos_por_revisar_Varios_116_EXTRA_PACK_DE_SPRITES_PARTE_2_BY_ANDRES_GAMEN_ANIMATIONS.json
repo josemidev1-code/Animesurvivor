@@ -1,0 +1,104 @@
+{
+ "idle": [
+  1
+ ],
+ "move": [
+  152
+ ],
+ "attack": [
+  162,
+  178,
+  179
+ ],
+ "kick": [],
+ "ki": [
+  83,
+  48
+ ],
+ "pow": [
+  124,
+  111
+ ],
+ "hurt": [
+  212,
+  202
+ ],
+ "faint": [
+  152
+ ],
+ "portrait": null,
+ "guardia": 1,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "ki": 0.9,
+  "pow": 0.9,
+  "move": 0.9,
+  "attack": 0.9,
+  "hurt": 0.9,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   6,
+   7,
+   242
+  ],
+  "bola": [
+   0,
+   4,
+   14,
+   15,
+   17,
+   23,
+   24,
+   25,
+   26,
+   27,
+   36,
+   70,
+   71,
+   81,
+   84,
+   89,
+   124,
+   147,
+   195,
+   196,
+   214,
+   244,
+   250
+  ],
+  "aura": [
+   16,
+   18,
+   30,
+   38,
+   41,
+   56,
+   86,
+   87,
+   93,
+   160,
+   193,
+   194,
+   227,
+   228,
+   245,
+   246
+  ],
+  "estela": []
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Broly/006_BROLY SSJ 3 DBZ ANDRES GAMEN ANIMATIONS",
+ "pack": "09_Packs_mixtos_por_revisar/Varios/116_EXTRA PACK DE SPRITES PARTE 2 , BY ANDRÉS GAMEN ANIMATIONS ✓",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "09_Packs_mixtos_por_revisar_Varios_116_EXTRA_PACK_DE_SPRITES_PARTE_2_BY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de patada",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos"
+ ],
+ "dudoso": true
+}

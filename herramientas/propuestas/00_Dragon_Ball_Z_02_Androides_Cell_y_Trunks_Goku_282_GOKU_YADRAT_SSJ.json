@@ -1,0 +1,71 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  21
+ ],
+ "attack": [
+  29,
+  30
+ ],
+ "kick": [
+  38
+ ],
+ "ki": [
+  63,
+  64
+ ],
+ "pow": [
+  8,
+  9,
+  10
+ ],
+ "hurt": [
+  43,
+  44
+ ],
+ "faint": [],
+ "portrait": 2,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.87,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.7,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   65,
+   67
+  ],
+  "bola": [
+   1,
+   95
+  ],
+  "aura": [
+   60,
+   61
+  ],
+  "estela": [
+   22,
+   23
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/282_GOKU YADRAT SSJ",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_02_Androides_Cell_y_Trunks_Goku_282_GOKU_YADRAT_SSJ",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

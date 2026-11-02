@@ -1,0 +1,80 @@
+{
+ "idle": [
+  8
+ ],
+ "move": [
+  24
+ ],
+ "attack": [
+  21
+ ],
+ "kick": [
+  41
+ ],
+ "ki": [
+  3
+ ],
+ "pow": [
+  4,
+  5
+ ],
+ "hurt": [
+  53,
+  54
+ ],
+ "faint": [
+  101
+ ],
+ "portrait": null,
+ "guardia": 8,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.91,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   81,
+   82
+  ],
+  "bola": [
+   6,
+   72,
+   73,
+   102,
+   103,
+   104,
+   108
+  ],
+  "aura": [
+   11,
+   105,
+   109
+  ],
+  "estela": [
+   0,
+   1,
+   2,
+   7,
+   9,
+   92,
+   98
+  ]
+ },
+ "pack": "05_Fanmade_y_alternativos/Vegeta/303_vegeta mui",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "05_Fanmade_y_alternativos_Vegeta_303_vegeta_mui",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

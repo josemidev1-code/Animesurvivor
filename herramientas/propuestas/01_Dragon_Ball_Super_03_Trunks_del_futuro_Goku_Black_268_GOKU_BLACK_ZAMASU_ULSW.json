@@ -1,0 +1,75 @@
+{
+ "idle": [
+  7
+ ],
+ "move": [
+  37
+ ],
+ "attack": [
+  8
+ ],
+ "kick": [
+  18
+ ],
+ "ki": [
+  39
+ ],
+ "pow": [
+  51,
+  52,
+  53
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": 93,
+ "guardia": 7,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   42,
+   45,
+   89,
+   90,
+   91,
+   92
+  ],
+  "bola": [
+   62,
+   63,
+   64,
+   65,
+   66,
+   67,
+   79,
+   80
+  ],
+  "aura": [],
+  "estela": [
+   44,
+   76,
+   77,
+   78
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/268_GOKU BLACK (ZAMASU) ULSW",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_03_Trunks_del_futuro_Goku_Black_268_GOKU_BLACK_ZAMASU_ULSW",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,75 @@
+{
+ "idle": [
+  2
+ ],
+ "move": [
+  53
+ ],
+ "attack": [
+  10,
+  11,
+  12
+ ],
+ "kick": [
+  19,
+  20
+ ],
+ "ki": [
+  4
+ ],
+ "pow": [
+  73,
+  74,
+  75
+ ],
+ "hurt": [
+  67,
+  68
+ ],
+ "faint": [
+  70
+ ],
+ "portrait": null,
+ "guardia": 2,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.93,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.8,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   82,
+   83,
+   98
+  ],
+  "bola": [
+   0,
+   1,
+   7,
+   8,
+   71,
+   72,
+   81,
+   94,
+   102
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/092_Vegeta Blue",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_09_Generales_y_manga_Vegeta_092_Vegeta_Blue",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

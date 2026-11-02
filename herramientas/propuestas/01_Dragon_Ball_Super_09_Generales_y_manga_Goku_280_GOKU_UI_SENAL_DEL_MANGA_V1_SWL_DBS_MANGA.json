@@ -1,0 +1,93 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  106
+ ],
+ "attack": [
+  10
+ ],
+ "kick": [
+  29
+ ],
+ "ki": [
+  18,
+  19
+ ],
+ "pow": [
+  22,
+  23,
+  24
+ ],
+ "hurt": [
+  91
+ ],
+ "faint": [
+  268
+ ],
+ "portrait": 269,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   161,
+   254
+  ],
+  "bola": [
+   21,
+   112,
+   113,
+   114,
+   115,
+   116,
+   147,
+   148,
+   149,
+   150,
+   151,
+   152,
+   167,
+   168,
+   169,
+   237
+  ],
+  "aura": [
+   93,
+   94,
+   165,
+   166,
+   241,
+   242
+  ],
+  "estela": [
+   57,
+   89,
+   162
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Goku/280_GOKU UI SEÑAL DEL MANGA V1 SWL+ DBS MANGA",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_09_Generales_y_manga_Goku_280_GOKU_UI_SENAL_DEL_MANGA_V1_SWL_DBS_MANGA",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

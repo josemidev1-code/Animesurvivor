@@ -1,0 +1,78 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  18
+ ],
+ "attack": [
+  35
+ ],
+ "kick": [
+  49
+ ],
+ "ki": [
+  1
+ ],
+ "pow": [
+  63,
+  64,
+  65
+ ],
+ "hurt": [
+  40,
+  41
+ ],
+ "faint": [],
+ "portrait": 112,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.94,
+  "hurt": 0.7,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   61,
+   62
+  ],
+  "bola": [
+   2,
+   72
+  ],
+  "aura": [
+   69,
+   96,
+   97,
+   100
+  ],
+  "estela": [
+   19,
+   20,
+   56,
+   57,
+   58,
+   59,
+   81,
+   85,
+   89
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/281_GOKU YADRAT BASE",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_02_Androides_Cell_y_Trunks_Goku_281_GOKU_YADRAT_BASE",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

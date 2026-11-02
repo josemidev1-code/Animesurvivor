@@ -1,0 +1,63 @@
+{
+ "idle": [
+  0,
+  2
+ ],
+ "move": [
+  66
+ ],
+ "attack": [
+  6,
+  7
+ ],
+ "kick": [
+  12
+ ],
+ "ki": [
+  59,
+  60
+ ],
+ "pow": [
+  56
+ ],
+ "hurt": [
+  72
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 1.0,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.7,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   61
+  ],
+  "bola": [
+   62,
+   63
+  ],
+  "aura": [],
+  "estela": [
+   50,
+   51,
+   55
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Goku/057_Goku SSJ 3 Mais Sprites",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_03_Majin_Buu_Goku_057_Goku_SSJ_3_Mais_Sprites",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,47 @@
+{
+ "idle": [
+  4
+ ],
+ "move": [
+  6
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [],
+ "pow": [
+  8,
+  9,
+  10
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 4,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "pow": 0.6
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": [
+   1,
+   7
+  ]
+ },
+ "pack": "07_Personajes_sin_saga_concreta/Vegeta/289_VEGETA",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "07_Personajes_sin_saga_concreta_Vegeta_289_VEGETA",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "falta la animación de ki",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

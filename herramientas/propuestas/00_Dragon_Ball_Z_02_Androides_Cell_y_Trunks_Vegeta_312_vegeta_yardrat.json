@@ -1,0 +1,62 @@
+{
+ "idle": [
+  7
+ ],
+ "move": [
+  19
+ ],
+ "attack": [
+  20
+ ],
+ "kick": [
+  29
+ ],
+ "ki": [
+  14,
+  15
+ ],
+ "pow": [
+  71,
+  72
+ ],
+ "hurt": [
+  52,
+  53
+ ],
+ "faint": [
+  61
+ ],
+ "portrait": null,
+ "guardia": 7,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   60
+  ],
+  "bola": [
+   16
+  ],
+  "aura": [],
+  "estela": [
+   0
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Vegeta/312_vegeta yardrat",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_02_Androides_Cell_y_Trunks_Vegeta_312_vegeta_yardrat",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)"
+ ],
+ "dudoso": true
+}

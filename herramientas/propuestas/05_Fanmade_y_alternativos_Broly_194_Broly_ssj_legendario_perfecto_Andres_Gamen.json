@@ -1,0 +1,55 @@
+{
+ "idle": [
+  3,
+  3
+ ],
+ "move": [
+  11
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  10
+ ],
+ "pow": [
+  15,
+  19
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": 26,
+ "guardia": 22,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.79,
+  "ki": 0.5,
+  "pow": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   15
+  ],
+  "bola": [
+   13,
+   14
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/05_Broly/Goku/220_GOKU,SSJ 1,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "05_Fanmade_y_alternativos/Broly/194_Broly ssj legendario, perfecto, Andrés Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Broly_194_Broly_ssj_legendario_perfecto_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "poca confianza en ki",
+  "falta la animación de daño",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en guardia"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,57 @@
+{
+ "idle": [
+  11,
+  11
+ ],
+ "move": [
+  21
+ ],
+ "attack": [
+  5,
+  6
+ ],
+ "kick": [
+  9,
+  10,
+  11
+ ],
+ "ki": [],
+ "pow": [
+  7,
+  8
+ ],
+ "hurt": [],
+ "faint": [
+  14
+ ],
+ "portrait": 24,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.78,
+  "pow": 0.9,
+  "attack": 0.7,
+  "kick": 0.7,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": [
+   17
+  ]
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Gogeta/117_GOGETA MUI+MEGA INSTINTO,BY ANDRÉS GAMEN ANIMATIONS",
+ "pack": "05_Fanmade_y_alternativos/Gohan/195_Gohan del futuro,ssj3, Andrés Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Gohan_195_Gohan_del_futuro_ssj3_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de ki",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

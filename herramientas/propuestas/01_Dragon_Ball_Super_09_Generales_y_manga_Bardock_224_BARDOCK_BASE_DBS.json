@@ -1,0 +1,92 @@
+{
+ "idle": [
+  13,
+  14
+ ],
+ "move": [],
+ "attack": [],
+ "kick": [],
+ "ki": [],
+ "pow": [],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 13,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75
+ },
+ "efectos": {
+  "rayo": [
+   10,
+   11,
+   18,
+   22,
+   23
+  ],
+  "bola": [
+   0,
+   1,
+   2,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   12,
+   15,
+   16,
+   19,
+   20,
+   24,
+   25,
+   26,
+   28,
+   29,
+   30,
+   32,
+   37,
+   38,
+   41,
+   42,
+   44,
+   49,
+   50,
+   52
+  ],
+  "aura": [
+   3,
+   17,
+   21,
+   27,
+   31,
+   33,
+   34,
+   35,
+   36,
+   39,
+   40,
+   43,
+   45,
+   46,
+   47,
+   48,
+   51
+  ],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Bardock/224_BARDOCK,BASE,DBS",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_09_Generales_y_manga_Bardock_224_BARDOCK_BASE_DBS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "falta la animación de ki",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

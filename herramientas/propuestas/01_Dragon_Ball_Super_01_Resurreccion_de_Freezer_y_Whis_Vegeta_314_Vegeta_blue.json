@@ -1,0 +1,73 @@
+{
+ "idle": [
+  8
+ ],
+ "move": [
+  95
+ ],
+ "attack": [
+  3,
+  4
+ ],
+ "kick": [
+  16
+ ],
+ "ki": [
+  9,
+  10
+ ],
+ "pow": [
+  1,
+  2
+ ],
+ "hurt": [
+  62,
+  63
+ ],
+ "faint": [
+  39
+ ],
+ "portrait": 113,
+ "guardia": 8,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.97,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.7,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   11,
+   19
+  ],
+  "bola": [
+   0,
+   46,
+   47,
+   111
+  ],
+  "aura": [
+   5,
+   108,
+   109
+  ],
+  "estela": [
+   94
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Vegeta/314_Vegeta blue",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_01_Resurreccion_de_Freezer_y_Whis_Vegeta_314_Vegeta_blue",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en patada"
+ ],
+ "dudoso": true
+}

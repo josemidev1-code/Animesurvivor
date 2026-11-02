@@ -1,0 +1,72 @@
+{
+ "idle": [
+  0,
+  9
+ ],
+ "move": [
+  14
+ ],
+ "attack": [
+  19,
+  22,
+  19
+ ],
+ "kick": [
+  16,
+  17
+ ],
+ "ki": [
+  23,
+  19
+ ],
+ "pow": [
+  16,
+  17,
+  18
+ ],
+ "hurt": [
+  26,
+  26
+ ],
+ "faint": [],
+ "portrait": 36,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "pow": 0.6,
+  "attack": 0.9,
+  "kick": 0.9,
+  "ki": 0.9,
+  "hurt": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   31,
+   35
+  ],
+  "bola": [
+   28,
+   29,
+   30
+  ],
+  "aura": [
+   3,
+   4
+  ],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/06_Moro/Goku/201_GOKU,CAMISA MEDIA RASGADA,DBS MORO, ANDRÉS GAMEN",
+ "pack": "05_Fanmade_y_alternativos/Goku Black/184_Majin Goku black ssj Díos.Andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_Black_184_Majin_Goku_black_ssj_Dios_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

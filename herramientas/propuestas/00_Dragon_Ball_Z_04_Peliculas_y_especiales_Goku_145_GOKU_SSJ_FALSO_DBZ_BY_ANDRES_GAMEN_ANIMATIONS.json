@@ -1,0 +1,143 @@
+{
+ "idle": [
+  48,
+  48
+ ],
+ "move": [
+  78
+ ],
+ "attack": [
+  46,
+  45,
+  48
+ ],
+ "kick": [
+  48,
+  48
+ ],
+ "ki": [
+  43,
+  40
+ ],
+ "pow": [
+  20,
+  21
+ ],
+ "hurt": [],
+ "faint": [
+  7
+ ],
+ "portrait": null,
+ "guardia": 18,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "ki": 0.9,
+  "pow": 0.6,
+  "move": 0.9,
+  "attack": 0.9,
+  "kick": 0.9,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   5,
+   6,
+   7,
+   17,
+   26,
+   27,
+   38,
+   39,
+   44,
+   52
+  ],
+  "bola": [
+   2,
+   3,
+   13,
+   14,
+   22,
+   23,
+   25,
+   30,
+   40,
+   41,
+   42,
+   43,
+   45,
+   46,
+   47,
+   51,
+   53,
+   54,
+   55,
+   56,
+   57,
+   58,
+   59,
+   60,
+   61,
+   62,
+   63,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   74,
+   77,
+   78,
+   80,
+   87
+  ],
+  "aura": [
+   0,
+   1,
+   4,
+   8,
+   9,
+   12,
+   15,
+   16,
+   24,
+   31,
+   32,
+   36,
+   37,
+   48,
+   49,
+   50,
+   64,
+   65,
+   66,
+   73,
+   75,
+   76,
+   79,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   88,
+   89
+  ],
+  "estela": []
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Vegetto/248_VEGETTO SSJ GOD MEJORADO, ANDRÉS GAMEN ANIMATIONS 🗿👍",
+ "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Goku/145_GOKU SSJ FALSO,DBZ,BY ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "00_Dragon_Ball_Z_04_Peliculas_y_especiales_Goku_145_GOKU_SSJ_FALSO_DBZ_BY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de daño",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,105 @@
+{
+ "idle": [
+  450,
+  574
+ ],
+ "move": [
+  104,
+  111
+ ],
+ "attack": [
+  358,
+  358,
+  321,
+  321
+ ],
+ "kick": [
+  428,
+  457,
+  475
+ ],
+ "ki": [
+  286,
+  238
+ ],
+ "pow": [
+  629,
+  629
+ ],
+ "hurt": [
+  20
+ ],
+ "faint": [
+  484
+ ],
+ "portrait": 693,
+ "guardia": 5,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "hurt": 0.5,
+  "ki": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.9,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   27,
+   337,
+   364,
+   492,
+   625,
+   661,
+   668,
+   671
+  ],
+  "aura": [
+   48,
+   49,
+   67,
+   89,
+   159,
+   239,
+   240,
+   508,
+   511,
+   513,
+   518,
+   527,
+   657,
+   658,
+   660,
+   675,
+   685,
+   686
+  ],
+  "estela": [
+   23,
+   32,
+   53,
+   59,
+   224,
+   336,
+   347,
+   402,
+   567,
+   605
+  ]
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Goku Black/125_GOKU BLACK TIME BREAKER SSJ ROSE 3 SWL, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "09_Packs_mixtos_por_revisar/Varios/291_SUPER EXTRA PACK DE SPRITES #3 (ESPECIAL 38K) ANDRÉS GAMEN ANIMATIONS 👍",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "09_Packs_mixtos_por_revisar_Varios_291_SUPER_EXTRA_PACK_DE_SPRITES_3_ESPECIAL_38K_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

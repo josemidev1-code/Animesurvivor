@@ -1,0 +1,60 @@
+{
+ "idle": [
+  4,
+  4
+ ],
+ "move": [
+  50
+ ],
+ "attack": [
+  39,
+  32,
+  41
+ ],
+ "kick": [
+  28
+ ],
+ "ki": [
+  13,
+  11
+ ],
+ "pow": [],
+ "hurt": [
+  16
+ ],
+ "faint": [
+  27
+ ],
+ "portrait": 61,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "hurt": 0.5,
+  "attack": 0.9,
+  "kick": 0.6,
+  "ki": 0.9,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "plantilla": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Turles/236_TURLES SSJ MALIGNO, ANDRÉS GAMEN ANIMATIONS ✓",
+ "pack": "05_Fanmade_y_alternativos/Goku/142_GOKU SSJ BLUE 3 ( traje wis ) ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_142_GOKU_SSJ_BLUE_3_traje_wis_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño",
+  "tamaño de píxel distinto en guardia",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

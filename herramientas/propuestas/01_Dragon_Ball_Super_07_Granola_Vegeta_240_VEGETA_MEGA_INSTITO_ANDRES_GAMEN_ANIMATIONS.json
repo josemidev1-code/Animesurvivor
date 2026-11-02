@@ -1,0 +1,90 @@
+{
+ "idle": [
+  12
+ ],
+ "move": [
+  66,
+  67
+ ],
+ "attack": [
+  59,
+  56,
+  53,
+  56
+ ],
+ "kick": [
+  62,
+  58,
+  46
+ ],
+ "ki": [
+  14,
+  15
+ ],
+ "pow": [
+  82,
+  82
+ ],
+ "hurt": [
+  38,
+  27
+ ],
+ "faint": [
+  25
+ ],
+ "portrait": 81,
+ "guardia": 12,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.9,
+  "faint": 0.9,
+  "hurt": 0.9,
+  "ki": 0.7,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   16,
+   18
+  ],
+  "bola": [
+   0,
+   1,
+   2,
+   72,
+   73,
+   74,
+   76
+  ],
+  "aura": [
+   3,
+   4,
+   5,
+   6,
+   75,
+   77,
+   78,
+   79,
+   80
+  ],
+  "estela": [
+   64
+  ]
+ },
+ "plantilla": "01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/245_VEGETA SSJB PERFECTO, MANGA , MEJORADO, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )",
+ "pack": "01_Dragon_Ball_Super/07_Granola/Vegeta/240_VEGETA MEGA INSTITO, ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_07_Granola_Vegeta_240_VEGETA_MEGA_INSTITO_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

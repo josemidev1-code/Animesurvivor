@@ -1,0 +1,38 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [],
+ "attack": [],
+ "kick": [],
+ "ki": [],
+ "pow": [],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Gohan/172_Volador - Dash",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_09_Generales_y_manga_Gohan_172_Volador_Dash",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "el pack tiene pocos fotogramas útiles",
+  "falta la animación de moverse",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "falta la animación de ki",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

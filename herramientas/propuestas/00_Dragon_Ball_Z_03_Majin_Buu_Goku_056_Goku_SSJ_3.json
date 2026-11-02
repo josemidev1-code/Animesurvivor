@@ -1,0 +1,60 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  22
+ ],
+ "attack": [
+  4
+ ],
+ "kick": [
+  15,
+  16
+ ],
+ "ki": [
+  33,
+  34
+ ],
+ "pow": [
+  6,
+  7,
+  8
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   37,
+   38,
+   47,
+   48
+  ],
+  "bola": [
+   35,
+   36
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Goku/056_Goku SSJ 3",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_03_Majin_Buu_Goku_056_Goku_SSJ_3",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,70 @@
+{
+ "idle": [
+  1,
+  2
+ ],
+ "move": [
+  70
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  18,
+  19
+ ],
+ "pow": [
+  12,
+  13,
+  14
+ ],
+ "hurt": [
+  52,
+  53
+ ],
+ "faint": [
+  92
+ ],
+ "portrait": 104,
+ "guardia": 1,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   3,
+   20
+  ],
+  "bola": [
+   0,
+   4,
+   5,
+   102
+  ],
+  "aura": [],
+  "estela": [
+   32,
+   40,
+   98,
+   116,
+   121,
+   138
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/00_Saiyans/Vegeta/309_Vegeta explorador HD",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_00_Saiyans_Vegeta_309_Vegeta_explorador_HD",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,45 @@
+{
+ "idle": [
+  1
+ ],
+ "move": [
+  5
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [],
+ "pow": [],
+ "hurt": [
+  3
+ ],
+ "faint": [
+  9
+ ],
+ "portrait": null,
+ "guardia": 1,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.95,
+  "faint": 0.6,
+  "hurt": 0.5
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/107_Zamasu e Black Fusão Desmanchando - Damage",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_03_Trunks_del_futuro_Zamasu_107_Zamasu_e_Black_Fusao_Desmanchando_Damage",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "falta la animación de ki",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

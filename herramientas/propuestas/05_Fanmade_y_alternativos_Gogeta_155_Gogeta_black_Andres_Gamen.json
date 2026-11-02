@@ -1,0 +1,69 @@
+{
+ "idle": [
+  9,
+  9
+ ],
+ "move": [
+  15
+ ],
+ "attack": [
+  19,
+  18,
+  19,
+  18
+ ],
+ "kick": [],
+ "ki": [
+  2
+ ],
+ "pow": [
+  6,
+  7
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": 43,
+ "guardia": 1,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 1.0,
+  "ki": 0.5,
+  "pow": 0.9,
+  "attack": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   4,
+   28,
+   37
+  ],
+  "bola": [
+   39,
+   47,
+   48,
+   49,
+   50,
+   51
+  ],
+  "aura": [
+   30
+  ],
+  "estela": [
+   16
+  ]
+ },
+ "plantilla": "01_Dragon_Ball_Super/05_Broly/Vegeta/226_VEGETA,SSJ BLUE,DBS, BROLY, DAMAGED, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "05_Fanmade_y_alternativos/Gogeta/155_Gogeta black.Andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Gogeta_155_Gogeta_black_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de patada",
+  "poca confianza en ki",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

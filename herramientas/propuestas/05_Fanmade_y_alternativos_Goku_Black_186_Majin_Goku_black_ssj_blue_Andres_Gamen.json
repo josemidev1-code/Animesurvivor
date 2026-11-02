@@ -1,0 +1,70 @@
+{
+ "idle": [
+  13,
+  14
+ ],
+ "move": [
+  18
+ ],
+ "attack": [
+  20,
+  24,
+  23
+ ],
+ "kick": [
+  20,
+  21
+ ],
+ "ki": [],
+ "pow": [
+  31
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "move": 0.9,
+  "kick": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   18,
+   19,
+   35
+  ],
+  "bola": [
+   5,
+   6,
+   17,
+   40
+  ],
+  "aura": [
+   3,
+   4,
+   20,
+   28,
+   36,
+   37,
+   38
+  ],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/06_Moro/Goku/199_GOKU SSJ 1 CAMISA MEDIA RASGADA DBS MORO, ANDRÉS GAMEN",
+ "pack": "05_Fanmade_y_alternativos/Goku Black/186_Majin Goku black ssj blue.Andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_Black_186_Majin_Goku_black_ssj_blue_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de ki",
+  "falta la animación de daño",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse"
+ ],
+ "dudoso": true
+}

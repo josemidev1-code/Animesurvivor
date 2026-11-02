@@ -1,0 +1,49 @@
+{
+ "idle": [
+  0,
+  1,
+  2
+ ],
+ "move": [],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  5
+ ],
+ "pow": [],
+ "hurt": [
+  6
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "hurt": 0.5,
+  "ki": 0.5
+ },
+ "efectos": {
+  "rayo": [
+   8,
+   9,
+   10
+  ],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Gohan/162_Aros de Ki",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_09_Generales_y_manga_Gohan_162_Aros_de_Ki",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "poca confianza en ki",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}
