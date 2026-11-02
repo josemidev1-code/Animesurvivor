@@ -884,3 +884,9 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Ficha grande: ◀ ▶ para elegir la forma (cara y sprite cambian juntos, ya no rotan solos), aviso «Despiértala con un deseo a Shenron» si esa forma no está despertada, y las mismas barras. `script.js?v=87`, `style.css?v=70`.
 - Comprobado: capturas a 1366×768 y 375×812, consola sin errores del juego, `comprobar_*.cjs` correctos. No probado: doble clic en Windows ni con la fuente Press Start 2P (en la nube no carga Google Fonts).
 - Pendiente de Josemi: valorar el aspecto (tamaño de las barras, que las tarjetas sean más altas).
+
+### Petición (2 nov., 16:13): todos los sprites jugables
+- Josemi: «quiero que todos los sprites que hay en las carpetas, todos los movimientos, estén en el juego».
+- Decisiones de Josemi: **todas las versiones como personajes jugables separados** (cada pack de Goku, Vegeta… es su propia tarjeta) y **solo los packs que tengan todo**; los incompletos se dejan fuera (apuntados en `SPRITES_PENDIENTES.md`).
+- Inventario: 331 packs en `sprites/`, 164 usados, 167 sin usar (Super 65, fanmade 44, DBZ 23, sin saga 12, escenarios 6, mixtos 5, Heroes 4, GT 3, Daima 3, Shenron 1, referencias 1).
+- Caras (16:00): el retrato de 74 de 168 formas era un recorte del sprite; `herramientas/buscar_caras.py` busca caras reales en otros packs del mismo personaje (en marcha). Goku MUI de Moro usa la cara plateada de UI Dominado (`extras.json`). Las tarjetas enseñan la forma más alta despertada.
