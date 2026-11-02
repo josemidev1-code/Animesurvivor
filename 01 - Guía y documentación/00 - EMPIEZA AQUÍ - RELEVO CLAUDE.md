@@ -12,7 +12,7 @@ Lee `Cambios propuestos por Josemi.md` en esta misma carpeta: es el documento co
 ## Estado (2 nov., noche)
 
 - Selección: personajes de lado (sin retratos), ventanas azules 16 bits, estadísticas con colores. Letra Press Start 2P en todo. **No volver a proponer la recreativa ni el efecto CRT** (Josemi los rechazó).
-- Josemi quiere **todos los packs completos como personajes jugables propios**; los incompletos fuera. En marcha: 105 personajes (2 nov., noche; tandas 7-12 de esta sesión); lista, procedimiento y atajo `herramientas/meter.py` en `PERSONAJES_POR_METER.md`. Vegeta terminado (salvo MUI 303, a medias). Siguiente: el resto de versiones de Goku.
+- Josemi quiere **todos los packs completos como personajes jugables propios**; los incompletos fuera. En marcha: 108 personajes (2 nov., noche; tandas 7-13 de esta sesión); lista, procedimiento y atajo `herramientas/meter.py` en `PERSONAJES_POR_METER.md`. Vegeta terminado (salvo MUI 303, a medias). Siguiente: el resto de versiones de Goku.
 - Pendiente de Josemi: permiso para incluir la letra en el proyecto (ahora se carga de Google Fonts y sin internet no se ve).
 
 ## Estado de Git

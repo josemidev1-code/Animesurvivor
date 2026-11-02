@@ -1288,6 +1288,110 @@
      259
     ]
    }
+  },
+  "gokumuimanga": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/270_GOKU MUI TDP MANGA",
+    "idle": [
+     26,
+     62
+    ],
+    "move": [
+     36
+    ],
+    "attack": [
+     49,
+     50,
+     51
+    ],
+    "kick": [
+     53,
+     54
+    ],
+    "ki": [
+     79,
+     77
+    ],
+    "pow": [
+     146,
+     147
+    ],
+    "hurt": [
+     44,
+     41
+    ],
+    "faint": [
+     46
+    ]
+   }
+  },
+  "gokuuimanga": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Goku/280_GOKU UI SEÑAL DEL MANGA V1 SWL+ DBS MANGA",
+    "idle": [
+     36,
+     42
+    ],
+    "move": [
+     35
+    ],
+    "attack": [
+     70,
+     71,
+     73
+    ],
+    "kick": [
+     77,
+     78
+    ],
+    "ki": [
+     81
+    ],
+    "pow": [
+     24,
+     25
+    ],
+    "hurt": [
+     120,
+     123
+    ],
+    "faint": [
+     128
+    ]
+   }
+  },
+  "gokussj2buu": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/276_GOKU SSJ2 SAGA BUU SWL+",
+    "idle": [
+     77,
+     78
+    ],
+    "move": [
+     98
+    ],
+    "attack": [
+     126,
+     128,
+     129
+    ],
+    "kick": [
+     167,
+     168
+    ],
+    "ki": [
+     204,
+     205
+    ],
+    "pow": [
+     24,
+     25
+    ],
+    "hurt": [
+     193,
+     198
+    ]
+   }
   }
  }
 }
