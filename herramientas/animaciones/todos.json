@@ -1392,6 +1392,113 @@
      198
     ]
    }
+  },
+  "gokussjkaioken": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/059_Goku SSJ Kaioken",
+    "idle": [
+     3,
+     20
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     24,
+     25,
+     26
+    ],
+    "kick": [
+     28,
+     29
+    ],
+    "ki": [
+     50,
+     51
+    ],
+    "pow": [
+     44
+    ],
+    "hurt": [
+     39,
+     41
+    ],
+    "faint": [
+     43
+    ]
+   }
+  },
+  "gokuevilssj2": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/127_GOKU EVIL SSJ 2 , ANDRÉS GAMEN ANIMATIONS , SPRITE HD,",
+    "idle": [
+     41,
+     42
+    ],
+    "move": [
+     96
+    ],
+    "attack": [
+     81,
+     82,
+     83
+    ],
+    "kick": [
+     57,
+     58
+    ],
+    "ki": [
+     20,
+     21
+    ],
+    "pow": [
+     17,
+     111
+    ],
+    "hurt": [
+     29,
+     32
+    ],
+    "faint": [
+     28
+    ]
+   }
+  },
+  "gokumuiblueevo": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/133_GOKU MUI BLUE EVOLUTION, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )",
+    "idle": [
+     118,
+     59
+    ],
+    "move": [
+     126
+    ],
+    "attack": [
+     100,
+     101,
+     102
+    ],
+    "kick": [
+     84,
+     80
+    ],
+    "ki": [
+     50,
+     51
+    ],
+    "pow": [
+     140,
+     141
+    ],
+    "hurt": [
+     57,
+     54
+    ],
+    "faint": [
+     53
+    ]
+   }
   }
  }
 }
