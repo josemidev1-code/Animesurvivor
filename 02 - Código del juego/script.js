@@ -708,6 +708,9 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ gokussj3swl:{name:'GOKU SSJ3 (HD)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 3, sprite HD de estilo SWL.',forms:['SSJ3'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussj3mais:{name:'GOKU SSJ3 (CLÁSICO)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 3, saga de Majin Buu, sprite clásico.',forms:['SSJ3'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ vegetabluemal:{name:'VEGETA BLUE MALIGNO',rar:5,hp:110,spd:69,atk:1.35,start:'galick',desc:'Vegeta Blue con aura oscura, versión maligna de Dragon Ball Heroes.',forms:['BLUE MALIGNO'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  vegetauihd:{name:'VEGETA ULTRA INSTINTO',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta con el Ultra Instinto, versión fanmade en HD.',forms:['ULTRA INSTINTO'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  vegetassjhd:{name:'VEGETA SSJ (HD)',rar:4,hp:105,spd:68,atk:1.22,start:'galick',desc:'Vegeta en Super Saiyan, sprite HD de estilo ULSW.',forms:['SSJ'],aura:['gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  vegetaxeno:{name:'VEGETA XENO',rar:3,hp:100,spd:66,atk:1.1,start:'galick',desc:'Vegeta Xeno, patrullero del tiempo de Dragon Ball Heroes.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
@@ -1252,7 +1255,10 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  vegetaego:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
  vegetaxeno:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
  vegetassjhd:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
- vegetauihd:['kiblast','punch','galick','bigbang','finalflash','finalexp']};
+ vegetauihd:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetabluemal:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ gokussj3mais:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussj3swl:['kiblast','punch','kame','kaioken','instant','genki']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];

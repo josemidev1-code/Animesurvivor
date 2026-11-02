@@ -21,6 +21,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 6: Vegeta SSJ (Whis, 315), Vegeta Blue (Whis, 314), Vegeta Blue (Super, 092).
 - Tanda 7: Vegeta Blue HD (296), Vegeta Blue Full Power (093), Vegeta Blue Evolution (299), Vegeta base HD (295). Ojo: en el 296 el fotograma 47 no mide su zoom; se fija con `escalaFrames`.
 - Tanda 8: Vegeta Ultra Ego (240), Vegeta Xeno (267), Vegeta SSJ HD (297), Vegeta Ultra Instinto HD (302). En el 297 el fotograma 33 se fija con `escalaFrames`.
+- Tanda 9: Vegeta Blue Maligno (241), Goku SSJ3 clásico (057), Goku SSJ3 HD (277).
 
 ## A medias
 
@@ -28,11 +29,10 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 
 - Bra Majin (189): la propuesta mezcla caras y otros personajes; hay que elegir todos los fotogramas a mano (pack de casi 300).
 - Fusión de Zamasu deshaciéndose (106): pocos golpes; comprobar si de verdad está completo.
+- Vegeta MUI (303): el pack viene reescalado y borroso; cada fotograma a otra escala y no se puede medir el píxel. Haría falta fijar la escala a mano fotograma a fotograma (`escalaFrames`) o buscar el pack original.
 
-## Completos por meter (39)
+## Completos por meter (34)
 
-- `00_Dragon_Ball_Z/03_Majin_Buu/Goku/057_Goku SSJ 3 Mais Sprites`
-- `00_Dragon_Ball_Z/03_Majin_Buu/Goku/277_GOKU SSJ3 SWL+`
 - `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/276_GOKU SSJ2 SAGA BUU SWL+`
 - `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Goku/049_Goku Blue Whis Gi`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose`
@@ -61,9 +61,6 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - `05_Fanmade_y_alternativos/Goku/207_GOKU SSJ DIOS,BERSERKER,DBS BROLY, ANDRÉS GAMEN ANIMATIONS ✓`
 - `05_Fanmade_y_alternativos/Goku/208_GOKU SSJ LEGENDARIO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS ✓`
 - `05_Fanmade_y_alternativos/Goku/274_GOKU SSJ KAIO KEN`
-- `05_Fanmade_y_alternativos/Vegeta/241_VEGETA SSJ BLUE MALIGNO,DBH, ANDRÉS GAMEN ANIMATIONS ✓`
-- `05_Fanmade_y_alternativos/Vegeta/249_Vegeta Omni God,Damaged.Andres Gamen`
-- `05_Fanmade_y_alternativos/Vegeta/303_vegeta mui`
 - `07_Personajes_sin_saga_concreta/Goku/044_Goku`
 - `07_Personajes_sin_saga_concreta/Goku/045_Goku (versión2)`
 - `07_Personajes_sin_saga_concreta/Goku/053_Goku SSJ 1`
@@ -162,3 +159,4 @@ Lo que les falta según la herramienta (puede equivocarse: si al mirarlo resulta
 - `09_Packs_mixtos_por_revisar/Varios/116_EXTRA PACK DE SPRITES PARTE 2 , BY ANDRÉS GAMEN ANIMATIONS ✓`: falta patada
 - `09_Packs_mixtos_por_revisar/Varios/203_MINI EXTRA PACK DE SPRITES, ANDRÉS GAMEN ANIMATIONS`: falta puñetazos, patada
 - `09_Packs_mixtos_por_revisar/Varios/230_SUPER EXTRA PACK DE SPRITES (ESPECIAL DE 24K DE SUBS) ANDRÉS GAMEN ANIMATIONS`: falta patada, daño
+- `05_Fanmade_y_alternativos/Vegeta/249_Vegeta Omni God,Damaged.Andres Gamen`: falta patada, daño (revisado a mano, 2 nov.)

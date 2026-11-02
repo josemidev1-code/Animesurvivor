@@ -856,6 +856,111 @@
      75
     ]
    }
+  },
+  "vegetabluemal": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Vegeta/241_VEGETA SSJ BLUE MALIGNO,DBH, ANDRÉS GAMEN ANIMATIONS ✓",
+    "idle": [
+     69,
+     80
+    ],
+    "move": [
+     70
+    ],
+    "attack": [
+     59,
+     60,
+     61
+    ],
+    "kick": [
+     50,
+     51
+    ],
+    "ki": [
+     20,
+     29
+    ],
+    "pow": [
+     25,
+     26
+    ],
+    "hurt": [
+     46,
+     47
+    ]
+   }
+  },
+  "gokussj3mais": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Goku/057_Goku SSJ 3 Mais Sprites",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     6
+    ],
+    "attack": [
+     13,
+     12,
+     14
+    ],
+    "kick": [
+     31,
+     33
+    ],
+    "ki": [
+     48,
+     49
+    ],
+    "pow": [
+     45,
+     46
+    ],
+    "hurt": [
+     38,
+     40
+    ],
+    "faint": [
+     43
+    ]
+   }
+  },
+  "gokussj3swl": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Goku/277_GOKU SSJ3 SWL+",
+    "idle": [
+     60,
+     63
+    ],
+    "move": [
+     62
+    ],
+    "attack": [
+     82,
+     81,
+     85
+    ],
+    "kick": [
+     98,
+     97
+    ],
+    "ki": [
+     121,
+     122
+    ],
+    "pow": [
+     110,
+     111
+    ],
+    "hurt": [
+     71,
+     72
+    ],
+    "faint": [
+     73
+    ]
+   }
   }
  }
 }
