@@ -708,6 +708,7 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ vegitoblue254:{name:'VEGETTO BLUE',rar:5,hp:130,spd:70,atk:1.35,start:'finalkame',desc:'Vegetto en Super Saiyan Blue, la fusión con los Pendientes Pothala.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','finalkame','spiritsword','bigbang','kick']},
  bramajin:{name:'BRA MAJIN SSJ',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Bra adulta poseída por Babidi en Super Saiyan, de Dragon Ball Multiverse (fanmade).',forms:['SSJ MAJIN'],aura:['gold'],sig:['kiblast','punch','kick','kame','renzoku']},
  zamasufusion:{name:'ZAMASU FUSIONADO (DESHACIÉNDOSE)',rar:5,hp:130,spd:72,atk:1.4,start:'blackkame',desc:'Zamasu fusionado mientras su cuerpo inmortal se deshace.',forms:['FUSIÓN'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
  gokussj4daima:{name:'GOKU SSJ4 (DAIMA)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 4, versión de Dragon Ball Daima.',forms:['SSJ4'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
@@ -1320,7 +1321,8 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  blackrose290:['kiblast','kiblade','blackkame','lances','scythe','kick'],
  gokussj4daima:['kiblast','punch','kame','kaioken','instant','genki'],
  zamasufusion:['kiblast','kiblade','blackkame','lances','scythe','kick'],
- bramajin:['kiblast','punch','kick','kame','renzoku']};
+ bramajin:['kiblast','punch','kick','kame','renzoku'],
+ vegitoblue254:['kiblast','punch','finalkame','spiritsword','bigbang','kick']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];

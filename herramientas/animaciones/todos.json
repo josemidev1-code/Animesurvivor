@@ -2084,6 +2084,39 @@
     "escala": 14.2,
     "escalaFija": true
    }
+  },
+  "vegitoblue254": {
+   "0": {
+    "pack": "09_Packs_mixtos_por_revisar/Varios/254_SPRITESEXTRA",
+    "idle": [
+     90,
+     92
+    ],
+    "move": [
+     180
+    ],
+    "attack": [
+     184,
+     189,
+     197
+    ],
+    "kick": [
+     220,
+     222
+    ],
+    "ki": [
+     286,
+     300
+    ],
+    "pow": [
+     245,
+     246
+    ],
+    "hurt": [
+     238,
+     242
+    ]
+   }
   }
  }
 }

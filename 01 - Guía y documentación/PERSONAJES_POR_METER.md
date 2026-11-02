@@ -34,16 +34,16 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 19: Goku SSJ Full Power (273), Black Rosé HD (290; megapack de 300 fotogramas revisado por tramos).
 - Tanda 20: Goku SSJ4 Daima (140; pack de 281 revisado por tramos, aura con `escalaFrames`), Zamasu fusionado deshaciéndose (106 + daño y muerte del pack hermano 107 con la opción nueva `pack2`, fotogramas desde 1000).
 - Tanda 21: Bra Majin SSJ (189; cada fotograma viene a un zoom distinto: `escala` 14,2 fija y `escalaFrames` a mano).
+- Tanda 22: Vegetto Blue (del pack mixto 254; técnicas de Vegetto: Final Kamehameha, espada de ki, Big Bang).
 
 ## A medias
 
 - Vegeta MUI (303): el pack viene reescalado y borroso; cada fotograma a otra escala y no se puede medir el píxel. Haría falta fijar la escala a mano fotograma a fotograma (`escalaFrames`) o buscar el pack original.
 - Goku Rey Mono (138): mismo problema que Vegeta MUI (303): fotogramas reescalados a tamaños distintos, sin píxel medible.
+- Pack mixto 254: además de Vegetto Blue (ya metido) trae un personaje de pelo blanco y ropa verde, sin identificar, con guardia, golpes, patadas, aura oscura y daño. Falta que Josemi diga quién es para meterlo.
 
-## Completos por meter (2)
+## Completos por meter (0)
 
-- `09_Packs_mixtos_por_revisar/Varios/254_SPRITESEXTRA`
-- `09_Packs_mixtos_por_revisar/Varios/291_SUPER EXTRA PACK DE SPRITES #3 (ESPECIAL 38K) ANDRÉS GAMEN ANIMATIONS 👍`
 
 ## Incompletos, fuera del juego (87)
 
@@ -137,3 +137,4 @@ Lo que les falta según la herramienta (puede equivocarse: si al mirarlo resulta
 - `09_Packs_mixtos_por_revisar/Varios/203_MINI EXTRA PACK DE SPRITES, ANDRÉS GAMEN ANIMATIONS`: falta puñetazos, patada
 - `09_Packs_mixtos_por_revisar/Varios/230_SUPER EXTRA PACK DE SPRITES (ESPECIAL DE 24K DE SUBS) ANDRÉS GAMEN ANIMATIONS`: falta patada, daño
 - `05_Fanmade_y_alternativos/Vegeta/249_Vegeta Omni God,Damaged.Andres Gamen`: falta patada, daño (revisado a mano, 2 nov.)
+- `09_Packs_mixtos_por_revisar/Varios/291_SUPER EXTRA PACK DE SPRITES #3 (ESPECIAL 38K) ANDRÉS GAMEN ANIMATIONS 👍`: colección de poses sueltas (una por personaje); ninguno completo (revisado a mano, 2 nov.)

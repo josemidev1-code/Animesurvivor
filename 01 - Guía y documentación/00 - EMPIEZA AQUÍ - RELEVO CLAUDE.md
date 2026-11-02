@@ -12,7 +12,7 @@ Lee `Cambios propuestos por Josemi.md` en esta misma carpeta: es el documento co
 ## Estado (2 nov., noche)
 
 - Selección: personajes de lado (sin retratos), ventanas azules 16 bits, estadísticas con colores. Letra Press Start 2P en todo. **No volver a proponer la recreativa ni el efecto CRT** (Josemi los rechazó).
-- Josemi quiere **todos los packs completos como personajes jugables propios**; los incompletos fuera. 122 personajes (2 nov., 20:35; tandas 7-18); lista, procedimiento y atajo `herramientas/meter.py` en `PERSONAJES_POR_METER.md`. Vegeta terminado (salvo MUI 303, a medias). Siguiente: el resto de versiones de Goku.
+- Josemi quiere **todos los packs completos como personajes jugables propios**; los incompletos fuera. 128 personajes (2 nov., noche; tandas 7-22). Lista de completos agotada; quedan los «a medias» de `PERSONAJES_POR_METER.md`; lista, procedimiento y atajo `herramientas/meter.py` en `PERSONAJES_POR_METER.md`. Vegeta terminado (salvo MUI 303, a medias). Siguiente: el resto de versiones de Goku.
 - Pendiente de Josemi: permiso para incluir la letra en el proyecto (ahora se carga de Google Fonts y sin internet no se ve).
 
 ## Siguiente (2 nov., 20:35)
@@ -21,7 +21,7 @@ Lee `Cambios propuestos por Josemi.md` en esta misma carpeta: es el documento co
 1. **Ataques personalizados para cada personaje**: hoy los nuevos usan las técnicas comunes de su familia (`FAMILIAS` en `herramientas/meter.py`); cada uno debe tener las suyas.
 2. **Usar en partida las animaciones propias de cada personaje** (los ataques y efectos de su pack), no solo las poses comunes.
 3. **Cuadrar los ataques estéticamente con las animaciones**: que el golpe, el ki y la técnica coincidan con el fotograma que se ve.
-4. Quedan 7 packs completos en `PERSONAJES_POR_METER.md` (Goku SSJ Full Power 273, Black Rosé 290, mixtos 254 y 291) y los «a medias» (140, 189, 106, 303, 138).
+4. Ya no quedan packs completos por meter. A medias: Vegeta MUI (303) y Goku Rey Mono (138), con escalas mezcladas, y el personaje sin identificar del pack 254.
 
 ## Estado de Git
 
