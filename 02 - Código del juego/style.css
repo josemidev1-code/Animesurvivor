@@ -223,3 +223,37 @@ h2{font-family:var(--pix);font-size:clamp(14px,3.4vw,22px);color:var(--ki);margi
 #rFormN{flex:1;text-align:center;font-family:var(--pix);font-size:8px;color:#fff;line-height:1.4}
 .rLock{margin:0;font-size:15px;color:var(--ki);text-align:center}
 .rPrev .sb b,.rPrev .sb span{font-size:8px}.rPrev .sb{grid-template-columns:40px 1fr 40px}.rPrev .sb i{height:9px}
+/* ===== Estilo consola 16 bits (pantalla de personajes): ventanas azules lisas con borde blanco doble,
+   sombras duras sin difuminar, esquinas rectas y letra pixel en todo ===== */
+:root{--w16:#2848b8;--w16b:#182c80;--w16d:#0c1448;--w16edge:#f8f8f8;--w16sel:#f8d030}
+#roster h2{font-family:var(--pix);font-size:20px;color:var(--w16sel);text-shadow:2px 2px 0 #a03000,4px 4px 0 #000;letter-spacing:2px}
+#roster .help{font-family:var(--pix);font-size:9px;line-height:1.8;color:#e8ecff;background:var(--w16d);border:3px solid var(--w16edge);box-shadow:0 0 0 2px #000,4px 4px 0 2px #000;padding:8px 12px;max-width:760px}
+#roster .help b{color:var(--w16sel)}
+#roster .card,#roster .rPrev{background:var(--w16);border:3px solid var(--w16edge);border-radius:0;
+  box-shadow:inset 0 0 0 3px var(--w16b),inset 0 0 0 5px var(--w16edge),0 0 0 2px #000,5px 5px 0 2px #000;padding:12px 10px}
+#roster .rPrev{background:var(--w16)}
+#roster .card{transition:none}
+#roster .card:hover,#roster .card:focus-visible{transform:none;border-color:var(--w16sel);box-shadow:inset 0 0 0 3px var(--w16b),inset 0 0 0 5px var(--w16sel),0 0 0 2px #000,5px 5px 0 2px #000}
+#roster .card:hover::before,#roster .card:focus-visible::before{content:'▶';position:absolute;left:-18px;top:44px;color:var(--w16sel);font-family:var(--pix);font-size:12px;text-shadow:2px 2px 0 #000}
+#roster .card{position:relative}
+#roster .card h3,#rPrevName{font-family:var(--pix);font-size:10px;color:var(--w16edge);text-shadow:2px 2px 0 #000;letter-spacing:1px}
+#roster .card p{font-family:var(--pix);font-size:7px;line-height:1.7;color:#d8e0ff}
+#roster .card .rar{color:var(--w16sel);text-shadow:1px 1px 0 #000}
+#roster .cardFace,#roster .rPrev img{border:3px solid var(--w16edge);border-radius:0;background:var(--w16d);box-shadow:0 0 0 2px #000;padding:3px}
+#roster .card:hover .cardFace{border-color:var(--w16sel)}
+#roster .card canvas.cardSpr,#rPrevC{background:var(--w16d);border-radius:0;border:2px solid #000;box-shadow:inset 0 -14px 0 #101c60}
+#rNoFace{border-radius:0;border:3px dashed var(--w16edge);font-family:var(--pix)}
+.rForm button{border-radius:0;background:var(--w16d);border:2px solid var(--w16edge);box-shadow:2px 2px 0 #000;color:var(--w16sel)}
+.rForm button:hover{background:var(--w16b)}
+.rForm button:active{transform:translate(2px,2px);box-shadow:none}
+#rFormN{font-size:8px;text-shadow:2px 2px 0 #000}
+.rLock{font-family:var(--pix);font-size:7px;line-height:1.7;color:var(--w16sel)}
+#rPrevMoves{font-family:var(--pix);font-size:8px;line-height:2;color:#e8ecff;text-align:left;background:var(--w16d);border:2px solid #000;padding:6px 8px}
+#rPrevMoves b{font-size:7px;color:var(--w16sel)}
+/* barras de estadísticas por segmentos, como los medidores de los juegos de 16 bits */
+#roster .sb b,#roster .sb span{text-shadow:1px 1px 0 #000}
+#roster .sb i{height:8px;background:#000;border:2px solid #000;box-shadow:none}
+#roster .sb em{background-image:repeating-linear-gradient(90deg,transparent 0 5px,#000 5px 6px)!important;box-shadow:inset 0 -2px 0 rgba(0,0,0,.35),inset 0 2px 0 rgba(255,255,255,.35)}
+#roster .sb.hp em{background-color:var(--hp)}#roster .sb.spd em{background-color:var(--spd)}#roster .sb.atk em{background-color:var(--atk)}
+#roster .btn{border-radius:0}
+#roster .cardFace.noFace{background:repeating-linear-gradient(45deg,var(--w16d) 0 6px,#101c60 6px 12px)}

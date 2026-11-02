@@ -199,6 +199,8 @@ def montar_forma(f):
         out[nombre] = {'w': cw, 'h': ch, 'du': du, 'url': data_url(im)}
     res = {'anims': out, 'pack': f['pack']}
     if ret: res['portrait'] = data_url(ret)
+    # sin cara grande propia ni de otro pack: el retrato es un recorte del sprite; la selección no lo enseña
+    if ret and not (f.get('retrato') or 'portrait' in f): res['busto'] = 1
     return res
 
 

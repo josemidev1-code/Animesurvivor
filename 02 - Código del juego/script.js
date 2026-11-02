@@ -2788,18 +2788,18 @@ Object.assign(SCPACK.h,{trunks:{0:'mtrunks',1:'trunks-ssj',2:'smtrunks'},gohan:{
   vegetasuper:{0:'vegeta-buu',1:'vegeta-buussj',2:'vegeta-god',3:'vegeta-blue',4:'vegeta-bluefp'},trunkscell:{0:'trunks-armor'},roshi:{0:'roshi'}});
 SCPACK.h.vegeta[2]='vegeta-grade';SCPACK.h.gokuui[4]='goku-uic';
 // hand-picked animations (herramientas/animaciones.json -> animaciones_juego.js) replace the pack of that form
-const PORTRAIT={};
+const PORTRAIT={},BUSTO={};
 if(window.ANIM_SET)for(const id in ANIM_SET.h)for(const f in ANIM_SET.h[id]){const F=ANIM_SET.h[id][f],k='as-'+id+'-'+f;SCPACK.s[k]={};
-  for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait}
+  for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait;if(F.busto)BUSTO[id+'/'+f]=1}
 // only hand-picked forms stay: missing forms leave the transformation chain, characters with none leave the game
 var FUERA=new Set(['roshi']);
 for(const id in HDEF){const D=HDEF[id],A=window.ANIM_SET&&ANIM_SET.h[id];if(D.npc||D.custom)continue;
   if(!A){FUERA.add(id);continue}const keep=Object.keys(A).map(Number).sort((a,b)=>a-b);
   if(keep.length!==D.forms.length||keep.some((f,i)=>f!==i)){for(const k of ['forms','aura','hair','hc','formPal'])if(Array.isArray(D[k]))D[k]=keep.map(f=>D[k][Math.min(f,D[k].length-1)]);
-    const H={},R={};keep.forEach((f,i)=>{H[i]='as-'+id+'-'+f;if(PORTRAIT[id]&&PORTRAIT[id][f])R[i]=PORTRAIT[id][f]});SCPACK.h[id]=H;if(PORTRAIT[id])PORTRAIT[id]=R}}
+    const H={},R={};const B={};keep.forEach((f,i)=>{H[i]='as-'+id+'-'+f;if(PORTRAIT[id]&&PORTRAIT[id][f])R[i]=PORTRAIT[id][f];if(BUSTO[id+'/'+f])B[id+'/'+i]=1});for(const k in BUSTO)if(k.startsWith(id+'/'))delete BUSTO[k];Object.assign(BUSTO,B);SCPACK.h[id]=H;if(PORTRAIT[id])PORTRAIT[id]=R}}
 // big face of a form: that form, else the closest one of the same character
 // cara exacta de una forma, sin pedir prestada la de otra (selección de personaje)
-function faceExact(id,form=0){const P=PORTRAIT[id];return P&&P[form]||null}
+function faceExact(id,form=0){const P=PORTRAIT[id];return !BUSTO[id+'/'+form]&&P&&P[form]||null}
 function faceOf(id,form=0){const P=PORTRAIT[id];if(!P)return null;if(P[form])return P[form];const k=Object.keys(P).map(Number).sort((a,b)=>Math.abs(a-form)-Math.abs(b-form));return k.length?P[k[0]]:null}
 Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta-buussj',rose:'rose',
   renegA:'enemy1',renegB:'enemy2',renegC:'enemy3',kingvegE:'kingvegeta',raditzssjE:'raditz-ssj',vegsaiE:'vegeta-saiyan',freeza2E:'freeza-2',cellperfE:'cell-perf2',a21E:'a21',
@@ -3161,6 +3161,8 @@ function showTitle(){state='title';if(started)openHub();else{hideMenus();$('#sta
 // character cards
 const cardTimers=[];
 // estadísticas con colores: vida verde, velocidad azul, ataque rojo; la barra compara con el resto de personajes
+// forma que enseña la tarjeta: la más alta que tengas despertada con Shenron y que tenga cara propia
+function topForm(id){const H=HEROES[id];if(!H||!H.forms)return 0;for(let f=formasAbiertas(id);f>0;f--)if(faceExact(id,f))return f;return 0}
 let STAT_RANGE=null;
 function statRange(){if(STAT_RANGE)return STAT_RANGE;const r={hp:[1e9,0],spd:[1e9,0],atk:[1e9,0]};
   for(const id in HEROES){const H=HEROES[id];if(H.npc||H.custom||!spriteHero(id))continue;for(const k in r){r[k][0]=Math.min(r[k][0],H[k]);r[k][1]=Math.max(r[k][1],H[k])}}return STAT_RANGE=r}
@@ -3170,7 +3172,7 @@ function statBars(H){const r=statRange(),row=(k,cl,lb,v)=>{const[a,b]=r[k],f=b>a
 // el personaje como en partida dentro de cada tarjeta (guardia de la forma base); solo se dibujan las tarjetas visibles
 function drawCardSprites(t){const vh=innerHeight;document.querySelectorAll('#chars .cardSpr').forEach(c=>{const r=c.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;
   const id=c.dataset.id,g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);g.imageSmoothingEnabled=false;let im=null;
-  const o=scHero(id,0);if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[Math.floor(t*6)%A.R.length]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
+  const o=scHero(id,+c.dataset.f||0);if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[Math.floor(t*6)%A.R.length]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
   if(!im)return;const fit=Math.min((c.height-6)/im.height,(c.width-6)/im.width),k=fit>=2?2:fit>=1.5?1.5:Math.min(1,fit);
   g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-4,28,5,0,0,TAU);g.fill();
   g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-2-im.height*k),Math.round(im.width*k),Math.round(im.height*k))})}
@@ -3178,9 +3180,9 @@ function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(
   const ids=Object.keys(HEROES).filter(spriteHero).sort((a,b)=>(!sv.owned[a])-(!sv.owned[b]));
   for(const id of ids){const H=HEROES[id],own=!!sv.owned[id]||id==='gokuui',b=document.createElement('button');b.type='button';b.className='card'+(own?'':' locked');
     const img=document.createElement('img');img.className='cardFace';
-    const f0=faceExact(id,0)||(MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():'');
-    img.src=f0||'';img.alt=H.name;img.hidden=!f0;
-    b.appendChild(img);const spr=mk(150,120);spr.className='cardSpr';spr.dataset.id=id;b.appendChild(spr);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
+    const fTop=topForm(id),f0=faceExact(id,fTop)||(MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():'');
+    img.src=f0||'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA=';img.alt=f0?H.name:'';if(!f0)img.classList.add('noFace');
+    b.appendChild(img);const spr=mk(150,120);spr.className='cardSpr';spr.dataset.id=id;spr.dataset.f=fTop;b.appendChild(spr);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
     b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p>${statBars(H)}${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
     b.dataset.id=id;b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
     }
@@ -3304,7 +3306,7 @@ function rosterForm(d){const id=rosterAnim.id,H=HEROES[id];if(!H)return;const n=
   $('#rFormN').textContent=(H.forms||[])[f]||'BASE';$('#rFormL').disabled=$('#rFormR').disabled=n<2;$('#rForm').classList.toggle('one',n<2);
   const own=!!loadSave().owned[id];$('#rFormLock').hidden=!(own&&f>formasAbiertas(id));if(d)rosterAnim.t0=performance.now()}
 function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
-  const prev=id=>{const H=HEROES[id];if(rosterAnim.id!==id)rosterAnim.form=0;$('#rPrevName').textContent=H.name;$('#rPrev').dataset.id=id;$('#rPrevStats').innerHTML=statBars(H);
+  const prev=id=>{const H=HEROES[id];if(rosterAnim.id!==id)rosterAnim.form=topForm(id);$('#rPrevName').textContent=H.name;$('#rPrev').dataset.id=id;$('#rPrevStats').innerHTML=statBars(H);
     // sus técnicas de la serie y el nivel en que se aprenden
     $('#rPrevMoves').innerHTML=sigList(id).map((m,i)=>MV[m]?`<li><b>Nv ${UNLOCK_LV[i]||1}</b> ${MV[m].name}</li>`:'').join('');rosterAnim.id=id;rosterAnim.t0=performance.now();rosterForm(0)};
   if(!rosterAnim.on){rosterAnim.on=1;const loop=()=>{if($('#roster').hidden){rosterAnim.on=0;return}drawRosterAnim();drawCardSprites(performance.now()/1000);requestAnimationFrame(loop)};loop()}
