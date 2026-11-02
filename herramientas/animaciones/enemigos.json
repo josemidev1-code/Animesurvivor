@@ -121,6 +121,182 @@
      50
     ]
    }
+  },
+  "e_dodoria": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/411_DODORIA (FilipeSpriter)",
+    "idle": [
+     9,
+     10
+    ],
+    "move": [
+     14
+    ],
+    "attack": [
+     4,
+     5,
+     15
+    ],
+    "kick": [
+     3,
+     12
+    ],
+    "ki": [
+     7,
+     19
+    ],
+    "pow": [
+     0,
+     25
+    ],
+    "hurt": [
+     13,
+     18
+    ],
+    "faint": [
+     20
+    ]
+   }
+  },
+  "e_zarbon": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/412_ZARBON (FilipeSpriter)",
+    "idle": [
+     9,
+     10
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     6,
+     7,
+     13
+    ],
+    "kick": [
+     4,
+     16
+    ],
+    "ki": [
+     10,
+     18
+    ],
+    "pow": [
+     17,
+     19
+    ],
+    "hurt": [
+     8,
+     14
+    ],
+    "faint": [
+     20
+    ]
+   }
+  },
+  "e_mecha": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/413_MECA FREEZER (TheWarriorFF2)",
+    "idle": [
+     28,
+     29
+    ],
+    "move": [
+     22
+    ],
+    "attack": [
+     44,
+     45,
+     46
+    ],
+    "kick": [
+     36,
+     37
+    ],
+    "ki": [
+     68,
+     75
+    ],
+    "pow": [
+     89,
+     90
+    ],
+    "hurt": [
+     18,
+     20
+    ],
+    "faint": [
+     17
+    ]
+   }
+  },
+  "e_garlic": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/414_GARLIC JR (ErickFl)",
+    "idle": [
+     2,
+     3
+    ],
+    "move": [
+     7
+    ],
+    "attack": [
+     12,
+     13,
+     14
+    ],
+    "kick": [
+     15,
+     16
+    ],
+    "ki": [
+     41,
+     42
+    ],
+    "pow": [
+     47,
+     48
+    ],
+    "hurt": [
+     22,
+     24
+    ],
+    "faint": [
+     25
+    ]
+   }
+  },
+  "e_kingveg": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/00_Saiyans/DeviantArt/415_REY VEGETA (SonIsaki)",
+    "idle": [
+     3,
+     31
+    ],
+    "move": [
+     0
+    ],
+    "attack": [
+     7,
+     10,
+     11
+    ],
+    "kick": [
+     12,
+     13
+    ],
+    "ki": [
+     27,
+     22
+    ],
+    "pow": [
+     21,
+     26
+    ],
+    "hurt": [
+     19
+    ]
+   }
   }
  }
 }

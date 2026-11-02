@@ -963,3 +963,18 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Lo que pidió Josemi a las 20:33: ataques personalizados por personaje, usar sus animaciones propias en partida y cuadrar ataques con animaciones.
+
+## 2026-11-03 — Claude (Opus) · Investigación en DeviantArt
+
+### Lo que pidió el usuario
+- Josemi (00:01): «haz una investigación profunda en DeviantArt de sprites que no tenemos en el juego, de enemigos, efectos, otros personajes, ataques o lo que sea, y lo implementamos al juego».
+
+### Lo que hice
+
+## 2026-11-03 — Claude (Opus) · Investigación de sprites en DeviantArt
+
+### Lo que pidió el usuario
+- Josemi (00:10): «hacer una investigación profunda en DeviantArt de sprites que no tenemos en el juego, de enemigos, efectos, otros personajes, ataques o lo que sea, e implementarlos en el juego».
+
+### Lo que hice
+- Investigación DeviantArt, parte 1: con las hojas que Josemi ya tenía en Descargas (no se volvieron a bajar) vuelven Dodoria y Zarbon (jefes de Namek), Meca Freezer, Garlic Jr. (élite y jefe) y el Rey Vegeta, cada uno con el color de su técnica; nuevo jugable Maestro Roshi con Kamehameha y Mafuba. Dr. Gero troceado sin usar; Freezer 2ª forma era un dibujo y Zeno solo poses. `recortar_hoja.py` acepta tolerancia de fondo y distancia de unión (hojas con ruido JPEG). 131 personajes; quedan 22 enemigos retirados. `animaciones_juego.js?v=92`, `script.js?v=117`.

@@ -708,6 +708,7 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ roshi:{name:'MAESTRO ROSHI',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'El maestro de la tortuga; inventó el Kamehameha y aún puede hinchar los músculos.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','mafuba','kick']},
  gokureymono:{name:'GOKU REY MONO',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku Rey Mono en Super Saiyan, de DB Tale (fanmade).',forms:['SSJ REY MONO'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  vegetamui:{name:'VEGETA UI DOMINADO',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta con el Ultra Instinto dominado, versión fanmade.',forms:['UI DOMINADO'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  vegitoblue254:{name:'VEGETTO BLUE',rar:5,hp:130,spd:70,atk:1.35,start:'finalkame',desc:'Vegetto en Super Saiyan Blue, la fusión con los Pendientes Pothala.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','finalkame','spiritsword','bigbang','kick']},
@@ -1577,7 +1578,7 @@ const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SE
     MAPS[k].pool.push([150,'renegA',2],[330,'renegB',2],[520,'renegC',2]);
     const R={freezer:[[0,'frzS2',4],[120,'frzS4',3],[260,'saiyanLow',2]],tierra:[[60,'frzS2',2],[260,'saiyanLow',2]],buu:[[90,'garlicH1',3],[200,'demonS',3],[320,'garlicH2',2],[420,'demonS2',3]],super:[[0,'frzS2',3],[200,'demonS',2],[360,'demonS2',2]]}[WSAGA[k]||'tierra'];
     R.forEach(p=>MAPS[k].pool.push(p.slice()))}
-  const B={namek:['ginyu','freeza1B','freeza2B','freeza3B','frieza100'],vegetasei:['freeza1B','coolerB','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
+  const B={namek:['dodoria','zarbon','ginyu','freeza3B','frieza100'],vegetasei:['freeza1B','coolerB','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
     tierra:['raditz','turles','mecha','a21B','cell'],redribbon:['a16B','mecha','a21B','a21mB','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
     kaioshin:['janemba','majinv','buuthinB','buugohanB','buu'],infierno:['garlicB','cell','superbuuB','ozarugB','janemba'],time:['coolerB','babyB','ozarugB','moroB','shenronB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
     bills:['golden','toppoB','whisB','billsB','zenoB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a16B','broly2B','mecha','cell'],
@@ -1884,11 +1885,12 @@ function bossAI(e,dt){
   e.aiT-=dt;const a=Math.atan2(P.y-e.y,P.x-e.x);if(bossBeam(e,dt))return true;
   switch(e.ai){
    case 'dash':if(e.aiS>0){e.aiS-=dt;if(solidMove(e,e.dx*dt,e.dy*dt,e.r))e.aiS=0;return true}
-     if(e.aiT<=0){e.aiT=3.6;e.aiS=0.5;e.dx=Math.cos(a)*170;e.dy=Math.sin(a)*170;burst(e.x,e.y-10,10,['#c58af0','#ffffff'])}break;
+     if(e.aiT<=0){e.aiT=3.6;e.aiS=0.5;e.dx=Math.cos(a)*170;e.dy=Math.sin(a)*170;burst(e.x,e.y-10,10,['#c58af0','#ffffff']);
+       const c=ET[e.type].col;if(c)for(let i=-1;i<=1;i++)eshot(e.x,e.y-14,a+i*0.25,150,e.dmg*0.6,3,c)}break;
    case 'frieza':if(e.aiT<=0){e.aiT=2.2;e.cnt=(e.cnt||0)+1;
-       if(e.cnt%3===0){for(let i=0;i<14;i++)eshot(e.x,e.y-14,i/14*TAU,70,e.dmg*0.6,3,'#ff5aa0')}
-       else for(let i=0;i<3;i++)setTimeout(()=>{if(!e.dead)eshot(e.x,e.y-14,Math.atan2(P.y-8-e.y+14,P.x-e.x),190,e.dmg*0.7,2,'#ff3a6a')},i*120)}break;
-   case 'spiral':e.sp=(e.sp||0)+dt*2.4;if(e.aiT<=0){e.aiT=0.16;eshot(e.x,e.y-14,e.sp,80,e.dmg*0.5,3,'#ff7a4a');eshot(e.x,e.y-14,e.sp+Math.PI,80,e.dmg*0.5,3,'#ff7a4a')}break;
+       if(e.cnt%3===0){for(let i=0;i<14;i++)eshot(e.x,e.y-14,i/14*TAU,70,e.dmg*0.6,3,ET[e.type].col2||'#ff5aa0')}
+       else for(let i=0;i<3;i++)setTimeout(()=>{if(!e.dead)eshot(e.x,e.y-14,Math.atan2(P.y-8-e.y+14,P.x-e.x),190,e.dmg*0.7,2,ET[e.type].col||'#ff3a6a')},i*120)}break;
+   case 'spiral':e.sp=(e.sp||0)+dt*2.4;if(e.aiT<=0){e.aiT=0.16;eshot(e.x,e.y-14,e.sp,80,e.dmg*0.5,3,ET[e.type].col||'#ff7a4a');eshot(e.x,e.y-14,e.sp+Math.PI,80,e.dmg*0.5,3,ET[e.type].col||'#ff7a4a')}break;
    case 'cell':if(e.aiT<=0){e.aiT=3.5;e.cnt=(e.cnt||0)+1;
        eshot(e.x,e.y-14,a,95,e.dmg*1.2,7,'#5ab0ff');
        // La invocación de Cell Jr. volverá cuando tenga secuencias revisadas.
@@ -1896,7 +1898,7 @@ function bossAI(e,dt){
    case 'buu':if(e.aiS>0){e.aiS-=dt;if(solidMove(e,e.dx*dt,e.dy*dt,e.r))e.aiS=0;return true}
      if(e.aiT<=0){e.aiT=2.6;e.cnt=(e.cnt||0)+1;
        if(e.cnt%2){e.aiS=0.5;e.dx=Math.cos(a)*260;e.dy=Math.sin(a)*260}
-       else for(let i=0;i<18;i++)eshot(e.x,e.y-14,i/18*TAU+e.cnt,85,e.dmg*0.6,3,'#ff8ad0')}break;
+       else for(let i=0;i<18;i++)eshot(e.x,e.y-14,i/18*TAU+e.cnt,85,e.dmg*0.6,3,ET[e.type].col||'#ff8ad0')}break;
   }
   return false}
 
@@ -2015,7 +2017,7 @@ function update(dt){
     if(!skip){vx+=e.kx;vy+=e.ky;const hit=solidMove(e,vx*dt,vy*dt,e.r);if(hit){e.avoidT=0.45;e.avoid=e.avoid||(((e.x*13+e.y*7)|0)&1?1:-1)}}else solidResolve(e,e.r);e.kx*=0.86;e.ky*=0.86;
     if(!e.boss){let pushed=0;near(e.x,e.y,10,o=>{if(o===e)return;const ox=e.x-o.x,oy=e.y-o.y,dd=ox*ox+oy*oy;if(dd<100&&dd>0.001){const f=(10-Math.sqrt(dd))*0.25,l=Math.sqrt(dd);e.x+=ox/l*f;e.y+=oy/l*f;pushed=1}});if(pushed)solidResolve(e,e.r)}
     e.stT=(e.stT||0)+dt;if(e.stT>0.7){const moved=e.stX===undefined?99:Math.hypot(e.x-e.stX,e.y-e.stY);e.stuck=moved<1.5&&d>24?(e.stuck||0)+e.stT:0;e.stX=e.x;e.stY=e.y;e.stT=0;if(e.stuck>1.4){solidPlace(e,e.r,1);e.avoidT=0.8;e.avoid=-(e.avoid||1);e.stuck=0}}
-    if(e.shootT){e.shootT-=dt;if(e.shootT<=0){e.shootT=ET[e.type].shoot;if(d>=MELEE_AJ.sinDisparo&&d<170&&eshots.length<ROL_AJ.maxBalas)eshot(e.x+dx/d*6,e.y-12,Math.atan2(dy-6+12,dx),90,e.dmg*0.7,2,'#ffe05a')}}
+    if(e.shootT){e.shootT-=dt;if(e.shootT<=0){e.shootT=ET[e.type].shoot;if(d>=MELEE_AJ.sinDisparo&&d<170&&eshots.length<ROL_AJ.maxBalas)eshot(e.x+dx/d*6,e.y-12,Math.atan2(dy-6+12,dx),90,e.dmg*0.7,2,ET[e.type].col||'#ffe05a')}}
     if(ET[e.type].kami){if(e.fuse===undefined&&d<28){e.fuse=0.75;e.spd*=0.25;texts.push({x:e.x,y:e.y-22,v:'!',t:0.7,c:'#ff3030'})}
       if(e.fuse!==undefined){e.fuse-=dt;e.flash=((e.fuse*14)|0)%2?0.05:0;
         if(e.fuse<=0){e.dead=true;fx(e.x,e.y-6,'fire',22,0.5);smoke(e.x,e.y-6,8);burst(e.x,e.y-6,20,['#fff6a0','#ffd23f','#ff8a2a']);cam.shake=Math.max(cam.shake,5);sfx('boom');
@@ -2982,6 +2984,15 @@ const ENEMIGO_HEROE={hitB:['hit',0],hitE:['hit',0],hit2E:['hit',0],superbuuB:['b
 Object.assign(ET,{zombi:{n:'Saiyan zombi',hp:26,spd:26,dmg:9,xp:2,r:7},zombiR:{n:'Saiyan zombi furioso',hp:44,spd:46,dmg:12,xp:4,r:7},
   zamasuC:{n:'Clon de Zamasu',hp:30,spd:38,dmg:11,xp:3,r:7,shoot:3.2}});
 Object.assign(ENEMIGO_HEROE,{soldier:['e_soldado',0],soldierE:['e_soldado',0],frzS2:['e_soldado',0],frzS4:['e_soldado',0],ginyu:['e_ginyu',0],jeice:['e_jeice',0],celljr:['cell',2],celljrE:['cell',2],majin:['buu',4],zombi:['zombies',0],zombiR:['zombies',1],zamasuC:['zamasu',0]});
+// 3 nov.: enemigos retirados que vuelven con animaciones ya revisadas de personajes jugables
+Object.assign(ENEMIGO_HEROE,{nappa:['nappa',0],nappaE:['nappa',0],guldo:['guldo',0],a21E:['a21',0],a21B:['a21',0],a21mB:['a21',0],zamasuhE:['zamasufusion',0]});
+// 3 nov.: enemigos de hojas de DeviantArt (créditos en CREDITOS_RECURSOS.md), cada uno con el color de su técnica
+Object.assign(ENEMIGO_HEROE,{dodoria:['e_dodoria',0],zarbon:['e_zarbon',0],mecha:['e_mecha',0],garlicE:['e_garlic',0],garlicB:['e_garlic',0],kingvegE:['e_kingveg',0]});
+if(ET.dodoria)Object.assign(ET.dodoria,{col:'#ff5aa0'}); // embiste y escupe el rayo de la boca
+if(ET.zarbon)Object.assign(ET.zarbon,{col:'#7af0e0',col2:'#c8fff6'}); // ráfagas de ki verdes
+if(ET.mecha)Object.assign(ET.mecha,{ai:'frieza',col:'#c58af0',col2:'#ff5aa0'}); // rayo mortal y Death Ball
+if(ET.garlicE)Object.assign(ET.garlicE,{col:'#5ab0ff'});if(ET.garlicB)Object.assign(ET.garlicB,{col:'#5ab0ff'}); // ki azul de la Zona Muerta
+if(ET.kingvegE)Object.assign(ET.kingvegE,{col:'#b48aff'}); // esferas moradas del Rey Vegeta
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);

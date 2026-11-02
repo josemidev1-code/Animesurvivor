@@ -2211,6 +2211,39 @@
      "82": 7.8
     }
    }
+  },
+  "roshi": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/DeviantArt/417_MAESTRO ROSHI (Xxspartan1235xX)",
+    "idle": [
+     2,
+     3
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     13,
+     14,
+     15
+    ],
+    "kick": [
+     16,
+     17
+    ],
+    "ki": [
+     40,
+     41
+    ],
+    "pow": [
+     28,
+     29
+    ],
+    "hurt": [
+     10,
+     42
+    ]
+   }
   }
  }
 }

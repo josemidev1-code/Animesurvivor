@@ -1,6 +1,6 @@
 """Convierte una hoja de sprites (una sola imagen, p. ej. de DeviantArt) en un pack: un PNG por fotograma.
 
-Uso:  python herramientas/recortar_hoja.py <hoja.png> <carpeta_pack_dentro_de_sprites> [x0,y0,x1,y1] [altomin] [altomax]
+Uso:  python herramientas/recortar_hoja.py <hoja.png> <carpeta_pack_dentro_de_sprites> [x0,y0,x1,y1] [altomin] [altomax] [tolerancia_fondo=18] [union=2]
   - El fondo es el color más repetido de la hoja (o la transparencia) y se quita.
   - x0,y0,x1,y1 (opcional) limita la zona a recortar, para saltar retratos, textos y la mitad en espejo.
   - Las figuras se numeran por filas (de arriba abajo y de izquierda a derecha), igual que lee ver_pack.py.
@@ -14,17 +14,26 @@ dest = os.path.join(RAIZ, 'sprites', sys.argv[2]); os.makedirs(dest, exist_ok=Tr
 zona = [int(v) for v in sys.argv[3].split(',')] if len(sys.argv) > 3 and sys.argv[3] != '-' else [0, 0, hoja.width, hoja.height]
 amin = int(sys.argv[4]) if len(sys.argv) > 4 else 16
 amax = int(sys.argv[5]) if len(sys.argv) > 5 else 140
+TOL = int(sys.argv[6]) if len(sys.argv) > 6 else 18  # sube para hojas con ruido de compresión alrededor del fondo
 W, H = hoja.size; px = hoja.load()
 fondo = collections.Counter(px[x, y] for x in range(0, W, 3) for y in range(0, H, 3)).most_common(1)[0][0]
 def es_fondo(c):
-    return c[3] < 20 or (abs(c[0] - fondo[0]) + abs(c[1] - fondo[1]) + abs(c[2] - fondo[2]) < 18 and fondo[3] > 0)
+    return c[3] < 20 or (abs(c[0] - fondo[0]) + abs(c[1] - fondo[1]) + abs(c[2] - fondo[2]) < TOL and fondo[3] > 0)
 x0, y0, x1, y1 = zona
+# fondo = lo que parece fondo Y está conectado con el borde de la zona (así no se borran los blancos
+# de dentro de un sprite aunque la tolerancia sea alta)
+fuera = [[False] * W for _ in range(H)]
+pila = [(x, y) for x in range(x0, x1) for y in (y0, y1 - 1)] + [(x, y) for y in range(y0, y1) for x in (x0, x1 - 1)]
+while pila:
+    x, y = pila.pop()
+    if x0 <= x < x1 and y0 <= y < y1 and not fuera[y][x] and es_fondo(px[x, y]):
+        fuera[y][x] = True; pila += [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
 lleno = [[False] * W for _ in range(H)]
 for y in range(y0, y1):
     for x in range(x0, x1):
-        lleno[y][x] = not es_fondo(px[x, y])
+        lleno[y][x] = not fuera[y][x]
 vis = [[False] * W for _ in range(H)]; cajas = []
-G = 2  # une trozos separados por 1-2 px (estelas, mechones)
+G = int(sys.argv[7]) if len(sys.argv) > 7 else 2  # une trozos separados por 1-2 px (estelas, mechones)
 for y in range(y0, y1):
     for x in range(x0, x1):
         if lleno[y][x] and not vis[y][x]:
@@ -47,6 +56,6 @@ for i, b in enumerate(cajas):
     im = hoja.crop(b); p = im.load()
     for yy in range(im.height):
         for xx in range(im.width):
-            if es_fondo(p[xx, yy]): p[xx, yy] = (0, 0, 0, 0)
+            if fuera[b[1] + yy][b[0] + xx] or not lleno[b[1] + yy][b[0] + xx] or not vis[b[1] + yy][b[0] + xx]: p[xx, yy] = (0, 0, 0, 0)
     im.save(os.path.join(dest, f'{i:03d}.png'))
 print(len(cajas), 'fotogramas en', dest)

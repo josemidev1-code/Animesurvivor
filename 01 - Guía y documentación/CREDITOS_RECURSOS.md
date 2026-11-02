@@ -91,3 +91,18 @@ Revisadas y descartadas: Zarbon y Dodoria de FilipeSpriter (hoja en JPEG borrosa
 ChrisReinerVV (comprimida en JPEG: bordes verdes sucios; su carpeta `02_Androides_Cell_y_Trunks/DeviantArt` quedó en
 `sprites/` sin usar), Zarbon y Yajirobe de arisrad (se venden: «for sell»).
 
+
+## Enemigos y personajes de DeviantArt (3 nov. 2026)
+
+Hojas que Josemi ya tenía en Descargas; fichas leídas en DeviantArt. Todas piden crédito si se usan. Originales en
+`Recursos pendientes/deviantart_originales/`, troceadas con `herramientas/recortar_hoja.py`.
+
+| Personaje | Autor y créditos | Ficha | Uso / condiciones |
+|---|---|---|---|
+| Dodoria y Zarbon | **FilipeSpriter** (estilo Ultimate LSW) | [Sprite Sheet Zarbon e Dodoria Ulsw](https://www.deviantart.com/filipespriter/art/Sprite-Sheet-Zarbon-e-Dodoria-Ulsw-933343123) | Jefes de Namek. Hoja de baja resolución: se ven algo borrosos |
+| Meca Freezer | **TheWarriorFF2 / Spir1tSolo**; con Arisrad, OmegaSuper, Chokito 8pixel, Nightmarex07, Que, Mosterjecth, Gougours, MestrePixelado, Contadodavid | [resubida de dragonballzfan200](https://www.deviantart.com/dragonballzfan200/art/Mecha-Freeza-Dbz-Sprite-Sheet-By-Thewarriorff2-D-952104916) (la hoja es de TheWarriorFF2) | Jefe (Red Ribbon, Tierra, Desierto, Torre Músculo) |
+| Garlic Jr. | **ErickFl** | [Ulsw Garlic Jr. By ErickFl](https://www.deviantart.com/erickfl/art/Ulsw-Garlic-Jr.-By-ErickFl-840407281) | Élite y jefe (Super Garlic Jr.). «Siempre recuerde dar créditos a todos los spriters» |
+| Rey Vegeta | **SonIsaki**; con qsab101 y agustin902 (Dragon Ball Rebirth) | [King Vegeta ULSW](https://www.deviantart.com/sonisaki/art/King-Vegeta-ULSW-873393815) | Élite. Ficha con CC BY-NC-ND; la descripción pide crédito si se usa |
+| Dr. Gero | **SonIsaki** (Dragon Ball Rebirth) | [Dr. Gero ULSW](https://www.deviantart.com/sonisaki/art/Dr.-Gero-ULSW-862625720) | Troceado en `sprites/`, aún sin usar (no hay enemigo Dr. Gero). CC BY-NC-ND; pide crédito |
+| Maestro Roshi | **Xxspartan1235xX**; créditos a orumaitoobeso, faceset de charlotteson | [Master roshi sprite sheet Swlplus](https://www.deviantart.com/xxspartan1235xx/art/Master-roshi-sprite-sheet-Swlplus-1001776947) | Personaje jugable. Pide sus créditos |
+| Zeno | AnimaPivotersZ (sprite de Qsab101) | [Zeno Sprite Sheet](https://www.deviantart.com/animapivotersz/art/Zeno-Sprite-Sheet-744045955) | No usado: solo unas poses |
