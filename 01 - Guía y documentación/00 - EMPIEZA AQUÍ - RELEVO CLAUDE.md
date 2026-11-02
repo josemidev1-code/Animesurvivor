@@ -1,35 +1,51 @@
 # Empieza aquí — Relevo para Claude
 
-Actualizado el 2 de noviembre de 2026. Usuario: Josemi. Proyecto: `C:\Users\soyjo\Desktop\ANIMESURVIVOR`.
+Actualizado el 2 de noviembre de 2026 (tarde). Usuario: Josemi. Proyecto: `C:\Users\soyjo\Desktop\ANIMESURVIVOR`.
 
 ## Qué quiere Josemi
 
-Lee `Cambios propuestos por Josemi.md` en esta misma carpeta: es el documento completo de sus ideas y requisitos. Quiere que seas un colaborador que aporte ideas concretas, explique sus motivos, respete sus decisiones visuales y trabaje por bloques, sin ejecutar todo de golpe. La petición que te haga ahora tiene prioridad. Habla con él en español, claro y sin hacerlo esperar con preguntas repetidas.
+Lee `Cambios propuestos por Josemi.md` en esta misma carpeta: es el documento completo de sus ideas y requisitos. Quiere un colaborador que aporte ideas concretas, explique sus motivos, respete sus decisiones visuales y trabaje por bloques, sin ejecutar todo de golpe. Habla en español, claro, sin hacerle esperar con preguntas repetidas. **Usa Claude Pro: ahorra contexto** (busca fragmentos, no leas los JS grandes enteros, evita subagentes salvo que los pida).
 
-Objetivos: incorporar gradualmente los personajes y formas útiles de `sprites/`, con ataques identificados y fieles a sus personajes; mejorar y equilibrar la progresión, los enemigos y el combate tanto a distancia como cuerpo a cuerpo; y mejorar menús, selección, estadísticas, gachapón y HUD con pixel art inspirado en PokéSurvivor y adaptado a Dragon Ball. El detalle y los puntos no decididos están en el documento.
+**Prioridad actual (2 nov.):** resolver primero los puntos de `Cambios propuestos por Josemi.md` y **después** volver a la jugabilidad. La última pregunta que quedó abierta fue por qué bloque empezar: «Selección y estadísticas» (puntos 4 y 5) o «Inventario de sprites» (punto 1).
 
-## Lo primero que debes hacer
+## Estado de Git
 
-1. Lee `AGENTS.md`, este relevo, `ESTADO_ACTUAL.md` y `Cambios propuestos por Josemi.md`. Antes de modificar nada, comprueba la rama, los cambios existentes y las entradas recientes de la bitácora; no descartes trabajo ajeno.
-2. Ten en cuenta que ya se realizaron cambios tras redactar las ideas: HUD más pequeño y nítido, ajustes iniciales de dificultad, efectos más pequeños y movimiento en vuelo bajo. Están documentados en la bitácora, pero falta la valoración de Josemi jugando; no los repitas sin comprobar el estado real.
-3. Preséntale un plan breve por bloques y pregunta qué quiere priorizar o, si ya ha indicado una tarea concreta, comienza por ella. Para diseño y elecciones creativas importantes, enséñale opciones. Para validar los cambios de HUD, efectos y movimiento, facilita que pueda probarlos y recoger su opinión.
-4. La rama `claude/quizzical-gates-9cf9c0` contiene siete personajes según la documentación y se observó separada de `main`; verifica su estado real y consulta con Josemi antes de fusionarla. No borres ni fusiones ramas por tu cuenta.
+- Rama de trabajo: **`claude/cuerpo-a-cuerpo`** (la carpeta está en ella). **Sin fusionar en `main` y sin subir.** Josemi la ha jugado y le parece bien en general; la fusión queda a su decisión.
+- `claude/quizzical-gates-9cf9c0`: 7 personajes nuevos (Nappa, Ginyu, Jeice, Guldo, Uub, Mr. Satán, Androide 21), separada de `main` antes del HUD nuevo; fusionarla tendrá conflictos. Consultar antes.
+- No borres ni fusiones ramas por tu cuenta.
 
-## Decisiones que siguen abiertas
+## Lo que se hizo el 2 nov. (rama `claude/cuerpo-a-cuerpo`)
 
-- Josemi quiere todos los personajes y formas de sus sprites. Si faltan animaciones o hay duplicados o dudas, informa y acuerda con él cómo tratarlos; no inventes identificaciones ni nombres de técnicas.
-- Él aportará los iconos pixel art del menú. Para la selección quiere un retrato fijo de la cara y debajo el personaje como se ve jugando; queda por aclarar si el retrato cambia con la transformación.
-- Quiere una zona de noticias arriba a la izquierda y debajo un enlace al rap de Dragon Ball de Porta. Pide la versión o enlace concreto y acuerda la música del juego por separado.
-- Quiere un HUD nítido, menos grande y con efectos que no tapen la acción; vida verde, velocidad azul y ataque rojo, y estadísticas visibles. Comprueba primero lo ya hecho y pregúntale si le gusta.
+1. **Cuerpo a cuerpo (parte A):** `MELEE_AJ` en `script.js` (de cerca no disparan, el combo protege mientras dura, cada golpe empuja y aturde, el impulso para a 20 px). Por sí sola no mejoró: el 95 % del daño de cerca era por contacto.
+2. **Tipos de enemigo (parte B):** `ROL_AJ`, `rolE`/`rolAI` antes de `update`. Pegador (avisa «!» 0,5 s y golpea), embestidor (se carga con línea roja y embiste), tirador (guarda 90-150 px y retrocede), élite («!» roja, 3 golpes, aguanta un golpe). Roce = daño continuo por enemigo pegado. Tope de 6 balas enemigas. Bot: cuerpo a cuerpo 100 → ~151 s, distancia 123 → ~130 s.
+3. **Menú:** recuadro de noticias arriba a la izquierda y enlace al rap de Porta (https://www.youtube.com/watch?v=HunKXh1ikes).
+4. **Transformaciones con un deseo a Shenron** (menú, permanente): botón `#gForma`, 5 tickets × número de forma, guardado `formas[héroe]`. Se bloquean **todas** las transformaciones (confirmado). En partida, aviso «FORMA BLOQUEADA».
+5. Pruebas nuevas: `herramientas/comprobar_combate.cjs`, `comprobar_roles.cjs`, `comprobar_formas.cjs`. Depuración: `window.AS.aj` y `window.AS.rol` permiten cambiar los ajustes en marcha.
+6. Diseño y plan en `Planes y diseños/superpowers/` (specs y plans del 2 nov.).
+
+## Valoración de Josemi tras jugar (para el bloque de jugabilidad, después)
+
+- «Lo que mola es que los enemigos te vengan ya de primeras y que no se esperen»: quitar o acortar mucho las esperas (avisos que paran al enemigo, tiradores que guardan distancia).
+- «Los ataques cuerpo a cuerpo deben ser útiles, pero solo en algunas situaciones».
+- **Kaioken:** que se consiga si duras X tiempo en la partida y aumente todas las estadísticas (fuerza y todo), como en la serie.
+
+## Puntos de «Cambios propuestos» y su estado
+
+| Punto | Estado | Falta de Josemi |
+|---|---|---|
+| 1. Todos los personajes y formas de `sprites/` | Sin empezar (≈168 packs sin usar; rama de 7) | Cómo tratar packs incompletos (les faltan animaciones: ki, daño, muerte, retrato…) |
+| 2. Ataques fieles a la serie | Sin empezar | Confirmar nombres dudosos; no inventar |
+| 3. Combate | Primera tanda hecha; seguir tras los demás puntos | Ver valoración arriba |
+| 4. HUD, nitidez, efectos | HUD más pequeño y efectos reducidos (1 nov.), sin valorar. Faltan estadísticas con **vida verde, velocidad azul, ataque rojo** | Opinión sobre el HUD |
+| 5. Selección: retrato fijo de la cara + personaje como en partida debajo | Sin empezar | ¿El retrato cambia con la transformación? |
+| 6. Iconos del menú | Esperando | Los aporta él |
+| 7. Noticias y música | Noticias y enlace hechos | Elegir música (no usar el rap como música de fondo sin permiso) |
 
 ## Mapa y forma de trabajar
 
-- `index.html`: abrir con doble clic. `02 - Código del juego/script.js`, `style.css` y `utilidades.js`: lógica y presentación. Los demás JS de esa carpeta contienen recursos, algunos generados.
-- `sprites/`: originales. `herramientas/`: montaje y pruebas; para animaciones lee `herramientas/GUIA_ANIMACIONES.md`. Usa `INDICE_SPRITES.md` para localizar selecciones y `PRUEBAS_RAPIDAS.md` para elegir comprobaciones.
-- Ahorra contexto: busca nombres y fragmentos concretos; evita leer completos los JS generados grandes y recorrer todos los sprites para una tarea localizada. Si haces un inventario, procésalo por lotes y registra resultados. Esto no garantiza ningún ahorro concreto.
-- Personajes y enemigos: sprites del proyecto; revisar animaciones a ojo. Conserva la apertura con doble clic y no inventes que se ha probado lo que no se ha probado.
-- Actualiza este relevo o `ESTADO_ACTUAL.md` cuando cambie el estado y anota trabajo y pruebas en `BITACORA.md`. Respeta el trabajo existente y verifica Git antes de decidir cómo guardar cambios; no hagas push ni fusiones sin que correspondan a la petición del usuario.
-
-## Qué se pudo verificar al preparar este relevo
-
-El 2 de noviembre, `git branch -vv` mostró `main` en `6506e25` con referencia local a `origin/main`; esto no comprueba el remoto en directo. `git status` falló en el entorno de Codex, así que **no se pudo confirmar si había cambios sin guardar**. No se jugó una partida para este relevo. Vuelve a verificar todo antes de trabajar.
+- `index.html`: abrir con doble clic. `02 - Código del juego/script.js` (lógica; está dentro de una función, lo accesible desde fuera es `window.AS`), `style.css`, `utilidades.js`. `sprites.js` y `animaciones_juego.js` son recursos grandes generados.
+- `sprites/`: originales. `herramientas/`: montaje y pruebas (`GUIA_ANIMACIONES.md` para animaciones). `INDICE_SPRITES.md` y `PRUEBAS_RAPIDAS.md` en esta carpeta.
+- Comprobaciones: `node --check "02 - Código del juego/script.js"` y `node herramientas/comprobar_*.cjs` (formas, roles, combate, enemigos, personajes, objetos); `python -m unittest discover -s herramientas/pruebas -t .`.
+- Servidor de pruebas: `.claude/launch.json` («animesurvivor», puerto 8765). El panel del navegador no ejecuta archivos locales (`file://`): **la apertura con doble clic no se ha podido comprobar** desde ahí. Si el panel queda oculto, el juego no se redibuja (usa `AS.tick`).
+- Sube `script.js?v=` / `style.css?v=` en `index.html` al cambiarlos (ahora `v=86` y `v=69`).
+- Anota cada petición y avance en `BITACORA.md`; actualiza este relevo y `ESTADO_ACTUAL.md` cuando cambie el estado.

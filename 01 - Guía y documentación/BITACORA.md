@@ -861,3 +861,11 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Kaioken: algo que se consigue si duras X tiempo y que aumente todas las estadísticas (fuerza y todo), como en la serie.
 - Prioridad ahora: resolver primero los cambios de `Cambios propuestos por Josemi.md` y después volver a la jugabilidad. La rama `claude/cuerpo-a-cuerpo` sigue sin fusionar.
 - Música del juego, iconos del menú (los aporta él), retrato fijo en la selección (¿cambia con la transformación?), packs incompletos, rama de los 7 personajes.
+
+### Cierre de la sesión (2 nov.)
+- Josemi va a crear un proyecto nuevo y pidió dejarlo todo escrito. Actualizados `00 - EMPIEZA AQUÍ - RELEVO CLAUDE.md` (estado completo, tabla de puntos pendientes y valoración tras jugar), `ESTADO_ACTUAL.md` y `README.md`.
+- Hecho y guardado en `claude/cuerpo-a-cuerpo`: cuerpo a cuerpo (A), tipos de enemigo (B), noticias y rap en el menú, transformaciones con deseo a Shenron. Sin fusionar en `main` ni subir.
+- A medias: nada en código. Sin comprobar: apertura con doble clic.
+
+### Siguiente paso recomendado
+- Preguntar a Josemi por qué punto de «Cambios propuestos» empezar (selección y estadísticas, o inventario de sprites) y si fusiona la rama en `main`. La jugabilidad (enemigos sin esperas, Kaioken por tiempo) va después.

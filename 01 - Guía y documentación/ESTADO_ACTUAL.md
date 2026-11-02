@@ -1,6 +1,6 @@
 # Estado actual — AnimeSurvivor
 
-> **Relevo para la próxima sesión (2 nov. 2026):** empieza por `00 - EMPIEZA AQUÍ - RELEVO CLAUDE.md` y `Cambios propuestos por Josemi.md`. El HUD, los efectos y el vuelo bajo recibieron cambios posteriores a las propuestas: faltan la prueba y valoración del usuario. No se pudo verificar `git status` al preparar el relevo.
+> **Relevo para la próxima sesión (2 nov. 2026, tarde):** empieza por `00 - EMPIEZA AQUÍ - RELEVO CLAUDE.md` (actualizado) y `Cambios propuestos por Josemi.md`. Trabajo en la rama `claude/cuerpo-a-cuerpo`, sin fusionar ni subir. Prioridad de Josemi: los puntos de «Cambios propuestos» primero y la jugabilidad después.
 
 Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 entradas, una ruta no localizada al generarlo), pruebas rápidas y extracción inicial de utilidades. Comprueba el estado real de Git y los archivos antes de trabajar; este resumen puede quedar desfasado.
 

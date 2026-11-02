@@ -60,7 +60,18 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
   solo aciertan un 25-35 %, la IA revisa todas las propuestas y el usuario solo lo que quede dudoso
   (ver «Proponer fotogramas» en `herramientas/GUIA_ANIMACIONES.md`). Pruebas: `python -m unittest discover -s herramientas/pruebas -t .`
 
+- **2 nov. (rama `claude/cuerpo-a-cuerpo`, sin fusionar):** tipos de enemigo (pegador, embestidor, tirador, élite) con
+  avisos «!», roce por enemigo y tope de 6 balas; ajustes del cuerpo a cuerpo; noticias y enlace al rap de Porta en el
+  menú; las transformaciones se despiertan con un deseo a Shenron (5 tickets × nº de forma). Detalle en
+  `01 - Guía y documentación/00 - EMPIEZA AQUÍ - RELEVO CLAUDE.md`.
+
 ## Lo que falta (en este orden)
+
+> **Prioridad actual (2 nov.):** los puntos de `01 - Guía y documentación/Cambios propuestos por Josemi.md` primero
+> (selección con retrato fijo, estadísticas con colores, inventario de sprites, ataques fieles…) y después la
+> jugabilidad (enemigos que vengan de primeras sin esperar, cuerpo a cuerpo útil solo en algunas situaciones, Kaioken
+> que se consigue aguantando y sube todas las estadísticas). La lista de bloques de abajo es la anterior.
+
 
 Plan acordado con el usuario en la sesión 10 (bloque 1 hecho; diseño en `Planes y diseños/superpowers/specs/`):
 
