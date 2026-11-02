@@ -2117,6 +2117,100 @@
      242
     ]
    }
+  },
+  "vegetamui": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Vegeta/303_vegeta mui",
+    "idle": [
+     13,
+     14
+    ],
+    "move": [
+     27
+    ],
+    "attack": [
+     41,
+     44,
+     43
+    ],
+    "kick": [
+     54,
+     53
+    ],
+    "ki": [
+     66,
+     67
+    ],
+    "pow": [
+     1,
+     2
+    ],
+    "hurt": [
+     57,
+     58
+    ],
+    "faint": [
+     79
+    ],
+    "escala": 11.3,
+    "escalaFija": true,
+    "escalaFrames": {
+     "13": 10.8,
+     "14": 13.3,
+     "1": 7.3,
+     "2": 7.3,
+     "58": 13.8,
+     "57": 12.5,
+     "79": 13.3
+    }
+   }
+  },
+  "gokureymono": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/138_GOKU REY MONO,DB TALE, HECHO POR ANDRÉSITO GAMEN ANIMATIONS",
+    "idle": [
+     73,
+     74
+    ],
+    "move": [
+     96
+    ],
+    "attack": [
+     79,
+     82,
+     86
+    ],
+    "kick": [
+     84,
+     113
+    ],
+    "ki": [
+     71,
+     72
+    ],
+    "pow": [
+     62,
+     63
+    ],
+    "hurt": [
+     92,
+     93
+    ],
+    "faint": [
+     17
+    ],
+    "escala": 9.2,
+    "escalaFija": true,
+    "escalaFrames": {
+     "113": 4.2,
+     "62": 5,
+     "63": 5,
+     "92": 5.5,
+     "93": 5.5,
+     "17": 3.2,
+     "82": 7.8
+    }
+   }
   }
  }
 }

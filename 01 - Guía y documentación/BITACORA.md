@@ -955,3 +955,11 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Tanda 20 hecha: Goku SSJ4 Daima (140) y Zamasu fusionado deshaciéndose (106; el daño y la muerte vienen del pack 107). Nueva opción `pack2` en `montar_animaciones.py` y `meter.py` para usar un pack hermano (sus fotogramas se numeran desde 1000). Comprobaciones y partida de prueba correctas. 126 personajes. `animaciones_juego.js?v=88`, `script.js?v=113`.
 - Tanda 21 hecha: Bra Majin SSJ (189), escalas fijadas a mano porque el pack mezcla zooms; comprobaciones y partida de prueba correctas. 127 personajes. `animaciones_juego.js?v=89`, `script.js?v=114`.
 - Tanda 22 hecha: Vegetto Blue (sacado del pack mixto 254), con las técnicas de Vegetto; comprobaciones y partida de prueba correctas. 128 personajes. El pack 291 resultó ser una colección de poses sueltas (una por personaje, unos 140, muchos no son de Dragon Ball): ninguno completo, pasado a incompletos. En el 254 queda un personaje de pelo blanco y ropa verde sin identificar (bastante completo) y Goku Black base con pocos fotogramas. `animaciones_juego.js?v=90`, `script.js?v=115`.
+- Tanda 23 hecha: Vegeta UI dominado (303) y Goku Rey Mono (138), los dos packs reescalados, resueltos fijando la escala a mano; comprobaciones y partida de prueba correctas. 130 personajes. `animaciones_juego.js?v=91`, `script.js?v=116`.
+
+### A medias / problemas
+- Lista de packs completos agotada. Solo queda a medias el personaje sin identificar del pack 254 (pelo blanco, ropa verde).
+- Las pruebas de `herramientas/pruebas` (unittest) tardan mucho en la nube; se quedaron corriendo sin resultado en esta sesión. Las `comprobar_*.cjs` y las partidas de prueba sí pasaron.
+
+### Siguiente paso recomendado
+- Lo que pidió Josemi a las 20:33: ataques personalizados por personaje, usar sus animaciones propias en partida y cuadrar ataques con animaciones.

@@ -5,6 +5,9 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 
 ## Cómo meter uno
 
+Packs con fotogramas a zooms distintos (Bra 189, Vegeta MUI 303, Rey Mono 138): poner `escala` (alto de la guardia en píxeles del PNG / 57) y `escalaFija: true`, y corregir los que salgan grandes o pequeños con `escalaFrames`. Pack hermano (daño aparte, como Zamasu 106 + 107): `pack2`, fotogramas desde 1000.
+
+
 1. `python herramientas/ver_pack.py "<pack>"` y mirar `herramientas/_revisar/pack_<nombre>.png`. La propuesta de `herramientas/propuestas/` sirve de pista, pero falla mucho (auras como ki, ataques como daño, caras como puñetazos): **elegir a mano**.
 2. Añadir el personaje a `herramientas/animaciones/todos.json` (id nuevo, forma "0") con idle, move, attack, kick, ki, pow, hurt y faint.
 3. `python herramientas/montar_animaciones.py <id>` y `python herramientas/previsualizar.py <id> 0`; mirar el PNG y corregir hasta que cumpla `GUIA_ANIMACIONES.md`.
@@ -35,11 +38,10 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 20: Goku SSJ4 Daima (140; pack de 281 revisado por tramos, aura con `escalaFrames`), Zamasu fusionado deshaciéndose (106 + daño y muerte del pack hermano 107 con la opción nueva `pack2`, fotogramas desde 1000).
 - Tanda 21: Bra Majin SSJ (189; cada fotograma viene a un zoom distinto: `escala` 14,2 fija y `escalaFrames` a mano).
 - Tanda 22: Vegetto Blue (del pack mixto 254; técnicas de Vegetto: Final Kamehameha, espada de ki, Big Bang).
+- Tanda 23: Vegeta UI dominado (303) y Goku Rey Mono (138), resueltos fijando la escala a mano (`escala` + `escalaFija` + `escalaFrames`).
 
 ## A medias
 
-- Vegeta MUI (303): el pack viene reescalado y borroso; cada fotograma a otra escala y no se puede medir el píxel. Haría falta fijar la escala a mano fotograma a fotograma (`escalaFrames`) o buscar el pack original.
-- Goku Rey Mono (138): mismo problema que Vegeta MUI (303): fotogramas reescalados a tamaños distintos, sin píxel medible.
 - Pack mixto 254: además de Vegetto Blue (ya metido) trae un personaje de pelo blanco y ropa verde, sin identificar, con guardia, golpes, patadas, aura oscura y daño. Falta que Josemi diga quién es para meterlo.
 
 ## Completos por meter (0)
