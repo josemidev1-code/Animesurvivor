@@ -930,3 +930,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Tanda 13 hecha: Goku UI dominado del manga (270), Goku UI señal del manga (280) y Goku SSJ2 de Buu (276, pack de 641 fotogramas revisado por tramos); comprobaciones y partida de prueba correctas. 108 personajes. `animaciones_juego.js?v=81`, `script.js?v=106`.
 - Tanda 14 hecha: Goku SSJ Kaioken (059), Goku maligno SSJ2 (127) y Goku UI Blue Evolution (133); comprobaciones y partida de prueba correctas. 111 personajes. `animaciones_juego.js?v=82`, `script.js?v=107`.
 - Tanda 15 hecha: Goku UI Blue (134), Goku UI Dios (135) y Goku Ultra SSJ Dios (150); comprobaciones y partida de prueba correctas. 114 personajes. `animaciones_juego.js?v=83`, `script.js?v=108`.
+- Tanda 16 hecha: Goku SSJ Supremo (151), Goku SSJ4 Dios (206) y Goku Dios Berserker (207); comprobaciones y partida de prueba correctas. 117 personajes. `animaciones_juego.js?v=84`, `script.js?v=109`.

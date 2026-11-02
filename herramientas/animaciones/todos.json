@@ -1600,6 +1600,118 @@
      "31": 6.87
     }
    }
+  },
+  "gokussjsupremo": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/151_GOKU,SSJ, SUPREMO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS, SPRITE HD ✓",
+    "idle": [
+     91,
+     92
+    ],
+    "move": [
+     78
+    ],
+    "attack": [
+     63,
+     64,
+     65
+    ],
+    "kick": [
+     55,
+     56
+    ],
+    "ki": [
+     37,
+     38
+    ],
+    "pow": [
+     25,
+     26
+    ],
+    "hurt": [
+     43,
+     42
+    ],
+    "faint": [
+     41
+    ]
+   }
+  },
+  "gokussj4dios": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/206_GOKU SSJ 4 DIOS,DBS BROLY, ANDRÉS GAMEN ANIMATIONS  ✓",
+    "idle": [
+     66,
+     67
+    ],
+    "move": [
+     84
+    ],
+    "attack": [
+     60,
+     61,
+     62
+    ],
+    "kick": [
+     43,
+     44
+    ],
+    "ki": [
+     31,
+     32
+    ],
+    "pow": [
+     25,
+     26
+    ],
+    "hurt": [
+     39,
+     36
+    ],
+    "faint": [
+     35
+    ]
+   }
+  },
+  "gokudiosberserk": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/207_GOKU SSJ DIOS,BERSERKER,DBS BROLY, ANDRÉS GAMEN ANIMATIONS ✓",
+    "idle": [
+     18,
+     43
+    ],
+    "move": [
+     14
+    ],
+    "attack": [
+     21,
+     22,
+     41
+    ],
+    "kick": [
+     23,
+     24
+    ],
+    "ki": [
+     30,
+     31
+    ],
+    "pow": [
+     38,
+     39
+    ],
+    "hurt": [
+     26,
+     27
+    ],
+    "faint": [
+     28
+    ],
+    "escalaFrames": {
+     "38": 5.8,
+     "39": 5.8
+    }
+   }
   }
  }
 }
