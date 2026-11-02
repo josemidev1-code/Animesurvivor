@@ -781,3 +781,28 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Que el usuario lo pruebe. Si gusta, valorar si los enemigos voladores deberían flotar igual.
+
+## 2026-11-02 — Codex · Relevo para la siguiente sesión de Claude
+
+### Lo que pidió el usuario
+- Dejar la carpeta preparada para que el siguiente Claude entienda lo que quiere hacer en el juego.
+
+### Lo que hice
+- Añadido `00 - EMPIEZA AQUÍ - RELEVO CLAUDE.md`, con objetivos, instrucciones de entrada, cambios ya documentados, decisiones pendientes y mapa del proyecto.
+- Enlazado el relevo y las propuestas desde `CLAUDE.md`; actualizadas las prioridades conservando las anteriores como historial y añadido un aviso al estado actual.
+
+### A medias / problemas
+- `git status` falló en este entorno: no se confirmó si había cambios sin guardar. `main` y su referencia local a `origin/main` apuntaban a `6506e25`; no se consultó el remoto. No se probó el juego.
+
+### Siguiente paso recomendado
+- El siguiente Claude debe verificar el estado real, leer las propuestas y coordinar con Josemi el primer bloque y la valoración del HUD, efectos y movimiento.
+
+## 2026-11-02 — Claude (Opus) · Combate cuerpo a cuerpo
+
+### Lo que pidió el usuario
+- Empezar mejorando el cuerpo a cuerpo: «los enemigos me matan demasiado rápido cuando me acerco». Revisar cómo funciona, explicar los problemas y proponer un plan breve antes de cambiar nada. Trabajar por partes y ahorrar contexto (usa Claude Pro).
+- Decisiones nuevas: **Super Saiyan debe ser desbloqueable**. Enlace del rap de Porta: https://www.youtube.com/watch?v=HunKXh1ikes
+- Preguntó qué son los «packs incompletos» y qué es la rama de los 7 personajes.
+
+### Lo que hice
+- Revisado el código del cuerpo a cuerpo y de los enemigos (`script.js`: `fireSig`, combo, `hitPlayer`, bucle de enemigos, `director`). Sin cambios en el juego todavía.
