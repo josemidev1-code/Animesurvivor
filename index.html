@@ -4,17 +4,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
-<link rel="stylesheet" href="02 - Código del juego/style.css?v=73">
+<link rel="stylesheet" href="02 - Código del juego/style.css?v=74">
 
 <canvas id="game" aria-label="DragonBall Survivor, juego"></canvas>
 <div id="radarAviso" hidden><img data-ui="radarAnimado" alt="Radar del Dragón animado de Lady-Pixel"><span>RADAR ACTIVO</span></div>
 <div id="hudBtns" hidden><button id="bMute" type="button" aria-label="Silenciar">SON</button><button id="bPause" type="button" aria-label="Pausa">II</button></div>
 
-<div id="cab" aria-hidden="true">
-  <div class="cabMarq"><span class="cabBalls"><img data-ui="esfera1" alt=""><img data-ui="esfera2" alt=""><img data-ui="esfera3" alt=""></span><span class="cabTitle">DRAGON BALL<b>SURVIVOR</b></span><span class="cabBalls"><img data-ui="esfera5" alt=""><img data-ui="esfera6" alt=""><img data-ui="esfera7" alt=""></span></div>
-  <div class="cabSide l"></div><div class="cabSide r"></div><div class="cabCrt"></div>
-  <div class="cabPanel"><span class="cabStick"><i></i></span><span class="cabCred" id="cabCred">CRÉDITOS 0</span><span class="cabCoin">INSERTA MONEDA</span><span class="cabBtns"><i class="a"></i><i class="b"></i><i class="c"></i></span></div>
-</div>
 <div id="start" class="ov start" hidden>
   <img class="logoImg" data-ui="logo" alt="">
   <h1 class="logo">DRAGON BALL<span>SURVIVOR</span></h1>
@@ -46,7 +41,7 @@
   <div class="hubStats" id="hubStats"></div>
 </div>
 <div id="roster" class="ov dark" hidden>
-  <h2>ELIGE TU GUERRERO</h2>
+  <h2>PERSONAJES</h2>
   <p class="help" id="rInfo"></p>
   <div class="rWrap"><div class="rPrev" id="rPrev"><div class="rFace"><img id="rPrevImg" alt=""><span id="rNoFace" hidden>SIN RETRATO</span></div><p id="rPrevName"></p><canvas id="rPrevC" width="200" height="190"></canvas><div class="rForm" id="rForm"><button type="button" id="rFormL" aria-label="Forma anterior">◀</button><span id="rFormN"></span><button type="button" id="rFormR" aria-label="Forma siguiente">▶</button></div><p class="rLock" id="rFormLock" hidden>Despiértala con un deseo a Shenron</p><div class="sBars" id="rPrevStats"></div><ul id="rPrevMoves"></ul></div><div id="rosterBox"></div></div>
   <div class="btns"><button class="btn alt" id="rBack" type="button">VOLVER</button></div>
@@ -179,4 +174,4 @@
 <script src="02 - Código del juego/escenarios_tiles.js?v=66"></script>
 <script src="02 - Código del juego/animaciones_juego.js?v=67"></script>
 <script src="02 - Código del juego/utilidades.js?v=1"></script>
-<script src="02 - Código del juego/script.js?v=90"></script>
+<script src="02 - Código del juego/script.js?v=91"></script>

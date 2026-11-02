@@ -3283,7 +3283,7 @@ function buildHub(){const nav=$('#hubMenu');nav.innerHTML='';
     const c=icon(ic),z=mk(32,32),g=z.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(c,0,0,32,32);b.appendChild(z);
     b.insertAdjacentHTML('beforeend',`<span><b>${t}</b><small>${typeof sub==='function'?sub():sub}</small></span>`);b.onclick=()=>{initAudio();sfx('shot');fn()};nav.appendChild(b)}}
 function hubRefresh(){const s=loadSave(),best=loadBest(),id=companion(),H=HEROES[id],all=Object.keys(HEROES).filter(spriteHero);
-  $('#cZeni').textContent='ZENI '+s.zeni;$('#cTix').textContent='TICKETS '+s.tickets;$('#cabCred').textContent='CRÉDITOS '+s.tickets;$('#cHeroes').textContent='GUERREROS '+all.filter(k=>s.owned[k]).length+'/'+all.length;
+  $('#cZeni').textContent='ZENI '+s.zeni;$('#cTix').textContent='TICKETS '+s.tickets;$('#cHeroes').textContent='GUERREROS '+all.filter(k=>s.owned[k]).length+'/'+all.length;
   $('#hCompName').textContent=H.name;{const f=faceOf(id,0);$('#hFace').src=f||'';$('#hFace').hidden=!f}const aw=awaken(id),mr=mastRank(id);
   $('#hCompTags').innerHTML=(H.rar?`<span class="pill r${H.rar}">${'★'.repeat(H.rar)}</span>`:'')+(aw?`<span class="pill">DESPERTAR +${aw}</span>`:'')+(mr?`<span class="pill">MAESTRÍA ${mr}</span>`:'');
   const bt=Object.values(best).reduce((m,b)=>Math.max(m,b.t||0),0),st=s.st||{};
