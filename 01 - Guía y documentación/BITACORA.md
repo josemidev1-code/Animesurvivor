@@ -912,3 +912,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Tanda 5 hecha: Goku SSJ4 GT y Vegeta SSJ4 GT. 82 personajes. Goku SSJ4 Daima (140) a medias (pack de 281 fotogramas). `animaciones_juego.js?v=72`, `script.js?v=96`.
 - Tanda 6 hecha: Vegeta SSJ y Vegeta Blue de la saga de Freezer resucitado. 84 personajes. `animaciones_juego.js?v=73`, `script.js?v=97`.
 - Tanda 6 (sigue): Vegeta Blue de Super (092). 85 personajes. `animaciones_juego.js?v=74`, `script.js?v=98`.
+- Josemi (19:13): «publica en github pages». Repositorio público; Josemi activó Pages (main, raíz). Añadido `.nojekyll`. Publicado bien (despliegue del 2 nov., 19:17): https://josemidev1-code.github.io/Animesurvivor/ — se actualiza con cada subida a `main`.

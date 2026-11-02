@@ -1,7 +1,7 @@
 # DragonBall Survivor
 
 Juego de supervivencia (estilo PokéSurvivor / Vampire Survivors) con personajes de Dragon Ball en pixel art.
-**Para jugar: doble clic en `index.html`.** No hace falta instalar nada.
+**Para jugar: doble clic en `index.html`** o en la web: https://josemidev1-code.github.io/Animesurvivor/ (GitHub Pages, se actualiza al subir a `main`).
 
 ## Qué hay en la carpeta
 
