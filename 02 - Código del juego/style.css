@@ -136,11 +136,21 @@ h2{font-family:var(--pix);font-size:clamp(14px,3.4vw,22px);color:var(--ki);margi
 .hitem:hover b,.hitem:focus-visible b{color:var(--ki)}
 .hubStats{grid-column:2;grid-row:3;background:linear-gradient(#1d3aa8,#142a7a);border:4px solid #dfe8ff;border-radius:12px;padding:10px 14px;font-size:19px;color:#dfe8ff;line-height:1.15;box-shadow:0 0 0 3px var(--shadow)}
 .hubStats b{color:#fff;font-weight:normal}
+/* noticias arriba a la izquierda y, debajo, el enlace al rap de Porta */
+.hubTop{padding-left:calc(min(230px,32vw) + 14px)}
+@media (max-height:700px){.hubNews ul{display:none}.hubNews h2{margin-bottom:0}}
+.hubNews{position:absolute;top:max(14px,env(safe-area-inset-top,0px));left:max(14px,env(safe-area-inset-left,0px));width:min(230px,32vw);background:rgba(10,14,30,.88);border:3px solid var(--edge);border-radius:10px;padding:10px 12px;box-shadow:0 3px 0 var(--shadow)}
+.hubNews h2{font-family:var(--pix);font-size:10px;color:var(--ki);margin:0 0 6px;letter-spacing:1px}
+.hubNews ul{margin:0;padding-left:16px;font-size:17px;line-height:1.05;color:#dfe8ff;display:flex;flex-direction:column;gap:5px}
+.hubNews b{color:var(--ki)}
+.hubRap{display:block;margin-top:8px;font-family:var(--pix);font-size:9px;line-height:1.5;color:var(--namek);text-decoration:none}
+.hubRap:hover,.hubRap:focus-visible{color:var(--ki);outline:none;text-decoration:underline}
 .setList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(520px,100%)}
 #rosterBox{width:100%;display:flex;justify-content:center}
 @media (max-width:760px){
   #hub{grid-template-columns:1fr;grid-template-rows:auto auto auto auto}
   .hubMid{grid-row:2}.hubMenu{grid-column:1;grid-row:3}.hubStats{grid-column:1;grid-row:4}
+  .hubNews{position:static;width:auto;grid-column:1;grid-row:5}.hubTop{padding-left:0}
   .setList{grid-template-columns:1fr}
 }
 #start .logo span,#hub .logo span{display:block}

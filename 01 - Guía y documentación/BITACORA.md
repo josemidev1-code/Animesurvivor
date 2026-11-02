@@ -840,3 +840,12 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Cuerpo a cuerpo: 100 s → ~151 s. A distancia: 123 s → 124-136 s. Ruido grande entre partidas.
 - Comprobaciones: sintaxis, roles, combate, enemigos, personajes, objetos y pruebas de Python correctas; consola sin errores en v=84; captura con los avisos vista.
 - No probado: abrir con doble clic (el panel muestra los archivos locales como imagen fija) ni jugar una persona.
+
+### Noticias y rap en el menú (lo decidido)
+- Recuadro «NOTICIAS» arriba a la izquierda del menú principal (`#hub`, `index.html`) con tres novedades del combate y debajo el enlace al rap de Porta (https://www.youtube.com/watch?v=HunKXh1ikes, se abre en otra pestaña). Estilos `.hubNews`/`.hubRap` en `style.css?v=69`. En pantallas bajas (<700 px) solo título y enlace; en móvil va debajo de las estadísticas. Comprobado a 1366×768, 800×600 y 375×812 sin solaparse ni desbordar.
+- El texto de las noticias es una propuesta mía: Josemi decide qué contar ahí y si se actualiza a mano.
+
+### Pendiente que necesita a Josemi
+- Jugar la rama y valorar el combate; decidir si se fusiona en `main`.
+- Super Saiyan desbloqueable: cómo se desbloquea (nivel, tienda, Shenron…).
+- Música del juego, iconos del menú (los aporta él), retrato fijo en la selección (¿cambia con la transformación?), packs incompletos, rama de los 7 personajes.
