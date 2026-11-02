@@ -1499,6 +1499,107 @@
      53
     ]
    }
+  },
+  "gokumuiblue": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/134_GOKU MUI BLUE, ANDRÉS GAMEN ANIMATIONS ✓ SPRITE HD",
+    "idle": [
+     86,
+     96
+    ],
+    "move": [
+     100
+    ],
+    "attack": [
+     80,
+     81
+    ],
+    "kick": [
+     71,
+     74
+    ],
+    "ki": [
+     41,
+     42
+    ],
+    "pow": [
+     50
+    ],
+    "hurt": [
+     58,
+     59
+    ]
+   }
+  },
+  "gokumuidios": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/135_GOKU MUI DIOS, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )",
+    "idle": [
+     103,
+     143
+    ],
+    "move": [
+     151
+    ],
+    "attack": [
+     120,
+     121,
+     122
+    ],
+    "kick": [
+     108,
+     109
+    ],
+    "ki": [
+     101,
+     100
+    ],
+    "pow": [
+     92,
+     93
+    ],
+    "hurt": [
+     102,
+     111
+    ]
+   }
+  },
+  "gokuultradios": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Goku/150_GOKU ULTRA SSJ DIOS, ANDRÉS GAMEN ANIMATIONS ✓",
+    "idle": [
+     48,
+     47
+    ],
+    "move": [
+     10
+    ],
+    "attack": [
+     16,
+     17,
+     18
+    ],
+    "kick": [
+     23,
+     24
+    ],
+    "ki": [
+     33,
+     34
+    ],
+    "pow": [
+     30,
+     31
+    ],
+    "hurt": [
+     36,
+     37
+    ],
+    "escalaFrames": {
+     "30": 6.87,
+     "31": 6.87
+    }
+   }
   }
  }
 }

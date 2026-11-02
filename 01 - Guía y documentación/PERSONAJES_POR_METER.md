@@ -27,6 +27,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 12: Goku UI verdadero (149), Goku Blue Moro manga (144), Goku Blue FighterZ (271; pack de 682 fotogramas, revisado por tramos). En 149 y 144 el aura se fija con `escalaFrames`.
 - Tanda 13: Goku UI dominado manga (270), Goku UI señal manga (280; la patada es un rodillazo, no hay otra), Goku SSJ2 Buu (276; sin muerte propia, la del pack es en base).
 - Tanda 14: Goku SSJ Kaioken (059), Goku maligno SSJ2 (127), Goku UI Blue Evolution (133).
+- Tanda 15: Goku UI Blue (134), Goku UI Dios (135; versión con gi), Goku Ultra SSJ Dios (150; aura con `escalaFrames`). Ninguno tiene fotograma de muerte.
 
 ## A medias
 
@@ -36,16 +37,13 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Fusión de Zamasu deshaciéndose (106): pocos golpes; comprobar si de verdad está completo.
 - Vegeta MUI (303): el pack viene reescalado y borroso; cada fotograma a otra escala y no se puede medir el píxel. Haría falta fijar la escala a mano fotograma a fotograma (`escalaFrames`) o buscar el pack original.
 
-## Completos por meter (19)
+## Completos por meter (16)
 
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose`
 - `01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/106_Zamasu e Black Fusão Desmanchando`
 - `03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍`
 - `05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés`
-- `05_Fanmade_y_alternativos/Goku/134_GOKU MUI BLUE, ANDRÉS GAMEN ANIMATIONS ✓ SPRITE HD`
-- `05_Fanmade_y_alternativos/Goku/135_GOKU MUI DIOS, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )`
 - `05_Fanmade_y_alternativos/Goku/138_GOKU REY MONO,DB TALE, HECHO POR ANDRÉSITO GAMEN ANIMATIONS`
-- `05_Fanmade_y_alternativos/Goku/150_GOKU ULTRA SSJ DIOS, ANDRÉS GAMEN ANIMATIONS ✓`
 - `05_Fanmade_y_alternativos/Goku/151_GOKU,SSJ, SUPREMO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS, SPRITE HD ✓`
 - `05_Fanmade_y_alternativos/Goku/206_GOKU SSJ 4 DIOS,DBS BROLY, ANDRÉS GAMEN ANIMATIONS  ✓`
 - `05_Fanmade_y_alternativos/Goku/207_GOKU SSJ DIOS,BERSERKER,DBS BROLY, ANDRÉS GAMEN ANIMATIONS ✓`

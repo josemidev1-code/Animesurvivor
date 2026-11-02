@@ -708,6 +708,9 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ gokuultradios:{name:'GOKU ULTRA SSJ DIOS',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku en una forma Super Saiyan Dios potenciada, versión fanmade.',forms:['ULTRA SSJ DIOS'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokumuidios:{name:'GOKU UI DIOS',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku combinando el Ultra Instinto con el Super Saiyan Dios, versión fanmade.',forms:['UI DIOS'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokumuiblue:{name:'GOKU UI BLUE',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku combinando el Ultra Instinto con el Super Saiyan Blue, versión fanmade.',forms:['UI BLUE'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokumuiblueevo:{name:'GOKU UI BLUE EVOLUTION',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku fusionando el Ultra Instinto con el Blue Evolución, versión fanmade.',forms:['UI BLUE EVOLUTION'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokuevilssj2:{name:'GOKU MALIGNO SSJ2',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku poseído en Super Saiyan 2 de pelo rojo, versión fanmade.',forms:['SSJ2 MALIGNO'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  gokussjkaioken:{name:'GOKU SSJ KAIOKEN',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku combinando el Super Saiyan con el Kaioken.',forms:['SSJ KAIOKEN'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
@@ -1288,7 +1291,10 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  gokussj2buu:['kiblast','punch','kame','kaioken','instant','genki'],
  gokussjkaioken:['kiblast','punch','kame','kaioken','instant','genki'],
  gokuevilssj2:['kiblast','punch','kame','kaioken','instant','genki'],
- gokumuiblueevo:['kiblast','punch','kame','kaioken','instant','genki']};
+ gokumuiblueevo:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokumuiblue:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokumuidios:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuultradios:['kiblast','punch','kame','kaioken','instant','genki']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
