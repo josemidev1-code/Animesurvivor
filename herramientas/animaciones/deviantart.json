@@ -1,0 +1,313 @@
+{
+ "heroes": {
+  "nappa": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/00_Saiyans/DeviantArt/403_NAPPA (Strice12)",
+    "idle": [
+     15,
+     16
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     19
+    ],
+    "attack": [
+     20,
+     21,
+     22,
+     23,
+     24
+    ],
+    "kick": [
+     29,
+     30,
+     31
+    ],
+    "ki": [
+     51,
+     54
+    ],
+    "pow": [
+     43,
+     44,
+     45
+    ],
+    "hurt": [
+     39,
+     40
+    ],
+    "portrait": 93,
+    "faint": [
+     103
+    ]
+   }
+  },
+  "guldo": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/404_GULDO (Strice12)",
+    "idle": [
+     3,
+     4
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     17,
+     18
+    ],
+    "attack": [
+     33,
+     31,
+     32
+    ],
+    "kick": [
+     28,
+     29,
+     30
+    ],
+    "ki": [
+     57,
+     60
+    ],
+    "pow": [
+     49,
+     50,
+     51
+    ],
+    "hurt": [
+     8,
+     42
+    ],
+    "portrait": 102,
+    "faint": [
+     43
+    ]
+   }
+  },
+  "uub": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/408_UUB (Strice12)",
+    "idle": [
+     10,
+     11
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     13
+    ],
+    "attack": [
+     18,
+     19,
+     20,
+     26,
+     27
+    ],
+    "kick": [
+     28,
+     29,
+     30
+    ],
+    "ki": [
+     82,
+     20
+    ],
+    "pow": [
+     42,
+     43,
+     44
+    ],
+    "hurt": [
+     39,
+     40
+    ],
+    "portrait": 91,
+    "faint": [
+     92
+    ]
+   }
+  },
+  "mrsatan": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/409_MR SATAN (JayHyperStarX)",
+    "idle": [
+     4,
+     5,
+     6
+    ],
+    "idleDu": [
+     20,
+     20,
+     20
+    ],
+    "move": [
+     12,
+     13
+    ],
+    "attack": [
+     22,
+     23,
+     264,
+     265
+    ],
+    "kick": [
+     26,
+     27,
+     28
+    ],
+    "ki": [
+     185,
+     264
+    ],
+    "pow": [
+     214,
+     215,
+     216
+    ],
+    "hurt": [
+     47,
+     49
+    ],
+    "faint": [
+     56
+    ]
+   }
+  },
+  "a21": {
+   "0": {
+    "pack": "04_Heroes_y_videojuegos/DeviantArt/410_ANDROIDE 21 (arisrad)",
+    "idle": [
+     10,
+     11,
+     12
+    ],
+    "idleDu": [
+     20,
+     20,
+     20
+    ],
+    "move": [
+     14,
+     15
+    ],
+    "attack": [
+     20,
+     21,
+     22
+    ],
+    "kick": [
+     26,
+     27,
+     28
+    ],
+    "ki": [
+     123,
+     124
+    ],
+    "pow": [
+     64,
+     65,
+     66
+    ],
+    "hurt": [
+     60,
+     53
+    ],
+    "portrait": 193,
+    "faint": [
+     194
+    ]
+   }
+  },
+  "ginyu": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/401_CAPITAN GINYU (Strice12)",
+    "idle": [
+     13,
+     14
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     17
+    ],
+    "attack": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "kick": [
+     24,
+     26
+    ],
+    "ki": [
+     57,
+     59
+    ],
+    "pow": [
+     53,
+     54
+    ],
+    "hurt": [
+     101,
+     10
+    ],
+    "faint": [
+     110
+    ],
+    "portrait": 109
+   }
+  },
+  "jeice": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/402_JEICE (MrDryy)",
+    "idle": [
+     2,
+     3
+    ],
+    "idleDu": [
+     26,
+     26
+    ],
+    "move": [
+     10
+    ],
+    "attack": [
+     15,
+     16,
+     17,
+     18
+    ],
+    "kick": [
+     20,
+     21
+    ],
+    "ki": [
+     44,
+     45
+    ],
+    "pow": [
+     40,
+     41
+    ],
+    "hurt": [
+     34,
+     37
+    ],
+    "faint": [
+     50
+    ]
+   }
+  }
+ }
+}
