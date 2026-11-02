@@ -199,3 +199,27 @@ h2{font-family:var(--pix);font-size:clamp(14px,3.4vw,22px);color:var(--ki);margi
 #levelup .up .ds{font-size:18px;color:#c8d4f4}
 #levelup .up .key{flex:none;border:2px solid #b8c8f0;border-radius:5px;padding:6px 7px;color:#fff;font-size:9px}
 #levelup .up.evo{background:linear-gradient(90deg,rgba(90,64,8,.85),rgba(40,30,6,.85));border-color:var(--ki)}
+/* selección: personaje como en partida y estadísticas con colores (vida verde, velocidad azul, ataque rojo) */
+:root{--hp:#4cd964;--spd:#4aa8ff;--atk:#ff4d5e}
+.card canvas.cardSpr{width:150px;height:120px;max-width:100%;background:radial-gradient(ellipse at 50% 85%,#2a4ab8,#0a1240 70%);border-radius:4px}
+.card.locked canvas.cardSpr{filter:brightness(0) opacity(.55)}
+.card p{font-size:17px}
+.sBars{display:flex;flex-direction:column;gap:3px;width:100%}
+.sb{display:grid;grid-template-columns:34px 1fr 34px;align-items:center;gap:5px}
+.sb b{font-family:var(--pix);font-size:8px;font-weight:normal;text-align:left}
+.sb i{display:block;height:7px;background:#0a0f22;border:1px solid #000;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.sb em{display:block;height:100%;box-shadow:inset 0 -2px 0 rgba(0,0,0,.3)}
+.sb span{font-family:var(--pix);font-size:8px;text-align:right}
+.sb.hp b,.sb.hp span{color:var(--hp)}.sb.hp em{background:var(--hp)}
+.sb.spd b,.sb.spd span{color:var(--spd)}.sb.spd em{background:var(--spd)}
+.sb.atk b,.sb.atk span{color:var(--atk)}.sb.atk em{background:var(--atk)}
+.rFace{width:100%;display:flex;justify-content:center}
+.rFace img{width:auto;height:156px;max-width:100%;padding:3px}
+#rNoFace{display:flex;align-items:center;justify-content:center;width:100%;height:120px;font-family:var(--pix);font-size:8px;color:var(--dim);border:3px dashed #3a4f9a;border-radius:6px}
+.rForm{display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%}
+.rForm button{font-family:var(--pix);font-size:10px;background:#0a1240;color:var(--ki);border:2px solid #dfe8ff;border-radius:4px;width:30px;height:28px;cursor:pointer}
+.rForm button:hover{background:#2a4ab8}
+.rForm.one button{visibility:hidden}
+#rFormN{flex:1;text-align:center;font-family:var(--pix);font-size:8px;color:#fff;line-height:1.4}
+.rLock{margin:0;font-size:15px;color:var(--ki);text-align:center}
+.rPrev .sb b,.rPrev .sb span{font-size:8px}.rPrev .sb{grid-template-columns:40px 1fr 40px}.rPrev .sb i{height:9px}

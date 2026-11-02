@@ -871,3 +871,16 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Preguntar a Josemi por qué punto de «Cambios propuestos» empezar (selección y estadísticas, o inventario de sprites) y si fusiona la rama en `main`. La jugabilidad (enemigos sin esperas, Kaioken por tiempo) va después.
 
 - Subido a GitHub (2 nov.): `main` avanzada con todo el trabajo (a191a967) e incluida la carpeta `sprites/` (33.697 archivos, 420 MB; repo privado); subidas también las ramas `claude/cuerpo-a-cuerpo`, `claude/quizzical-gates-9cf9c0`, `bloque1-fotogramas`, `claude/efectos-pequenos` y `claude/vuelo-bajo`.
+
+## 2026-11-02 — Claude (Opus) · Selección y estadísticas (puntos 4 y 5)
+
+### Lo que pidió el usuario
+- Trabajar desde GitHub (comprobado: su carpeta del escritorio y `main` en GitHub son idénticas).
+- Empezar por el bloque «Selección y estadísticas»: retrato fijo de la cara en la selección con el personaje como en partida debajo, y estadísticas con colores (vida verde, velocidad azul, ataque rojo).
+
+### Lo que hice
+- Decisión de Josemi sobre el retrato: «si por ejemplo tienes la cara de goku super saiyan ponla, pero si no hay cara no se pone». Aplicado: la cara sigue a la forma que se muestra; si esa forma no tiene retrato propio no se pide prestado el de otra (`faceExact`), sale «SIN RETRATO». Hoy las 168 formas tienen retrato propio.
+- Tarjetas (`buildCards`): cara de la forma base fija (se quitó el cambio automático cada 2,5 s), debajo el personaje como en partida (guardia animada, escala ×2 o ×1,5 sin suavizado; solo se dibujan las tarjetas visibles, `drawCardSprites`) y las estadísticas en barras: VIDA verde, VEL azul, ATQ rojo, con etiqueta y número (`statBars`; la barra compara con el resto del plantel).
+- Ficha grande: ◀ ▶ para elegir la forma (cara y sprite cambian juntos, ya no rotan solos), aviso «Despiértala con un deseo a Shenron» si esa forma no está despertada, y las mismas barras. `script.js?v=87`, `style.css?v=70`.
+- Comprobado: capturas a 1366×768 y 375×812, consola sin errores del juego, `comprobar_*.cjs` correctos. No probado: doble clic en Windows ni con la fuente Press Start 2P (en la nube no carga Google Fonts).
+- Pendiente de Josemi: valorar el aspecto (tamaño de las barras, que las tarjetas sean más altas).

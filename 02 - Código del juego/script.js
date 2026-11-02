@@ -2798,6 +2798,8 @@ for(const id in HDEF){const D=HDEF[id],A=window.ANIM_SET&&ANIM_SET.h[id];if(D.np
   if(keep.length!==D.forms.length||keep.some((f,i)=>f!==i)){for(const k of ['forms','aura','hair','hc','formPal'])if(Array.isArray(D[k]))D[k]=keep.map(f=>D[k][Math.min(f,D[k].length-1)]);
     const H={},R={};keep.forEach((f,i)=>{H[i]='as-'+id+'-'+f;if(PORTRAIT[id]&&PORTRAIT[id][f])R[i]=PORTRAIT[id][f]});SCPACK.h[id]=H;if(PORTRAIT[id])PORTRAIT[id]=R}}
 // big face of a form: that form, else the closest one of the same character
+// cara exacta de una forma, sin pedir prestada la de otra (selección de personaje)
+function faceExact(id,form=0){const P=PORTRAIT[id];return P&&P[form]||null}
 function faceOf(id,form=0){const P=PORTRAIT[id];if(!P)return null;if(P[form])return P[form];const k=Object.keys(P).map(Number).sort((a,b)=>Math.abs(a-form)-Math.abs(b-form));return k.length?P[k[0]]:null}
 Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta-buussj',rose:'rose',
   renegA:'enemy1',renegB:'enemy2',renegC:'enemy3',kingvegE:'kingvegeta',raditzssjE:'raditz-ssj',vegsaiE:'vegeta-saiyan',freeza2E:'freeza-2',cellperfE:'cell-perf2',a21E:'a21',
@@ -3158,19 +3160,30 @@ function showTitle(){state='title';if(started)openHub();else{hideMenus();$('#sta
   const n=misReady();if(n)$('#bTrain').dataset.n=n;else delete $('#bTrain').dataset.n;buildCards()}
 // character cards
 const cardTimers=[];
+// estadísticas con colores: vida verde, velocidad azul, ataque rojo; la barra compara con el resto de personajes
+let STAT_RANGE=null;
+function statRange(){if(STAT_RANGE)return STAT_RANGE;const r={hp:[1e9,0],spd:[1e9,0],atk:[1e9,0]};
+  for(const id in HEROES){const H=HEROES[id];if(H.npc||H.custom||!spriteHero(id))continue;for(const k in r){r[k][0]=Math.min(r[k][0],H[k]);r[k][1]=Math.max(r[k][1],H[k])}}return STAT_RANGE=r}
+function statBars(H){const r=statRange(),row=(k,cl,lb,v)=>{const[a,b]=r[k],f=b>a?(H[k]-a)/(b-a):1,pc=Math.round(15+85*clamp(f,0,1));
+    return `<span class="sb ${cl}"><b>${lb}</b><i><em style="width:${pc}%"></em></i><span>${v}</span></span>`};
+  return `<span class="sBars">${row('hp','hp','VIDA',H.hp)}${row('spd','spd','VEL',H.spd)}${row('atk','atk','ATQ','x'+H.atk)}</span>`}
+// el personaje como en partida dentro de cada tarjeta (guardia de la forma base); solo se dibujan las tarjetas visibles
+function drawCardSprites(t){const vh=innerHeight;document.querySelectorAll('#chars .cardSpr').forEach(c=>{const r=c.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;
+  const id=c.dataset.id,g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);g.imageSmoothingEnabled=false;let im=null;
+  const o=scHero(id,0);if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[Math.floor(t*6)%A.R.length]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
+  if(!im)return;const fit=Math.min((c.height-6)/im.height,(c.width-6)/im.width),k=fit>=2?2:fit>=1.5?1.5:Math.min(1,fit);
+  g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-4,28,5,0,0,TAU);g.fill();
+  g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-2-im.height*k),Math.round(im.width*k),Math.round(im.height*k))})}
 function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(clearInterval);cardTimers.length=0;const sv=loadSave();heroMigrate(sv);unlockAll(sv);
   const ids=Object.keys(HEROES).filter(spriteHero).sort((a,b)=>(!sv.owned[a])-(!sv.owned[b]));
   for(const id of ids){const H=HEROES[id],own=!!sv.owned[id]||id==='gokuui',b=document.createElement('button');b.type='button';b.className='card'+(own?'':' locked');
     const img=document.createElement('img');img.className='cardFace';
-    const f0=faceOf(id,0)||(MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():'');
-    img.src=f0||'';img.alt=H.name;
-    b.appendChild(img);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
-    b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p><span class="stats">VIDA ${H.hp} · VEL ${H.spd} · ATQ x${H.atk}</span>${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
+    const f0=faceExact(id,0)||(MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():'');
+    img.src=f0||'';img.alt=H.name;img.hidden=!f0;
+    b.appendChild(img);const spr=mk(150,120);spr.className='cardSpr';spr.dataset.id=id;b.appendChild(spr);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
+    b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p>${statBars(H)}${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
     b.dataset.id=id;b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
-    if(own&&H.forms&&H.forms.length>1){let form=0;cardTimers.push(setInterval(()=>{
-      if(state!=='title')return;form=(form+1)%H.forms.length;
-      const fn=faceOf(id,form);if(fn&&img.src!==fn)img.src=fn;
-    },2500))}}
+    }
   $('#wallet').textContent=`Tickets: ${sv.tickets} · Zeni: ${sv.zeni} · Personajes: ${Object.keys(HEROES).filter(k=>spriteHero(k)&&sv.owned[k]).length}/${Object.keys(HEROES).filter(spriteHero).length}`}
 // ---------- Crea tu guerrero: player-made heroes from any PNG, stored only in this browser ----------
 const CTYPES={bal:{n:'Equilibrado',hp:115,spd:62,atk:1},str:{n:'Fuerza bruta',hp:105,spd:57,atk:1.15},fast:{n:'Velocidad',hp:95,spd:72,atk:0.95},tank:{n:'Tanque',hp:150,spd:54,atk:0.9,regen:0.4}};
@@ -3281,16 +3294,20 @@ function enterGame(){if(started)return;started=true;initAudio();sfx('level');ope
 // ficha del personaje: recorre sus formas mostrando guardia, combo, patada y ki con los sprites reales
 const rosterAnim={id:null,t0:0,on:0};
 function drawRosterAnim(){const c=$('#rPrevC'),g=c.getContext('2d'),id=rosterAnim.id,H=HEROES[id];g.clearRect(0,0,c.width,c.height);if(!H)return;
-  const t=(performance.now()-rosterAnim.t0)/1000,nf=(H.forms||[0]).length,form=Math.floor(t/4)%nf,seq=['Idle','Attack','Idle','Kick','Cast','Pow'],an=seq[Math.floor(t/0.67)%seq.length];
+  const t=(performance.now()-rosterAnim.t0)/1000,form=rosterAnim.form||0,seq=['Idle','Attack','Idle','Kick','Cast','Pow'],an=seq[Math.floor(t/0.67)%seq.length];
   const o=scHero(id,form);if(!o)return;const A=o[an]||o.Idle;if(!A||!A.R.length)return;const im=A.R[Math.floor(t*8)%A.R.length],k=Math.min(2,(c.height-6)/im.height,(c.width-4)/im.width);
   g.imageSmoothingEnabled=false;g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-4,22,4,0,0,TAU);g.fill();
-  g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-2-im.height*k),Math.round(im.width*k),Math.round(im.height*k));
-  g.font='8px "Press Start 2P", monospace';g.fillStyle='#ffd23f';g.textAlign='left';g.fillText((H.forms||[])[form]||'',4,10)}
+  g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-2-im.height*k),Math.round(im.width*k),Math.round(im.height*k));}
+// forma que se ve en la ficha: la cara es la de esa forma; si no tiene retrato propio no se pone ninguno
+function rosterForm(d){const id=rosterAnim.id,H=HEROES[id];if(!H)return;const n=(H.forms||[0]).length;rosterAnim.form=((rosterAnim.form||0)+d+n)%n;const f=rosterAnim.form;
+  const face=faceExact(id,f)||(f===0&&MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():null);$('#rPrevImg').src=face||'';$('#rPrevImg').hidden=!face;$('#rNoFace').hidden=!!face;
+  $('#rFormN').textContent=(H.forms||[])[f]||'BASE';$('#rFormL').disabled=$('#rFormR').disabled=n<2;$('#rForm').classList.toggle('one',n<2);
+  const own=!!loadSave().owned[id];$('#rFormLock').hidden=!(own&&f>formasAbiertas(id));if(d)rosterAnim.t0=performance.now()}
 function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
-  const prev=id=>{const H=HEROES[id],f=faceOf(id,0);$('#rPrevImg').src=f||'';$('#rPrevImg').hidden=!f;$('#rPrevName').textContent=H.name;$('#rPrevForms').textContent=(H.forms||[]).join(' · ');$('#rPrev').dataset.id=id;
+  const prev=id=>{const H=HEROES[id];if(rosterAnim.id!==id)rosterAnim.form=0;$('#rPrevName').textContent=H.name;$('#rPrev').dataset.id=id;$('#rPrevStats').innerHTML=statBars(H);
     // sus técnicas de la serie y el nivel en que se aprenden
-    $('#rPrevMoves').innerHTML=sigList(id).map((m,i)=>MV[m]?`<li><b>Nv ${UNLOCK_LV[i]||1}</b> ${MV[m].name}</li>`:'').join('');rosterAnim.id=id;rosterAnim.t0=performance.now()};
-  if(!rosterAnim.on){rosterAnim.on=1;const loop=()=>{if($('#roster').hidden){rosterAnim.on=0;return}drawRosterAnim();requestAnimationFrame(loop)};loop()}
+    $('#rPrevMoves').innerHTML=sigList(id).map((m,i)=>MV[m]?`<li><b>Nv ${UNLOCK_LV[i]||1}</b> ${MV[m].name}</li>`:'').join('');rosterAnim.id=id;rosterAnim.t0=performance.now();rosterForm(0)};
+  if(!rosterAnim.on){rosterAnim.on=1;const loop=()=>{if($('#roster').hidden){rosterAnim.on=0;return}drawRosterAnim();drawCardSprites(performance.now()/1000);requestAnimationFrame(loop)};loop()}
   $('#chars').querySelectorAll('.card').forEach(b=>{b.onmouseenter=b.onfocus=()=>prev(b.dataset.id)});prev(companion());
   $('#rInfo').innerHTML=`Tienes <b>${all.filter(k=>s.owned[k]).length}</b> de <b>${all.length}</b>. Toca uno tuyo para llevarlo de compañero; los que te faltan se consiguen pidiendo deseos a Shenron.`}
 const SHOP=[{n:'1 TICKET',d:'Un deseo a Shenron',c:120,t:1},{n:'10 TICKETS',d:'Diez deseos con descuento',c:1100,t:10},{n:'50 TICKETS',d:'El pack del guerrero',c:5000,t:50}];
@@ -3310,7 +3327,7 @@ function toggleFull(){if(document.fullscreenElement)document.exitFullscreen();el
   $('#start').onclick=enterGame;addEventListener('keydown',e=>{if(!started&&state==='title'&&!$('#start').hidden)enterGame()});
   $('#hComp').onclick=openRoster;$('#hEvent').onclick=()=>openGacha();
   $('#hSave').onclick=()=>$('#bkSave').click();$('#hMute').onclick=()=>{$('#bMute').click();$('#hMute').textContent=$('#bMute').textContent==='MUDO'?'MUDO':'SONIDO'};$('#hFull').onclick=toggleFull;$('#hSet').onclick=openSettings;
-  $('#rBack').onclick=showTitle;$('#shBack').onclick=showTitle;$('#rkBack').onclick=showTitle;$('#sBack').onclick=showTitle;
+  $('#rBack').onclick=showTitle;$('#rFormL').onclick=()=>rosterForm(-1);$('#rFormR').onclick=()=>rosterForm(1);$('#shBack').onclick=showTitle;$('#rkBack').onclick=showTitle;$('#sBack').onclick=showTitle;
   $('#sMute').onclick=()=>{$('#bMute').click();setLabels()};$('#sFull').onclick=toggleFull;$('#sCol').onclick=()=>{debugSolid=!debugSolid;setLabels()};
   $('#sSave').onclick=()=>$('#bkSave').click();$('#sLoad').onclick=()=>$('#bkLoad').click();$('#sForge').onclick=()=>openForge();$('#sMine').onclick=()=>$('#bMine').click();$('#sCred').onclick=()=>openCredits();
   $('#rosterBox').appendChild($('#chars'))})();
