@@ -709,6 +709,153 @@
      73
     ]
    }
+  },
+  "vegetaego": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/07_Granola/Vegeta/240_VEGETA MEGA INSTITO, ANDRÉS GAMEN ANIMATIONS",
+    "idle": [
+     23,
+     24
+    ],
+    "move": [
+     66
+    ],
+    "attack": [
+     56,
+     53,
+     54
+    ],
+    "kick": [
+     32,
+     38
+    ],
+    "ki": [
+     17,
+     19
+    ],
+    "pow": [
+     20,
+     21
+    ],
+    "hurt": [
+     27,
+     28
+    ],
+    "faint": [
+     25
+    ]
+   }
+  },
+  "vegetaxeno": {
+   "0": {
+    "pack": "04_Heroes_y_videojuegos/Vegeta/267_VEGETA BASE XENO ULSW",
+    "idle": [
+     31,
+     32
+    ],
+    "move": [
+     13
+    ],
+    "attack": [
+     15,
+     16,
+     17
+    ],
+    "kick": [
+     26,
+     27
+    ],
+    "ki": [
+     95,
+     120
+    ],
+    "pow": [
+     42,
+     43
+    ],
+    "hurt": [
+     34,
+     35
+    ],
+    "faint": [
+     37
+    ]
+   }
+  },
+  "vegetassjhd": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/Vegeta/297_Vegeta SSJ1",
+    "idle": [
+     80,
+     81
+    ],
+    "move": [
+     89
+    ],
+    "attack": [
+     71,
+     72,
+     73
+    ],
+    "kick": [
+     62,
+     63
+    ],
+    "ki": [
+     21,
+     22
+    ],
+    "pow": [
+     32,
+     33
+    ],
+    "hurt": [
+     40,
+     41
+    ],
+    "faint": [
+     36
+    ],
+    "escalaFrames": {
+     "33": 6.15
+    }
+   }
+  },
+  "vegetauihd": {
+   "0": {
+    "pack": "05_Fanmade_y_alternativos/Vegeta/302_Vegeta UI HD",
+    "idle": [
+     10,
+     11
+    ],
+    "move": [
+     26
+    ],
+    "attack": [
+     39,
+     42,
+     41
+    ],
+    "kick": [
+     52,
+     51
+    ],
+    "ki": [
+     64,
+     65
+    ],
+    "pow": [
+     7,
+     8
+    ],
+    "hurt": [
+     55,
+     56
+    ],
+    "faint": [
+     75
+    ]
+   }
   }
  }
 }

@@ -708,6 +708,10 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ vegetauihd:{name:'VEGETA ULTRA INSTINTO',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta con el Ultra Instinto, versión fanmade en HD.',forms:['ULTRA INSTINTO'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetassjhd:{name:'VEGETA SSJ (HD)',rar:4,hp:105,spd:68,atk:1.22,start:'galick',desc:'Vegeta en Super Saiyan, sprite HD de estilo ULSW.',forms:['SSJ'],aura:['gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetaxeno:{name:'VEGETA XENO',rar:3,hp:100,spd:66,atk:1.1,start:'galick',desc:'Vegeta Xeno, patrullero del tiempo de Dragon Ball Heroes.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetaego:{name:'VEGETA ULTRA EGO',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta con el Ultra Ego, poder de destrucción de la saga de Granola.',forms:['ULTRA EGO'],aura:['purple'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  vegetabaseulsw:{name:'VEGETA (HD)',rar:3,hp:100,spd:66,atk:1.1,start:'galick',desc:'Vegeta en estado base, sprite HD de estilo ULSW.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  vegetablueevo:{name:'VEGETA BLUE EVOLUTION',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta en Super Saiyan Blue Evolución, Torneo del Poder.',forms:['BLUE EVOLUTION'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  vegetabluefp:{name:'VEGETA BLUE FULL POWER',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta en Super Saiyan Blue al máximo, Torneo del Poder.',forms:['BLUE FULL POWER'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
@@ -1244,7 +1248,11 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  vegetablueulsw:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
  vegetabluefp:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
  vegetablueevo:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
- vegetabaseulsw:['kiblast','punch','galick','bigbang','finalflash','finalexp']};
+ vegetabaseulsw:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetaego:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetaxeno:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetassjhd:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetauihd:['kiblast','punch','galick','bigbang','finalflash','finalexp']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];

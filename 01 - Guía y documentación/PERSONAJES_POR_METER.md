@@ -20,6 +20,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Tanda 5: Goku SSJ4 GT (058), Vegeta SSJ4 GT (264).
 - Tanda 6: Vegeta SSJ (Whis, 315), Vegeta Blue (Whis, 314), Vegeta Blue (Super, 092).
 - Tanda 7: Vegeta Blue HD (296), Vegeta Blue Full Power (093), Vegeta Blue Evolution (299), Vegeta base HD (295). Ojo: en el 296 el fotograma 47 no mide su zoom; se fija con `escalaFrames`.
+- Tanda 8: Vegeta Ultra Ego (240), Vegeta Xeno (267), Vegeta SSJ HD (297), Vegeta Ultra Instinto HD (302). En el 297 el fotograma 33 se fija con `escalaFrames`.
 
 ## A medias
 
@@ -28,7 +29,7 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - Bra Majin (189): la propuesta mezcla caras y otros personajes; hay que elegir todos los fotogramas a mano (pack de casi 300).
 - Fusión de Zamasu deshaciéndose (106): pocos golpes; comprobar si de verdad está completo.
 
-## Completos por meter (43)
+## Completos por meter (39)
 
 - `00_Dragon_Ball_Z/03_Majin_Buu/Goku/057_Goku SSJ 3 Mais Sprites`
 - `00_Dragon_Ball_Z/03_Majin_Buu/Goku/277_GOKU SSJ3 SWL+`
@@ -43,12 +44,10 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - `01_Dragon_Ball_Super/06_Moro/Goku/174_Goku base.patrullero galáctico.dbs moro.andres Gamen`
 - `01_Dragon_Ball_Super/07_Granola/Goku/132_GOKU MUI ( SAGA GRANOLA ) Andrés Gamen ANIMATIONS ( SPRITE HD )`
 - `01_Dragon_Ball_Super/07_Granola/Goku/149_GOKU ULTRA INSTINTO VERDADERO,MANGA,BY ANDRÉS GAMEN ANIMATIONS`
-- `01_Dragon_Ball_Super/07_Granola/Vegeta/240_VEGETA MEGA INSTITO, ANDRÉS GAMEN ANIMATIONS`
 - `01_Dragon_Ball_Super/08_Super_Hero/Goku/205_GOKU SSJ 1,ROPA,ORANGE JACKET, ANDRÉS GAMEN ANIMATIONS`
 - `01_Dragon_Ball_Super/09_Generales_y_manga/Goku/271_GOKU SSJ BLUE DBFZ V3`
 - `01_Dragon_Ball_Super/09_Generales_y_manga/Goku/280_GOKU UI SEÑAL DEL MANGA V1 SWL+ DBS MANGA`
 - `03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍`
-- `04_Heroes_y_videojuegos/Vegeta/267_VEGETA BASE XENO ULSW`
 - `05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés`
 - `05_Fanmade_y_alternativos/Goku/059_Goku SSJ Kaioken`
 - `05_Fanmade_y_alternativos/Goku/127_GOKU EVIL SSJ 2 , ANDRÉS GAMEN ANIMATIONS , SPRITE HD,`
@@ -64,13 +63,11 @@ Completo = guardia, vuelo, puñetazos, patada, ki, aura (o pose de carga) y dañ
 - `05_Fanmade_y_alternativos/Goku/274_GOKU SSJ KAIO KEN`
 - `05_Fanmade_y_alternativos/Vegeta/241_VEGETA SSJ BLUE MALIGNO,DBH, ANDRÉS GAMEN ANIMATIONS ✓`
 - `05_Fanmade_y_alternativos/Vegeta/249_Vegeta Omni God,Damaged.Andres Gamen`
-- `05_Fanmade_y_alternativos/Vegeta/302_Vegeta UI HD`
 - `05_Fanmade_y_alternativos/Vegeta/303_vegeta mui`
 - `07_Personajes_sin_saga_concreta/Goku/044_Goku`
 - `07_Personajes_sin_saga_concreta/Goku/045_Goku (versión2)`
 - `07_Personajes_sin_saga_concreta/Goku/053_Goku SSJ 1`
 - `07_Personajes_sin_saga_concreta/Goku/273_GOKU SSJ FULL POWER SWL+`
-- `07_Personajes_sin_saga_concreta/Vegeta/297_Vegeta SSJ1`
 - `09_Packs_mixtos_por_revisar/Varios/254_SPRITESEXTRA`
 - `09_Packs_mixtos_por_revisar/Varios/291_SUPER EXTRA PACK DE SPRITES #3 (ESPECIAL 38K) ANDRÉS GAMEN ANIMATIONS 👍`
 
