@@ -161,7 +161,8 @@ Cuarta tanda (3 nov.):
 | Paragus (película de 1993) | **Strice12** | [Paragus Dbz Sheet Sprite Ulsw](https://www.deviantart.com/strice12/art/Paragus-Dbz-Sheet-Sprite-Ulsw-1235958309) | Jugable |
 | Gran Sacerdote | **YolokinG777** | [DBS Daishinkan Grand Priest ULSW Sprite Sheet](https://www.deviantart.com/yoloking777/art/DBS-Daishinkan-Grand-Priest-ULSW-Sprite-Sheet-948899992) | Jugable |
 | Majin Duu | **AlquimistaSK** | [Majin duu Ulsw](https://www.deviantart.com/alquimistask/art/Majin-duu-Ulsw-By-AlquimistaSK-1147205569) | Jugable |
+| Magetta | **AlquimistaSK** | [Magetta sheet ulsw](https://www.deviantart.com/alquimistask/art/Magetta-sheet-ulsw-by-AlquimistaSK-1126260363) | Jugable y élite (Torneo del Poder, Bills) |
 
-Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los namekianos de ziglepaz y los hijos del Rey Piccolo de CaptainDutch son dibujos sueltos sin animación.
+Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los namekianos de ziglepaz y los hijos del Rey Piccolo de CaptainDutch son dibujos sueltos sin animación. Ribrianne (JPEG muy pequeño y con ruido) y Zeno (solo 3 poses) se descartan. «Yakon y otros» (suten94) y «DAIMA varios» (AS02X) son una pose por personaje: quedan para enemigos de una sola pose.
 
 Descartada: «DBUL - Tora (Reformed)» de Yumejoki (el sprite se parece demasiado a Vegeta y confundiría en partida).

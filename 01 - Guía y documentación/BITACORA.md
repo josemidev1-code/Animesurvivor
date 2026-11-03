@@ -1014,3 +1014,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - 3 nov.: saga GT. La Sala del Tiempo pasa a tener de jefes a Dr. Myuu, Baby, Super 17, Moro y Omega Shenron (antes Cooler y el Shenron oscuro retirado). `animaciones_juego.js?v=101`, `script.js?v=127`.
 - 3 nov.: Kyabe deja de estar oculto (solo forma SSJ); Gas y Granola jugables; Gas jefe de la arena de Bills en lugar de Zeno (retirado). `animaciones_juego.js?v=102`, `script.js?v=128`.
 - 3 nov.: Paragus, Gran Sacerdote y Majin Duu jugables. Los hijos del Rey Piccolo descargados no son sprites (dibujos grandes), sin usar. `animaciones_juego.js?v=103`, `script.js?v=129`.
+- 3 nov.: Magetta jugable y élite en los mapas del Torneo del Poder y de Bills. Hojas pendientes del plan: solo quedan las de una pose por personaje (Yakon y otros, DAIMA varios), colecciones y objetos. `animaciones_juego.js?v=104`, `script.js?v=130`.

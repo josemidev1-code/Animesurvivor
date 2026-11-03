@@ -219,7 +219,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable (Kyabe) | Cabba |
 | ✅ jugable y enemigo | Frost |
 | — | Botamo |
-| — | Magetta |
+| ✅ jugable y enemigo | Magetta |
 | ✅ jugable y enemigo | Goku Black |
 | ✅ jugable y enemigo | Zamasu |
 | ✅ jugable y enemigo | Zamasu fusionado |

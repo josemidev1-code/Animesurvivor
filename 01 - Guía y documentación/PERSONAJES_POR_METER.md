@@ -46,6 +46,7 @@ Packs con fotogramas a zooms distintos (Bra 189, Vegeta MUI 303, Rey Mono 138): 
 - Tanda «sprites para casa» 5 (GT): Pan (448, con Giru Bomba), Super 17 (449, Tormenta Infernal y Barrera), Dr. Myuu (450, jefe) y Omega Shenron (451, Minus Energy Power Ball).
 - Tanda «sprites para casa» 6 (saga de Granola y Universo 6): Kyabe SSJ (452), Gas (453, Anillo Paralizador y Rayo de Gas) y Granola (454, Disparo Certero y Lluvia de Ki).
 - Tanda «sprites para casa» 7: Paragus (455, Esfera de Paragus), Gran Sacerdote (456, Golpe Angelical y Aura Divina) y Majin Duu de Daima (457, Rodillo Majin y Bola Majin).
+- Tanda «sprites para casa» 8: Magetta (458) jugable y élite, con Escupitajo de Magma y Puño de Hierro. Descartadas Ribrianne y Zeno por calidad.
 
 ## A medias
 

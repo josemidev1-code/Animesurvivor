@@ -3061,6 +3061,39 @@
      31
     ]
    }
+  },
+  "magetta": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/02_Universo_6/DeviantArt/458_MAGETTA (AlquimistaSK)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     69,
+     70,
+     71
+    ],
+    "kick": [
+     82,
+     83
+    ],
+    "ki": [
+     75,
+     77
+    ],
+    "pow": [
+     12,
+     13
+    ],
+    "hurt": [
+     67,
+     68
+    ]
+   }
   }
  }
 }
