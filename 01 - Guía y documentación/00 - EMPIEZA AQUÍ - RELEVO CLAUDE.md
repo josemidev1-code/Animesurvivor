@@ -12,7 +12,7 @@ Lee `Cambios propuestos por Josemi.md` en esta misma carpeta: es el documento co
 ## Estado (2 nov., noche)
 
 - Selección: personajes de lado (sin retratos), ventanas azules 16 bits, estadísticas con colores. Letra Press Start 2P en todo. **No volver a proponer la recreativa ni el efecto CRT** (Josemi los rechazó).
-- Josemi quiere **todos los packs completos como personajes jugables propios**; los incompletos fuera. 130 personajes (2 nov., noche; tandas 7-23). Lista de completos agotada; quedan los «a medias» de `PERSONAJES_POR_METER.md`; lista, procedimiento y atajo `herramientas/meter.py` en `PERSONAJES_POR_METER.md`. Vegeta terminado (salvo MUI 303, a medias). Siguiente: el resto de versiones de Goku.
+- Josemi quiere **todos los packs completos como personajes jugables propios**; los incompletos fuera. 132 personajes (3 nov.; tandas 7-23 y DeviantArt). Lista de completos agotada; quedan los «a medias» de `PERSONAJES_POR_METER.md`; lista, procedimiento y atajo `herramientas/meter.py` en `PERSONAJES_POR_METER.md`. Vegeta terminado (salvo MUI 303, a medias). Siguiente: el resto de versiones de Goku.
 - Pendiente de Josemi: permiso para incluir la letra en el proyecto (ahora se carga de Google Fonts y sin internet no se ve).
 
 ## Siguiente (2 nov., 20:35)
@@ -22,6 +22,7 @@ Lee `Cambios propuestos por Josemi.md` en esta misma carpeta: es el documento co
 2. **Usar en partida las animaciones propias de cada personaje** (los ataques y efectos de su pack), no solo las poses comunes.
 3. **Cuadrar los ataques estéticamente con las animaciones**: que el golpe, el ki y la técnica coincidan con el fotograma que se ve.
 4. Ya no quedan packs completos por meter. A medias solo el personaje sin identificar del pack 254 (pelo blanco, ropa verde): falta que Josemi diga quién es.
+5. **DeviantArt (3 nov.)**: con hojas de DeviantArt volvieron 24 de los 35 enemigos retirados (Dodoria, Zarbon, Meca Freezer, Garlic Jr., Rey Vegeta, Burter, Whis, A19, Dabura, soldado Red Ribbon, Fasha, Ozaru, Freezer 2ª forma, Pui Pui, Yamu…) y dos jugables nuevos (Maestro Roshi y Tao Pai Pai con Dodonpa). Cada enemigo dispara con el color de su técnica (`col`/`col2` en `ET`). Quedan 11 retirados (bolita de Buu, saiyans renegados, Goku falso, Ozaru dorado, Zeno, esbirros de Garlic, demonio gigante, Shenron oscuro). Para bajar más: el navegador de la app desde el PC de Josemi (la nube no llega a DeviantArt); créditos en `CREDITOS_RECURSOS.md`. Hoja de efectos de ki y aura (GMKirito) bajada sin integrar.
 
 ## Estado de Git
 
