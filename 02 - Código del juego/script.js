@@ -711,6 +711,8 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ slug:{name:'LORD SLUG',rar:4,hp:130,spd:62,atk:1.15,start:'slugball',desc:'Namekiano demoníaco de la película: crece, estira el brazo y lanza bolas de ki.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ tarble:{name:'TARBLE',rar:3,hp:105,spd:68,atk:1.05,start:'galick',desc:'El hermano pequeño de Vegeta: Super Saiyan tranquilo que pelea si hace falta.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  reycold:{name:'REY COLD',rar:4,hp:135,spd:60,atk:1.2,start:'deathbeam',desc:'El padre de Freezer y Cooler; enorme, cruel y con un cañón de ki en la mano.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  cui:{name:'CUI',rar:3,hp:105,spd:66,atk:0.95,start:'cuiblast',desc:'Rival de Vegeta en el ejército de Freezer; rápido y presumido.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  kibitoshin:{name:'KIBITOSHIN',rar:4,hp:120,spd:67,atk:1.12,start:'kaikai',desc:'Fusión de Shin y Kibito con los pendientes Pothala; se teletransporta y cura.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
@@ -1208,6 +1210,8 @@ Object.assign(MV,{
  kaishot:SHOT('Esfera Divina',['#d02a9a','#ff8ad8','#ffffff'],1.5,18,7,1,280,{pierce:3}),
  kaikai:NOVA('Kai Kai',['#3aa0ff','#a0e0ff','#ffffff'],5,30,10,75,0.8),
  coldcannon:BIG('Cañón de Cold',['#c02a7a','#ff7ac0','#ffe0f0','#ffffff'],3.0,34,12,30,130),
+ slugball:BIG('Bola Explosiva',['#d8a010','#ffe060','#fff8d0','#ffffff'],3.2,32,12,30,120),
+ slugarm:MELEE('Brazo Estirado',['#4ac040','#b0ff9a'],'punch',1.0,12,6,2,130,22,{kb:110}),
  cuiblast:SHOT('Ráfaga de Cui',['#8a3ad8','#d0a0ff','#ffffff'],1.2,12,5,2,300),
  // ataques propios de cada personaje (sesión 9)
  deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
@@ -1360,7 +1364,9 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  shin:['kiblast','punch','kick','kame','renzoku'],
  kibitoshin:['kiblast','punch','kick','kame','renzoku'],
  cui:['kiblast','punch','kick','kame','renzoku'],
- reycold:['kiblast','punch','kick','kame','renzoku']};
+ reycold:['kiblast','punch','kick','kame','renzoku'],
+ tarble:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ slug:['kiblast','punch','kick','kame','renzoku']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 // 3 nov.: técnicas propias del plan «sprites para casa»
 Object.assign(SIGS,{yamcha:['kiblast','rogafu','kick','sokidan','kame'],tenshinhan:['kiblast','punch','kikoho','taiyoken','dodonpa','kick'],
@@ -1501,6 +1507,9 @@ const ET={
  blueE:{n:'GENERAL BLUE',hp:480,spd:58,dmg:15,xp:44,r:8,elite:1},
  murasakiE:{n:'NINJA MURASAKI',hp:380,spd:66,dmg:13,xp:38,r:8,elite:1,shoot:2},
  reycoldB:{n:'REY COLD',boss:1,ai:'frieza'},
+ slugB:{n:'LORD SLUG',boss:1,ai:'dash'},
+ zangyaE:{n:'ZANGYA',hp:420,spd:64,dmg:14,xp:42,r:8,elite:1,shoot:1.6},
+ bujinE:{n:'BUJIN',hp:400,spd:60,dmg:14,xp:40,r:8,elite:1,shoot:1.9},
  geroE:{n:'DR. GERO',hp:520,spd:50,dmg:15,xp:45,r:8,elite:1,shoot:1.7},
  cell:{n:'CELL PERFECTO',boss:1,ai:'cell'},
  dabura:{n:'DABURA',boss:1,ai:'frieza'},
@@ -1626,7 +1635,7 @@ const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SE
     tierra:['raditz','reycoldB','mecha','a21B','cell'],redribbon:['a16B','a19','mecha','a21B','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
     kaioshin:['dabura','janemba','majinv','buugohanB','buu'],infierno:['garlicB','cell','superbuuB','ozarugB','janemba'],time:['coolerB','babyB','ozarugB','moroB','shenronB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
     bills:['golden','toppoB','whisB','billsB','zenoB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a16B','broly2B','mecha','cell'],
-    pradera:['raditz','turles','vegetaB','broly3B','frieza'],bosque:['raditz','ozaruB','a16B','piccoloB','cell']};
+    pradera:['raditz','slugB','vegetaB','broly3B','frieza'],bosque:['raditz','ozaruB','a16B','piccoloB','cell']};
   for(const k in B)if(MAPS[k])MAPS[k].bosses=B[k].map(f);
   WAVES.buu.push(['superbuuE',1]);WAVES.super.push(['hitE',1],['zamasuE',1]);
   for(const k in WAVES)WAVES[k].forEach(w=>w[0]=f(w[0]))})();
@@ -3056,7 +3065,10 @@ Object.assign(ENEMIGO_HEROE,{geroE:['e_gero',0]});
 Object.assign(ENEMIGO_HEROE,{appuleE:['e_appule',0],cuiE:['cui',0],blueE:['e_blue',0],murasakiE:['e_murasaki',0],reycoldB:['reycold',0]});
 Object.assign(ET.appuleE,{col:'#5aa0ff'});Object.assign(ET.cuiE,{col:'#b06aff'});Object.assign(ET.murasakiE,{col:'#d0d0e0'});Object.assign(ET.reycoldB,{col:'#ff5aa0',col2:'#ffd23f'});
 for(const k of ['namek','freezer','yardrat','vegetasei'])if(MAPS[k])MAPS[k].pool.push([150,'appuleE',2],[300,'cuiE',2]);
-for(const k of ['redribbon','musculo','capsule'])if(MAPS[k])MAPS[k].pool.push([120,'murasakiE',2],[280,'blueE',2]);if(ET.geroE)ET.geroE.col='#ff5a8a'; // Androide 20: rayo de los ojos
+for(const k of ['redribbon','musculo','capsule'])if(MAPS[k])MAPS[k].pool.push([120,'murasakiE',2],[280,'blueE',2]);
+Object.assign(ENEMIGO_HEROE,{slugB:['slug',0],zangyaE:['e_zangya',0],bujinE:['e_bujin',0]});
+Object.assign(ET.slugB,{col:'#ffd23f'});Object.assign(ET.zangyaE,{col:'#7af04a'});Object.assign(ET.bujinE,{col:'#7af04a'});
+for(const k of ['pradera','desierto','bosque','lookout'])if(MAPS[k])MAPS[k].pool.push([180,'zangyaE',2],[260,'bujinE',2]);if(ET.geroE)ET.geroE.col='#ff5a8a'; // Androide 20: rayo de los ojos
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);

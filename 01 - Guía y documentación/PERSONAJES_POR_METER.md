@@ -42,6 +42,7 @@ Packs con fotogramas a zooms distintos (Bra 189, Vegeta MUI 303, Rey Mono 138): 
 - Tanda «sprites para casa» 1: Yamcha (431), Tenshinhan (432), Goten SSJ (433), Trunks niño base+SSJ (434), con Rōgafūfūken, Sōkidan, Kikoho y Burning Attack.
 - Tanda «sprites para casa» 2: Goku niño (435), Videl (436), Supremo Kaioshin (437), Kibitoshin (438) y Cui (439), con Jan Ken, Patada Justiciera, Esfera Divina, Kai Kai y Ráfaga de Cui.
 - Tanda «sprites para casa» 3: Rey Cold jugable y jefe (440, Cañón de Cold); enemigos Appule (441), General Blue (442), Ninja Murasaki (443) y Cui como élite.
+- Tanda «sprites para casa» 4: Tarble SSJ (444), Lord Slug jugable y jefe (445, Bola Explosiva y Brazo Estirado), Zangya (446) y Bujin (447) como élites.
 
 ## A medias
 

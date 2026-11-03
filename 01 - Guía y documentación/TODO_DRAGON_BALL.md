@@ -109,7 +109,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Tora |
 | — | Shugesh |
 | — | Borgos |
-| — | Tarble |
+| ✅ jugable | Tarble |
 
 ### Dragon Ball Z · Androides y Cell (8/10)
 
@@ -164,7 +164,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Dr. Wheelo |
 | — | Dr. Kochin |
 | ✅ jugable y enemigo | Turles |
-| — | Lord Slug |
+| ✅ jugable y jefe | Lord Slug |
 | ✅ jugable y enemigo | Cooler |
 | — | Metal Cooler |
 | — | Androide 13 |
@@ -172,8 +172,9 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Androide 15 |
 | ✅ jugable y enemigo | Broly |
 | — | Paragus |
-| — | Bojack |
-| — | Zangya |
+| — | Bojack (la hoja descargada pide permiso al autor: sin usar) |
+| ✅ enemigo | Zangya |
+| ✅ enemigo | Bujin |
 | — | Bio-Broly |
 | ✅ jugable y enemigo | Janemba |
 | ✅ jugable | Gogeta |

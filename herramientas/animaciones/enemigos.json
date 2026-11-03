@@ -785,6 +785,72 @@
      21
     ]
    }
+  },
+  "e_zangya": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/446_ZANGYA (Morai)",
+    "idle": [
+     0,
+     12
+    ],
+    "move": [
+     2
+    ],
+    "attack": [
+     6,
+     7,
+     8
+    ],
+    "kick": [
+     10,
+     11
+    ],
+    "ki": [
+     13,
+     23
+    ],
+    "pow": [
+     14,
+     15
+    ],
+    "hurt": [
+     16,
+     17
+    ]
+   }
+  },
+  "e_bujin": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/447_BUJIN (Morai)",
+    "idle": [
+     0,
+     10
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     1,
+     8,
+     11
+    ],
+    "kick": [
+     8,
+     3
+    ],
+    "ki": [
+     13,
+     4
+    ],
+    "pow": [
+     4,
+     3
+    ],
+    "hurt": [
+     2,
+     6
+    ]
+   }
   }
  }
 }

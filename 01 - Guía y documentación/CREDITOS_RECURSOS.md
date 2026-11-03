@@ -148,5 +148,10 @@ Cuarta tanda (3 nov.):
 | Appule | **Kopoloku** (base de GodofHell), subida por LSW-Sprite | [Appule sprite](https://www.deviantart.com/lsw-sprite/art/Appule-sprite-607390635) | Élite del ejército de Freezer |
 | General Blue | **ChipsoDebik** | [general blue ULSW](https://www.deviantart.com/chipsodebik/art/general-blue-ULSW-1051138588) | Élite de la Red Ribbon |
 | Ninja Murasaki | **LSW-Sprite** (base de Tortue Géniale de Fullpower, modificada por Trimss) | [DB ninja Murasaki sprite sheet](https://www.deviantart.com/lsw-sprite/art/DB-ninja-Murasaki-sprite-sheet-622397905) | Élite de la Red Ribbon |
+| Tarble SSJ | **LSW-Sprite** | [Tarble ssj sprite 2](https://www.deviantart.com/lsw-sprite/art/Tarble-ssj-sprite-2-645589408) | Jugable |
+| Lord Slug | **Adrianzin09** (edición); créditos a DB FighterZ, Extreme Butoden, Jump Ultimate Stars, Supersonic Warriors, qsab101, Luka, Angry Boy, Matheus Anima, OrumaitoObeso, Azazel300, Woothrad, Rud 390, ErickJCrack507 | [Lord Slug First Form ULSW](https://www.deviantart.com/adrianzin09/art/Lord-Slug-First-Form-ULSW-read-description-1278778424) | Jugable y jefe de la pradera. Halo de ruido alrededor |
+| Zangya y Bujin | **Morai (devons)** | [Bujin et zangya sprites](https://www.deviantart.com/zitlezoan/art/Bujin-et-zangya-sprites-348811994) | Élites. Pide crédito («give credit if used») |
+
+Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los dos namekianos de ziglepaz son poses sueltas sin animación.
 
 Descartada: «DBUL - Tora (Reformed)» de Yumejoki (el sprite se parece demasiado a Vegeta y confundiría en partida).

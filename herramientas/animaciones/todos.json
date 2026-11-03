@@ -2668,6 +2668,78 @@
      34
     ]
    }
+  },
+  "tarble": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/DeviantArt/444_TARBLE SSJ (LSW-Sprite)",
+    "idle": [
+     0,
+     22
+    ],
+    "move": [
+     1
+    ],
+    "attack": [
+     8,
+     9,
+     10
+    ],
+    "kick": [
+     11,
+     12
+    ],
+    "ki": [
+     27,
+     28
+    ],
+    "pow": [
+     5,
+     6
+    ],
+    "hurt": [
+     20,
+     21
+    ],
+    "faint": [
+     25
+    ]
+   }
+  },
+  "slug": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/445_LORD SLUG (Adrianzin09)",
+    "idle": [
+     2,
+     3
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     6,
+     8,
+     7
+    ],
+    "kick": [
+     21,
+     22
+    ],
+    "ki": [
+     31,
+     32
+    ],
+    "pow": [
+     28,
+     29
+    ],
+    "hurt": [
+     24,
+     25
+    ],
+    "faint": [
+     26
+    ]
+   }
   }
  }
 }
