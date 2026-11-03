@@ -3007,6 +3007,10 @@ if(ET.rrsoldier)Object.assign(ET.rrsoldier,{col:'#ffd23f'}); // balas del fusil
 if(ET.renegB)Object.assign(ET.renegB,{n:'FASHA',col:'#ff5ad8'}); // compañera de Bardock, ki rosa
 if(ET.ozaruB)Object.assign(ET.ozaruB,{n:'OZARU VEGETA',col:'#ff9a3a'}); // rayo por la boca
 for(const k of ['redribbon','musculo','capsule'])if(MAPS[k])MAPS[k].pool.push([0,'rrsoldier',6],[200,'rrsoldier',6]);
+Object.assign(ENEMIGO_HEROE,{freeza2E:['e_freeza2',0],freeza2B:['e_freeza2',0],demonS:['e_puipui',0],demonS2:['e_yamu',0]});
+for(const id of ['freeza2E','freeza2B'])if(ET[id])Object.assign(ET[id],{col:'#ff5aa0',col2:'#ff9ad0'}); // rayos rosas y Death Ball
+if(ET.demonS)Object.assign(ET.demonS,{n:'PUI PUI',col:'#5af0c8'}); // guerrero de Babidi, ki turquesa
+if(ET.demonS2)Object.assign(ET.demonS2,{n:'YAMU',col:'#b06aff'}); // esbirro de Babidi, ki morado
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);

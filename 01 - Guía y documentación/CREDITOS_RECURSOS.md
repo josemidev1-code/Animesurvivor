@@ -128,3 +128,13 @@ Tercera tanda (3 nov.):
 | Soldado Red Ribbon | **PaulGekko98** (créditos: Akira Toriyama) | [Red Ribbon Army JUS Sprite Sheet](https://www.deviantart.com/paulgekko98/art/Red-Ribbon-Army-JUS-Sprite-Sheet-1362631195) | Enemigo común en Red Ribbon, Torre Músculo y Ciudad del Oeste. Estilo JUS, sin daño propio |
 | Tao Pai Pai | **ChrisReinerVV** | [Tao Pai Pai Sprite Sheet Ulsw](https://www.deviantart.com/chrisreinervv/art/Tao-Pai-Pai-Sprite-Sheet-Ulsw-By-ChrisReiner-VV-1248981253) | Personaje jugable con Dodonpa y Golpe de la Grulla |
 | Efectos de ki y aura | **GMKirito** | [Ki Blast E Aura Sprite Sheet](https://www.deviantart.com/gmkirito/art/Ki-Blast-E-Aura-Sprite-Sheet-Dragon-Ball-876723464) | Bajada y guardada en `Recursos pendientes/deviantart_originales/`; sin integrar (bolas de ki de muchos colores para las técnicas) |
+
+Cuarta tanda (3 nov.):
+
+| Personaje | Autor y créditos | Ficha | Uso / condiciones |
+|---|---|---|---|
+| Freezer 2ª forma | **Strice12**; créditos a JustOruma, MrDryy, Azazel300, Qsab101, Arisrad, 310r4ngut4nit0123, ErickJCrack507, zenninsama | [Sheet Sprite Freezer Segunda forma Ulsw](https://www.deviantart.com/strice12/art/Sheet-Sprite-Freezer-Segunda-forma-Ulsw-1332749441) | Élite y jefe. JPEG: algo de ruido alrededor |
+| Pui Pui | **MrDryy**; créditos a qsab101, m0v3537m4k3r, Scarlettdancer2627, 3lOr4ngut4nit0123, GZ52, AThePro013, Arisrad, ErickJCrack507, JustOruma | [Pui Pui Sprite Sheet ULSW](https://www.deviantart.com/mrdryy/art/Pui-Pui-Sprite-Sheet-ULSW-1333543307) | Enemigo de la saga de Buu (antes «Demonio») |
+| Yamu | **MrDryy**; estilo de qsab101, faceset de 3lOr4ngut4nit0123, con GZ52, JustOruma, ErickJCrack507, TarloEgnaro | [Yamu Sprites Sheet ULSW](https://www.deviantart.com/mrdryy/art/Yamu-Sprites-Sheet-ULSW-1251547228) | Enemigo de la saga de Buu (antes «Demonio de élite») |
+
+Descartada: «DBUL - Tora (Reformed)» de Yumejoki (el sprite se parece demasiado a Vegeta y confundiría en partida).

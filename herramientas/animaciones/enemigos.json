@@ -542,6 +542,108 @@
      8
     ]
    }
+  },
+  "e_freeza2": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/427_FREEZER 2 FORMA (Strice12)",
+    "idle": [
+     12,
+     13
+    ],
+    "move": [
+     20
+    ],
+    "attack": [
+     24,
+     25,
+     26
+    ],
+    "kick": [
+     27,
+     28
+    ],
+    "ki": [
+     44,
+     83
+    ],
+    "pow": [
+     48,
+     49
+    ],
+    "hurt": [
+     15,
+     35
+    ],
+    "faint": [
+     38
+    ]
+   }
+  },
+  "e_puipui": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/429_PUI PUI (MrDryy)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     11
+    ],
+    "attack": [
+     9,
+     12,
+     13
+    ],
+    "kick": [
+     18,
+     19
+    ],
+    "ki": [
+     65,
+     66
+    ],
+    "pow": [
+     44,
+     43
+    ],
+    "hurt": [
+     29,
+     17
+    ]
+   }
+  },
+  "e_yamu": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/430_YAMU (MrDryy)",
+    "idle": [
+     1,
+     2
+    ],
+    "move": [
+     15
+    ],
+    "attack": [
+     10,
+     11,
+     13
+    ],
+    "kick": [
+     25,
+     26
+    ],
+    "ki": [
+     46,
+     47
+    ],
+    "pow": [
+     42,
+     43
+    ],
+    "hurt": [
+     22,
+     23
+    ]
+   }
   }
  }
 }
