@@ -203,6 +203,186 @@ Sacado del propio juego en marcha (la selección de personajes y los enemigos ac
 
 Siguen retirados (sin sprites buenos): bolita de Buu, Saiyan renegado, Saiyan oscuro, Saiyan de clase baja, Goku falso, Ozaru dorado, Zeno, dos esbirros de Garlic, demonio gigante y Shenron oscuro.
 
+## Lista maestra de la serie (objetivo: todos)
+
+Petición de Josemi (3 nov.): «literalmente todo personaje que se ve en la serie»; los sprites fanmade o no oficiales también entran, como personajes extra o como enemigos.
+Estado: 64 de 129 ya están en el juego; faltan 65. Marcar aquí cada uno al meterlo.
+
+
+### Dragon Ball
+
+| Personaje | Estado |
+|---|---|
+| Goku niño | **FALTA** |
+| Bulma | **FALTA** |
+| Oolong | **FALTA** |
+| Puar | **FALTA** |
+| Yamcha | **FALTA** |
+| Chi-Chi | **FALTA** |
+| Ox-Satán | **FALTA** |
+| Maestro Roshi | Jugable |
+| Krilin | Jugable |
+| Lunch | **FALTA** |
+| Pilaf, Mai y Shu | **FALTA** |
+| Tenshinhan | **FALTA** |
+| Chaoz | **FALTA** |
+| Maestro Grulla | **FALTA** |
+| Tao Pai Pai | Jugable |
+| General Blue | **FALTA** |
+| Comandante Red y Black | **FALTA** |
+| Soldados Red Ribbon | Enemigo |
+| Androide 8 | **FALTA** |
+| Uranai Baba | **FALTA** |
+| Piccolo Daimaō | Enemigo |
+| Tambourine y los hijos de Piccolo | **FALTA** |
+| Kami-sama | **FALTA** |
+| Mr. Popo | **FALTA** |
+| Yajirobe | **FALTA** |
+| Karin | **FALTA** |
+| Upa y Bora | **FALTA** |
+
+### DBZ Saiyans
+
+| Personaje | Estado |
+|---|---|
+| Raditz | Jugable y enemigo |
+| Nappa | Jugable y enemigo |
+| Vegeta | Jugable y enemigo |
+| Saibaman | Jugable y enemigo |
+| Gohan niño | Jugable y enemigo |
+| Kaio-sama | **FALTA** |
+| Ozaru | Enemigo |
+
+### DBZ Freezer
+
+| Personaje | Estado |
+|---|---|
+| Freezer (todas las formas) | Jugable y enemigo |
+| Dodoria | Enemigo |
+| Zarbon | Enemigo |
+| Cui | **FALTA** |
+| Capitán Ginyu | Jugable y enemigo |
+| Recoome | **FALTA** |
+| Burter | Enemigo |
+| Jeice | Jugable y enemigo |
+| Guldo | Jugable y enemigo |
+| Soldados de Freezer | Enemigo |
+| Nail | **FALTA** |
+| Dende | **FALTA** |
+| Gran Patriarca | **FALTA** |
+| Bardock | Jugable |
+| Rey Vegeta | Enemigo |
+| Fasha | Enemigo |
+| Tora, Shugesh y Borgos | **FALTA** |
+| Gine | **FALTA** |
+| Rey Cold | **FALTA** |
+| Meca Freezer | Enemigo |
+
+### DBZ Androides
+
+| Personaje | Estado |
+|---|---|
+| Trunks del futuro | Jugable y enemigo |
+| Androide 16 | Jugable y enemigo |
+| Androide 17 | Jugable y enemigo |
+| Androide 18 | Jugable y enemigo |
+| Androide 19 | Enemigo |
+| Dr. Gero (Androide 20) | Enemigo |
+| Cell (todas las formas) | Jugable y enemigo |
+| Cell Jr. | Enemigo |
+
+### DBZ Buu
+
+| Personaje | Estado |
+|---|---|
+| Videl | **FALTA** |
+| Goten | **FALTA** |
+| Trunks niño | **FALTA** |
+| Gotenks | Jugable |
+| Supremo Kaio-sama (Shin) | **FALTA** |
+| Kibito y Kibitoshin | **FALTA** |
+| Babidi | **FALTA** |
+| Dabura | Enemigo |
+| Pui Pui | Enemigo |
+| Yakon | **FALTA** |
+| Yamu y Spopovich | Enemigo |
+| Majin Buu (todas las formas) | Jugable y enemigo |
+| Mr. Satán | Jugable |
+| Vegetto | Jugable |
+| Uub | Jugable |
+
+### Películas Z
+
+| Personaje | Estado |
+|---|---|
+| Garlic Jr. | Enemigo |
+| Dr. Wheelo | **FALTA** |
+| Turles | Jugable y enemigo |
+| Lord Slug | **FALTA** |
+| Cooler y Metal Cooler | Jugable y enemigo |
+| Androides 13, 14 y 15 | **FALTA** |
+| Broly | Jugable y enemigo |
+| Paragus | **FALTA** |
+| Bojack y su banda | **FALTA** |
+| Bio-Broly | **FALTA** |
+| Janemba | Jugable y enemigo |
+| Gogeta | Jugable |
+| Hildegarn y Tapion | **FALTA** |
+
+### GT
+
+| Personaje | Estado |
+|---|---|
+| Goku GT (SSJ4) | Jugable |
+| Pan | **FALTA** |
+| Giru | **FALTA** |
+| Baby | Jugable y enemigo |
+| Dr. Myuu y Rilldo | **FALTA** |
+| Super 17 | **FALTA** |
+| Dragones malignos (Omega Shenron…) | **FALTA** |
+| Bra | Jugable y enemigo |
+
+### Super
+
+| Personaje | Estado |
+|---|---|
+| Bills | Jugable y enemigo |
+| Whis | Jugable y enemigo |
+| Champa y Vados | **FALTA** |
+| Hit | Jugable y enemigo |
+| Cabba | **FALTA** |
+| Frost | Jugable y enemigo |
+| Goku Black | Jugable y enemigo |
+| Zamasu | Jugable y enemigo |
+| Zeno | **FALTA** |
+| Jiren | Jugable y enemigo |
+| Toppo | Jugable y enemigo |
+| Dyspo | **FALTA** |
+| Kale | Jugable y enemigo |
+| Caulifla | Jugable |
+| Kefla | Jugable |
+| Kyabe | Jugable |
+| Ribrianne | **FALTA** |
+| Moro | Jugable y enemigo |
+| Granola | **FALTA** |
+| Gas | **FALTA** |
+| Gamma 1 y 2 | **FALTA** |
+| Cell Max | **FALTA** |
+| Piccolo Naranja | Jugable |
+| Gohan Bestia | Jugable |
+
+### Daima
+
+| Personaje | Estado |
+|---|---|
+| Goku Daima | Jugable y enemigo |
+| Glorio | **FALTA** |
+| Panzy | **FALTA** |
+| Gomah | **FALTA** |
+| Degesu | **FALTA** |
+| Neva | **FALTA** |
+| Majin Kuu y Duu | **FALTA** |
+
 ## Personajes de la serie que aún no están
 
 - **En el código pero ocultos por falta de sprites:** Yamcha, Goten y Gohan Bestia (versión propia).

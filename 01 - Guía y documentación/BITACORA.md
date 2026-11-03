@@ -995,3 +995,7 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Lo que hice
 - Inventario sacado del juego en marcha: `01 - Guía y documentación/INVENTARIO_PERSONAJES.md` (132 jugables = 48 personajes distintos; 85 tipos de enemigo; lo que falta de la serie).
 - Arreglado: el Maestro Roshi no salía en la selección (regla antigua `FUERA=new Set(['roshi'])` de cuando no tenía sprites). Comprobado que ahora salen las 132 tarjetas.
+
+### Petición (3 nov., 15:25): literalmente todos
+- Josemi: «quiero que el juego tenga literalmente todo personaje que se ve en la serie de Dragon Ball, y si hay sprites de fanmades o no oficiales esos también los metemos como personajes extra o como enemigos».
+- Lista maestra de la serie en `INVENTARIO_PERSONAJES.md` (129 personajes; 64 ya en el juego, faltan 65). Dr. Gero entra como enemigo de élite de la saga de la Tierra (hoja de SonIsaki ya troceada). `animaciones_juego.js?v=96`, `script.js?v=122`.

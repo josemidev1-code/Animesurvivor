@@ -644,6 +644,39 @@
      23
     ]
    }
+  },
+  "e_gero": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/416_DR GERO (SonIsaki)",
+    "idle": [
+     7,
+     9
+    ],
+    "move": [
+     0
+    ],
+    "attack": [
+     23,
+     25,
+     15
+    ],
+    "kick": [
+     16,
+     17
+    ],
+    "ki": [
+     10,
+     11
+    ],
+    "pow": [
+     8,
+     5
+    ],
+    "hurt": [
+     6,
+     19
+    ]
+   }
   }
  }
 }

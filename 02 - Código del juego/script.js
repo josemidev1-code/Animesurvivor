@@ -1462,6 +1462,7 @@ const ET={
  nappa:{n:'NAPPA',boss:1,ai:'dash'},
  mecha:{n:'MECA FREEZER',boss:1,ai:'spiral'},
  a19:{n:'ANDROIDE 19',boss:1,ai:'spiral'},
+ geroE:{n:'DR. GERO',hp:520,spd:50,dmg:15,xp:45,r:8,elite:1,shoot:1.7},
  cell:{n:'CELL PERFECTO',boss:1,ai:'cell'},
  dabura:{n:'DABURA',boss:1,ai:'frieza'},
  fatbuu:{n:'MAJIN BUU',boss:1,ai:'buu'},
@@ -1575,7 +1576,7 @@ const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SE
   if(MAPS.futuro)MAPS.futuro.bosses=['a16B','black','zamasuB','rose','brolyB'];
   if(MAPS.kaioshin)MAPS.kaioshin.bosses[3]='superbuuB';
   if(MAPS.bills)MAPS.bills.bosses[4]='billsB';
-  const EL={freezer:['burter','kingvegE','raditzssjE','turlesE','frostE','vegsaiE','freeza2E','coolerE'],tierra:['raditzssjE','cellimpE','a16E','cellsemiE','a21E','cellperfE'],
+  const EL={freezer:['burter','kingvegE','raditzssjE','turlesE','frostE','vegsaiE','freeza2E','coolerE'],tierra:['geroE','raditzssjE','cellimpE','a16E','cellsemiE','a21E','cellperfE'],
     buu:['garlicE','majinvE','fatbuuE','gohanpossE','buuthinE','demonE','superbuuE'],super:['frost2E','black2E','hitE','zamasuE','hit2E','zamasuhE','vegetaE','fakegokuE','kalessjE']};
   // elites come in one by one, weakest first; renegade saiyans fill the mid game
   for(const k in MAPS){const L=EL[WSAGA[k]||'tierra'];L.forEach((id,i)=>MAPS[k].pool.push([240+i*Math.round(600/L.length),id,0.25]));
@@ -3011,6 +3012,7 @@ Object.assign(ENEMIGO_HEROE,{freeza2E:['e_freeza2',0],freeza2B:['e_freeza2',0],d
 for(const id of ['freeza2E','freeza2B'])if(ET[id])Object.assign(ET[id],{col:'#ff5aa0',col2:'#ff9ad0'}); // rayos rosas y Death Ball
 if(ET.demonS)Object.assign(ET.demonS,{n:'PUI PUI',col:'#5af0c8'}); // guerrero de Babidi, ki turquesa
 if(ET.demonS2)Object.assign(ET.demonS2,{n:'YAMU',col:'#b06aff'}); // esbirro de Babidi, ki morado
+Object.assign(ENEMIGO_HEROE,{geroE:['e_gero',0]});if(ET.geroE)ET.geroE.col='#ff5a8a'; // Androide 20: rayo de los ojos
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);
