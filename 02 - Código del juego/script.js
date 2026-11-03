@@ -711,6 +711,11 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ cui:{name:'CUI',rar:3,hp:105,spd:66,atk:0.95,start:'cuiblast',desc:'Rival de Vegeta en el ejército de Freezer; rápido y presumido.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ kibitoshin:{name:'KIBITOSHIN',rar:4,hp:120,spd:67,atk:1.12,start:'kaikai',desc:'Fusión de Shin y Kibito con los pendientes Pothala; se teletransporta y cura.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ shin:{name:'SUPREMO KAIOSHIN',rar:4,hp:115,spd:67,atk:1.1,start:'kaishot',desc:'El dios de la creación del Universo 7: ráfagas de ki rosa y poderes divinos.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ videl:{name:'VIDEL',rar:3,hp:100,spd:66,atk:0.95,start:'videlkick',desc:'Hija de Mr. Satán y justiciera de Satan City; vuela y pelea a patadas.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ gokunino:{name:'GOKU NIÑO',rar:3,hp:110,spd:66,atk:1.0,start:'jankenpon',desc:'El niño de la cola de mono: Nyoibo, nube Kinton y su Jan Ken.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  trunksnino:{name:'TRUNKS NIÑO',rar:3,hp:105,spd:70,atk:1.1,start:'burningatk',desc:'El hijo de Vegeta y Bulma: travieso, rápido y Super Saiyan desde pequeño.',forms:['BASE','SUPER SAIYAN'],aura:['white','gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
  tenshinhan:{name:'TENSHINHAN',rar:3,hp:120,spd:66,atk:1.1,start:'kikoho',desc:'Tres ojos y cuatro brazos si hace falta: Kikoho, Taiyoken y Dodonpa.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  taopaipai:{name:'TAO PAI PAI',rar:3,hp:115,spd:64,atk:1.0,start:'dodonpa',desc:'El asesino más famoso del mundo; dispara el Dodonpa con el dedo.',forms:['BASE'],aura:['white'],sig:['kiblast','taopunch','kick','dodonpa','renzoku']},
@@ -1197,6 +1202,11 @@ Object.assign(MV,{
  sokidan:SHOT('Sōkidan',['#3a8ad8','#a0e0ff','#ffffff'],1.4,16,6,1,330,{home:1,pierce:2}),
  kikoho:BEAM('Kikoho',['#c8a010','#ffe860','#ffffff'],3.6,30,11,200,14,0.4),
  burningatk:BEAM('Burning Attack',['#d86010','#ffb040','#fff3c0'],3.2,26,10,220,9,0.25),
+ jankenpon:MELEE('Jan Ken',['#ffd23f','#ff8a3a'],'punch',1.1,14,6,3,80,26,{kb:120}),
+ videlkick:MELEE('Patada Justiciera',['#ffffff','#c070ff'],'kick',0.85,10,5,3,90,24),
+ kaishot:SHOT('Esfera Divina',['#d02a9a','#ff8ad8','#ffffff'],1.5,18,7,1,280,{pierce:3}),
+ kaikai:NOVA('Kai Kai',['#3aa0ff','#a0e0ff','#ffffff'],5,30,10,75,0.8),
+ cuiblast:SHOT('Ráfaga de Cui',['#8a3ad8','#d0a0ff','#ffffff'],1.2,12,5,2,300),
  // ataques propios de cada personaje (sesión 9)
  deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
  deathball:BOMB('Death Ball',['#c83a10','#ff8a3a','#ffd08a','#fff6e0'],7,70,26,40),
@@ -1342,11 +1352,18 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  gokureymono:['kiblast','punch','kame','kaioken','instant','genki'],
  taopaipai:['kiblast','taopunch','kick','dodonpa','renzoku'],
  tenshinhan:['kiblast','punch','kick','kame','renzoku'],
- trunksnino:['kiblast','punch','galick','bigbang','finalflash','finalexp']};
+ trunksnino:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ gokunino:['kiblast','punch','kame','kaioken','instant','genki'],
+ videl:['kiblast','punch','kick','kame','renzoku'],
+ shin:['kiblast','punch','kick','kame','renzoku'],
+ kibitoshin:['kiblast','punch','kick','kame','renzoku'],
+ cui:['kiblast','punch','kick','kame','renzoku']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 // 3 nov.: técnicas propias del plan «sprites para casa»
 Object.assign(SIGS,{yamcha:['kiblast','rogafu','kick','sokidan','kame'],tenshinhan:['kiblast','punch','kikoho','taiyoken','dodonpa','kick'],
- goten:['kiblast','punch','kame','kick','renzoku'],trunksnino:['kiblast','punch','burningatk','kick','renzoku']});
+ goten:['kiblast','punch','kame','kick','renzoku'],gokunino:['kiblast','punch','jankenpon','kame','kick'],videl:['kiblast','videlkick','punch','renzoku','kick'],
+ shin:['kiblast','punch','kaishot','kaikai','kick'],kibitoshin:['kiblast','punch','kaikai','kaishot','kick'],cui:['kiblast','punch','cuiblast','kick','renzoku'],
+ trunksnino:['kiblast','punch','burningatk','kick','renzoku']});
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
 function sigList(hid=S.hid){if(SIGS[hid])return SIGS[hid];const st=HEROES[hid]&&HEROES[hid].start;return['kiblast','punch',MV[st]&&st!=='kiblast'?st:'kame','kick','renzoku']}

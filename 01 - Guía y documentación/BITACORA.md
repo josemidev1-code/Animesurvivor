@@ -1008,3 +1008,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Lo que hice
 - Bajadas con el navegador de la app 38 hojas de prioridad 1 (sin marca de agua, tamaño útil); originales en `Recursos pendientes/deviantart_originales/`.
 - 3 nov.: Yamcha y Goten dejan de estar ocultos; nuevos Tenshinhan y Trunks niño (2 formas). Técnicas nuevas: rogafu, sokidan, kikoho, burningatk. `animaciones_juego.js?v=97`, `script.js?v=123`.
+- 3 nov.: nuevos Goku niño, Videl, Supremo Kaioshin, Kibitoshin y Cui. Ojo: la rareza mínima de un jugable es 3 (el gachapón solo tiene bolsas 3-5). `animaciones_juego.js?v=98`, `script.js?v=124`.

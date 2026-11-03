@@ -13,7 +13,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 
 | | Personaje |
 |---|---|
-| — | Goku niño |
+| ✅ jugable | Goku niño |
 | — | Bulma |
 | — | Oolong |
 | — | Puar |
@@ -90,7 +90,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Rey Cold |
 | ✅ enemigo | Dodoria |
 | ✅ enemigo | Zarbon |
-| — | Cui |
+| ✅ jugable | Cui |
 | — | Appule |
 | ✅ enemigo | Soldados de Freezer |
 | ✅ jugable y enemigo | Capitán Ginyu |
@@ -134,14 +134,14 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable | Goten |
 | ✅ jugable | Trunks niño |
 | ✅ jugable | Gotenks |
-| — | Videl |
+| ✅ jugable | Videl |
 | ✅ jugable | Mr. Satán |
 | ✅ jugable | Majin Buu gordo |
 | ✅ jugable y enemigo | Super Buu |
 | ✅ jugable y enemigo | Kid Buu |
-| — | Supremo Kaio-sama (Shin) |
+| ✅ jugable | Supremo Kaio-sama (Shin) |
 | — | Kibito |
-| — | Kibitoshin |
+| ✅ jugable | Kibitoshin |
 | — | Viejo Kaioshin |
 | — | Babidi |
 | — | Bibidi |

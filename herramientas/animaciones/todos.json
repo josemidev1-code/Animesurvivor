@@ -2452,6 +2452,186 @@
      99
     ]
    }
+  },
+  "gokunino": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/DeviantArt/435_GOKU NINO (Strice12)",
+    "idle": [
+     3,
+     4
+    ],
+    "move": [
+     103
+    ],
+    "attack": [
+     104,
+     105,
+     107
+    ],
+    "kick": [
+     25,
+     26
+    ],
+    "ki": [
+     74,
+     79
+    ],
+    "pow": [
+     117,
+     118
+    ],
+    "hurt": [
+     37,
+     38
+    ],
+    "faint": [
+     41
+    ]
+   }
+  },
+  "videl": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/436_VIDEL (MrDryy)",
+    "idle": [
+     1,
+     2
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     6,
+     9,
+     10
+    ],
+    "kick": [
+     12,
+     13
+    ],
+    "ki": [
+     35,
+     36
+    ],
+    "pow": [
+     32,
+     33
+    ],
+    "hurt": [
+     29,
+     24
+    ],
+    "faint": [
+     25
+    ]
+   }
+  },
+  "shin": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/437_SUPREMO KAIOSHIN (ErickFl)",
+    "idle": [
+     1,
+     10
+    ],
+    "move": [
+     4
+    ],
+    "attack": [
+     11,
+     12,
+     14
+    ],
+    "kick": [
+     18,
+     21
+    ],
+    "ki": [
+     39,
+     41
+    ],
+    "pow": [
+     36,
+     37
+    ],
+    "hurt": [
+     23,
+     24
+    ],
+    "faint": [
+     25
+    ]
+   }
+  },
+  "kibitoshin": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/438_KIBITOSHIN (ErickFl)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     9,
+     10,
+     12
+    ],
+    "kick": [
+     13,
+     14
+    ],
+    "ki": [
+     11,
+     16
+    ],
+    "pow": [
+     2,
+     4
+    ],
+    "hurt": [
+     20,
+     19
+    ],
+    "faint": [
+     21
+    ]
+   }
+  },
+  "cui": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/439_CUI (TheWarriorFF2)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     5
+    ],
+    "attack": [
+     11,
+     12,
+     13
+    ],
+    "kick": [
+     18,
+     19
+    ],
+    "ki": [
+     30,
+     31
+    ],
+    "pow": [
+     34,
+     39
+    ],
+    "hurt": [
+     40,
+     41
+    ],
+    "faint": [
+     45
+    ]
+   }
   }
  }
 }
