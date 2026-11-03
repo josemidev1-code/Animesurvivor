@@ -986,3 +986,12 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Integrar la hoja de efectos de ki y aura de GMKirito para que cada técnica use su bola de color.
 - Buscar hojas para los 11 enemigos que siguen retirados (Spopovich para el demonio gigante, esbirros de Garlic, Shenron oscuro, Zeno).
 - Lo pendiente de Josemi: ataques personalizados por personaje y cuadrarlos con las animaciones.
+
+## 2026-11-03 — Claude (Opus) · Inventario de personajes
+
+### Lo que pidió el usuario
+- Josemi (15:19): «hacer una lista de lo que ya tenemos ahora, qué personajes tenemos de la serie bien».
+
+### Lo que hice
+- Inventario sacado del juego en marcha: `01 - Guía y documentación/INVENTARIO_PERSONAJES.md` (132 jugables = 48 personajes distintos; 85 tipos de enemigo; lo que falta de la serie).
+- Arreglado: el Maestro Roshi no salía en la selección (regla antigua `FUERA=new Set(['roshi'])` de cuando no tenía sprites). Comprobado que ahora salen las 132 tarjetas.

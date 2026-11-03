@@ -2947,7 +2947,7 @@ const PORTRAIT={},BUSTO={};
 if(window.ANIM_SET)for(const id in ANIM_SET.h)for(const f in ANIM_SET.h[id]){const F=ANIM_SET.h[id][f],k='as-'+id+'-'+f;SCPACK.s[k]={};
   for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait;if(F.busto)BUSTO[id+'/'+f]=1}
 // only hand-picked forms stay: missing forms leave the transformation chain, characters with none leave the game
-var FUERA=new Set(['roshi']);
+var FUERA=new Set(); // Roshi ya tiene sprites propios (3 nov.); antes se ocultaba aquí
 for(const id in HDEF){const D=HDEF[id],A=window.ANIM_SET&&ANIM_SET.h[id];if(D.npc||D.custom)continue;
   if(!A){FUERA.add(id);continue}const keep=Object.keys(A).map(Number).sort((a,b)=>a-b);
   if(keep.length!==D.forms.length||keep.some((f,i)=>f!==i)){for(const k of ['forms','aura','hair','hc','formPal'])if(Array.isArray(D[k]))D[k]=keep.map(f=>D[k][Math.min(f,D[k].length-1)]);
