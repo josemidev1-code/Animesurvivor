@@ -216,7 +216,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Champa |
 | — | Vados |
 | ✅ jugable y enemigo | Hit |
-| — | Cabba |
+| ✅ jugable (Kyabe) | Cabba |
 | ✅ jugable y enemigo | Frost |
 | — | Botamo |
 | — | Magetta |
@@ -242,8 +242,8 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable y enemigo | Black Freezer |
 | ✅ jugable y enemigo | Moro |
 | — | Merus |
-| — | Granola |
-| — | Gas |
+| ✅ jugable | Granola |
+| ✅ jugable y jefe | Gas |
 | — | Macki |
 | — | Gamma 1 |
 | — | Gamma 2 |

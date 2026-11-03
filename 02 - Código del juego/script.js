@@ -655,7 +655,7 @@ HDEF.gotenks={...HDEF.goten,name:'GOTENKS',rar:4,hp:115,spd:70,atk:1.15,desc:'La
 HDEF.kefla={...HDEF.goten,name:'KEFLA',rar:5,hp:120,spd:68,atk:1.25,start:'eraser',desc:'Fusión de Kale y Caulifla. Empieza con Eraser Cannon.',forms:['SUPER SAIYAN'],aura:['green'],npc:0};
 HDEF.caulifla={...HDEF.goten,name:'CAULIFLA',rar:3,hp:105,spd:70,atk:1.05,start:'galick',desc:'Saiyan del Universo 6. Muy veloz.',forms:['BASE'],npc:0};
 HDEF.kale={...HDEF.goten,name:'KALE',rar:4,hp:130,spd:60,atk:1.1,start:'eraser',desc:'Su furia despierta al Berserker.',forms:['BASE','BERSERKER'],aura:['gold','green'],npc:0};
-HDEF.kyabe={...HDEF.goten,name:'KYABE',rar:3,hp:110,spd:64,atk:1.0,start:'galick',desc:'Saiyan del Universo 6. Equilibrado.',forms:['BASE','SUPER SAIYAN'],npc:0};
+HDEF.kyabe={...HDEF.goten,name:'KYABE',rar:3,hp:110,spd:64,atk:1.0,start:'galick',desc:'Saiyan del Universo 6. Equilibrado.',forms:['SUPER SAIYAN'],aura:['gold'],npc:0};
 HDEF.gohanadult={...HDEF.gohan,name:'GOHAN ADULTO',rar:4,hp:120,atk:1.15,desc:'El poder místico de Gohan. Empieza con Kamehameha.',forms:['BASE','MÍSTICO'],aura:['white','white']};
 HDEF.gokugt={...HDEF.goku,name:'GOKU GT',rar:5,hp:125,atk:1.2,desc:'Super Saiyan 4. Empieza con Kamehameha.',forms:['BASE','SUPER SAIYAN 4'],aura:['gold','red']};
 HDEF.vegetagt={...HDEF.vegeta,name:'VEGETA GT',rar:5,hp:110,atk:1.3,desc:'Super Saiyan 4. Empieza con Galick Gun.',forms:['BASE','SUPER SAIYAN 4'],aura:['gold','red'],majin:99};
@@ -711,6 +711,8 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ granola:{name:'GRANOLA',rar:4,hp:115,spd:68,atk:1.2,start:'granolasnipe',desc:'El último cerealiano: francotirador con el ojo derecho y el deseo de ser el más fuerte.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ gas:{name:'GAS',rar:4,hp:140,spd:64,atk:1.2,start:'gasring',desc:'El más fuerte de los Heeters tras pedir su deseo a las esferas de Cereal.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  omega:{name:'OMEGA SHENRON',rar:5,hp:150,spd:60,atk:1.3,start:'minusball',desc:'El dragón oscuro de una estrella: Bola de Energía Negativa y Minus Energy Power Ball.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  super17:{name:'SUPER 17',rar:4,hp:135,spd:62,atk:1.15,start:'hellstorm',desc:'Fusión de los dos Androides 17: absorbe el ki y lanza la Tormenta Infernal.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  pangt:{name:'PAN GT',rar:3,hp:100,spd:70,atk:1.0,start:'masenko',desc:'La nieta de Goku en la saga GT: rápida, valiente y con Giru siempre cerca.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
@@ -1220,6 +1222,10 @@ Object.assign(MV,{
  minusball:BIG('Minus Energy Power Ball',['#d86010','#ffb040','#fff3c0','#ffffff'],3.4,40,14,36,110),
  negaball:SHOT('Bola de Energía Negativa',['#c0207a','#ff6ad0','#ffffff'],1.6,20,8,1,260,{pierce:2}),
  giru:SHOT('Giru Bomba',['#c8c8d0','#ffffff','#ffd23f'],2.0,16,6,1,220,{home:1}),
+ granolasnipe:BEAM('Disparo Certero',['#2ac070','#9affc0','#ffffff'],2.2,30,12,320,4,0.15),
+ granolarain:SHOT('Lluvia de Ki',['#2ac070','#9affc0','#ffffff'],1.6,10,4,4,300),
+ gasring:SHOT('Anillo Paralizador',['#d02ad0','#ff8aff','#ffffff'],1.8,14,6,1,240,{ring:1,pierce:3}),
+ gasbeam:BEAM('Rayo de Gas',['#d02ad0','#ff8aff','#ffffff'],3.4,28,11,230,9,0.3),
  cuiblast:SHOT('Ráfaga de Cui',['#8a3ad8','#d0a0ff','#ffffff'],1.2,12,5,2,300),
  // ataques propios de cada personaje (sesión 9)
  deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
@@ -1377,7 +1383,9 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  slug:['kiblast','punch','kick','kame','renzoku'],
  pangt:['kiblast','punch','kame','kaioken','instant','genki'],
  super17:['kiblast','punch','kick','kame','renzoku'],
- omega:['kiblast','punch','kick','kame','renzoku']};
+ omega:['kiblast','punch','kick','kame','renzoku'],
+ gas:['kiblast','punch','kick','kame','renzoku'],
+ granola:['kiblast','punch','kick','kame','renzoku']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 // 3 nov.: técnicas propias del plan «sprites para casa»
 Object.assign(SIGS,{yamcha:['kiblast','rogafu','kick','sokidan','kame'],tenshinhan:['kiblast','punch','kikoho','taiyoken','dodonpa','kick'],
@@ -1522,6 +1530,7 @@ const ET={
  myuuB:{n:'DR. MYUU',boss:1,ai:'dash'},
  super17B:{n:'SUPER 17',boss:1,ai:'frieza'},
  omegaB:{n:'OMEGA SHENRON',boss:1,ai:'cell'},
+ gasB:{n:'GAS',boss:1,ai:'dash'},
  zangyaE:{n:'ZANGYA',hp:420,spd:64,dmg:14,xp:42,r:8,elite:1,shoot:1.6},
  bujinE:{n:'BUJIN',hp:400,spd:60,dmg:14,xp:40,r:8,elite:1,shoot:1.9},
  geroE:{n:'DR. GERO',hp:520,spd:50,dmg:15,xp:45,r:8,elite:1,shoot:1.7},
@@ -1648,7 +1657,7 @@ const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SE
   const B={namek:['dodoria','zarbon','ginyu','freeza3B','frieza100'],vegetasei:['freeza1B','coolerB','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
     tierra:['raditz','reycoldB','mecha','a21B','cell'],redribbon:['a16B','a19','mecha','a21B','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
     kaioshin:['dabura','janemba','majinv','buugohanB','buu'],infierno:['garlicB','cell','superbuuB','ozarugB','janemba'],time:['myuuB','babyB','super17B','moroB','omegaB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
-    bills:['golden','toppoB','whisB','billsB','zenoB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a16B','broly2B','mecha','cell'],
+    bills:['golden','toppoB','whisB','gasB','billsB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a16B','broly2B','mecha','cell'],
     pradera:['raditz','slugB','vegetaB','broly3B','frieza'],bosque:['raditz','ozaruB','a16B','piccoloB','cell']};
   for(const k in B)if(MAPS[k])MAPS[k].bosses=B[k].map(f);
   WAVES.buu.push(['superbuuE',1]);WAVES.super.push(['hitE',1],['zamasuE',1]);
@@ -3084,7 +3093,7 @@ Object.assign(ENEMIGO_HEROE,{slugB:['slug',0],zangyaE:['e_zangya',0],bujinE:['e_
 Object.assign(ET.slugB,{col:'#ffd23f'});Object.assign(ET.zangyaE,{col:'#7af04a'});Object.assign(ET.bujinE,{col:'#7af04a'});
 for(const k of ['pradera','desierto','bosque','lookout'])if(MAPS[k])MAPS[k].pool.push([180,'zangyaE',2],[260,'bujinE',2]);
 Object.assign(ENEMIGO_HEROE,{myuuB:['e_myuu',0],super17B:['super17',0],omegaB:['omega',0]});
-Object.assign(ET.myuuB,{col:'#7af04a'});Object.assign(ET.super17B,{col:'#ffd23f'});Object.assign(ET.omegaB,{col:'#ff5aa0',col2:'#ffb040'});if(ET.geroE)ET.geroE.col='#ff5a8a'; // Androide 20: rayo de los ojos
+Object.assign(ET.myuuB,{col:'#7af04a'});Object.assign(ENEMIGO_HEROE,{gasB:['gas',0]});Object.assign(ET.gasB,{col:'#ff6aff'});Object.assign(ET.super17B,{col:'#ffd23f'});Object.assign(ET.omegaB,{col:'#ff5aa0',col2:'#ffb040'});if(ET.geroE)ET.geroE.col='#ff5a8a'; // Androide 20: rayo de los ojos
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);

@@ -2845,6 +2845,114 @@
      29
     ]
    }
+  },
+  "kyabe": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/02_Universo_6/DeviantArt/452_KYABE SSJ (MrDryy)",
+    "idle": [
+     19,
+     20
+    ],
+    "move": [
+     26
+    ],
+    "attack": [
+     30,
+     99,
+     31
+    ],
+    "kick": [
+     42,
+     43
+    ],
+    "ki": [
+     97,
+     98
+    ],
+    "pow": [
+     12,
+     13
+    ],
+    "hurt": [
+     55,
+     56
+    ],
+    "faint": [
+     57
+    ]
+   }
+  },
+  "gas": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/DeviantArt/453_GAS (VairenMorningstar)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     7,
+     8,
+     9
+    ],
+    "kick": [
+     10,
+     11
+    ],
+    "ki": [
+     19,
+     20
+    ],
+    "pow": [
+     39,
+     40
+    ],
+    "hurt": [
+     34,
+     35
+    ],
+    "faint": [
+     38
+    ]
+   }
+  },
+  "granola": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/DeviantArt/454_GRANOLA (AThePro013)",
+    "idle": [
+     3,
+     34
+    ],
+    "move": [
+     25
+    ],
+    "attack": [
+     35,
+     37,
+     38
+    ],
+    "kick": [
+     67,
+     68
+    ],
+    "ki": [
+     114,
+     115
+    ],
+    "pow": [
+     110,
+     111
+    ],
+    "hurt": [
+     121,
+     122
+    ],
+    "faint": [
+     130
+    ]
+   }
   }
  }
 }

@@ -155,6 +155,9 @@ Cuarta tanda (3 nov.):
 | Super 17 | **LSW-Sprite** (créditos a GodofHell) | [Super C17 Sprite Sheet](https://www.deviantart.com/lsw-sprite/art/Super-C17-Sprite-Sheet-614731779) | Jugable y jefe de la Sala del Tiempo |
 | Dr. Myuu | **LSW-Sprite** (B_V) | [Dr Myuu 2](https://www.deviantart.com/lsw-sprite/art/Dr-Myuu-2-610598282) | Jefe de la Sala del Tiempo |
 | Omega Shenron | **qsab101** (gracias a AngryBoy, Luka, Extreme Butoden, Jump Ultimate Stars, Supersonic Warriors, LSW) | [Omega Shenron Ultimate LSW Sheet PREVIEW](https://www.deviantart.com/xbae12/art/Omega-Shenron-Ultimate-LSW-Sheet-PREVIEW-806406165) | Jugable y jefe final de la Sala del Tiempo (sin animación de derrota) |
+| Kyabe (Cabba) SSJ | **MrDryy** | [Cabba (Kyabe) Ssj Sprite Sheet ULSW](https://www.deviantart.com/mrdryy/art/Cabba-Kyabe-Ssj-Sprite-Sheet-ULSW-1185539236) | Jugable (antes oculto) |
+| Gas (3ª fase) | **VairenMorningstar667**; créditos a AndresZ2021, qsab101, Gatitopri, ThibaultDeBoon, Endericaro | [Gas Forma 3 Sprites LSW](https://www.deviantart.com/vairenmorningstar667/art/Gas-Forma-3-Sprites-LSW-DBS-Saga-de-Granola-939682837) | Jugable y jefe de la arena de Bills |
+| Granola | **AThePro013** | [Granola sprite Sheet Swl](https://www.deviantart.com/athepro013/art/Granola-sprite-Sheet-Swl-979282045) | Jugable |
 
 Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los dos namekianos de ziglepaz son poses sueltas sin animación.
 
