@@ -171,7 +171,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Androide 14 |
 | — | Androide 15 |
 | ✅ jugable y enemigo | Broly |
-| — | Paragus |
+| ✅ jugable | Paragus |
 | — | Bojack (la hoja descargada pide permiso al autor: sin usar) |
 | ✅ enemigo | Zangya |
 | ✅ enemigo | Bujin |
@@ -225,7 +225,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable y enemigo | Zamasu fusionado |
 | — | Gowasu |
 | — | Zeno |
-| — | Gran Sacerdote |
+| ✅ jugable | Gran Sacerdote |
 | ✅ jugable y enemigo | Jiren |
 | ✅ jugable y enemigo | Toppo |
 | — | Dyspo |
@@ -264,7 +264,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Degesu |
 | — | Neva |
 | — | Majin Kuu |
-| — | Majin Duu |
+| ✅ jugable | Majin Duu |
 | — | Arinsu |
 | — | Tamagami |
 

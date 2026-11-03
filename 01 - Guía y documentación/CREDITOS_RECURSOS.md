@@ -158,7 +158,10 @@ Cuarta tanda (3 nov.):
 | Kyabe (Cabba) SSJ | **MrDryy** | [Cabba (Kyabe) Ssj Sprite Sheet ULSW](https://www.deviantart.com/mrdryy/art/Cabba-Kyabe-Ssj-Sprite-Sheet-ULSW-1185539236) | Jugable (antes oculto) |
 | Gas (3ª fase) | **VairenMorningstar667**; créditos a AndresZ2021, qsab101, Gatitopri, ThibaultDeBoon, Endericaro | [Gas Forma 3 Sprites LSW](https://www.deviantart.com/vairenmorningstar667/art/Gas-Forma-3-Sprites-LSW-DBS-Saga-de-Granola-939682837) | Jugable y jefe de la arena de Bills |
 | Granola | **AThePro013** | [Granola sprite Sheet Swl](https://www.deviantart.com/athepro013/art/Granola-sprite-Sheet-Swl-979282045) | Jugable |
+| Paragus (película de 1993) | **Strice12** | [Paragus Dbz Sheet Sprite Ulsw](https://www.deviantart.com/strice12/art/Paragus-Dbz-Sheet-Sprite-Ulsw-1235958309) | Jugable |
+| Gran Sacerdote | **YolokinG777** | [DBS Daishinkan Grand Priest ULSW Sprite Sheet](https://www.deviantart.com/yoloking777/art/DBS-Daishinkan-Grand-Priest-ULSW-Sprite-Sheet-948899992) | Jugable |
+| Majin Duu | **AlquimistaSK** | [Majin duu Ulsw](https://www.deviantart.com/alquimistask/art/Majin-duu-Ulsw-By-AlquimistaSK-1147205569) | Jugable |
 
-Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los dos namekianos de ziglepaz son poses sueltas sin animación.
+Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los namekianos de ziglepaz y los hijos del Rey Piccolo de CaptainDutch son dibujos sueltos sin animación.
 
 Descartada: «DBUL - Tora (Reformed)» de Yumejoki (el sprite se parece demasiado a Vegeta y confundiría en partida).

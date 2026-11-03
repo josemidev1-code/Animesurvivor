@@ -711,6 +711,9 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ majinduu:{name:'MAJIN DUU',rar:3,hp:150,spd:58,atk:1.1,start:'duuroll',desc:'El Majin de Daima: grande, glotón y con golpes de rodillo.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ daishinkan:{name:'GRAN SACERDOTE',rar:5,hp:150,spd:74,atk:1.35,start:'angelbeam',desc:'El ángel más poderoso, al servicio de Zeno: esquiva todo y golpea con calma.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ paragus:{name:'PARAGUS',rar:3,hp:115,spd:60,atk:1.05,start:'paragusball',desc:'El padre de Broly: lo controla con la corona y dispara esferas de ki verdes.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  granola:{name:'GRANOLA',rar:4,hp:115,spd:68,atk:1.2,start:'granolasnipe',desc:'El último cerealiano: francotirador con el ojo derecho y el deseo de ser el más fuerte.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  gas:{name:'GAS',rar:4,hp:140,spd:64,atk:1.2,start:'gasring',desc:'El más fuerte de los Heeters tras pedir su deseo a las esferas de Cereal.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  omega:{name:'OMEGA SHENRON',rar:5,hp:150,spd:60,atk:1.3,start:'minusball',desc:'El dragón oscuro de una estrella: Bola de Energía Negativa y Minus Energy Power Ball.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
@@ -1226,6 +1229,11 @@ Object.assign(MV,{
  granolarain:SHOT('Lluvia de Ki',['#2ac070','#9affc0','#ffffff'],1.6,10,4,4,300),
  gasring:SHOT('Anillo Paralizador',['#d02ad0','#ff8aff','#ffffff'],1.8,14,6,1,240,{ring:1,pierce:3}),
  gasbeam:BEAM('Rayo de Gas',['#d02ad0','#ff8aff','#ffffff'],3.4,28,11,230,9,0.3),
+ paragusball:SHOT('Esfera de Paragus',['#3ad83a','#a0ff8a','#ffffff'],1.5,16,6,1,250,{home:1}),
+ angelbeam:SHOT('Golpe Angelical',['#5ad8ff','#c0f4ff','#ffffff'],1.0,14,6,2,360,{pierce:3}),
+ angelnova:NOVA('Aura Divina',['#5ad8ff','#c0f4ff','#ffffff'],6,35,12,80,1.0),
+ duuroll:MELEE('Rodillo Majin',['#e8e070','#fff8b0'],'kick',1.0,13,6,3,95,30,{kb:130}),
+ duuball:BIG('Bola Majin',['#7ad83a','#d0ff9a','#ffffff','#ffffff'],3.2,32,12,32,120),
  cuiblast:SHOT('Ráfaga de Cui',['#8a3ad8','#d0a0ff','#ffffff'],1.2,12,5,2,300),
  // ataques propios de cada personaje (sesión 9)
  deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
@@ -1385,7 +1393,10 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  super17:['kiblast','punch','kick','kame','renzoku'],
  omega:['kiblast','punch','kick','kame','renzoku'],
  gas:['kiblast','punch','kick','kame','renzoku'],
- granola:['kiblast','punch','kick','kame','renzoku']};
+ granola:['kiblast','punch','kick','kame','renzoku'],
+ paragus:['kiblast','punch','kick','kame','renzoku'],
+ daishinkan:['kiblast','punch','kick','kame','renzoku'],
+ majinduu:['kiblast','punch','kick','kame','renzoku']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 // 3 nov.: técnicas propias del plan «sprites para casa»
 Object.assign(SIGS,{yamcha:['kiblast','rogafu','kick','sokidan','kame'],tenshinhan:['kiblast','punch','kikoho','taiyoken','dodonpa','kick'],

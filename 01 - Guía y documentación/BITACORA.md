@@ -1013,3 +1013,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - 3 nov.: Tarble y Lord Slug jugables; Lord Slug sustituye a Turles como jefe de la pradera; Zangya y Bujin élites en pradera, desierto, bosque y templo. Bojack sin usar (la hoja pide permiso). `animaciones_juego.js?v=100`, `script.js?v=126`.
 - 3 nov.: saga GT. La Sala del Tiempo pasa a tener de jefes a Dr. Myuu, Baby, Super 17, Moro y Omega Shenron (antes Cooler y el Shenron oscuro retirado). `animaciones_juego.js?v=101`, `script.js?v=127`.
 - 3 nov.: Kyabe deja de estar oculto (solo forma SSJ); Gas y Granola jugables; Gas jefe de la arena de Bills en lugar de Zeno (retirado). `animaciones_juego.js?v=102`, `script.js?v=128`.
+- 3 nov.: Paragus, Gran Sacerdote y Majin Duu jugables. Los hijos del Rey Piccolo descargados no son sprites (dibujos grandes), sin usar. `animaciones_juego.js?v=103`, `script.js?v=129`.
