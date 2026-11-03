@@ -708,6 +708,7 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ taopaipai:{name:'TAO PAI PAI',rar:3,hp:115,spd:64,atk:1.0,start:'dodonpa',desc:'El asesino más famoso del mundo; dispara el Dodonpa con el dedo.',forms:['BASE'],aura:['white'],sig:['kiblast','taopunch','kick','dodonpa','renzoku']},
  roshi:{name:'MAESTRO ROSHI',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'El maestro de la tortuga; inventó el Kamehameha y aún puede hinchar los músculos.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','mafuba','kick']},
  gokureymono:{name:'GOKU REY MONO',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku Rey Mono en Super Saiyan, de DB Tale (fanmade).',forms:['SSJ REY MONO'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
  vegetamui:{name:'VEGETA UI DOMINADO',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta con el Ultra Instinto dominado, versión fanmade.',forms:['UI DOMINADO'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
@@ -1185,6 +1186,8 @@ Object.assign(MV,{
  roar:NOVA('Gigantic Roar',['#2a9a20','#8af06a','#f0fff0'],4,40,14,55),
  taiyoken:NOVA('Taiyoken',['#ffffff','#fff8c0','#ffffff'],6,5,2,90,1.6),
  mafuba:NOVA('Mafuba',['#2a9a20','#8af06a','#f0fff0'],7,20,8,70,2.5),
+ dodonpa:BEAM('Dodonpa',['#d8b010','#fff06a','#ffffff'],4,24,9,230,7,0.3),
+ taopunch:MELEE('Golpe de la Grulla',['#ffffff','#ff8ad0'],'punch',0.9,10,5,3,80,22),
  // ataques propios de cada personaje (sesión 9)
  deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
  deathball:BOMB('Death Ball',['#c83a10','#ff8a3a','#ffd08a','#fff6e0'],7,70,26,40),
@@ -1327,7 +1330,8 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  bramajin:['kiblast','punch','kick','kame','renzoku'],
  vegitoblue254:['kiblast','punch','finalkame','spiritsword','bigbang','kick'],
  vegetamui:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
- gokureymono:['kiblast','punch','kame','kaioken','instant','genki']};
+ gokureymono:['kiblast','punch','kame','kaioken','instant','genki'],
+ taopaipai:['kiblast','taopunch','kick','dodonpa','renzoku']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
@@ -2998,6 +3002,11 @@ if(ET.burter)Object.assign(ET.burter,{shoot:1.8,col:'#4a7ad8'}); // el más ráp
 if(ET.whisB)Object.assign(ET.whisB,{col:'#7ad8ff'}); // ráfagas del bastón
 if(ET.a19)Object.assign(ET.a19,{col:'#ff7ad0'}); // rayos de los ojos y absorción de energía
 if(ET.dabura)Object.assign(ET.dabura,{col:'#ff5a2a',col2:'#ffb02a'}); // aliento de fuego y saliva de piedra
+Object.assign(ENEMIGO_HEROE,{rrsoldier:['e_rrsoldier',0],renegB:['e_fasha',0],ozaruB:['e_ozaru',0]});
+if(ET.rrsoldier)Object.assign(ET.rrsoldier,{col:'#ffd23f'}); // balas del fusil
+if(ET.renegB)Object.assign(ET.renegB,{n:'FASHA',col:'#ff5ad8'}); // compañera de Bardock, ki rosa
+if(ET.ozaruB)Object.assign(ET.ozaruB,{n:'OZARU VEGETA',col:'#ff9a3a'}); // rayo por la boca
+for(const k of ['redribbon','musculo','capsule'])if(MAPS[k])MAPS[k].pool.push([0,'rrsoldier',6],[200,'rrsoldier',6]);
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);

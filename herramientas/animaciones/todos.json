@@ -2244,6 +2244,39 @@
      42
     ]
    }
+  },
+  "taopaipai": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/DeviantArt/426_TAO PAI PAI (ChrisReinerVV)",
+    "idle": [
+     6,
+     7
+    ],
+    "move": [
+     16
+    ],
+    "attack": [
+     21,
+     23,
+     25
+    ],
+    "kick": [
+     26,
+     28
+    ],
+    "ki": [
+     42,
+     43
+    ],
+    "pow": [
+     34,
+     35
+    ],
+    "hurt": [
+     12,
+     24
+    ]
+   }
   }
  }
 }

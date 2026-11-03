@@ -118,3 +118,13 @@ Bajadas de DeviantArt el 3 nov. (originales en `Recursos pendientes/deviantart_o
 | Freezer (formas) | **qsab101 / Que** | [Frieza - Ultimate LSW Sheet](https://www.deviantart.com/qsab101/art/Frieza---Ultimate-LSW-Sheet-752959651) | «If used, please give credit to Que». Troceado; la 2ª forma solo trae la transformación y unas poses: no está completa, sin usar |
 
 Descartados: Ozaru y Ozaru dorado de phyetro (marca de agua, sin original descargable); Dabura y Dr. Gero de arisrad (de pago).
+
+Tercera tanda (3 nov.):
+
+| Personaje | Autor y créditos | Ficha | Uso / condiciones |
+|---|---|---|---|
+| Fasha | **ErickFl**; gracias a qsab101 | [Fasha DBZ Sprites Sheet Ulsw](https://www.deviantart.com/erickfl/art/Fasha-DBZ-Sprites-Sheet-Ulsw-829798829) | Enemiga de élite (antes «Saiyan de élite»), con su nombre |
+| Ozaru (Vegeta) | **AldetSkywalker** | [Oozaru Vegeta Sheet](https://www.deviantart.com/aldetskywalker/art/Oozaru-Vegeta-Sheet-805111160) | Jefe «OZARU VEGETA». JPEG y solo 11 poses: sin daño ni ki propios |
+| Soldado Red Ribbon | **PaulGekko98** (créditos: Akira Toriyama) | [Red Ribbon Army JUS Sprite Sheet](https://www.deviantart.com/paulgekko98/art/Red-Ribbon-Army-JUS-Sprite-Sheet-1362631195) | Enemigo común en Red Ribbon, Torre Músculo y Ciudad del Oeste. Estilo JUS, sin daño propio |
+| Tao Pai Pai | **ChrisReinerVV** | [Tao Pai Pai Sprite Sheet Ulsw](https://www.deviantart.com/chrisreinervv/art/Tao-Pai-Pai-Sprite-Sheet-Ulsw-By-ChrisReiner-VV-1248981253) | Personaje jugable con Dodonpa y Golpe de la Grulla |
+| Efectos de ki y aura | **GMKirito** | [Ki Blast E Aura Sprite Sheet](https://www.deviantart.com/gmkirito/art/Ki-Blast-E-Aura-Sprite-Sheet-Dragon-Ball-876723464) | Bajada y guardada en `Recursos pendientes/deviantart_originales/`; sin integrar (bolas de ki de muchos colores para las técnicas) |
