@@ -1011,3 +1011,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - 3 nov.: nuevos Goku niño, Videl, Supremo Kaioshin, Kibitoshin y Cui. Ojo: la rareza mínima de un jugable es 3 (el gachapón solo tiene bolsas 3-5). `animaciones_juego.js?v=98`, `script.js?v=124`.
 - 3 nov.: Rey Cold (jugable y jefe de la Tierra en lugar de Turles), élites Appule y Cui en mapas de Freezer, General Blue y Murasaki en mapas de la Red Ribbon. `animaciones_juego.js?v=99`, `script.js?v=125`.
 - 3 nov.: Tarble y Lord Slug jugables; Lord Slug sustituye a Turles como jefe de la pradera; Zangya y Bujin élites en pradera, desierto, bosque y templo. Bojack sin usar (la hoja pide permiso). `animaciones_juego.js?v=100`, `script.js?v=126`.
+- 3 nov.: saga GT. La Sala del Tiempo pasa a tener de jefes a Dr. Myuu, Baby, Super 17, Moro y Omega Shenron (antes Cooler y el Shenron oscuro retirado). `animaciones_juego.js?v=101`, `script.js?v=127`.

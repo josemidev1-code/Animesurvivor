@@ -187,16 +187,16 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | | Personaje |
 |---|---|
 | ✅ jugable | Goku GT (niño y SSJ4) |
-| — | Pan |
-| — | Giru |
+| ✅ jugable | Pan |
+| ✅ técnica de Pan | Giru |
 | — | Trunks GT |
 | — | Pilaf GT |
 | ✅ jugable y enemigo | Baby |
-| — | Dr. Myuu |
+| ✅ jefe | Dr. Myuu |
 | — | Rilldo |
-| — | Super 17 |
+| ✅ jugable y jefe | Super 17 |
 | — | Androide 17 del Infierno |
-| — | Omega Shenron |
+| ✅ jugable y jefe | Omega Shenron |
 | — | Nuova Shenron |
 | — | Haze Shenron |
 | — | Rage Shenron |
