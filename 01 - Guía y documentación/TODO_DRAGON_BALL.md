@@ -38,11 +38,11 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Ranfan |
 | — | General Red |
 | — | Comandante Black |
-| — | General Blue |
+| ✅ enemigo | General Blue |
 | — | Coronel Silver |
 | — | General White |
 | — | Sargento Metálico |
-| — | Ninja Murasaki |
+| ✅ enemigo | Ninja Murasaki |
 | — | Androide 8 |
 | ✅ enemigo | Soldados Red Ribbon |
 | — | Arale (crossover) |
@@ -87,11 +87,11 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable y enemigo | Freezer 3ª forma |
 | ✅ jugable y enemigo | Freezer forma final |
 | ✅ enemigo | Meca Freezer |
-| — | Rey Cold |
+| ✅ jugable y jefe | Rey Cold |
 | ✅ enemigo | Dodoria |
 | ✅ enemigo | Zarbon |
-| ✅ jugable | Cui |
-| — | Appule |
+| ✅ jugable y enemigo | Cui |
+| ✅ enemigo | Appule |
 | ✅ enemigo | Soldados de Freezer |
 | ✅ jugable y enemigo | Capitán Ginyu |
 | — | Recoome |

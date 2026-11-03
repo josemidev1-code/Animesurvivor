@@ -144,5 +144,9 @@ Cuarta tanda (3 nov.):
 | Supremo Kaioshin | **ErickFl** (cara de AlexKX29) | [Supreme Kaio Shin Sprites Sheet Lsw](https://www.deviantart.com/erickfl/art/Supreme-Kaio-Shin-Sprites-Sheet-Lsw-822659018) | Jugable |
 | Kibitoshin | **ErickFl** (cara de AlexKX29) | [Sprites Sheet Kibito Kai](https://www.deviantart.com/erickfl/art/Sprites-Sheet-Kibito-Kai-Majin-Buu-825257745) | Jugable; los paneles de supers no se pudieron recortar |
 | Cui | **TheWarriorFF2**; créditos a Spir1tSolo, OrumaitoObeso, Luka, MestrePixelado, YolongKing777, Tansaki, LukaSahl1, Qsab101, PeculiarDoc, TheKrillMaster, MV95, ManikDX, Papuro Tekikujimo, Reek495 | [Cui Sprite Sheets (No scouter)](https://www.deviantart.com/thewarriorff2/art/Cui-Sprite-Sheets-No-scouter-855741054) | Jugable |
+| Rey Cold (3ª forma) | **AlquimistaSK** | [King cold forma 3 Ulsw](https://www.deviantart.com/alquimistask/art/King-cold-forma-3-Ulsw-989365541) | Jugable y jefe de la Tierra |
+| Appule | **Kopoloku** (base de GodofHell), subida por LSW-Sprite | [Appule sprite](https://www.deviantart.com/lsw-sprite/art/Appule-sprite-607390635) | Élite del ejército de Freezer |
+| General Blue | **ChipsoDebik** | [general blue ULSW](https://www.deviantart.com/chipsodebik/art/general-blue-ULSW-1051138588) | Élite de la Red Ribbon |
+| Ninja Murasaki | **LSW-Sprite** (base de Tortue Géniale de Fullpower, modificada por Trimss) | [DB ninja Murasaki sprite sheet](https://www.deviantart.com/lsw-sprite/art/DB-ninja-Murasaki-sprite-sheet-622397905) | Élite de la Red Ribbon |
 
 Descartada: «DBUL - Tora (Reformed)» de Yumejoki (el sprite se parece demasiado a Vegeta y confundiría en partida).

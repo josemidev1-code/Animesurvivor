@@ -2632,6 +2632,42 @@
      45
     ]
    }
+  },
+  "reycold": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/440_REY COLD (AlquimistaSK)",
+    "idle": [
+     15,
+     16
+    ],
+    "move": [
+     22
+    ],
+    "attack": [
+     36,
+     37,
+     38
+    ],
+    "kick": [
+     48,
+     49
+    ],
+    "ki": [
+     10,
+     11
+    ],
+    "pow": [
+     27,
+     28
+    ],
+    "hurt": [
+     31,
+     32
+    ],
+    "faint": [
+     34
+    ]
+   }
   }
  }
 }
