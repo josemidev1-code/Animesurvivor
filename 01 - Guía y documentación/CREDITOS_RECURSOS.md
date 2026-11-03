@@ -136,5 +136,8 @@ Cuarta tanda (3 nov.):
 | Freezer 2ª forma | **Strice12**; créditos a JustOruma, MrDryy, Azazel300, Qsab101, Arisrad, 310r4ngut4nit0123, ErickJCrack507, zenninsama | [Sheet Sprite Freezer Segunda forma Ulsw](https://www.deviantart.com/strice12/art/Sheet-Sprite-Freezer-Segunda-forma-Ulsw-1332749441) | Élite y jefe. JPEG: algo de ruido alrededor |
 | Pui Pui | **MrDryy**; créditos a qsab101, m0v3537m4k3r, Scarlettdancer2627, 3lOr4ngut4nit0123, GZ52, AThePro013, Arisrad, ErickJCrack507, JustOruma | [Pui Pui Sprite Sheet ULSW](https://www.deviantart.com/mrdryy/art/Pui-Pui-Sprite-Sheet-ULSW-1333543307) | Enemigo de la saga de Buu (antes «Demonio») |
 | Yamu | **MrDryy**; estilo de qsab101, faceset de 3lOr4ngut4nit0123, con GZ52, JustOruma, ErickJCrack507, TarloEgnaro | [Yamu Sprites Sheet ULSW](https://www.deviantart.com/mrdryy/art/Yamu-Sprites-Sheet-ULSW-1251547228) | Enemigo de la saga de Buu (antes «Demonio de élite») |
+| Yamcha y Tenshinhan (saga de Cell) | **Dryy7** | [Yamcha & Ten Shin Han Cell Saga Sprite Sheet ULSW](https://www.deviantart.com/dryy7/art/Yamcha-Ten-Shin-Han-Cell-Saga-Sprite-Sheet-ULSW-948418024) | Jugables |
+| Goten Super Saiyan | **ThatonePeepDA** | [ULSW Super Saiyan Goten Sprite Sheet](https://www.deviantart.com/thatonepeepda/art/ULSW-Super-Saiyan-Goten-Sprite-Sheet-843848290) | Jugable (antes oculto) |
+| Trunks niño (base y SSJ) | **MrDryy** | [Kid Trunks Base/Ssj Mini Sheet ULSW](https://www.deviantart.com/mrdryy/art/Kid-Trunks-Base-Ssj-Mini-Sheet-ULSW-1084396050) | Jugable, 2 formas. JPEG: algo de ruido |
 
 Descartada: «DBUL - Tora (Reformed)» de Yumejoki (el sprite se parece demasiado a Vegeta y confundiría en partida).

@@ -2277,6 +2277,181 @@
      24
     ]
    }
+  },
+  "tenshinhan": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/432_TENSHINHAN (Dryy7)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     10
+    ],
+    "attack": [
+     25,
+     26,
+     38
+    ],
+    "kick": [
+     28,
+     29
+    ],
+    "ki": [
+     53,
+     55
+    ],
+    "pow": [
+     48,
+     49
+    ],
+    "hurt": [
+     21,
+     23
+    ],
+    "faint": [
+     22
+    ]
+   }
+  },
+  "yamcha": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/431_YAMCHA (Dryy7)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     12
+    ],
+    "attack": [
+     29,
+     30,
+     42
+    ],
+    "kick": [
+     31,
+     32
+    ],
+    "ki": [
+     59,
+     64
+    ],
+    "pow": [
+     56,
+     57
+    ],
+    "hurt": [
+     24,
+     25
+    ],
+    "faint": [
+     27
+    ]
+   }
+  },
+  "goten": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/433_GOTEN (ThatonePeepDA)",
+    "idle": [
+     12,
+     13
+    ],
+    "move": [
+     23
+    ],
+    "attack": [
+     32,
+     33,
+     31
+    ],
+    "kick": [
+     36,
+     37
+    ],
+    "ki": [
+     46,
+     47
+    ],
+    "pow": [
+     56,
+     57
+    ],
+    "hurt": [
+     50,
+     51
+    ],
+    "faint": [
+     54
+    ]
+   }
+  },
+  "trunksnino": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/434_TRUNKS NINO (MrDryy)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     12,
+     13,
+     9
+    ],
+    "kick": [
+     15,
+     16
+    ],
+    "ki": [
+     40,
+     41
+    ],
+    "pow": [
+     34,
+     35
+    ],
+    "hurt": [
+     29,
+     30
+    ],
+    "faint": [
+     31
+    ]
+   },
+   "1": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/434_TRUNKS NINO (MrDryy)",
+    "idle": [
+     75,
+     76
+    ],
+    "move": [
+     81
+    ],
+    "attack": [
+     85,
+     86,
+     87
+    ],
+    "kick": [
+     90,
+     91
+    ],
+    "ki": [
+     146,
+     145
+    ],
+    "pow": [
+     108,
+     109
+    ],
+    "hurt": [
+     98,
+     99
+    ]
+   }
   }
  }
 }

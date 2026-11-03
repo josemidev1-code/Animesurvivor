@@ -17,7 +17,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Bulma |
 | — | Oolong |
 | — | Puar |
-| — | Yamcha |
+| ✅ jugable | Yamcha |
 | — | Chi-Chi |
 | — | Ox-Satán (Gyu Mao) |
 | ✅ jugable | Maestro Roshi |
@@ -27,7 +27,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Pilaf |
 | — | Mai |
 | — | Shu |
-| — | Tenshinhan |
+| ✅ jugable | Tenshinhan |
 | — | Chaoz |
 | — | Maestro Grulla |
 | ✅ jugable | Tao Pai Pai |
@@ -131,8 +131,8 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | | Personaje |
 |---|---|
 | ✅ jugable y enemigo | Gohan adulto / Gran Saiyaman |
-| — | Goten |
-| — | Trunks niño |
+| ✅ jugable | Goten |
+| ✅ jugable | Trunks niño |
 | ✅ jugable | Gotenks |
 | — | Videl |
 | ✅ jugable | Mr. Satán |

@@ -999,3 +999,12 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Petición (3 nov., 15:25): literalmente todos
 - Josemi: «quiero que el juego tenga literalmente todo personaje que se ve en la serie de Dragon Ball, y si hay sprites de fanmades o no oficiales esos también los metemos como personajes extra o como enemigos».
 - Lista maestra de la serie en `INVENTARIO_PERSONAJES.md` (129 personajes; 64 ya en el juego, faltan 65). Dr. Gero entra como enemigo de élite de la saga de la Tierra (hoja de SonIsaki ya troceada). `animaciones_juego.js?v=96`, `script.js?v=122`.
+
+## 2026-11-03 — Claude (Opus) · Todos los personajes de la serie (hojas del plan «sprites para casa»)
+
+### Lo que pidió el usuario
+- Josemi (22:41): adjunta `sprites_para_casa.zip` (lista de 142 hojas con enlaces) y dice «seguimos»: meter los personajes que faltan de la serie.
+
+### Lo que hice
+- Bajadas con el navegador de la app 38 hojas de prioridad 1 (sin marca de agua, tamaño útil); originales en `Recursos pendientes/deviantart_originales/`.
+- 3 nov.: Yamcha y Goten dejan de estar ocultos; nuevos Tenshinhan y Trunks niño (2 formas). Técnicas nuevas: rogafu, sokidan, kikoho, burningatk. `animaciones_juego.js?v=97`, `script.js?v=123`.

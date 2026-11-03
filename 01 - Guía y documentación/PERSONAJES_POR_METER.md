@@ -39,6 +39,7 @@ Packs con fotogramas a zooms distintos (Bra 189, Vegeta MUI 303, Rey Mono 138): 
 - Tanda 21: Bra Majin SSJ (189; cada fotograma viene a un zoom distinto: `escala` 14,2 fija y `escalaFrames` a mano).
 - Tanda 22: Vegetto Blue (del pack mixto 254; técnicas de Vegetto: Final Kamehameha, espada de ki, Big Bang).
 - Tanda 23: Vegeta UI dominado (303) y Goku Rey Mono (138), resueltos fijando la escala a mano (`escala` + `escalaFija` + `escalaFrames`).
+- Tanda «sprites para casa» 1: Yamcha (431), Tenshinhan (432), Goten SSJ (433), Trunks niño base+SSJ (434), con Rōgafūfūken, Sōkidan, Kikoho y Burning Attack.
 
 ## A medias
 

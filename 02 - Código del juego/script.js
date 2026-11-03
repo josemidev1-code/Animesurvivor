@@ -641,7 +641,10 @@ HDEF.gokuui={...HDEF.goku,name:'GOKU UI',rar:5,atk:1.25,spd:70,hp:115,desc:'Ultr
   hair:[SPK.goku,SPK.gokuSSJ,SPK.gokuSSJ,SPK.goku],hc:['dark','ssj','blue','ui'],aura:['gold','gold','blue','white']};
 HDEF.vegetaue={...HDEF.vegeta,name:'VEGETA EGO',rar:5,atk:1.35,hp:120,desc:'Ultra Ego: más fuerte cuanto más pelea. Empieza con Galick Gun.',forms:['BASE','SUPER SAIYAN','SSJ BLUE','ULTRA EGO'],
   hair:[SPK.vegeta,SPK.vegetaSSJ,SPK.vegetaSSJ,SPK.vegetaSSJ],hc:['dark','ssj','blue','ego'],aura:['gold','gold','blue','red'],majin:99,formPal:null};
-for(const k of ['yamcha','goten','gohanb'])HDEF[k].npc=1;
+HDEF.gohanb.npc=1; // Yamcha y Goten ya tienen sprites (3 nov.)
+HDEF.yamcha.forms=['BASE'];HDEF.yamcha.start='sokidan';HDEF.yamcha.desc='Colmillo de lobo y Sōkidan teledirigido. Rápido.';
+HDEF.goten.forms=['SUPER SAIYAN'];HDEF.goten.aura=['gold'];
+
 HDEF.a17npc={...HDEF.a18,name:'ANDROIDE 17',npc:1,rar:0,hc:['dark'],pal:{...HDEF.a18.pal,...DARKH,c:'#2a2a34',C:'#1a1a22',u:'#3a3a48',w:'#f2771a',W:'#c0500c'}};
 HDEF.a18npc={...HDEF.a18,npc:1,rar:0};
 HDEF.bardock.forms=['BASE','SUPER SAIYAN','SUPER SAIYAN 2','SUPER SAIYAN 4'];HDEF.bardock.aura=['gold','gold','gold','red'];
@@ -708,6 +711,8 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ trunksnino:{name:'TRUNKS NIÑO',rar:3,hp:105,spd:70,atk:1.1,start:'burningatk',desc:'El hijo de Vegeta y Bulma: travieso, rápido y Super Saiyan desde pequeño.',forms:['BASE','SUPER SAIYAN'],aura:['white','gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ tenshinhan:{name:'TENSHINHAN',rar:3,hp:120,spd:66,atk:1.1,start:'kikoho',desc:'Tres ojos y cuatro brazos si hace falta: Kikoho, Taiyoken y Dodonpa.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  taopaipai:{name:'TAO PAI PAI',rar:3,hp:115,spd:64,atk:1.0,start:'dodonpa',desc:'El asesino más famoso del mundo; dispara el Dodonpa con el dedo.',forms:['BASE'],aura:['white'],sig:['kiblast','taopunch','kick','dodonpa','renzoku']},
  roshi:{name:'MAESTRO ROSHI',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'El maestro de la tortuga; inventó el Kamehameha y aún puede hinchar los músculos.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','mafuba','kick']},
  gokureymono:{name:'GOKU REY MONO',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku Rey Mono en Super Saiyan, de DB Tale (fanmade).',forms:['SSJ REY MONO'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
@@ -1188,6 +1193,10 @@ Object.assign(MV,{
  mafuba:NOVA('Mafuba',['#2a9a20','#8af06a','#f0fff0'],7,20,8,70,2.5),
  dodonpa:BEAM('Dodonpa',['#d8b010','#fff06a','#ffffff'],4,24,9,230,7,0.3),
  taopunch:MELEE('Golpe de la Grulla',['#ffffff','#ff8ad0'],'punch',0.9,10,5,3,80,22),
+ rogafu:MELEE('Rōgafūfūken',['#e8e8ff','#8ab0ff'],'punch',0.8,9,5,4,85,24),
+ sokidan:SHOT('Sōkidan',['#3a8ad8','#a0e0ff','#ffffff'],1.4,16,6,1,330,{home:1,pierce:2}),
+ kikoho:BEAM('Kikoho',['#c8a010','#ffe860','#ffffff'],3.6,30,11,200,14,0.4),
+ burningatk:BEAM('Burning Attack',['#d86010','#ffb040','#fff3c0'],3.2,26,10,220,9,0.25),
  // ataques propios de cada personaje (sesión 9)
  deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
  deathball:BOMB('Death Ball',['#c83a10','#ff8a3a','#ffd08a','#fff6e0'],7,70,26,40),
@@ -1331,8 +1340,13 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  vegitoblue254:['kiblast','punch','finalkame','spiritsword','bigbang','kick'],
  vegetamui:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
  gokureymono:['kiblast','punch','kame','kaioken','instant','genki'],
- taopaipai:['kiblast','taopunch','kick','dodonpa','renzoku']};
+ taopaipai:['kiblast','taopunch','kick','dodonpa','renzoku'],
+ tenshinhan:['kiblast','punch','kick','kame','renzoku'],
+ trunksnino:['kiblast','punch','galick','bigbang','finalflash','finalexp']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
+// 3 nov.: técnicas propias del plan «sprites para casa»
+Object.assign(SIGS,{yamcha:['kiblast','rogafu','kick','sokidan','kame'],tenshinhan:['kiblast','punch','kikoho','taiyoken','dodonpa','kick'],
+ goten:['kiblast','punch','kame','kick','renzoku'],trunksnino:['kiblast','punch','burningatk','kick','renzoku']});
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
 function sigList(hid=S.hid){if(SIGS[hid])return SIGS[hid];const st=HEROES[hid]&&HEROES[hid].start;return['kiblast','punch',MV[st]&&st!=='kiblast'?st:'kame','kick','renzoku']}
