@@ -3094,6 +3094,212 @@
      68
     ]
    }
+  },
+  "bulma": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/DeviantArt/459_BULMA (ChipsoDebik)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     10
+    ],
+    "attack": [
+     11,
+     12
+    ],
+    "kick": [
+     14,
+     9
+    ],
+    "ki": [
+     12,
+     11
+    ],
+    "pow": [
+     4,
+     5
+    ],
+    "hurt": [
+     13,
+     6
+    ],
+    "faint": [
+     15
+    ]
+   }
+  },
+  "a14": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/461_ANDROIDE 14 (Arisrad)",
+    "idle": [
+     2,
+     3
+    ],
+    "move": [
+     7
+    ],
+    "attack": [
+     15,
+     16,
+     17
+    ],
+    "kick": [
+     21,
+     22
+    ],
+    "ki": [
+     52,
+     53
+    ],
+    "pow": [
+     32,
+     33
+    ],
+    "hurt": [
+     43,
+     45
+    ]
+   }
+  },
+  "a13": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/462_ANDROIDE 13 (Strice12)",
+    "idle": [
+     9,
+     10
+    ],
+    "move": [
+     24
+    ],
+    "attack": [
+     28,
+     29,
+     31
+    ],
+    "kick": [
+     37,
+     38
+    ],
+    "ki": [
+     67,
+     68
+    ],
+    "pow": [
+     61,
+     62
+    ],
+    "hurt": [
+     49,
+     50
+    ]
+   }
+  },
+  "metalcooler": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/463_METAL COOLER (Mast3rK1ll3r171)",
+    "idle": [
+     3,
+     4
+    ],
+    "move": [
+     25
+    ],
+    "attack": [
+     26,
+     27,
+     28
+    ],
+    "kick": [
+     41,
+     42
+    ],
+    "ki": [
+     49,
+     49
+    ],
+    "pow": [
+     12,
+     13
+    ],
+    "hurt": [
+     21,
+     22
+    ],
+    "faint": [
+     23
+    ]
+   }
+  },
+  "majinkuu": {
+   "0": {
+    "pack": "03_Daima/DeviantArt/464_MAJIN KUU (Strice12)",
+    "idle": [
+     5,
+     6
+    ],
+    "move": [
+     17
+    ],
+    "attack": [
+     21,
+     22,
+     23
+    ],
+    "kick": [
+     33,
+     34
+    ],
+    "ki": [
+     48,
+     49
+    ],
+    "pow": [
+     43,
+     44
+    ],
+    "hurt": [
+     38,
+     39
+    ]
+   }
+  },
+  "merus": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/DeviantArt/465_MERUS (ErickJCrack507)",
+    "idle": [
+     0,
+     31
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     8,
+     9,
+     10
+    ],
+    "kick": [
+     6,
+     7
+    ],
+    "ki": [
+     38,
+     39
+    ],
+    "pow": [
+     27,
+     28
+    ],
+    "hurt": [
+     24,
+     25
+    ],
+    "faint": [
+     26
+    ]
+   }
   }
  }
 }

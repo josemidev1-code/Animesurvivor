@@ -819,39 +819,6 @@
     ]
    }
   },
-  "e_bujin": {
-   "0": {
-    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/447_BUJIN (Morai)",
-    "idle": [
-     0,
-     10
-    ],
-    "move": [
-     5
-    ],
-    "attack": [
-     1,
-     8,
-     11
-    ],
-    "kick": [
-     8,
-     3
-    ],
-    "ki": [
-     13,
-     4
-    ],
-    "pow": [
-     4,
-     3
-    ],
-    "hurt": [
-     2,
-     6
-    ]
-   }
-  },
   "e_myuu": {
    "0": {
     "pack": "02_GT/DeviantArt/450_DR MYUU (LSW-Sprite)",
@@ -885,6 +852,147 @@
     ],
     "faint": [
      29
+    ]
+   }
+  },
+  "e_recoome": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/460_RECOOME (Bite035)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     9
+    ],
+    "attack": [
+     14,
+     15,
+     16
+    ],
+    "kick": [
+     22,
+     12
+    ],
+    "ki": [
+     28,
+     29
+    ],
+    "pow": [
+     25,
+     26
+    ],
+    "hurt": [
+     18,
+     19
+    ]
+   }
+  },
+  "e_silver": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/DeviantArt/466_CORONEL SILVER (ChipsoDebik)",
+    "idle": [
+     1,
+     3
+    ],
+    "move": [
+     0
+    ],
+    "attack": [
+     15,
+     16,
+     17
+    ],
+    "kick": [
+     5,
+     6
+    ],
+    "ki": [
+     2,
+     14
+    ],
+    "pow": [
+     3,
+     4
+    ],
+    "hurt": [
+     10,
+     11
+    ],
+    "faint": [
+     13
+    ]
+   }
+  },
+  "e_tambourine": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/DeviantArt/467_TAMBOURINE (KrystalDragonX546)",
+    "idle": [
+     0,
+     1
+    ],
+    "move": [
+     3
+    ],
+    "attack": [
+     10,
+     11,
+     12
+    ],
+    "kick": [
+     14,
+     15
+    ],
+    "ki": [
+     31,
+     13
+    ],
+    "pow": [
+     7,
+     8
+    ],
+    "hurt": [
+     23,
+     24
+    ],
+    "faint": [
+     28
+    ]
+   }
+  },
+  "e_drum": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/DeviantArt/468_DRUM (KrystalDragonX546)",
+    "idle": [
+     0,
+     3
+    ],
+    "move": [
+     7
+    ],
+    "attack": [
+     16,
+     17,
+     23
+    ],
+    "kick": [
+     24,
+     25
+    ],
+    "ki": [
+     31,
+     26
+    ],
+    "pow": [
+     28,
+     29
+    ],
+    "hurt": [
+     9,
+     10
+    ],
+    "faint": [
+     12
     ]
    }
   }

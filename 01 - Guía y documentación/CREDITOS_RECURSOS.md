@@ -162,7 +162,18 @@ Cuarta tanda (3 nov.):
 | Gran Sacerdote | **YolokinG777** | [DBS Daishinkan Grand Priest ULSW Sprite Sheet](https://www.deviantart.com/yoloking777/art/DBS-Daishinkan-Grand-Priest-ULSW-Sprite-Sheet-948899992) | Jugable |
 | Majin Duu | **AlquimistaSK** | [Majin duu Ulsw](https://www.deviantart.com/alquimistask/art/Majin-duu-Ulsw-By-AlquimistaSK-1147205569) | Jugable |
 | Magetta | **AlquimistaSK** | [Magetta sheet ulsw](https://www.deviantart.com/alquimistask/art/Magetta-sheet-ulsw-by-AlquimistaSK-1126260363) | Jugable y élite (Torneo del Poder, Bills) |
+| Bulma | **ChipsoDebik** | [ULSW bulma](https://www.deviantart.com/chipsodebik/art/ULSW-bulma-1050070932) | Jugable |
+| Recoome | **Bite035** (encargo) | [LSW Recoome sprite sheet](https://www.deviantart.com/bite035/art/LSW-Recoome-sprite-sheet-724400887) | Élite de las Fuerzas Ginyu. JPEG limpiado |
+| Androide 13 | **Strice12**; créditos a JCO200, ErickJCrack507, Theflearenton, ErickFl, JustOruma, azazel300, Arisrad | [Android 13 Sprite Sheet ulsw](https://www.deviantart.com/strice12/art/Android-13-Sprite-Sheet-ulsw-1155890307) | Jugable y élite |
+| Androide 14 | **Arisrad**; créditos a orumaitoobeso, LukasAhl1, qsab101, azazel300, BlackSanYT, thekrillmaster | [Android 14 swl sprite sheet](https://www.deviantart.com/arisrad/art/Android-14-swl-sprite-sheet-By-ARISRADIKLIF-1041849066) | Jugable y élite |
+| Metal Cooler | **Mast3rK1ll3r171** | [METAL COOLER ULSW SPRITE SHEET](https://www.deviantart.com/mast3rk1ll3r171/art/METAL-COOLER-ULSW-SPRITE-SHEET-1080649742) | Jugable y jefe del Infierno |
+| Majin Kuu | **Strice12**; créditos a NatitoKun77, Scarlettdancer2627, Kiibo0, JustOruma, KauanPereba, AlquimistaSK, MrDryy | [Majin Kuu Sheet Sprite Ulsw](https://www.deviantart.com/strice12/art/Majin-Kuu-Sheet-Sprite-Ulsw-1137913302) | Jugable |
+| Merus | **ErickJCrack507** (ULSW de qsab101, base de Orumaito) | [Merus ULSW Sprite Sheet](https://www.deviantart.com/erickjcrack507/art/Merus-ULSW%2C-Sprite-Sheet-854750971) | Jugable |
+| Coronel Silver | **ChipsoDebik** | [colonel silver ULSW](https://www.deviantart.com/chipsodebik/art/colonel-silver-ULSW-1053165938) | Élite de la Red Ribbon |
+| Tambourine y Drum | **KrystalDragonX546** (créditos a los autores originales) | [Lsw Tambourine and drum Sprite Sheet Pack](https://www.deviantart.com/krystaldragonx546/art/Lsw-Tambourine-and-drum-Sprite-Sheet-Pack-1364244605) | Élites en Kame House, Paoz, Budokai y Templo |
 
 Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los namekianos de ziglepaz y los hijos del Rey Piccolo de CaptainDutch son dibujos sueltos sin animación. Ribrianne (JPEG muy pequeño y con ruido) y Zeno (solo 3 poses) se descartan. «Yakon y otros» (suten94) y «DAIMA varios» (AS02X) son una pose por personaje: quedan para enemigos de una sola pose.
+
+Descartados también: Bujin (animaciones demasiado pobres), Gine de SuperSaiyanPanda175 (JPEG con mucho ruido) y Launch de LavenderBlueDreams (pide permiso).
 
 Descartada: «DBUL - Tora (Reformed)» de Yumejoki (el sprite se parece demasiado a Vegeta y confundiría en partida).

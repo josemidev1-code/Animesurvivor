@@ -711,6 +711,12 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ merus:{name:'MERUS',rar:4,hp:120,spd:70,atk:1.2,start:'merusgun',desc:'Ángel en formación y agente de la Patrulla Galáctica: bastón, pistola y reflejos divinos.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ majinkuu:{name:'MAJIN KUU',rar:3,hp:105,spd:72,atk:1.05,start:'kuublast',desc:'El pequeño Majin de Daima: rápido, burlón y con ráfagas verdes.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ metalcooler:{name:'METAL COOLER',rar:4,hp:135,spd:66,atk:1.2,start:'metalbeam',desc:'Cooler reconstruido en metal: se regenera y no conoce el cansancio.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ a14:{name:'ANDROIDE 14',rar:3,hp:150,spd:58,atk:1.05,start:'a14rush',desc:'El gigante silencioso del Dr. Gero: embestidas y ondas de energía.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ a13:{name:'ANDROIDE 13',rar:4,hp:140,spd:60,atk:1.15,start:'deadlybomber',desc:'El androide sureño de la película: SS Deadly Bomber y puños de hierro.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ bulma:{name:'BULMA',rar:3,hp:90,spd:66,atk:0.95,start:'bulmagun',desc:'La genio de la Corporación Cápsula: pistola, cápsulas y mucho carácter.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  magetta:{name:'MAGETTA',rar:3,hp:160,spd:54,atk:1.05,start:'magma',desc:'El robot de lava del Universo 6: escupe magma y se pone al rojo si le insultan.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  majinduu:{name:'MAJIN DUU',rar:3,hp:150,spd:58,atk:1.1,start:'duuroll',desc:'El Majin de Daima: grande, glotón y con golpes de rodillo.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
  daishinkan:{name:'GRAN SACERDOTE',rar:5,hp:150,spd:74,atk:1.35,start:'angelbeam',desc:'El ángel más poderoso, al servicio de Zeno: esquiva todo y golpea con calma.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
@@ -1237,6 +1243,17 @@ Object.assign(MV,{
  duuball:BIG('Bola Majin',['#7ad83a','#d0ff9a','#ffffff','#ffffff'],3.2,32,12,32,120),
  magma:BEAM('Escupitajo de Magma',['#d84010','#ff9a3a','#ffe0a0'],3.0,24,10,200,8,0.3),
  magettapunch:MELEE('Puño de Hierro',['#c0c0d0','#ffffff'],'punch',1.1,14,6,2,90,30,{kb:140}),
+ bulmagun:SHOT('Pistola de Bulma',['#ffd23f','#fff3a0','#ffffff'],0.9,8,3,2,380),
+ bulmacapsule:BIG('Cápsula Explosiva',['#d86010','#ffb040','#fff3c0','#ffffff'],3.2,26,10,28,110),
+ deadlybomber:BIG('SS Deadly Bomber',['#c0102a','#ff5a6a','#ffd0d8','#ffffff'],3.0,36,13,34,120),
+ a14rush:MELEE('Embestida del 14',['#c0c0d0','#ffffff'],'punch',1.0,14,6,2,110,30,{kb:150}),
+ a14wave:SHOT('Onda del 14',['#6ad86a','#c0ffc0','#ffffff'],1.6,16,6,1,260,{pierce:4}),
+ metalbeam:BEAM('Rayo de Metal Cooler',['#c0207a','#ff6ad0','#ffffff'],2.6,26,10,250,6,0.2),
+ metalregen:NOVA('Regeneración',['#3ad8d8','#a0ffff','#ffffff'],8,20,6,60,0,{heal:1}),
+ kuublast:SHOT('Ráfaga de Kuu',['#5ad83a','#c0ff9a','#ffffff'],1.1,12,5,3,320),
+ kuuball:BIG('Bomba Majin Kuu',['#7ad83a','#d0ff9a','#fff8d0','#ffffff'],3.2,30,11,32,120),
+ merusgun:SHOT('Disparo de la Patrulla',['#3ad8d8','#a0ffff','#ffffff'],0.8,10,4,2,420,{pierce:1}),
+ merusstaff:MELEE('Bastón de Merus',['#e0e0ff','#ffffff'],'kick',0.9,12,5,3,120,26),
  cuiblast:SHOT('Ráfaga de Cui',['#8a3ad8','#d0a0ff','#ffffff'],1.2,12,5,2,300),
  // ataques propios de cada personaje (sesión 9)
  deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
@@ -1400,7 +1417,13 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  paragus:['kiblast','punch','kick','kame','renzoku'],
  daishinkan:['kiblast','punch','kick','kame','renzoku'],
  majinduu:['kiblast','punch','kick','kame','renzoku'],
- magetta:['kiblast','punch','kick','kame','renzoku']};
+ magetta:['kiblast','punch','kick','kame','renzoku'],
+ bulma:['kiblast','punch','kick','kame','renzoku'],
+ a13:['kiblast','punch','kick','kame','renzoku'],
+ a14:['kiblast','punch','kick','kame','renzoku'],
+ metalcooler:['kiblast','punch','kick','kame','renzoku'],
+ majinkuu:['kiblast','punch','kick','kame','renzoku'],
+ merus:['kiblast','punch','kick','kame','renzoku']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 // 3 nov.: técnicas propias del plan «sprites para casa»
 Object.assign(SIGS,{yamcha:['kiblast','rogafu','kick','sokidan','kame'],tenshinhan:['kiblast','punch','kikoho','taiyoken','dodonpa','kick'],
@@ -1546,9 +1569,15 @@ const ET={
  super17B:{n:'SUPER 17',boss:1,ai:'frieza'},
  omegaB:{n:'OMEGA SHENRON',boss:1,ai:'cell'},
  gasB:{n:'GAS',boss:1,ai:'dash'},
+ silverE:{n:'CORONEL SILVER',hp:380,spd:62,dmg:13,xp:38,r:8,elite:1},
+ tambourineE:{n:'TAMBOURINE',hp:420,spd:66,dmg:14,xp:40,r:8,elite:1,shoot:1.8},
+ drumE:{n:'DRUM',hp:480,spd:56,dmg:15,xp:42,r:8,elite:1,shoot:2.2},
+ recoomeE:{n:'RECOOME',hp:520,spd:56,dmg:16,xp:46,r:9,elite:1,shoot:2.0},
+ a13E:{n:'ANDROIDE 13',hp:480,spd:58,dmg:15,xp:45,r:8,elite:1,shoot:1.8},
+ a14E:{n:'ANDROIDE 14',hp:560,spd:54,dmg:16,xp:46,r:9,elite:1},
+ metalcoolerB:{n:'METAL COOLER',boss:1,ai:'frieza'},
  magettaE:{n:'MAGETTA',hp:600,spd:48,dmg:16,xp:48,r:10,elite:1,shoot:2.2},
  zangyaE:{n:'ZANGYA',hp:420,spd:64,dmg:14,xp:42,r:8,elite:1,shoot:1.6},
- bujinE:{n:'BUJIN',hp:400,spd:60,dmg:14,xp:40,r:8,elite:1,shoot:1.9},
  geroE:{n:'DR. GERO',hp:520,spd:50,dmg:15,xp:45,r:8,elite:1,shoot:1.7},
  cell:{n:'CELL PERFECTO',boss:1,ai:'cell'},
  dabura:{n:'DABURA',boss:1,ai:'frieza'},
@@ -1617,7 +1646,7 @@ const BOSS_SLOT=[{hp:900,spd:38,dmg:11,xp:80},{hp:2600,spd:36,dmg:16,xp:120},{hp
 const MAPS={
  namek:{name:'PLANETA NAMEK',sub:'Saga de Freezer',
    pool:[[0,'saiba',10],[45,'soldier',4],[240,'soldier',3],[330,'saibaR',5],[420,'saibaX',3],[500,'soldierE',6]],
-   bosses:['freeza1B','freeza2B','ginyu','frieza','golden'],ring:['saiba','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
+   bosses:['freeza1B','freeza2B','ginyu','frieza','golden'],ring:['saiba','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
  tierra:{name:'TIERRA · YERMO',sub:'Sagas Saiyan y Androides',
    pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'celljr',4]],
    bosses:['raditz','turles','mecha','a16B','cell'],ring:['saiba','saibaR'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
@@ -1641,16 +1670,16 @@ const MAPS={
  redribbon:{name:'BASE RED RIBBON',sub:'Saga del Ejército Red Ribbon',req:1,cam:[-44,-60],pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['a16B','mecha','a17B','trunksB','cell'],ring:['soldier','celljr'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
  musculo:{name:'TORRE MÚSCULO',sub:'Aldea Jingle',req:1,cam:[-44,-110],pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['raditz','a16B','turles','mecha','cell'],ring:['soldier','saiba'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
  capsule:{name:'CIUDAD DEL OESTE',sub:'Corporación Cápsula',req:1,cam:[90,-130],pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['a16B','frieza','cell','trunksB','black'],ring:['soldier','celljr'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
- yardrat:{name:'PLANETA YARDRAT',sub:'El refugio de Goku',req:1,cam:[-120,-80],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['ginyu','freeza2B','freeza1B','frieza','frieza100'],ring:['soldier','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
+ yardrat:{name:'PLANETA YARDRAT',sub:'El refugio de Goku',req:1,cam:[-120,-80],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['ginyu','freeza2B','freeza1B','frieza','frieza100'],ring:['soldier','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
  kaioshin:{name:'MUNDO KAIOSHIN',sub:'Saga de Majin Buu',req:1,cam:[-44,-100],pool:[[0,'majin',9],[40,'majin',4],[150,'celljr',4],[330,'soldierE',5],[480,'saibaR',5]],bosses:['janemba','majinv','fatbuu','gokuB','buu'],ring:['majin','majin'],squad:[600,['celljrE','celljrE','celljrE','celljrE','celljrE','celljrE','celljrE'],'¡LOS CELL JR.!']},
- infierno:{name:'INFIERNO',sub:'Saga del Más Allá',req:1,cam:[-110,-90],pool:[[0,'majin',9],[40,'majin',4],[150,'celljr',4],[330,'soldierE',5],[480,'saibaR',5]],bosses:['frieza','cell','janemba','fatbuu','buu'],ring:['majin','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
- bills:{name:'PLANETA DE BILLS',sub:'La batalla de los dioses',req:1,cam:[-44,-120],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['frieza','golden','vegetaB','majinv','black'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
+ infierno:{name:'INFIERNO',sub:'Saga del Más Allá',req:1,cam:[-110,-90],pool:[[0,'majin',9],[40,'majin',4],[150,'celljr',4],[330,'soldierE',5],[480,'saibaR',5]],bosses:['frieza','cell','janemba','fatbuu','buu'],ring:['majin','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
+ bills:{name:'PLANETA DE BILLS',sub:'La batalla de los dioses',req:1,cam:[-44,-120],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['frieza','golden','vegetaB','majinv','black'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
  poder:{name:'TORNEO DEL PODER',sub:'Supervivencia universal',req:1,cam:[-44,-28],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['a17B','frieza','brolyB','golden','gokuB'],ring:['soldierE','celljr'],squad:[600,['shadow'],'¡TU SOMBRA!']},
  pradera:{name:'PRADERAS',sub:'Campo de batalla Saiyan',req:1,pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'soldierE',5]],bosses:['raditz','turles','vegetaB','piccoloB','frieza'],ring:['saiba','saibaR'],squad:[630,['raditzE','vegsaiE'],'¡SAIYANS DE ÉLITE!']},
  bosque:{name:'BOSQUE PROFUNDO',sub:'Entrenamiento en la naturaleza',req:1,pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'soldierE',5]],bosses:['raditz','turles','a16B','piccoloB','cell'],ring:['saiba','saibaR'],squad:[630,['raditzE','vegsaiE'],'¡SAIYANS DE ÉLITE!']},
  desierto:{name:'DESIERTO',sub:'Guarida de Yamcha',req:1,pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['raditz','a16B','turles','mecha','cell'],ring:['soldier','saiba'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
  gizard:{name:'YERMO DE GIZARD',sub:'Llegada de los Saiyans',req:1,pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'soldierE',5]],bosses:['turles','raditz','vegetaB','ginyu','frieza'],ring:['saiba','saibaX'],squad:[630,['raditzE','vegsaiE'],'¡SAIYANS DE ÉLITE!']},
- volcan:{name:'TIERRA VOLCÁNICA',sub:'Planeta en llamas',req:1,pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['freeza2B','freeza1B','ginyu','frieza100','golden'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice','burter'],'¡FUERZAS ESPECIALES!']},
+ volcan:{name:'TIERRA VOLCÁNICA',sub:'Planeta en llamas',req:1,pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['freeza2B','freeza1B','ginyu','frieza100','golden'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
 };
 const BOSS_T=[180,360,540,720,900];
 const WAVE_T=[130,230,310,410,490,590,670,770,850];
@@ -1672,7 +1701,7 @@ const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SE
     R.forEach(p=>MAPS[k].pool.push(p.slice()))}
   const B={namek:['dodoria','zarbon','ginyu','freeza3B','frieza100'],vegetasei:['freeza1B','coolerB','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
     tierra:['raditz','reycoldB','mecha','a21B','cell'],redribbon:['a16B','a19','mecha','a21B','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
-    kaioshin:['dabura','janemba','majinv','buugohanB','buu'],infierno:['garlicB','cell','superbuuB','ozarugB','janemba'],time:['myuuB','babyB','super17B','moroB','omegaB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
+    kaioshin:['dabura','janemba','majinv','buugohanB','buu'],infierno:['garlicB','metalcoolerB','superbuuB','ozarugB','janemba'],time:['myuuB','babyB','super17B','moroB','omegaB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
     bills:['golden','toppoB','whisB','gasB','billsB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a16B','broly2B','mecha','cell'],
     pradera:['raditz','slugB','vegetaB','broly3B','frieza'],bosque:['raditz','ozaruB','a16B','piccoloB','cell']};
   for(const k in B)if(MAPS[k])MAPS[k].bosses=B[k].map(f);
@@ -3105,11 +3134,15 @@ Object.assign(ENEMIGO_HEROE,{appuleE:['e_appule',0],cuiE:['cui',0],blueE:['e_blu
 Object.assign(ET.appuleE,{col:'#5aa0ff'});Object.assign(ET.cuiE,{col:'#b06aff'});Object.assign(ET.murasakiE,{col:'#d0d0e0'});Object.assign(ET.reycoldB,{col:'#ff5aa0',col2:'#ffd23f'});
 for(const k of ['namek','freezer','yardrat','vegetasei'])if(MAPS[k])MAPS[k].pool.push([150,'appuleE',2],[300,'cuiE',2]);
 for(const k of ['redribbon','musculo','capsule'])if(MAPS[k])MAPS[k].pool.push([120,'murasakiE',2],[280,'blueE',2]);
-Object.assign(ENEMIGO_HEROE,{slugB:['slug',0],zangyaE:['e_zangya',0],bujinE:['e_bujin',0]});
-Object.assign(ET.slugB,{col:'#ffd23f'});Object.assign(ET.zangyaE,{col:'#7af04a'});Object.assign(ET.bujinE,{col:'#7af04a'});
-for(const k of ['pradera','desierto','bosque','lookout'])if(MAPS[k])MAPS[k].pool.push([180,'zangyaE',2],[260,'bujinE',2]);
+Object.assign(ENEMIGO_HEROE,{slugB:['slug',0],zangyaE:['e_zangya',0]});
+Object.assign(ET.slugB,{col:'#ffd23f'});Object.assign(ET.zangyaE,{col:'#7af04a'});
+for(const k of ['pradera','desierto','bosque','lookout'])if(MAPS[k])MAPS[k].pool.push([180,'zangyaE',2],[260,'zangyaE',1]);
 Object.assign(ENEMIGO_HEROE,{myuuB:['e_myuu',0],super17B:['super17',0],omegaB:['omega',0]});
-Object.assign(ET.myuuB,{col:'#7af04a'});Object.assign(ENEMIGO_HEROE,{gasB:['gas',0]});Object.assign(ENEMIGO_HEROE,{magettaE:['magetta',0]});Object.assign(ET.magettaE,{col:'#ff7a2a'});for(const k of ['poder','bills'])if(MAPS[k])MAPS[k].pool.push([240,'magettaE',2]);Object.assign(ET.gasB,{col:'#ff6aff'});Object.assign(ET.super17B,{col:'#ffd23f'});Object.assign(ET.omegaB,{col:'#ff5aa0',col2:'#ffb040'});if(ET.geroE)ET.geroE.col='#ff5a8a'; // Androide 20: rayo de los ojos
+Object.assign(ET.myuuB,{col:'#7af04a'});Object.assign(ENEMIGO_HEROE,{gasB:['gas',0]});Object.assign(ENEMIGO_HEROE,{magettaE:['magetta',0]});
+Object.assign(ENEMIGO_HEROE,{silverE:['e_silver',0],tambourineE:['e_tambourine',0],drumE:['e_drum',0]});Object.assign(ET.tambourineE,{col:'#ffd23f'});Object.assign(ET.drumE,{col:'#ffd23f'});
+for(const k of ['redribbon','musculo'])if(MAPS[k])MAPS[k].pool.push([150,'silverE',2]);for(const k of ['budokai','lookout','kame','paoz'])if(MAPS[k])MAPS[k].pool.push([160,'tambourineE',2],[280,'drumE',2]);
+Object.assign(ENEMIGO_HEROE,{recoomeE:['e_recoome',0],a13E:['a13',0],a14E:['a14',0],metalcoolerB:['metalcooler',0]});Object.assign(ET.recoomeE,{col:'#ff5aa0'});Object.assign(ET.a13E,{col:'#ff3a4a'});Object.assign(ET.metalcoolerB,{col:'#ff6ad0',col2:'#ffd0f0'});
+for(const k of ['namek','freezer','yardrat'])if(MAPS[k])MAPS[k].pool.push([260,'recoomeE',2]);for(const k of ['tierra','redribbon','desierto'])if(MAPS[k])MAPS[k].pool.push([200,'a14E',2],[300,'a13E',2]);Object.assign(ET.magettaE,{col:'#ff7a2a'});for(const k of ['poder','bills'])if(MAPS[k])MAPS[k].pool.push([240,'magettaE',2]);Object.assign(ET.gasB,{col:'#ff6aff'});Object.assign(ET.super17B,{col:'#ffd23f'});Object.assign(ET.omegaB,{col:'#ff5aa0',col2:'#ffb040'});if(ET.geroE)ET.geroE.col='#ff5a8a'; // Androide 20: rayo de los ojos
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);

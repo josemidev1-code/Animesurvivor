@@ -14,7 +14,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | | Personaje |
 |---|---|
 | ✅ jugable | Goku niño |
-| — | Bulma |
+| ✅ | Bulma |
 | — | Oolong |
 | — | Puar |
 | ✅ jugable | Yamcha |
@@ -39,7 +39,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | General Red |
 | — | Comandante Black |
 | ✅ enemigo | General Blue |
-| — | Coronel Silver |
+| ✅ | Coronel Silver |
 | — | General White |
 | — | Sargento Metálico |
 | ✅ enemigo | Ninja Murasaki |
@@ -51,9 +51,9 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Uranai Baba |
 | — | Los luchadores de Baba (Drácula Man, Hombre Invisible, Momia, Akkuman) |
 | ✅ enemigo | Piccolo Daimaō |
-| — | Tambourine |
+| ✅ | Tambourine |
 | — | Cymbal |
-| — | Drum |
+| ✅ | Drum |
 | — | Piano |
 | — | Karin |
 | — | Yajirobe |
@@ -94,7 +94,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ enemigo | Appule |
 | ✅ enemigo | Soldados de Freezer |
 | ✅ jugable y enemigo | Capitán Ginyu |
-| — | Recoome |
+| ✅ | Recoome |
 | ✅ enemigo | Burter |
 | ✅ jugable y enemigo | Jeice |
 | ✅ jugable y enemigo | Guldo |
@@ -166,9 +166,9 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable y enemigo | Turles |
 | ✅ jugable y jefe | Lord Slug |
 | ✅ jugable y enemigo | Cooler |
-| — | Metal Cooler |
-| — | Androide 13 |
-| — | Androide 14 |
+| ✅ | Metal Cooler |
+| ✅ | Androide 13 |
+| ✅ | Androide 14 |
 | — | Androide 15 |
 | ✅ jugable y enemigo | Broly |
 | ✅ jugable | Paragus |
@@ -241,7 +241,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable y enemigo | Golden Freezer |
 | ✅ jugable y enemigo | Black Freezer |
 | ✅ jugable y enemigo | Moro |
-| — | Merus |
+| ✅ | Merus |
 | ✅ jugable | Granola |
 | ✅ jugable y jefe | Gas |
 | — | Macki |
@@ -263,7 +263,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Gomah |
 | — | Degesu |
 | — | Neva |
-| — | Majin Kuu |
+| ✅ | Majin Kuu |
 | ✅ jugable | Majin Duu |
 | — | Arinsu |
 | — | Tamagami |

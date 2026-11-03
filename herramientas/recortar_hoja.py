@@ -20,6 +20,8 @@ fondo = collections.Counter(px[x, y] for x in range(0, W, 3) for y in range(0, H
 def es_fondo(c):
     return c[3] < 20 or (abs(c[0] - fondo[0]) + abs(c[1] - fondo[1]) + abs(c[2] - fondo[2]) < TOL and fondo[3] > 0)
 x0, y0, x1, y1 = zona
+if os.environ.get('FONDO_ZONA'):  # paneles con fondo propio: el fondo es el color más repetido del borde de la zona
+    fondo = collections.Counter([px[x, y] for x in range(x0, x1) for y in (y0, y1 - 1)] + [px[x, y] for y in range(y0, y1) for x in (x0, x1 - 1)]).most_common(1)[0][0]
 # fondo = lo que parece fondo Y está conectado con el borde de la zona (así no se borran los blancos
 # de dentro de un sprite aunque la tolerancia sea alta)
 fuera = [[False] * W for _ in range(H)]
