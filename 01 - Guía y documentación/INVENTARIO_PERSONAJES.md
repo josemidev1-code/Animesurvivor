@@ -203,6 +203,14 @@ Sacado del propio juego en marcha (la selección de personajes y los enemigos ac
 
 Siguen retirados (sin sprites buenos): bolita de Buu, Saiyan renegado, Saiyan oscuro, Saiyan de clase baja, Goku falso, Ozaru dorado, Zeno, dos esbirros de Garlic, demonio gigante y Shenron oscuro.
 
+## Estado de las animaciones (3 nov.)
+
+Las 132 tarjetas tienen guardia, vuelo, puñetazos, patada, ki, aura y daño en todas sus formas. Lo único que falta en algunas es la animación de **muerte** (al caer se usa la de daño).
+
+- **99 tarjetas completas** (con muerte en todas sus formas).
+- **33 tarjetas sin muerte en alguna forma:** Goku (todas); Vegeta (Base, Super Saiyan, Super Vegeta); Piccolo (Base); Gohan (Super Saiyan, Super Saiyan 2, Definitivo); Bardock (todas); Vegetto (Super Vegetto, Super Vegetto 2); Gogeta (Super Gogeta); Goku Black (todas); Goku Ui (Base, Super Saiyan, Ssj Blue, Ultra Instinto); Vegeta Ego (Super Saiyan, Ssj Blue); Gohan Adulto (Base, Místico); Goku Gt (todas); Vegeta Gt (Super Saiyan, Super Saiyan 4); Goku Super (Base, Kaioken, Ssj Kaioken, Ssj God); Vegeta Super (Ssj God); Maestro Roshi (todas); Cell (Imperfecto); Gohan Dbs (Ultra Instinto); Goku Saga Moro (Ssj Blue, Ultra Instinto, Mui); Tao Pai Pai (todas); Vegetto Blue (todas); Goku Ssj Kaioken (Halo) (todas); Goku Ultra Ssj Dios (todas); Goku Ui Dios (todas); Goku Ui Blue (todas); Goku Ssj2 (Buu) (todas); Goku Ui (Granola) (todas); Vegeta Blue Maligno (todas); Goku Yardrat Ssj (todas); Majin Black Dios (todas); Black Rosé Evolution (todas); Goku Black Ssj Falso (todas); Goku Black Kaioshin (todas)
+- Formas con la guardia o el puñetazo de un solo fotograma (se ven más estáticas): Vegeta Ego SSJ, Vegeta Super Blue Full Power, Freezer 3ª forma, Goku Black fanmade Rosé Kaioken y Vegeta Yardrat.
+
 ## Lista maestra de la serie (objetivo: todos)
 
 Petición de Josemi (3 nov.): «literalmente todo personaje que se ve en la serie»; los sprites fanmade o no oficiales también entran, como personajes extra o como enemigos.
