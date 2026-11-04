@@ -1235,3 +1235,16 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Andar con más detalle: la pierna que avanza dobla la rodilla (sube solo de la rodilla al pie), el tronco se adelanta 1 px al cruzar las piernas y baja 1 px con los pies separados, polvo bajo los pies en cada pisada (3 motas) y la sombra se ensancha al apoyar.
 - Pruebas: 6 comprobaciones correctas; capturas en Playwright de Goku, Vegeta y Piccolo apuntando de −90° a 90° (`herramientas/_revisar/tronco_rayos.png`) y GIF del paso (`andar_personajes.gif`, `andar_hoja.png`). Sin errores en la consola.
 - Josemi: «en algunos personajes se corta porque las piernas están hechas de alguna manera; la cosa sería ir sprite por sprite estudiar cómo está hecho el personaje y la mejor forma de hacerlo caminar fluidamente y disparar mientras camina, ¿crees que podremos hacer eso?». Propuesto plan por tandas (pendiente de su sí).
+
+### Lo que hice (andar personaje a personaje, tanda 1: línea de Goku)
+- Josemi: «Sí, empieza».
+- `script.js?v=144`:
+  - Las piernas se reconocen siguiendo sus píxeles conectados desde cada pie hacia la cadera (antes, por una columna fija: se partían). Solo cuenta como pierna lo que está a la anchura de los pies; pelo largo, capas y colas van con el tronco. El hueco entre los pies se busca entre los pies, no en todo el contorno.
+  - Ajustes por forma en `02 - Código del juego/andar.js` (nuevo, `?v=2`): `cadera`, `hueco`, `zancada`, `rodilla`, `base` y `modo` ('pasos' o 'flotar').
+  - **Disparar andando**: las piernas siguen el paso y arriba va el tronco del fotograma de disparo, girado hacia el enemigo; tronco y piernas se alinean por el centro de la cadera (`bodySplit` → `cx`). La mano/rayo sale de ahí.
+- Herramientas: `herramientas/andar_revision.js` (hoja por forma: cintura, piernas reconocidas en rojo/azul, pasos y disparo andando; se carga en la página por HTTP) y `herramientas/dataurl_a_png.py`.
+- Tanda 1 revisada a ojo (14 formas: goku/0-4, gokusuper/0-4, gokugt/0-3): ajustes de cintura en SSJ3 (pelo largo), Blue y Kaioken (manos en la cintura) y las 4 de GT (piernas cortas, cola). Hoja final: `herramientas/_revisar/andar/tanda1.png`; en partida: `disparar_andando.png`.
+- Pruebas: 6 comprobaciones correctas (`comprobar_enemigos.cjs` con `walkCfg`). Ojo: en el navegador de Playwright había otra pestaña al frente y el juego iba a 1 fps; hay que seleccionar la pestaña del juego antes de medir.
+
+### Siguiente paso
+- Tanda 2: línea de Vegeta (vegeta, vegetaue, vegetagt, vegetasuper, vegetto).

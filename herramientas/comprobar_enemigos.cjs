@@ -56,7 +56,7 @@ assert.equal(vm.runInContext("enemySprite('kidbuuE')",c),real);
 assert.equal(vm.runInContext("enemySprite('saiba')",c),real);
 // Lejos del jugador anda hacia él (ciclo de pasos generado desde la guardia, 4 nov.); cerca, con un solo frame de vuelo, guarda la guardia.
 let dibujado;
-Object.assign(c,{ctx:{drawImage:im=>{dibujado=im}},ebeams:[],scFrame:()=>0,WALK_N:8,walkCycle:()=>Array(8).fill({width:34,height:50,tipo:'paso'})});
+Object.assign(c,{ctx:{drawImage:im=>{dibujado=im}},ebeams:[],scFrame:()=>0,WALK_N:8,walkCfg:()=>({}),walkCycle:()=>Array(8).fill({width:34,height:50,tipo:'paso'})});
 vm.runInContext(tramo('function drawPkEnemy','function drawSprite'),c);
 for(const frames of [1,2])for(const x of [200,20]){
   const idle={width:30,height:50,tipo:'guardia'},vuelo={...idle,tipo:'vuelo'};

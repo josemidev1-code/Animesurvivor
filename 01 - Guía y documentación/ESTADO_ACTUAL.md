@@ -45,3 +45,4 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - 4 nov. (noche): ataques extra por forma (`animaciones/ataques.json`: más combos, pose de rayo, brazos arriba, embestida). Hecho y revisado en Goku base; faltan las demás formas por tandas. `animaciones_juego.js?v=110`, `script.js?v=138`.
 - 4 nov. (noche): todos andan con un ciclo de 8 pasos generado desde su guardia, sin inclinarse ni volar al moverse (`script.js?v=141`). Se mantiene la inclinación al disparar. Falta que Josemi lo juegue.
 - 4 nov. (noche): al disparar arriba/abajo solo gira el tronco (hasta 40°); el paso tiene rodilla, balanceo, polvo y sombra (`script.js?v=142`).
+- 4 nov. (noche): andar revisado personaje a personaje con `andar.js` + `herramientas/andar_revision.js`; disparan andando. Tanda 1 (línea de Goku, 14 formas) hecha; siguiente: línea de Vegeta.
