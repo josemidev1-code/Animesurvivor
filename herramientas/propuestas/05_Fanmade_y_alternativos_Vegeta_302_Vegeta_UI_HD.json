@@ -1,0 +1,68 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  22
+ ],
+ "attack": [
+  8
+ ],
+ "kick": [
+  80
+ ],
+ "ki": [
+  1
+ ],
+ "pow": [
+  4,
+  5
+ ],
+ "hurt": [
+  51,
+  52
+ ],
+ "faint": [
+  78
+ ],
+ "portrait": 7,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   88,
+   95,
+   109,
+   110
+  ],
+  "bola": [
+   3,
+   108
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "05_Fanmade_y_alternativos/Vegeta/302_Vegeta UI HD",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "05_Fanmade_y_alternativos_Vegeta_302_Vegeta_UI_HD",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

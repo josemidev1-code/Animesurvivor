@@ -1,0 +1,105 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  165
+ ],
+ "attack": [
+  3
+ ],
+ "kick": [
+  56,
+  57
+ ],
+ "ki": [
+  84,
+  85
+ ],
+ "pow": [
+  59,
+  60,
+  61
+ ],
+ "hurt": [
+  50,
+  51
+ ],
+ "faint": [
+  72
+ ],
+ "portrait": 1,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   10,
+   11,
+   101,
+   109,
+   119,
+   120,
+   121,
+   148
+  ],
+  "bola": [
+   12,
+   86,
+   87,
+   98,
+   100,
+   107,
+   108,
+   116,
+   117,
+   118,
+   128,
+   129,
+   130,
+   139,
+   140,
+   141,
+   142,
+   144,
+   166,
+   167,
+   168,
+   169
+  ],
+  "aura": [
+   6,
+   39,
+   40,
+   131,
+   132,
+   159
+  ],
+  "estela": [
+   147,
+   149
+  ]
+ },
+ "pack": "07_Personajes_sin_saga_concreta/Goku/273_GOKU SSJ FULL POWER SWL+",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "07_Personajes_sin_saga_concreta_Goku_273_GOKU_SSJ_FULL_POWER_SWL",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

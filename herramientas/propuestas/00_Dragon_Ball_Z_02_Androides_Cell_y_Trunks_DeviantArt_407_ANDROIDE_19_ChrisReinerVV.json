@@ -1,0 +1,50 @@
+{
+ "idle": [
+  6
+ ],
+ "move": [
+  7
+ ],
+ "attack": [
+  0,
+  1
+ ],
+ "kick": [
+  9
+ ],
+ "ki": [],
+ "pow": [
+  21
+ ],
+ "hurt": [
+  5
+ ],
+ "faint": [],
+ "portrait": 33,
+ "guardia": 6,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "hurt": 0.5,
+  "pow": 0.6,
+  "attack": 0.7,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/407_ANDROIDE 19 (ChrisReinerVV)",
+ "autor": "CHRISREINERVV",
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_02_Androides_Cell_y_Trunks_DeviantArt_407_ANDROIDE_19_ChrisReinerVV",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de ki",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

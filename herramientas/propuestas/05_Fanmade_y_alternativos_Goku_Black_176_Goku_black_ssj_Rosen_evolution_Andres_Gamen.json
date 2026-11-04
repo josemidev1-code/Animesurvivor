@@ -1,0 +1,63 @@
+{
+ "idle": [
+  8,
+  8
+ ],
+ "move": [
+  14
+ ],
+ "attack": [
+  18,
+  22,
+  22
+ ],
+ "kick": [
+  18,
+  19
+ ],
+ "ki": [
+  40,
+  37
+ ],
+ "pow": [
+  36
+ ],
+ "hurt": [
+  24,
+  25
+ ],
+ "faint": [],
+ "portrait": 46,
+ "guardia": 1,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "hurt": 0.7,
+  "ki": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   42
+  ],
+  "bola": [],
+  "aura": [],
+  "estela": [
+   15,
+   27
+  ]
+ },
+ "plantilla": "01_Dragon_Ball_Super/06_Moro/Goku/199_GOKU SSJ 1 CAMISA MEDIA RASGADA DBS MORO, ANDRÉS GAMEN",
+ "pack": "05_Fanmade_y_alternativos/Goku Black/176_Goku black ssj Rosen evolution.Andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_Black_176_Goku_black_ssj_Rosen_evolution_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en moverse"
+ ],
+ "dudoso": true
+}

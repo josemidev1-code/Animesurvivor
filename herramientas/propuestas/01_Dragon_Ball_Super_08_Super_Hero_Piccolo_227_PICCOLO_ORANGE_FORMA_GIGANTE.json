@@ -1,0 +1,125 @@
+{
+ "idle": [
+  67,
+  64
+ ],
+ "move": [],
+ "attack": [
+  51,
+  58,
+  58
+ ],
+ "kick": [],
+ "ki": [
+  22,
+  31
+ ],
+ "pow": [
+  67
+ ],
+ "hurt": [],
+ "faint": [
+  1
+ ],
+ "portrait": null,
+ "guardia": 4,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "faint": 0.6,
+  "pow": 0.9,
+  "attack": 0.9,
+  "ki": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   3,
+   14,
+   15,
+   23,
+   24,
+   25,
+   26,
+   28,
+   29,
+   33,
+   34,
+   46,
+   47
+  ],
+  "bola": [
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   16,
+   17,
+   18,
+   19,
+   21,
+   22,
+   27,
+   32,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   44,
+   45,
+   48,
+   50,
+   51,
+   52,
+   53,
+   54,
+   55,
+   57,
+   58,
+   62,
+   64,
+   66,
+   68,
+   69,
+   70,
+   71,
+   73,
+   74,
+   75,
+   76,
+   79
+  ],
+  "aura": [
+   7,
+   20,
+   41,
+   42,
+   43,
+   59,
+   61,
+   63,
+   65,
+   67,
+   72,
+   77,
+   78
+  ],
+  "estela": []
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Jiren/181_JIREN HAKAISHIN, ANDRÉS GAMEN ANIMATIONS ✓ (SPRITE HD)",
+ "pack": "01_Dragon_Ball_Super/08_Super_Hero/Piccolo/227_PICCOLO ORANGE (FORMA GIGANTE)",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_08_Super_Hero_Piccolo_227_PICCOLO_ORANGE_FORMA_GIGANTE",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de patada",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en guardia"
+ ],
+ "dudoso": true
+}

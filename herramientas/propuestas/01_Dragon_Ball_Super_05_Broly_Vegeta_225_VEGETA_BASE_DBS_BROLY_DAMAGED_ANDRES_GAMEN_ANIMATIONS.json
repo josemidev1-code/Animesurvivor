@@ -1,0 +1,63 @@
+{
+ "idle": [
+  3,
+  1
+ ],
+ "move": [
+  7
+ ],
+ "attack": [
+  9,
+  10,
+  11,
+  9
+ ],
+ "kick": [
+  5,
+  6
+ ],
+ "ki": [
+  17,
+  18
+ ],
+ "pow": [],
+ "hurt": [
+  14,
+  15
+ ],
+ "faint": [
+  16
+ ],
+ "portrait": 20,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "attack": 0.9,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   19
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/05_Broly/Vegeta/226_VEGETA,SSJ BLUE,DBS, BROLY, DAMAGED, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "01_Dragon_Ball_Super/05_Broly/Vegeta/225_VEGETA,BASE,DBS, BROLY,DAMAGED, ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_05_Broly_Vegeta_225_VEGETA_BASE_DBS_BROLY_DAMAGED_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

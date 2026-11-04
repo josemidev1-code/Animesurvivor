@@ -1,0 +1,81 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  157
+ ],
+ "attack": [
+  12
+ ],
+ "kick": [
+  14
+ ],
+ "ki": [
+  117,
+  118
+ ],
+ "pow": [
+  105,
+  106,
+  107
+ ],
+ "hurt": [
+  51
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   140,
+   141,
+   142,
+   143,
+   169,
+   170
+  ],
+  "bola": [
+   119,
+   120,
+   121,
+   122,
+   144,
+   166,
+   175,
+   176,
+   177,
+   178,
+   179,
+   180,
+   181,
+   182,
+   193
+  ],
+  "aura": [
+   167,
+   168
+  ],
+  "estela": []
+ },
+ "pack": "04_Heroes_y_videojuegos/DeviantArt/410_ANDROIDE 21 (arisrad)",
+ "autor": "ARISRAD",
+ "origen": "reglas",
+ "nombre": "04_Heroes_y_videojuegos_DeviantArt_410_ANDROIDE_21_arisrad",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

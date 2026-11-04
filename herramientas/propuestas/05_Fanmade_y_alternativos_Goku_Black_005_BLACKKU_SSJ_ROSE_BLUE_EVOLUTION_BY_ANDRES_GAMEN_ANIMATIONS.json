@@ -1,0 +1,63 @@
+{
+ "idle": [
+  12,
+  20
+ ],
+ "move": [
+  29
+ ],
+ "attack": [
+  20,
+  21,
+  22
+ ],
+ "kick": [
+  40
+ ],
+ "ki": [
+  3,
+  2
+ ],
+ "pow": [
+  14,
+  14
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.78,
+  "ki": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   13,
+   14
+  ],
+  "aura": [],
+  "estela": [
+   4,
+   26,
+   27
+  ]
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Vegetto/214_VEGETTO SSJ DIOS KAIOKEN, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "05_Fanmade_y_alternativos/Goku Black/005_BLACKKU SSJ ROSE,BLUE, EVOLUTION,BY ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_Black_005_BLACKKU_SSJ_ROSE_BLUE_EVOLUTION_BY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en guardia",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

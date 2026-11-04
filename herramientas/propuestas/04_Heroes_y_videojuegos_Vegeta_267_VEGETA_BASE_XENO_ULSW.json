@@ -1,0 +1,91 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  73
+ ],
+ "attack": [
+  41
+ ],
+ "kick": [
+  64
+ ],
+ "ki": [
+  55,
+  56
+ ],
+ "pow": [
+  164,
+  165,
+  166
+ ],
+ "hurt": [
+  20,
+  21
+ ],
+ "faint": [
+  37
+ ],
+ "portrait": 184,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   58,
+   59,
+   60,
+   61,
+   62,
+   91,
+   92,
+   93,
+   94,
+   114,
+   117,
+   140,
+   158,
+   159
+  ],
+  "bola": [
+   57,
+   85,
+   86,
+   131
+  ],
+  "aura": [
+   163
+  ],
+  "estela": [
+   39,
+   67,
+   68,
+   69,
+   75,
+   178
+  ]
+ },
+ "pack": "04_Heroes_y_videojuegos/Vegeta/267_VEGETA BASE XENO ULSW",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "04_Heroes_y_videojuegos_Vegeta_267_VEGETA_BASE_XENO_ULSW",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

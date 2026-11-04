@@ -1,0 +1,93 @@
+{
+ "idle": [
+  124,
+  139
+ ],
+ "move": [
+  115
+ ],
+ "attack": [
+  103,
+  103,
+  107,
+  118
+ ],
+ "kick": [
+  108,
+  109,
+  109
+ ],
+ "ki": [
+  48,
+  48
+ ],
+ "pow": [
+  81,
+  56
+ ],
+ "hurt": [
+  42
+ ],
+ "faint": [],
+ "portrait": 1,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "hurt": 0.5,
+  "ki": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   22,
+   51
+  ],
+  "bola": [
+   8,
+   9,
+   19,
+   20,
+   21,
+   37,
+   38,
+   39,
+   40,
+   41,
+   68,
+   69,
+   146,
+   148
+  ],
+  "aura": [
+   43,
+   44,
+   45,
+   46,
+   47,
+   147
+  ],
+  "estela": [
+   28,
+   92
+  ]
+ },
+ "plantilla": "04_Heroes_y_videojuegos/Goku Black/124_GOKU BLACK TIME BREAKER SSJ DIOS, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )✓",
+ "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/148_GOKU ULTRA INSTINTO FULL POWER,NEW VERSIÓN BY ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_04_Torneo_del_Poder_Goku_148_GOKU_ULTRA_INSTINTO_FULL_POWER_NEW_VERSION_BY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño",
+  "tamaño de píxel distinto en guardia",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

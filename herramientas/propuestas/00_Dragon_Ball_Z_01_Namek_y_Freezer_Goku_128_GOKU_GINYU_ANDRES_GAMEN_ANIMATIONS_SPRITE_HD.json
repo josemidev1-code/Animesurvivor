@@ -1,0 +1,70 @@
+{
+ "idle": [
+  74,
+  74
+ ],
+ "move": [
+  76
+ ],
+ "attack": [
+  55,
+  63,
+  58,
+  58
+ ],
+ "kick": [
+  42,
+  43,
+  43
+ ],
+ "ki": [
+  24,
+  14
+ ],
+ "pow": [],
+ "hurt": [
+  28,
+  29
+ ],
+ "faint": [
+  25
+ ],
+ "portrait": null,
+ "guardia": 2,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "hurt": 0.9,
+  "ki": 0.9,
+  "attack": 0.9,
+  "kick": 0.9,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   4,
+   5,
+   7,
+   19,
+   20,
+   90
+  ],
+  "bola": [],
+  "aura": [],
+  "estela": [
+   77
+  ]
+ },
+ "plantilla": "04_Heroes_y_videojuegos/Goku Black/124_GOKU BLACK TIME BREAKER SSJ DIOS, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )✓",
+ "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/Goku/128_GOKU GINYU, ANDRÉS GAMEN ANIMATIONS ✓ SPRITE HD",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "00_Dragon_Ball_Z_01_Namek_y_Freezer_Goku_128_GOKU_GINYU_ANDRES_GAMEN_ANIMATIONS_SPRITE_HD",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,37 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [],
+ "attack": [],
+ "kick": [],
+ "ki": [],
+ "pow": [],
+ "hurt": [],
+ "faint": [],
+ "portrait": 16,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/05_Broly/Vegeta/304_Vegeta com capote HD",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_05_Broly_Vegeta_304_Vegeta_com_capote_HD",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "falta la animación de ki",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

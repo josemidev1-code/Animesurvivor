@@ -1,0 +1,67 @@
+{
+ "idle": [
+  0,
+  1,
+  3
+ ],
+ "move": [
+  60
+ ],
+ "attack": [
+  5
+ ],
+ "kick": [
+  16
+ ],
+ "ki": [
+  27,
+  28
+ ],
+ "pow": [
+  24,
+  25,
+  26
+ ],
+ "hurt": [
+  34
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 1.0,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   30,
+   31,
+   42,
+   47,
+   61
+  ],
+  "bola": [
+   29
+  ],
+  "aura": [],
+  "estela": [
+   6,
+   7
+  ]
+ },
+ "pack": "02_GT/Goku/058_Goku SSJ 4",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "02_GT_Goku_058_Goku_SSJ_4",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

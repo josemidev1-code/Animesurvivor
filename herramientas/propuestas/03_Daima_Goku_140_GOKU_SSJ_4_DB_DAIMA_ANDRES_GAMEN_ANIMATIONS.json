@@ -1,0 +1,137 @@
+{
+ "idle": [
+  268,
+  228
+ ],
+ "move": [
+  58,
+  58
+ ],
+ "attack": [
+  144,
+  144,
+  144,
+  144
+ ],
+ "kick": [
+  28
+ ],
+ "ki": [
+  126,
+  123
+ ],
+ "pow": [
+  253,
+  253
+ ],
+ "hurt": [
+  41,
+  42
+ ],
+ "faint": [
+  189
+ ],
+ "portrait": 2,
+ "guardia": 8,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "faint": 0.9,
+  "hurt": 0.7,
+  "ki": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   14,
+   22,
+   23,
+   24,
+   70,
+   71,
+   96,
+   97,
+   113,
+   114,
+   115,
+   205,
+   206,
+   265,
+   269
+  ],
+  "bola": [
+   50,
+   51,
+   56,
+   57,
+   58,
+   75,
+   76,
+   109,
+   111,
+   128,
+   129,
+   207,
+   208,
+   210,
+   211,
+   214,
+   228,
+   242,
+   253,
+   260,
+   261,
+   267,
+   268
+  ],
+  "aura": [
+   18,
+   87,
+   209,
+   227,
+   234,
+   235,
+   237,
+   238,
+   245,
+   254,
+   266,
+   273
+  ],
+  "estela": [
+   17,
+   36,
+   80,
+   81,
+   82,
+   106,
+   107,
+   119,
+   120,
+   121,
+   142,
+   158,
+   161,
+   197,
+   198,
+   201,
+   202,
+   222,
+   257
+  ]
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Goku Black/125_GOKU BLACK TIME BREAKER SSJ ROSE 3 SWL, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "03_Daima/Goku/140_GOKU SSJ 4 DB DAIMA(ANDRÉS GAMEN ANIMATIONS)👍",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "03_Daima_Goku_140_GOKU_SSJ_4_DB_DAIMA_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en guardia",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

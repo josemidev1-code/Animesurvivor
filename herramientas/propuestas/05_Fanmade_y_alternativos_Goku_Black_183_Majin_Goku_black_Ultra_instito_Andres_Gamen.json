@@ -1,0 +1,68 @@
+{
+ "idle": [
+  5,
+  8
+ ],
+ "move": [
+  15
+ ],
+ "attack": [
+  20,
+  24,
+  25
+ ],
+ "kick": [
+  18,
+  19
+ ],
+ "ki": [],
+ "pow": [
+  38
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "pow": 0.9,
+  "move": 0.9,
+  "attack": 0.9,
+  "kick": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   33
+  ],
+  "bola": [
+   2,
+   3,
+   4,
+   6,
+   7,
+   29,
+   30,
+   37,
+   38,
+   47,
+   48
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/06_Moro/Goku/200_GOKU SSJ DIOS CAMISA MEDIA RASGADA,DBS MORO, ANDRÉS GAMEN",
+ "pack": "05_Fanmade_y_alternativos/Goku Black/183_Majin Goku black Ultra instito.Andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_Black_183_Majin_Goku_black_Ultra_instito_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de ki",
+  "falta la animación de daño",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en patada"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,44 @@
+{
+ "idle": [
+  9,
+  12
+ ],
+ "move": [
+  7
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [],
+ "pow": [],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 9,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 0.93
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": [
+   2,
+   8
+  ]
+ },
+ "pack": "07_Personajes_sin_saga_concreta/Goku/287_GOKU",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "07_Personajes_sin_saga_concreta_Goku_287_GOKU",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "falta la animación de ki",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en moverse"
+ ],
+ "dudoso": true
+}

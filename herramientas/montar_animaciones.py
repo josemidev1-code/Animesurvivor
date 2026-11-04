@@ -139,8 +139,10 @@ def data_url(im):
 def cargar_forma(f):
     """Fotogramas ya limpios y reducidos de cada animación de una forma: {'Idle': [img,...], ...}, retrato."""
     rutas = frames_del_pack(f['pack'])
+    if f.get('pack2'):  # pack hermano (p. ej. el de daño aparte): sus fotogramas se numeran desde 1000
+        rutas = dict(enumerate(rutas)); rutas.update({1000 + j: r for j, r in enumerate(frames_del_pack(f['pack2']))})
     usados = sorted({i for k in CLAVES for i in f.get(k, [])} | ({f['portrait']} if 'portrait' in f else set()))
-    malos = [i for i in usados if i >= len(rutas)]
+    malos = [i for i in usados if i not in rutas] if isinstance(rutas, dict) else [i for i in usados if i >= len(rutas)]
     if malos: raise SystemExit(f"{f['pack']}: el pack solo tiene {len(rutas)} fotogramas (0-{len(rutas) - 1}); no existen {malos}")
     crudos = {i: limpiar(rutas[i]) for i in usados}
     # cada fotograma puede venir ampliado a un zoom distinto: se mide uno a uno; si está cerca del
@@ -199,6 +201,8 @@ def montar_forma(f):
         out[nombre] = {'w': cw, 'h': ch, 'du': du, 'url': data_url(im)}
     res = {'anims': out, 'pack': f['pack']}
     if ret: res['portrait'] = data_url(ret)
+    # sin cara grande propia ni de otro pack: el retrato es un recorte del sprite; la selección no lo enseña
+    if ret and not (f.get('retrato') or 'portrait' in f): res['busto'] = 1
     return res
 
 

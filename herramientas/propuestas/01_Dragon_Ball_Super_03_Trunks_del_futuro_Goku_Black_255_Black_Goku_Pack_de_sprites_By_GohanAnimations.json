@@ -1,0 +1,62 @@
+{
+ "idle": [
+  2,
+  3,
+  4
+ ],
+ "move": [
+  60
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  50,
+  51
+ ],
+ "pow": [
+  55,
+  56,
+  57
+ ],
+ "hurt": [
+  32
+ ],
+ "faint": [
+  0
+ ],
+ "portrait": 72,
+ "guardia": 3,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   71
+  ],
+  "bola": [
+   53,
+   54
+  ],
+  "aura": [
+   23
+  ],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/255_Black Goku Pack de sprites By GohanAnimations",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_03_Trunks_del_futuro_Goku_Black_255_Black_Goku_Pack_de_sprites_By_GohanAnimations",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

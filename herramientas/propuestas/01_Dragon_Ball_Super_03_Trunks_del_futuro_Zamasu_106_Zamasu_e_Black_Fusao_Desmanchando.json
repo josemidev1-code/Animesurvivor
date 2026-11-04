@@ -1,0 +1,71 @@
+{
+ "idle": [
+  0,
+  2
+ ],
+ "move": [
+  98
+ ],
+ "attack": [
+  4
+ ],
+ "kick": [
+  6
+ ],
+ "ki": [
+  107,
+  108
+ ],
+ "pow": [
+  88
+ ],
+ "hurt": [
+  103,
+  104
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 1.0,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   110,
+   111,
+   115,
+   116,
+   120,
+   121
+  ],
+  "bola": [
+   109,
+   114,
+   127,
+   128
+  ],
+  "aura": [],
+  "estela": [
+   27,
+   28,
+   41,
+   42
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/106_Zamasu e Black Fusão Desmanchando",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_03_Trunks_del_futuro_Zamasu_106_Zamasu_e_Black_Fusao_Desmanchando",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

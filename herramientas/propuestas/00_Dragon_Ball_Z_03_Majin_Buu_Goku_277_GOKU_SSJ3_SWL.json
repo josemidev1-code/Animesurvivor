@@ -1,0 +1,108 @@
+{
+ "idle": [
+  1,
+  3
+ ],
+ "move": [
+  58
+ ],
+ "attack": [
+  17
+ ],
+ "kick": [
+  30
+ ],
+ "ki": [
+  134,
+  135
+ ],
+ "pow": [
+  229,
+  230,
+  231
+ ],
+ "hurt": [
+  96
+ ],
+ "faint": [
+  120
+ ],
+ "portrait": 236,
+ "guardia": 1,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   125,
+   159,
+   160,
+   165,
+   166,
+   167,
+   214,
+   215,
+   217,
+   218,
+   219,
+   220
+  ],
+  "bola": [
+   130,
+   131,
+   132,
+   133,
+   136,
+   137,
+   138,
+   139,
+   140,
+   141,
+   149,
+   150,
+   168,
+   170,
+   171,
+   172,
+   173,
+   202,
+   203,
+   205,
+   206,
+   207,
+   208,
+   209,
+   210,
+   213
+  ],
+  "aura": [
+   204
+  ],
+  "estela": [
+   127,
+   196
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Goku/277_GOKU SSJ3 SWL+",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_03_Majin_Buu_Goku_277_GOKU_SSJ3_SWL",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,113 @@
+{
+ "idle": [
+  2
+ ],
+ "move": [
+  0
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  22,
+  23
+ ],
+ "pow": [
+  11,
+  12,
+  13
+ ],
+ "hurt": [],
+ "faint": [
+  105
+ ],
+ "portrait": null,
+ "guardia": 2,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.74,
+  "faint": 0.6,
+  "ki": 0.7,
+  "pow": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   1,
+   3,
+   6,
+   20,
+   24,
+   43,
+   72,
+   80,
+   81,
+   90,
+   93,
+   97,
+   112,
+   114,
+   116,
+   118,
+   124,
+   130
+  ],
+  "bola": [
+   38,
+   39,
+   44,
+   45,
+   48,
+   68,
+   75,
+   83,
+   95,
+   98,
+   127,
+   128,
+   134,
+   135
+  ],
+  "aura": [
+   10,
+   27,
+   28,
+   32,
+   35,
+   36,
+   42,
+   54,
+   67,
+   89,
+   92,
+   94,
+   96,
+   99,
+   100,
+   102,
+   106,
+   111,
+   113,
+   115,
+   119,
+   120,
+   129,
+   142
+  ],
+  "estela": [
+   40,
+   41
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Zamasu/108_Zamasu e Black fusion Robotica",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_03_Trunks_del_futuro_Zamasu_108_Zamasu_e_Black_fusion_Robotica",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "falta la animación de daño",
+  "la pose de moverse parece un salto hacia atrás (polvo delante)"
+ ],
+ "dudoso": true
+}

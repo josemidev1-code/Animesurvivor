@@ -1,0 +1,48 @@
+{
+ "idle": [
+  3,
+  2
+ ],
+ "move": [
+  12
+ ],
+ "attack": [
+  9
+ ],
+ "kick": [
+  12
+ ],
+ "ki": [],
+ "pow": [],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 2,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": [
+   11
+  ]
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Bardock/210_BARDOCK BLACK, ANDRÉS GAMEN ANIMATIONS ✓",
+ "pack": "01_Dragon_Ball_Super/05_Broly/Goku/217_GOKU, TRAJE DE INVIERNO,DBS BROLY ,ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_05_Broly_Goku_217_GOKU_TRAJE_DE_INVIERNO_DBS_BROLY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de ki",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en puñetazos"
+ ],
+ "dudoso": true
+}

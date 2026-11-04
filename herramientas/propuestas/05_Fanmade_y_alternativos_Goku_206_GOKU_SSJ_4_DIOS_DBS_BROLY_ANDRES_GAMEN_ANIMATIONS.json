@@ -1,0 +1,78 @@
+{
+ "idle": [
+  2
+ ],
+ "move": [
+  80
+ ],
+ "attack": [
+  61,
+  63,
+  59
+ ],
+ "kick": [
+  27
+ ],
+ "ki": [
+  33,
+  32
+ ],
+ "pow": [
+  15,
+  15
+ ],
+ "hurt": [
+  39,
+  40
+ ],
+ "faint": [
+  35
+ ],
+ "portrait": 0,
+ "guardia": 2,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.9,
+  "hurt": 0.9,
+  "ki": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.6,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   1,
+   29,
+   30
+  ],
+  "bola": [
+   13,
+   15,
+   16,
+   98,
+   99
+  ],
+  "aura": [
+   12,
+   17
+  ],
+  "estela": [
+   81,
+   82
+  ]
+ },
+ "plantilla": "01_Dragon_Ball_Super/09_Generales_y_manga/Gohan/114_GOHAN MÍSTICO DBS ANDRÉS GAMEN ANIMATIONS",
+ "pack": "05_Fanmade_y_alternativos/Goku/206_GOKU SSJ 4 DIOS,DBS BROLY, ANDRÉS GAMEN ANIMATIONS  ✓",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_206_GOKU_SSJ_4_DIOS_DBS_BROLY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

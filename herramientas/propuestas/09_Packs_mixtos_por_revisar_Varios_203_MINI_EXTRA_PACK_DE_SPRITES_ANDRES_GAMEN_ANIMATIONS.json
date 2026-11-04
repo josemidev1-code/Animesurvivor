@@ -1,0 +1,71 @@
+{
+ "idle": [
+  9,
+  9
+ ],
+ "move": [
+  15
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  14
+ ],
+ "pow": [
+  28,
+  28
+ ],
+ "hurt": [
+  25,
+  25
+ ],
+ "faint": [],
+ "portrait": 23,
+ "guardia": 5,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.78,
+  "ki": 0.5,
+  "pow": 0.9,
+  "hurt": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   0,
+   17,
+   18,
+   24,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32,
+   33,
+   35,
+   36,
+   38
+  ],
+  "aura": [
+   25,
+   34,
+   37
+  ],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/05_Broly/Goku/216_GOKU, SSJ GOD,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "09_Packs_mixtos_por_revisar/Varios/203_MINI EXTRA PACK DE SPRITES, ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "09_Packs_mixtos_por_revisar_Varios_203_MINI_EXTRA_PACK_DE_SPRITES_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "poca confianza en ki"
+ ],
+ "dudoso": true
+}

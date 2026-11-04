@@ -1,0 +1,62 @@
+{
+ "idle": [
+  2,
+  2
+ ],
+ "move": [
+  14
+ ],
+ "attack": [
+  20,
+  22,
+  22
+ ],
+ "kick": [],
+ "ki": [
+  5,
+  6
+ ],
+ "pow": [
+  24,
+  25,
+  26
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": 0,
+ "guardia": 15,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.81,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   7
+  ],
+  "bola": [
+   8,
+   9,
+   18,
+   19
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "plantilla": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Turles/236_TURLES SSJ MALIGNO, ANDRÉS GAMEN ANIMATIONS ✓",
+ "pack": "05_Fanmade_y_alternativos/Broly/007_BROLY SSJ DIOS,DBZ,BY ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Broly_007_BROLY_SSJ_DIOS_DBZ_BY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de patada",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en guardia",
+  "tamaño de píxel distinto en puñetazos"
+ ],
+ "dudoso": true
+}

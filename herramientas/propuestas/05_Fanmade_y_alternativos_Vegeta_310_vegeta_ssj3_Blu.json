@@ -1,0 +1,63 @@
+{
+ "idle": [
+  1
+ ],
+ "move": [
+  22
+ ],
+ "attack": [
+  10,
+  11
+ ],
+ "kick": [
+  18,
+  19,
+  20
+ ],
+ "ki": [
+  46,
+  47
+ ],
+ "pow": [
+  3,
+  4,
+  5
+ ],
+ "hurt": [],
+ "faint": [
+  53
+ ],
+ "portrait": null,
+ "guardia": 1,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.92,
+  "faint": 0.6,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.7,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   48,
+   49
+  ],
+  "aura": [],
+  "estela": [
+   0,
+   54
+  ]
+ },
+ "pack": "05_Fanmade_y_alternativos/Vegeta/310_vegeta ssj3 Blu",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "05_Fanmade_y_alternativos_Vegeta_310_vegeta_ssj3_Blu",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

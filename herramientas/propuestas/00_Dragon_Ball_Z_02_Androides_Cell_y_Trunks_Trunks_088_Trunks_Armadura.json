@@ -1,0 +1,67 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  34
+ ],
+ "attack": [
+  2,
+  3,
+  4,
+  5
+ ],
+ "kick": [
+  13,
+  14,
+  15
+ ],
+ "ki": [
+  61,
+  62
+ ],
+ "pow": [
+  67,
+  68
+ ],
+ "hurt": [
+  12
+ ],
+ "faint": [],
+ "portrait": 70,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.83,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.8,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   63,
+   65,
+   66,
+   71
+  ],
+  "bola": [
+   64,
+   72,
+   73
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/088_Trunks Armadura",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_02_Androides_Cell_y_Trunks_Trunks_088_Trunks_Armadura",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

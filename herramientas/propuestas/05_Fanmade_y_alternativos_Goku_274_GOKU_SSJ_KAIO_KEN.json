@@ -1,0 +1,90 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  43
+ ],
+ "attack": [
+  50
+ ],
+ "kick": [
+  92,
+  93
+ ],
+ "ki": [
+  66,
+  67
+ ],
+ "pow": [
+  6,
+  7,
+  8
+ ],
+ "hurt": [
+  57
+ ],
+ "faint": [],
+ "portrait": 2,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.8,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   82
+  ],
+  "bola": [
+   68,
+   77,
+   78,
+   80,
+   81,
+   83,
+   84,
+   85,
+   86,
+   87,
+   88,
+   116,
+   117,
+   118,
+   132,
+   133,
+   134,
+   136,
+   137,
+   138
+  ],
+  "aura": [
+   79,
+   101,
+   102,
+   106
+  ],
+  "estela": [
+   34,
+   35,
+   121,
+   122
+  ]
+ },
+ "pack": "05_Fanmade_y_alternativos/Goku/274_GOKU SSJ KAIO KEN",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "05_Fanmade_y_alternativos_Goku_274_GOKU_SSJ_KAIO_KEN",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,49 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  3
+ ],
+ "attack": [
+  2
+ ],
+ "kick": [
+  5
+ ],
+ "ki": [],
+ "pow": [],
+ "hurt": [
+  20
+ ],
+ "faint": [],
+ "portrait": 64,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "hurt": 0.5,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "02_GT/Vegeta/308_VEGETA SSJ4 HD",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "02_GT_Vegeta_308_VEGETA_SSJ4_HD",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de ki",
+  "poca confianza en daño",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

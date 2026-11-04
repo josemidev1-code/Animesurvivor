@@ -1,0 +1,95 @@
+{
+ "idle": [
+  6
+ ],
+ "move": [
+  29
+ ],
+ "attack": [
+  3
+ ],
+ "kick": [
+  9
+ ],
+ "ki": [
+  0
+ ],
+ "pow": [
+  122,
+  123,
+  124
+ ],
+ "hurt": [
+  72,
+  73
+ ],
+ "faint": [
+  102
+ ],
+ "portrait": 126,
+ "guardia": 6,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.97,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   21,
+   149,
+   150,
+   151
+  ],
+  "bola": [
+   1,
+   7,
+   11,
+   12,
+   16,
+   17,
+   18,
+   20,
+   22,
+   23,
+   24,
+   84,
+   91,
+   118,
+   119,
+   138,
+   140,
+   143,
+   145,
+   146,
+   147,
+   148,
+   156
+  ],
+  "aura": [
+   87,
+   152,
+   153,
+   154,
+   155
+  ],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Vegeta/299_Vegeta blue evolution",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_04_Torneo_del_Poder_Vegeta_299_Vegeta_blue_evolution",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

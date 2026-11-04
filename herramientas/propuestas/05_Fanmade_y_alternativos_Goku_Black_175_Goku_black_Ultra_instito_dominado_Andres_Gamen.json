@@ -1,0 +1,68 @@
+{
+ "idle": [
+  9,
+  10
+ ],
+ "move": [
+  16
+ ],
+ "attack": [
+  21,
+  22,
+  24
+ ],
+ "kick": [],
+ "ki": [
+  34,
+  37
+ ],
+ "pow": [
+  37,
+  38
+ ],
+ "hurt": [],
+ "faint": [
+  36
+ ],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "ki": 0.9,
+  "pow": 0.9,
+  "move": 0.9,
+  "attack": 0.9,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   36
+  ],
+  "bola": [
+   6,
+   42,
+   49,
+   53
+  ],
+  "aura": [],
+  "estela": [
+   17,
+   26
+  ]
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Goku/218_GOKU, ULTRA INSTINTO DOMINADO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "05_Fanmade_y_alternativos/Goku Black/175_Goku black Ultra instito dominado.Andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_Black_175_Goku_black_Ultra_instito_dominado_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de patada",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en guardia",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

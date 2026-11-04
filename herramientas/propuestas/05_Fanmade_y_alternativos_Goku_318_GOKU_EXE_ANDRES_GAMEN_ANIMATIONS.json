@@ -1,0 +1,59 @@
+{
+ "idle": [
+  31,
+  31
+ ],
+ "move": [
+  28,
+  27
+ ],
+ "attack": [
+  28,
+  25,
+  19,
+  21
+ ],
+ "kick": [],
+ "ki": [],
+ "pow": [
+  8,
+  9
+ ],
+ "hurt": [
+  14,
+  15
+ ],
+ "faint": [
+  12
+ ],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "faint": 0.9,
+  "pow": 0.6,
+  "attack": 0.9,
+  "hurt": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Goku Black/213_GOKU BLACK ULTRA INSTITO SSJ ROSE, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "05_Fanmade_y_alternativos/Goku/318_GOKU .EXE ,ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_318_GOKU_EXE_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de patada",
+  "falta la animación de ki",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos"
+ ],
+ "dudoso": true
+}

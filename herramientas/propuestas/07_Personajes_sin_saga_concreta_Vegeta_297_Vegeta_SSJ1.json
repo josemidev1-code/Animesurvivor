@@ -1,0 +1,69 @@
+{
+ "idle": [
+  17
+ ],
+ "move": [
+  92
+ ],
+ "attack": [
+  11,
+  12,
+  13
+ ],
+ "kick": [
+  21
+ ],
+ "ki": [
+  41,
+  42
+ ],
+ "pow": [
+  0,
+  1,
+  2
+ ],
+ "hurt": [
+  9,
+  10
+ ],
+ "faint": [
+  36
+ ],
+ "portrait": 114,
+ "guardia": 17,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.8,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   94
+  ],
+  "bola": [
+   43,
+   44
+  ],
+  "aura": [],
+  "estela": [
+   91
+  ]
+ },
+ "pack": "07_Personajes_sin_saga_concreta/Vegeta/297_Vegeta SSJ1",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "07_Personajes_sin_saga_concreta_Vegeta_297_Vegeta_SSJ1",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,131 @@
+{
+ "idle": [
+  20,
+  21
+ ],
+ "move": [
+  26
+ ],
+ "attack": [
+  23,
+  32,
+  51,
+  53
+ ],
+ "kick": [
+  40,
+  42,
+  49,
+  50
+ ],
+ "ki": [
+  63,
+  36
+ ],
+ "pow": [
+  9,
+  17
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "ki": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "move": 0.9,
+  "kick": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   26,
+   61,
+   65
+  ],
+  "bola": [
+   5,
+   6,
+   8,
+   9,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   24,
+   25,
+   30,
+   32,
+   37,
+   39,
+   40,
+   42,
+   44,
+   45,
+   46,
+   47,
+   48,
+   54,
+   55,
+   56,
+   57,
+   58,
+   60,
+   63,
+   64,
+   72,
+   73,
+   78,
+   79,
+   84
+  ],
+  "aura": [
+   7,
+   10,
+   11,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   28,
+   29,
+   33,
+   34,
+   35,
+   36,
+   43,
+   49,
+   50,
+   51,
+   52,
+   69,
+   70,
+   71,
+   74,
+   75,
+   76,
+   80,
+   81
+  ],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/05_Broly/Vegeta/226_VEGETA,SSJ BLUE,DBS, BROLY, DAMAGED, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "01_Dragon_Ball_Super/06_Moro/Vegeta/250_Vegeta ssj Dios patrullero galáctico.Andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_06_Moro_Vegeta_250_Vegeta_ssj_Dios_patrullero_galactico_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de daño",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

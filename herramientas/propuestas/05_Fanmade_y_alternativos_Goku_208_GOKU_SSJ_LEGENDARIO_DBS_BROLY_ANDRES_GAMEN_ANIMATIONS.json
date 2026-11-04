@@ -1,0 +1,104 @@
+{
+ "idle": [
+  116
+ ],
+ "move": [
+  121,
+  115
+ ],
+ "attack": [
+  93,
+  98,
+  89,
+  91
+ ],
+ "kick": [
+  89,
+  75,
+  75
+ ],
+ "ki": [
+  2
+ ],
+ "pow": [
+  128,
+  128
+ ],
+ "hurt": [
+  67,
+  66
+ ],
+ "faint": [
+  65
+ ],
+ "portrait": 1,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "hurt": 0.9,
+  "ki": 0.5,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.9,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   3,
+   27,
+   28,
+   29,
+   40,
+   59,
+   126
+  ],
+  "bola": [
+   4,
+   5,
+   6,
+   7,
+   14,
+   19,
+   53,
+   55,
+   56,
+   57,
+   60,
+   61,
+   125,
+   127,
+   128,
+   129,
+   130,
+   131,
+   132,
+   141,
+   142,
+   143,
+   145,
+   146
+  ],
+  "aura": [
+   8,
+   9,
+   144
+  ],
+  "estela": [
+   22,
+   104,
+   105
+  ]
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Goku Black/212_GOKU BLACK SSJ ROSE KAIOKEN, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "05_Fanmade_y_alternativos/Goku/208_GOKU SSJ LEGENDARIO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS ✓",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Goku_208_GOKU_SSJ_LEGENDARIO_DBS_BROLY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki"
+ ],
+ "dudoso": true
+}

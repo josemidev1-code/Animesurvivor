@@ -1,0 +1,105 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [],
+ "attack": [
+  44
+ ],
+ "kick": [],
+ "ki": [
+  3,
+  4
+ ],
+ "pow": [
+  9,
+  10,
+  11
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   5,
+   58,
+   59,
+   65,
+   66,
+   68,
+   69,
+   81,
+   83,
+   95,
+   100,
+   114
+  ],
+  "bola": [
+   6,
+   7,
+   8,
+   25,
+   33,
+   48,
+   50,
+   55,
+   60,
+   61,
+   62,
+   76,
+   82,
+   84,
+   85,
+   86,
+   87,
+   88,
+   91,
+   96,
+   104
+  ],
+  "aura": [
+   20,
+   23,
+   32,
+   34,
+   39,
+   46,
+   51,
+   52,
+   53,
+   63,
+   64,
+   75,
+   89,
+   97,
+   103,
+   106,
+   107,
+   108,
+   109
+  ],
+  "estela": [
+   26,
+   27
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Goku Black/042_Goku Black SSJ",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_09_Generales_y_manga_Goku_Black_042_Goku_Black_SSJ",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de patada",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

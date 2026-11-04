@@ -1,0 +1,84 @@
+{
+ "idle": [
+  3,
+  5
+ ],
+ "move": [
+  26
+ ],
+ "attack": [
+  11,
+  12
+ ],
+ "kick": [
+  14,
+  15
+ ],
+ "ki": [
+  69
+ ],
+ "pow": [
+  120,
+  121,
+  122
+ ],
+ "hurt": [
+  48,
+  49
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 1,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 1.0,
+  "hurt": 0.7,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.7,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   89,
+   90,
+   98
+  ],
+  "bola": [
+   72,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   94,
+   95,
+   108,
+   112,
+   113
+  ],
+  "aura": [
+   73
+  ],
+  "estela": [
+   0,
+   17,
+   18
+  ]
+ },
+ "plantilla": "01_Dragon_Ball_Super/09_Generales_y_manga/Goku Black/043_Goku Black SSJ(versión 2)",
+ "pack": "07_Personajes_sin_saga_concreta/Goku/045_Goku (versión2)",
+ "autor": "VERSION2",
+ "origen": "plantilla",
+ "nombre": "07_Personajes_sin_saga_concreta_Goku_045_Goku_version2",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en ki",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

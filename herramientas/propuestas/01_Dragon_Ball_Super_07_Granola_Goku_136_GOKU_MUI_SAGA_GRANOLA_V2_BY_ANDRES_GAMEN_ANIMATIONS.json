@@ -1,0 +1,72 @@
+{
+ "idle": [
+  114
+ ],
+ "move": [
+  90,
+  106
+ ],
+ "attack": [
+  80,
+  87,
+  76,
+  78
+ ],
+ "kick": [
+  76,
+  69,
+  72
+ ],
+ "ki": [],
+ "pow": [
+  58,
+  59,
+  60
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "pow": 0.6,
+  "attack": 0.9,
+  "move": 0.9,
+  "kick": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   6,
+   8,
+   27,
+   28
+  ],
+  "aura": [
+   1,
+   122,
+   123,
+   124
+  ],
+  "estela": [
+   12,
+   57,
+   102,
+   103
+  ]
+ },
+ "plantilla": "05_Fanmade_y_alternativos/Goku Black/212_GOKU BLACK SSJ ROSE KAIOKEN, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "01_Dragon_Ball_Super/07_Granola/Goku/136_GOKU MUI SAGA GRANOLA,V2,BY ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_07_Granola_Goku_136_GOKU_MUI_SAGA_GRANOLA_V2_BY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de ki",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos"
+ ],
+ "dudoso": true
+}

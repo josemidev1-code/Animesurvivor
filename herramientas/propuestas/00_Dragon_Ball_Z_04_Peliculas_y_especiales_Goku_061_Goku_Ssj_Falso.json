@@ -1,0 +1,56 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [],
+ "attack": [
+  1
+ ],
+ "kick": [],
+ "ki": [
+  4
+ ],
+ "pow": [
+  25,
+  26,
+  27
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "ki": 0.5,
+  "pow": 0.6,
+  "attack": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   18,
+   19,
+   92
+  ],
+  "bola": [
+   7
+  ],
+  "aura": [
+   24,
+   86
+  ],
+  "estela": []
+ },
+ "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Goku/061_Goku Ssj Falso",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_04_Peliculas_y_especiales_Goku_061_Goku_Ssj_Falso",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de patada",
+  "poca confianza en ki",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

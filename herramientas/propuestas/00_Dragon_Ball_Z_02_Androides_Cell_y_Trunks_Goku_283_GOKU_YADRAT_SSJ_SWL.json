@@ -1,0 +1,110 @@
+{
+ "idle": [
+  66,
+  67
+ ],
+ "move": [
+  83
+ ],
+ "attack": [
+  103
+ ],
+ "kick": [
+  105
+ ],
+ "ki": [
+  60,
+  61
+ ],
+ "pow": [
+  122,
+  123,
+  124
+ ],
+ "hurt": [
+  74,
+  75
+ ],
+ "faint": [],
+ "portrait": 0,
+ "guardia": 66,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 1.0,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   57,
+   58,
+   140
+  ],
+  "bola": [
+   20,
+   21,
+   62,
+   63,
+   89,
+   90,
+   91,
+   92,
+   94,
+   95,
+   96,
+   97,
+   99,
+   100,
+   130,
+   131,
+   132,
+   138,
+   139,
+   141,
+   142,
+   143,
+   151,
+   156
+  ],
+  "aura": [
+   51,
+   52,
+   53,
+   54,
+   77,
+   78,
+   79,
+   114,
+   115,
+   118
+  ],
+  "estela": [
+   2,
+   3,
+   4,
+   55,
+   56,
+   76,
+   165,
+   166,
+   167
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/283_GOKU YADRAT SSJ SWL +",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_02_Androides_Cell_y_Trunks_Goku_283_GOKU_YADRAT_SSJ_SWL",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

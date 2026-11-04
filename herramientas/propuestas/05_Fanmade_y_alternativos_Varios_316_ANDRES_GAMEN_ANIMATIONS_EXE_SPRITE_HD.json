@@ -1,0 +1,58 @@
+{
+ "idle": [
+  10,
+  6
+ ],
+ "move": [
+  33
+ ],
+ "attack": [
+  25,
+  24,
+  24
+ ],
+ "kick": [
+  8,
+  9
+ ],
+ "ki": [],
+ "pow": [
+  12,
+  13
+ ],
+ "hurt": [
+  3,
+  4
+ ],
+ "faint": [
+  54
+ ],
+ "portrait": 50,
+ "guardia": 6,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "pow": 0.6,
+  "attack": 0.9,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/06_Moro/Goku/200_GOKU SSJ DIOS CAMISA MEDIA RASGADA,DBS MORO, ANDRÉS GAMEN",
+ "pack": "05_Fanmade_y_alternativos/Varios/316_ANDRÉS GAMEN ANIMATIONS(.EXE) 🎃 SPRITE HD 🎃",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Varios_316_ANDRES_GAMEN_ANIMATIONS_EXE_SPRITE_HD",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de ki"
+ ],
+ "dudoso": true
+}

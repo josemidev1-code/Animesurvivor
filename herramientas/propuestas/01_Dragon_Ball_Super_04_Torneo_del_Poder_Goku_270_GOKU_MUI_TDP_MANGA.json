@@ -1,0 +1,127 @@
+{
+ "idle": [
+  4
+ ],
+ "move": [
+  181
+ ],
+ "attack": [
+  48
+ ],
+ "kick": [
+  127
+ ],
+ "ki": [
+  6,
+  7
+ ],
+ "pow": [
+  224,
+  225,
+  226
+ ],
+ "hurt": [
+  171,
+  172
+ ],
+ "faint": [
+  271
+ ],
+ "portrait": 260,
+ "guardia": 4,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   129,
+   132,
+   153,
+   156,
+   168,
+   169,
+   170,
+   194,
+   195,
+   200,
+   201,
+   202,
+   203
+  ],
+  "bola": [
+   9,
+   13,
+   14,
+   21,
+   90,
+   91,
+   96,
+   97,
+   111,
+   112,
+   113,
+   114,
+   115,
+   116,
+   121,
+   122,
+   123,
+   130,
+   131,
+   146,
+   147,
+   154,
+   155,
+   188,
+   191,
+   222,
+   223,
+   230,
+   232,
+   245,
+   246,
+   247,
+   248,
+   249,
+   250
+  ],
+  "aura": [
+   73,
+   74,
+   104,
+   106,
+   107,
+   189,
+   190,
+   192,
+   193,
+   215,
+   216,
+   217,
+   218,
+   231
+  ],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/270_GOKU MUI TDP MANGA",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_04_Torneo_del_Poder_Goku_270_GOKU_MUI_TDP_MANGA",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en puñetazos",
+  "tamaño de píxel distinto en patada",
+  "tamaño de píxel distinto en ki",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

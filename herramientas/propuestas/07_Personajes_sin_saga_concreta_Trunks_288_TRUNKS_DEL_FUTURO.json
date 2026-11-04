@@ -1,0 +1,54 @@
+{
+ "idle": [
+  0,
+  1,
+  2
+ ],
+ "move": [],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  11,
+  12
+ ],
+ "pow": [],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "ki": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   13,
+   14
+  ],
+  "bola": [
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "07_Personajes_sin_saga_concreta/Trunks/288_TRUNKS DEL FUTURO",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "07_Personajes_sin_saga_concreta_Trunks_288_TRUNKS_DEL_FUTURO",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

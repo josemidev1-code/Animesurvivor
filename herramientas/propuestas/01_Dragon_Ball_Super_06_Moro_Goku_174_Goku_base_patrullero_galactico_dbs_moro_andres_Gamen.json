@@ -1,0 +1,65 @@
+{
+ "idle": [
+  1,
+  2
+ ],
+ "move": [
+  9
+ ],
+ "attack": [
+  26,
+  28,
+  30
+ ],
+ "kick": [
+  20,
+  21
+ ],
+ "ki": [
+  19,
+  30
+ ],
+ "pow": [
+  50
+ ],
+ "hurt": [
+  40,
+  42
+ ],
+ "faint": [
+  43
+ ],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "hurt": 0.9,
+  "attack": 0.9,
+  "kick": 0.9,
+  "ki": 0.9,
+  "pow": 0.9,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": [
+   10
+  ]
+ },
+ "plantilla": "01_Dragon_Ball_Super/06_Moro/Goku/201_GOKU,CAMISA MEDIA RASGADA,DBS MORO, ANDRÉS GAMEN",
+ "pack": "01_Dragon_Ball_Super/06_Moro/Goku/174_Goku base.patrullero galáctico.dbs moro.andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_06_Moro_Goku_174_Goku_base_patrullero_galactico_dbs_moro_andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse",
+  "tamaño de píxel distinto en daño"
+ ],
+ "dudoso": true
+}

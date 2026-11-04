@@ -1,0 +1,74 @@
+{
+ "idle": [
+  14
+ ],
+ "move": [
+  201
+ ],
+ "attack": [
+  12,
+  13
+ ],
+ "kick": [
+  21
+ ],
+ "ki": [
+  103,
+  104
+ ],
+ "pow": [
+  77
+ ],
+ "hurt": [
+  19,
+  20
+ ],
+ "faint": [
+  368
+ ],
+ "portrait": 302,
+ "guardia": 14,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.7,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   105
+  ],
+  "bola": [
+   155,
+   211,
+   212,
+   236,
+   268
+  ],
+  "aura": [
+   98,
+   126,
+   160,
+   161
+  ],
+  "estela": [
+   46,
+   107,
+   241
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/409_MR SATAN (JayHyperStarX)",
+ "autor": "JAYHYPERSTARX",
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_03_Majin_Buu_DeviantArt_409_MR_SATAN_JayHyperStarX",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

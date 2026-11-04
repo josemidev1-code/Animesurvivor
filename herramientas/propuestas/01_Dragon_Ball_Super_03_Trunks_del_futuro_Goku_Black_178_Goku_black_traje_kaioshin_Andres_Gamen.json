@@ -1,0 +1,64 @@
+{
+ "idle": [
+  0,
+  1,
+  2
+ ],
+ "move": [
+  6
+ ],
+ "attack": [
+  16,
+  13,
+  13
+ ],
+ "kick": [
+  18
+ ],
+ "ki": [
+  37,
+  35
+ ],
+ "pow": [
+  29,
+  29
+ ],
+ "hurt": [
+  39
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 1.0,
+  "hurt": 0.5,
+  "ki": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   25,
+   36
+  ],
+  "bola": [
+   28,
+   29
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/05_Broly/Goku/220_GOKU,SSJ 1,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/178_Goku black traje kaioshin.Andres Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_03_Trunks_del_futuro_Goku_Black_178_Goku_black_traje_kaioshin_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

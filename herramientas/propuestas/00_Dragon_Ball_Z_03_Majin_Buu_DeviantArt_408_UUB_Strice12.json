@@ -1,0 +1,69 @@
+{
+ "idle": [
+  2,
+  4,
+  5
+ ],
+ "move": [
+  13
+ ],
+ "attack": [
+  3
+ ],
+ "kick": [
+  9,
+  10,
+  11
+ ],
+ "ki": [
+  81,
+  82
+ ],
+ "pow": [
+  42,
+  43
+ ],
+ "hurt": [
+  29
+ ],
+ "faint": [
+  92
+ ],
+ "portrait": 91,
+ "guardia": 2,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.9,
+  "attack": 0.6,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   83,
+   84,
+   85,
+   86
+  ],
+  "aura": [
+   48,
+   49
+  ],
+  "estela": []
+ },
+ "plantilla": "00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/401_CAPITAN GINYU (Strice12)",
+ "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/408_UUB (Strice12)",
+ "autor": "STRICE12",
+ "origen": "plantilla",
+ "nombre": "00_Dragon_Ball_Z_03_Majin_Buu_DeviantArt_408_UUB_Strice12",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

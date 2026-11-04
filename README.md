@@ -1,7 +1,7 @@
 # DragonBall Survivor
 
 Juego de supervivencia (estilo PokéSurvivor / Vampire Survivors) con personajes de Dragon Ball en pixel art.
-**Para jugar: doble clic en `index.html`.** No hace falta instalar nada.
+**Para jugar: doble clic en `index.html`** o en la web: https://josemidev1-code.github.io/Animesurvivor/ (GitHub Pages, se actualiza al subir a `main`).
 
 ## Qué hay en la carpeta
 
@@ -66,6 +66,12 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
   `01 - Guía y documentación/00 - EMPIEZA AQUÍ - RELEVO CLAUDE.md`.
 
 ## Lo que falta (en este orden)
+
+**Pendiente pedido por Josemi (2 nov., 20:33):**
+1. **Ataques personalizados para cada personaje**: hoy los nuevos usan las técnicas comunes de su familia (`FAMILIAS` en `herramientas/meter.py`); cada uno debe tener las suyas.
+2. **Usar en partida las animaciones propias de cada personaje** (los ataques y efectos de su pack), no solo las poses comunes.
+3. **Cuadrar los ataques estéticamente con las animaciones**: que el golpe, el ki y la técnica coincidan con el fotograma que se ve.
+
 
 > **Prioridad actual (2 nov.):** los puntos de `01 - Guía y documentación/Cambios propuestos por Josemi.md` primero
 > (selección con retrato fijo, estadísticas con colores, inventario de sprites, ataques fieles…) y después la

@@ -1,0 +1,68 @@
+{
+ "idle": [
+  8,
+  9
+ ],
+ "move": [
+  49
+ ],
+ "attack": [
+  27
+ ],
+ "kick": [],
+ "ki": [
+  13,
+  14
+ ],
+ "pow": [
+  52
+ ],
+ "hurt": [
+  39
+ ],
+ "faint": [],
+ "portrait": null,
+ "guardia": 8,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 1.0,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   15,
+   16
+  ],
+  "bola": [
+   0,
+   1,
+   53,
+   56,
+   57,
+   58
+  ],
+  "aura": [
+   54,
+   55
+  ],
+  "estela": [
+   17,
+   18
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/052_Goku Instinto Superior Completo",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_04_Torneo_del_Poder_Goku_052_Goku_Instinto_Superior_Completo",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de patada",
+  "poca confianza en daño",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

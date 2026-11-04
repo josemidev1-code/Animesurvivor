@@ -1,0 +1,74 @@
+{
+ "idle": [
+  7,
+  8
+ ],
+ "move": [],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  3
+ ],
+ "pow": [
+  5,
+  5
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": 14,
+ "guardia": 4,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "ki": 0.5,
+  "pow": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   1,
+   5,
+   12,
+   15,
+   16,
+   17,
+   18,
+   19,
+   24,
+   25,
+   26,
+   28,
+   30
+  ],
+  "aura": [
+   0,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   20,
+   21,
+   22,
+   23,
+   27
+  ],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/05_Broly/Vegeta/226_VEGETA,SSJ BLUE,DBS, BROLY, DAMAGED, ANDRÉS GAMEN ANIMATIONS",
+ "pack": "05_Fanmade_y_alternativos/Vegeta/198_Vegeta ssj Blue1,Ultra ssjb, Damaged, Andrés Gamen",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Vegeta_198_Vegeta_ssj_Blue1_Ultra_ssjb_Damaged_Andres_Gamen",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "poca confianza en ki",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en guardia"
+ ],
+ "dudoso": true
+}

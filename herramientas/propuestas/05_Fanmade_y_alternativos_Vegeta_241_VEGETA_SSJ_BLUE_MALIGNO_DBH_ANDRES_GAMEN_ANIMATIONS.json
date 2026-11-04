@@ -1,0 +1,70 @@
+{
+ "idle": [
+  80,
+  81
+ ],
+ "move": [
+  75
+ ],
+ "attack": [
+  59,
+  60,
+  62,
+  63
+ ],
+ "kick": [
+  39,
+  41,
+  42,
+  43
+ ],
+ "ki": [
+  29,
+  20
+ ],
+ "pow": [
+  83,
+  83
+ ],
+ "hurt": [
+  1,
+  2
+ ],
+ "faint": [
+  37
+ ],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.9,
+  "faint": 0.9,
+  "hurt": 0.7,
+  "ki": 0.9,
+  "pow": 0.9,
+  "attack": 0.9,
+  "kick": 0.9
+ },
+ "efectos": {
+  "rayo": [
+   12,
+   19
+  ],
+  "bola": [
+   33
+  ],
+  "aura": [],
+  "estela": []
+ },
+ "plantilla": "01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/242_VEGETA SSJ BLUE PERFECTO ( MANGA ) ANDRÉS GAMEN ANIMATIONS ( SPRITE HD ) ✓",
+ "pack": "05_Fanmade_y_alternativos/Vegeta/241_VEGETA SSJ BLUE MALIGNO,DBH, ANDRÉS GAMEN ANIMATIONS ✓",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "05_Fanmade_y_alternativos_Vegeta_241_VEGETA_SSJ_BLUE_MALIGNO_DBH_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "tamaño de píxel distinto en moverse"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,96 @@
+{
+ "idle": [
+  1,
+  2
+ ],
+ "move": [],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  3
+ ],
+ "pow": [
+  16,
+  17,
+  18
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": 0,
+ "guardia": 2,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "ki": 0.5,
+  "pow": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   76,
+   77,
+   86,
+   101,
+   103,
+   104,
+   112
+  ],
+  "bola": [
+   4,
+   5,
+   6,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   64,
+   65,
+   67,
+   68,
+   70,
+   71,
+   80,
+   81,
+   82,
+   83,
+   84,
+   87,
+   88,
+   91,
+   92,
+   93,
+   94,
+   100,
+   109,
+   123,
+   124,
+   125,
+   127
+  ],
+  "aura": [
+   14,
+   15,
+   118,
+   119,
+   120,
+   121
+  ],
+  "estela": []
+ },
+ "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Goku/278_GOKU SSJ3 ULSW DBZ",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_03_Majin_Buu_Goku_278_GOKU_SSJ3_ULSW_DBZ",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "poca confianza en ki",
+  "falta la animación de daño",
+  "tamaño de píxel distinto en guardia",
+  "tamaño de píxel distinto en ki"
+ ],
+ "dudoso": true
+}

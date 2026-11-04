@@ -1,0 +1,48 @@
+{
+ "idle": [
+  1
+ ],
+ "move": [
+  5
+ ],
+ "attack": [
+  6
+ ],
+ "kick": [
+  8
+ ],
+ "ki": [],
+ "pow": [],
+ "hurt": [],
+ "faint": [],
+ "portrait": null,
+ "guardia": 1,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.94,
+  "attack": 0.6,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": [
+   0,
+   2,
+   7,
+   16
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Vegeta/300_Vegeta ssj3",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_03_Majin_Buu_Vegeta_300_Vegeta_ssj3",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de ki",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

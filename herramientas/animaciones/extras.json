@@ -69,6 +69,10 @@
    "0": {
     "faint": [
      32
+    ],
+    "retrato": [
+     "00_Dragon_Ball_Z/00_Saiyans/Vegeta/309_Vegeta explorador HD",
+     40
     ]
    },
    "1": {
@@ -125,6 +129,10 @@
    "0": {
     "faint": [
      69
+    ],
+    "retrato": [
+     "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/255_Black Goku Pack de sprites By GohanAnimations",
+     12
     ]
    },
    "1": {
@@ -135,6 +143,10 @@
    "2": {
     "faint": [
      56
+    ],
+    "retrato": [
+     "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/290_Mega Pack de Sprites Goku Black Ssj Rose",
+     299
     ]
    }
   },
@@ -190,6 +202,28 @@
    "0": {
     "faint": [
      70
+    ]
+   }
+  },
+  "broly": {
+   "0": {
+    "retrato": [
+     "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/008_Broly ssj restringido,remake, Andrés Gamen",
+     29
+    ]
+   }
+  },
+  "trunks": {
+   "0": {
+    "retrato": [
+     "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/233_TRUNKS CON ARMADURA,BASE, ANDRÉS GAMEN ANIMATIONS",
+     55
+    ]
+   },
+   "1": {
+    "retrato": [
+     "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/234_TRUNKS CON ARMADURA,SSJ1, ANDRÉS GAMEN ANIMATIONS",
+     54
     ]
    }
   }

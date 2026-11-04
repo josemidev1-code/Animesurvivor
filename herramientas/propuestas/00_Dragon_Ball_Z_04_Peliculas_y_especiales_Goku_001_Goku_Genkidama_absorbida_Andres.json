@@ -1,0 +1,78 @@
+{
+ "idle": [
+  14
+ ],
+ "move": [
+  70
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [
+  81
+ ],
+ "pow": [
+  16,
+  17,
+  18
+ ],
+ "hurt": [
+  74
+ ],
+ "faint": [],
+ "portrait": 159,
+ "guardia": 14,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 0.78,
+  "hurt": 0.5,
+  "ki": 0.5,
+  "pow": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   121,
+   158
+  ],
+  "bola": [
+   84,
+   100,
+   153
+  ],
+  "aura": [
+   0,
+   1,
+   146,
+   147,
+   148,
+   149,
+   150,
+   154,
+   155,
+   156,
+   157,
+   177
+  ],
+  "estela": [
+   55,
+   56,
+   83,
+   88,
+   91,
+   120,
+   131
+  ]
+ },
+ "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Goku/001_(Goku Genkidama absorbida) Andrés",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "00_Dragon_Ball_Z_04_Peliculas_y_especiales_Goku_001_Goku_Genkidama_absorbida_Andres",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "poca confianza en ki",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

@@ -1,0 +1,46 @@
+{
+ "idle": [
+  0,
+  1,
+  2
+ ],
+ "move": [
+  11
+ ],
+ "attack": [],
+ "kick": [],
+ "ki": [],
+ "pow": [
+  14,
+  15,
+  16
+ ],
+ "hurt": [],
+ "faint": [],
+ "portrait": 49,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "move": 0.84,
+  "pow": 0.6
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/269_GOKU BLACK PITIKOS",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_03_Trunks_del_futuro_Goku_Black_269_GOKU_BLACK_PITIKOS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de puñetazos",
+  "falta la animación de patada",
+  "falta la animación de ki",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

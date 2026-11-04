@@ -874,6 +874,164 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 - Subido a GitHub (2 nov.): `main` avanzada con todo el trabajo (a191a967) e incluida la carpeta `sprites/` (33.697 archivos, 420 MB; repo privado); subidas también las ramas `claude/cuerpo-a-cuerpo`, `claude/quizzical-gates-9cf9c0`, `bloque1-fotogramas`, `claude/efectos-pequenos` y `claude/vuelo-bajo`.
 
+## 2026-11-02 — Claude (Opus) · Selección y estadísticas (puntos 4 y 5)
+
+### Lo que pidió el usuario
+- Trabajar desde GitHub (comprobado: su carpeta del escritorio y `main` en GitHub son idénticas).
+- Empezar por el bloque «Selección y estadísticas»: retrato fijo de la cara en la selección con el personaje como en partida debajo, y estadísticas con colores (vida verde, velocidad azul, ataque rojo).
+
+### Lo que hice
+- Decisión de Josemi sobre el retrato: «si por ejemplo tienes la cara de goku super saiyan ponla, pero si no hay cara no se pone». Aplicado: la cara sigue a la forma que se muestra; si esa forma no tiene retrato propio no se pide prestado el de otra (`faceExact`), sale «SIN RETRATO». Hoy las 168 formas tienen retrato propio.
+- Tarjetas (`buildCards`): cara de la forma base fija (se quitó el cambio automático cada 2,5 s), debajo el personaje como en partida (guardia animada, escala ×2 o ×1,5 sin suavizado; solo se dibujan las tarjetas visibles, `drawCardSprites`) y las estadísticas en barras: VIDA verde, VEL azul, ATQ rojo, con etiqueta y número (`statBars`; la barra compara con el resto del plantel).
+- Ficha grande: ◀ ▶ para elegir la forma (cara y sprite cambian juntos, ya no rotan solos), aviso «Despiértala con un deseo a Shenron» si esa forma no está despertada, y las mismas barras. `script.js?v=87`, `style.css?v=70`.
+- Comprobado: capturas a 1366×768 y 375×812, consola sin errores del juego, `comprobar_*.cjs` correctos. No probado: doble clic en Windows ni con la fuente Press Start 2P (en la nube no carga Google Fonts).
+- Pendiente de Josemi: valorar el aspecto (tamaño de las barras, que las tarjetas sean más altas).
+
+### Petición (2 nov., 16:13): todos los sprites jugables
+- Josemi: «quiero que todos los sprites que hay en las carpetas, todos los movimientos, estén en el juego».
+- Decisiones de Josemi: **todas las versiones como personajes jugables separados** (cada pack de Goku, Vegeta… es su propia tarjeta) y **solo los packs que tengan todo**; los incompletos se dejan fuera (apuntados en `SPRITES_PENDIENTES.md`).
+- Inventario: 331 packs en `sprites/`, 164 usados, 167 sin usar (Super 65, fanmade 44, DBZ 23, sin saga 12, escenarios 6, mixtos 5, Heroes 4, GT 3, Daima 3, Shenron 1, referencias 1).
+- Caras (16:00): el retrato de 74 de 168 formas era un recorte del sprite; `herramientas/buscar_caras.py` busca caras reales en otros packs del mismo personaje (en marcha). Goku MUI de Moro usa la cara plateada de UI Dominado (`extras.json`). Las tarjetas enseñan la forma más alta despertada.
+- Caras (hecho): revisadas a ojo las 74 formas sin cara propia con `herramientas/buscar_caras.py` (hojas en `herramientas/_revisar/caras/`). Caras reales nuevas, del mismo personaje y forma: vegeta/0 (Vegeta explorador HD #40), black/0, black/2 (Rosé), broly/0 (restringido), trunks/0 y trunks/1 (armadura), gokumoro/5 (MUI plateado). Las demás solo tenían auras, otros personajes o caras de otra forma (p. ej. Goku SSJ2 solo SSJ3): quedan sin cara. `montar_animaciones.py` marca `busto:1` en esas formas y la selección enseña un recuadro vacío (30 de 62 tarjetas en su forma base). Animaciones idénticas a las anteriores (comprobado). `animaciones_juego.js?v=67`, `script.js?v=88`, `style.css?v=71`.
+- Josemi (16:38): «si no están así para todos es mejor poner todos de lado». Hecho: la selección ya no enseña retratos; cada tarjeta y la ficha grande muestran al personaje de lado, como en partida, a doble tamaño (`#roster .cardFace,.rFace{display:none}`, lienzos 150×170 y 200×190). Los datos de las caras se conservan por si se usan en otro sitio. `script.js?v=89`, `style.css?v=72`.
+- Josemi (16:41): «más temática Dragon Ball retro, típicas máquinas retro». Eligió **máquina recreativa DB**. Hecho: `#cab` en `index.html` (solo fuera de la partida, con `:has`): marquesina naranja con «DRAGON BALL SURVIVOR» y sus esferas 1-3 y 5-7, marco lateral morado con filete naranja, pantalla con líneas de tele antigua y viñeta, panel con palanca, botones A/B/C, «CRÉDITOS n» (tickets) e «INSERTA MONEDA» parpadeando. Menús y pantallas encajan dentro de la pantalla de la máquina. Selección titulada «ELIGE TU GUERRERO». Menú principal: el título ya va en la marquesina y el compañero se ve de lado (`drawHubComp`), no con la cara. Textos en español por la regla del proyecto.
+- Arreglado un error que ya existía: al abrir, el mapa de fondo del menú a veces no existía (`demoT` NaN) y `drawWorld` fallaba en la consola (2 de cada 3 aperturas). `script.js?v=90`, `style.css?v=73`.
+- Josemi (17:00): «quita el crt, quita los cambios de la máquina retro esa, porque no me gusta el diseño». Hecho: quitados la recreativa (`#cab`: marquesina, marco, líneas de tele, panel), el título «ELIGE TU GUERRERO» (vuelve «PERSONAJES») y el fondo morado de la selección. Se mantienen: el estilo de ventanas azules de la selección (16 bits, elegido antes), el compañero de lado en el menú principal y el arreglo del fondo del menú. `script.js?v=91`, `style.css?v=74`. **No volver a proponer la recreativa ni el efecto CRT.**
+- Josemi (17:07): «la tipografía de la letra no me gusta, vamos a cambiarla». Comparador con 12 letras publicado como página; eligió la **A: Press Start 2P en todo** (antes VT323 en los textos). Hecho: `--body` = Press Start 2P, textos de menús a ~la mitad de tamaño (VT323 20px → 10px) con interlineado 1,7, base del `body` 10px, VT323 fuera del enlace de Google Fonts, «JUGAR» del menú a 15px. Comprobado sin desbordes a 1366×768 y 375×812 simulando la anchura de la letra (en la nube no carga Google Fonts). `style.css?v=75`.
+
+### Todos los personajes · tanda 1 (2 nov., 18:19)
+- Josemi: «seguimos con el juego, vamos a poner todos los personajes».
+- Análisis de los 159 packs de personajes sin usar (`herramientas/propuestas/`): 69 parecen completos (guardia, vuelo, puñetazos, patada, ki, aura y daño; todos marcados dudosos porque la herramienta acierta poco) y 90 incompletos (faltan sobre todo daño 65 y patada 60).
+- Tanda 1 hecha: traídos de la rama `claude/quizzical-gates-9cf9c0` (sin fusionarla) los 7 jugables de DeviantArt ya revisados: Nappa, Capitán Ginyu, Jeice, Guldo, Uub, Mr. Satán y Androide 21. Copiados `herramientas/animaciones/deviantart.json`, `herramientas/bajar_deviantart.py`, sus datos, 13 técnicas, firmas y créditos (`script.js`, `CREDITOS_RECURSOS.md`). Revisados otra vez a ojo con `previsualizar.py` y probada una partida con cada uno sin errores. 69 personajes en la selección. `animaciones_juego.js?v=68`, `script.js?v=92`.
+- La rama `claude/quizzical-gates-9cf9c0` ya no hace falta para estos 7 (no se ha borrado).
+- Tanda 2 hecha: Jiren (Torneo, pack 069), Vegetto SSJ falso (247) y Trunks con armadura (088), fotogramas elegidos a mano en `herramientas/animaciones/todos.json` (las propuestas automáticas confundían auras con ki y ataques con daño). Revisados con `previsualizar.py` y probada una partida con cada uno. 72 personajes en la selección. Bra Majin (189) y la fusión de Zamasu (106) quedan a medias, fuera del juego.
+- Inventario corregido: Jiren Hakaishin (181) ya estaba en el juego (la ruta se escribía distinta); ahora se compara por número de pack. Lista completa de lo que falta y cómo meter cada uno: `01 - Guía y documentación/PERSONAJES_POR_METER.md` (60 completos por meter, 87 incompletos fuera).
+
+### Siguiente paso recomendado
+- Seguir `PERSONAJES_POR_METER.md` por tandas de 3-5, eligiendo los fotogramas a mano y revisando cada uno con `previsualizar.py`. `animaciones_juego.js?v=69`, `script.js?v=93`.
+- Tanda 3 hecha: Goku Black Kaioshin (178), Black SSJ falso (177), Black Rosé Evolution (176) y Majin Black Dios (184). Nuevo atajo `herramientas/meter.py`. 76 personajes. `animaciones_juego.js?v=70`, `script.js?v=94`.
+- Tanda 4 hecha: Goku Yardrat base, SSJ y SSJ SWL, y Vegeta Yardrat. 80 personajes. `animaciones_juego.js?v=71`, `script.js?v=95`.
+- Tanda 5 hecha: Goku SSJ4 GT y Vegeta SSJ4 GT. 82 personajes. Goku SSJ4 Daima (140) a medias (pack de 281 fotogramas). `animaciones_juego.js?v=72`, `script.js?v=96`.
+- Tanda 6 hecha: Vegeta SSJ y Vegeta Blue de la saga de Freezer resucitado. 84 personajes. `animaciones_juego.js?v=73`, `script.js?v=97`.
+- Tanda 6 (sigue): Vegeta Blue de Super (092). 85 personajes. `animaciones_juego.js?v=74`, `script.js?v=98`.
+- Josemi (19:13): «publica en github pages». Repositorio público; Josemi activó Pages (main, raíz). Añadido `.nojekyll`. Publicado bien (despliegue del 2 nov., 19:17): https://josemidev1-code.github.io/Animesurvivor/ — se actualiza con cada subida a `main`.
+- Josemi (19:22): «¿podemos hacer que mientras se mueven los personajes también ataquen?». Los ataques ya ocurrían en movimiento, pero el dibujo los tapaba con la pose de vuelo. Ahora puñetazos, patadas, ki y la preparación de técnicas se ven también moviéndose (el aura de poder, solo quieto). Probado: 32 de 120 fotogramas de una carrera con Goku salen atacando, sin errores. `script.js?v=99`.
+
+## 2026-11-02 — Claude (Opus) · Todos los personajes, tandas 7 en adelante
+
+### Lo que pidió el usuario
+- Josemi (19:28): seguir metiendo todos los personajes desde GitHub (`main`). Siguiente Vegeta Blue Ulsw HD (296), luego el resto de Vegeta y después las versiones de Goku. Elegir los fotogramas a mano, revisar con `previsualizar.py`, pasar `comprobar_*.cjs`, probar una partida, tandas de 3-5 con bitácora, `PERSONAJES_POR_METER.md`, versiones `?v=`, commit y push a `main`. No parar entre tandas.
+
+### Lo que hice
+- Tanda 7 hecha: Vegeta Blue HD (296), Vegeta Blue Full Power (093), Vegeta Blue Evolution (299) y Vegeta base HD (295), fotogramas a mano, revisados con `previsualizar.py`, `comprobar_*.cjs` correctos y una partida de 25 s con cada uno sin errores. 89 personajes. `animaciones_juego.js?v=75`, `script.js?v=100`.
+- Tanda 8 hecha: Vegeta Ultra Ego (240), Vegeta Xeno (267), Vegeta SSJ HD (297) y Vegeta Ultra Instinto HD (302); revisados con `previsualizar.py`, comprobaciones correctas y partida de prueba con cada uno sin errores. 93 personajes. `animaciones_juego.js?v=76`, `script.js?v=101`.
+- Tanda 9 hecha: Vegeta Blue Maligno (241), Goku SSJ3 clásico (057) y Goku SSJ3 HD (277); comprobaciones y partida de prueba correctas. 96 personajes. Vegeta MUI (303) a medias: pack reescalado y borroso (cada fotograma a otra escala, el zoom no se puede medir). Vegeta Omni God (249) es incompleto: sin patada ni daño. `animaciones_juego.js?v=77`, `script.js?v=102`.
+- Tanda 10 hecha: Goku Blue con gi (049), Goku UI señal (051) y Goku UI dominado a pleno poder (148); comprobaciones y partida de prueba correctas. 99 personajes. `animaciones_juego.js?v=78`, `script.js?v=103`.
+- Tanda 11 hecha: Goku patrullero (174), Goku SSJ con chaqueta (205) y Goku UI de Granola (132, sin aura: pose de carga; sin fotograma de muerte); comprobaciones y partida de prueba correctas. 102 personajes. `animaciones_juego.js?v=79`, `script.js?v=104`.
+- Tanda 12 hecha: Goku UI verdadero (149), Goku Blue de Moro (144) y Goku Blue FighterZ (271); comprobaciones y partida de prueba correctas. 105 personajes. `animaciones_juego.js?v=80`, `script.js?v=105`.
+- Tanda 13 hecha: Goku UI dominado del manga (270), Goku UI señal del manga (280) y Goku SSJ2 de Buu (276, pack de 641 fotogramas revisado por tramos); comprobaciones y partida de prueba correctas. 108 personajes. `animaciones_juego.js?v=81`, `script.js?v=106`.
+- Tanda 14 hecha: Goku SSJ Kaioken (059), Goku maligno SSJ2 (127) y Goku UI Blue Evolution (133); comprobaciones y partida de prueba correctas. 111 personajes. `animaciones_juego.js?v=82`, `script.js?v=107`.
+- Tanda 15 hecha: Goku UI Blue (134), Goku UI Dios (135) y Goku Ultra SSJ Dios (150); comprobaciones y partida de prueba correctas. 114 personajes. `animaciones_juego.js?v=83`, `script.js?v=108`.
+- Tanda 16 hecha: Goku SSJ Supremo (151), Goku SSJ4 Dios (206) y Goku Dios Berserker (207); comprobaciones y partida de prueba correctas. 117 personajes. `animaciones_juego.js?v=84`, `script.js?v=109`.
+- Tanda 17 hecha: Goku SSJ Legendario (208) y Goku SSJ Kaioken con halo (274); comprobaciones y partida de prueba correctas. 119 personajes. Goku Rey Mono (138) a medias: pack reescalado, cada fotograma a otro tamaño y sin píxel medible (como Vegeta MUI 303). `animaciones_juego.js?v=85`, `script.js?v=110`.
+- Tanda 18 hecha: Goku clásico (044), Goku clásico 2 (045) y Goku SSJ clásico (053); comprobaciones y partida de prueba correctas. 122 personajes. `animaciones_juego.js?v=86`, `script.js?v=111`.
+- Josemi (20:33): «te queda poco ya has hecho mucho, deja un commit con lo que has hecho y lo que te queda y pon en cosas que hacer que debemos hacer ataques personalizados a cada personajes y usar las animaciones de los personajes ingame y también hay que cuadrar ataques estéticamente con las animaciones». Apuntado en `README.md` («Lo que falta»), relevo y `ESTADO_ACTUAL.md`.
+
+### A medias / problemas
+- Vegeta MUI (303) y Goku Rey Mono (138): packs reescalados, cada fotograma a otro tamaño; no se pueden montar sin fijar la escala a mano.
+- Siguen a medias Goku SSJ4 Daima (140), Bra Majin (189) y la fusión de Zamasu (106).
+- Vegeta Omni God (249) resultó incompleto (sin patada ni daño); pasado a la lista de incompletos.
+- Sin probar el doble clic en Windows; las partidas de prueba se hicieron en Chromium con servidor local (25 s por personaje, sin errores del juego).
+
+### Siguiente paso recomendado
+- Ataques personalizados por personaje, usar sus animaciones propias en partida y cuadrar ataques con animaciones (petición de Josemi).
+- Terminar los 7 packs completos que quedan en `PERSONAJES_POR_METER.md` (empezar por Goku SSJ Full Power 273, hoja ya lista en `_revisar/`).
+
+## 2026-11-02 — Claude (Opus) · Todos los personajes, continuación (23:15)
+
+### Lo que pidió el usuario
+- Josemi (23:15): «seguimos con meter a todos los personajes».
+
+### Lo que hice
+- Tanda 19 hecha: Goku SSJ Full Power (273) y Black Rosé HD (290); comprobaciones y partida de prueba correctas. 124 personajes. `animaciones_juego.js?v=87`, `script.js?v=112`.
+- Tanda 20 hecha: Goku SSJ4 Daima (140) y Zamasu fusionado deshaciéndose (106; el daño y la muerte vienen del pack 107). Nueva opción `pack2` en `montar_animaciones.py` y `meter.py` para usar un pack hermano (sus fotogramas se numeran desde 1000). Comprobaciones y partida de prueba correctas. 126 personajes. `animaciones_juego.js?v=88`, `script.js?v=113`.
+- Tanda 21 hecha: Bra Majin SSJ (189), escalas fijadas a mano porque el pack mezcla zooms; comprobaciones y partida de prueba correctas. 127 personajes. `animaciones_juego.js?v=89`, `script.js?v=114`.
+- Tanda 22 hecha: Vegetto Blue (sacado del pack mixto 254), con las técnicas de Vegetto; comprobaciones y partida de prueba correctas. 128 personajes. El pack 291 resultó ser una colección de poses sueltas (una por personaje, unos 140, muchos no son de Dragon Ball): ninguno completo, pasado a incompletos. En el 254 queda un personaje de pelo blanco y ropa verde sin identificar (bastante completo) y Goku Black base con pocos fotogramas. `animaciones_juego.js?v=90`, `script.js?v=115`.
+- Tanda 23 hecha: Vegeta UI dominado (303) y Goku Rey Mono (138), los dos packs reescalados, resueltos fijando la escala a mano; comprobaciones y partida de prueba correctas. 130 personajes. `animaciones_juego.js?v=91`, `script.js?v=116`.
+
+### A medias / problemas
+- Lista de packs completos agotada. Solo queda a medias el personaje sin identificar del pack 254 (pelo blanco, ropa verde).
+- Las pruebas de `herramientas/pruebas` (unittest) tardan mucho en la nube; se quedaron corriendo sin resultado en esta sesión. Las `comprobar_*.cjs` y las partidas de prueba sí pasaron.
+
+### Siguiente paso recomendado
+- Lo que pidió Josemi a las 20:33: ataques personalizados por personaje, usar sus animaciones propias en partida y cuadrar ataques con animaciones.
+
+## 2026-11-03 — Claude (Opus) · Investigación en DeviantArt
+
+### Lo que pidió el usuario
+- Josemi (00:01): «haz una investigación profunda en DeviantArt de sprites que no tenemos en el juego, de enemigos, efectos, otros personajes, ataques o lo que sea, y lo implementamos al juego».
+
+### Lo que hice
+
+## 2026-11-03 — Claude (Opus) · Investigación de sprites en DeviantArt
+
+### Lo que pidió el usuario
+- Josemi (00:10): «hacer una investigación profunda en DeviantArt de sprites que no tenemos en el juego, de enemigos, efectos, otros personajes, ataques o lo que sea, e implementarlos en el juego».
+
+### Lo que hice
+- Investigación DeviantArt, parte 1: con las hojas que Josemi ya tenía en Descargas (no se volvieron a bajar) vuelven Dodoria y Zarbon (jefes de Namek), Meca Freezer, Garlic Jr. (élite y jefe) y el Rey Vegeta, cada uno con el color de su técnica; nuevo jugable Maestro Roshi con Kamehameha y Mafuba. Dr. Gero troceado sin usar; Freezer 2ª forma era un dibujo y Zeno solo poses. `recortar_hoja.py` acepta tolerancia de fondo y distancia de unión (hojas con ruido JPEG). 131 personajes; quedan 22 enemigos retirados. `animaciones_juego.js?v=92`, `script.js?v=117`.
+- Investigación DeviantArt, parte 2: bajadas con el navegador a Descargas y troceadas Burter (élite y escuadrón de las Fuerzas Especiales), Whis (jefe del Planeta de Bills), Androide 19 (jefe de la Red Ribbon) y Dabura (jefe del Mundo Kaioshin), cada uno con el color de su técnica. Quedan 18 enemigos retirados. Freezer 2ª forma incompleta en la hoja de qsab101; Ozaru con marca de agua; Dabura y Gero de arisrad son de pago. `animaciones_juego.js?v=93`, `script.js?v=118`.
+- Investigación DeviantArt, parte 3: vuelven el soldado Red Ribbon (común en 3 mapas), Fasha (élite) y Ozaru Vegeta (jefe); nuevo jugable Tao Pai Pai con técnicas nuevas Dodonpa (rayo) y Golpe de la Grulla, comprobado en partida que el Dodonpa dispara. Bajada sin integrar una hoja de efectos de ki y aura (GMKirito). 132 personajes; quedan 15 enemigos retirados. `animaciones_juego.js?v=94`, `script.js?v=119`.
+- Investigación DeviantArt, parte 4: vuelven Freezer 2ª forma (élite y jefe, hoja de Strice12), Pui Pui y Yamu (antes «Demonio» y «Demonio de élite»), con sus colores de ataque. Quedan 11 enemigos retirados. `animaciones_juego.js?v=95`, `script.js?v=120`.
+
+### Siguiente paso recomendado
+- Integrar la hoja de efectos de ki y aura de GMKirito para que cada técnica use su bola de color.
+- Buscar hojas para los 11 enemigos que siguen retirados (Spopovich para el demonio gigante, esbirros de Garlic, Shenron oscuro, Zeno).
+- Lo pendiente de Josemi: ataques personalizados por personaje y cuadrarlos con las animaciones.
+
+## 2026-11-03 — Claude (Opus) · Inventario de personajes
+
+### Lo que pidió el usuario
+- Josemi (15:19): «hacer una lista de lo que ya tenemos ahora, qué personajes tenemos de la serie bien».
+
+### Lo que hice
+- Inventario sacado del juego en marcha: `01 - Guía y documentación/INVENTARIO_PERSONAJES.md` (132 jugables = 48 personajes distintos; 85 tipos de enemigo; lo que falta de la serie).
+- Arreglado: el Maestro Roshi no salía en la selección (regla antigua `FUERA=new Set(['roshi'])` de cuando no tenía sprites). Comprobado que ahora salen las 132 tarjetas.
+
+### Petición (3 nov., 15:25): literalmente todos
+- Josemi: «quiero que el juego tenga literalmente todo personaje que se ve en la serie de Dragon Ball, y si hay sprites de fanmades o no oficiales esos también los metemos como personajes extra o como enemigos».
+- Lista maestra de la serie en `INVENTARIO_PERSONAJES.md` (129 personajes; 64 ya en el juego, faltan 65). Dr. Gero entra como enemigo de élite de la saga de la Tierra (hoja de SonIsaki ya troceada). `animaciones_juego.js?v=96`, `script.js?v=122`.
+
+## 2026-11-03 — Claude (Opus) · Todos los personajes de la serie (hojas del plan «sprites para casa»)
+
+### Lo que pidió el usuario
+- Josemi (22:41): adjunta `sprites_para_casa.zip` (lista de 142 hojas con enlaces) y dice «seguimos»: meter los personajes que faltan de la serie.
+
+### Lo que hice
+- Bajadas con el navegador de la app 38 hojas de prioridad 1 (sin marca de agua, tamaño útil); originales en `Recursos pendientes/deviantart_originales/`.
+- 3 nov.: Yamcha y Goten dejan de estar ocultos; nuevos Tenshinhan y Trunks niño (2 formas). Técnicas nuevas: rogafu, sokidan, kikoho, burningatk. `animaciones_juego.js?v=97`, `script.js?v=123`.
+- 3 nov.: nuevos Goku niño, Videl, Supremo Kaioshin, Kibitoshin y Cui. Ojo: la rareza mínima de un jugable es 3 (el gachapón solo tiene bolsas 3-5). `animaciones_juego.js?v=98`, `script.js?v=124`.
+- 3 nov.: Rey Cold (jugable y jefe de la Tierra en lugar de Turles), élites Appule y Cui en mapas de Freezer, General Blue y Murasaki en mapas de la Red Ribbon. `animaciones_juego.js?v=99`, `script.js?v=125`.
+- 3 nov.: Tarble y Lord Slug jugables; Lord Slug sustituye a Turles como jefe de la pradera; Zangya y Bujin élites en pradera, desierto, bosque y templo. Bojack sin usar (la hoja pide permiso). `animaciones_juego.js?v=100`, `script.js?v=126`.
+- 3 nov.: saga GT. La Sala del Tiempo pasa a tener de jefes a Dr. Myuu, Baby, Super 17, Moro y Omega Shenron (antes Cooler y el Shenron oscuro retirado). `animaciones_juego.js?v=101`, `script.js?v=127`.
+- 3 nov.: Kyabe deja de estar oculto (solo forma SSJ); Gas y Granola jugables; Gas jefe de la arena de Bills en lugar de Zeno (retirado). `animaciones_juego.js?v=102`, `script.js?v=128`.
+- 3 nov.: Paragus, Gran Sacerdote y Majin Duu jugables. Los hijos del Rey Piccolo descargados no son sprites (dibujos grandes), sin usar. `animaciones_juego.js?v=103`, `script.js?v=129`.
+- 3 nov.: Magetta jugable y élite en los mapas del Torneo del Poder y de Bills. Hojas pendientes del plan: solo quedan las de una pose por personaje (Yakon y otros, DAIMA varios), colecciones y objetos. `animaciones_juego.js?v=104`, `script.js?v=130`.
+- 3 nov.: nueva búsqueda en DeviantArt. Jugables Bulma, A13, A14, Metal Cooler (también jefe del Infierno), Majin Kuu y Merus; élites Recoome (con las Fuerzas Ginyu), A13, A14, Coronel Silver, Tambourine y Drum. Se quita Bujin por calidad. recortar_hoja.py admite FONDO_ZONA=1 para hojas con paneles de color. `animaciones_juego.js?v=105`, `script.js?v=131`.
+
+## 2026-11-04 — Claude (Opus) · Personajes que faltan con hojas de DeviantArt
+
+### Lo que pidió el usuario
+- Josemi (01:15): meter los personajes que faltan solo si tienen sprites buenos y animaciones completas, cada uno con técnicas propias y, si encaja, como élite o jefe. Primero el pack del Rey Gomah y las hojas ya bajadas (Gomah, Anilaza, Hildegarn, Tapion, Cell Max, Nuova, Gohan del futuro, Nam, Nail, Trunks GT, Hatchiyack, Wheelo, Kaio-sama, Bubbles, Shugesh y Borgos); después buscar en DeviantArt los que falten, sin bajar lo que ya esté en Descargas. Descartados: Bujin, Gine, Launch, Ribrianne, Zeno, Bojack, hijos del Rey Piccolo. Tandas de 3-5 con bitácora, créditos, ✅ y commit; no parar entre tandas.
+
+### Lo que hice
+- Tanda 1: Rey Gomah (pack 469), Nuova Shenron (470), Hildegarn forma final (471) y Cell Max (472) jugables con técnicas propias (Bastón, Onda Demoníaca, Esfera del Rey Demonio; Disparo Ígneo, Nova Strike, Gran Bola de Fuego; Zarpazo, Coletazo, Llamarada; Aguijón, Rayo y Onda de Cell Max). Jefes: Gomah en el Mundo Kaioshin (en lugar de Janemba, que sigue en el Infierno), Cell Max en la Base Red Ribbon (en lugar de Meca Freezer), Hildegarn en la Ciudad del Oeste (en lugar de Freezer). Nuova élite en la Sala del Tiempo y la Tierra Volcánica. La hoja de Gomah de azazel300 no se usa (tiene marca de agua y ya estaba el pack 469). Nuevo `herramientas/limpiar_ruido.py` (quita el halo blanco del JPEG); `meter.py alta` acepta `start=`, `sig=`, `rar=`, `hp=`, `spd=`, `atk=`. Comprobaciones `comprobar_*.cjs` correctas y partida probada con los cuatro en Chrome sin ventana. `animaciones_juego.js?v=106`, `script.js?v=132`.
+- Josemi (01:29): «los grandes no los pongas, solo los pequeñitos» (confirmado: fuera los sprites grandes o HD). Quitados Hildegarn y Cell Max (vuelven Meca Freezer a la Base Red Ribbon y Freezer a la Ciudad del Oeste); no se meten Anilaza ni Gohan del futuro (JUS). Regla para lo que venga: solo sprites pequeños estilo LSW (unos 40-50 px de alto en la hoja).
+- Tanda 2: Trunks GT (474) y Hatchiyack (475) jugables con técnicas propias (Buster Cannon, Ráfaga de Trunks; Revenger Cannon, Onda Tsufur, Aura de Venganza); Hatchiyack también élite en la Ciudad del Oeste, el Desierto y el Infierno; Nam (477) élite en Budokai, Kame House y Templo (le falta ki y aura para ser jugable). Descartados: Tapion (ruido, sin patada ni aura), Nail y Kaio-sama (solo guardia), «Bubbles» (fanmade, no el mono), Shugesh y Borgos (una pose), Dr. Wheelo (grande). `limpiar_ruido.py` acepta el color del fondo para quitar halos teñidos. Comprobaciones correctas y partida probada. `animaciones_juego.js?v=107`, `script.js?v=133`.
+- Tanda 3 (búsqueda nueva en DeviantArt con el navegador de la app; las hojas llegan a Descargas como .tmp y se pasan con device_stage_files): Glorio, Gohan del futuro (hoja pequeña de BlackSanYT), Kibito y Dyspo jugables con técnicas propias; Glorio y Dyspo también élites. Descartados: «Chaoz» de gold-ring-951 (es un robot inventado), Mr. Popo de thibault-deboom y Arale (una pose), Tamagami y Black Smoke Shenron (una pose), Dr. Wheelo de osocrack (grande), Babidi (diminuto). `animaciones_juego.js?v=108`, `script.js?v=134`.
+- Josemi (01:41): «para y dime qué personajes tenemos overall». Parado tras la tanda 3; pendientes de meter Gamma 1 y 2, Champa, Mr. Popo (azazel300) y Androide 15.
+
+
 ## 2026-11-03 — Codex · Continuación del trabajo de Claude
 
 ### Lo que pidió el usuario
@@ -1014,3 +1172,17 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Pendiente
 - 22 formas siguen sin muerte porque su pack no la tiene (el juego usa el daño): e_ginyu/0, gokugt/0-3, cell/0, piccolo/0, gohandbs/2-3, goku/1, goku/4, gokuui/1-4, gokusuper/1, 2, 4, vegetagt/1, bardock/3, gokumoro/3-4. Josemi decide si se quitan.
 - Josemi: «si o tienen animacion de muerte pero todas las otras animaciones estan bien» → las 22 formas sin muerte **se quedan** (usan el daño al morir).
+
+## 2026-11-04 — Claude (mezcla con GitHub)
+
+### Lo que pidió el usuario
+- «si, todos los cambios se documentan y se suben a guithub».
+
+### Lo que hice
+- GitHub tenía 40 commits de otra sesión (3-4 nov.: tandas de personajes hasta 140 jugables, vuelta de enemigos de DeviantArt, selección estilo 16 bits con barras de estadísticas, GitHub Pages) que no estaban en local. Mezclados con lo local, sin forzar nada:
+  - `script.js` y `style.css`: se conserva todo lo de ambos; en el único trozo en choque (tarjeta de selección) queda la versión de GitHub (barras de vida/velocidad/ataque y personaje en la tarjeta), que sustituye a los colores del 3 nov.
+  - `extras.json`: unidas ambas. Donde chocaban (vegeta/4, vegetasuper/3, vegetaue/0 y 3, vegetagt/0) se quedan las muertes de aquí: las de GitHub eran rayos/anillos que la sesión del 4 nov. ya había quitado. También quitadas otra vez gokuui/4 y gokusuper/4. Se conservan los retratos nuevos de GitHub (Black, Rosé, Broly, Trunks, Vegeta); quitado el de gokumoro/5 (forma retirada).
+  - `animaciones_juego.js`: el de GitHub, remontando solo los personajes tocados aquí. Comparado forma a forma: solo cambian las formas arregladas aquí; ningún retrato cambia.
+  - `index.html`: versiones `style.css?v=76`, `animaciones_juego.js?v=109`, `efectos_pixelfx.js?v=1`, `script.js?v=135`.
+- Pruebas: sintaxis y las 6 `comprobar_*.cjs` correctas (140 personajes, 193 formas); juego cargado sin errores, partidas simuladas con Goku, Goku Moro, Vegeta y Hit.
+- Norma de Josemi: **todos los cambios se documentan y se suben a GitHub**.

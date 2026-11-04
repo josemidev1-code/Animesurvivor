@@ -1,0 +1,68 @@
+{
+ "idle": [
+  0
+ ],
+ "move": [
+  17
+ ],
+ "attack": [
+  2,
+  3
+ ],
+ "kick": [
+  5
+ ],
+ "ki": [
+  56,
+  57
+ ],
+ "pow": [
+  67,
+  68,
+  69
+ ],
+ "hurt": [
+  33,
+  34
+ ],
+ "faint": [
+  58
+ ],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.6,
+  "move": 1.0,
+  "faint": 0.6,
+  "hurt": 0.7,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.7,
+  "kick": 0.6
+ },
+ "efectos": {
+  "rayo": [
+   61
+  ],
+  "bola": [
+   59,
+   63,
+   65
+  ],
+  "aura": [],
+  "estela": [
+   7,
+   8
+  ]
+ },
+ "pack": "01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Goku/049_Goku Blue Whis Gi",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_01_Resurreccion_de_Freezer_y_Whis_Goku_049_Goku_Blue_Whis_Gi",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "la pose de moverse está muy agachada"
+ ],
+ "dudoso": true
+}

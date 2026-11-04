@@ -1,0 +1,70 @@
+{
+ "idle": [
+  5,
+  7
+ ],
+ "move": [
+  14
+ ],
+ "attack": [
+  9,
+  10
+ ],
+ "kick": [
+  16,
+  17
+ ],
+ "ki": [
+  35,
+  36
+ ],
+ "pow": [
+  68,
+  69,
+  70
+ ],
+ "hurt": [
+  12
+ ],
+ "faint": [],
+ "portrait": 60,
+ "guardia": 5,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "move": 1.0,
+  "hurt": 0.5,
+  "ki": 0.7,
+  "pow": 0.6,
+  "attack": 0.7,
+  "kick": 0.7
+ },
+ "efectos": {
+  "rayo": [
+   38,
+   39,
+   45,
+   46,
+   48,
+   51
+  ],
+  "bola": [
+   37,
+   44
+  ],
+  "aura": [],
+  "estela": [
+   0,
+   11
+  ]
+ },
+ "pack": "07_Personajes_sin_saga_concreta/Goku/044_Goku",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "07_Personajes_sin_saga_concreta_Goku_044_Goku",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "poca confianza en daño"
+ ],
+ "dudoso": true
+}

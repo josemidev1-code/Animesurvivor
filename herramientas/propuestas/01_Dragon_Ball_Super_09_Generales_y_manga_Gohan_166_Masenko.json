@@ -1,0 +1,44 @@
+{
+ "idle": [
+  0,
+  3
+ ],
+ "move": [],
+ "attack": [
+  1,
+  2
+ ],
+ "kick": [],
+ "ki": [],
+ "pow": [],
+ "hurt": [],
+ "faint": [],
+ "portrait": 7,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.75,
+  "attack": 0.7
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [],
+  "aura": [
+   5,
+   6
+  ],
+  "estela": []
+ },
+ "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Gohan/166_Masenko",
+ "autor": null,
+ "origen": "reglas",
+ "nombre": "01_Dragon_Ball_Super_09_Generales_y_manga_Gohan_166_Masenko",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de moverse",
+  "falta la animación de patada",
+  "falta la animación de ki",
+  "falta la animación de daño"
+ ],
+ "dudoso": true
+}

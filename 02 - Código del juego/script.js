@@ -641,7 +641,10 @@ HDEF.gokuui={...HDEF.goku,name:'GOKU UI',rar:5,atk:1.25,spd:70,hp:115,desc:'Ultr
   hair:[SPK.goku,SPK.gokuSSJ,SPK.gokuSSJ,SPK.goku],hc:['dark','ssj','blue','ui'],aura:['gold','gold','blue','white']};
 HDEF.vegetaue={...HDEF.vegeta,name:'VEGETA EGO',rar:5,atk:1.35,hp:120,desc:'Ultra Ego: más fuerte cuanto más pelea. Empieza con Galick Gun.',forms:['BASE','SUPER SAIYAN','SSJ BLUE','ULTRA EGO'],
   hair:[SPK.vegeta,SPK.vegetaSSJ,SPK.vegetaSSJ,SPK.vegetaSSJ],hc:['dark','ssj','blue','ego'],aura:['gold','gold','blue','red'],majin:99,formPal:null};
-for(const k of ['yamcha','goten','gohanb'])HDEF[k].npc=1;
+HDEF.gohanb.npc=1; // Yamcha y Goten ya tienen sprites (3 nov.)
+HDEF.yamcha.forms=['BASE'];HDEF.yamcha.start='sokidan';HDEF.yamcha.desc='Colmillo de lobo y Sōkidan teledirigido. Rápido.';
+HDEF.goten.forms=['SUPER SAIYAN'];HDEF.goten.aura=['gold'];
+
 HDEF.a17npc={...HDEF.a18,name:'ANDROIDE 17',npc:1,rar:0,hc:['dark'],pal:{...HDEF.a18.pal,...DARKH,c:'#2a2a34',C:'#1a1a22',u:'#3a3a48',w:'#f2771a',W:'#c0500c'}};
 HDEF.a18npc={...HDEF.a18,npc:1,rar:0};
 HDEF.bardock.forms=['BASE','SUPER SAIYAN','SUPER SAIYAN 2','SUPER SAIYAN 4'];HDEF.bardock.aura=['gold','gold','gold','red'];
@@ -652,7 +655,7 @@ HDEF.gotenks={...HDEF.goten,name:'GOTENKS',rar:4,hp:115,spd:70,atk:1.15,desc:'La
 HDEF.kefla={...HDEF.goten,name:'KEFLA',rar:5,hp:120,spd:68,atk:1.25,start:'eraser',desc:'Fusión de Kale y Caulifla. Empieza con Eraser Cannon.',forms:['SUPER SAIYAN'],aura:['green'],npc:0};
 HDEF.caulifla={...HDEF.goten,name:'CAULIFLA',rar:3,hp:105,spd:70,atk:1.05,start:'galick',desc:'Saiyan del Universo 6. Muy veloz.',forms:['BASE'],npc:0};
 HDEF.kale={...HDEF.goten,name:'KALE',rar:4,hp:130,spd:60,atk:1.1,start:'eraser',desc:'Su furia despierta al Berserker.',forms:['BASE','BERSERKER'],aura:['gold','green'],npc:0};
-HDEF.kyabe={...HDEF.goten,name:'KYABE',rar:3,hp:110,spd:64,atk:1.0,start:'galick',desc:'Saiyan del Universo 6. Equilibrado.',forms:['BASE','SUPER SAIYAN'],npc:0};
+HDEF.kyabe={...HDEF.goten,name:'KYABE',rar:3,hp:110,spd:64,atk:1.0,start:'galick',desc:'Saiyan del Universo 6. Equilibrado.',forms:['SUPER SAIYAN'],aura:['gold'],npc:0};
 HDEF.gohanadult={...HDEF.gohan,name:'GOHAN ADULTO',rar:4,hp:120,atk:1.15,desc:'El poder místico de Gohan. Empieza con Kamehameha.',forms:['BASE','MÍSTICO'],aura:['white','white']};
 HDEF.gokugt={...HDEF.goku,name:'GOKU GT',rar:5,hp:125,atk:1.2,desc:'Super Saiyan 4. Empieza con Kamehameha.',forms:['BASE','SUPER SAIYAN 4'],aura:['gold','red']};
 HDEF.vegetagt={...HDEF.vegeta,name:'VEGETA GT',rar:5,hp:110,atk:1.3,desc:'Super Saiyan 4. Empieza con Galick Gun.',forms:['BASE','SUPER SAIYAN 4'],aura:['gold','red'],majin:99};
@@ -699,6 +702,111 @@ const NUEVOS={
  blacktime:{name:'BLACK TIME BREAKER',rar:5,hp:120,spd:68,atk:1.3,start:'blackkame',desc:'El Goku Black enmascarado de Heroes.',forms:['SSJ DIOS','SSJ ROSÉ','SSJ ROSÉ 3'],aura:['red','purple','purple'],sig:['kiblast','punch','kick','blackkame','kiblade','scythe']},
  blackfan:{name:'GOKU BLACK FANMADE',rar:5,hp:120,spd:68,atk:1.3,start:'blackkame',desc:'Goku Black en formas alternativas creadas por fans.',forms:['SSJ RAGE','ROSÉ KAIOKEN','ROSÉ ULTRA INSTINTO','MUI'],aura:['gold','red','purple','silver'],sig:['kiblast','punch','kick','blackkame','kiblade','scythe']},
  gokualt:{name:'GOKU ALTERNATIVO',rar:5,hp:130,spd:66,atk:1.3,start:'kame',desc:'Tres versiones de Goku creadas por fans: Místico, Ikari y Bestia.',forms:['MÍSTICO','IKARI','BESTIA'],aura:['white','green','purple'],sig:['kiblast','punch','kick','kame','instant','genki']},
+ // hojas de DeviantArt (sesión 10; animaciones en herramientas/animaciones/deviantart.json, créditos en PACK_CREDITS)
+ nappa:{name:'NAPPA',rar:3,hp:150,spd:58,atk:1.15,start:'breakcannon',desc:'El gigante de élite Saiyan. Break Cannon y Bomber DX.',forms:['BASE'],aura:['gold'],sig:['kiblast','punch','breakcannon','kick','bomberdx']},
+ ginyu:{name:'CAPITÁN GINYU',rar:4,hp:125,spd:62,atk:1.15,start:'milky',desc:'Líder de las Fuerzas Especiales. Cambia de cuerpo con su rival.',forms:['BASE'],aura:['purple'],sig:['kiblast','punch','kick','milky','bodychange']},
+ jeice:{name:'JEICE',rar:3,hp:105,spd:70,atk:1.05,start:'burning',desc:'El veloz de las Fuerzas Especiales. Lanza la Crusher Ball.',forms:['BASE'],aura:['red'],sig:['kiblast','punch','kick','crusherball','renzoku']},
+ guldo:{name:'GULDO',rar:3,hp:95,spd:58,atk:1.0,start:'kienzan',desc:'Detiene el tiempo y lanza rocas con la mente.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','psychorock','timefreeze']},
+ uub:{name:'UUB',rar:4,hp:120,spd:68,atk:1.15,start:'kame',desc:'La reencarnación de Kid Buu y alumno de Goku.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kiai','kame','renzoku']},
+ mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
+ a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
+ // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ dyspo:{name:'DYSPO',rar:4,hp:110,spd:82,atk:1.2,start:'dysposlash',desc:'El más rápido de las Tropas del Orgullo: golpes a la velocidad de la luz.',forms:['BASE'],aura:['purple'],sig:['dysposlash','dyspoball','kick','dysposhoot','punch']},
+ kibito:{name:'KIBITO',rar:3,hp:110,spd:66,atk:1.0,start:'kibitowave',desc:'El guardaespaldas del Supremo Kaioshin: teletransporte, ondas paralizantes y curación.',forms:['BASE'],aura:['white'],sig:['kiblast','kibitoslash','kibitowave','kick','kibitoheal']},
+ gohanfut:{name:'GOHAN DEL FUTURO',rar:4,hp:120,spd:68,atk:1.2,start:'gohanfutkame',desc:'El último guerrero Z de la línea de Trunks: manco, Super Saiyan y sin rendirse jamás.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','gohanfutrush','gohanfutkame','kick','masenko']},
+ glorio:{name:'GLORIO',rar:4,hp:110,spd:70,atk:1.15,start:'gloriogun',desc:'El agente de Gomah en Daima: pistola, magia del Reino Demoníaco y barreras.',forms:['BASE'],aura:['purple'],sig:['gloriogun','punch','gloriowave','kick','glorioshield']},
+ hatchiyack:{name:'HATCHIYACK',rar:4,hp:135,spd:62,atk:1.2,start:'revenger',desc:'La máquina de venganza tsufur: se alimenta de odio y lanza el Revenger Cannon.',forms:['BASE'],aura:['green'],sig:['kiblast','punch','revenger','kick','tsufurwave','hatchiwave']},
+ trunksgt:{name:'TRUNKS GT',rar:3,hp:110,spd:68,atk:1.1,start:'trunksbuster',desc:'Trunks adulto en el viaje de GT: presidente de la Corporación Cápsula y guerrero veterano.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','trunksbuster','kick','trunksflash']},
+ nuova:{name:'NUOVA SHENRON',rar:4,hp:135,spd:64,atk:1.2,start:'nuovafire',desc:'El dragón de la Esfera de Cuatro Estrellas: guerrero de fuego con honor.',forms:['BASE'],aura:['red'],sig:['nuovafire','novastrike','kick','nuovasun','punch']},
+ gomah:{name:'REY GOMAH',rar:4,hp:125,spd:66,atk:1.2,start:'gomahwave',desc:'El Rey Demonio del Reino Demoníaco en Daima: bastón, magia y un aura morada.',forms:['BASE'],aura:['purple'],sig:['kiblast','gomahstaff','gomahwave','kick','gomahball']},
+ merus:{name:'MERUS',rar:4,hp:120,spd:70,atk:1.2,start:'merusgun',desc:'Ángel en formación y agente de la Patrulla Galáctica: bastón, pistola y reflejos divinos.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ majinkuu:{name:'MAJIN KUU',rar:3,hp:105,spd:72,atk:1.05,start:'kuublast',desc:'El pequeño Majin de Daima: rápido, burlón y con ráfagas verdes.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ metalcooler:{name:'METAL COOLER',rar:4,hp:135,spd:66,atk:1.2,start:'metalbeam',desc:'Cooler reconstruido en metal: se regenera y no conoce el cansancio.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ a14:{name:'ANDROIDE 14',rar:3,hp:150,spd:58,atk:1.05,start:'a14rush',desc:'El gigante silencioso del Dr. Gero: embestidas y ondas de energía.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ a13:{name:'ANDROIDE 13',rar:4,hp:140,spd:60,atk:1.15,start:'deadlybomber',desc:'El androide sureño de la película: SS Deadly Bomber y puños de hierro.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ bulma:{name:'BULMA',rar:3,hp:90,spd:66,atk:0.95,start:'bulmagun',desc:'La genio de la Corporación Cápsula: pistola, cápsulas y mucho carácter.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ magetta:{name:'MAGETTA',rar:3,hp:160,spd:54,atk:1.05,start:'magma',desc:'El robot de lava del Universo 6: escupe magma y se pone al rojo si le insultan.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ majinduu:{name:'MAJIN DUU',rar:3,hp:150,spd:58,atk:1.1,start:'duuroll',desc:'El Majin de Daima: grande, glotón y con golpes de rodillo.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ daishinkan:{name:'GRAN SACERDOTE',rar:5,hp:150,spd:74,atk:1.35,start:'angelbeam',desc:'El ángel más poderoso, al servicio de Zeno: esquiva todo y golpea con calma.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ paragus:{name:'PARAGUS',rar:3,hp:115,spd:60,atk:1.05,start:'paragusball',desc:'El padre de Broly: lo controla con la corona y dispara esferas de ki verdes.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ granola:{name:'GRANOLA',rar:4,hp:115,spd:68,atk:1.2,start:'granolasnipe',desc:'El último cerealiano: francotirador con el ojo derecho y el deseo de ser el más fuerte.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ gas:{name:'GAS',rar:4,hp:140,spd:64,atk:1.2,start:'gasring',desc:'El más fuerte de los Heeters tras pedir su deseo a las esferas de Cereal.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ omega:{name:'OMEGA SHENRON',rar:5,hp:150,spd:60,atk:1.3,start:'minusball',desc:'El dragón oscuro de una estrella: Bola de Energía Negativa y Minus Energy Power Ball.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ super17:{name:'SUPER 17',rar:4,hp:135,spd:62,atk:1.15,start:'hellstorm',desc:'Fusión de los dos Androides 17: absorbe el ki y lanza la Tormenta Infernal.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ pangt:{name:'PAN GT',rar:3,hp:100,spd:70,atk:1.0,start:'masenko',desc:'La nieta de Goku en la saga GT: rápida, valiente y con Giru siempre cerca.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ slug:{name:'LORD SLUG',rar:4,hp:130,spd:62,atk:1.15,start:'slugball',desc:'Namekiano demoníaco de la película: crece, estira el brazo y lanza bolas de ki.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ tarble:{name:'TARBLE',rar:3,hp:105,spd:68,atk:1.05,start:'galick',desc:'El hermano pequeño de Vegeta: Super Saiyan tranquilo que pelea si hace falta.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ reycold:{name:'REY COLD',rar:4,hp:135,spd:60,atk:1.2,start:'deathbeam',desc:'El padre de Freezer y Cooler; enorme, cruel y con un cañón de ki en la mano.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ cui:{name:'CUI',rar:3,hp:105,spd:66,atk:0.95,start:'cuiblast',desc:'Rival de Vegeta en el ejército de Freezer; rápido y presumido.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ kibitoshin:{name:'KIBITOSHIN',rar:4,hp:120,spd:67,atk:1.12,start:'kaikai',desc:'Fusión de Shin y Kibito con los pendientes Pothala; se teletransporta y cura.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ shin:{name:'SUPREMO KAIOSHIN',rar:4,hp:115,spd:67,atk:1.1,start:'kaishot',desc:'El dios de la creación del Universo 7: ráfagas de ki rosa y poderes divinos.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ videl:{name:'VIDEL',rar:3,hp:100,spd:66,atk:0.95,start:'videlkick',desc:'Hija de Mr. Satán y justiciera de Satan City; vuela y pelea a patadas.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ gokunino:{name:'GOKU NIÑO',rar:3,hp:110,spd:66,atk:1.0,start:'jankenpon',desc:'El niño de la cola de mono: Nyoibo, nube Kinton y su Jan Ken.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ trunksnino:{name:'TRUNKS NIÑO',rar:3,hp:105,spd:70,atk:1.1,start:'burningatk',desc:'El hijo de Vegeta y Bulma: travieso, rápido y Super Saiyan desde pequeño.',forms:['BASE','SUPER SAIYAN'],aura:['white','gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ tenshinhan:{name:'TENSHINHAN',rar:3,hp:120,spd:66,atk:1.1,start:'kikoho',desc:'Tres ojos y cuatro brazos si hace falta: Kikoho, Taiyoken y Dodonpa.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
+ taopaipai:{name:'TAO PAI PAI',rar:3,hp:115,spd:64,atk:1.0,start:'dodonpa',desc:'El asesino más famoso del mundo; dispara el Dodonpa con el dedo.',forms:['BASE'],aura:['white'],sig:['kiblast','taopunch','kick','dodonpa','renzoku']},
+ roshi:{name:'MAESTRO ROSHI',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'El maestro de la tortuga; inventó el Kamehameha y aún puede hinchar los músculos.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','mafuba','kick']},
+ gokureymono:{name:'GOKU REY MONO',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku Rey Mono en Super Saiyan, de DB Tale (fanmade).',forms:['SSJ REY MONO'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ vegetamui:{name:'VEGETA UI DOMINADO',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta con el Ultra Instinto dominado, versión fanmade.',forms:['UI DOMINADO'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegitoblue254:{name:'VEGETTO BLUE',rar:5,hp:130,spd:70,atk:1.35,start:'finalkame',desc:'Vegetto en Super Saiyan Blue, la fusión con los Pendientes Pothala.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','finalkame','spiritsword','bigbang','kick']},
+ bramajin:{name:'BRA MAJIN SSJ',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Bra adulta poseída por Babidi en Super Saiyan, de Dragon Ball Multiverse (fanmade).',forms:['SSJ MAJIN'],aura:['gold'],sig:['kiblast','punch','kick','kame','renzoku']},
+ zamasufusion:{name:'ZAMASU FUSIONADO (DESHACIÉNDOSE)',rar:5,hp:130,spd:72,atk:1.4,start:'blackkame',desc:'Zamasu fusionado mientras su cuerpo inmortal se deshace.',forms:['FUSIÓN'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ gokussj4daima:{name:'GOKU SSJ4 (DAIMA)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 4, versión de Dragon Ball Daima.',forms:['SSJ4'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ blackrose290:{name:'BLACK ROSÉ (HD)',rar:5,hp:125,spd:69,atk:1.3,start:'blackkame',desc:'Goku Black en Super Saiyan Rosé, megapack de sprites HD.',forms:['SSJ ROSÉ'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ gokussjfp:{name:'GOKU SSJ FULL POWER',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku en Super Saiyan a pleno poder, sprite HD de estilo SWL.',forms:['SSJ FULL POWER'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussj053:{name:'GOKU SSJ (CLÁSICO)',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku en Super Saiyan, sprite clásico de Dragon Ball Z.',forms:['SSJ'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ goku045:{name:'GOKU (CLÁSICO 2)',rar:3,hp:115,spd:64,atk:1.0,start:'kame',desc:'Goku en estado base, segunda versión del sprite clásico.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ goku044:{name:'GOKU (CLÁSICO)',rar:3,hp:115,spd:64,atk:1.0,start:'kame',desc:'Goku en estado base, sprite clásico de Dragon Ball Z.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussjkaioken2:{name:'GOKU SSJ KAIOKEN (HALO)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en el Más Allá, con halo, combinando Super Saiyan y Kaioken.',forms:['SSJ KAIOKEN'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussjlegend:{name:'GOKU SSJ LEGENDARIO',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con el poder del Super Saiyan Legendario, versión fanmade.',forms:['SSJ LEGENDARIO'],aura:['green'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokudiosberserk:{name:'GOKU DIOS BERSERKER',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku Super Saiyan Dios desatado con aura oscura, versión fanmade.',forms:['DIOS BERSERKER'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussj4dios:{name:'GOKU SSJ4 DIOS',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku en Super Saiyan 4 con el poder de un dios, versión fanmade.',forms:['SSJ4 DIOS'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussjsupremo:{name:'GOKU SSJ SUPREMO',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en un Super Saiyan supremo con chispas, versión fanmade.',forms:['SSJ SUPREMO'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuultradios:{name:'GOKU ULTRA SSJ DIOS',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku en una forma Super Saiyan Dios potenciada, versión fanmade.',forms:['ULTRA SSJ DIOS'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokumuidios:{name:'GOKU UI DIOS',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku combinando el Ultra Instinto con el Super Saiyan Dios, versión fanmade.',forms:['UI DIOS'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokumuiblue:{name:'GOKU UI BLUE',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku combinando el Ultra Instinto con el Super Saiyan Blue, versión fanmade.',forms:['UI BLUE'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokumuiblueevo:{name:'GOKU UI BLUE EVOLUTION',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku fusionando el Ultra Instinto con el Blue Evolución, versión fanmade.',forms:['UI BLUE EVOLUTION'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuevilssj2:{name:'GOKU MALIGNO SSJ2',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku poseído en Super Saiyan 2 de pelo rojo, versión fanmade.',forms:['SSJ2 MALIGNO'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussjkaioken:{name:'GOKU SSJ KAIOKEN',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku combinando el Super Saiyan con el Kaioken.',forms:['SSJ KAIOKEN'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussj2buu:{name:'GOKU SSJ2 (BUU)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 2, saga de Majin Buu, sprite HD de estilo SWL.',forms:['SSJ2'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuuimanga:{name:'GOKU UI SEÑAL (MANGA)',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con la señal del Ultra Instinto, versión del manga.',forms:['UI SEÑAL'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokumuimanga:{name:'GOKU UI DOMINADO (MANGA)',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con el Ultra Instinto dominado, manga del Torneo del Poder.',forms:['UI DOMINADO'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokubluedbfz:{name:'GOKU BLUE (FIGHTERZ)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan Blue, estilo Dragon Ball FighterZ.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokubluemoro:{name:'GOKU BLUE (MORO)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan Blue, manga de la saga de Moro.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuuiverdadero:{name:'GOKU UI VERDADERO',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con el Ultra Instinto a su manera, manga de Granola.',forms:['UI VERDADERO'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokumuigranola:{name:'GOKU UI (GRANOLA)',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con el Ultra Instinto dominado, saga de Granola.',forms:['UI DOMINADO'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussjchaqueta:{name:'GOKU SSJ CHAQUETA',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku en Super Saiyan con su chaqueta naranja, saga de Super Hero.',forms:['SSJ'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokupatrulla:{name:'GOKU PATRULLERO',rar:3,hp:115,spd:64,atk:1.0,start:'kame',desc:'Goku con el uniforme de la Patrulla Galáctica, saga de Moro.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokumuifp:{name:'GOKU UI DOMINADO',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con el Ultra Instinto dominado a pleno poder, Torneo del Poder.',forms:['UI DOMINADO'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuuisign:{name:'GOKU UI SEÑAL',rar:5,hp:130,spd:70,atk:1.35,start:'kame',desc:'Goku con la señal del Ultra Instinto, Torneo del Poder.',forms:['UI SEÑAL'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokubluewhis:{name:'GOKU BLUE (WHIS)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan Blue con su gi, saga de Freezer resucitado.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussj3swl:{name:'GOKU SSJ3 (HD)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 3, sprite HD de estilo SWL.',forms:['SSJ3'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokussj3mais:{name:'GOKU SSJ3 (CLÁSICO)',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 3, saga de Majin Buu, sprite clásico.',forms:['SSJ3'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ vegetabluemal:{name:'VEGETA BLUE MALIGNO',rar:5,hp:110,spd:69,atk:1.35,start:'galick',desc:'Vegeta Blue con aura oscura, versión maligna de Dragon Ball Heroes.',forms:['BLUE MALIGNO'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetauihd:{name:'VEGETA ULTRA INSTINTO',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta con el Ultra Instinto, versión fanmade en HD.',forms:['ULTRA INSTINTO'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetassjhd:{name:'VEGETA SSJ (HD)',rar:4,hp:105,spd:68,atk:1.22,start:'galick',desc:'Vegeta en Super Saiyan, sprite HD de estilo ULSW.',forms:['SSJ'],aura:['gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetaxeno:{name:'VEGETA XENO',rar:3,hp:100,spd:66,atk:1.1,start:'galick',desc:'Vegeta Xeno, patrullero del tiempo de Dragon Ball Heroes.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetaego:{name:'VEGETA ULTRA EGO',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta con el Ultra Ego, poder de destrucción de la saga de Granola.',forms:['ULTRA EGO'],aura:['purple'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetabaseulsw:{name:'VEGETA (HD)',rar:3,hp:100,spd:66,atk:1.1,start:'galick',desc:'Vegeta en estado base, sprite HD de estilo ULSW.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetablueevo:{name:'VEGETA BLUE EVOLUTION',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta en Super Saiyan Blue Evolución, Torneo del Poder.',forms:['BLUE EVOLUTION'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetabluefp:{name:'VEGETA BLUE FULL POWER',rar:5,hp:115,spd:72,atk:1.45,start:'galick',desc:'Vegeta en Super Saiyan Blue al máximo, Torneo del Poder.',forms:['BLUE FULL POWER'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetablueulsw:{name:'VEGETA BLUE (HD)',rar:5,hp:110,spd:69,atk:1.35,start:'galick',desc:'Vegeta en Super Saiyan Blue, sprite HD de estilo ULSW.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetablue092:{name:'VEGETA BLUE (SUPER)',rar:5,hp:110,spd:69,atk:1.35,start:'galick',desc:'Vegeta en Super Saiyan Blue, sprite clásico de Super.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetabluewhis:{name:'VEGETA BLUE (WHIS)',rar:5,hp:110,spd:69,atk:1.35,start:'galick',desc:'Vegeta en Super Saiyan Blue, saga de Freezer resucitado.',forms:['SSJ BLUE'],aura:['blue'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetassjwhis:{name:'VEGETA SSJ (WHIS)',rar:4,hp:105,spd:68,atk:1.22,start:'galick',desc:'Vegeta en Super Saiyan con la armadura de la saga de Freezer resucitado.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ vegetassj4gt:{name:'VEGETA SSJ4 GT',rar:5,hp:110,spd:69,atk:1.35,start:'galick',desc:'Vegeta en Super Saiyan 4, de Dragon Ball GT.',forms:['SUPER SAIYAN 4'],aura:['red'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ gokussj4gt:{name:'GOKU SSJ4 GT',rar:5,hp:125,spd:67,atk:1.25,start:'kame',desc:'Goku en Super Saiyan 4, de Dragon Ball GT.',forms:['SUPER SAIYAN 4'],aura:['red'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ vegetayardrat:{name:'VEGETA YARDRAT',rar:3,hp:100,spd:66,atk:1.1,start:'galick',desc:'Vegeta con la ropa de Yardrat.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','galick','bigbang','finalflash','finalexp']},
+ gokuyardratswl:{name:'GOKU YARDRAT SSJ SWL',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku de Yardrat en Super Saiyan, otro estilo de sprite.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuyardratssj:{name:'GOKU YARDRAT SSJ',rar:4,hp:120,spd:66,atk:1.12,start:'kame',desc:'Goku de Yardrat en Super Saiyan.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ gokuyardrat:{name:'GOKU YARDRAT',rar:3,hp:115,spd:64,atk:1.0,start:'kame',desc:'Goku con la ropa de Yardrat, tras Namek.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kame','kaioken','instant','genki']},
+ blackmajin:{name:'MAJIN BLACK DIOS',rar:5,hp:125,spd:69,atk:1.3,start:'blackkame',desc:'Goku Black Majin en Super Saiyan Dios, de los fans.',forms:['SSJ DIOS'],aura:['red'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ blackrosen:{name:'BLACK ROSÉ EVOLUTION',rar:5,hp:125,spd:69,atk:1.3,start:'blackkame',desc:'Goku Black Rosé evolucionado, de los fans.',forms:['ROSÉ EVOLUTION'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ blackfalso:{name:'GOKU BLACK SSJ FALSO',rar:4,hp:120,spd:68,atk:1.17,start:'blackkame',desc:'Goku Black en Super Saiyan falso, de los fans.',forms:['SSJ FALSO'],aura:['gold'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ blackkaioshin:{name:'GOKU BLACK KAIOSHIN',rar:3,hp:115,spd:66,atk:1.05,start:'blackkame',desc:'Goku Black con el traje de Kaioshin.',forms:['BASE'],aura:['purple'],sig:['kiblast','kiblade','blackkame','lances','scythe','kick']},
+ jirengray:{name:'JIREN (TORNEO)',rar:5,hp:150,spd:62,atk:1.35,start:'eraser',desc:'Jiren del Torneo del Poder, otro estilo de sprite.',forms:['BASE'],aura:['red'],sig:['kiblast','jirenrush','powerimpact','kick','roar','omega']},
+ vegettofalso:{name:'VEGETTO SSJ FALSO',rar:5,hp:130,spd:68,atk:1.3,start:'finalkame',desc:'Vegetto en su forma de Super Saiyan falso.',forms:['SSJ FALSO'],aura:['gold'],sig:['kiblast','punch','finalkame','spiritsword','bigbang','kick']},
+ trunksarmor:{name:'TRUNKS ARMADURA',rar:4,hp:110,spd:66,atk:1.12,start:'burning',desc:'Trunks del futuro con la armadura Saiyan.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','burning','kick','finishbuster','renzoku']},
 };
 // formas añadidas a personajes que ya estaban
 Object.assign(HDEF.gokugt,{forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 3','SUPER SAIYAN 4'],aura:['white','gold','gold','red']});
@@ -1114,6 +1222,70 @@ Object.assign(MV,{
  roar:NOVA('Gigantic Roar',['#2a9a20','#8af06a','#f0fff0'],4,40,14,55),
  taiyoken:NOVA('Taiyoken',['#ffffff','#fff8c0','#ffffff'],6,5,2,90,1.6),
  mafuba:NOVA('Mafuba',['#2a9a20','#8af06a','#f0fff0'],7,20,8,70,2.5),
+ dodonpa:BEAM('Dodonpa',['#d8b010','#fff06a','#ffffff'],4,24,9,230,7,0.3),
+ taopunch:MELEE('Golpe de la Grulla',['#ffffff','#ff8ad0'],'punch',0.9,10,5,3,80,22),
+ rogafu:MELEE('Rōgafūfūken',['#e8e8ff','#8ab0ff'],'punch',0.8,9,5,4,85,24),
+ sokidan:SHOT('Sōkidan',['#3a8ad8','#a0e0ff','#ffffff'],1.4,16,6,1,330,{home:1,pierce:2}),
+ kikoho:BEAM('Kikoho',['#c8a010','#ffe860','#ffffff'],3.6,30,11,200,14,0.4),
+ burningatk:BEAM('Burning Attack',['#d86010','#ffb040','#fff3c0'],3.2,26,10,220,9,0.25),
+ jankenpon:MELEE('Jan Ken',['#ffd23f','#ff8a3a'],'punch',1.1,14,6,3,80,26,{kb:120}),
+ videlkick:MELEE('Patada Justiciera',['#ffffff','#c070ff'],'kick',0.85,10,5,3,90,24),
+ kaishot:SHOT('Esfera Divina',['#d02a9a','#ff8ad8','#ffffff'],1.5,18,7,1,280,{pierce:3}),
+ kaikai:NOVA('Kai Kai',['#3aa0ff','#a0e0ff','#ffffff'],5,30,10,75,0.8),
+ coldcannon:BIG('Cañón de Cold',['#c02a7a','#ff7ac0','#ffe0f0','#ffffff'],3.0,34,12,30,130),
+ slugball:BIG('Bola Explosiva',['#d8a010','#ffe060','#fff8d0','#ffffff'],3.2,32,12,30,120),
+ slugarm:MELEE('Brazo Estirado',['#4ac040','#b0ff9a'],'punch',1.0,12,6,2,130,22,{kb:110}),
+ hellstorm:BEAM('Tormenta Infernal',['#d8a010','#ffe860','#ffffff'],3.0,26,10,240,8,0.2),
+ s17barrier:NOVA('Barrera Absorbente',['#3a8ad8','#a0e0ff','#ffffff'],7,15,6,60,0,{shield:1}),
+ minusball:BIG('Minus Energy Power Ball',['#d86010','#ffb040','#fff3c0','#ffffff'],3.4,40,14,36,110),
+ negaball:SHOT('Bola de Energía Negativa',['#c0207a','#ff6ad0','#ffffff'],1.6,20,8,1,260,{pierce:2}),
+ giru:SHOT('Giru Bomba',['#c8c8d0','#ffffff','#ffd23f'],2.0,16,6,1,220,{home:1}),
+ granolasnipe:BEAM('Disparo Certero',['#2ac070','#9affc0','#ffffff'],2.2,30,12,320,4,0.15),
+ granolarain:SHOT('Lluvia de Ki',['#2ac070','#9affc0','#ffffff'],1.6,10,4,4,300),
+ gasring:SHOT('Anillo Paralizador',['#d02ad0','#ff8aff','#ffffff'],1.8,14,6,1,240,{ring:1,pierce:3}),
+ gasbeam:BEAM('Rayo de Gas',['#d02ad0','#ff8aff','#ffffff'],3.4,28,11,230,9,0.3),
+ paragusball:SHOT('Esfera de Paragus',['#3ad83a','#a0ff8a','#ffffff'],1.5,16,6,1,250,{home:1}),
+ angelbeam:SHOT('Golpe Angelical',['#5ad8ff','#c0f4ff','#ffffff'],1.0,14,6,2,360,{pierce:3}),
+ angelnova:NOVA('Aura Divina',['#5ad8ff','#c0f4ff','#ffffff'],6,35,12,80,1.0),
+ duuroll:MELEE('Rodillo Majin',['#e8e070','#fff8b0'],'kick',1.0,13,6,3,95,30,{kb:130}),
+ duuball:BIG('Bola Majin',['#7ad83a','#d0ff9a','#ffffff','#ffffff'],3.2,32,12,32,120),
+ magma:BEAM('Escupitajo de Magma',['#d84010','#ff9a3a','#ffe0a0'],3.0,24,10,200,8,0.3),
+ magettapunch:MELEE('Puño de Hierro',['#c0c0d0','#ffffff'],'punch',1.1,14,6,2,90,30,{kb:140}),
+ bulmagun:SHOT('Pistola de Bulma',['#ffd23f','#fff3a0','#ffffff'],0.9,8,3,2,380),
+ bulmacapsule:BIG('Cápsula Explosiva',['#d86010','#ffb040','#fff3c0','#ffffff'],3.2,26,10,28,110),
+ deadlybomber:BIG('SS Deadly Bomber',['#c0102a','#ff5a6a','#ffd0d8','#ffffff'],3.0,36,13,34,120),
+ a14rush:MELEE('Embestida del 14',['#c0c0d0','#ffffff'],'punch',1.0,14,6,2,110,30,{kb:150}),
+ a14wave:SHOT('Onda del 14',['#6ad86a','#c0ffc0','#ffffff'],1.6,16,6,1,260,{pierce:4}),
+ metalbeam:BEAM('Rayo de Metal Cooler',['#c0207a','#ff6ad0','#ffffff'],2.6,26,10,250,6,0.2),
+ metalregen:NOVA('Regeneración',['#3ad8d8','#a0ffff','#ffffff'],8,20,6,60,0,{heal:1}),
+ kuublast:SHOT('Ráfaga de Kuu',['#5ad83a','#c0ff9a','#ffffff'],1.1,12,5,3,320),
+ kuuball:BIG('Bomba Majin Kuu',['#7ad83a','#d0ff9a','#fff8d0','#ffffff'],3.2,30,11,32,120),
+ merusgun:SHOT('Disparo de la Patrulla',['#3ad8d8','#a0ffff','#ffffff'],0.8,10,4,2,420,{pierce:1}),
+ merusstaff:MELEE('Bastón de Merus',['#e0e0ff','#ffffff'],'kick',0.9,12,5,3,120,26),
+ // 4 nov.: técnicas propias (tanda Daima, GT y películas)
+ gomahstaff:MELEE('Bastón de Gomah',['#d8d0c0','#ffffff'],'punch',0.9,13,5,2,110,28,{kb:110}),
+ gomahwave:BEAM('Onda Demoníaca',['#8a20d8','#e06aff','#ffffff'],2.8,26,10,240,8,0.25),
+ gomahball:BIG('Esfera del Rey Demonio',['#6a10a0','#c050ff','#f0c0ff','#ffffff'],3.4,34,12,32,120),
+ trunksbuster:BEAM('Buster Cannon',['#3a8aff','#a0d0ff','#ffffff'],2.6,26,10,250,8,0.2),
+ trunksflash:SHOT('Ráfaga de Trunks',['#ffd23f','#fff3a0','#ffffff'],0.9,10,4,3,360),
+ revenger:BEAM('Revenger Cannon',['#3ad83a','#a0ffa0','#ffffff'],2.8,28,10,260,10,0.3),
+ tsufurwave:BIG('Onda Tsufur',['#d82a2a','#ff8a5a','#ffe0c0','#ffffff'],3.4,32,12,32,115),
+ hatchiwave:NOVA('Aura de Venganza',['#3ad83a','#c0ffa0','#ffffff'],7,22,8,70,0.3),
+ gloriogun:SHOT('Pistola de Glorio',['#7af04a','#d0ffa0','#ffffff'],0.8,10,4,2,420,{pierce:1}),
+ gloriowave:BEAM('Onda Mágica',['#a03ad8','#e06aff','#ffffff'],2.6,24,9,250,7,0.2),
+ glorioshield:NOVA('Barrera Mágica',['#c050ff','#f0c0ff','#ffffff'],7,18,6,60,0,{shield:1}),
+ gohanfutkame:BEAM('Kamehameha del Futuro',['#3ad8ff','#a0f0ff','#ffffff'],2.6,28,10,260,9,0.25),
+ gohanfutrush:MELEE('Furia del Último Guerrero',['#ffd23f','#fff3a0'],'punch',1.1,15,6,3,110,30,{kb:120}),
+ kibitoslash:MELEE('Corte de Kibito',['#ff8ad0','#ffffff'],'punch',0.9,13,5,2,110,28,{kb:110}),
+ kibitowave:NOVA('Onda Paralizante',['#a0f0ff','#ffffff'],7,16,6,70,0.6),
+ kibitoheal:NOVA('Curación Divina',['#7af04a','#d0ffa0','#ffffff'],9,8,3,50,0,{heal:1}),
+ dysposlash:MELEE('Golpe Relámpago',['#c0a0ff','#ffffff'],'kick',0.7,11,5,3,130,26,{kb:100}),
+ dyspoball:SHOT('Bola de Justicia',['#ff8a20','#ffd23f','#fff3c0'],1.0,12,5,2,380),
+ dysposhoot:BIG('Super Maximum Light Speed',['#ff5a10','#ffb040','#fff3c0','#ffffff'],3.2,30,11,30,140),
+ nuovafire:SHOT('Disparo Ígneo',['#ff6a10','#ffc040','#fff3c0'],1.0,13,5,2,330),
+ novastrike:MELEE('Nova Strike',['#ff8a20','#ffe0a0'],'punch',1.3,18,7,2,150,34,{kb:160}),
+ nuovasun:BIG('Gran Bola de Fuego',['#d84010','#ff9a3a','#ffe080','#ffffff'],3.6,38,13,36,110),
+ cuiblast:SHOT('Ráfaga de Cui',['#8a3ad8','#d0a0ff','#ffffff'],1.2,12,5,2,300),
  // ataques propios de cada personaje (sesión 9)
  deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
  deathball:BOMB('Death Ball',['#c83a10','#ff8a3a','#ffd08a','#fff6e0'],7,70,26,40),
@@ -1145,6 +1317,20 @@ Object.assign(MV,{
  brablast:SHOT('Ráfaga de Bra',['#d02a80','#ff8ad0','#fff0f8'],1.0,8,3,4,230,{home:1}),
  timebreak:NOVA('Ruptura del Tiempo',['#5a1a6a','#c060d0','#ffe0ff'],6,30,11,85,1.8),
  acidspit:SHOT('Ácido Saibaman',['#4a8a1a','#a0f040','#f0ffc0'],1.0,7,3,2,170,{pierce:1}),
+ // personajes de DeviantArt (sesión 10)
+ breakcannon:BEAM('Break Cannon',['#d86a10','#ffb03a','#ffffff'],6,42,15,270,20,0.8),
+ bomberdx:NOVA('Bomber DX',['#d86a10','#ffb03a','#fff3c0'],6,44,16,75),
+ milky:BEAM('Milky Cannon',['#7a24d8','#d08aff','#ffffff'],5.5,40,14,260,18,0.7),
+ bodychange:NOVA('Cambio de Cuerpo',['#7a24d8','#d08aff','#ffffff'],7,20,8,80,2.2),
+ crusherball:BIG('Crusher Ball',['#c8202a','#ff6a3a','#ffd08a','#ffffff'],2.8,36,13,30,150),
+ psychorock:SHOT('Rocas Psíquicas',['#6a4a2a','#b08a5a','#f0e0c0'],1.4,10,4,3,200,{home:1}),
+ timefreeze:NOVA('Parada del Tiempo',['#2a9a20','#8af06a','#f0fff0'],7,10,4,110,2.6),
+ kiai:NOVA('Kiai',['#c8d0e8','#ffffff','#ffffff'],3.5,26,10,70),
+ megaton:MELEE('Megaton Punch',['#ffffff','#ffd23f'],'atk',1.6,26,10,1,120,30,{kb:220}),
+ dynamite:MELEE('Dynamite Kick',['#ff8a3a','#ffd23f'],'kick',1.8,24,9,2,140,30,{kb:200}),
+ presentbomb:BOMB('Regalo Explosivo',['#c8202a','#ff8a6a','#ffd0c0','#ffffff'],6,50,18,36),
+ photonwave:BEAM('Photon Wave',['#d02a80','#ff8ad0','#ffffff'],6,44,15,280,20,0.8),
+ fullcourse:NOVA('Menú Completo',['#d02a80','#ff8ad0','#ffe0f0'],7,34,12,70,0,{heal:0.3}),
 });
 // nombres de la serie para técnicas que comparten efecto con otra (4 nov.): sig:1 para que no salgan como arma nueva
 MV.discomortal={...MV.kienzan,name:'Disco Mortal',evo:'Disco Mortal Doble',sig:1};
@@ -1182,8 +1368,111 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  gokumoro:['kiblast','silver','kick','kame','instant','godkame'],gokubroly:['kiblast','punch','kame','instant','godkame','genki'],
  vegetamanga:['kiblast','punch','galick','finalflash','gamma','finalexp'],vegetabroly:['renzoku','punch','galick','finalflash','gamma','finalexp'],
  blacktime:['lances','kiblade','blackkame','timebreak','kick','scythe'],blackfan:['kiblade','lances','scythe','blackkame','timebreak','kick'],
- gokualt:['kiblast','punch','kaioken','ikarikame','dragonfist','genki']};
+ gokualt:['kiblast','punch','kaioken','ikarikame','dragonfist','genki'],
+ nappa:['kiblast','punch','breakcannon','kick','bomberdx','lariat'],ginyu:['kiblast','punch','kick','milky','bodychange','renzoku'],
+ jeice:['kiblast','punch','kick','crusherball','renzoku'],guldo:['kiblast','punch','kick','psychorock','timefreeze'],
+ uub:['kiblast','punch','kick','kiai','kame','renzoku'],mrsatan:['punch','kick','megaton','dynamite','presentbomb'],
+ a21:['kiblast','punch','kick','choco','photonwave','fullcourse'],
+ jirengray:['kiblast','jirenrush','powerimpact','kick','roar','omega'],
+ vegettofalso:['kiblast','punch','finalkame','spiritsword','bigbang','kick'],trunksarmor:['kiblast','punch','burning','kick','finishbuster','renzoku'],
+ blackkaioshin:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ blackfalso:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ blackrosen:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ blackmajin:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ gokuyardrat:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuyardratssj:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuyardratswl:['kiblast','punch','kame','kaioken','instant','genki'],
+ vegetayardrat:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ gokussj4gt:['kiblast','punch','kame','kaioken','instant','genki'],
+ vegetassj4gt:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetassjwhis:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetabluewhis:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetablue092:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetablueulsw:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetabluefp:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetablueevo:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetabaseulsw:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetaego:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetaxeno:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetassjhd:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetauihd:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ vegetabluemal:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ gokussj3mais:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussj3swl:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokubluewhis:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuuisign:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokumuifp:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokupatrulla:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussjchaqueta:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokumuigranola:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuuiverdadero:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokubluemoro:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokubluedbfz:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokumuimanga:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuuimanga:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussj2buu:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussjkaioken:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuevilssj2:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokumuiblueevo:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokumuiblue:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokumuidios:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokuultradios:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussjsupremo:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussj4dios:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokudiosberserk:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussjlegend:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussjkaioken2:['kiblast','punch','kame','kaioken','instant','genki'],
+ goku044:['kiblast','punch','kame','kaioken','instant','genki'],
+ goku045:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussj053:['kiblast','punch','kame','kaioken','instant','genki'],
+ gokussjfp:['kiblast','punch','kame','kaioken','instant','genki'],
+ blackrose290:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ gokussj4daima:['kiblast','punch','kame','kaioken','instant','genki'],
+ zamasufusion:['kiblast','kiblade','blackkame','lances','scythe','kick'],
+ bramajin:['kiblast','punch','kick','kame','renzoku'],
+ vegitoblue254:['kiblast','punch','finalkame','spiritsword','bigbang','kick'],
+ vegetamui:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ gokureymono:['kiblast','punch','kame','kaioken','instant','genki'],
+ taopaipai:['kiblast','taopunch','kick','dodonpa','renzoku'],
+ tenshinhan:['kiblast','punch','kick','kame','renzoku'],
+ trunksnino:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ gokunino:['kiblast','punch','kame','kaioken','instant','genki'],
+ videl:['kiblast','punch','kick','kame','renzoku'],
+ shin:['kiblast','punch','kick','kame','renzoku'],
+ kibitoshin:['kiblast','punch','kick','kame','renzoku'],
+ cui:['kiblast','punch','kick','kame','renzoku'],
+ reycold:['kiblast','punch','kick','kame','renzoku'],
+ tarble:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
+ slug:['kiblast','punch','kick','kame','renzoku'],
+ pangt:['kiblast','punch','kame','kaioken','instant','genki'],
+ super17:['kiblast','punch','kick','kame','renzoku'],
+ omega:['kiblast','punch','kick','kame','renzoku'],
+ gas:['kiblast','punch','kick','kame','renzoku'],
+ granola:['kiblast','punch','kick','kame','renzoku'],
+ paragus:['kiblast','punch','kick','kame','renzoku'],
+ daishinkan:['kiblast','punch','kick','kame','renzoku'],
+ majinduu:['kiblast','punch','kick','kame','renzoku'],
+ magetta:['kiblast','punch','kick','kame','renzoku'],
+ bulma:['kiblast','punch','kick','kame','renzoku'],
+ a13:['kiblast','punch','kick','kame','renzoku'],
+ a14:['kiblast','punch','kick','kame','renzoku'],
+ metalcooler:['kiblast','punch','kick','kame','renzoku'],
+ majinkuu:['kiblast','punch','kick','kame','renzoku'],
+ merus:['kiblast','punch','kick','kame','renzoku'],
+ gomah:['kiblast','gomahstaff','gomahwave','kick','gomahball'],
+ nuova:['nuovafire','novastrike','kick','nuovasun','punch'],
+ trunksgt:['kiblast','punch','trunksbuster','kick','trunksflash'],
+ hatchiyack:['kiblast','punch','revenger','kick','tsufurwave','hatchiwave'],
+ glorio:['gloriogun','punch','gloriowave','kick','glorioshield'],
+ gohanfut:['kiblast','gohanfutrush','gohanfutkame','kick','masenko'],
+ kibito:['kiblast','kibitoslash','kibitowave','kick','kibitoheal'],
+ dyspo:['dysposlash','dyspoball','kick','dysposhoot','punch']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
+// 3 nov.: técnicas propias del plan «sprites para casa»
+Object.assign(SIGS,{yamcha:['kiblast','rogafu','kick','sokidan','kame'],tenshinhan:['kiblast','punch','kikoho','taiyoken','dodonpa','kick'],
+ goten:['kiblast','punch','kame','kick','renzoku'],gokunino:['kiblast','punch','jankenpon','kame','kick'],videl:['kiblast','videlkick','punch','renzoku','kick'],
+ shin:['kiblast','punch','kaishot','kaikai','kick'],kibitoshin:['kiblast','punch','kaikai','kaishot','kick'],cui:['kiblast','punch','cuiblast','kick','renzoku'],
+ trunksnino:['kiblast','punch','burningatk','kick','renzoku']});
 const UNLOCK_LV=[1,1,3,6,10,15];
 let FO=null;const fxSl=[],fxRg=[];
 function sigList(hid=S.hid){if(SIGS[hid])return SIGS[hid];const st=HEROES[hid]&&HEROES[hid].start;return['kiblast','punch',MV[st]&&st!=='kiblast'?st:'kame','kick','renzoku']}
@@ -1315,6 +1604,32 @@ const ET={
  nappa:{n:'NAPPA',boss:1,ai:'dash'},
  mecha:{n:'MECA FREEZER',boss:1,ai:'spiral'},
  a19:{n:'ANDROIDE 19',boss:1,ai:'spiral'},
+ appuleE:{n:'APPULE',hp:360,spd:60,dmg:13,xp:38,r:8,elite:1,shoot:1.7},
+ cuiE:{n:'CUI',hp:400,spd:64,dmg:14,xp:40,r:8,elite:1,shoot:1.6},
+ blueE:{n:'GENERAL BLUE',hp:480,spd:58,dmg:15,xp:44,r:8,elite:1},
+ murasakiE:{n:'NINJA MURASAKI',hp:380,spd:66,dmg:13,xp:38,r:8,elite:1,shoot:2},
+ reycoldB:{n:'REY COLD',boss:1,ai:'frieza'},
+ slugB:{n:'LORD SLUG',boss:1,ai:'dash'},
+ myuuB:{n:'DR. MYUU',boss:1,ai:'dash'},
+ super17B:{n:'SUPER 17',boss:1,ai:'frieza'},
+ omegaB:{n:'OMEGA SHENRON',boss:1,ai:'cell'},
+ gasB:{n:'GAS',boss:1,ai:'dash'},
+ silverE:{n:'CORONEL SILVER',hp:380,spd:62,dmg:13,xp:38,r:8,elite:1},
+ tambourineE:{n:'TAMBOURINE',hp:420,spd:66,dmg:14,xp:40,r:8,elite:1,shoot:1.8},
+ drumE:{n:'DRUM',hp:480,spd:56,dmg:15,xp:42,r:8,elite:1,shoot:2.2},
+ recoomeE:{n:'RECOOME',hp:520,spd:56,dmg:16,xp:46,r:9,elite:1,shoot:2.0},
+ a13E:{n:'ANDROIDE 13',hp:480,spd:58,dmg:15,xp:45,r:8,elite:1,shoot:1.8},
+ a14E:{n:'ANDROIDE 14',hp:560,spd:54,dmg:16,xp:46,r:9,elite:1},
+ metalcoolerB:{n:'METAL COOLER',boss:1,ai:'frieza'},
+ gomahB:{n:'REY GOMAH',boss:1,ai:'frieza'},
+ hatchiyackE:{n:'HATCHIYACK',hp:520,spd:62,dmg:15,xp:46,r:8,elite:1,shoot:1.8},
+ namE:{n:'NAM',hp:380,spd:66,dmg:13,xp:36,r:8,elite:1},
+ glorioE:{n:'GLORIO',hp:440,spd:68,dmg:14,xp:42,r:8,elite:1,shoot:1.6},
+ dyspoE:{n:'DYSPO',hp:460,spd:84,dmg:14,xp:44,r:8,elite:1,shoot:1.7},
+ nuovaE:{n:'NUOVA SHENRON',hp:560,spd:60,dmg:16,xp:48,r:9,elite:1,shoot:1.9},
+ magettaE:{n:'MAGETTA',hp:600,spd:48,dmg:16,xp:48,r:10,elite:1,shoot:2.2},
+ zangyaE:{n:'ZANGYA',hp:420,spd:64,dmg:14,xp:42,r:8,elite:1,shoot:1.6},
+ geroE:{n:'DR. GERO',hp:520,spd:50,dmg:15,xp:45,r:8,elite:1,shoot:1.7},
  cell:{n:'CELL PERFECTO',boss:1,ai:'cell'},
  dabura:{n:'DABURA',boss:1,ai:'frieza'},
  fatbuu:{n:'MAJIN BUU',boss:1,ai:'buu'},
@@ -1382,7 +1697,7 @@ const BOSS_SLOT=[{hp:900,spd:38,dmg:11,xp:80},{hp:2600,spd:36,dmg:16,xp:120},{hp
 const MAPS={
  namek:{name:'PLANETA NAMEK',sub:'Saga de Freezer',
    pool:[[0,'saiba',10],[45,'soldier',4],[240,'soldier',3],[330,'saibaR',5],[420,'saibaX',3],[500,'soldierE',6]],
-   bosses:['freeza1B','freeza2B','ginyu','frieza','golden'],ring:['saiba','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
+   bosses:['freeza1B','freeza2B','ginyu','frieza','golden'],ring:['saiba','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
  tierra:{name:'TIERRA · YERMO',sub:'Sagas Saiyan y Androides',
    pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'celljr',4]],
    bosses:['raditz','turles','mecha','a16B','cell'],ring:['saiba','saibaR'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
@@ -1406,16 +1721,16 @@ const MAPS={
  redribbon:{name:'BASE RED RIBBON',sub:'Saga del Ejército Red Ribbon',req:1,cam:[-44,-60],pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['a16B','mecha','a17B','trunksB','cell'],ring:['soldier','celljr'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
  musculo:{name:'TORRE MÚSCULO',sub:'Aldea Jingle',req:1,cam:[-44,-110],pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['raditz','a16B','turles','mecha','cell'],ring:['soldier','saiba'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
  capsule:{name:'CIUDAD DEL OESTE',sub:'Corporación Cápsula',req:1,cam:[90,-130],pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['a16B','frieza','cell','trunksB','black'],ring:['soldier','celljr'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
- yardrat:{name:'PLANETA YARDRAT',sub:'El refugio de Goku',req:1,cam:[-120,-80],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['ginyu','freeza2B','freeza1B','frieza','frieza100'],ring:['soldier','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
+ yardrat:{name:'PLANETA YARDRAT',sub:'El refugio de Goku',req:1,cam:[-120,-80],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['ginyu','freeza2B','freeza1B','frieza','frieza100'],ring:['soldier','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
  kaioshin:{name:'MUNDO KAIOSHIN',sub:'Saga de Majin Buu',req:1,cam:[-44,-100],pool:[[0,'majin',9],[40,'majin',4],[150,'celljr',4],[330,'soldierE',5],[480,'saibaR',5]],bosses:['janemba','majinv','fatbuu','gokuB','buu'],ring:['majin','majin'],squad:[600,['celljrE','celljrE','celljrE','celljrE','celljrE','celljrE','celljrE'],'¡LOS CELL JR.!']},
- infierno:{name:'INFIERNO',sub:'Saga del Más Allá',req:1,cam:[-110,-90],pool:[[0,'majin',9],[40,'majin',4],[150,'celljr',4],[330,'soldierE',5],[480,'saibaR',5]],bosses:['frieza','cell','janemba','fatbuu','buu'],ring:['majin','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
- bills:{name:'PLANETA DE BILLS',sub:'La batalla de los dioses',req:1,cam:[-44,-120],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['frieza','golden','vegetaB','majinv','black'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
+ infierno:{name:'INFIERNO',sub:'Saga del Más Allá',req:1,cam:[-110,-90],pool:[[0,'majin',9],[40,'majin',4],[150,'celljr',4],[330,'soldierE',5],[480,'saibaR',5]],bosses:['frieza','cell','janemba','fatbuu','buu'],ring:['majin','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
+ bills:{name:'PLANETA DE BILLS',sub:'La batalla de los dioses',req:1,cam:[-44,-120],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['frieza','golden','vegetaB','majinv','black'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
  poder:{name:'TORNEO DEL PODER',sub:'Supervivencia universal',req:1,cam:[-44,-28],pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['a17B','frieza','brolyB','golden','gokuB'],ring:['soldierE','celljr'],squad:[600,['shadow'],'¡TU SOMBRA!']},
  pradera:{name:'PRADERAS',sub:'Campo de batalla Saiyan',req:1,pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'soldierE',5]],bosses:['raditz','turles','vegetaB','piccoloB','frieza'],ring:['saiba','saibaR'],squad:[630,['raditzE','vegsaiE'],'¡SAIYANS DE ÉLITE!']},
  bosque:{name:'BOSQUE PROFUNDO',sub:'Entrenamiento en la naturaleza',req:1,pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'soldierE',5]],bosses:['raditz','turles','a16B','piccoloB','cell'],ring:['saiba','saibaR'],squad:[630,['raditzE','vegsaiE'],'¡SAIYANS DE ÉLITE!']},
  desierto:{name:'DESIERTO',sub:'Guarida de Yamcha',req:1,pool:[[0,'soldier',10],[60,'saiba',5],[200,'celljr',4],[320,'saibaX',4],[480,'soldier',6]],bosses:['raditz','a16B','turles','mecha','cell'],ring:['soldier','saiba'],squad:[630,['a17e','a18e'],'¡LOS ANDROIDES!']},
  gizard:{name:'YERMO DE GIZARD',sub:'Llegada de los Saiyans',req:1,pool:[[0,'saiba',10],[45,'soldier',4],[200,'celljr',4],[300,'saibaX',3],[330,'saibaR',5],[480,'soldierE',5]],bosses:['turles','raditz','vegetaB','ginyu','frieza'],ring:['saiba','saibaX'],squad:[630,['raditzE','vegsaiE'],'¡SAIYANS DE ÉLITE!']},
- volcan:{name:'TIERRA VOLCÁNICA',sub:'Planeta en llamas',req:1,pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['freeza2B','freeza1B','ginyu','frieza100','golden'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice'],'¡FUERZAS ESPECIALES!']},
+ volcan:{name:'TIERRA VOLCÁNICA',sub:'Planeta en llamas',req:1,pool:[[0,'soldier',9],[0,'saiba',5],[100,'soldierE',4],[220,'saibaR',5],[300,'saibaX',4],[420,'soldierE',6]],bosses:['freeza2B','freeza1B','ginyu','frieza100','golden'],ring:['soldierE','saibaR'],squad:[600,['ginyu','jeice','burter','recoomeE'],'¡FUERZAS ESPECIALES!']},
 };
 const BOSS_T=[180,360,540,720,900];
 const WAVE_T=[130,230,310,410,490,590,670,770,850];
@@ -1428,18 +1743,18 @@ const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SE
   if(MAPS.futuro)MAPS.futuro.bosses=['a16B','black','zamasuB','rose','brolyB'];
   if(MAPS.kaioshin)MAPS.kaioshin.bosses[3]='superbuuB';
   if(MAPS.bills)MAPS.bills.bosses[4]='billsB';
-  const EL={freezer:['kingvegE','raditzssjE','turlesE','frostE','vegsaiE','freeza2E','coolerE'],tierra:['raditzssjE','cellimpE','a16E','cellsemiE','a21E','cellperfE'],
+  const EL={freezer:['burter','kingvegE','raditzssjE','turlesE','frostE','vegsaiE','freeza2E','coolerE'],tierra:['geroE','raditzssjE','cellimpE','a16E','cellsemiE','a21E','cellperfE'],
     buu:['garlicE','majinvE','fatbuuE','gohanpossE','buuthinE','demonE','superbuuE'],super:['frost2E','black2E','hitE','zamasuE','hit2E','zamasuhE','vegetaE','fakegokuE','kalessjE']};
   // elites come in one by one, weakest first; renegade saiyans fill the mid game
   for(const k in MAPS){const L=EL[WSAGA[k]||'tierra'];L.forEach((id,i)=>MAPS[k].pool.push([240+i*Math.round(600/L.length),id,0.25]));
     MAPS[k].pool.push([150,'renegA',2],[330,'renegB',2],[520,'renegC',2]);
     const R={freezer:[[0,'frzS2',4],[120,'frzS4',3],[260,'saiyanLow',2]],tierra:[[60,'frzS2',2],[260,'saiyanLow',2]],buu:[[90,'garlicH1',3],[200,'demonS',3],[320,'garlicH2',2],[420,'demonS2',3]],super:[[0,'frzS2',3],[200,'demonS',2],[360,'demonS2',2]]}[WSAGA[k]||'tierra'];
     R.forEach(p=>MAPS[k].pool.push(p.slice()))}
-  const B={namek:['ginyu','freeza1B','freeza2B','freeza3B','frieza100'],vegetasei:['freeza1B','coolerB','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
-    tierra:['raditz','turles','mecha','a21B','cell'],redribbon:['a16B','mecha','a21B','a21mB','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
-    kaioshin:['janemba','majinv','buuthinB','buugohanB','buu'],infierno:['garlicB','cell','superbuuB','ozarugB','janemba'],time:['coolerB','babyB','ozarugB','moroB','shenronB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
-    bills:['golden','toppoB','whisB','billsB','zenoB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a16B','broly2B','mecha','cell'],
-    pradera:['raditz','turles','vegetaB','broly3B','frieza'],bosque:['raditz','ozaruB','a16B','piccoloB','cell']};
+  const B={namek:['dodoria','zarbon','ginyu','freeza3B','frieza100'],vegetasei:['freeza1B','coolerB','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
+    tierra:['raditz','reycoldB','mecha','a21B','cell'],redribbon:['a16B','a19','mecha','a21B','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
+    kaioshin:['dabura','gomahB','majinv','buugohanB','buu'],infierno:['garlicB','metalcoolerB','superbuuB','ozarugB','janemba'],time:['myuuB','babyB','super17B','moroB','omegaB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
+    bills:['golden','toppoB','whisB','gasB','billsB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a16B','broly2B','mecha','cell'],
+    pradera:['raditz','slugB','vegetaB','broly3B','frieza'],bosque:['raditz','ozaruB','a16B','piccoloB','cell']};
   for(const k in B)if(MAPS[k])MAPS[k].bosses=B[k].map(f);
   WAVES.buu.push(['superbuuE',1]);WAVES.super.push(['hitE',1],['zamasuE',1]);
   for(const k in WAVES)WAVES[k].forEach(w=>w[0]=f(w[0]))})();
@@ -1744,11 +2059,12 @@ function bossAI(e,dt){
   e.aiT-=dt;const a=Math.atan2(P.y-e.y,P.x-e.x);if(bossBeam(e,dt))return true;
   switch(e.ai){
    case 'dash':if(e.aiS>0){e.aiS-=dt;if(solidMove(e,e.dx*dt,e.dy*dt,e.r))e.aiS=0;return true}
-     if(e.aiT<=0){e.aiT=3.6;e.aiS=0.5;e.dx=Math.cos(a)*170;e.dy=Math.sin(a)*170;burst(e.x,e.y-10,10,['#c58af0','#ffffff'])}break;
+     if(e.aiT<=0){e.aiT=3.6;e.aiS=0.5;e.dx=Math.cos(a)*170;e.dy=Math.sin(a)*170;burst(e.x,e.y-10,10,['#c58af0','#ffffff']);
+       const c=ET[e.type].col;if(c)for(let i=-1;i<=1;i++)eshot(e.x,e.y-14,a+i*0.25,150,e.dmg*0.6,3,c)}break;
    case 'frieza':if(e.aiT<=0){e.aiT=2.2;e.cnt=(e.cnt||0)+1;
-       if(e.cnt%3===0){for(let i=0;i<14;i++)eshot(e.x,e.y-14,i/14*TAU,70,e.dmg*0.6,3,'#ff5aa0')}
-       else for(let i=0;i<3;i++)setTimeout(()=>{if(!e.dead)eshot(e.x,e.y-14,Math.atan2(P.y-8-e.y+14,P.x-e.x),190,e.dmg*0.7,2,'#ff3a6a')},i*120)}break;
-   case 'spiral':e.sp=(e.sp||0)+dt*2.4;if(e.aiT<=0){e.aiT=0.16;eshot(e.x,e.y-14,e.sp,80,e.dmg*0.5,3,'#ff7a4a');eshot(e.x,e.y-14,e.sp+Math.PI,80,e.dmg*0.5,3,'#ff7a4a')}break;
+       if(e.cnt%3===0){for(let i=0;i<14;i++)eshot(e.x,e.y-14,i/14*TAU,70,e.dmg*0.6,3,ET[e.type].col2||'#ff5aa0')}
+       else for(let i=0;i<3;i++)setTimeout(()=>{if(!e.dead)eshot(e.x,e.y-14,Math.atan2(P.y-8-e.y+14,P.x-e.x),190,e.dmg*0.7,2,ET[e.type].col||'#ff3a6a')},i*120)}break;
+   case 'spiral':e.sp=(e.sp||0)+dt*2.4;if(e.aiT<=0){e.aiT=0.16;eshot(e.x,e.y-14,e.sp,80,e.dmg*0.5,3,ET[e.type].col||'#ff7a4a');eshot(e.x,e.y-14,e.sp+Math.PI,80,e.dmg*0.5,3,ET[e.type].col||'#ff7a4a')}break;
    case 'cell':if(e.aiT<=0){e.aiT=3.5;e.cnt=(e.cnt||0)+1;
        eshot(e.x,e.y-14,a,95,e.dmg*1.2,7,'#5ab0ff');
        // La invocación de Cell Jr. volverá cuando tenga secuencias revisadas.
@@ -1756,7 +2072,7 @@ function bossAI(e,dt){
    case 'buu':if(e.aiS>0){e.aiS-=dt;if(solidMove(e,e.dx*dt,e.dy*dt,e.r))e.aiS=0;return true}
      if(e.aiT<=0){e.aiT=2.6;e.cnt=(e.cnt||0)+1;
        if(e.cnt%2){e.aiS=0.5;e.dx=Math.cos(a)*260;e.dy=Math.sin(a)*260}
-       else for(let i=0;i<18;i++)eshot(e.x,e.y-14,i/18*TAU+e.cnt,85,e.dmg*0.6,3,'#ff8ad0')}break;
+       else for(let i=0;i<18;i++)eshot(e.x,e.y-14,i/18*TAU+e.cnt,85,e.dmg*0.6,3,ET[e.type].col||'#ff8ad0')}break;
   }
   return false}
 
@@ -1875,7 +2191,7 @@ function update(dt){
     if(!skip){vx+=e.kx;vy+=e.ky;const hit=solidMove(e,vx*dt,vy*dt,e.r);if(hit){e.avoidT=0.45;e.avoid=e.avoid||(((e.x*13+e.y*7)|0)&1?1:-1)}}else solidResolve(e,e.r);e.kx*=0.86;e.ky*=0.86;
     if(!e.boss){let pushed=0;near(e.x,e.y,10,o=>{if(o===e)return;const ox=e.x-o.x,oy=e.y-o.y,dd=ox*ox+oy*oy;if(dd<100&&dd>0.001){const f=(10-Math.sqrt(dd))*0.25,l=Math.sqrt(dd);e.x+=ox/l*f;e.y+=oy/l*f;pushed=1}});if(pushed)solidResolve(e,e.r)}
     e.stT=(e.stT||0)+dt;if(e.stT>0.7){const moved=e.stX===undefined?99:Math.hypot(e.x-e.stX,e.y-e.stY);e.stuck=moved<1.5&&d>24?(e.stuck||0)+e.stT:0;e.stX=e.x;e.stY=e.y;e.stT=0;if(e.stuck>1.4){solidPlace(e,e.r,1);e.avoidT=0.8;e.avoid=-(e.avoid||1);e.stuck=0}}
-    if(e.shootT){e.shootT-=dt;if(e.shootT<=0){e.shootT=ET[e.type].shoot;if(d>=MELEE_AJ.sinDisparo&&d<170&&eshots.length<ROL_AJ.maxBalas)eshot(e.x+dx/d*6,e.y-12,Math.atan2(dy-6+12,dx),90,e.dmg*0.7,2,'#ffe05a')}}
+    if(e.shootT){e.shootT-=dt;if(e.shootT<=0){e.shootT=ET[e.type].shoot;if(d>=MELEE_AJ.sinDisparo&&d<170&&eshots.length<ROL_AJ.maxBalas)eshot(e.x+dx/d*6,e.y-12,Math.atan2(dy-6+12,dx),90,e.dmg*0.7,2,ET[e.type].col||'#ffe05a')}}
     if(ET[e.type].kami){if(e.fuse===undefined&&d<28){e.fuse=0.75;e.spd*=0.25;texts.push({x:e.x,y:e.y-22,v:'!',t:0.7,c:'#ff3030'})}
       if(e.fuse!==undefined){e.fuse-=dt;e.flash=((e.fuse*14)|0)%2?0.05:0;
         if(e.fuse<=0){e.dead=true;fx(e.x,e.y-6,'fire',22,0.5);smoke(e.x,e.y-6,8);burst(e.x,e.y-6,20,['#fff6a0','#ffd23f','#ff8a2a']);cam.shake=Math.max(cam.shake,5);sfx('boom');
@@ -2485,7 +2801,7 @@ function edges(tx,ty,x,y,f,c1,c2){const n=f(tx,ty-1),s=f(tx,ty+1),w=f(tx-1,ty),e
   ctx.fillStyle=c2;if(n)ctx.fillRect(x,y+3,T,1);if(s)ctx.fillRect(x,y+T-4,T,1);if(w)ctx.fillRect(x+3,y,1,T);if(e)ctx.fillRect(x+T-4,y,1,T)}
 function drawWorld(time){
   if(S&&S.isl&&!['title','maps','mine','gacha','credits','train','forge'].includes(state)){drawIsland(time);return}
-  const W=WORLD[MAPK],cx=Math.floor(cam.x),cy=Math.floor(cam.y);
+  const W=WORLD[MAPK];if(!W)return;const cx=Math.floor(cam.x),cy=Math.floor(cam.y);
   const tx0=Math.floor(cx/T)-1,ty0=Math.floor(cy/T)-1,tx1=Math.floor((cx+VW)/T)+1,ty1=Math.floor((cy+VH)/T)+1;
   const wf=Math.floor(time*3)%4;
   for(let ty=ty0;ty<=ty1;ty++)for(let tx=tx0;tx<=tx1;tx++)W.tile(tx,ty,tx*T-cx,ty*T-cy,wf);
@@ -2632,7 +2948,8 @@ function render(time){
         const bobY=P.moving?((P.anim|0)%2):((time*2.5|0)%2),lean=P.moving?(((P.anim|0)%4)<2?1:-1):0;
         ctx.drawImage(im,0,0,im.width,Math.round(im.height*0.6),Math.round(x-w/2+lean),Math.round(y-h+bobY),w,Math.round(h*0.6));
         ctx.drawImage(im,0,Math.round(im.height*0.6),im.width,im.height-Math.round(im.height*0.6),Math.round(x-w/2),Math.round(y-h+bobY+h*0.6),w,h-Math.round(h*0.6))}
-      else if(pk){const mv=P.moving&&!P.cast&&!P.dead,pw=!mv&&P.powT>0,pd=!mv&&P.pend,ak=!mv&&P.atkT>0,
+      else if(pk){// moverse y atacar a la vez (Josemi, 2 nov.): golpes, patadas, ki y preparación de técnicas se ven también en vuelo; el aura de poder solo quieto
+        const mv=P.moving&&!P.cast&&!P.dead,pw=!mv&&P.powT>0,pd=P.pend,ak=P.atkT>0,
         left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
         // vuelo bajo al moverse: la pose de impulso se despega 3 px de la sombra y flota (0, 1, 2, 1 px) a 8 pasos por segundo;
         // sube y baja poco a poco al arrancar y al pararse, y la sombra se queda en el suelo
@@ -2797,16 +3114,18 @@ Object.assign(SCPACK.h,{trunks:{0:'mtrunks',1:'trunks-ssj',2:'smtrunks'},gohan:{
   vegetasuper:{0:'vegeta-buu',1:'vegeta-buussj',2:'vegeta-god',3:'vegeta-blue',4:'vegeta-bluefp'},trunkscell:{0:'trunks-armor'},roshi:{0:'roshi'}});
 SCPACK.h.vegeta[2]='vegeta-grade';SCPACK.h.gokuui[4]='goku-uic';
 // hand-picked animations (herramientas/animaciones.json -> animaciones_juego.js) replace the pack of that form
-const PORTRAIT={};
+const PORTRAIT={},BUSTO={};
 if(window.ANIM_SET)for(const id in ANIM_SET.h)for(const f in ANIM_SET.h[id]){const F=ANIM_SET.h[id][f],k='as-'+id+'-'+f;SCPACK.s[k]={};
-  for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait}
+  for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait;if(F.busto)BUSTO[id+'/'+f]=1}
 // only hand-picked forms stay: missing forms leave the transformation chain, characters with none leave the game
-var FUERA=new Set(['roshi']);
+var FUERA=new Set(); // Roshi ya tiene sprites propios (3 nov.); antes se ocultaba aquí
 for(const id in HDEF){const D=HDEF[id],A=window.ANIM_SET&&ANIM_SET.h[id];if(D.npc||D.custom)continue;
   if(!A){FUERA.add(id);continue}const keep=Object.keys(A).map(Number).sort((a,b)=>a-b);
   if(keep.length!==D.forms.length||keep.some((f,i)=>f!==i)){for(const k of ['forms','aura','hair','hc','formPal'])if(Array.isArray(D[k]))D[k]=keep.map(f=>D[k][Math.min(f,D[k].length-1)]);
-    const H={},R={};keep.forEach((f,i)=>{H[i]='as-'+id+'-'+f;if(PORTRAIT[id]&&PORTRAIT[id][f])R[i]=PORTRAIT[id][f]});SCPACK.h[id]=H;if(PORTRAIT[id])PORTRAIT[id]=R}}
+    const H={},R={};const B={};keep.forEach((f,i)=>{H[i]='as-'+id+'-'+f;if(PORTRAIT[id]&&PORTRAIT[id][f])R[i]=PORTRAIT[id][f];if(BUSTO[id+'/'+f])B[id+'/'+i]=1});for(const k in BUSTO)if(k.startsWith(id+'/'))delete BUSTO[k];Object.assign(BUSTO,B);SCPACK.h[id]=H;if(PORTRAIT[id])PORTRAIT[id]=R}}
 // big face of a form: that form, else the closest one of the same character
+// cara exacta de una forma, sin pedir prestada la de otra (selección de personaje)
+function faceExact(id,form=0){const P=PORTRAIT[id];return !BUSTO[id+'/'+form]&&P&&P[form]||null}
 function faceOf(id,form=0){const P=PORTRAIT[id];if(!P)return null;if(P[form])return P[form];const k=Object.keys(P).map(Number).sort((a,b)=>Math.abs(a-form)-Math.abs(b-form));return k.length?P[k[0]]:null}
 Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta-buussj',rose:'rose',
   renegA:'enemy1',renegB:'enemy2',renegC:'enemy3',kingvegE:'kingvegeta',raditzssjE:'raditz-ssj',vegsaiE:'vegeta-saiyan',freeza2E:'freeza-2',cellperfE:'cell-perf2',a21E:'a21',
@@ -2840,6 +3159,50 @@ const ENEMIGO_HEROE={hitB:['hit',0],hitE:['hit',0],hit2E:['hit',0],superbuuB:['b
 Object.assign(ET,{zombi:{n:'Saiyan zombi',hp:26,spd:26,dmg:9,xp:2,r:7},zombiR:{n:'Saiyan zombi furioso',hp:44,spd:46,dmg:12,xp:4,r:7},
   zamasuC:{n:'Clon de Zamasu',hp:30,spd:38,dmg:11,xp:3,r:7,shoot:3.2}});
 Object.assign(ENEMIGO_HEROE,{soldier:['e_soldado',0],soldierE:['e_soldado',0],frzS2:['e_soldado',0],frzS4:['e_soldado',0],ginyu:['e_ginyu',0],jeice:['e_jeice',0],celljr:['cell',2],celljrE:['cell',2],majin:['buu',4],zombi:['zombies',0],zombiR:['zombies',1],zamasuC:['zamasu',0]});
+// 3 nov.: enemigos retirados que vuelven con animaciones ya revisadas de personajes jugables
+Object.assign(ENEMIGO_HEROE,{nappa:['nappa',0],nappaE:['nappa',0],guldo:['guldo',0],a21E:['a21',0],a21B:['a21',0],a21mB:['a21',0],zamasuhE:['zamasufusion',0]});
+// 3 nov.: enemigos de hojas de DeviantArt (créditos en CREDITOS_RECURSOS.md), cada uno con el color de su técnica
+Object.assign(ENEMIGO_HEROE,{dodoria:['e_dodoria',0],zarbon:['e_zarbon',0],mecha:['e_mecha',0],garlicE:['e_garlic',0],garlicB:['e_garlic',0],kingvegE:['e_kingveg',0]});
+if(ET.dodoria)Object.assign(ET.dodoria,{col:'#ff5aa0'}); // embiste y escupe el rayo de la boca
+if(ET.zarbon)Object.assign(ET.zarbon,{col:'#7af0e0',col2:'#c8fff6'}); // ráfagas de ki verdes
+if(ET.mecha)Object.assign(ET.mecha,{ai:'frieza',col:'#c58af0',col2:'#ff5aa0'}); // rayo mortal y Death Ball
+if(ET.garlicE)Object.assign(ET.garlicE,{col:'#5ab0ff'});if(ET.garlicB)Object.assign(ET.garlicB,{col:'#5ab0ff'}); // ki azul de la Zona Muerta
+if(ET.kingvegE)Object.assign(ET.kingvegE,{col:'#b48aff'}); // esferas moradas del Rey Vegeta
+Object.assign(ENEMIGO_HEROE,{burter:['e_burter',0],whisB:['e_whis',0],a19:['e_a19',0],dabura:['e_dabura',0]});
+if(ET.burter)Object.assign(ET.burter,{shoot:1.8,col:'#4a7ad8'}); // el más rápido del universo; Space Mach Attack azul
+if(ET.whisB)Object.assign(ET.whisB,{col:'#7ad8ff'}); // ráfagas del bastón
+if(ET.a19)Object.assign(ET.a19,{col:'#ff7ad0'}); // rayos de los ojos y absorción de energía
+if(ET.dabura)Object.assign(ET.dabura,{col:'#ff5a2a',col2:'#ffb02a'}); // aliento de fuego y saliva de piedra
+Object.assign(ENEMIGO_HEROE,{rrsoldier:['e_rrsoldier',0],renegB:['e_fasha',0],ozaruB:['e_ozaru',0]});
+if(ET.rrsoldier)Object.assign(ET.rrsoldier,{col:'#ffd23f'}); // balas del fusil
+if(ET.renegB)Object.assign(ET.renegB,{n:'FASHA',col:'#ff5ad8'}); // compañera de Bardock, ki rosa
+if(ET.ozaruB)Object.assign(ET.ozaruB,{n:'OZARU VEGETA',col:'#ff9a3a'}); // rayo por la boca
+for(const k of ['redribbon','musculo','capsule'])if(MAPS[k])MAPS[k].pool.push([0,'rrsoldier',6],[200,'rrsoldier',6]);
+Object.assign(ENEMIGO_HEROE,{freeza2E:['e_freeza2',0],freeza2B:['e_freeza2',0],demonS:['e_puipui',0],demonS2:['e_yamu',0]});
+for(const id of ['freeza2E','freeza2B'])if(ET[id])Object.assign(ET[id],{col:'#ff5aa0',col2:'#ff9ad0'}); // rayos rosas y Death Ball
+if(ET.demonS)Object.assign(ET.demonS,{n:'PUI PUI',col:'#5af0c8'}); // guerrero de Babidi, ki turquesa
+if(ET.demonS2)Object.assign(ET.demonS2,{n:'YAMU',col:'#b06aff'}); // esbirro de Babidi, ki morado
+Object.assign(ENEMIGO_HEROE,{geroE:['e_gero',0]});
+// 3 nov.: plan «sprites para casa» (tanda 3)
+Object.assign(ENEMIGO_HEROE,{appuleE:['e_appule',0],cuiE:['cui',0],blueE:['e_blue',0],murasakiE:['e_murasaki',0],reycoldB:['reycold',0]});
+Object.assign(ET.appuleE,{col:'#5aa0ff'});Object.assign(ET.cuiE,{col:'#b06aff'});Object.assign(ET.murasakiE,{col:'#d0d0e0'});Object.assign(ET.reycoldB,{col:'#ff5aa0',col2:'#ffd23f'});
+for(const k of ['namek','freezer','yardrat','vegetasei'])if(MAPS[k])MAPS[k].pool.push([150,'appuleE',2],[300,'cuiE',2]);
+for(const k of ['redribbon','musculo','capsule'])if(MAPS[k])MAPS[k].pool.push([120,'murasakiE',2],[280,'blueE',2]);
+Object.assign(ENEMIGO_HEROE,{slugB:['slug',0],zangyaE:['e_zangya',0]});
+Object.assign(ET.slugB,{col:'#ffd23f'});Object.assign(ET.zangyaE,{col:'#7af04a'});
+for(const k of ['pradera','desierto','bosque','lookout'])if(MAPS[k])MAPS[k].pool.push([180,'zangyaE',2],[260,'zangyaE',1]);
+Object.assign(ENEMIGO_HEROE,{myuuB:['e_myuu',0],super17B:['super17',0],omegaB:['omega',0]});
+Object.assign(ET.myuuB,{col:'#7af04a'});Object.assign(ENEMIGO_HEROE,{gasB:['gas',0]});Object.assign(ENEMIGO_HEROE,{magettaE:['magetta',0]});
+Object.assign(ENEMIGO_HEROE,{silverE:['e_silver',0],tambourineE:['e_tambourine',0],drumE:['e_drum',0]});Object.assign(ET.tambourineE,{col:'#ffd23f'});Object.assign(ET.drumE,{col:'#ffd23f'});
+for(const k of ['redribbon','musculo'])if(MAPS[k])MAPS[k].pool.push([150,'silverE',2]);for(const k of ['budokai','lookout','kame','paoz'])if(MAPS[k])MAPS[k].pool.push([160,'tambourineE',2],[280,'drumE',2]);
+Object.assign(ENEMIGO_HEROE,{recoomeE:['e_recoome',0],a13E:['a13',0],a14E:['a14',0],metalcoolerB:['metalcooler',0]});Object.assign(ET.recoomeE,{col:'#ff5aa0'});Object.assign(ET.a13E,{col:'#ff3a4a'});Object.assign(ET.metalcoolerB,{col:'#ff6ad0',col2:'#ffd0f0'});
+for(const k of ['namek','freezer','yardrat'])if(MAPS[k])MAPS[k].pool.push([260,'recoomeE',2]);for(const k of ['tierra','redribbon','desierto'])if(MAPS[k])MAPS[k].pool.push([200,'a14E',2],[300,'a13E',2]);Object.assign(ET.magettaE,{col:'#ff7a2a'});for(const k of ['poder','bills'])if(MAPS[k])MAPS[k].pool.push([240,'magettaE',2]);Object.assign(ET.gasB,{col:'#ff6aff'});Object.assign(ET.super17B,{col:'#ffd23f'});Object.assign(ET.omegaB,{col:'#ff5aa0',col2:'#ffb040'});if(ET.geroE)ET.geroE.col='#ff5a8a'; // Androide 20: rayo de los ojos
+// 4 nov.: Rey Gomah (jefe) y Nuova Shenron (élite)
+Object.assign(ENEMIGO_HEROE,{gomahB:['gomah',0],nuovaE:['nuova',0],namE:['e_nam',0],hatchiyackE:['hatchiyack',0]});
+Object.assign(ET.gomahB,{col:'#c050ff'});Object.assign(ET.nuovaE,{col:'#ff8a20'});
+for(const k of ['time','volcan'])if(MAPS[k])MAPS[k].pool.push([220,'nuovaE',2]);
+Object.assign(ENEMIGO_HEROE,{glorioE:['glorio',0]});Object.assign(ENEMIGO_HEROE,{dyspoE:['dyspo',0]});Object.assign(ET.dyspoE,{col:'#ff8a20'});for(const k of ['poder'])if(MAPS[k])MAPS[k].pool.push([180,'dyspoE',2]);Object.assign(ET.glorioE,{col:'#7af04a'});for(const k of ['kaioshin','infierno'])if(MAPS[k])MAPS[k].pool.push([200,'glorioE',2]);
+for(const k of ['budokai','kame','lookout'])if(MAPS[k])MAPS[k].pool.push([140,'namE',2]);for(const k of ['capsule','desierto','infierno'])if(MAPS[k])MAPS[k].pool.push([260,'hatchiyackE',2]);Object.assign(ET.hatchiyackE,{col:'#3ad83a'});
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);
@@ -2953,7 +3316,7 @@ function loop(now){
   try{
   if(state==='play')update(dt);
   if(state==='dying'){P.dead+=dt;cam.shake=Math.max(cam.shake||0,P.dead<0.3?3:0);if(P.dead>1.8){P.dead=0;endGame(false)}}
-  if(state==='title'||state==='maps'||state==='mine'||state==='gacha'||state==='credits'||state==='train'||state==='forge'){demoT+=dt;MAPK=Object.keys(WORLD)[Math.floor(demoT/12)%Object.keys(WORLD).length];cam.x=Math.sin(demoT*0.05)*400+demoT*12;cam.y=Math.cos(demoT*0.04)*300;ctx.fillStyle='#000';ctx.fillRect(0,0,VW,VH);drawWorld(now/1000);drawTitleDemo(now/1000)}
+  if(state==='title'||state==='maps'||state==='mine'||state==='gacha'||state==='credits'||state==='train'||state==='forge'){demoT+=dt||0;if(!isFinite(demoT))demoT=0;MAPK=Object.keys(WORLD)[Math.floor(demoT/12)%Object.keys(WORLD).length];cam.x=Math.sin(demoT*0.05)*400+demoT*12;cam.y=Math.cos(demoT*0.04)*300;ctx.fillStyle='#000';ctx.fillRect(0,0,VW,VH);drawWorld(now/1000);drawTitleDemo(now/1000)}
   else if(S)render(now/1000);
   actualizarRadarAnimado();present()}catch(err){console.error(err)}
   requestAnimationFrame(loop)}
@@ -3125,9 +3488,15 @@ let PACK_CREDITS=window.RECURSOS_CREDITOS||[];
 // hojas de DeviantArt usadas para enemigos (sesión 9); los coautores son los que cita cada ficha
 PACK_CREDITS=PACK_CREDITS.concat([
  {what:'Soldado de Freezer (enemigo)',name:'TheWarriorFF2 / Spir1tSolo; con Que, qsab101, DyanDisel, Izanagi797, Orumaitoobeso, Reeck495, MV95, MANIKDX y Papuro Tenkikujimo',url:'https://www.deviantart.com/thewarriorff2/art/Frieza-s-Soldier-1-Sprite-Sheet-856331851'},
- {what:'Capitán Ginyu (jefe)',name:'Strice12; con azazel300, JustOruma, MrDryy, Godkuuxfy, MAST3RK1LL3R171, GZ52, arisrad, AlanBrito962 y MatheusAnimaa',url:'https://www.deviantart.com/strice12/art/Sheet-Sprite-Ginyu-Ulsw-1161968207'},
+ {what:'Capitán Ginyu (jefe y jugable)',name:'Strice12; con azazel300, JustOruma, MrDryy, Godkuuxfy, MAST3RK1LL3R171, GZ52, arisrad, AlanBrito962 y MatheusAnimaa',url:'https://www.deviantart.com/strice12/art/Sheet-Sprite-Ginyu-Ulsw-1161968207'},
  {what:'Suelos, árboles y rocas de los escenarios (CC0)',name:'Pixel-Boy y AAA, Ninja Adventure Asset Pack',url:'https://pixel-boy.itch.io/ninja-adventure-asset-pack'},
- {what:'Jeice (enemigo de élite)',name:'MrDryy; faceset de MAST3RK1LL3R171; con Qsab101, ErickJCrack507, Scarlettdancer2627, JustOruma, Arisrad y Yasertheblack',url:'https://www.deviantart.com/mrdryy/art/Jeice-Sprite-Sheet-ULSW-1145996714'}]);
+ {what:'Jeice (enemigo de élite y jugable)',name:'MrDryy; faceset de MAST3RK1LL3R171; con Qsab101, ErickJCrack507, Scarlettdancer2627, JustOruma, Arisrad y Yasertheblack',url:'https://www.deviantart.com/mrdryy/art/Jeice-Sprite-Sheet-ULSW-1145996714'},
+ // personajes jugables de DeviantArt (sesión 10, traídos de la rama claude/quizzical-gates-9cf9c0); Ginyu y Jeice usan las hojas de arriba
+ {what:'Nappa (jugable)',name:'Strice12; con AlquimistaSK, GABY361, SheriffSyler, AThePro013, MrDryy, JCO2003, Scarlettdancer2627 y Diego Tesfaye',url:'https://www.deviantart.com/strice12/art/Nappa-sheet-sprite-ulsw-1107877711'},
+ {what:'Guldo (jugable)',name:'Strice12; con JCO2003, BrolyGamer096, Marcowwwww, JustOruma, Pedrocarlos877, MrDryy y AlquimistaSK',url:'https://www.deviantart.com/strice12/art/Guldo-Sheet-Sprite-Ulsw-1154137000'},
+ {what:'Uub (jugable)',name:'Strice12; con ErickJCrack507, MrDryy, Godkuufy, JustOruma, Scarlettdancer2627, AS02X y pedrocarlos8772',url:'https://www.deviantart.com/strice12/art/Uub-Sheet-Sprite-Ulsw-1157141190'},
+ {what:'Mr. Satán (jugable)',name:'JayHyperStarX',url:'https://www.deviantart.com/jayhyperstarx/art/Hercule-Satan---Sprite-Sheet-1039720310'},
+ {what:'Androide 21 (jugable)',name:'arisrad; combinada con hojas de GMInazuma y ErickJCrack507; con Mattfv y LUISFCX12; banner de R0N1N60',url:'https://www.deviantart.com/arisrad/art/android-21-swl-sprite-sheet-by-ARIS-RAD-1131494602'}]);
 (()=>{const m=window.SPRITE_MANIFEST;if(!m)return;PACK_CREDITS=PACK_CREDITS.concat(m.credits||[]);
   const load=(url,cb)=>{const im=new Image();im.onload=()=>{const c=mk(im.width,im.height);c.getContext('2d').drawImage(im,0,0);cb(c);if(state==='title')buildCards()};im.src='sprites/'+url};
   const strip=(c,n)=>{const w=Math.floor(c.width/n),out=[];for(let i=0;i<n;i++){const o=mk(w,c.height);o.getContext('2d').drawImage(c,i*w,0,w,c.height,0,0,w,c.height);out.push(o)}return out};
@@ -3167,19 +3536,32 @@ function showTitle(){state='title';if(started)openHub();else{hideMenus();$('#sta
   const n=misReady();if(n)$('#bTrain').dataset.n=n;else delete $('#bTrain').dataset.n;buildCards()}
 // character cards
 const cardTimers=[];
+// estadísticas con colores: vida verde, velocidad azul, ataque rojo; la barra compara con el resto de personajes
+// forma que enseña la tarjeta: la más alta que tengas despertada con Shenron y que tenga cara propia
+function topForm(id){const H=HEROES[id];if(!H||!H.forms)return 0;for(let f=formasAbiertas(id);f>0;f--)if(faceExact(id,f))return f;return 0}
+let STAT_RANGE=null;
+function statRange(){if(STAT_RANGE)return STAT_RANGE;const r={hp:[1e9,0],spd:[1e9,0],atk:[1e9,0]};
+  for(const id in HEROES){const H=HEROES[id];if(H.npc||H.custom||!spriteHero(id))continue;for(const k in r){r[k][0]=Math.min(r[k][0],H[k]);r[k][1]=Math.max(r[k][1],H[k])}}return STAT_RANGE=r}
+function statBars(H){const r=statRange(),row=(k,cl,lb,v)=>{const[a,b]=r[k],f=b>a?(H[k]-a)/(b-a):1,pc=Math.round(15+85*clamp(f,0,1));
+    return `<span class="sb ${cl}"><b>${lb}</b><i><em style="width:${pc}%"></em></i><span>${v}</span></span>`};
+  return `<span class="sBars">${row('hp','hp','VIDA',H.hp)}${row('spd','spd','VEL',H.spd)}${row('atk','atk','ATQ','x'+H.atk)}</span>`}
+// el personaje como en partida dentro de cada tarjeta (guardia de la forma base); solo se dibujan las tarjetas visibles
+function drawCardSprites(t){const vh=innerHeight;document.querySelectorAll('#chars .cardSpr').forEach(c=>{const r=c.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;
+  const id=c.dataset.id,g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);g.imageSmoothingEnabled=false;let im=null;
+  const o=scHero(id,+c.dataset.f||0);if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[Math.floor(t*6)%A.R.length]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
+  if(!im)return;const fit=Math.min((c.height-6)/im.height,(c.width-6)/im.width),k=fit>=2?2:fit>=1.5?1.5:Math.min(1,fit);
+  g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-4,28,5,0,0,TAU);g.fill();
+  g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-2-im.height*k),Math.round(im.width*k),Math.round(im.height*k))})}
 function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(clearInterval);cardTimers.length=0;const sv=loadSave();heroMigrate(sv);unlockAll(sv);
   const ids=Object.keys(HEROES).filter(spriteHero).sort((a,b)=>(!sv.owned[a])-(!sv.owned[b]));
   for(const id of ids){const H=HEROES[id],own=!!sv.owned[id]||id==='gokuui',b=document.createElement('button');b.type='button';b.className='card'+(own?'':' locked');
     const img=document.createElement('img');img.className='cardFace';
-    const f0=faceOf(id,0)||(MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():'');
-    img.src=f0||'';img.alt=H.name;
-    b.appendChild(img);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
-    b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p><span class="stats"><span class="statVida">VIDA ${H.hp}</span> · <span class="statVel">VEL ${H.spd}</span> · <span class="statAtq">ATQ x${H.atk}</span></span>${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
+    const fTop=topForm(id),f0=faceExact(id,fTop)||(MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():'');
+    img.src=f0||'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA=';img.alt=f0?H.name:'';if(!f0)img.classList.add('noFace');
+    b.appendChild(img);const spr=mk(150,170);spr.className='cardSpr';spr.dataset.id=id;spr.dataset.f=fTop;b.appendChild(spr);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
+    b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p>${statBars(H)}${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
     b.dataset.id=id;b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
-    if(own&&H.forms&&H.forms.length>1){let form=0;cardTimers.push(setInterval(()=>{
-      if(state!=='title')return;form=(form+1)%H.forms.length;
-      const fn=faceOf(id,form);if(fn&&img.src!==fn)img.src=fn;
-    },2500))}}
+    }
   $('#wallet').textContent=`Tickets: ${sv.tickets} · Zeni: ${sv.zeni} · Personajes: ${Object.keys(HEROES).filter(k=>spriteHero(k)&&sv.owned[k]).length}/${Object.keys(HEROES).filter(spriteHero).length}`}
 // ---------- Crea tu guerrero: player-made heroes from any PNG, stored only in this browser ----------
 const CTYPES={bal:{n:'Equilibrado',hp:115,spd:62,atk:1},str:{n:'Fuerza bruta',hp:105,spd:57,atk:1.15},fast:{n:'Velocidad',hp:95,spd:72,atk:0.95},tank:{n:'Tanque',hp:150,spd:54,atk:0.9,regen:0.4}};
@@ -3285,21 +3667,30 @@ function hubRefresh(){const s=loadSave(),best=loadBest(),id=companion(),H=HEROES
   buildHub();evTick()}
 function evTick(){const b=gBanners()[0];if(!b.f5||!HEROES[b.f5]){$('#hEvent').hidden=true;return}$('#hEvent').hidden=false;$('#hEvent').innerHTML=`<b>¡DESEO DESTACADO: ${HEROES[b.f5].name}!</b> Termina en ${countdown(b.ends-Date.now())}`}
 function openHub(){hideMenus();state='title';$('#hub').hidden=false;hubRefresh();
-  let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;if(++n%8===0)evTick()},120)}
+  let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;drawHubComp();if(++n%8===0)evTick()},120)}
+// compañero del menú de lado, como en partida (igual que la selección)
+function drawHubComp(){const c=$('#hCompC');if(!c)return;const id=companion(),g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);g.imageSmoothingEnabled=false;
+  const o=scHero(id,topForm(id));let im=null;if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[Math.floor(performance.now()/160)%A.R.length]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
+  if(!im)return;const fit=Math.min((c.height-8)/im.height,(c.width-8)/im.width),k=fit>=2?2:fit>=1.5?1.5:Math.min(1,fit);
+  g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-5,30,5,0,0,TAU);g.fill();g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-3-im.height*k),Math.round(im.width*k),Math.round(im.height*k))}
 function enterGame(){if(started)return;started=true;initAudio();sfx('level');openHub()}
 // ficha del personaje: recorre sus formas mostrando guardia, combo, patada y ki con los sprites reales
 const rosterAnim={id:null,t0:0,on:0};
 function drawRosterAnim(){const c=$('#rPrevC'),g=c.getContext('2d'),id=rosterAnim.id,H=HEROES[id];g.clearRect(0,0,c.width,c.height);if(!H)return;
-  const t=(performance.now()-rosterAnim.t0)/1000,nf=(H.forms||[0]).length,form=Math.floor(t/4)%nf,seq=['Idle','Attack','Idle','Kick','Cast','Pow'],an=seq[Math.floor(t/0.67)%seq.length];
+  const t=(performance.now()-rosterAnim.t0)/1000,form=rosterAnim.form||0,seq=['Idle','Attack','Idle','Kick','Cast','Pow'],an=seq[Math.floor(t/0.67)%seq.length];
   const o=scHero(id,form);if(!o)return;const A=o[an]||o.Idle;if(!A||!A.R.length)return;const im=A.R[Math.floor(t*8)%A.R.length],k=Math.min(2,(c.height-6)/im.height,(c.width-4)/im.width);
   g.imageSmoothingEnabled=false;g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-4,22,4,0,0,TAU);g.fill();
-  g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-2-im.height*k),Math.round(im.width*k),Math.round(im.height*k));
-  g.font='8px "Press Start 2P", monospace';g.fillStyle='#ffd23f';g.textAlign='left';g.fillText((H.forms||[])[form]||'',4,10)}
+  g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-2-im.height*k),Math.round(im.width*k),Math.round(im.height*k));}
+// forma que se ve en la ficha: la cara es la de esa forma; si no tiene retrato propio no se pone ninguno
+function rosterForm(d){const id=rosterAnim.id,H=HEROES[id];if(!H)return;const n=(H.forms||[0]).length;rosterAnim.form=((rosterAnim.form||0)+d+n)%n;const f=rosterAnim.form;
+  const face=faceExact(id,f)||(f===0&&MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():null);$('#rPrevImg').src=face||'';$('#rPrevImg').hidden=!face;$('#rNoFace').hidden=!!face;
+  $('#rFormN').textContent=(H.forms||[])[f]||'BASE';$('#rFormL').disabled=$('#rFormR').disabled=n<2;$('#rForm').classList.toggle('one',n<2);
+  const own=!!loadSave().owned[id];$('#rFormLock').hidden=!(own&&f>formasAbiertas(id));if(d)rosterAnim.t0=performance.now()}
 function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
-  const prev=id=>{const H=HEROES[id],f=faceOf(id,0);$('#rPrevImg').src=f||'';$('#rPrevImg').hidden=!f;$('#rPrevName').textContent=H.name;$('#rPrevForms').textContent=(H.forms||[]).join(' · ');$('#rPrev').dataset.id=id;
+  const prev=id=>{const H=HEROES[id];if(rosterAnim.id!==id)rosterAnim.form=topForm(id);$('#rPrevName').textContent=H.name;$('#rPrev').dataset.id=id;$('#rPrevStats').innerHTML=statBars(H);
     // sus técnicas de la serie y el nivel en que se aprenden
-    $('#rPrevMoves').innerHTML=sigList(id).map((m,i)=>MV[m]?`<li><b>Nv ${UNLOCK_LV[i]||1}</b> ${MV[m].name}</li>`:'').join('');rosterAnim.id=id;rosterAnim.t0=performance.now()};
-  if(!rosterAnim.on){rosterAnim.on=1;const loop=()=>{if($('#roster').hidden){rosterAnim.on=0;return}drawRosterAnim();requestAnimationFrame(loop)};loop()}
+    $('#rPrevMoves').innerHTML=sigList(id).map((m,i)=>MV[m]?`<li><b>Nv ${UNLOCK_LV[i]||1}</b> ${MV[m].name}</li>`:'').join('');rosterAnim.id=id;rosterAnim.t0=performance.now();rosterForm(0)};
+  if(!rosterAnim.on){rosterAnim.on=1;const loop=()=>{if($('#roster').hidden){rosterAnim.on=0;return}drawRosterAnim();drawCardSprites(performance.now()/1000);requestAnimationFrame(loop)};loop()}
   $('#chars').querySelectorAll('.card').forEach(b=>{b.onmouseenter=b.onfocus=()=>prev(b.dataset.id)});prev(companion());
   $('#rInfo').innerHTML=`Tienes <b>${all.filter(k=>s.owned[k]).length}</b> de <b>${all.length}</b>. Toca uno tuyo para llevarlo de compañero; los que te faltan se consiguen pidiendo deseos a Shenron.`}
 const SHOP=[{n:'1 TICKET',d:'Un deseo a Shenron',c:120,t:1},{n:'10 TICKETS',d:'Diez deseos con descuento',c:1100,t:10},{n:'50 TICKETS',d:'El pack del guerrero',c:5000,t:50}];
@@ -3319,7 +3710,7 @@ function toggleFull(){if(document.fullscreenElement)document.exitFullscreen();el
   $('#start').onclick=enterGame;addEventListener('keydown',e=>{if(!started&&state==='title'&&!$('#start').hidden)enterGame()});
   $('#hComp').onclick=openRoster;$('#hEvent').onclick=()=>openGacha();
   $('#hSave').onclick=()=>$('#bkSave').click();$('#hMute').onclick=()=>{$('#bMute').click();$('#hMute').textContent=$('#bMute').textContent==='MUDO'?'MUDO':'SONIDO'};$('#hFull').onclick=toggleFull;$('#hSet').onclick=openSettings;
-  $('#rBack').onclick=showTitle;$('#shBack').onclick=showTitle;$('#rkBack').onclick=showTitle;$('#sBack').onclick=showTitle;
+  $('#rBack').onclick=showTitle;$('#rFormL').onclick=()=>rosterForm(-1);$('#rFormR').onclick=()=>rosterForm(1);$('#shBack').onclick=showTitle;$('#rkBack').onclick=showTitle;$('#sBack').onclick=showTitle;
   $('#sMute').onclick=()=>{$('#bMute').click();setLabels()};$('#sFull').onclick=toggleFull;$('#sCol').onclick=()=>{debugSolid=!debugSolid;setLabels()};
   $('#sSave').onclick=()=>$('#bkSave').click();$('#sLoad').onclick=()=>$('#bkLoad').click();$('#sForge').onclick=()=>openForge();$('#sMine').onclick=()=>$('#bMine').click();$('#sCred').onclick=()=>openCredits();
   $('#rosterBox').appendChild($('#chars'))})();

@@ -1,0 +1,70 @@
+{
+ "idle": [
+  10,
+  11
+ ],
+ "move": [
+  16
+ ],
+ "attack": [
+  26,
+  24,
+  25
+ ],
+ "kick": [
+  21,
+  22
+ ],
+ "ki": [
+  40,
+  41
+ ],
+ "pow": [
+  32,
+  33,
+  34
+ ],
+ "hurt": [],
+ "faint": [
+  29
+ ],
+ "portrait": null,
+ "guardia": 0,
+ "espejo": null,
+ "confianza": {
+  "idle": 0.9,
+  "ki": 0.9,
+  "pow": 0.6,
+  "attack": 0.9,
+  "move": 0.9,
+  "kick": 0.9,
+  "faint": 0.9
+ },
+ "efectos": {
+  "rayo": [],
+  "bola": [
+   47,
+   55
+  ],
+  "aura": [
+   3,
+   4
+  ],
+  "estela": [
+   17,
+   18
+  ]
+ },
+ "plantilla": "01_Dragon_Ball_Super/06_Moro/Goku/199_GOKU SSJ 1 CAMISA MEDIA RASGADA DBS MORO, ANDRÉS GAMEN",
+ "pack": "01_Dragon_Ball_Super/05_Broly/Goku/222_GOKU,SSJ BLUE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+ "autor": "ANDRES GAMEN",
+ "origen": "plantilla",
+ "nombre": "01_Dragon_Ball_Super_05_Broly_Goku_222_GOKU_SSJ_BLUE_DBS_BROLY_ANDRES_GAMEN_ANIMATIONS",
+ "motivos": [
+  "no se sabe hacia dónde mira el pack: compruébalo (y pon \"espejo\" si mira a la izquierda)",
+  "falta la animación de daño",
+  "la pose de moverse está muy agachada",
+  "tamaño de píxel distinto en moverse"
+ ],
+ "dudoso": true
+}

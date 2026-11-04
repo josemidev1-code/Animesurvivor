@@ -4,6 +4,9 @@
 
 Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 entradas, una ruta no localizada al generarlo), pruebas rápidas y extracción inicial de utilidades. Comprueba el estado real de Git y los archivos antes de trabajar; este resumen puede quedar desfasado.
 
+> **Siguiente (Josemi, 2 nov.):** ataques personalizados por personaje, usar sus animaciones propias en partida y cuadrar los ataques con las animaciones.
+> **2 nov., noche:** 132 personajes jugables; meter el resto de packs completos siguiendo `PERSONAJES_POR_METER.md`. Selección con personajes de lado y letra Press Start 2P en todo.
+
 ## Proyecto y reglas
 - Juego de supervivencia Dragon Ball para navegador. Debe funcionar abriendo `index.html` con doble clic.
 - Personajes y enemigos: usar sprites de `sprites/`, no dibujarlos por código. Revisar animaciones visualmente; anotar recursos pendientes en `01 - Guía y documentación/SPRITES_PENDIENTES.md`.
@@ -36,3 +39,5 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 
 - 4 nov.: revisadas a ojo las 171 formas. Quitadas muertes que eran rayos/efectos, corregidas SSJ Kaioken (Goku Super), aura de Gohan Místico DBS y daño de Goku Moro UI. Técnicas de villanos sin ataques de otros personajes (Disco Mortal, Puño Invisible, Autodestrucción). `animaciones_juego.js?v=67`, `script.js?v=88`. Pendiente: halo de goku/3 y aura de dlrx/0. Detalle en la bitácora.
 - 4 nov. (tarde): 31 muertes nuevas, SSJ3 con halo, DLRX con su aura, fuera Goku Moro MUI (incompleto). 22 formas sin muerte (su pack no la tiene) se quedan: lo decidió Josemi. `animaciones_juego.js?v=68`, `script.js?v=90`.
+
+- 4 nov. (noche): mezclado `main` local con GitHub (40 commits de otra sesión: 140 personajes jugables, selección 16 bits). Arreglos de modelos de hoy conservados. Versiones: `style.css?v=76`, `animaciones_juego.js?v=109`, `script.js?v=135`. Todo subido.
