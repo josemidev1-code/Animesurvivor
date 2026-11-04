@@ -2284,7 +2284,7 @@ function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypo
   else if(e.boss&&d<e.r+18&&o.Attack){A=o.Attack;i=scFrame(A,t)}
   else if(T.shoot&&o.Cast&&(e.shootT<0.35||e.shootT>T.shoot-0.25)){A=o.Cast;i=e.shootT<0.35?0:Math.min(1,A.R.length-1)}
   else if(A.R.length>1)i=scFrame(A,t);else bob=Math.round(Math.sin(t*6+e.x*0.07)*1);
-  const EC=T.hero?walkCfg(T.hero[0],T.hero[1]):{},EB=o[(EC.base||[])[0]]||o.Idle,im=A===o.Walk&&o.Idle?walkCycle((left?EB.L:EB.R)[Math.min((EC.base||[])[1]||0,EB.R.length-1)],EC)[Math.abs((e.anim*1.2+e.x*0.05)|0)%WALK_N]:(left?A.L:A.R)[i]||A.R[0],z=e.boss?0.62:(T.z||0.5),w=im.width*z,hh=im.height*z;e.dh=hh;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-hh+bob),w,hh);
+  const EC=T.hero?walkCfg(T.hero[0],T.hero[1]):{},EB=o[(EC.base||[])[0]]||o.Idle,WQ=A===o.Walk&&o.Idle?(o.Paso&&o.Paso.R.length>1?(left?o.Paso.L:o.Paso.R):walkCycle((left?EB.L:EB.R)[Math.min((EC.base||[])[1]||0,EB.R.length-1)],EC)):null,im=WQ?WQ[Math.abs((e.anim*1.2+e.x*0.05)|0)%WQ.length]:(left?A.L:A.R)[i]||A.R[0],z=e.boss?0.62:(T.z||0.5),w=im.width*z,hh=im.height*z;e.dh=hh;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-hh+bob),w,hh);
   if(e.flash>0){ctx.globalAlpha=0.55;const wi=e.spr.pkw||(e.spr.pkw={});const key=A===o.Hurt?'h'+left:'x';if(!wi[key])wi[key]=tintC(im,'#ffffff');ctx.drawImage(wi[key],Math.round(x-w/2),Math.round(y-hh+bob),w,hh);ctx.globalAlpha=1}
   // aviso de ataque: «!» parpadeando sobre la cabeza y, al cargar una embestida, la línea por donde va a pasar
   const k=e.atk;if(k&&(k.f==='aviso'||k.f==='carga')){const ax=Math.round(x),ay=Math.round(y-hh-15);
@@ -2891,7 +2891,9 @@ function rotSpr(c,r){const st=Math.round(r/ROT_PASO);if(!st)return c;const K=c._
     if(u>=0&&v>=0&&sx<W4&&sy<H4)o32[Y*D+X]=s4[sy*W4+sx]}
   oc.putImageData(id,0,0);return K[st]=out}
 // inclinación del cuerpo según lo que hace: rayo o ki hacia donde apunta, golpes un poco, vuelo hacia donde va
-function heroTilt(left,mx,my){const nr=a=>{a=(left?a-Math.PI:a);while(a>Math.PI)a-=TAU;while(a<=-Math.PI)a+=TAU;return a},cl=(a,m)=>Math.max(-m,Math.min(m,a));
+function heroTilt(left,mx,my){return 0;// Josemi, 4 nov.: al girar el tronco se veía el corte de la cintura; ahora no se gira nada
+  // (pose de disparo tal cual; el rayo sale de la mano hacia el enemigo). Se deja el código por si se recupera.
+  const nr=a=>{a=(left?a-Math.PI:a);while(a>Math.PI)a-=TAU;while(a<=-Math.PI)a+=TAU;return a},cl=(a,m)=>Math.max(-m,Math.min(m,a));
   if(P.dead||P.hitT>0||(P.powT>0&&!P.moving))return 0;
   // tope de 50° al disparar (a 90° el cuerpo queda tumbado y parece caído; el rayo sigue saliendo de la mano hacia el
   // enemigo), 40° en los golpes y 36° al volar
@@ -3046,7 +3048,7 @@ function render(time){
         // paso: ajustes propios de la forma (andar.js); disparando andando, las piernas siguen el paso y arriba va el
         // tronco del fotograma de disparo, girado hacia el enemigo
         WC=walkCfg(S.hid,P.form),BA=pk[(WC.base||[])[0]]||A0,BI=Math.min((WC.base||[])[1]||0,BA.R.length-1),
-        WK=P.moving&&!P.dead&&!(P.hitT>0)?walkCycle((left?BA.L:BA.R)[BI],WC):null,wf=WK?WK[(P.anim*1.2|0)%WALK_N]:null,
+        WK=P.moving&&!P.dead&&!(P.hitT>0)?(pk.Paso&&pk.Paso.R.length>1?(left?pk.Paso.L:pk.Paso.R):walkCycle((left?BA.L:BA.R)[BI],WC)):null,wf=WK?WK[(P.anim*1.2|0)%WK.length]:null,
         shootW=!!WK&&!fly&&(A===pk.Cast||A===pk.Beam)&&WC.modo!=='flotar',
         SP=!fly&&(shootW||Math.round(tl/ROT_PASO))?bodySplit(im,WC.cadera):null,LS=shootW?bodySplit(wf,WC.cadera):SP,LC=shootW?wf:im,
         lx=Math.round(x-LC.width/2),ly=Math.round(y-LC.height+1+bob),piv=LS?ly+LS.hip:0,
@@ -3216,7 +3218,9 @@ SCPACK.h.vegeta[2]='vegeta-grade';SCPACK.h.gokuui[4]='goku-uic';
 // hand-picked animations (herramientas/animaciones.json -> animaciones_juego.js) replace the pack of that form
 const PORTRAIT={},BUSTO={};
 if(window.ANIM_SET)for(const id in ANIM_SET.h)for(const f in ANIM_SET.h[id]){const F=ANIM_SET.h[id][f],k='as-'+id+'-'+f;SCPACK.s[k]={};
-  for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait;if(F.busto)BUSTO[id+'/'+f]=1}
+  for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}
+  // pasos de verdad generados con Sprite Fusion (andar_frames.js): si están, sustituyen al paso generado por código
+  {const AF=(window.ANDAR_FRAMES||{})[id+'/'+f];if(AF)SCPACK.s[k].Paso=[AF.w,AF.h,AF.du,AF.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait;if(F.busto)BUSTO[id+'/'+f]=1}
 // only hand-picked forms stay: missing forms leave the transformation chain, characters with none leave the game
 var FUERA=new Set(); // Roshi ya tiene sprites propios (3 nov.); antes se ocultaba aquí
 for(const id in HDEF){const D=HDEF[id],A=window.ANIM_SET&&ANIM_SET.h[id];if(D.npc||D.custom)continue;

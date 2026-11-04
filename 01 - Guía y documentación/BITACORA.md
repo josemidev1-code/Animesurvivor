@@ -1248,3 +1248,15 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso
 - Tanda 2: línea de Vegeta (vegeta, vegetaue, vegetagt, vegetasuper, vegetto).
+
+### Nueva petición
+- Josemi: «queda mal porque al inclinar a goku se corta; https://www.spritefusion.com/ creo que se podrá hacer algo mejor; que los sprites caminen con buena animación y disparen con buena animación, y que se aprovechen los ataques de los sprites». Decidido con él: **al disparar no se gira nada** (pose de disparo tal cual, el rayo sale de la mano hacia donde sea) y **Sprite Fusion**: yo preparo una imagen de cada personaje e importo lo que él genere con su cuenta.
+
+### Lo que hice (sin giro al disparar y camino para Sprite Fusion)
+- `script.js?v=146`: al disparar ya no se gira nada (`heroTilt` devuelve 0): pose de disparo tal cual y el rayo sale de la mano. Disparar andando sigue (piernas del paso + tronco del disparo, sin girar).
+- Sprite Fusion: `herramientas/exportar_sprite_fusion.py` dejó 302 imágenes limpias (guardia de cada forma, sin fondo, x4) en `Recursos pendientes/sprite_fusion/entrada/`; Josemi genera con su cuenta y guarda en `salida/` con el mismo nombre (instrucciones en `Recursos pendientes/sprite_fusion/LEEME.md`). `herramientas/importar_sprite_fusion.py` trocea GIF/tiras PNG, quita el fondo, escala a la altura del personaje y escribe `02 - Código del juego/andar_frames.js` (`window.ANDAR_FRAMES`, cargado en `index.html`). El juego usa esos pasos (`Paso`) en jugador y enemigos si existen; si no, el paso generado.
+- Probado con una tira falsa de Goku base (4 pasos): se importa, el juego la usa al andar, sin errores; luego quitada. 6 comprobaciones correctas.
+
+### Pendiente
+- Que Josemi pruebe Sprite Fusion con uno o dos personajes y pase los resultados.
+- Ataques del pack por tandas (`animaciones/ataques.json`), hecho solo Goku base.
