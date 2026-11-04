@@ -1270,3 +1270,8 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Respuesta: los correos temporales no (van contra las normas de Sprite Fusion). Las 302 formas ya tienen ataque, patada y ki reales de su pack; falta el andar. Opciones: gratis por tandas (recomendado) o plan Pro (49 $, ~2.900 créditos para las 193 jugables). Pendiente de que elija; mientras, sigo gratis con la tanda 2 (línea de Vegeta).
 
 ### Lo que hice
+- Inventario: 196 personajes, 302 formas en `animaciones_juego.js`; todas tienen Idle, Walk (pose), Attack, Kick, Cast (ki), Pow y Hurt; 248 con muerte. Ataques extra del pack (`Attack2/3`, `Beam`, `Up`) solo en Goku base. El paso de andar es generado (`walkCycle`); `andar_frames.js` sigue vacío (sin Sprite Fusion).
+- **Tanda 2 del andar (línea de Vegeta, 28 formas)** revisada a ojo con `hojaAndar`: 21 ajustes de cintura en `andar.js` (`?v=3`) donde la mano, el guante o la cola colgaban a la altura de la cadera y se tomaban como pierna. Hoja: `herramientas/_revisar/andar/tanda2.png`. 6 comprobaciones correctas. Copiado al PC de Josemi (`andar.js`, `index.html`).
+
+### Siguiente paso
+- Tanda 3: villanos principales (Freezer, Cell, Buu, Broly, Black…), luego el resto. Después, ataques extra del pack por forma (`animaciones/ataques.json`).
