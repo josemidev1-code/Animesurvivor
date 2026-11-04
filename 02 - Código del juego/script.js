@@ -1495,7 +1495,7 @@ function sigUpdate(dt,ps){
   if(P.combo&&!P.dash){const C=P.combo;if((C.t-=dt)<=0){C.t=0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;let tocado=0;
       near(hx,hy,C.rad+14,e=>{if(Math.hypot(e.x-hx,e.y-hy)<C.rad+e.r){tocado=1;hurt(e,C.dmg,C.d*C.kb*(last?1:MELEE_AJ.empuje),0);if(!e.boss&&(!ET[e.type].elite||(e.golpesR=(e.golpesR||0)+1)%2===0))e.stun=Math.max(e.stun||0,MELEE_AJ.aturde)}});
       for(let i=0;i<5;i++)parts.push({x:hx+C.d*rnd(4,12),y:hy-rnd(4,16),vx:C.d*rnd(20,70),vy:rnd(-40,10),t:0.22,c:C.col[i%2],s:2});
-      if(tocado&&window.PFX)PFX.hit(hx,P.y,C.d,last);
+      if(tocado&&window.PFX)PFX.hit(hx,P.y,C.d,last&&C.dragon);
       if(C.dragon&&last){fxRg.push({x:hx,y:hy-6,t:0,dur:0.5,rad:C.rad*1.6,col:C.col});cam.shake=Math.max(cam.shake||0,6)}
       P.atkT=P.atkD=0.16;P.atkK=C.kick?2:0;P.atkV=(C.v||0)+C.i;P.atkA=C.d>0?0:Math.PI;if(last)P.combo=null}}
   if(P.swing&&!P.dash&&(P.swing.t-=dt)<=0){const G=P.swing,t=G.tg,a=Math.atan2(t.y-P.y,t.x-P.x);P.swing=null;
@@ -2909,6 +2909,11 @@ function drawBeam(b){
   const ox=Math.round(b.x-cam.x),oy=Math.round(b.y-cam.y),t=b.t;
   ctx.save();ctx.translate(ox,oy);ctx.rotate(b.a);
   const C=b.col; // [outer, mid, core]
+  // Kamehameha del jugador con pose de carga del pack (manos atrás, a la altura de la cadera): la bola se forma ahí y pequeña
+  if(t<0&&b.hero&&!b.spiral){const pk=scHero(S.hid,P.form);if(pk&&pk.Beam){ctx.restore();const k=1-(-t)/b.T,d=Math.cos(b.a)<0?-1:1,orb=kiOrb(C),
+      hx=Math.round(P.x-cam.x-d*4),hy=Math.round(P.y-cam.y-12),s=Math.round(4+k*5+((Math.random()*2)|0));
+    if(orb)ctx.drawImage(orb,hx-(s>>1),hy-(s>>1),s,s);else{ctx.fillStyle=C[1];ctx.fillRect(hx-(s>>1),hy-(s>>1),s,s)}
+    for(let i=0;i<4;i++){const a=i/4*TAU+t*9,q=4+(1-k)*10;ctx.fillStyle=i%2?C[2]:C[1];ctx.fillRect(Math.round(hx+Math.cos(a)*q),Math.round(hy+Math.sin(a)*q),1,1)}return}}
   if(t<0){ // charging: growing orb with converging sparks
     const k=1-(-t)/b.T,r=Math.round(2+k*(b.big?9:5)),fl=(Math.random()*2)|0,orb=kiOrb(C);
     if(orb){const d=(r+1+fl)*2.2;ctx.drawImage(orb,Math.round(-d/2),Math.round(-d/2),Math.round(d),Math.round(d))}
