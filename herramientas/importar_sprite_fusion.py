@@ -53,14 +53,17 @@ def trocear(ruta, n=0):
 
 def montar(frs, alto):
     """Escala los fotogramas a la altura del modelo, los apoya en los pies y los pone en tira."""
-    res = []
-    for fr in frs:
-        b = fr.getbbox()
-        if not b: continue
-        fr = fr.crop(b); k = alto / fr.height
-        res.append(fr.resize((max(1, round(fr.width * k)), alto), Image.NEAREST))
-    if len(res) < 2: return None
-    W = max(f.width for f in res) + 2; Hh = alto + 2 + PIE
+    # UNA sola escala para toda la animación (la del fotograma más alto = de pie, igual que el modelo del juego): si se
+    # escala cada fotograma a la misma altura, los pasos con las piernas abiertas se agrandan y el personaje cambia de
+    # tamaño al andar (lo vio Josemi, 4 nov.). Cada fotograma conserva su sube y baja y se apoya en el suelo.
+    frs = [f for f in frs if f.getbbox()]
+    if len(frs) < 2: return None
+    suelo = max(f.getbbox()[3] for f in frs); techo = min(f.getbbox()[1] for f in frs)
+    k = alto / (suelo - techo)
+    izq = min(f.getbbox()[0] for f in frs); der = max(f.getbbox()[2] for f in frs)
+    res = [f.crop((izq, techo, der, suelo)) for f in frs]  # mismo recorte para todos: no salta de sitio
+    res = [f.resize((max(1, round(f.width * k)), max(1, round(f.height * k))), Image.NEAREST) for f in res]
+    W = max(f.width for f in res) + 2; Hh = max(f.height for f in res) + 2 + PIE
     tira = Image.new('RGBA', (W * len(res), Hh), (0, 0, 0, 0))
     for i, fr in enumerate(res): tira.paste(fr, (i * W + (W - fr.width) // 2, Hh - PIE - fr.height), fr)
     bio = io.BytesIO(); tira.save(bio, 'PNG')
