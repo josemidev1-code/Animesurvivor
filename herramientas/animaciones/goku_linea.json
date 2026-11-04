@@ -75,8 +75,8 @@
    "3": {
     "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/147_GOKU SSJ3,SAGA MAJIN BUU,DBZ, ANDRÉS GAMEN ANIMATIONS",
     "idle": [
-     6,
-     7
+     51,
+     52
     ],
     "move": [
      32
@@ -100,10 +100,21 @@
      67
     ],
     "hurt": [
+     48,
+     48
+    ],
+    "portrait": 2,
+    "idleAntes": [
+     6,
+     7
+    ],
+    "hurtAntes": [
      47,
      48
     ],
-    "portrait": 2
+    "faint": [
+     22
+    ]
    },
    "4": {
     "pack": "01_Dragon_Ball_Super/05_Broly/Goku/141_GOKU SSJ BLUE ,DBS BROLY, MEJORADO, BY ANDRÉS GAMEN ANIMATIONS",

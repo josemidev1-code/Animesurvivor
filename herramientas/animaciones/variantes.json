@@ -629,9 +629,8 @@
      72
     ],
     "pow": [
-     63,
-     64,
-     65
+     67,
+     68
     ],
     "hurt": [
      46,
@@ -640,7 +639,12 @@
     "faint": [
      48
     ],
-    "portrait": 84
+    "portrait": 84,
+    "powAntes": [
+     63,
+     64,
+     65
+    ]
    }
   },
   "zombies": {
@@ -1392,35 +1396,6 @@
      146,
      147
     ]
-   },
-   "5": {
-    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/251_fases Goku dbs moro, Damaged.Andres Gamen",
-    "idle": [
-     157,
-     158
-    ],
-    "move": [
-     161
-    ],
-    "attack": [
-     162,
-     163
-    ],
-    "kick": [
-     161,
-     166
-    ],
-    "ki": [
-     165,
-     167
-    ],
-    "pow": [
-     159
-    ],
-    "hurt": [
-     166
-    ],
-    "portrait": 169
    }
   },
   "gokubroly": {
@@ -2123,6 +2098,40 @@
      "41": 4,
      "48": 4
     }
+   }
+  }
+ },
+ "_retiradas": {
+  "gokumoro/5": {
+   "motivo": "MUI: el pack solo trae 12 fotogramas, sin daño ni muerte (4 nov. 2026)",
+   "sel": {
+    "pack": "01_Dragon_Ball_Super/06_Moro/Goku/251_fases Goku dbs moro, Damaged.Andres Gamen",
+    "idle": [
+     157,
+     158
+    ],
+    "move": [
+     161
+    ],
+    "attack": [
+     162,
+     163
+    ],
+    "kick": [
+     161,
+     166
+    ],
+    "ki": [
+     165,
+     167
+    ],
+    "pow": [
+     159
+    ],
+    "hurt": [
+     166
+    ],
+    "portrait": 169
    }
   }
  }

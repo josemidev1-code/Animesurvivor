@@ -1001,3 +1001,15 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Lo que pidió el usuario
 - «mira la carpeta de animesurvivor y vamos a seguir con dragon ball». Revisado el relevo; pendiente de que elija el siguiente paso.
+- «vamos a arreglar todos los modelos, los que no sirvan o esten incompletos fuera».
+
+### Lo que hice (arreglo de modelos)
+- Inventario de las 171 formas: todas tenían guardia, vuelo, puñetazos, patadas, ki, aura, daño y retrato; 55 sin muerte.
+- **Muertes nuevas (31 formas)**, buscadas en su propio pack y revisadas a ojo (tumbado, misma forma): goku/0, goku/2, gokuui/0, gokusuper/0, gokusuper/3, vegeta/0-2 y 4, vegetaue/0-3, vegetagt/0 y 2, vegetasuper/2-3, vegetto/1-2, black/0-2, gogeta/0, gohanadult/0-1, gohan/1-3, bardock/0-1, zombies/0 (en `extras.json`). Descartadas las que salían con otra forma (vegetagt/1 y gokumoro/3-5 tumbados con pelo negro).
+- **goku/3 SSJ3**: guardia `[51, 52]` con halo (antes 6-7 sin halo) y daño `[48, 48]` (el 47 era tumbado); muerte `[22]`.
+- **dlrx/0**: aura `[67, 68]` con su pelo negro (antes 63-65, pelo rosa).
+- **Fuera: gokumoro/5 MUI** (el pack solo trae 12 fotogramas, sin daño ni muerte; el «daño» era un puñetazo). Guardada en `variantes.json` → `_retiradas`. Goku Saga Moro queda con 5 formas.
+- `animaciones_juego.js?v=68`, `script.js?v=90`. Comprobaciones: sintaxis y las 6 `comprobar_*.cjs` correctas; juego cargado sin errores.
+
+### Pendiente
+- 22 formas siguen sin muerte porque su pack no la tiene (el juego usa el daño): e_ginyu/0, gokugt/0-3, cell/0, piccolo/0, gohandbs/2-3, goku/1, goku/4, gokuui/1-4, gokusuper/1, 2, 4, vegetagt/1, bardock/3, gokumoro/3-4. Josemi decide si se quitan.
