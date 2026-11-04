@@ -1,5 +1,5 @@
 {
- "_ayuda": "Ataques extra de cada pack (4 nov. 2026): attack2/attack3 = otros combos (el juego los alterna golpe a golpe), kick2 = otra patada, beam = [carga, disparo] propios de los rayos tipo Kamehameha, up = brazos arriba (Genkidama, Kienzan...), dash = embestida. Si falta alguno, el juego usa el de siempre. throw = pose de lanzar (Genkidama); fxgenki = la esfera de la Genkidama del propio pack, de pequeña a grande.",
+ "_ayuda": "Ataques extra de cada pack (4 nov. 2026): attack2/attack3 = otros combos (el juego los alterna golpe a golpe), kick2 = otra patada, beam = [carga, disparo] propios de los rayos tipo Kamehameha, up = brazos arriba (Genkidama, Kienzan...), dash = embestida. Si falta alguno, el juego usa el de siempre. throw = pose de lanzar (Genkidama); fxgenki = la esfera de la Genkidama del propio pack, de pequeña a grande. trans = secuencia de transformación a la forma siguiente (si el pack la trae).",
  "heroes": {
   "goku": {
    "0": {
@@ -27,6 +27,12 @@
      53,
      54,
      55
+    ],
+    "trans": [
+     49,
+     50,
+     51,
+     52
     ]
    }
   }

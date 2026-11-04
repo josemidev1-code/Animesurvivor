@@ -1487,7 +1487,7 @@ function sigUpdate(dt,ps){
   const L=sigOpen();if(P.sel>=L.length)P.sel=0;
   if(L.length>P.sigN){if(P.sigN)P.newSig={t:3.2,i:L.length-1};P.sigN=L.length}
   if(P.newSig&&(P.newSig.t-=dt)<=0)P.newSig=null;
-  if(P.kaioT>0)P.kaioT-=dt;if(P.throwT>0)P.throwT-=dt;if(P.powT>0)P.powT-=dt;if(P.shieldT>0)P.shieldT-=dt;
+  if(P.kaioT>0)P.kaioT-=dt;if(P.throwT>0)P.throwT-=dt;if(P.transT>0&&(P.transT-=dt)<=0)P.transA=null;if(P.powT>0)P.powT-=dt;if(P.shieldT>0)P.shieldT-=dt;
   for(const a of [fxSl,fxRg])for(let i=a.length-1;i>=0;i--)if((a[i].t+=dt)>=a[i].dur)a.splice(i,1);
   if(window.PFX)PFX.update(dt);
   if(P.dash){const D=P.dash,k=Math.min(1,dt/Math.max(dt,D.t));parts.push({x:P.x+rnd(-4,4),y:P.y-rnd(4,24),vx:0,vy:-8,t:0.25,c:D.c,s:2});
@@ -2139,7 +2139,8 @@ function formaUI(){const b=$('#gForma');if(!b)return;const hid=companion(),H=HER
 // ---------- fin del deseo de transformación
 function checkForm(){const lv=FORM_LV.filter(l=>P.lvl>=l).length-1,f=Math.min(HEROES[S.hid].forms.length-1,formasAbiertas(S.hid),lv);
   if(lv>f&&f<HEROES[S.hid].forms.length-1&&!S.formAviso){S.formAviso=1;S.banner={t:2.6,text:'FORMA BLOQUEADA',sub:'Pídesela a Shenron en el menú'}}
-  if(f>P.form){S.forms+=f-P.form;P.form=f;P.hp=stats().maxhp;
+  // secuencia de transformación del pack de la forma de la que sale (Goku base -> SSJ: 49-52), si la trae
+  if(f>P.form){const TA=(scHero(S.hid,P.form)||{}).Trans;S.forms+=f-P.form;P.form=f;P.hp=stats().maxhp;if(TA){P.transA=TA;P.transT=P.transD=1.2}
   S.banner={t:2.6,text:HEROES[S.hid].forms[f]+'!',sub:'¡Transformación!',trans:1};S.flash=0.5;S.freeze=0.6;P.powT=1.6;cam.shake=8;sfx('trans');
   burst(P.x,P.y-10,60,['#ffd23f','#ffffff','#fff6a8'])}}
 
@@ -3038,7 +3039,7 @@ function render(time){
         ctx.drawImage(im,0,Math.round(im.height*0.6),im.width,im.height-Math.round(im.height*0.6),Math.round(x-w/2),Math.round(y-h+bobY+h*0.6),w,h-Math.round(h*0.6))}
       else if(pk){// moverse y atacar a la vez (Josemi, 2 nov.): golpes, patadas, ki y preparación de técnicas se ven también en vuelo; el aura de poder solo quieto
         const mv=P.moving&&!P.cast&&!P.dead,pw=!mv&&P.powT>0,pd=P.pend,ak=P.atkT>0,
-        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),UP=pk.Up||pk.Pow,atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(varAnim(pk,'Kick',P.atkV)||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(varAnim(pk,'Attack',P.atkV)||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:P.throwT>0&&pk.Throw&&!pd?pk.Throw:pd?(P.pend.pose==='up'&&UP?UP:pk.Cast):P.cast?(pk.Beam||pk.Cast):P.hitT>0?pk.Hurt:P.dash&&pk.Dash?pk.Dash:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&(A===pk.Pow||A===UP)?((time*8|0)%A.R.length):A===pk.Dash?0:pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
+        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),UP=pk.Up||pk.Pow,atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(varAnim(pk,'Kick',P.atkV)||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(varAnim(pk,'Attack',P.atkV)||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):P.transA&&P.transT>0?P.transA:pw&&pk.Pow?pk.Pow:P.throwT>0&&pk.Throw&&!pd?pk.Throw:pd?(P.pend.pose==='up'&&UP?UP:pk.Cast):P.cast?(pk.Beam||pk.Cast):P.hitT>0?pk.Hurt:P.dash&&pk.Dash?pk.Dash:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):A===P.transA?Math.min(A.R.length-1,Math.floor((1-P.transT/P.transD)*A.R.length*1.15)):(pw||(pd&&P.pend.pose==='up'))&&(A===pk.Pow||A===UP)?((time*8|0)%A.R.length):A===pk.Dash?0:pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
         // vuelo bajo al moverse: la pose de impulso se despega 3 px de la sombra y flota (0, 1, 2, 1 px) a 8 pasos por segundo;
         // sube y baja poco a poco al arrancar y al pararse, y la sombra se queda en el suelo
         A0=pk.Idle,bob=-Math.round(P.hov=(P.hov||0)+(0-(P.hov||0))*0.25),

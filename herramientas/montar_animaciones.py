@@ -15,10 +15,10 @@ from PIL import Image
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SPRITES = os.path.join(RAIZ, 'sprites')
 # nombre en el juego -> duración por defecto de cada fotograma (ticks de 1/60 s)
-DUR = {'Idle': 24, 'Walk': 8, 'Attack': 5, 'Kick': 6, 'Cast': 12, 'Pow': 6, 'Hurt': 10, 'Faint': 14, 'Attack2': 5, 'Attack3': 5, 'Kick2': 6, 'Beam': 12, 'Up': 6, 'Dash': 8, 'Throw': 6, 'FxGenki': 6}
+DUR = {'Idle': 24, 'Walk': 8, 'Attack': 5, 'Kick': 6, 'Cast': 12, 'Pow': 6, 'Hurt': 10, 'Faint': 14, 'Attack2': 5, 'Attack3': 5, 'Kick2': 6, 'Beam': 12, 'Up': 6, 'Dash': 8, 'Throw': 6, 'FxGenki': 6, 'Trans': 9}
 CLAVES = {'idle': 'Idle', 'move': 'Walk', 'attack': 'Attack', 'kick': 'Kick', 'ki': 'Cast', 'pow': 'Pow', 'hurt': 'Hurt', 'faint': 'Faint',
           # ataques extra del pack (4 nov.): más combos, pose propia de rayo, brazos arriba y embestida
-          'attack2': 'Attack2', 'attack3': 'Attack3', 'kick2': 'Kick2', 'beam': 'Beam', 'up': 'Up', 'dash': 'Dash', 'throw': 'Throw', 'fxgenki': 'FxGenki'}
+          'attack2': 'Attack2', 'attack3': 'Attack3', 'kick2': 'Kick2', 'beam': 'Beam', 'up': 'Up', 'dash': 'Dash', 'throw': 'Throw', 'fxgenki': 'FxGenki', 'trans': 'Trans'}
 PIE = 4  # el juego recorta 4 filas de la parte de abajo de cada celda
 ALTO_BASE = 52  # alto en píxeles de la postura de guardia de un adulto (ver "altura" en cada forma)
 
