@@ -3441,6 +3441,157 @@
      25
     ]
    }
+  },
+  "glorio": {
+   "0": {
+    "pack": "03_Daima/DeviantArt/478_GLORIO (ChrisReinerVV)",
+    "idle": [
+     34,
+     35
+    ],
+    "move": [
+     2
+    ],
+    "attack": [
+     16,
+     17,
+     18
+    ],
+    "kick": [
+     25,
+     29
+    ],
+    "ki": [
+     42,
+     43,
+     44
+    ],
+    "pow": [
+     37,
+     38
+    ],
+    "hurt": [
+     13,
+     14
+    ],
+    "faint": [
+     15
+    ]
+   }
+  },
+  "gohanfut": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/476_GOHAN DEL FUTURO (BlackSanYT)",
+    "idle": [
+     10,
+     11,
+     12
+    ],
+    "move": [
+     17
+    ],
+    "attack": [
+     30,
+     31,
+     24
+    ],
+    "kick": [
+     34,
+     35
+    ],
+    "ki": [
+     62,
+     63,
+     65
+    ],
+    "pow": [
+     60,
+     61
+    ],
+    "hurt": [
+     53,
+     55
+    ],
+    "faint": [
+     58
+    ]
+   }
+  },
+  "kibito": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/479_KIBITO (Dryy7)",
+    "idle": [
+     3,
+     4
+    ],
+    "move": [
+     9
+    ],
+    "attack": [
+     37,
+     38,
+     42
+    ],
+    "kick": [
+     40,
+     46
+    ],
+    "ki": [
+     57,
+     58,
+     59
+    ],
+    "pow": [
+     54,
+     55
+    ],
+    "hurt": [
+     34,
+     35
+    ],
+    "faint": [
+     36
+    ]
+   }
+  },
+  "dyspo": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/481_DYSPO (Omegasuper)",
+    "idle": [
+     0,
+     1,
+     2
+    ],
+    "move": [
+     20
+    ],
+    "attack": [
+     24,
+     25,
+     26
+    ],
+    "kick": [
+     37,
+     44
+    ],
+    "ki": [
+     108,
+     109,
+     110
+    ],
+    "pow": [
+     81,
+     82,
+     83
+    ],
+    "hurt": [
+     63,
+     65
+    ],
+    "faint": [
+     68
+    ]
+   }
   }
  }
 }

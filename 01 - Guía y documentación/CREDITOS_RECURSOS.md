@@ -176,6 +176,10 @@ Cuarta tanda (3 nov.):
 | Trunks GT | **Breckhhh** | [hoja en DeviantArt](https://www.deviantart.com/breckhhh/art/1131247491) | Jugable |
 | Hatchiyack | **BLZofOZ** (base de Freezer de Legendary Super Warriors; auras de Devons, rayos de Angryboy) | [hoja en DeviantArt](https://www.deviantart.com/blzofozz/art/208215858) | Jugable y élite en la Ciudad del Oeste, el Desierto y el Infierno |
 | Nam | **LSW-Sprite** (autor original anónimo) | [DB Nam sprite sheet](https://www.deviantart.com/lsw-sprite/art/635413041) | Élite en el Budokai, Kame House y el Templo (sin ki ni aura: no es jugable) |
+| Glorio | **ChrisReinerVV** | [Glorio Sprite Sheet Ulsw](https://www.deviantart.com/chrisreinervv/art/1267982920) | Jugable y élite en el Mundo Kaioshin y el Infierno |
+| Gohan del futuro | **BlackSanYT** | [Gohan(Future) Sprite Sheet Ultimate Lsw](https://www.deviantart.com/blacksanyt/art/895673269) | Jugable |
+| Kibito | **Dryy7** | [Kibito ULSW](https://www.deviantart.com/dryy7/art/923469276) | Jugable |
+| Dyspo | **Omegasuper** (edición; créditos a Que) | [Dyspo ULSW](https://www.deviantart.com/omegasuper/art/807041424) | Jugable y élite en el Torneo del Poder |
 
 Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los namekianos de ziglepaz y los hijos del Rey Piccolo de CaptainDutch son dibujos sueltos sin animación. Ribrianne (JPEG muy pequeño y con ruido) y Zeno (solo 3 poses) se descartan. «Yakon y otros» (suten94) y «DAIMA varios» (AS02X) son una pose por personaje: quedan para enemigos de una sola pose.
 

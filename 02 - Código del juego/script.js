@@ -711,6 +711,10 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
+ dyspo:{name:'DYSPO',rar:4,hp:110,spd:82,atk:1.2,start:'dysposlash',desc:'El más rápido de las Tropas del Orgullo: golpes a la velocidad de la luz.',forms:['BASE'],aura:['purple'],sig:['dysposlash','dyspoball','kick','dysposhoot','punch']},
+ kibito:{name:'KIBITO',rar:3,hp:110,spd:66,atk:1.0,start:'kibitowave',desc:'El guardaespaldas del Supremo Kaioshin: teletransporte, ondas paralizantes y curación.',forms:['BASE'],aura:['white'],sig:['kiblast','kibitoslash','kibitowave','kick','kibitoheal']},
+ gohanfut:{name:'GOHAN DEL FUTURO',rar:4,hp:120,spd:68,atk:1.2,start:'gohanfutkame',desc:'El último guerrero Z de la línea de Trunks: manco, Super Saiyan y sin rendirse jamás.',forms:['SUPER SAIYAN'],aura:['gold'],sig:['kiblast','gohanfutrush','gohanfutkame','kick','masenko']},
+ glorio:{name:'GLORIO',rar:4,hp:110,spd:70,atk:1.15,start:'gloriogun',desc:'El agente de Gomah en Daima: pistola, magia del Reino Demoníaco y barreras.',forms:['BASE'],aura:['purple'],sig:['gloriogun','punch','gloriowave','kick','glorioshield']},
  hatchiyack:{name:'HATCHIYACK',rar:4,hp:135,spd:62,atk:1.2,start:'revenger',desc:'La máquina de venganza tsufur: se alimenta de odio y lanza el Revenger Cannon.',forms:['BASE'],aura:['green'],sig:['kiblast','punch','revenger','kick','tsufurwave','hatchiwave']},
  trunksgt:{name:'TRUNKS GT',rar:3,hp:110,spd:68,atk:1.1,start:'trunksbuster',desc:'Trunks adulto en el viaje de GT: presidente de la Corporación Cápsula y guerrero veterano.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','trunksbuster','kick','trunksflash']},
  nuova:{name:'NUOVA SHENRON',rar:4,hp:135,spd:64,atk:1.2,start:'nuovafire',desc:'El dragón de la Esfera de Cuatro Estrellas: guerrero de fuego con honor.',forms:['BASE'],aura:['red'],sig:['nuovafire','novastrike','kick','nuovasun','punch']},
@@ -1267,6 +1271,17 @@ Object.assign(MV,{
  revenger:BEAM('Revenger Cannon',['#3ad83a','#a0ffa0','#ffffff'],2.8,28,10,260,10,0.3),
  tsufurwave:BIG('Onda Tsufur',['#d82a2a','#ff8a5a','#ffe0c0','#ffffff'],3.4,32,12,32,115),
  hatchiwave:NOVA('Aura de Venganza',['#3ad83a','#c0ffa0','#ffffff'],7,22,8,70,0.3),
+ gloriogun:SHOT('Pistola de Glorio',['#7af04a','#d0ffa0','#ffffff'],0.8,10,4,2,420,{pierce:1}),
+ gloriowave:BEAM('Onda Mágica',['#a03ad8','#e06aff','#ffffff'],2.6,24,9,250,7,0.2),
+ glorioshield:NOVA('Barrera Mágica',['#c050ff','#f0c0ff','#ffffff'],7,18,6,60,0,{shield:1}),
+ gohanfutkame:BEAM('Kamehameha del Futuro',['#3ad8ff','#a0f0ff','#ffffff'],2.6,28,10,260,9,0.25),
+ gohanfutrush:MELEE('Furia del Último Guerrero',['#ffd23f','#fff3a0'],'punch',1.1,15,6,3,110,30,{kb:120}),
+ kibitoslash:MELEE('Corte de Kibito',['#ff8ad0','#ffffff'],'punch',0.9,13,5,2,110,28,{kb:110}),
+ kibitowave:NOVA('Onda Paralizante',['#a0f0ff','#ffffff'],7,16,6,70,0.6),
+ kibitoheal:NOVA('Curación Divina',['#7af04a','#d0ffa0','#ffffff'],9,8,3,50,0,{heal:1}),
+ dysposlash:MELEE('Golpe Relámpago',['#c0a0ff','#ffffff'],'kick',0.7,11,5,3,130,26,{kb:100}),
+ dyspoball:SHOT('Bola de Justicia',['#ff8a20','#ffd23f','#fff3c0'],1.0,12,5,2,380),
+ dysposhoot:BIG('Super Maximum Light Speed',['#ff5a10','#ffb040','#fff3c0','#ffffff'],3.2,30,11,30,140),
  nuovafire:SHOT('Disparo Ígneo',['#ff6a10','#ffc040','#fff3c0'],1.0,13,5,2,330),
  novastrike:MELEE('Nova Strike',['#ff8a20','#ffe0a0'],'punch',1.3,18,7,2,150,34,{kb:160}),
  nuovasun:BIG('Gran Bola de Fuego',['#d84010','#ff9a3a','#ffe080','#ffffff'],3.6,38,13,36,110),
@@ -1443,7 +1458,11 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  gomah:['kiblast','gomahstaff','gomahwave','kick','gomahball'],
  nuova:['nuovafire','novastrike','kick','nuovasun','punch'],
  trunksgt:['kiblast','punch','trunksbuster','kick','trunksflash'],
- hatchiyack:['kiblast','punch','revenger','kick','tsufurwave','hatchiwave']};
+ hatchiyack:['kiblast','punch','revenger','kick','tsufurwave','hatchiwave'],
+ glorio:['gloriogun','punch','gloriowave','kick','glorioshield'],
+ gohanfut:['kiblast','gohanfutrush','gohanfutkame','kick','masenko'],
+ kibito:['kiblast','kibitoslash','kibitowave','kick','kibitoheal'],
+ dyspo:['dysposlash','dyspoball','kick','dysposhoot','punch']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 // 3 nov.: técnicas propias del plan «sprites para casa»
 Object.assign(SIGS,{yamcha:['kiblast','rogafu','kick','sokidan','kame'],tenshinhan:['kiblast','punch','kikoho','taiyoken','dodonpa','kick'],
@@ -1599,6 +1618,8 @@ const ET={
  gomahB:{n:'REY GOMAH',boss:1,ai:'frieza'},
  hatchiyackE:{n:'HATCHIYACK',hp:520,spd:62,dmg:15,xp:46,r:8,elite:1,shoot:1.8},
  namE:{n:'NAM',hp:380,spd:66,dmg:13,xp:36,r:8,elite:1},
+ glorioE:{n:'GLORIO',hp:440,spd:68,dmg:14,xp:42,r:8,elite:1,shoot:1.6},
+ dyspoE:{n:'DYSPO',hp:460,spd:84,dmg:14,xp:44,r:8,elite:1,shoot:1.7},
  nuovaE:{n:'NUOVA SHENRON',hp:560,spd:60,dmg:16,xp:48,r:9,elite:1,shoot:1.9},
  magettaE:{n:'MAGETTA',hp:600,spd:48,dmg:16,xp:48,r:10,elite:1,shoot:2.2},
  zangyaE:{n:'ZANGYA',hp:420,spd:64,dmg:14,xp:42,r:8,elite:1,shoot:1.6},
@@ -3171,6 +3192,7 @@ for(const k of ['namek','freezer','yardrat'])if(MAPS[k])MAPS[k].pool.push([260,'
 Object.assign(ENEMIGO_HEROE,{gomahB:['gomah',0],nuovaE:['nuova',0],namE:['e_nam',0],hatchiyackE:['hatchiyack',0]});
 Object.assign(ET.gomahB,{col:'#c050ff'});Object.assign(ET.nuovaE,{col:'#ff8a20'});
 for(const k of ['time','volcan'])if(MAPS[k])MAPS[k].pool.push([220,'nuovaE',2]);
+Object.assign(ENEMIGO_HEROE,{glorioE:['glorio',0]});Object.assign(ENEMIGO_HEROE,{dyspoE:['dyspo',0]});Object.assign(ET.dyspoE,{col:'#ff8a20'});for(const k of ['poder'])if(MAPS[k])MAPS[k].pool.push([180,'dyspoE',2]);Object.assign(ET.glorioE,{col:'#7af04a'});for(const k of ['kaioshin','infierno'])if(MAPS[k])MAPS[k].pool.push([200,'glorioE',2]);
 for(const k of ['budokai','kame','lookout'])if(MAPS[k])MAPS[k].pool.push([140,'namE',2]);for(const k of ['capsule','desierto','infierno'])if(MAPS[k])MAPS[k].pool.push([260,'hatchiyackE',2]);Object.assign(ET.hatchiyackE,{col:'#3ad83a'});
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);

@@ -124,7 +124,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable y enemigo | Cell |
 | ✅ enemigo | Cell Jr. |
 | — | Bulma del futuro |
-| — | Gohan del futuro |
+| ✅ jugable | Gohan del futuro |
 
 ### Dragon Ball Z · Majin Buu (12/25)
 
@@ -140,7 +140,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable y enemigo | Super Buu |
 | ✅ jugable y enemigo | Kid Buu |
 | ✅ jugable | Supremo Kaio-sama (Shin) |
-| — | Kibito |
+| ✅ jugable | Kibito |
 | ✅ jugable | Kibitoshin |
 | — | Viejo Kaioshin |
 | — | Babidi |
@@ -228,7 +228,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable | Gran Sacerdote |
 | ✅ jugable y enemigo | Jiren |
 | ✅ jugable y enemigo | Toppo |
-| — | Dyspo |
+| ✅ jugable y élite | Dyspo |
 | ✅ jugable y enemigo | Kale |
 | ✅ jugable | Caulifla |
 | ✅ jugable | Kefla |
@@ -258,7 +258,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | | Personaje |
 |---|---|
 | ✅ jugable y enemigo | Goku (Daima) |
-| — | Glorio |
+| ✅ jugable y élite | Glorio |
 | — | Panzy |
 | ✅ jugable y jefe | Gomah |
 | — | Degesu |

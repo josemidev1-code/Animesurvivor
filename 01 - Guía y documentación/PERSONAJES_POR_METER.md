@@ -50,6 +50,7 @@ Packs con fotogramas a zooms distintos (Bra 189, Vegeta MUI 303, Rey Mono 138): 
 - Tanda de búsqueda nueva 1: Bulma (459), Recoome (460), Androides 13 y 14 (461-462), Metal Cooler (463), Majin Kuu (464), Merus (465), Coronel Silver (466), Tambourine (467) y Drum (468). Fuera Bujin.
 - Tanda del 4 nov. 1: Rey Gomah (469, jefe del Mundo Kaioshin) y Nuova Shenron (470, élite), con técnicas propias. Hildegarn y Cell Max se quitaron: Josemi solo quiere sprites pequeños, no grandes ni HD. Herramienta nueva `limpiar_ruido.py` para el halo de JPEG; `meter.py alta` acepta `start=` y `sig=`.
 - Tanda del 4 nov. 2: Trunks GT (474, Buster Cannon y Ráfaga de Trunks), Hatchiyack (475, Revenger Cannon, Onda Tsufur y Aura de Venganza; también élite) y Nam (477, solo élite). Descartados de las hojas bajadas: Tapion, Nail, Kaio-sama, «Bubbles» (fanmade), Shugesh y Borgos, Dr. Wheelo, y por grandes Hildegarn, Cell Max, Anilaza y Gohan del futuro.
+- Tanda del 4 nov. 3: Glorio (478), Gohan del futuro de BlackSanYT (476, sustituye a la hoja grande), Kibito (479) y Dyspo (481), con técnicas propias. Bajadas y pendientes de meter: Gamma 1 y 2, Champa, Mr. Popo y Androide 15 (en Recursos pendientes). Babidi descartado (sprite diminuto y pobre).
 
 ## A medias
 
