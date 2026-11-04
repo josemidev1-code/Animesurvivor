@@ -2140,7 +2140,7 @@ function formaUI(){const b=$('#gForma');if(!b)return;const hid=companion(),H=HER
 function checkForm(){const lv=FORM_LV.filter(l=>P.lvl>=l).length-1,f=Math.min(HEROES[S.hid].forms.length-1,formasAbiertas(S.hid),lv);
   if(lv>f&&f<HEROES[S.hid].forms.length-1&&!S.formAviso){S.formAviso=1;S.banner={t:2.6,text:'FORMA BLOQUEADA',sub:'Pídesela a Shenron en el menú'}}
   // secuencia de transformación del pack de la forma de la que sale (Goku base -> SSJ: 49-52), si la trae
-  if(f>P.form){const TA=(scHero(S.hid,P.form)||{}).Trans;S.forms+=f-P.form;P.form=f;P.hp=stats().maxhp;if(TA){P.transA=TA;P.transT=P.transD=1.2}
+  if(f>P.form){const TA=typeof scHero==='function'?(scHero(S.hid,P.form)||{}).Trans:null;S.forms+=f-P.form;P.form=f;P.hp=stats().maxhp;if(TA){P.transA=TA;P.transT=P.transD=1.2}
   S.banner={t:2.6,text:HEROES[S.hid].forms[f]+'!',sub:'¡Transformación!',trans:1};S.flash=0.5;S.freeze=0.6;P.powT=1.6;cam.shake=8;sfx('trans');
   burst(P.x,P.y-10,60,['#ffd23f','#ffffff','#fff6a8'])}}
 
@@ -2175,7 +2175,7 @@ function update(dt){
   const ml=Math.hypot(mx,my);if(ml>1){mx/=ml;my/=ml}
   P.moving=ml>0.05;P.mvx=mx;P.mvy=my;if(!P.moving&&P.atkT>0&&P.atkFace)P.face=P.atkFace;else{P.atkFace=0;if(mx<-0.1)P.face=-1;else if(mx>0.1)P.face=1}
   if(P.cast){P.cast.t-=dt;if(P.cast.t<=0)P.cast=null}
-  const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.85:1)*(S.ev&&S.ev.k==='gravedad'?0.65:S.ev&&S.ev.k==='fusion'?1.35:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
+  const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(P.combo&&!P.dash?0.25:1)*(inW?0.85:1)*(S.ev&&S.ev.k==='gravedad'?0.65:S.ev&&S.ev.k==='fusion'?1.35:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
   if(P.moving){if(Math.abs(mx)>Math.abs(my)*1.1)P.dir='side';else P.dir=my<0?'up':'down'}
   solidMove(P,mx*ps.spd*dt*slow,my*ps.spd*dt*slow,5);islandTick();solidResolve(P,5);crateTick(dt);if(P.moving)P.anim+=dt*9;
   {const st=(P.anim*1.2|0)%WALK_N;if(P.moving&&!P.cast&&!P.dash&&st!==P.lastSt&&(st===2||st===6))for(let i=0;i<3;i++)parts.push({x:P.x+rnd(-5,5),y:P.y-rnd(0,2),vx:-(P.face||1)*rnd(6,22)+rnd(-8,8),vy:-rnd(4,16),t:0.28,c:i?'#e6dcc2':'#c8b896',s:1});P.lastSt=st}
