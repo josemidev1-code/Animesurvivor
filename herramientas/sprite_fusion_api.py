@@ -150,7 +150,7 @@ def animar(arg, prompt=ANDAR, frames=8, clave_sal='andar'):
     if a.get('assetUrl'):
         ext = {'image/gif': '.gif', 'image/webp': '.webp', 'image/png': '.apng.png'}.get(a.get('contentType'), '.bin')
         arch['animacion'] = bajar(a['assetUrl'], os.path.join(SALIDA, f'{nombre}_{clave_sal}_anim{ext}'))
-    E.setdefault('animaciones', []).append({'tipo': clave_sal, 'id': a.get('id'), 'desde': ('pose' + i) if i else 'base', 'prompt': prompt,
+    E.setdefault('animaciones', []).append({'tipo': clave_sal, 'id': a.get('id'), 'desde': (i if i[:1].isalpha() else 'pose' + i) if i else 'base', 'prompt': prompt,
                                             'fotogramas': a.get('frameCount'), 'fps': a.get('fps'), **arch, 'hora': time.strftime('%Y-%m-%d %H:%M')})
     R[nombre] = E; guardar_registro(R)
     print(nombre, ': animación ->', arch, '| quedan', (fin or {}).get('credits', {}).get('remaining'))

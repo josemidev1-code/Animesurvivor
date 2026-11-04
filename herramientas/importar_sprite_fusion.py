@@ -51,33 +51,56 @@ def trocear(ruta, n=0):
     return [im]
 
 
+def montar(frs, alto):
+    """Escala los fotogramas a la altura del modelo, los apoya en los pies y los pone en tira."""
+    res = []
+    for fr in frs:
+        b = fr.getbbox()
+        if not b: continue
+        fr = fr.crop(b); k = alto / fr.height
+        res.append(fr.resize((max(1, round(fr.width * k)), alto), Image.NEAREST))
+    if len(res) < 2: return None
+    W = max(f.width for f in res) + 2; Hh = alto + 2 + PIE
+    tira = Image.new('RGBA', (W * len(res), Hh), (0, 0, 0, 0))
+    for i, fr in enumerate(res): tira.paste(fr, (i * W + (W - fr.width) // 2, Hh - PIE - fr.height), fr)
+    bio = io.BytesIO(); tira.save(bio, 'PNG')
+    return {'w': W, 'h': Hh, 'du': [DU] * len(res), 'url': 'data:image/png;base64,' + base64.b64encode(bio.getvalue()).decode()}
+
+
+def alto_de(fr):
+    b = fr.getbbox(); return b[3] - b[1]
+
+
 def main():
-    H = anim_set(); out = {}
+    H = anim_set(); out = {}; disp = {}
+    # andar disparando: <heroe>_<forma>_disparo_<n>.png, generado desde el fotograma de disparo del pack (registro.json dice cuál)
+    REG = os.path.join(RAIZ, 'Recursos pendientes', 'sprite_fusion', 'registro.json')
+    reg = json.load(open(REG, encoding='utf-8')) if os.path.exists(REG) else {}
+    for nom in sorted(os.listdir(ENTRADA)) if os.path.isdir(ENTRADA) else []:
+        m = re.match(r'(.+?)_(\d+)_disparo_(\d+)\.(png|gif|webp)$', nom)
+        if not m or m.group(1) not in H or m.group(2) not in H[m.group(1)]: continue
+        h, f = m.group(1), m.group(2); A = H[h][f]['anims']
+        hecho = [a for a in reg.get(f'{h}_{f}', {}).get('animaciones', []) if a.get('tipo') == 'disparo']
+        desde = re.sub(r'^pose(?=[A-Z])', '', (hecho[-1].get('desde') if hecho else '') or 'Cast1')
+        an, i = re.match(r'([A-Za-z]+)(\d+)', desde).groups() if re.match(r'[A-Za-z]+\d+$', desde) else ('Cast', '1')
+        ref = fotograma(A[an], int(i)) if an in A else fotograma(A['Idle'])
+        r = montar(trocear(os.path.join(ENTRADA, nom), int(m.group(3))), alto_de(ref))
+        if r: disp[f'{h}/{f}'] = r; print(f'{h}/{f}: andar disparando, {len(r["du"])} pasos (desde {an} {i})')
     if not os.path.isdir(ENTRADA): os.makedirs(ENTRADA)
     for nom in sorted(os.listdir(ENTRADA)):
         base, ext = os.path.splitext(nom)
-        if ext.lower() not in ('.png', '.gif', '.webp'): continue
+        if ext.lower() not in ('.png', '.gif', '.webp') or re.search(r'_(anim|disparo|golpe|pose)', base): continue
         m = re.match(r'(.+?)_(\d+)(?:_(\d+))?$', base)
         if not m or m.group(1) not in H or m.group(2) not in H[m.group(1)]: print('sin forma en el juego:', nom); continue
         h, f = m.group(1), m.group(2)
-        ref = fotograma(H[h][f]['anims']['Idle']); alto = ref.getbbox()[3] - ref.getbbox()[1]
-        frs = []
-        for fr in trocear(os.path.join(ENTRADA, nom), int(m.group(3) or 0)):
-            b = fr.getbbox()
-            if not b: continue
-            fr = fr.crop(b); k = alto / fr.height
-            frs.append(fr.resize((max(1, round(fr.width * k)), alto), Image.NEAREST))
-        if len(frs) < 2: print('menos de 2 fotogramas, se salta:', nom); continue
-        W = max(f.width for f in frs) + 2; Hh = alto + 2 + PIE
-        tira = Image.new('RGBA', (W * len(frs), Hh), (0, 0, 0, 0))
-        for i, fr in enumerate(frs): tira.paste(fr, (i * W + (W - fr.width) // 2, Hh - PIE - fr.height), fr)
-        bio = io.BytesIO(); tira.save(bio, 'PNG')
-        out[f'{h}/{f}'] = {'w': W, 'h': Hh, 'du': [DU] * len(frs), 'url': 'data:image/png;base64,' + base64.b64encode(bio.getvalue()).decode()}
-        print(f'{h}/{f}: {len(frs)} pasos')
+        r = montar(trocear(os.path.join(ENTRADA, nom), int(m.group(3) or 0)), alto_de(fotograma(H[h][f]['anims']['Idle'])))
+        if not r: print('menos de 2 fotogramas, se salta:', nom); continue
+        out[f'{h}/{f}'] = r; print(f'{h}/{f}: {len(r["du"])} pasos')
     with open(JS, 'w', encoding='utf-8') as fh:
         fh.write('// Generado por herramientas/importar_sprite_fusion.py (ciclos de andar de Sprite Fusion). No editar a mano.\n')
         fh.write('window.ANDAR_FRAMES=' + json.dumps(out, separators=(',', ':')) + ';\n')
-    print(len(out), 'formas con pasos de Sprite Fusion ->', JS)
+        fh.write('window.ANDAR_DISPARO_FRAMES=' + json.dumps(disp, separators=(',', ':')) + ';\n')
+    print(len(out), 'formas con pasos y', len(disp), 'con andar disparando ->', JS)
 
 
 if __name__ == '__main__':

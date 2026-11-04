@@ -3049,10 +3049,12 @@ function render(time){
         // tronco del fotograma de disparo, girado hacia el enemigo
         WC=walkCfg(S.hid,P.form),BA=pk[(WC.base||[])[0]]||A0,BI=Math.min((WC.base||[])[1]||0,BA.R.length-1),
         WK=P.moving&&!P.dead&&!(P.hitT>0)?(pk.Paso&&pk.Paso.R.length>1?(left?pk.Paso.L:pk.Paso.R):walkCycle((left?BA.L:BA.R)[BI],WC)):null,wf=WK?WK[(P.anim*1.2|0)%WK.length]:null,
-        shootW=!!WK&&!fly&&(A===pk.Cast||A===pk.Beam)&&WC.modo!=='flotar',
-        SP=!fly&&(shootW||Math.round(tl/ROT_PASO))?bodySplit(im,WC.cadera):null,LS=shootW?bodySplit(wf,WC.cadera):SP,LC=shootW?wf:im,
+        // andar disparando dibujado de verdad (Sprite Fusion, andar_frames.js): si la forma lo tiene, va entero y sin cortar por la cintura
+        wd=!!WK&&!fly&&A===pk.Cast&&WC.modo!=='flotar'&&pk.PasoD&&pk.PasoD.R.length>1?(left?pk.PasoD.L:pk.PasoD.R)[(P.anim*1.2|0)%pk.PasoD.R.length]:null,
+        shootW=!wd&&!!WK&&!fly&&(A===pk.Cast||A===pk.Beam)&&WC.modo!=='flotar',
+        SP=!fly&&!wd&&(shootW||Math.round(tl/ROT_PASO))?bodySplit(im,WC.cadera):null,LS=shootW?bodySplit(wf,WC.cadera):SP,LC=shootW?wf:im,
         lx=Math.round(x-LC.width/2),ly=Math.round(y-LC.height+1+bob),piv=LS?ly+LS.hip:0,
-        ri=fly?wf:SP?rotSpr(SP.up,tl):im,
+        ri=fly?wf:wd?wd:SP?rotSpr(SP.up,tl):im,
         ofs=SP?SP.cx-im.width/2:0,ca=Math.cos(Math.round(tl/ROT_PASO)*ROT_PASO),sa=Math.sin(Math.round(tl/ROT_PASO)*ROT_PASO),hx=SP?lx+LS.cx:x,
         rx=SP?Math.round(hx-ri.width/2-ofs*ca):Math.round(x-ri.width/2),ry=SP?Math.round(piv-ri.height/2-ofs*sa):Math.round(y-ri.height+1+bob);
         P.pivDY=SP?piv-y:null;P.pivDX=SP?hx-x:0;
@@ -3220,7 +3222,8 @@ const PORTRAIT={},BUSTO={};
 if(window.ANIM_SET)for(const id in ANIM_SET.h)for(const f in ANIM_SET.h[id]){const F=ANIM_SET.h[id][f],k='as-'+id+'-'+f;SCPACK.s[k]={};
   for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}
   // pasos de verdad generados con Sprite Fusion (andar_frames.js): si están, sustituyen al paso generado por código
-  {const AF=(window.ANDAR_FRAMES||{})[id+'/'+f];if(AF)SCPACK.s[k].Paso=[AF.w,AF.h,AF.du,AF.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait;if(F.busto)BUSTO[id+'/'+f]=1}
+  {const AF=(window.ANDAR_FRAMES||{})[id+'/'+f];if(AF)SCPACK.s[k].Paso=[AF.w,AF.h,AF.du,AF.url,0];
+   const AD=(window.ANDAR_DISPARO_FRAMES||{})[id+'/'+f];if(AD)SCPACK.s[k].PasoD=[AD.w,AD.h,AD.du,AD.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait;if(F.busto)BUSTO[id+'/'+f]=1}
 // only hand-picked forms stay: missing forms leave the transformation chain, characters with none leave the game
 var FUERA=new Set(); // Roshi ya tiene sprites propios (3 nov.); antes se ocultaba aquí
 for(const id in HDEF){const D=HDEF[id],A=window.ANIM_SET&&ANIM_SET.h[id];if(D.npc||D.custom)continue;
