@@ -1289,3 +1289,27 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Revisar visualmente ataques extra por forma (solo Goku base los tenía seleccionados), comenzando Vegeta, Freezer y Piccolo. No se afirma revisión de las 193 formas.
 - Valorar jugando dificultad, ritmo y ciclo importado de Goku. Doble clic no verificable mediante el navegador automatizado (bloquea file://); probado por HTTP local.
 - Cambios previos en andar.js, andar_frames.js y salida/goku_0 preservados; no pertenecen a este cambio.
+
+## 2026-11-05 — Antigravity / Gemini
+
+### Lo que pidió el usuario
+- Buscar en DeviantArt (vía Google / web) todos los sprites 2D de Dragon Ball estilo LSW (Legendary Super Warriors) buenos que haya, y guardarlos en una carpeta aparte llamada `antigravity sprites`.
+
+### Lo que hice
+- En curso.
+
+
+## 2026-11-05 — Claude (sesión ataques propios por familias)
+
+### Lo que pidió el usuario
+- Implementar los ataques de cada personaje de `sprites/`, montando las animaciones poco a poco con Piskel (idea suya); vamos por familias, empezando por Goku/Vegeta.
+
+### Lo que hice
+- Ataques extra (attack2/attack3/kick2/beam/dash) en `herramientas/animaciones/ataques.json` para `gokussj4gt` y `gokussj3mais`; montados con `montar_animaciones.py` y revisados con `previsualizar.py`. El motor ya los alterna golpe a golpe.
+- Piskel: el montaje se hace con los scripts de `herramientas/` (equivalente); Piskel queda para retocar/exportar si hace falta.
+
+### A medias / problemas
+- Faltan el resto de versiones de Goku (≈42) y toda la familia Vegeta. Falta comprobarlo jugando.
+
+### Siguiente paso recomendado
+- Seguir por `gokugt` (259/260/261), `gokuui`, `gokusuper`… con `ver_pack.py` y luego Vegeta.

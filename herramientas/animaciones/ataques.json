@@ -1,6 +1,76 @@
 {
  "_ayuda": "Ataques extra de cada pack (4 nov. 2026): attack2/attack3 = otros combos (el juego los alterna golpe a golpe), kick2 = otra patada, beam = [carga, disparo] propios de los rayos tipo Kamehameha, up = brazos arriba (Genkidama, Kienzan...), dash = embestida. Si falta alguno, el juego usa el de siempre.",
  "heroes": {
-  "goku": {"0": {"attack2": [17, 19, 20], "attack3": [62, 63], "up": [45, 46], "beam": [48, 37]}}
+  "goku": {
+   "0": {
+    "attack2": [
+     17,
+     19,
+     20
+    ],
+    "attack3": [
+     62,
+     63
+    ],
+    "up": [
+     45,
+     46
+    ],
+    "beam": [
+     48,
+     37
+    ]
+   }
+  },
+  "gokussj4gt": {
+   "0": {
+    "attack2": [
+     27,
+     28
+    ],
+    "attack3": [
+     54,
+     55,
+     56
+    ],
+    "kick2": [
+     12,
+     13,
+     14
+    ],
+    "beam": [
+     43,
+     46
+    ],
+    "dash": [
+     59,
+     60
+    ]
+   }
+  },
+  "gokussj3mais": {
+   "0": {
+    "attack2": [
+     27,
+     29
+    ],
+    "attack3": [
+     24,
+     26
+    ],
+    "kick2": [
+     32,
+     33
+    ],
+    "beam": [
+     59,
+     60
+    ],
+    "dash": [
+     64,
+     65
+    ]
+   }
+  }
  }
 }
