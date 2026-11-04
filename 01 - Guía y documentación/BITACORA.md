@@ -1275,3 +1275,5 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso
 - Tanda 3: villanos principales (Freezer, Cell, Buu, Broly, Black…), luego el resto. Después, ataques extra del pack por forma (`animaciones/ataques.json`).
+- Josemi eligió **«Gratis, yo por tandas»** (no paga Sprite Fusion de momento).
+- **Tanda 3 del andar (villanos, 49 formas)**: Freezer (6), Cooler, Frost (2), Cell (5), Buu (5), Broly (4), Janemba, Black (3), Zamasu (2), Jiren (3), Hit, Toppo, Bills, Moro, Raditz (2), Turles (2), Nappa, Ginyu, Saibaman, A16-18. 41 ajustes en `andar.js` (`?v=4`): la raza de Freezer con la cola en el suelo (Freezer 1ª, 2ª, 3ª forma, Golden, Black Freezer, Cooler, Frost 1ª), Super Buu (capa al suelo) y Zamasu fusionado van con `modo:'flotar'` (como en la serie); el resto, cintura subida donde manos, capas, colas o pelo largo bajaban a la cadera. Hojas: `herramientas/_revisar/andar/tanda3a.png` y `tanda3b.png`.

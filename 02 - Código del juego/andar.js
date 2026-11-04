@@ -36,4 +36,46 @@ window.ANDAR={
  'vegettofan/0':{cadera:0.68},
  'vegettofan/2':{cadera:0.74}, // SSJ4: cola
  'vegettofan/3':{cadera:0.68},
+ // tanda 3: villanos (flotar = sin pasos, flota a ras de suelo)
+ 'a16/0':{cadera:0.7},
+ 'a17/0':{cadera:0.68},
+ 'a18/0':{cadera:0.66},
+ 'bills/0':{cadera:0.68},
+ 'black/0':{cadera:0.66},
+ 'black/1':{cadera:0.66},
+ 'black/2':{cadera:0.66},
+ 'broly/0':{cadera:0.7},
+ 'broly/1':{cadera:0.7},
+ 'broly/2':{cadera:0.7},
+ 'broly/3':{cadera:0.72},
+ 'buu/0':{cadera:0.8},         // Buu gordo: piernas cortas bajo la barriga
+ 'buu/1':{modo:'flotar'},      // Super Buu: la capa llega al suelo
+ 'buu/2':{cadera:0.66},
+ 'buu/3':{cadera:0.66},
+ 'cell/1':{cadera:0.66},
+ 'cell/2':{cadera:0.66},
+ 'cell/3':{cadera:0.68},
+ 'cell/4':{cadera:0.66},
+ 'cooler/0':{modo:'flotar'},
+ 'freezer/0':{modo:'flotar'},  // raza de Freezer: la cola llega al suelo y flotan, como en la serie
+ 'freezer/1':{modo:'flotar'},
+ 'freezer/2':{modo:'flotar'},
+ 'freezer/3':{cadera:0.66},
+ 'freezer/4':{modo:'flotar'},
+ 'freezer/5':{modo:'flotar'},
+ 'frost/0':{modo:'flotar'},
+ 'frost/1':{cadera:0.66},
+ 'ginyu/0':{cadera:0.68},
+ 'hit/0':{cadera:0.7},
+ 'janemba/0':{cadera:0.68},
+ 'jiren/1':{cadera:0.66},
+ 'moro/0':{cadera:0.66},
+ 'nappa/0':{cadera:0.68},
+ 'raditz/0':{cadera:0.72},     // pelo largo hasta la cadera
+ 'raditz/1':{cadera:0.72},
+ 'toppo/0':{cadera:0.72},      // manos a la altura de la cadera
+ 'turles/0':{cadera:0.66},
+ 'turles/1':{cadera:0.72},
+ 'zamasu/0':{cadera:0.7},
+ 'zamasu/1':{modo:'flotar'},   // Zamasu fusionado: flota
 };
