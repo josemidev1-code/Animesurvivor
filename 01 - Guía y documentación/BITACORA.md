@@ -1262,3 +1262,11 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Ataques del pack por tandas (`animaciones/ataques.json`), hecho solo Goku base.
 - Josemi: «¿y tú con MCP no puedes controlar mi navegador y hacerlo para todos los personajes?». Claude in Chrome no está conectado. Sprite Fusion tiene **API** (`https://www.spritefusion.com/api/v1`, `POST /generate`, clave `Authorization: Bearer`) pensada para agentes: se puede automatizar sin navegador. Coste: **15 créditos por animación** (planes: Starter 9 $/450 créditos, Creator 19 $/1050, Pro 49 $/3000). 193 formas jugables ≈ 2900 créditos. Pendiente: que Josemi elija plan y cree la clave (la compra y la clave las hace él).
 - Josemi: «Sí, prueba con 3». Hecho `herramientas/sprite_fusion_api.py` (anima por la API con `operation: animate`, 8 fotogramas, la imagen como `data_url`; clave desde `.env`, nunca se muestra; sin reintentos). Esperando a que Josemi cree la clave en `.env` para probar con goku_0, vegeta_0 y freezer_2.
+
+## 2026-11-04 — Claude (animar todos andando y atacando)
+
+### Lo que pidió el usuario
+- Josemi: «vull animar tots els personatges per a que caminen y ataquen; en Sprite Fusion es poden fer molt bones animacions… per a tots va a fer falta pagar perquè són molts o utilitzar un generador de correus temporals per a fer més sprites, mira a vore».
+- Respuesta: los correos temporales no (van contra las normas de Sprite Fusion). Las 302 formas ya tienen ataque, patada y ki reales de su pack; falta el andar. Opciones: gratis por tandas (recomendado) o plan Pro (49 $, ~2.900 créditos para las 193 jugables). Pendiente de que elija; mientras, sigo gratis con la tanda 2 (línea de Vegeta).
+
+### Lo que hice
