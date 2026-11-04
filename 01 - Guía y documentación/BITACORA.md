@@ -1228,3 +1228,9 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Pruebas: 6 comprobaciones correctas; partida en Playwright andando en las cuatro direcciones sin errores y sin inclinación (0°). GIF: `herramientas/_revisar/andar_personajes.gif` (Goku, Vegeta, Freezer, Piccolo, Cell, Gohan, Broly, A18).
 - Limitación: es un paso generado, no dibujado a mano; en personajes con cola o capa (Freezer, Piccolo) la cola/capa se mueve con la pierna de atrás.
 - Josemi: «Mantenerla» → se queda la inclinación al disparar (hasta 50°); al andar, sin inclinación.
+- Josemi: «está bien lo de andar pero le falta más detalles y lo de cuando dispare arriba no inclines a todo el personaje».
+
+### Lo que hice (tronco al disparar y más detalle al andar)
+- `script.js?v=142`: al apuntar arriba o abajo **solo gira el tronco** desde la cintura (`bodySplit`: el fotograma se parte al 58 % de su altura; las piernas se quedan en el suelo y la parte de arriba gira alrededor de la cadera con RotSprite), hasta 40°. La mano y los rayos salen del tronco girado.
+- Andar con más detalle: la pierna que avanza dobla la rodilla (sube solo de la rodilla al pie), el tronco se adelanta 1 px al cruzar las piernas y baja 1 px con los pies separados, polvo bajo los pies en cada pisada (3 motas) y la sombra se ensancha al apoyar.
+- Pruebas: 6 comprobaciones correctas; capturas en Playwright de Goku, Vegeta y Piccolo apuntando de −90° a 90° (`herramientas/_revisar/tronco_rayos.png`) y GIF del paso (`andar_personajes.gif`, `andar_hoja.png`). Sin errores en la consola.

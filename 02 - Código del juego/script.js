@@ -2176,6 +2176,7 @@ function update(dt){
   const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.85:1)*(S.ev&&S.ev.k==='gravedad'?0.65:S.ev&&S.ev.k==='fusion'?1.35:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
   if(P.moving){if(Math.abs(mx)>Math.abs(my)*1.1)P.dir='side';else P.dir=my<0?'up':'down'}
   solidMove(P,mx*ps.spd*dt*slow,my*ps.spd*dt*slow,5);islandTick();solidResolve(P,5);crateTick(dt);if(P.moving)P.anim+=dt*9;
+  {const st=(P.anim*1.2|0)%WALK_N;if(P.moving&&!P.cast&&!P.dash&&st!==P.lastSt&&(st===2||st===6))for(let i=0;i<3;i++)parts.push({x:P.x+rnd(-5,5),y:P.y-rnd(0,2),vx:-(P.face||1)*rnd(6,22)+rnd(-8,8),vy:-rnd(4,16),t:0.28,c:i?'#e6dcc2':'#c8b896',s:1});P.lastSt=st}
   P.iframe-=dt;P.hitT-=dt;P.atkT=(P.atkT||0)-dt;if(P.mcd)for(let i=0;i<3;i++)P.mcd[i]-=dt;if(P.shout&&(P.shout.t-=dt)<=0)P.shout=null;
   if(P.moving&&Math.random()<0.25)parts.push({x:P.x+rnd(-3,3),y:P.y-1,vx:-mx*10,vy:-rnd(2,8),t:0.3,c:MAPK==='namek'?'#a6d8a0':MAPK==='tierra'||MAPK==='kame'?'#e6cfa0':MAPK==='musculo'?'#ffffff':'#d8d4c0',s:1});
   if(ps.regen)P.hp=Math.min(ps.maxhp,P.hp+ps.regen*dt);
@@ -2824,12 +2825,14 @@ function walkCycle(c){if(c._walk)return c._walk;const W=c.width,H=c.height,d=c.g
   for(let x=Math.round(x0+(x1-x0)*0.3);x<=Math.round(x0+(x1-x0)*0.7);x++){let n=0;for(let y=yb;y<=y1;y++)if(op(x,y))n++;const sc=n*4+Math.abs(x-(x0+x1)/2);if(sc<best){best=sc;split=x}}
   const A=Math.max(3,Math.round(bh*0.1)),M=A+2,src=new Uint32Array(d.buffer.slice(0)),out=[];
   for(let k=0;k<WALK_N;k++){const ph=k/WALK_N*TAU,sn=Math.sin(ph),cs=Math.cos(ph),
-      dxB=Math.round(A*sn),dxF=-dxB,liftB=Math.max(0,Math.round(3*cs)),liftF=Math.max(0,Math.round(-3*cs)),bob=Math.abs(sn)>0.7?1:0,
+      dxB=Math.round(A*sn),dxF=-dxB,liftB=Math.max(0,Math.round(3*cs)),liftF=Math.max(0,Math.round(-3*cs)),bob=Math.abs(sn)>0.7?1:0,sx=Math.abs(sn)<0.5?1:0,
       cv=mk(W+M*2,H),g=cv.getContext('2d'),id=g.createImageData(W+M*2,H),o=new Uint32Array(id.data.buffer),OW=W+M*2;
     const put=(x,y,v)=>{if(x>=0&&x<OW&&y>=0&&y<H)o[y*OW+x]=v};
     for(let y=0;y<H;y++)for(let x=0;x<W;x++){const v=src[y*W+x];if(!v||!(d[(y*W+x)*4+3]>40))continue;
-      if(y<hip){put(x+M,y+bob,v);continue}
-      const w=(y-hip)/lh,back=x<split,dx=Math.round((back?dxB:dxF)*w),dy=-Math.round((back?liftB:liftF)*w)+Math.round(bob*(1-w));put(x+M+dx,y+dy,v)}
+      // tronco: baja 1 px con los pies separados y se adelanta 1 px al cruzar las piernas
+      if(y<hip){put(x+M+sx,y+bob,v);continue}
+      // pierna: se balancea desde la cadera; la que avanza dobla la rodilla (sube solo de la rodilla al pie)
+      const w=(y-hip)/lh,back=x<split,kn=Math.max(0,Math.min(1,(w-0.35)/0.65)),dx=Math.round((back?dxB:dxF)*w+sx*(1-w)),dy=-Math.round((back?liftB:liftF)*kn)+Math.round(bob*(1-w));put(x+M+dx,y+dy,v)}
     g.putImageData(id,0,0);out.push(cv)}
   return c._walk=out}
 // variantes de una animación (Attack, Attack2, Attack3…): el combo las va alternando golpe a golpe
@@ -2842,11 +2845,18 @@ function heroHand(i,left){const pk=scHero(S.hid,P.form);if(!pk||!pk.Cast)return 
       for(let x=W-1;x>=0&&bx<0;x--)for(let y=ya;y<=yb;y++)if(d[(y*W+x)*4+3]>40){bx=x;sy+=y;n++}
       c._hand=bx<0?[W*0.75,H*0.6]:[bx,sy/n]}}
   // el cuerpo se dibuja girado P.tilt alrededor de su centro (rotSpr): la mano gira con él y el rayo sale de ella
-  const r=P.tilt||0,vx=(left?-1:1)*(c._hand[0]-c.width/2),vy=c._hand[1]-c.height/2,cs=Math.cos(r),sn=Math.sin(r),bob=P.hov||0;
-  return[P.x+(vx*cs-vy*sn)*0.5,P.y+(-c.height/2+1-bob+vx*sn+vy*cs)*0.5]}
+  const r=Math.round((P.tilt||0)/ROT_PASO)*ROT_PASO,hip=bodySplit(c).hip,vx=(left?-1:1)*(c._hand[0]-c.width/2),vy=c._hand[1]-hip,cs=Math.cos(r),sn=Math.sin(r),bob=P.hov||0;
+  return[P.x+(vx*cs-vy*sn)*0.5,P.y+(hip-c.height+1-bob+vx*sn+vy*cs)*0.5]}
 // Giro de pixel art sin emborronar (método RotSprite): se amplía x4 con Scale2x dos veces, se gira por vecino más
 // cercano y se vuelve al tamaño original muestreando el centro de cada bloque. Caché por fotograma en pasos de 5°.
 const ROT_PASO=Math.PI/36;
+// al apuntar arriba o abajo solo gira el tronco (Josemi, 4 nov.: «no inclines a todo el personaje»): el fotograma se
+// parte por la cintura; las piernas se quedan en el suelo y la parte de arriba gira alrededor de la cadera.
+function bodySplit(c){if(c._sp)return c._sp;const W=c.width,H=c.height,d=c.getContext('2d').getImageData(0,0,W,H).data;let y0=H,y1=-1;
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(d[(y*W+x)*4+3]>40){if(y<y0)y0=y;if(y>y1)y1=y}
+  const hip=y1<0?H>>1:Math.round(y0+(y1-y0+1)*0.58),up=mk(W,hip*2),low=mk(W,H);
+  up.getContext('2d').drawImage(c,0,0,W,hip+2,0,0,W,hip+2);low.getContext('2d').drawImage(c,0,hip,W,H-hip,0,hip,W,H-hip);
+  return c._sp={up,low,hip}}
 function scale2x(src,W,H){const o=new Uint32Array(W*H*4),W2=W*2,g=(x,y)=>src[Math.min(H-1,Math.max(0,y))*W+Math.min(W-1,Math.max(0,x))];
   for(let y=0;y<H;y++)for(let x=0;x<W;x++){const P0=src[y*W+x],A=g(x,y-1),B=g(x+1,y),C=g(x-1,y),D=g(x,y+1);
     let e0=P0,e1=P0,e2=P0,e3=P0;if(C===A&&C!==D&&A!==B)e0=A;if(A===B&&A!==C&&B!==D)e1=B;if(D===C&&D!==B&&C!==A)e2=C;if(B===D&&B!==A&&D!==C)e3=D;
@@ -2863,7 +2873,7 @@ function heroTilt(left,mx,my){const nr=a=>{a=(left?a-Math.PI:a);while(a>Math.PI)
   if(P.dead||P.hitT>0||(P.powT>0&&!P.moving))return 0;
   // tope de 50° al disparar (a 90° el cuerpo queda tumbado y parece caído; el rayo sigue saliendo de la mano hacia el
   // enemigo), 40° en los golpes y 36° al volar
-  const TD=Math.PI*5/18;
+  const TD=Math.PI*2/9;
   if(P.pend)return P.pend.pose==='up'?0:cl(nr(P.pend.a),TD);
   if(P.cast)return cl(nr(P.cast.a),TD);
   if(P.atkT>0)return cl(nr(P.atkA),P.atkK===1?TD:Math.PI*2/9);
@@ -2984,7 +2994,7 @@ function render(time){
   // sort sprites
   const list=enemies.slice();list.push(P);list.sort((a,b)=>a.y-b.y);
   for(const e of list){
-    if(e===P){const x=P.x-cam.x,y=P.y-cam.y;ctx.save();ctx.translate(x,y);ctx.scale(0.5,0.5);ctx.translate(-x,-y);shadow(x,y,16);
+    if(e===P){const x=P.x-cam.x,y=P.y-cam.y;ctx.save();ctx.translate(x,y);ctx.scale(0.5,0.5);ctx.translate(-x,-y);shadow(x,y,P.moving&&!P.cast&&(P.anim*1.2|0)%4===2?18:16);
       if(P.form>0){const fl=auraFlames(heroAura(S.hid,P.form)),f=(time*14|0)%3;
         ctx.globalAlpha=0.8;ctx.drawImage(fl[f],Math.round(x-fl[f].width/2),Math.round(y-fl[f].height+3));ctx.globalAlpha=1;
         if(P.form>=2&&Math.random()<0.35){ctx.fillStyle='#bfe6ff';let lx=x+rnd(-10,10),ly=y-rnd(4,24);for(let i=0;i<5;i++){ctx.fillRect(Math.round(lx),Math.round(ly),1,2);lx+=rnd(-2,2)|0;ly+=2}}}
@@ -3007,16 +3017,18 @@ function render(time){
         // vuelo bajo al moverse: la pose de impulso se despega 3 px de la sombra y flota (0, 1, 2, 1 px) a 8 pasos por segundo;
         // sube y baja poco a poco al arrancar y al pararse, y la sombra se queda en el suelo
         A0=pk.Idle,bob=-Math.round(P.hov=(P.hov||0)+(0-(P.hov||0))*0.25),
-        // inclinación (Josemi, 4 nov.): al lanzar un rayo hacia arriba apunta arriba, hacia abajo abajo; al volar se inclina
-        // hacia donde va con un leve balanceo. Al disparar o golpear gira de golpe; al volar, poco a poco.
+        // al apuntar arriba o abajo gira solo el tronco desde la cintura (hasta 40°) y las piernas siguen en el suelo;
+        // al andar, recto con el ciclo de pasos (Josemi, 4 nov.)
         tg=heroTilt(left,P.mvx||0,P.mvy||0),
         tl=P.tilt=(P.cast||P.pend||P.atkT>0||!tg)&&!fly?tg:(P.tilt||0)+(tg-(P.tilt||0))*0.2,
-        ri=fly?walkCycle((left?A0.L:A0.R)[0])[(P.anim*1.2|0)%WALK_N]:rotSpr(im,tl),rx=Math.round(x-ri.width/2),ry=Math.round(y-im.height/2+1+bob-ri.height/2);
+        SP=!fly&&Math.round(tl/ROT_PASO)?bodySplit(im):null,lx=Math.round(x-im.width/2),ly=Math.round(y-im.height+1+bob),
+        ri=fly?walkCycle((left?A0.L:A0.R)[0])[(P.anim*1.2|0)%WALK_N]:SP?rotSpr(SP.up,tl):im,
+        rx=SP?Math.round(lx+im.width/2-ri.width/2):Math.round(x-ri.width/2),ry=SP?Math.round(ly+SP.hip-ri.height/2):Math.round(y-ri.height+1+bob);
         {const TR=P.tr||(P.tr=[]);if(P.dash){if(!(time-TR.lt<0.045)){TR.lt=time;TR.unshift([P.x,P.y]);if(TR.length>4)TR.length=4}}else TR.length=0;
           for(let k=TR.length-1;k>=1;k--){ctx.globalAlpha=0.34-k*0.08;ctx.drawImage(ri,Math.round(rx+(TR[k][0]-P.x)*2),Math.round(ry+(TR[k][1]-P.y)*2))}ctx.globalAlpha=1}
         if(P.shieldT>0){ctx.globalAlpha=0.35+0.25*Math.sin(time*20);ctx.strokeStyle='#bfe6ff';ctx.lineWidth=2;ctx.beginPath();ctx.arc(Math.round(x),Math.round(y-im.height/2),Math.max(im.width,im.height)*0.62,0,TAU);ctx.stroke();ctx.globalAlpha=1}
         if(P.kaioT>0){const fl=auraFlames('red')[(time*14|0)%3];ctx.globalAlpha=0.85;ctx.drawImage(fl,Math.round(x-fl.width/2),Math.round(y-fl.height+3));ctx.globalAlpha=1}
-        ctx.drawImage(ri,rx,ry);
+        if(SP)ctx.drawImage(SP.low,lx,ly);ctx.drawImage(ri,rx,ry);
         if(pd){const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(x+(up?0:(left?-1:1)*im.width*0.3)-kb.width/2),Math.round(up?y-im.height-kb.height*0.6:y-im.height*0.5-kb.height/2));ctx.globalAlpha=1}
         if(chg&&!bm){const r=4+((time*14|0)%3),kb=kiSprite(r,['#1a5ad8','#6ac8ff','#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.9;ctx.drawImage(kb,Math.round(x+(left?-1:1)*im.width*0.12-kb.width/2),Math.round(y-im.height*0.42-kb.height/2));ctx.globalAlpha=1}}
       // mientras carga su pack no se dibuja ningún muñeco hecho por código
