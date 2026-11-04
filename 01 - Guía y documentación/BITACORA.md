@@ -1217,3 +1217,13 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso
 - Hacer lo mismo con el resto de formas por tandas (cada forma: ver su pack entero, elegir y revisar la hoja). Orden propuesto: línea de Goku, de Vegeta, villanos principales, resto.
+
+### Nueva petición
+- «con esto de pixelfx si puedes hacer que todos los personajes tengan una animacion de caminar fluida y que no se inclinen te lo juro que me pondria muy contento».
+
+### Lo que hice (caminar fluido, sin inclinarse)
+- `script.js?v=141`: `walkCycle(fotograma)` genera 8 pasos desde la guardia de cada forma (todos los jugables y los enemigos que usan packs): separa las piernas por el hueco entre ellas, las balancea en sentidos contrarios (de la cadera al pie, zancada ≈10 % de la altura), levanta la que avanza 3 px y baja el tronco 1 px con los pies separados. Caché por fotograma.
+- Al moverse ya no vuela ni se inclina: anda por el suelo con ese ciclo (sin vuelo bajo, sin balanceo, sin estela; la estela queda para las embestidas). La inclinación al **disparar** se mantiene (lo pidió antes); se puede quitar si Josemi quiere.
+- Enemigos: al acercarse andan con el mismo ciclo (antes, pose de vuelo). Arreglado un índice negativo con x < 0. `comprobar_enemigos.cjs` actualizado.
+- Pruebas: 6 comprobaciones correctas; partida en Playwright andando en las cuatro direcciones sin errores y sin inclinación (0°). GIF: `herramientas/_revisar/andar_personajes.gif` (Goku, Vegeta, Freezer, Piccolo, Cell, Gohan, Broly, A18).
+- Limitación: es un paso generado, no dibujado a mano; en personajes con cola o capa (Freezer, Piccolo) la cola/capa se mueve con la pierna de atrás.

@@ -2283,7 +2283,7 @@ function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypo
   else if(e.boss&&d<e.r+18&&o.Attack){A=o.Attack;i=scFrame(A,t)}
   else if(T.shoot&&o.Cast&&(e.shootT<0.35||e.shootT>T.shoot-0.25)){A=o.Cast;i=e.shootT<0.35?0:Math.min(1,A.R.length-1)}
   else if(A.R.length>1)i=scFrame(A,t);else bob=Math.round(Math.sin(t*6+e.x*0.07)*1);
-  const im=(left?A.L:A.R)[i]||A.R[0],z=e.boss?0.62:(T.z||0.5),w=im.width*z,hh=im.height*z;e.dh=hh;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-hh+bob),w,hh);
+  const im=A===o.Walk&&o.Idle?walkCycle((left?o.Idle.L:o.Idle.R)[0])[Math.abs((e.anim*1.2+e.x*0.05)|0)%WALK_N]:(left?A.L:A.R)[i]||A.R[0],z=e.boss?0.62:(T.z||0.5),w=im.width*z,hh=im.height*z;e.dh=hh;ctx.drawImage(im,Math.round(x-w/2),Math.round(y-hh+bob),w,hh);
   if(e.flash>0){ctx.globalAlpha=0.55;const wi=e.spr.pkw||(e.spr.pkw={});const key=A===o.Hurt?'h'+left:'x';if(!wi[key])wi[key]=tintC(im,'#ffffff');ctx.drawImage(wi[key],Math.round(x-w/2),Math.round(y-hh+bob),w,hh);ctx.globalAlpha=1}
   // aviso de ataque: «!» parpadeando sobre la cabeza y, al cargar una embestida, la línea por donde va a pasar
   const k=e.atk;if(k&&(k.f==='aviso'||k.f==='carga')){const ax=Math.round(x),ay=Math.round(y-hh-15);
@@ -2810,6 +2810,28 @@ function drawWorld(time){
   for(let ty=ty0-3;ty<=ty1+1;ty++)for(let tx=tx0-3;tx<=tx1+1;tx++){if(W.special(tx,ty))continue;const d=W.decor(tx,ty,h2(tx,ty,3));
     if(d)ctx.drawImage(d,tx*T-cx+((h2(tx,ty,4)*8)|0)-d.width/2+8,ty*T-cy+((h2(tx,ty,6)*8)|0)-d.height/2+8)}}
 // punto de las manos en el frame de cargar (0) o de lanzar (1) de la animación Cast del héroe (el héroe se dibuja a 0.5)
+// Ciclo de andar generado desde la postura de guardia (Josemi, 4 nov.: «una animación de caminar fluida y que no se
+// inclinen»; casi ningún pack trae pasos porque en la serie vuelan). Se separan las dos piernas por el hueco entre ellas
+// y se balancean en sentidos contrarios: el desplazamiento crece de la cadera (0) al pie (máximo), la pierna que avanza
+// se levanta y el tronco baja 1 px cuando los pies están más separados. 8 fotogramas por paso doble, caché por fotograma.
+const WALK_N=8;
+function walkCycle(c){if(c._walk)return c._walk;const W=c.width,H=c.height,d=c.getContext('2d').getImageData(0,0,W,H).data,op=(x,y)=>d[(y*W+x)*4+3]>40;
+  let x0=W,x1=-1,y0=H,y1=-1;for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(op(x,y)){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}
+  if(x1<0)return c._walk=[c];
+  const bh=y1-y0+1,hip=Math.round(y0+bh*0.6),lh=Math.max(1,y1-hip);
+  // hueco entre las piernas: la columna con menos píxeles en la mitad baja de las piernas, cerca del centro
+  const yb=Math.round(hip+lh*0.45);let split=Math.round((x0+x1)/2),best=1e9;
+  for(let x=Math.round(x0+(x1-x0)*0.3);x<=Math.round(x0+(x1-x0)*0.7);x++){let n=0;for(let y=yb;y<=y1;y++)if(op(x,y))n++;const sc=n*4+Math.abs(x-(x0+x1)/2);if(sc<best){best=sc;split=x}}
+  const A=Math.max(3,Math.round(bh*0.1)),M=A+2,src=new Uint32Array(d.buffer.slice(0)),out=[];
+  for(let k=0;k<WALK_N;k++){const ph=k/WALK_N*TAU,sn=Math.sin(ph),cs=Math.cos(ph),
+      dxB=Math.round(A*sn),dxF=-dxB,liftB=Math.max(0,Math.round(3*cs)),liftF=Math.max(0,Math.round(-3*cs)),bob=Math.abs(sn)>0.7?1:0,
+      cv=mk(W+M*2,H),g=cv.getContext('2d'),id=g.createImageData(W+M*2,H),o=new Uint32Array(id.data.buffer),OW=W+M*2;
+    const put=(x,y,v)=>{if(x>=0&&x<OW&&y>=0&&y<H)o[y*OW+x]=v};
+    for(let y=0;y<H;y++)for(let x=0;x<W;x++){const v=src[y*W+x];if(!v||!(d[(y*W+x)*4+3]>40))continue;
+      if(y<hip){put(x+M,y+bob,v);continue}
+      const w=(y-hip)/lh,back=x<split,dx=Math.round((back?dxB:dxF)*w),dy=-Math.round((back?liftB:liftF)*w)+Math.round(bob*(1-w));put(x+M+dx,y+dy,v)}
+    g.putImageData(id,0,0);out.push(cv)}
+  return c._walk=out}
 // variantes de una animación (Attack, Attack2, Attack3…): el combo las va alternando golpe a golpe
 function varAnim(pk,base,v){const L=[pk[base],pk[base+'2'],pk[base+'3']].filter(Boolean);return L.length?L[(v||0)%L.length]:null}
 function heroHand(i,left){const pk=scHero(S.hid,P.form);if(!pk||!pk.Cast)return null;const CA=(P.cast&&pk.Beam)||pk.Cast,c=CA.R[Math.min(i,CA.R.length-1)];
@@ -2845,7 +2867,7 @@ function heroTilt(left,mx,my){const nr=a=>{a=(left?a-Math.PI:a);while(a>Math.PI)
   if(P.pend)return P.pend.pose==='up'?0:cl(nr(P.pend.a),TD);
   if(P.cast)return cl(nr(P.cast.a),TD);
   if(P.atkT>0)return cl(nr(P.atkA),P.atkK===1?TD:Math.PI*2/9);
-  if(P.moving&&(mx||my))return cl(nr(Math.atan2(my,mx)),Math.PI/5);
+  // al andar no se inclina (Josemi, 4 nov.)
   return 0}
 function drawBeam(b){
   const ox=Math.round(b.x-cam.x),oy=Math.round(b.y-cam.y),t=b.t;
@@ -2984,13 +3006,13 @@ function render(time){
         left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),UP=pk.Up||pk.Pow,atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(varAnim(pk,'Kick',P.atkV)||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(varAnim(pk,'Attack',P.atkV)||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&UP?UP:pk.Cast):P.cast?(pk.Beam||pk.Cast):P.hitT>0?pk.Hurt:P.dash&&pk.Dash?pk.Dash:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&(A===pk.Pow||A===UP)?((time*8|0)%A.R.length):A===pk.Dash?0:pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
         // vuelo bajo al moverse: la pose de impulso se despega 3 px de la sombra y flota (0, 1, 2, 1 px) a 8 pasos por segundo;
         // sube y baja poco a poco al arrancar y al pararse, y la sombra se queda en el suelo
-        bob=-Math.round(P.hov=(P.hov||0)+((fly?3+[0,1,2,1][(time*8|0)%4]:0)-(P.hov||0))*0.25),
+        A0=pk.Idle,bob=-Math.round(P.hov=(P.hov||0)+(0-(P.hov||0))*0.25),
         // inclinación (Josemi, 4 nov.): al lanzar un rayo hacia arriba apunta arriba, hacia abajo abajo; al volar se inclina
         // hacia donde va con un leve balanceo. Al disparar o golpear gira de golpe; al volar, poco a poco.
-        tg=heroTilt(left,P.mvx||0,P.mvy||0)+(fly?Math.sin(time*6)*0.09:0),
+        tg=heroTilt(left,P.mvx||0,P.mvy||0),
         tl=P.tilt=(P.cast||P.pend||P.atkT>0||!tg)&&!fly?tg:(P.tilt||0)+(tg-(P.tilt||0))*0.2,
-        ri=rotSpr(im,tl),rx=Math.round(x-ri.width/2),ry=Math.round(y-im.height/2+1+bob-ri.height/2);
-        {const TR=P.tr||(P.tr=[]);if(P.moving&&!P.cast&&!(P.hitT>0)){if(!(time-TR.lt<0.045)){TR.lt=time;TR.unshift([P.x,P.y]);if(TR.length>4)TR.length=4}}else TR.length=0;
+        ri=fly?walkCycle((left?A0.L:A0.R)[0])[(P.anim*1.2|0)%WALK_N]:rotSpr(im,tl),rx=Math.round(x-ri.width/2),ry=Math.round(y-im.height/2+1+bob-ri.height/2);
+        {const TR=P.tr||(P.tr=[]);if(P.dash){if(!(time-TR.lt<0.045)){TR.lt=time;TR.unshift([P.x,P.y]);if(TR.length>4)TR.length=4}}else TR.length=0;
           for(let k=TR.length-1;k>=1;k--){ctx.globalAlpha=0.34-k*0.08;ctx.drawImage(ri,Math.round(rx+(TR[k][0]-P.x)*2),Math.round(ry+(TR[k][1]-P.y)*2))}ctx.globalAlpha=1}
         if(P.shieldT>0){ctx.globalAlpha=0.35+0.25*Math.sin(time*20);ctx.strokeStyle='#bfe6ff';ctx.lineWidth=2;ctx.beginPath();ctx.arc(Math.round(x),Math.round(y-im.height/2),Math.max(im.width,im.height)*0.62,0,TAU);ctx.stroke();ctx.globalAlpha=1}
         if(P.kaioT>0){const fl=auraFlames('red')[(time*14|0)%3];ctx.globalAlpha=0.85;ctx.drawImage(fl,Math.round(x-fl.width/2),Math.round(y-fl.height+3));ctx.globalAlpha=1}
@@ -3750,7 +3772,7 @@ function toggleFull(){if(document.fullscreenElement)document.exitFullscreen();el
   $('#sMute').onclick=()=>{$('#bMute').click();setLabels()};$('#sFull').onclick=toggleFull;$('#sCol').onclick=()=>{debugSolid=!debugSolid;setLabels()};
   $('#sSave').onclick=()=>$('#bkSave').click();$('#sLoad').onclick=()=>$('#bkLoad').click();$('#sForge').onclick=()=>openForge();$('#sMine').onclick=()=>$('#bMine').click();$('#sCred').onclick=()=>openCredits();
   $('#rosterBox').appendChild($('#chars'))})();
-window.AS={SCPACK,scHero,scLoad,heroAnim,rotSpr,spawnAt:(t,dx,dy)=>spawn(t,P.x+dx,P.y+dy),spawnBoss,spawnCrate,putPickup,dropGem,addMove:id=>{addMove(id);const m=P.moves[id];m.lv=5},ebeamT:()=>ebeams.length?ebeams[0].t:null,setDiff:d=>{pickedDiff=d},kiSprite,autoWalk,ET,fxFrames,sparkFrames,fxN:()=>fxs.length,HDEF,loadSave,doPull,heroFrames,enemySprite,beamT:()=>{const b=beams.find(q=>q.hero);return b?b.t:-1},beamsN:()=>beams.length,enemies:()=>enemies,eshots:()=>eshots,gems:()=>gems,pickups:()=>pickups,spd:()=>stats().spd,maps:()=>Object.keys(WORLD),decorAudit:()=>Object.keys(DECOR).filter(k=>!(k in SOLID_DEF)),obstacle:(tx,ty)=>{solidSync();return solidAt(tx,ty)},solid:(x,y,r)=>solidHit(x,y,r),move:(o,dx,dy,r)=>solidMove(o,dx,dy,r),place:(o,r,f)=>solidPlace(o,r,f),setMap:id=>{MAPK=id;S.map=id;S.isl=null;solidReset()},get state(){return state},get S(){return S},get P(){return P},aj:MELEE_AJ,rol:ROL_AJ,start:startGame,tick:(sec)=>{for(let i=0;i<sec*30;i++){if(state==='play')update(1/30)}},pick:i=>{const b=$('#ups').querySelectorAll('button')[i||0];b&&b.click()}};
+window.AS={SCPACK,scHero,scLoad,heroAnim,rotSpr,walkCycle,spawnAt:(t,dx,dy)=>spawn(t,P.x+dx,P.y+dy),spawnBoss,spawnCrate,putPickup,dropGem,addMove:id=>{addMove(id);const m=P.moves[id];m.lv=5},ebeamT:()=>ebeams.length?ebeams[0].t:null,setDiff:d=>{pickedDiff=d},kiSprite,autoWalk,ET,fxFrames,sparkFrames,fxN:()=>fxs.length,HDEF,loadSave,doPull,heroFrames,enemySprite,beamT:()=>{const b=beams.find(q=>q.hero);return b?b.t:-1},beamsN:()=>beams.length,enemies:()=>enemies,eshots:()=>eshots,gems:()=>gems,pickups:()=>pickups,spd:()=>stats().spd,maps:()=>Object.keys(WORLD),decorAudit:()=>Object.keys(DECOR).filter(k=>!(k in SOLID_DEF)),obstacle:(tx,ty)=>{solidSync();return solidAt(tx,ty)},solid:(x,y,r)=>solidHit(x,y,r),move:(o,dx,dy,r)=>solidMove(o,dx,dy,r),place:(o,r,f)=>solidPlace(o,r,f),setMap:id=>{MAPK=id;S.map=id;S.isl=null;solidReset()},get state(){return state},get S(){return S},get P(){return P},aj:MELEE_AJ,rol:ROL_AJ,start:startGame,tick:(sec)=>{for(let i=0;i<sec*30;i++){if(state==='play')update(1/30)}},pick:i=>{const b=$('#ups').querySelectorAll('button')[i||0];b&&b.click()}};
 newGame('goku');showTitle();
 (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>requestAnimationFrame(loop));
 })();
