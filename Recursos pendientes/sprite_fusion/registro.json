@@ -1,0 +1,102 @@
+{
+ "goku_0": {
+  "poses": [
+   {
+    "id": "34be0d13-c700-4ab5-9918-0ff9ac02347e",
+    "archivo": "Recursos pendientes/sprite_fusion/salida/goku_0_pose0.png"
+   },
+   {
+    "id": "d10c7247-c0ba-487d-b2ca-b336cd1aa073",
+    "archivo": "Recursos pendientes/sprite_fusion/salida/goku_0_pose1.png"
+   }
+  ],
+  "pose_req": {
+   "prompt": "Redraw this exact sprite in a side-view walking pose facing right, mid-step: front leg forward, back leg behind, arms swinging opposite to the legs. It must stay the SAME sprite: identical height in pixels, identical large head, hair, face, chunky short proportions, outfit details, palette, black outline and pixel size. Do not make the character taller, slimmer or more detailed. Keep the head and torso pixels as they are; only the legs and arms move. Transparent background, no effects, no shadow.",
+   "hora": "2026-11-04 18:12"
+  },
+  "animaciones": [
+   {
+    "id": "af54b8f6-b2a8-4119-b0bd-03a900d30b34",
+    "desde": "pose0",
+    "prompt": "Side view walk cycle to the right, seamless loop with a steady rhythm. Legs alternate clearly with the feet planted on the same ground line, the arms swing opposite to the legs, a small body bob on each step. Keep exactly the same character, hair, outfit, colors and pixel size in every frame. No effects, no aura, no background.",
+    "fotogramas": 8,
+    "fps": 8,
+    "tira": "Recursos pendientes/sprite_fusion/salida/goku_0_8.png",
+    "animacion": "Recursos pendientes/sprite_fusion/salida/goku_0_anim.webp",
+    "hora": "2026-11-04 18:03"
+   },
+   {
+    "tipo": "disparo",
+    "id": "c4af564e-1882-464b-b10f-9d7ba818783d",
+    "desde": "poseCast1",
+    "prompt": "Side view walk cycle to the right while shooting: the legs walk with clear alternating steps, feet on the same ground line, but the upper body, head and the extended shooting arm stay fixed in this exact firing pose, aimed straight ahead, with only a tiny bob on each step. Keep exactly the same character, proportions, colors and pixel size in every frame. Seamless loop. No projectile, no effects, no background.",
+    "fotogramas": 8,
+    "fps": 8,
+    "tira": "Recursos pendientes/sprite_fusion/salida/goku_0_disparo_8.png",
+    "animacion": "Recursos pendientes/sprite_fusion/salida/goku_0_disparo_anim.webp",
+    "hora": "2026-11-04 18:09"
+   },
+   {
+    "tipo": "golpe",
+    "id": "a8d69044-9919-476e-9368-03b59e73eb49",
+    "desde": "poseAttack1",
+    "prompt": "Side view: the character walks forward to the right while punching: alternating steps with the feet on the same ground line and a fast straight punch forward with the front arm, then the arm comes back. Keep exactly the same character, proportions, colors and pixel size in every frame. Seamless loop. No effects, no background.",
+    "fotogramas": 8,
+    "fps": 8,
+    "tira": "Recursos pendientes/sprite_fusion/salida/goku_0_golpe_8.png",
+    "animacion": "Recursos pendientes/sprite_fusion/salida/goku_0_golpe_anim.webp",
+    "hora": "2026-11-04 18:11"
+   },
+   {
+    "tipo": "andar",
+    "id": "56aa81d8-5599-478e-907f-fe901dcdaf7c",
+    "desde": "pose0",
+    "prompt": "Side view walk cycle to the right, seamless loop with a steady rhythm. Legs alternate clearly with the feet planted on the same ground line, the arms swing opposite to the legs, a small body bob on each step. Keep exactly the same character, hair, outfit, colors and pixel size in every frame. No effects, no aura, no background.",
+    "fotogramas": 8,
+    "fps": 8,
+    "tira": "Recursos pendientes/sprite_fusion/salida/goku_0_8.png",
+    "animacion": "Recursos pendientes/sprite_fusion/salida/goku_0_andar_anim.webp",
+    "hora": "2026-11-04 18:14"
+   }
+  ]
+ },
+ "vegeta_0": {
+  "poses": [
+   {
+    "id": "7c7523fc-5a0c-42ac-bee3-5a347a648848",
+    "archivo": "Recursos pendientes/sprite_fusion/salida/vegeta_0_pose0.png"
+   },
+   {
+    "id": "a6630d74-9ae8-458f-91f8-61368bf99f78",
+    "archivo": "Recursos pendientes/sprite_fusion/salida/vegeta_0_pose1.png"
+   }
+  ],
+  "pose_req": {
+   "prompt": "Redraw this exact sprite in a side-view walking pose facing right, mid-step: front leg forward, back leg behind, arms swinging opposite to the legs. It must stay the SAME sprite: identical height in pixels, identical large head, hair, face, chunky short proportions, outfit details, palette, black outline and pixel size. Do not make the character taller, slimmer or more detailed. Keep the head and torso pixels as they are; only the legs and arms move. Transparent background, no effects, no shadow.",
+   "hora": "2026-11-04 18:06"
+  },
+  "animaciones": [
+   {
+    "id": "b44d5608-f52e-4bdd-b0a2-1e9913eefa5a",
+    "desde": "pose0",
+    "prompt": "Side view walk cycle to the right, seamless loop with a steady rhythm. Legs alternate clearly with the feet planted on the same ground line, the arms swing opposite to the legs, a small body bob on each step. Keep exactly the same character, hair, outfit, colors and pixel size in every frame. No effects, no aura, no background.",
+    "fotogramas": 8,
+    "fps": 8,
+    "tira": "Recursos pendientes/sprite_fusion/salida/vegeta_0_8.png",
+    "animacion": "Recursos pendientes/sprite_fusion/salida/vegeta_0_anim.webp",
+    "hora": "2026-11-04 18:07"
+   },
+   {
+    "tipo": "disparo",
+    "id": "315b125c-3491-4d49-8a97-392bfb45665d",
+    "desde": "poseCast1",
+    "prompt": "Side view walk cycle to the right while shooting: the legs walk with clear alternating steps, feet on the same ground line, but the upper body, head and the extended shooting arm stay fixed in this exact firing pose, aimed straight ahead, with only a tiny bob on each step. Keep exactly the same character, proportions, colors and pixel size in every frame. Seamless loop. No projectile, no effects, no background.",
+    "fotogramas": 8,
+    "fps": 8,
+    "tira": "Recursos pendientes/sprite_fusion/salida/vegeta_0_disparo_8.png",
+    "animacion": "Recursos pendientes/sprite_fusion/salida/vegeta_0_disparo_anim.webp",
+    "hora": "2026-11-04 18:10"
+   }
+  ]
+ }
+}
