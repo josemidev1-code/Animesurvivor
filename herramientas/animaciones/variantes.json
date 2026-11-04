@@ -67,8 +67,8 @@
      27
     ],
     "pow": [
-     7,
-     8
+     6,
+     9
     ],
     "hurt": [
      35,
@@ -77,7 +77,11 @@
     "faint": [
      31
     ],
-    "portrait": 0
+    "portrait": 0,
+    "powAntes": [
+     7,
+     8
+    ]
    },
    "2": {
     "pack": "05_Fanmade_y_alternativos/Gohan/115_GOHAN ULTRA INSTINTO DBS ANDRÉS GAMEN ANIMATIONS",
@@ -149,10 +153,10 @@
      99,
      100
     ],
-    "faint": [
+    "portrait": 0,
+    "faintAntes": [
      97
-    ],
-    "portrait": 0
+    ]
    },
    "4": {
     "pack": "05_Fanmade_y_alternativos/Gohan/120_GOHAN MODO BESTIA BY ANDRÉS GAMEN ANIMATIONS",
@@ -674,10 +678,10 @@
      48,
      47
     ],
-    "faint": [
+    "portrait": 0,
+    "faintAntes": [
      71
-    ],
-    "portrait": 0
+    ]
    },
    "1": {
     "pack": "05_Fanmade_y_alternativos/Goku/285_GOKU ZOMBIE ULSW",
@@ -1381,9 +1385,13 @@
     ],
     "hurt": [
      146,
-     147
+     146
     ],
-    "portrait": 136
+    "portrait": 136,
+    "hurtAntes": [
+     146,
+     147
+    ]
    },
    "5": {
     "pack": "01_Dragon_Ball_Super/06_Moro/Goku/251_fases Goku dbs moro, Damaged.Andres Gamen",

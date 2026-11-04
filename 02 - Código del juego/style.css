@@ -199,3 +199,6 @@ h2{font-family:var(--pix);font-size:clamp(14px,3.4vw,22px);color:var(--ki);margi
 #levelup .up .ds{font-size:18px;color:#c8d4f4}
 #levelup .up .key{flex:none;border:2px solid #b8c8f0;border-radius:5px;padding:6px 7px;color:#fff;font-size:9px}
 #levelup .up.evo{background:linear-gradient(90deg,rgba(90,64,8,.85),rgba(40,30,6,.85));border-color:var(--ki)}
+
+/* Colores de estadísticas, acompañados de sus etiquetas. */
+.card .statVida{color:#7cf29b}.card .statVel{color:#82c7ff}.card .statAtq{color:#ff9898}

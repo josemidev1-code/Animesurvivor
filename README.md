@@ -102,3 +102,5 @@ el GIF de Lady-Pixel se conserva íntegro. Falta revisar estos objetos en una pa
 - Solo sprites de `sprites/`, nada dibujado por código. Lo que no tenga sprites buenos se quita y se apunta en `01 - Guía y documentación/SPRITES_PENDIENTES.md`.
 - Al moverse, los personajes vuelan o se impulsan (no caminan).
 - Todo tiene que funcionar con doble clic en `index.html`.
+
+> 3 nov.: las estadísticas de selección usan verde para vida, azul para velocidad y rojo para ataque. Pendiente revisión visual; siguen pendientes el retrato y el personaje completo en selección.

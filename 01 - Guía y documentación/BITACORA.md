@@ -81,7 +81,9 @@ El siguiente agente (o tú en otra sesión) lo leerá antes de tocar nada.
    - Mapeados los 10 enemigos pendientes en `SCPACK.e` y configurados con filtros cromáticos en `SCTINT`:
      - `dodoria`: `toppo` con filtro rosado alienígena.
      - `zarbon`: `frost` con filtro verdoso elegante.
-     - `nappa` y `nappaE`: `saiyanw` (guerrero Saiyan con armadura y botas).
+     - 
+appa` y 
+appaE`: `saiyanw` (guerrero Saiyan con armadura y botas).
      - `a19`: `a16` con filtro robótico pálido.
      - `dabura`: `janemba` con tono demoníaco púrpura.
      - `burter`: `ginyu` con filtro azul de las Fuerzas Especiales.
@@ -871,3 +873,131 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Preguntar a Josemi por qué punto de «Cambios propuestos» empezar (selección y estadísticas, o inventario de sprites) y si fusiona la rama en `main`. La jugabilidad (enemigos sin esperas, Kaioken por tiempo) va después.
 
 - Subido a GitHub (2 nov.): `main` avanzada con todo el trabajo (a191a967) e incluida la carpeta `sprites/` (33.697 archivos, 420 MB; repo privado); subidas también las ramas `claude/cuerpo-a-cuerpo`, `claude/quizzical-gates-9cf9c0`, `bloque1-fotogramas`, `claude/efectos-pequenos` y `claude/vuelo-bajo`.
+
+## 2026-11-03 — Codex · Continuación del trabajo de Claude
+
+### Lo que pidió el usuario
+- «SIGUE LO QUE ESTABA HACIENDO CLAUDE, IVNESTIGA».
+
+### Lo que hice
+- Revisado el relevo, las propuestas y las ramas: main contiene el trabajo de combate y Shenron; los siete personajes siguen en una rama separada.
+- En la selección, vida aparece en verde, velocidad en azul y ataque en rojo, conservando sus etiquetas. Versiones de caché actualizadas.
+
+### A medias / problemas
+- Sintaxis de script.js comprobada con node --check. Pendiente comprobar visualmente y al abrir con doble clic.
+
+### Siguiente paso recomendado
+- Revisar visualmente la selección; decidir con Josemi si el retrato cambia con cada transformación y cómo tratar los packs incompletos. Continuar por bloques las propuestas antes de retomar jugabilidad.
+
+
+## 2026-11-03 — Codex · Consulta de Claude
+
+### Lo que pidió el usuario
+- «entra a la app de claude y mira lo que estaba haciedo i continua».
+
+### Lo que hice
+- Abrí Claude y localicé la sesión «Dragon Ball Survivor: metiendo personajes».
+
+### A medias / problemas
+- Fortnite está delante de Claude y bloquea la interacción; no he podido abrir la conversación. Falta comprobar qué estaba haciendo antes de continuar.
+
+### Siguiente paso recomendado
+- Minimizar Fortnite, abrir la sesión y contrastar sus últimas instrucciones con el proyecto.
+
+
+## 2026-11-03 — Codex · Sesión real de Claude
+
+### Lo que pidió el usuario
+- «ESCUCHAME, ENTRA TU»: consultar Claude y continuar su trabajo.
+
+### Lo que hice
+- La captura de Claude muestra trabajo en Fasha, soldado Red Ribbon y Ozaru, y una tanda anterior de Burter, Whis, Androide 19 y Dabura. El lector de accesibilidad mostraba una pantalla desactualizada.
+- Localizado y recuperado de GitHub el commit a5137f9f (tanda 2 de DeviantArt), posterior a esta copia local; se empezó a crear la copia ANIMESURVIVOR-CLAUDE, rama codex/continuar-claude.
+
+### A medias / problemas
+- La creación de la copia quedó en curso; index.lock permanece en uso y no está confirmada su integridad. No se ha recuperado el trabajo posterior sin commit de Fasha y Red Ribbon. La carpeta principal tiene cambios locales sin commit.
+
+### Siguiente paso recomendado
+- Comprobar que termine el checkout y revisar el estado en la copia nueva; investigar cómo recuperar los cambios no publicados de la sesión antes de rehacerlos.
+
+
+## 2026-11-03 — Codex · Auditoría profunda y prueba de juego
+
+### Lo que pidió el usuario
+- «INVESTIGA PROFUDNAMENTE ESTE JUEGO Y DIME UN ANALISIS JUEGALO Y DIME QUE TENGO QUE CAMBIAR».
+
+### Lo que hice
+- Iniciada revisión del estado, prioridades y pruebas. Hay cambios locales previos en documentación, script.js, style.css, README e index.html; se conservarán.
+- En curso: prueba visual de la versión local y análisis de jugabilidad, interfaz, progresión y fallos.
+
+### A medias / problemas
+- Auditoría en curso; todavía no hay conclusiones finales.
+
+### Siguiente paso recomendado
+- Completar la prueba y entregar recomendaciones priorizadas con evidencias.
+- Hallazgo confirmado en navegador: comprar Super Saiyan de Goku cuesta 5 tickets (23 → 18); al recargar vuelve a estar bloqueado y los tickets siguen gastados. loadSave omite formas y otros campos añadidos después.
+- Primera partida controlada con teclado y observación visual: Goku / Kame House / Normal; final 02:09, nivel 5, 119 KO. Probados ki, combo, Kamehameha, subidas de nivel, curación, recogida y pausa. Los tiempos incluyen limitaciones del control por herramientas y no son una estadística de equilibrio.
+- Sintaxis y seis comprobaciones existentes (combate, roles, formas, enemigos, personajes, objetos) pasan. La de formas no detecta la pérdida al recargar.
+- Apertura file:// bloqueada por la política del navegador de herramientas. Se prueba por HTTP local 127.0.0.1:8766; doble clic no verificado.
+
+
+## 2026-11-04 — Claude (sesión animaciones coherentes)
+
+### Lo que pidió el usuario
+- «mejorar las animaciones y que todos los personajes tengan que ver con sus animaciones».
+- Aclarado con él: las dos cosas (que cada forma se vea como dice su nombre y que cada personaje lance técnicas suyas de la serie). Si una forma usa sprites de otra, **renombrarla al sprite**. Las formas inventadas o sin sprites (Krilin, A18, Yamcha, Goten…) **se quitan y se apuntan**.
+
+### Lo que hice
+- En curso: revisión a ojo de las 168 formas jugables (hojas con todas las animaciones de cada forma, generadas desde `animaciones_juego.js`).
+
+## 2026-11-04 — Claude (sesión animaciones coherentes, continuación)
+
+### Lo que pidió el usuario
+- «en mi escritorio una carpeta que se llama animesurvivor mira dentro y quiero mejorar las animaciones y que todos los personajes tengan que ver con sus animaciones». Continúo la entrada anterior (la revisión quedó «en curso» y sus hojas no llegaron a la carpeta).
+
+### Lo que hice
+- Revisión a ojo de las **171 formas** del juego (29 hojas generadas desde `animaciones_juego.js`, todas las animaciones de cada forma). Los nombres de forma ya coinciden con sus packs; la mayoría está bien.
+- **Muerte (Faint) que era un rayo o un efecto, no el personaje caído** → quitada (el juego usa entonces el daño): vegeta/4, vegetaue/0, vegetaue/3, vegetagt/0 (anillos rosas), vegetasuper/3, gokuui/4, gokusuper/4. También gohandbs/3 MUI (caía en pelo negro, otra forma) y zombies/0 (mancha diminuta). Las de `variantes.json` se guardan como `faintAntes`.
+- **gokusuper/2 SSJ KAIOKEN**: el vuelo y el daño eran fotogramas con el pelo rosa (Kaioken base) y la guardia en SSJ → vuelo `[20]`, daño `[25, 41]`, todos en SSJ con el gi teñido (`moveAntes`/`hurtAntes`).
+- **gohandbs/1 MÍSTICO**: el aura (pow 7, 8) venía dibujada a otra escala y Gohan salía diminuto → pow `[6, 9]` (postura de carga y carga agachado con remolino), a su tamaño (`powAntes`).
+- **gokumoro/4 ULTRA INSTINTO**: el 2.º fotograma de daño era de otra forma (rojo) → daño `[146, 146]` (`hurtAntes`).
+- Reconstruidas solo esas dos formas con `montar_animaciones.py` (mismo código; las animaciones sin cambios salen idénticas byte a byte) y el resto parcheado en `animaciones_juego.js` (quitar Faint). `animaciones_juego.js?v=67`.
+- **Técnicas fieles a la serie** (`SIGS` / `SIGS_SERIE`, `script.js?v=88`): quitadas técnicas con nombre de otro personaje.
+  - Saibaman: fuera «Ráfaga de Krilin» y «Final Explosion» → Ráfaga de Ki y **Autodestrucción** (`jibaku`, mismo efecto que Final Explosion).
+  - Freezer, Cooler, Frost: «Kienzan» → **Disco Mortal** (`discomortal`, mismo efecto, `sig:1` para que no salga como arma nueva). Freezer y Frost sin «Lanzas Divinas» (de Zamasu).
+  - Hit: fuera «Teletransporte» y «Golpe del Instinto» (de Goku) → **Puño Invisible** (`invisible`, efecto del Golpe del Instinto) y patada.
+  - Janemba sin Hellzone Grenade (de Piccolo); Buu, Kefla, Caulifla sin Gigantic Roar (de Broly); Jiren sin Gigantic Roar ni Omega Blaster; Moro sin Omega Blaster; Toppo sin Power Blitz (de 17/18); Cumber sin Eraser Cannon ni Gigantic Roar.
+  - Descripciones corregidas: Raditz (decía Galick Gun), Bills (Big Bang) y A16 («su cañón»).
+- Pruebas: `node --check`, `comprobar_personajes.cjs` y `comprobar_roles.cjs` correctas. Juego abierto como archivo local (`file://`, equivale al doble clic) en Chromium sin errores de página; 25 s simulados con Hit, Freezer, Saibaman, Goku Super, Gohan DBS, Goku Moro, Jiren y Vegeta; Puño Invisible, Disco Mortal y Autodestrucción lanzados contra enemigos (matan, sin errores). El HUD muestra «Disco Mortal».
+
+### A medias / problemas
+- **goku/3 SSJ3**: la guardia (6, 7) y el vuelo no llevan halo y los golpes sí (salta al atacar). Hay que elegir fotogramas con halo del pack 147 (`ver_pack.py`).
+- **dlrx/0**: el aura (pow 63-65) es de otra transformación (pelo rosa). Falta elegir otros fotogramas del pack 009 o confirmar con Josemi.
+- Dudas de nombres para Josemi (no cambiadas): A18 con Kienzan; Toppo/A16 con Ráfaga de Ki genérica; Kale con Gigantic Roar; las descripciones «Empieza con…» dicen la técnica estrella aunque al empezar se abren las dos primeras de la lista.
+- No jugado por una persona; no vista la selección de personajes tras el cambio.
+
+### Siguiente paso recomendado
+- Arreglar goku/3 y dlrx/0 con `ver_pack.py` + `previsualizar.py`. Que Josemi juegue Freezer, Hit y Saibaman y diga si las técnicas se sienten suyas.
+
+## 2026-11-04 — Claude (efectos de pixelfx en las técnicas)
+
+### Lo que pidió el usuario
+- Le propuse 4 caminos y eligió el 1 («SIIII!»): mejorar los efectos de las técnicas con pixelfx (librería MIT que nos pasó), empezando por una prueba.
+
+### Lo que hice
+- `herramientas/efectos_pixelfx/efectos.js` (+ `LEEME.md`): puente que crea, avanza y dibuja efectos de pixelfx sobre el lienzo del juego (`window.PFX`). Empaquetado con esbuild en `02 - Código del juego/efectos_pixelfx.js` (58 KB, sin módulos ni fetch: funciona con doble clic). Se carga antes de `script.js` (`efectos_pixelfx.js?v=1`, `script.js?v=89`).
+- Enganchado en `script.js` en 6 sitios (todos con `if(window.PFX)`, si falta se usan los efectos de antes): `explode()` → explosión de plasma con los colores de la técnica (sustituye la explosión de sprites y la ráfaga de partículas; se mantiene el anillo de alcance); `fireSig()` rama nova → implosión para Hakai, plasma para Final Explosion/Autodestrucción, estallido arcano para el resto; combo cuerpo a cuerpo → chispa en cada golpe que toca y golpe crítico en el último; avance en `sigUpdate`, dibujo tras los anillos de `fxRg`, limpieza en `newGame`.
+- Paleta: rampa a partir de los colores de cada técnica, sin tonos casi negros (en la hierba se veían como manchas) y sustituyendo también el acento morado de pixelfx (el Big Bang salía morado).
+- Topes: 10 plasmas, 4 implosiones, 6 estallidos, 14 chispas, 6 críticos vivos a la vez; cada uno dura como mucho 0,5-1,7 s.
+- Pruebas en Chromium abriendo `index.html` como archivo: sin errores; Goku (combo), Vegeta (Big Bang, Final Explosion), Bills (Hakai), Saibaman (Autodestrucción) vistos en capturas; 60 fps con 40 enemigos. Créditos añadidos en `CREDITOS_RECURSOS.md`.
+
+### A medias / problemas
+- Es una prueba: falta que Josemi lo juegue y diga si le gusta, si los efectos son demasiado grandes (el plasma llega a ~120 px de ancho con sus anillos finos) y qué técnicas quiere después (rayos tipo Kamehameha, carga de ki, Genkidama, Kienzan/Disco Mortal, impactos de los enemigos).
+
+### Siguiente paso recomendado
+- Según lo que diga Josemi: ajustar tamaño/duración y pasar a los rayos (carga en las manos + impacto al final) y a la Genkidama.
+
+## 2026-11-04 — Claude (sesión nueva)
+
+### Lo que pidió el usuario
+- «mira la carpeta de animesurvivor y vamos a seguir con dragon ball». Revisado el relevo; pendiente de que elija el siguiente paso.

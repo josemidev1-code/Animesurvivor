@@ -72,3 +72,9 @@ deben acompañar a cualquier incorporación posterior.
 
 La senzu y las cápsulas que finalmente usa el juego proceden de la hoja de Legacy of Goku II citada arriba,
 **no** de los dos avatares de SailorTrekkie92. No se han enviado mensajes a artistas ni creado cuentas.
+
+## Efectos de pixel art (pixelfx)
+
+| Recurso | Fuente | Uso |
+|---|---|---|
+| Efectos de explosión, implosión, estallido arcano y golpes | [pixelfx — Patch (patch.gg)](https://github.com/patch-gg/pixelfx), licencia MIT; método de [Hugo Duprez](https://www.spritefusion.com/blog/how-to-make-good-pixel-art-effects-with-claude) | Incorporados por código en `02 - Código del juego/efectos_pixelfx.js` (origen en `herramientas/efectos_pixelfx/`). La fuente Patch Pixel de pixelfx no se usa |

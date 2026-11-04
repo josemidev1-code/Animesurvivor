@@ -662,9 +662,9 @@ HDEF.trunkscell={...HDEF.trunks,name:'TRUNKS (CELL)',rar:3,hp:115,desc:'Trunks c
 HDEF.roshi={...HDEF.krilin,name:'MAESTRO ROSHI',rar:3,hp:100,spd:56,atk:1.1,start:'kame',desc:'El inventor del Kamehameha.',forms:['BASE']};
 // personajes añadidos desde los packs de sprites/ (animaciones en herramientas/animaciones/nuevos.json)
 const NUEVOS={
- raditz:{name:'RADITZ',rar:3,hp:115,spd:64,atk:1.05,start:'galick',desc:'El hermano de Goku. Empieza con Galick Gun.',forms:['BASE','SUPER SAIYAN'],aura:['white','gold'],sig:['kiblast','punch','galick','kick','renzoku','bigbang']},
+ raditz:{name:'RADITZ',rar:3,hp:115,spd:64,atk:1.05,start:'galick',desc:'El hermano de Goku. Saturday Crush y Double Sunday.',forms:['BASE','SUPER SAIYAN'],aura:['white','gold'],sig:['kiblast','punch','galick','kick','renzoku','bigbang']},
  saibaman:{name:'SAIBAMAN',rar:3,hp:90,spd:72,atk:0.95,start:'kame',desc:'Pequeño y rápido. Explota si hace falta.',forms:['BASE'],aura:['purple'],sig:['kiblast','punch','kick','scatter','finalexp']},
- a16:{name:'ANDROIDE 16',rar:4,hp:160,spd:56,atk:1.15,start:'eraser',desc:'Enorme y resistente. Empieza con su cañón.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','powerblitz','finalflash','finalexp']},
+ a16:{name:'ANDROIDE 16',rar:4,hp:160,spd:56,atk:1.15,start:'eraser',desc:'Enorme y resistente. Puño Cohete y Hell Flash.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','powerblitz','finalflash','finalexp']},
  a17:{name:'ANDROIDE 17',rar:4,hp:110,spd:70,atk:1.05,start:'orbs',desc:'Energía infinita y barrera. Muy veloz.',forms:['BASE'],aura:['blue'],sig:['kiblast','kick','punch','a18volley','powerblitz']},
  freezer:{name:'FREEZER',rar:5,hp:110,spd:66,atk:1.25,start:'kienzan',desc:'El emperador del universo. Empieza con el Disco Mortal.',forms:['1ª FORMA','3ª FORMA','FORMA FINAL','100%','GOLDEN','BLACK'],aura:['purple','purple','purple','purple','gold','purple'],sig:['kiblast','kienzan','punch','lances','kick','omega']},
  cooler:{name:'COOLER',rar:4,hp:120,spd:62,atk:1.2,start:'kienzan',desc:'El hermano de Freezer. Golpes y rayos.',forms:['FORMA FINAL'],aura:['purple'],sig:['kiblast','kienzan','punch','kick','omega']},
@@ -672,7 +672,7 @@ const NUEVOS={
  cell:{name:'CELL',rar:5,hp:125,spd:62,atk:1.2,start:'kame',desc:'El androide perfecto. Absorbe y crece.',forms:['IMPERFECTO','SEMIPERFECTO','PERFECTO','GOLDEN','MAJIN'],aura:['gold','gold','gold','gold','gold'],sig:['kiblast','punch','kame','kienzan','kick','finalexp']},
  buu:{name:'MAJIN BUU',rar:5,hp:150,spd:60,atk:1.15,start:'donut',desc:'Se regenera sin parar. Cinco formas.',regen:0.5,forms:['GORDO','MALIGNO','SUPER BUU','BUU GOHAN','KID BUU'],aura:['purple','purple','purple','purple','purple'],sig:['kiblast','punch','kick','renzoku','finalexp','roar']},
  turles:{name:'TURLES',rar:4,hp:120,spd:64,atk:1.15,start:'galick',desc:'El Saiyan del Árbol Sagrado.',forms:['BASE','SSJ MALIGNO'],aura:['purple','red'],sig:['kiblast','punch','renzoku','kick','bigbang','finalflash']},
- bills:{name:'BILLS',rar:5,hp:130,spd:66,atk:1.35,start:'bigbang',desc:'El Dios de la Destrucción. Empieza con Big Bang.',forms:['DIOS DESTRUCTOR'],aura:['purple'],sig:['kiblast','punch','kick','renzoku','hakai']},
+ bills:{name:'BILLS',rar:5,hp:130,spd:66,atk:1.35,start:'bigbang',desc:'El Dios de la Destrucción. Esfera de Destrucción y Hakai.',forms:['DIOS DESTRUCTOR'],aura:['purple'],sig:['kiblast','punch','kick','renzoku','hakai']},
  frost:{name:'FROST',rar:3,hp:110,spd:64,atk:1.1,start:'kienzan',desc:'El tramposo del Universo 6.',forms:['1ª FORMA','FORMA FINAL'],aura:['purple','purple'],sig:['kiblast','punch','lances','kick','kienzan']},
  hit:{name:'HIT',rar:5,hp:115,spd:70,atk:1.3,start:'kienzan',desc:'El asesino legendario. Salta en el tiempo.',forms:['BASE'],aura:['purple'],sig:['kiblast','punch','kick','instant','silver']},
  zamasu:{name:'ZAMASU',rar:5,hp:120,spd:64,atk:1.25,start:'makanko',desc:'El Kaioshin que odia a los mortales.',forms:['BASE','FUSIONADO'],aura:['white','purple'],sig:['kiblast','kiblade','punch','lances','kick','scythe']},
@@ -1146,6 +1146,10 @@ Object.assign(MV,{
  timebreak:NOVA('Ruptura del Tiempo',['#5a1a6a','#c060d0','#ffe0ff'],6,30,11,85,1.8),
  acidspit:SHOT('Ácido Saibaman',['#4a8a1a','#a0f040','#f0ffc0'],1.0,7,3,2,170,{pierce:1}),
 });
+// nombres de la serie para técnicas que comparten efecto con otra (4 nov.): sig:1 para que no salgan como arma nueva
+MV.discomortal={...MV.kienzan,name:'Disco Mortal',evo:'Disco Mortal Doble',sig:1};
+MV.jibaku={...MV.finalexp,name:'Autodestrucción'};
+MV.invisible={...MV.silver,name:'Puño Invisible'};
 const SIGS={goku:['kiblast','punch','kame','kaioken','instant','genki'],vegeta:['kiblast','punch','galick','bigbang','finalflash','finalexp'],
  piccolo:['kiblast','punch','eyebeam','makanko','hellzone','lightgren'],krilin:['kiblast','kick','kienzan','scatter','taiyoken','kame'],
  gohan:['kiblast','kick','masenko','kame','gekiretsu','fskame'],trunks:['kiblast','tsword','burning','finishbuster','heatdome','masenko'],
@@ -1153,23 +1157,23 @@ const SIGS={goku:['kiblast','punch','kame','kaioken','instant','genki'],vegeta:[
  broly:['blaster','lariat','eraser','roar','omega','kick'],vegetto:['kiblast','punch','finalkame','spiritsword','bigbang','kick'],
  gogeta:['kiblast','punch','kick','bbkame','stardust'],black:['lances','kiblade','blackkame','punch','scythe','kick'],
  gokuui:['kiblast','silver','kick','kame','instant','genki'],vegetaue:['kiblast','punch','galick','finalflash','hakai','bigbang'],
- gotenks:['ghost','punch','donut','victory','kick'],kefla:['blaster','kick','giganticray','punch','roar'],caulifla:['renzoku','kick','crush','punch','roar'],
+ gotenks:['ghost','punch','donut','victory','kick'],kefla:['blaster','kick','giganticray','punch','kiblast'],caulifla:['renzoku','kick','crush','punch','kiblast'],
  kale:['blaster','lariat','eraser','roar','kick'],kyabe:['kiblast','punch','galick','renzoku','kyabecannon','kick'],
  gohanadult:['kiblast','punch','masenko','kame','makanko','fskame'],gokugt:['kiblast','punch','kame','instant','dragonfist','kame10x'],
  vegetagt:['kiblast','punch','galick','bigbang','finalshine','kick'],gokusuper:['kiblast','punch','kaioken','kame','godkame','genki'],
  vegetasuper:['renzoku','punch','galick','bigbang','finalflash','gamma'],trunkscell:['kiblast','tsword','burning','finishbuster','kick','heatdome'],
  roshi:['kiblast','punch','kame','mafuba','kick']};
 // villanos y variantes: técnicas propias de la serie (antes casi todos tenían la misma lista)
-const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','renzoku'],saibaman:['acidspit','punch','kick','scatter','finalexp'],
+const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','renzoku'],saibaman:['acidspit','punch','kick','kiblast','jibaku'],
  a16:['kiblast','punch','rocketpunch','hellflash','kick','finalexp'],a17:['a18volley','kick','barrier','powerblitz','punch'],
- freezer:['deathbeam','kienzan','punch','lances','deathball','kick'],cooler:['deathbeam','kienzan','punch','kick','supernova'],
- janemba:['kiblast','dimsword','rakshasa','hellzone','kick'],cell:['kiblast','punch','kame','kienzan','solarkame','finalexp'],
- buu:['choco','punch','kick','vanish','finalexp','roar'],turles:['kiblast','punch','killdriver','kick','calamity','renzoku'],
- bills:['kiblast','punch','kick','sphere','hakai'],frost:['deathbeam','punch','lances','kick','kienzan'],
- hit:['kiblast','instant','timeskip','punch','silver'],zamasu:['kiblast','kiblade','lances','holywrath','kick','scythe'],
- jiren:['kiblast','jirenrush','powerimpact','kick','roar','omega'],toppo:['justiceflash','punch','kick','powerblitz','hakai'],
- moro:['kiblast','punch','absorb','kick','omega'],babyvegeta:['kiblast','punch','galick','kick','finalshine','revdeathball'],
- cumber:['kiblast','punch','evilkame','kick','eraser','roar'],gokuxeno:['kiblast','punch','kame10x','instant','kaioken','dragonfist'],
+ freezer:['deathbeam','discomortal','punch','kiblast','deathball','kick'],cooler:['deathbeam','discomortal','punch','kick','supernova'],
+ janemba:['kiblast','dimsword','rakshasa','punch','kick'],cell:['kiblast','punch','kame','kienzan','solarkame','finalexp'],
+ buu:['choco','punch','kick','vanish','kiblast'],turles:['kiblast','punch','killdriver','kick','calamity','renzoku'],
+ bills:['kiblast','punch','kick','sphere','hakai'],frost:['deathbeam','punch','kiblast','kick','discomortal'],
+ hit:['kiblast','invisible','timeskip','punch','kick'],zamasu:['kiblast','kiblade','lances','holywrath','kick','scythe'],
+ jiren:['kiblast','jirenrush','powerimpact','kick','punch'],toppo:['justiceflash','punch','kick','kiblast','hakai'],
+ moro:['kiblast','punch','absorb','kick'],babyvegeta:['kiblast','punch','galick','kick','finalshine','revdeathball'],
+ cumber:['kiblast','punch','evilkame','kick'],gokuxeno:['kiblast','punch','kame10x','instant','kaioken','dragonfist'],
  gohanposeido:['kiblast','punch','kick','masenko','evilkame'],bardockalt:['kiblast','punch','kick','riot','rebellion','finalspirit'],
  brolyfan:['eraser','lariat','blaster','omega','roar','kick'],zombies:['kiblast','punch','kick','kame','galick','finalexp'],
  gohandbs:['kiblast','kick','masenko','gekiretsu','makanko','fskame'],gohanmanga:['kiblast','punch','masenko','makanko','kick','beastcannon'],
@@ -1196,11 +1200,13 @@ function sigUpdate(dt,ps){
   if(P.newSig&&(P.newSig.t-=dt)<=0)P.newSig=null;
   if(P.kaioT>0)P.kaioT-=dt;if(P.powT>0)P.powT-=dt;if(P.shieldT>0)P.shieldT-=dt;
   for(const a of [fxSl,fxRg])for(let i=a.length-1;i>=0;i--)if((a[i].t+=dt)>=a[i].dur)a.splice(i,1);
+  if(window.PFX)PFX.update(dt);
   if(P.dash){const D=P.dash,k=Math.min(1,dt/Math.max(dt,D.t));parts.push({x:P.x+rnd(-4,4),y:P.y-rnd(4,24),vx:0,vy:-8,t:0.25,c:D.c,s:2});
     if(solidMove(P,(D.x-P.x)*k,(D.y-P.y)*k,5))P.dash=null;else if((D.t-=dt)<=0)P.dash=null}
-  if(P.combo&&!P.dash){const C=P.combo;if((C.t-=dt)<=0){C.t=0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;
-      near(hx,hy,C.rad+14,e=>{if(Math.hypot(e.x-hx,e.y-hy)<C.rad+e.r){hurt(e,C.dmg,C.d*C.kb*(last?1:MELEE_AJ.empuje),0);if(!e.boss&&(!ET[e.type].elite||(e.golpesR=(e.golpesR||0)+1)%2===0))e.stun=Math.max(e.stun||0,MELEE_AJ.aturde)}});
+  if(P.combo&&!P.dash){const C=P.combo;if((C.t-=dt)<=0){C.t=0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;let tocado=0;
+      near(hx,hy,C.rad+14,e=>{if(Math.hypot(e.x-hx,e.y-hy)<C.rad+e.r){tocado=1;hurt(e,C.dmg,C.d*C.kb*(last?1:MELEE_AJ.empuje),0);if(!e.boss&&(!ET[e.type].elite||(e.golpesR=(e.golpesR||0)+1)%2===0))e.stun=Math.max(e.stun||0,MELEE_AJ.aturde)}});
       for(let i=0;i<5;i++)parts.push({x:hx+C.d*rnd(4,12),y:hy-rnd(4,16),vx:C.d*rnd(20,70),vy:rnd(-40,10),t:0.22,c:C.col[i%2],s:2});
+      if(tocado&&window.PFX)PFX.hit(hx,P.y,C.d,last);
       if(C.dragon&&last){fxRg.push({x:hx,y:hy-6,t:0,dur:0.5,rad:C.rad*1.6,col:C.col});cam.shake=Math.max(cam.shake||0,6)}
       P.atkT=P.atkD=0.16;P.atkK=C.kick?2:0;P.atkA=C.d>0?0:Math.PI;if(last)P.combo=null}}
   if(P.swing&&!P.dash&&(P.swing.t-=dt)<=0){const G=P.swing,t=G.tg,a=Math.atan2(t.y-P.y,t.x-P.x);P.swing=null;
@@ -1230,7 +1236,7 @@ function fireSig(W,st,dmg,ps){
     // barrera: invulnerable un rato; absorción: cura según los enemigos tocados
     if(W.shield){P.iframe=Math.max(P.iframe,W.shield);P.shieldT=W.shield}
     if(W.heal&&hit){const mx=stats().maxhp;P.hp=Math.min(mx,P.hp+mx*0.03*Math.min(hit,8)*W.heal*4);fx(P.x,P.y-12,'green',18,0.5)}
-    fxRg.push({x:P.x,y:P.y-10,t:0,dur:0.45,rad,col:W.col});if(st.stun)S.flash=Math.max(S.flash,0.25);cam.shake=Math.max(cam.shake||0,5);P.atkT=P.atkD=0.3;P.atkK=1;P.atkA=d>0?0:Math.PI;sfx('charge')}}
+    fxRg.push({x:P.x,y:P.y-10,t:0,dur:0.45,rad,col:W.col});if(window.PFX)PFX.nova(P.x,P.y-10,rad,W.col,W===MV.hakai?'hakai':W===MV.finalexp||W===MV.jibaku?'final':'');if(st.stun)S.flash=Math.max(S.flash,0.25);cam.shake=Math.max(cam.shake||0,5);P.atkT=P.atkD=0.3;P.atkK=1;P.atkA=d>0?0:Math.PI;sfx('charge')}}
 function sigIcon(id){const k='s:'+id;if(ICON_C[k])return ICON_C[k];if(MV0.has(id))return ICON_C[k]=ic(id);
   const W=MV[id],c=mk(16,16),g=c.getContext('2d'),px=(x,y,w,h,col)=>{g.fillStyle=col;g.fillRect(x,y,w,h)},C=W.col;
   switch(W.kind){
@@ -1494,7 +1500,7 @@ function newGame(hid,map){
   S={map:MAPK,bossN:0,t:0,kills:0,spawnT:0,bossIdx:0,ringIdx:0,boss:null,banner:null,flash:0,pending:0,hid,won:false,endless:false,nextEndless:0,zeni:0,freeze:0,diff:pickedDiff,meta:metaBonus(),mr:1+0.01*mastRank(hid),aw:awaken(hid),saiba:0,forms:0,evos:0,balls:0,ballN:0,wishes:0,bank:{t:0,kills:0,boss:0,saiba:0,forms:0,evos:0,zeni:0,wishes:0}};S.revives=S.meta.revive;
   P={dir:'down',cast:null,x:0,y:0,hp:H.hp,face:1,anim:0,moving:false,iframe:0,lvl:1,xp:0,need:need(1),form:0,
      moves:{},order:[],cards:{},orbA:0,hitT:0,sel:0,sigT:0.6,sigCD:1,sigN:0,sigU:2,sigB:[],powT:1.2};
-  P.hp=stats().maxhp;fxSl.length=0;fxRg.length=0;
+  P.hp=stats().maxhp;fxSl.length=0;fxRg.length=0;if(window.PFX)PFX.clear();
   fxs=[];ebeams=[];enemies=[];projs=[];eshots=[];beams=[];bombs=[];gems=[];pickups=[];parts=[];texts=[];
   cam.x=-VW/2;cam.y=-VH/2;
 }
@@ -1594,8 +1600,10 @@ function dropGem(x,y,v){if(gems.length>450){const g=gems[(Math.random()*gems.len
 function burst(x,y,n,cols){for(let i=0;i<n&&parts.length<500;i++){const a=rnd(TAU),s=rnd(20,90);parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,t:rnd(0.25,0.6),c:cols[i%cols.length],s:Math.random()<.3?2:1})}}
 function explode(x,y,rad,dmg,cols){
   near(x,y,rad+12,e=>{const d=Math.hypot(e.x-x,e.y-y);if(d<rad+e.r)hurt(e,dmg,(e.x-x)/(d||1)*80,(e.y-y)/(d||1)*80)});
-  if(FXI.boom&&fxs.length<90)fxs.push({x,y,fr:boomFrames(rad,cols),t:0,T:0.42});else fx(x,y,fxKind(cols[1]),Math.max(8,Math.min(28,rad*0.8|0)),0.45);smoke(x,y,4);
-  parts.push({ring:1,x,y,t:0.35,T:0.35,r:rad,c:cols[1]});burst(x,y,18,cols);cam.shake=Math.max(cam.shake,3);sfx('boom')}
+  // efectos de pixelfx (efectos_pixelfx.js); si no está o se llega al tope, la explosión de siempre
+  const pfx=window.PFX&&PFX.boom(x,y,rad,cols);
+  if(!pfx){if(FXI.boom&&fxs.length<90)fxs.push({x,y,fr:boomFrames(rad,cols),t:0,T:0.42});else fx(x,y,fxKind(cols[1]),Math.max(8,Math.min(28,rad*0.8|0)),0.45)}smoke(x,y,4);
+  parts.push({ring:1,x,y,t:0.35,T:0.35,r:rad,c:cols[1]});if(!pfx)burst(x,y,18,cols);cam.shake=Math.max(cam.shake,3);sfx('boom')}
 function roce(v){if(P.iframe>0||state!=='play')return;P.hp-=v;P.hitT=Math.max(P.hitT,0.05);if(P.hp<=0){P.hp=0.5;hitPlayer(1)}}
 function hitPlayer(d,big){
   if(P.iframe>0||state!=='play')return;const st=stats();d=Math.max(1,d-st.armor);
@@ -2654,6 +2662,7 @@ function render(time){
   // sword slashes and shock rings
   for(const f of fxSl){const k=f.t/f.dur,x=X(f.x),y=Y(f.y);ctx.globalAlpha=1-k;for(let j=0;j<3;j++){ctx.fillStyle=j?f.col[0]:'#ffffff';const rr=f.r*(0.55+0.15*j+0.3*k);for(let b=-f.arc/2;b<=f.arc/2;b+=0.06){const c=f.a+b,w=1+((f.arc/2-Math.abs(b))*3|0);ctx.fillRect(Math.round(x+Math.cos(c)*rr),Math.round(y+Math.sin(c)*rr*0.7),w>2?2:1,w>1?2:1)}}ctx.globalAlpha=1}
   for(const f of fxRg){const k=f.t/f.dur,x=X(f.x),y=Y(f.y);ctx.globalAlpha=1-k*0.8;ring(x,y,Math.round(f.rad*(0.25+0.75*k)),f.col[0],2);ring(x,y,Math.round(f.rad*(0.15+0.7*k)),f.col[1],1);ctx.globalAlpha=1}
+  if(window.PFX)PFX.draw(ctx,X,Y);
   // projectiles
   for(const p of projs){const x=X(p.x),y=Y(p.y);
     if(p.k==='ki')drawKi(p,x,y,time)
@@ -3165,7 +3174,7 @@ function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(
     const f0=faceOf(id,0)||(MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():'');
     img.src=f0||'';img.alt=H.name;
     b.appendChild(img);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
-    b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p><span class="stats">VIDA ${H.hp} · VEL ${H.spd} · ATQ x${H.atk}</span>${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
+    b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p><span class="stats"><span class="statVida">VIDA ${H.hp}</span> · <span class="statVel">VEL ${H.spd}</span> · <span class="statAtq">ATQ x${H.atk}</span></span>${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
     b.dataset.id=id;b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
     if(own&&H.forms&&H.forms.length>1){let form=0;cardTimers.push(setInterval(()=>{
       if(state!=='title')return;form=(form+1)%H.forms.length;

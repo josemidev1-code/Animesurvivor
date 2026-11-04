@@ -31,3 +31,7 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - Sintaxis: `node --check "02 - Código del juego/script.js"`. Para animaciones o personajes: consulta la guía y usa las comprobaciones específicas de `herramientas/`.
 - La sintaxis no sustituye una prueba de partida ni la revisión visual de sprites.
 - Si cambian recursos cargados por `index.html`, revisa el parámetro de versión. Deja al terminar un relevo breve con hechos, pruebas y pendientes; actualiza este resumen si cambia el estado.
+
+- 3 nov.: estadísticas de las tarjetas de selección coloreadas: vida verde, velocidad azul y ataque rojo; sintaxis comprobada, revisión visual y doble clic pendientes. La rama de siete personajes sigue separada.
+
+- 4 nov.: revisadas a ojo las 171 formas. Quitadas muertes que eran rayos/efectos, corregidas SSJ Kaioken (Goku Super), aura de Gohan Místico DBS y daño de Goku Moro UI. Técnicas de villanos sin ataques de otros personajes (Disco Mortal, Puño Invisible, Autodestrucción). `animaciones_juego.js?v=67`, `script.js?v=88`. Pendiente: halo de goku/3 y aura de dlrx/0. Detalle en la bitácora.

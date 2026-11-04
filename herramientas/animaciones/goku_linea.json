@@ -478,8 +478,7 @@
      15
     ],
     "move": [
-     64,
-     65
+     20
     ],
     "attack": [
      21,
@@ -502,10 +501,18 @@
      39
     ],
     "hurt": [
+     25,
+     41
+    ],
+    "portrait": 12,
+    "moveAntes": [
+     64,
+     65
+    ],
+    "hurtAntes": [
      63,
      64
-    ],
-    "portrait": 12
+    ]
    },
    "3": {
     "pack": "01_Dragon_Ball_Super/00_Dioses_y_Super_Saiyan_God/Goku/050_Goku God",
