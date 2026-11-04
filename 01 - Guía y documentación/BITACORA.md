@@ -1295,3 +1295,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Cuando haya créditos: probar con 3 (`python herramientas/sprite_fusion_api.py goku_0 vegeta_0 freezer_2`), revisar a ojo, importar con `importar_sprite_fusion.py` y seguir por tandas.
+- Josemi (después): «ya tienes 1095 créditos, por favor úsalos bien; antes entra a pokesurvivor.com, que quiero coger la jugabilidad, la lógica de los enemigos, los ataques, las mejoras y todo de ahí, y quiero animar muy bien los personajes en mi juego Dragon Ball Survivor». Créditos comprobados: 1095 (≈73 animaciones).
+- Josemi: «antes de hacer nada de las animaciones juega a PokéSurvivor y así tienes una idea»; «entra como invitado»; «quiero que analices a fondo todo el juego, las mecánicas de los personajes y todo, porque quiero hacer lo mismo en Dragon Ball Survivor»; «el HUD de Dragon Ball Survivor lo quiero en naranja».
+- Hecho: jugando como invitado con navegador automático (compañero Scorbunny); leídas las páginas públicas (guía, movimientos, objetos, legendarios, tipos, logros, novedades). Su código publicado está ofuscado y el repositorio ya no es público: no se copia código, solo se estudian las mecánicas.
