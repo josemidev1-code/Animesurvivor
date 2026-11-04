@@ -1938,7 +1938,9 @@ function fire(id,m,st,ps){
   switch(W.kind){
    case 'shot':{const n=st.count*(ev?2:1),ts=nearestN(ox,oy,n);
      // se gira hacia el enemigo y la bola sale de la mano, no del pecho ni por la espalda
-     if(!FO&&!W.ring&&ts[0]){const d=ts[0].x<P.x?-1:1;if(P.moving){ox=P.x;oy=P.y-18}else{P.atkFace=d;P.face=d;ox=P.x+d*9;oy=P.y-20}}
+     if(!FO&&!W.ring&&ts[0]){const d=ts[0].x<P.x?-1:1;if(P.moving){ox=P.x;oy=P.y-18}else{P.atkFace=d;P.face=d;ox=P.x+d*9;oy=P.y-20}
+       // el cuerpo se inclina hacia el enemigo y la bola sale de la mano girada
+       P.atkT=P.atkD=0.24;P.atkK=1;P.atkA=aimAt(ts[0]);P.tilt=heroTilt(d<0,0,0);const hh=heroHand(1,d<0);if(hh){ox=hh[0];oy=hh[1]}}
      for(let i=0;i<n;i++){const t=ts[i%Math.max(1,ts.length)];const a=W.ring?i*TAU/n+rnd(-0.05,0.05):aimAt(t)+(ts.length<n?(i-(n-1)/2)*0.18:rnd(-0.05,0.05));
        projs.push({k:'ki',x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:4*ps.area,dmg,pierce:st.pierce+(ev?2:0),life:W.home?2.2:1.3,home:W.home?(t||true):null,age:0,hit:new Set(),col:W.col,spr:FO&&KI_REAL.has(id)?heroKi():null})}
      P.atkT=P.atkD=0.24;P.atkK=1;P.atkA=aimAt(ts[0]);sfx('shot');break}
@@ -2169,7 +2171,7 @@ function update(dt){
   let mx=(keys.KeyD||keys.ArrowRight?1:0)-(keys.KeyA||keys.ArrowLeft?1:0),my=(keys.KeyS||keys.ArrowDown?1:0)-(keys.KeyW||keys.ArrowUp?1:0);
   if(joy.on){const dx=joy.x-joy.ox,dy=joy.y-joy.oy,d=Math.hypot(dx,dy);if(d>3){mx=dx/Math.max(d,18);my=dy/Math.max(d,18)}}
   const ml=Math.hypot(mx,my);if(ml>1){mx/=ml;my/=ml}
-  P.moving=ml>0.05;if(!P.moving&&P.atkT>0&&P.atkFace)P.face=P.atkFace;else{P.atkFace=0;if(mx<-0.1)P.face=-1;else if(mx>0.1)P.face=1}
+  P.moving=ml>0.05;P.mvx=mx;P.mvy=my;if(!P.moving&&P.atkT>0&&P.atkFace)P.face=P.atkFace;else{P.atkFace=0;if(mx<-0.1)P.face=-1;else if(mx>0.1)P.face=1}
   if(P.cast){P.cast.t-=dt;if(P.cast.t<=0)P.cast=null}
   const inW=onWaterAt(P.x,P.y),slow=(P.cast?0.45:1)*(inW?0.85:1)*(S.ev&&S.ev.k==='gravedad'?0.65:S.ev&&S.ev.k==='fusion'?1.35:1);if(inW&&P.moving&&Math.random()<0.5)parts.push({x:P.x+rnd(-5,5),y:P.y-1,vx:rnd(-14,14),vy:-rnd(12,28),t:0.35,c:MAPK==='infierno'?'#ff8a9a':'#e0f6ff',s:1});
   if(P.moving){if(Math.abs(mx)>Math.abs(my)*1.1)P.dir='side';else P.dir=my<0?'up':'down'}
@@ -2815,7 +2817,34 @@ function heroHand(i,left){const pk=scHero(S.hid,P.form);if(!pk||!pk.Cast)return 
     else{const ya=y0+(y1-y0)*0.25|0,yb=y0+(y1-y0)*0.7|0;let bx=-1,sy=0,n=0;
       for(let x=W-1;x>=0&&bx<0;x--)for(let y=ya;y<=yb;y++)if(d[(y*W+x)*4+3]>40){bx=x;sy+=y;n++}
       c._hand=bx<0?[W*0.75,H*0.6]:[bx,sy/n]}}
-  return[P.x+(left?-1:1)*(c._hand[0]-c.width/2)*0.5,P.y+(c._hand[1]-c.height+1)*0.5]}
+  // el cuerpo se dibuja girado P.tilt alrededor de su centro (rotSpr): la mano gira con él y el rayo sale de ella
+  const r=P.tilt||0,vx=(left?-1:1)*(c._hand[0]-c.width/2),vy=c._hand[1]-c.height/2,cs=Math.cos(r),sn=Math.sin(r),bob=P.hov||0;
+  return[P.x+(vx*cs-vy*sn)*0.5,P.y+(-c.height/2+1-bob+vx*sn+vy*cs)*0.5]}
+// Giro de pixel art sin emborronar (método RotSprite): se amplía x4 con Scale2x dos veces, se gira por vecino más
+// cercano y se vuelve al tamaño original muestreando el centro de cada bloque. Caché por fotograma en pasos de 5°.
+const ROT_PASO=Math.PI/36;
+function scale2x(src,W,H){const o=new Uint32Array(W*H*4),W2=W*2,g=(x,y)=>src[Math.min(H-1,Math.max(0,y))*W+Math.min(W-1,Math.max(0,x))];
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){const P0=src[y*W+x],A=g(x,y-1),B=g(x+1,y),C=g(x-1,y),D=g(x,y+1);
+    let e0=P0,e1=P0,e2=P0,e3=P0;if(C===A&&C!==D&&A!==B)e0=A;if(A===B&&A!==C&&B!==D)e1=B;if(D===C&&D!==B&&C!==A)e2=C;if(B===D&&B!==A&&D!==C)e3=D;
+    const i=y*2*W2+x*2;o[i]=e0;o[i+1]=e1;o[i+W2]=e2;o[i+W2+1]=e3}return o}
+function rotSpr(c,r){const st=Math.round(r/ROT_PASO);if(!st)return c;const K=c._rot||(c._rot={});if(K[st])return K[st];
+  const W=c.width,H=c.height,src=new Uint32Array(c.getContext('2d').getImageData(0,0,W,H).data.buffer.slice(0)),
+    s4=scale2x(scale2x(src,W,H),W*2,H*2),W4=W*4,H4=H*4,D=Math.ceil(Math.hypot(W,H))+2,out=mk(D,D),oc=out.getContext('2d'),id=oc.createImageData(D,D),
+    o32=new Uint32Array(id.data.buffer),a=st*ROT_PASO,cs=Math.cos(a),sn=Math.sin(a);
+  for(let Y=0;Y<D;Y++)for(let X=0;X<D;X++){const dx=X+0.5-D/2,dy=Y+0.5-D/2,u=dx*cs+dy*sn+W/2,v=-dx*sn+dy*cs+H/2,sx=u*4|0,sy=v*4|0;
+    if(u>=0&&v>=0&&sx<W4&&sy<H4)o32[Y*D+X]=s4[sy*W4+sx]}
+  oc.putImageData(id,0,0);return K[st]=out}
+// inclinación del cuerpo según lo que hace: rayo o ki hacia donde apunta, golpes un poco, vuelo hacia donde va
+function heroTilt(left,mx,my){const nr=a=>{a=(left?a-Math.PI:a);while(a>Math.PI)a-=TAU;while(a<=-Math.PI)a+=TAU;return a},cl=(a,m)=>Math.max(-m,Math.min(m,a));
+  if(P.dead||P.hitT>0||(P.powT>0&&!P.moving))return 0;
+  // tope de 50° al disparar (a 90° el cuerpo queda tumbado y parece caído; el rayo sigue saliendo de la mano hacia el
+  // enemigo), 40° en los golpes y 36° al volar
+  const TD=Math.PI*5/18;
+  if(P.pend)return P.pend.pose==='up'?0:cl(nr(P.pend.a),TD);
+  if(P.cast)return cl(nr(P.cast.a),TD);
+  if(P.atkT>0)return cl(nr(P.atkA),P.atkK===1?TD:Math.PI*2/9);
+  if(P.moving&&(mx||my))return cl(nr(Math.atan2(my,mx)),Math.PI/5);
+  return 0}
 function drawBeam(b){
   const ox=Math.round(b.x-cam.x),oy=Math.round(b.y-cam.y),t=b.t;
   ctx.save();ctx.translate(ox,oy);ctx.rotate(b.a);
@@ -2953,12 +2982,17 @@ function render(time){
         left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
         // vuelo bajo al moverse: la pose de impulso se despega 3 px de la sombra y flota (0, 1, 2, 1 px) a 8 pasos por segundo;
         // sube y baja poco a poco al arrancar y al pararse, y la sombra se queda en el suelo
-        bob=-Math.round(P.hov=(P.hov||0)+((fly?3+[0,1,2,1][(time*8|0)%4]:0)-(P.hov||0))*0.25);
+        bob=-Math.round(P.hov=(P.hov||0)+((fly?3+[0,1,2,1][(time*8|0)%4]:0)-(P.hov||0))*0.25),
+        // inclinación (Josemi, 4 nov.): al lanzar un rayo hacia arriba apunta arriba, hacia abajo abajo; al volar se inclina
+        // hacia donde va con un leve balanceo. Al disparar o golpear gira de golpe; al volar, poco a poco.
+        tg=heroTilt(left,P.mvx||0,P.mvy||0)+(fly?Math.sin(time*6)*0.09:0),
+        tl=P.tilt=(P.cast||P.pend||P.atkT>0||!tg)&&!fly?tg:(P.tilt||0)+(tg-(P.tilt||0))*0.2,
+        ri=rotSpr(im,tl),rx=Math.round(x-ri.width/2),ry=Math.round(y-im.height/2+1+bob-ri.height/2);
         {const TR=P.tr||(P.tr=[]);if(P.moving&&!P.cast&&!(P.hitT>0)){if(!(time-TR.lt<0.045)){TR.lt=time;TR.unshift([P.x,P.y]);if(TR.length>4)TR.length=4}}else TR.length=0;
-          for(let k=TR.length-1;k>=1;k--){ctx.globalAlpha=0.34-k*0.08;ctx.drawImage(im,Math.round(x+(TR[k][0]-P.x)*2-im.width/2),Math.round(y+(TR[k][1]-P.y)*2-im.height+1+bob))}ctx.globalAlpha=1}
+          for(let k=TR.length-1;k>=1;k--){ctx.globalAlpha=0.34-k*0.08;ctx.drawImage(ri,Math.round(rx+(TR[k][0]-P.x)*2),Math.round(ry+(TR[k][1]-P.y)*2))}ctx.globalAlpha=1}
         if(P.shieldT>0){ctx.globalAlpha=0.35+0.25*Math.sin(time*20);ctx.strokeStyle='#bfe6ff';ctx.lineWidth=2;ctx.beginPath();ctx.arc(Math.round(x),Math.round(y-im.height/2),Math.max(im.width,im.height)*0.62,0,TAU);ctx.stroke();ctx.globalAlpha=1}
         if(P.kaioT>0){const fl=auraFlames('red')[(time*14|0)%3];ctx.globalAlpha=0.85;ctx.drawImage(fl,Math.round(x-fl.width/2),Math.round(y-fl.height+3));ctx.globalAlpha=1}
-        ctx.drawImage(im,Math.round(x-im.width/2),Math.round(y-im.height+1+bob));
+        ctx.drawImage(ri,rx,ry);
         if(pd){const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(x+(up?0:(left?-1:1)*im.width*0.3)-kb.width/2),Math.round(up?y-im.height-kb.height*0.6:y-im.height*0.5-kb.height/2));ctx.globalAlpha=1}
         if(chg&&!bm){const r=4+((time*14|0)%3),kb=kiSprite(r,['#1a5ad8','#6ac8ff','#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.9;ctx.drawImage(kb,Math.round(x+(left?-1:1)*im.width*0.12-kb.width/2),Math.round(y-im.height*0.42-kb.height/2));ctx.globalAlpha=1}}
       // mientras carga su pack no se dibuja ningún muñeco hecho por código
@@ -3714,7 +3748,7 @@ function toggleFull(){if(document.fullscreenElement)document.exitFullscreen();el
   $('#sMute').onclick=()=>{$('#bMute').click();setLabels()};$('#sFull').onclick=toggleFull;$('#sCol').onclick=()=>{debugSolid=!debugSolid;setLabels()};
   $('#sSave').onclick=()=>$('#bkSave').click();$('#sLoad').onclick=()=>$('#bkLoad').click();$('#sForge').onclick=()=>openForge();$('#sMine').onclick=()=>$('#bMine').click();$('#sCred').onclick=()=>openCredits();
   $('#rosterBox').appendChild($('#chars'))})();
-window.AS={SCPACK,scHero,scLoad,heroAnim,spawnAt:(t,dx,dy)=>spawn(t,P.x+dx,P.y+dy),spawnBoss,spawnCrate,putPickup,dropGem,addMove:id=>{addMove(id);const m=P.moves[id];m.lv=5},ebeamT:()=>ebeams.length?ebeams[0].t:null,setDiff:d=>{pickedDiff=d},kiSprite,autoWalk,ET,fxFrames,sparkFrames,fxN:()=>fxs.length,HDEF,loadSave,doPull,heroFrames,enemySprite,beamT:()=>{const b=beams.find(q=>q.hero);return b?b.t:-1},beamsN:()=>beams.length,enemies:()=>enemies,eshots:()=>eshots,gems:()=>gems,pickups:()=>pickups,spd:()=>stats().spd,maps:()=>Object.keys(WORLD),decorAudit:()=>Object.keys(DECOR).filter(k=>!(k in SOLID_DEF)),obstacle:(tx,ty)=>{solidSync();return solidAt(tx,ty)},solid:(x,y,r)=>solidHit(x,y,r),move:(o,dx,dy,r)=>solidMove(o,dx,dy,r),place:(o,r,f)=>solidPlace(o,r,f),setMap:id=>{MAPK=id;S.map=id;S.isl=null;solidReset()},get state(){return state},get S(){return S},get P(){return P},aj:MELEE_AJ,rol:ROL_AJ,start:startGame,tick:(sec)=>{for(let i=0;i<sec*30;i++){if(state==='play')update(1/30)}},pick:i=>{const b=$('#ups').querySelectorAll('button')[i||0];b&&b.click()}};
+window.AS={SCPACK,scHero,scLoad,heroAnim,rotSpr,spawnAt:(t,dx,dy)=>spawn(t,P.x+dx,P.y+dy),spawnBoss,spawnCrate,putPickup,dropGem,addMove:id=>{addMove(id);const m=P.moves[id];m.lv=5},ebeamT:()=>ebeams.length?ebeams[0].t:null,setDiff:d=>{pickedDiff=d},kiSprite,autoWalk,ET,fxFrames,sparkFrames,fxN:()=>fxs.length,HDEF,loadSave,doPull,heroFrames,enemySprite,beamT:()=>{const b=beams.find(q=>q.hero);return b?b.t:-1},beamsN:()=>beams.length,enemies:()=>enemies,eshots:()=>eshots,gems:()=>gems,pickups:()=>pickups,spd:()=>stats().spd,maps:()=>Object.keys(WORLD),decorAudit:()=>Object.keys(DECOR).filter(k=>!(k in SOLID_DEF)),obstacle:(tx,ty)=>{solidSync();return solidAt(tx,ty)},solid:(x,y,r)=>solidHit(x,y,r),move:(o,dx,dy,r)=>solidMove(o,dx,dy,r),place:(o,r,f)=>solidPlace(o,r,f),setMap:id=>{MAPK=id;S.map=id;S.isl=null;solidReset()},get state(){return state},get S(){return S},get P(){return P},aj:MELEE_AJ,rol:ROL_AJ,start:startGame,tick:(sec)=>{for(let i=0;i<sec*30;i++){if(state==='play')update(1/30)}},pick:i=>{const b=$('#ups').querySelectorAll('button')[i||0];b&&b.click()}};
 newGame('goku');showTitle();
 (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>requestAnimationFrame(loop));
 })();

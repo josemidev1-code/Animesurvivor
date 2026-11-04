@@ -14,3 +14,4 @@ herramientas/__pycache__/
 
 # Bocetos del acompañante visual (Superpowers)
 .superpowers/
+.playwright-mcp/

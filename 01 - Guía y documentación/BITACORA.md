@@ -1186,3 +1186,23 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   - `index.html`: versiones `style.css?v=76`, `animaciones_juego.js?v=109`, `efectos_pixelfx.js?v=1`, `script.js?v=135`.
 - Pruebas: sintaxis y las 6 `comprobar_*.cjs` correctas (140 personajes, 193 formas); juego cargado sin errores, partidas simuladas con Goku, Goku Moro, Vegeta y Hit.
 - Norma de Josemi: **todos los cambios se documentan y se suben a GitHub**.
+
+## 2026-11-04 — Claude (reanimar personajes)
+
+### Lo que pidió el usuario
+- «quiero que reanimemos todos los personajes conforme al juego, si tiran un kamehameha arriba que el personaje apunte arriba, si es abajo abajo, que camine, que tenga coherencia, en todos los personajes» (con el plugin pixelfx).
+- Decidido con Josemi (preguntas con opciones): **inclinar el cuerpo** hacia el disparo (vale para todos los modelos) y **volar inclinado** hacia donde va (se mantiene volar en vez de caminar).
+
+### Lo que hice
+- `script.js` (`v=137`):
+  - `rotSpr(c, ángulo)`: giro de pixel art sin emborronar (RotSprite: Scale2x dos veces, giro por vecino más cercano y vuelta al tamaño). Caché por fotograma en pasos de 5°.
+  - `heroTilt()`: inclinación según lo que hace. Rayos, ki y preparación de técnicas: hacia donde apunta, como mucho 50° (a 90° el cuerpo quedaba tumbado y parecía caído; el rayo sigue saliendo de la mano hacia el enemigo). Golpes: hasta 40°. Vuelo: hacia donde va, hasta 36°, suavizado y con un balanceo leve (±5°) en lugar de un segundo fotograma de impulso. Quieto, recibiendo daño, muerto o cargando aura: recto.
+  - `heroHand()` gira la mano con el cuerpo: los rayos (que se recolocan cada fotograma) y las bolas de ki salen de la mano girada.
+  - La estela del vuelo también se dibuja girada. `window.AS.rotSpr` para depurar.
+- Vale para los 193 modelos jugables que usan las animaciones elegidas a mano (no para los dibujados por el sistema viejo de `heroFrames`).
+- Pruebas: sintaxis y las 6 `comprobar_*.cjs` correctas; capturas en Playwright de Goku, Vegeta, Freezer y Piccolo apuntando a −90°, −45°, 0°, 45°, 90° y 135° (`herramientas/_revisar/inclinacion_rayos.png`), y volando hacia arriba (−38°). Sin errores en la consola.
+
+### A medias / problemas
+- No lo ha jugado una persona: falta que Josemi diga si el tope de 50° y el balanceo del vuelo le gustan.
+- Al disparar hacia abajo, la pose de carga (manos atrás) girada se lee peor que la de disparo; dura solo la carga.
+- No se usó ningún efecto nuevo de pixelfx en esta parte (era animación del cuerpo).

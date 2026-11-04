@@ -41,3 +41,4 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - 4 nov. (tarde): 31 muertes nuevas, SSJ3 con halo, DLRX con su aura, fuera Goku Moro MUI (incompleto). 22 formas sin muerte (su pack no la tiene) se quedan: lo decidió Josemi. `animaciones_juego.js?v=68`, `script.js?v=90`.
 
 - 4 nov. (noche): mezclado `main` local con GitHub (40 commits de otra sesión: 140 personajes jugables, selección 16 bits). Arreglos de modelos de hoy conservados. Versiones: `style.css?v=76`, `animaciones_juego.js?v=109`, `script.js?v=135`. Todo subido.
+- 4 nov. (noche): el personaje se inclina hacia donde dispara (hasta 50°) y hacia donde vuela (hasta 36°), con giro RotSprite y rayos desde la mano girada. `script.js?v=137`. Falta que Josemi lo juegue.
