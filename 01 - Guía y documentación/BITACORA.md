@@ -1260,3 +1260,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Pendiente
 - Que Josemi pruebe Sprite Fusion con uno o dos personajes y pase los resultados.
 - Ataques del pack por tandas (`animaciones/ataques.json`), hecho solo Goku base.
+- Josemi: «¿y tú con MCP no puedes controlar mi navegador y hacerlo para todos los personajes?». Claude in Chrome no está conectado. Sprite Fusion tiene **API** (`https://www.spritefusion.com/api/v1`, `POST /generate`, clave `Authorization: Bearer`) pensada para agentes: se puede automatizar sin navegador. Coste: **15 créditos por animación** (planes: Starter 9 $/450 créditos, Creator 19 $/1050, Pro 49 $/3000). 193 formas jugables ≈ 2900 créditos. Pendiente: que Josemi elija plan y cree la clave (la compra y la clave las hace él).
