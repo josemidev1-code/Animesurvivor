@@ -1262,3 +1262,21 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Ataques del pack por tandas (`animaciones/ataques.json`), hecho solo Goku base.
 - Josemi: «¿y tú con MCP no puedes controlar mi navegador y hacerlo para todos los personajes?». Claude in Chrome no está conectado. Sprite Fusion tiene **API** (`https://www.spritefusion.com/api/v1`, `POST /generate`, clave `Authorization: Bearer`) pensada para agentes: se puede automatizar sin navegador. Coste: **15 créditos por animación** (planes: Starter 9 $/450 créditos, Creator 19 $/1050, Pro 49 $/3000). 193 formas jugables ≈ 2900 créditos. Pendiente: que Josemi elija plan y cree la clave (la compra y la clave las hace él).
 - Josemi: «Sí, prueba con 3». Hecho `herramientas/sprite_fusion_api.py` (anima por la API con `operation: animate`, 8 fotogramas, la imagen como `data_url`; clave desde `.env`, nunca se muestra; sin reintentos). Esperando a que Josemi cree la clave en `.env` para probar con goku_0, vegeta_0 y freezer_2.
+
+## 2026-11-04 — Claude (animar todos andando y atacando)
+
+### Lo que pidió el usuario
+- Josemi: «vull animar tots els personatges per a que caminen y ataquen; en Sprite Fusion es poden fer molt bones animacions… per a tots va a fer falta pagar perquè són molts o utilitzar un generador de correus temporals per a fer més sprites, mira a vore».
+- Respuesta: los correos temporales no (van contra las normas de Sprite Fusion). Las 302 formas ya tienen ataque, patada y ki reales de su pack; falta el andar. Opciones: gratis por tandas (recomendado) o plan Pro (49 $, ~2.900 créditos para las 193 jugables). Pendiente de que elija; mientras, sigo gratis con la tanda 2 (línea de Vegeta).
+
+### Lo que hice
+- Inventario: 196 personajes, 302 formas en `animaciones_juego.js`; todas tienen Idle, Walk (pose), Attack, Kick, Cast (ki), Pow y Hurt; 248 con muerte. Ataques extra del pack (`Attack2/3`, `Beam`, `Up`) solo en Goku base. El paso de andar es generado (`walkCycle`); `andar_frames.js` sigue vacío (sin Sprite Fusion).
+- **Tanda 2 del andar (línea de Vegeta, 28 formas)** revisada a ojo con `hojaAndar`: 21 ajustes de cintura en `andar.js` (`?v=3`) donde la mano, el guante o la cola colgaban a la altura de la cadera y se tomaban como pierna. Hoja: `herramientas/_revisar/andar/tanda2.png`. 6 comprobaciones correctas. Copiado al PC de Josemi (`andar.js`, `index.html`).
+
+### Siguiente paso
+- Tanda 3: villanos principales (Freezer, Cell, Buu, Broly, Black…), luego el resto. Después, ataques extra del pack por forma (`animaciones/ataques.json`).
+- Josemi eligió **«Gratis, yo por tandas»** (no paga Sprite Fusion de momento).
+- **Tanda 3 del andar (villanos, 49 formas)**: Freezer (6), Cooler, Frost (2), Cell (5), Buu (5), Broly (4), Janemba, Black (3), Zamasu (2), Jiren (3), Hit, Toppo, Bills, Moro, Raditz (2), Turles (2), Nappa, Ginyu, Saibaman, A16-18. 41 ajustes en `andar.js` (`?v=4`): la raza de Freezer con la cola en el suelo (Freezer 1ª, 2ª, 3ª forma, Golden, Black Freezer, Cooler, Frost 1ª), Super Buu (capa al suelo) y Zamasu fusionado van con `modo:'flotar'` (como en la serie); el resto, cintura subida donde manos, capas, colas o pelo largo bajaban a la cadera. Hojas: `herramientas/_revisar/andar/tanda3a.png` y `tanda3b.png`.
+- Josemi prueba desde el PC de clase: pidió una rama **`animaciones-personajes`** publicada en GitHub Pages. Creada (se sube cada tanda ahí y a `claude/project-thread-sgcumm`); Josemi cambió Pages a esa rama (despliegue correcto 4 nov. 15:44). Al darlo por bueno: pasar a `main` y volver a poner Pages en `main`.
+- **Tanda 4 del andar (resto, 185 formas)** revisada en hojas compactas (`herramientas/_revisar/andar/tanda4_0..8.png`: guardia con cintura, piernas reconocidas y pasos 2 y 6). Casi todos tenían la mano a la altura de la cadera → cintura 0.66; colas de saiyan (SSJ4, Goku niño, Gogeta SSJ4, Bardock SSJ4) y pelo largo de SSJ3 0.72; túnicas/capas/barrigas 0.7. Flotan (14): Piccolo (capa hasta los pies), Rey Cold, Meca Freezer, Freezer 2ª forma (enemigo), Metal Cooler, Garlic Jr., Dabura, Whis, Daishinkan, Merus, Tambourine, Gomah, Nuova y Zamasu fusionado. `andar.js?v=5`: ya tienen ajuste de andar revisado las 302 formas.
+- Ojo: Bardock en `animaciones_juego.js` tiene formas 0,1,3 pero en el juego (`SCPACK`) son 0,1,2: el ajuste va en `bardock/2`.
