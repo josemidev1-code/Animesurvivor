@@ -171,6 +171,10 @@ Cuarta tanda (3 nov.):
 | Merus | **ErickJCrack507** (ULSW de qsab101, base de Orumaito) | [Merus ULSW Sprite Sheet](https://www.deviantart.com/erickjcrack507/art/Merus-ULSW%2C-Sprite-Sheet-854750971) | Jugable |
 | Coronel Silver | **ChipsoDebik** | [colonel silver ULSW](https://www.deviantart.com/chipsodebik/art/colonel-silver-ULSW-1053165938) | Élite de la Red Ribbon |
 | Tambourine y Drum | **KrystalDragonX546** (créditos a los autores originales) | [Lsw Tambourine and drum Sprite Sheet Pack](https://www.deviantart.com/krystaldragonx546/art/Lsw-Tambourine-and-drum-Sprite-Sheet-Pack-1364244605) | Élites en Kame House, Paoz, Budokai y Templo |
+| Rey Gomah | **ChrisReinerVV** | [hoja en DeviantArt](https://www.deviantart.com/chrisreinervv/art/1261501464) | Jugable y jefe del Mundo Kaioshin |
+| Nuova Shenron | **azazel300** (ULSW) | [nova shenrong](https://www.deviantart.com/azazel300/art/806976617) | Jugable y élite en la Sala del Tiempo y la Tierra Volcánica. JPEG limpiado |
+| Hildegarn (forma final) | **azazel300** (ULSW) | [hileghan (hirudegarn)](https://www.deviantart.com/azazel300/art/855092418) | Jugable y jefe de la Ciudad del Oeste. JPEG limpiado |
+| Cell Max | **azazel300** (ULSW; créditos a jcob2003, erickjcrack, orumaito y otros) | [cell max](https://www.deviantart.com/azazel300/art/937353553) | Jugable y jefe de la Base Red Ribbon. JPEG limpiado |
 
 Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los namekianos de ziglepaz y los hijos del Rey Piccolo de CaptainDutch son dibujos sueltos sin animación. Ribrianne (JPEG muy pequeño y con ruido) y Zeno (solo 3 poses) se descartan. «Yakon y otros» (suten94) y «DAIMA varios» (AS02X) son una pose por personaje: quedan para enemigos de una sola pose.
 

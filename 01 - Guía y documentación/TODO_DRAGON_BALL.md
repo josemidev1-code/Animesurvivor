@@ -178,7 +178,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Bio-Broly |
 | ✅ jugable y enemigo | Janemba |
 | ✅ jugable | Gogeta |
-| — | Hildegarn |
+| ✅ jugable y jefe | Hildegarn |
 | — | Tapion |
 | — | Hatchiyack |
 
@@ -197,7 +197,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable y jefe | Super 17 |
 | — | Androide 17 del Infierno |
 | ✅ jugable y jefe | Omega Shenron |
-| — | Nuova Shenron |
+| ✅ jugable y élite | Nuova Shenron |
 | — | Haze Shenron |
 | — | Rage Shenron |
 | — | Oceanus Shenron |
@@ -247,7 +247,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Macki |
 | — | Gamma 1 |
 | — | Gamma 2 |
-| — | Cell Max |
+| ✅ jugable y jefe | Cell Max |
 | — | Dr. Hedo |
 | — | Magenta |
 | ✅ jugable | Gohan Bestia |
@@ -260,7 +260,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable y enemigo | Goku (Daima) |
 | — | Glorio |
 | — | Panzy |
-| — | Gomah |
+| ✅ jugable y jefe | Gomah |
 | — | Degesu |
 | — | Neva |
 | ✅ | Majin Kuu |

@@ -3300,6 +3300,154 @@
      26
     ]
    }
+  },
+  "gomah": {
+   "0": {
+    "pack": "03_Daima/DeviantArt/469_REY GOMAH (ChrisReinerVV)",
+    "idle": [
+     5,
+     6,
+     7
+    ],
+    "move": [
+     11
+    ],
+    "attack": [
+     24,
+     25,
+     22
+    ],
+    "kick": [
+     30,
+     31
+    ],
+    "ki": [
+     19,
+     4
+    ],
+    "pow": [
+     15,
+     16,
+     17,
+     18
+    ],
+    "hurt": [
+     32,
+     33
+    ],
+    "faint": [
+     21
+    ]
+   }
+  },
+  "nuova": {
+   "0": {
+    "pack": "02_GT/DeviantArt/470_NUOVA SHENRON (azazel300)",
+    "idle": [
+     0,
+     12
+    ],
+    "move": [
+     1
+    ],
+    "attack": [
+     2,
+     3
+    ],
+    "kick": [
+     4,
+     5
+    ],
+    "ki": [
+     10,
+     11
+    ],
+    "pow": [
+     12,
+     13
+    ],
+    "hurt": [
+     7,
+     8
+    ],
+    "faint": [
+     9
+    ]
+   }
+  },
+  "hildegarn": {
+   "0": {
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/471_HILDEGARN (azazel300)",
+    "idle": [
+     0
+    ],
+    "move": [
+     3,
+     4
+    ],
+    "attack": [
+     8,
+     9,
+     6,
+     7
+    ],
+    "kick": [
+     12,
+     13
+    ],
+    "ki": [
+     16,
+     17,
+     18,
+     19
+    ],
+    "pow": [
+     14
+    ],
+    "hurt": [
+     21
+    ],
+    "faint": [
+     20
+    ]
+   }
+  },
+  "cellmax": {
+   "0": {
+    "pack": "01_Dragon_Ball_Super/DeviantArt/472_CELL MAX (azazel300)",
+    "idle": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "move": [
+     21
+    ],
+    "attack": [
+     38,
+     39,
+     40
+    ],
+    "kick": [
+     47,
+     48
+    ],
+    "ki": [
+     87,
+     88,
+     89,
+     90
+    ],
+    "pow": [
+     76,
+     77
+    ],
+    "hurt": [
+     67,
+     68
+    ]
+   }
   }
  }
 }

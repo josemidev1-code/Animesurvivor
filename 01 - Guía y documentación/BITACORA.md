@@ -1016,3 +1016,12 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - 3 nov.: Paragus, Gran Sacerdote y Majin Duu jugables. Los hijos del Rey Piccolo descargados no son sprites (dibujos grandes), sin usar. `animaciones_juego.js?v=103`, `script.js?v=129`.
 - 3 nov.: Magetta jugable y élite en los mapas del Torneo del Poder y de Bills. Hojas pendientes del plan: solo quedan las de una pose por personaje (Yakon y otros, DAIMA varios), colecciones y objetos. `animaciones_juego.js?v=104`, `script.js?v=130`.
 - 3 nov.: nueva búsqueda en DeviantArt. Jugables Bulma, A13, A14, Metal Cooler (también jefe del Infierno), Majin Kuu y Merus; élites Recoome (con las Fuerzas Ginyu), A13, A14, Coronel Silver, Tambourine y Drum. Se quita Bujin por calidad. recortar_hoja.py admite FONDO_ZONA=1 para hojas con paneles de color. `animaciones_juego.js?v=105`, `script.js?v=131`.
+
+## 2026-11-04 — Claude (Opus) · Personajes que faltan con hojas de DeviantArt
+
+### Lo que pidió el usuario
+- Josemi (01:15): meter los personajes que faltan solo si tienen sprites buenos y animaciones completas, cada uno con técnicas propias y, si encaja, como élite o jefe. Primero el pack del Rey Gomah y las hojas ya bajadas (Gomah, Anilaza, Hildegarn, Tapion, Cell Max, Nuova, Gohan del futuro, Nam, Nail, Trunks GT, Hatchiyack, Wheelo, Kaio-sama, Bubbles, Shugesh y Borgos); después buscar en DeviantArt los que falten, sin bajar lo que ya esté en Descargas. Descartados: Bujin, Gine, Launch, Ribrianne, Zeno, Bojack, hijos del Rey Piccolo. Tandas de 3-5 con bitácora, créditos, ✅ y commit; no parar entre tandas.
+
+### Lo que hice
+- Tanda 1: Rey Gomah (pack 469), Nuova Shenron (470), Hildegarn forma final (471) y Cell Max (472) jugables con técnicas propias (Bastón, Onda Demoníaca, Esfera del Rey Demonio; Disparo Ígneo, Nova Strike, Gran Bola de Fuego; Zarpazo, Coletazo, Llamarada; Aguijón, Rayo y Onda de Cell Max). Jefes: Gomah en el Mundo Kaioshin (en lugar de Janemba, que sigue en el Infierno), Cell Max en la Base Red Ribbon (en lugar de Meca Freezer), Hildegarn en la Ciudad del Oeste (en lugar de Freezer). Nuova élite en la Sala del Tiempo y la Tierra Volcánica. La hoja de Gomah de azazel300 no se usa (tiene marca de agua y ya estaba el pack 469). Nuevo `herramientas/limpiar_ruido.py` (quita el halo blanco del JPEG); `meter.py alta` acepta `start=`, `sig=`, `rar=`, `hp=`, `spd=`, `atk=`. Comprobaciones `comprobar_*.cjs` correctas y partida probada con los cuatro en Chrome sin ventana. `animaciones_juego.js?v=106`, `script.js?v=132`.
+

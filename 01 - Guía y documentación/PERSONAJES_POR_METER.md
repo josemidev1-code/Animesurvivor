@@ -48,6 +48,7 @@ Packs con fotogramas a zooms distintos (Bra 189, Vegeta MUI 303, Rey Mono 138): 
 - Tanda «sprites para casa» 7: Paragus (455, Esfera de Paragus), Gran Sacerdote (456, Golpe Angelical y Aura Divina) y Majin Duu de Daima (457, Rodillo Majin y Bola Majin).
 - Tanda «sprites para casa» 8: Magetta (458) jugable y élite, con Escupitajo de Magma y Puño de Hierro. Descartadas Ribrianne y Zeno por calidad.
 - Tanda de búsqueda nueva 1: Bulma (459), Recoome (460), Androides 13 y 14 (461-462), Metal Cooler (463), Majin Kuu (464), Merus (465), Coronel Silver (466), Tambourine (467) y Drum (468). Fuera Bujin.
+- Tanda del 4 nov. 1: Rey Gomah (469, jefe del Mundo Kaioshin), Nuova Shenron (470, élite), Hildegarn (471, jefe de la Ciudad del Oeste) y Cell Max (472, jefe de la Base Red Ribbon), todos con técnicas propias. Herramienta nueva `limpiar_ruido.py` para el halo de JPEG; `meter.py alta` acepta `start=` y `sig=`.
 
 ## A medias
 

@@ -7,6 +7,7 @@
   python herramientas/meter.py alta <id> "<NOMBRE>" <familia> <potencia> "<descripción>" "<FORMA>" <aura>
       Lo da de alta en script.js (NUEVOS y SIGS_SERIE). Familias: goku, vegeta, black, otro.
       Potencia: 1 base, 2 SSJ, 3 SSJ2/SSJ3/SSJ4/God/Blue, 4 UI/MUI/Ego y formas máximas.
+      Opcional al final: start=<técnica> sig=a,b,c (técnicas propias, ya definidas en MV) rar= hp= spd= atk=
   python herramientas/meter.py quitar <id>
       Lo quita de todos.json y de animaciones_juego.js (para packs que al mirarlos no sirven).
 Elige siempre los fotogramas a mano mirando la hoja: las propuestas automáticas fallan mucho.
@@ -56,11 +57,14 @@ def poner(hid, pack, args):
     print('previsualización:', os.path.join(RAIZ, 'herramientas', '_revisar', hid + '_0.png'))
 
 
-def alta(hid, nombre, fam, pot, desc, forma, aura):
+def alta(hid, nombre, fam, pot, desc, forma, aura, *extra):
     hp, spd, atk, rar = POT[int(pot)]
+    op = dict(e.split('=', 1) for e in extra)  # start=<técnica> sig=a,b,c rar=4 hp=140 spd=60 atk=1.2
     if fam == 'vegeta': hp, spd, atk = hp - 15, spd + 2, round(atk + 0.1, 2)
     if fam == 'black': spd, atk = spd + 2, round(atk + 0.05, 2)
     start, sig = FAMILIAS[fam]
+    start = op.get('start', start); sig = op['sig'].split(',') if 'sig' in op else sig
+    rar = max(3, int(op.get('rar', rar))); hp = int(op.get('hp', hp)); spd = int(op.get('spd', spd)); atk = float(op.get('atk', atk))
     s = open(JS, encoding='utf-8').read()
     if re.search(r'\n ' + re.escape(hid) + r':\{name:', s): print('ya estaba', hid); return
     linea = (f" {hid}:{{name:'{nombre}',rar:{rar},hp:{hp},spd:{spd},atk:{atk},start:'{start}',desc:'{desc}',"
@@ -86,5 +90,5 @@ if __name__ == '__main__':
     a = sys.argv[1:]
     if a[0] == 'ver': ver(a[1])
     elif a[0] == 'poner': poner(a[1], a[2], a[3:])
-    elif a[0] == 'alta': alta(*a[1:8])
+    elif a[0] == 'alta': alta(*a[1:])
     elif a[0] == 'quitar': quitar(a[1])
