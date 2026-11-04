@@ -1280,3 +1280,18 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Josemi prueba desde el PC de clase: pidió una rama **`animaciones-personajes`** publicada en GitHub Pages. Creada (se sube cada tanda ahí y a `claude/project-thread-sgcumm`); Josemi cambió Pages a esa rama (despliegue correcto 4 nov. 15:44). Al darlo por bueno: pasar a `main` y volver a poner Pages en `main`.
 - **Tanda 4 del andar (resto, 185 formas)** revisada en hojas compactas (`herramientas/_revisar/andar/tanda4_0..8.png`: guardia con cintura, piernas reconocidas y pasos 2 y 6). Casi todos tenían la mano a la altura de la cadera → cintura 0.66; colas de saiyan (SSJ4, Goku niño, Gogeta SSJ4, Bardock SSJ4) y pelo largo de SSJ3 0.72; túnicas/capas/barrigas 0.7. Flotan (14): Piccolo (capa hasta los pies), Rey Cold, Meca Freezer, Freezer 2ª forma (enemigo), Metal Cooler, Garlic Jr., Dabura, Whis, Daishinkan, Merus, Tambourine, Gomah, Nuova y Zamasu fusionado. `andar.js?v=5`: ya tienen ajuste de andar revisado las 302 formas.
 - Ojo: Bardock en `animaciones_juego.js` tiene formas 0,1,3 pero en el juego (`SCPACK`) son 0,1,2: el ajuste va en `bardock/2`.
+
+## 2026-11-04 — Claude (Sprite Fusion con la API)
+
+### Lo que pidió el usuario
+- Josemi: «vamos a seguir animando personajes, hay que hacerlo en Sprite Fusion, te paso el .env de mi API de Sprite Fusion y vamos a animar».
+
+### Lo que hice
+- Copiada la clave a `.env` en la raíz (está en `.gitignore`, no se sube ni se muestra).
+- `python herramientas/sprite_fusion_api.py --creditos`: la clave es válida, pero la cuenta tiene **0 créditos** (la API devuelve `{"credits": 0}`). Cada animación cuesta 15, así que no se ha generado nada.
+
+### A medias / problemas
+- Sin créditos no se puede animar. Falta que Josemi compre créditos en Sprite Fusion (Starter 9 $/450 ≈ 30 animaciones; Pro 49 $/3000 ≈ 200).
+
+### Siguiente paso recomendado
+- Cuando haya créditos: probar con 3 (`python herramientas/sprite_fusion_api.py goku_0 vegeta_0 freezer_2`), revisar a ojo, importar con `importar_sprite_fusion.py` y seguir por tandas.
