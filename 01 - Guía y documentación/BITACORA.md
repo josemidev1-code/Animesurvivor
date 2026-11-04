@@ -1013,3 +1013,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Pendiente
 - 22 formas siguen sin muerte porque su pack no la tiene (el juego usa el daño): e_ginyu/0, gokugt/0-3, cell/0, piccolo/0, gohandbs/2-3, goku/1, goku/4, gokuui/1-4, gokusuper/1, 2, 4, vegetagt/1, bardock/3, gokumoro/3-4. Josemi decide si se quitan.
+- Josemi: «si o tienen animacion de muerte pero todas las otras animaciones estan bien» → las 22 formas sin muerte **se quedan** (usan el daño al morir).

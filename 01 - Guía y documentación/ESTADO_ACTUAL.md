@@ -35,4 +35,4 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - 3 nov.: estadísticas de las tarjetas de selección coloreadas: vida verde, velocidad azul y ataque rojo; sintaxis comprobada, revisión visual y doble clic pendientes. La rama de siete personajes sigue separada.
 
 - 4 nov.: revisadas a ojo las 171 formas. Quitadas muertes que eran rayos/efectos, corregidas SSJ Kaioken (Goku Super), aura de Gohan Místico DBS y daño de Goku Moro UI. Técnicas de villanos sin ataques de otros personajes (Disco Mortal, Puño Invisible, Autodestrucción). `animaciones_juego.js?v=67`, `script.js?v=88`. Pendiente: halo de goku/3 y aura de dlrx/0. Detalle en la bitácora.
-- 4 nov. (tarde): 31 muertes nuevas, SSJ3 con halo, DLRX con su aura, fuera Goku Moro MUI (incompleto). 22 formas siguen sin muerte (su pack no la tiene): decide Josemi. `animaciones_juego.js?v=68`, `script.js?v=90`.
+- 4 nov. (tarde): 31 muertes nuevas, SSJ3 con halo, DLRX con su aura, fuera Goku Moro MUI (incompleto). 22 formas sin muerte (su pack no la tiene) se quedan: lo decidió Josemi. `animaciones_juego.js?v=68`, `script.js?v=90`.
