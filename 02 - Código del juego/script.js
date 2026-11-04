@@ -1487,7 +1487,7 @@ function sigUpdate(dt,ps){
   const L=sigOpen();if(P.sel>=L.length)P.sel=0;
   if(L.length>P.sigN){if(P.sigN)P.newSig={t:3.2,i:L.length-1};P.sigN=L.length}
   if(P.newSig&&(P.newSig.t-=dt)<=0)P.newSig=null;
-  if(P.kaioT>0)P.kaioT-=dt;if(P.powT>0)P.powT-=dt;if(P.shieldT>0)P.shieldT-=dt;
+  if(P.kaioT>0)P.kaioT-=dt;if(P.throwT>0)P.throwT-=dt;if(P.powT>0)P.powT-=dt;if(P.shieldT>0)P.shieldT-=dt;
   for(const a of [fxSl,fxRg])for(let i=a.length-1;i>=0;i--)if((a[i].t+=dt)>=a[i].dur)a.splice(i,1);
   if(window.PFX)PFX.update(dt);
   if(P.dash){const D=P.dash,k=Math.min(1,dt/Math.max(dt,D.t));parts.push({x:P.x+rnd(-4,4),y:P.y-rnd(4,24),vx:0,vy:-8,t:0.25,c:D.c,s:2});
@@ -1501,14 +1501,14 @@ function sigUpdate(dt,ps){
   if(P.swing&&!P.dash&&(P.swing.t-=dt)<=0){const G=P.swing,t=G.tg,a=Math.atan2(t.y-P.y,t.x-P.x);P.swing=null;
     near(P.x,P.y-6,G.rad+14,e=>{const ea=Math.atan2(e.y-P.y,e.x-P.x),df=Math.abs(((ea-a)%TAU+TAU*1.5)%TAU-Math.PI);if(df<G.arc/2&&Math.hypot(e.x-P.x,e.y-P.y)<G.rad+e.r)hurt(e,G.dmg,Math.cos(a)*90,Math.sin(a)*90)});
     fxSl.push({x:P.x,y:P.y-10,a,arc:G.arc,r:G.rad,t:0,dur:0.22,col:G.col});P.atkT=P.atkD=0.25;P.atkK=0;P.atkA=a;sfx('shot')}
-  if(P.pend){const Q=P.pend;if((Q.t-=dt)<=0){P.pend=null;FO=sigOrigin(Q.pose,Q.a);fire(Q.id,Q.m,Q.st,ps);FO=null}return}
+  if(P.pend){const Q=P.pend;if((Q.t-=dt)<=0){P.pend=null;if(Q.id==='genki')P.throwT=0.35;FO=sigOrigin(Q.pose,Q.a);fire(Q.id,Q.m,Q.st,ps);FO=null}return}
   if(P.cast||P.combo||P.dash||P.swing)return;
   if((P.sigT-=dt*(S.ev&&S.ev.k==='fusion'?1.6:1))>0)return;
   const id=L[P.sel];if(!id)return;const W=MV[id],st=W.st(sigLv(P.sel)),m={lv:sigLv(P.sel),evo:false};
   const t=nearest(P.x,P.y,sigReach(W,st));if(!t){P.sigT=0.1;return}
   const a=Math.atan2(t.y-6-(P.y-13),t.x-P.x);P.sigT=P.sigCD=Math.max(0.35,st.cd*ps.cd);
   if(W.pose==='up'||W.kind==='nova'||(W.kind!=='beam'&&W.kind!=='melee'&&W.kind!=='sword'&&W.pose==='cast')){
-    const up=W.pose==='up',wind=up?0.5:W.kind==='nova'?0.3:0.12;
+    const up=W.pose==='up',wind=up?(id==='genki'&&(scHero(S.hid,P.form)||{}).FxGenki?1.1:0.5):W.kind==='nova'?0.3:0.12;
     P.pend={id,m,st,t:wind,T:wind,pose:up?'up':W.pose,a,col:W.col};{const d=Math.cos(a)<0?-1:1;if(!P.moving){P.face=d;P.dir='side'}}return}
   FO=sigOrigin(W.pose,a);fire(id,m,st,ps);FO=null}
 function fireSig(W,st,dmg,ps){
@@ -1959,7 +1959,8 @@ function fire(id,m,st,ps){
    case 'bomb':{shout(id,ev);const vis=enemies.filter(e=>!e.dead&&Math.abs(e.x-P.x)<VW/2&&Math.abs(e.y-P.y)<VH/2);
      const n=ev?3:1;for(let i=0;i<n;i++){const t=vis.length?vis[(Math.random()*vis.length)|0]:null;
        const tx=t?t.x:P.x+rnd(-60,60),ty=t?t.y:P.y+rnd(-60,60);
-       bombs.push({x:tx,y:ty,t:0,fall:0.8,rad:st.rad*ps.area*(ev?1.3:1),dmg,col:W.col})}
+       const gk=id==='genki'&&(scHero(S.hid,P.form)||{}).FxGenki;
+       bombs.push({x:tx,y:ty,t:0,fall:gk?0.7:0.8,rad:st.rad*ps.area*(ev?1.3:1),dmg,col:W.col,fx:gk?1:0,sx:P.x,sy:P.gkY!=null?P.y+P.gkY:P.y-85,d0:P.gkD||60})}
      sfx('charge');break}
    case 'melee':case 'sword':case 'nova':fireSig(W,st,dmg,ps);break;
    case 'aura':{const rad=st.rad*ps.area*(ev?1.3:1);near(P.x,P.y-4,rad+12,e=>{if(Math.hypot(e.x-P.x,e.y-P.y)<rad+e.r)hurt(e,dmg,0,0)});break}
@@ -3037,7 +3038,7 @@ function render(time){
         ctx.drawImage(im,0,Math.round(im.height*0.6),im.width,im.height-Math.round(im.height*0.6),Math.round(x-w/2),Math.round(y-h+bobY+h*0.6),w,h-Math.round(h*0.6))}
       else if(pk){// moverse y atacar a la vez (Josemi, 2 nov.): golpes, patadas, ki y preparación de técnicas se ven también en vuelo; el aura de poder solo quieto
         const mv=P.moving&&!P.cast&&!P.dead,pw=!mv&&P.powT>0,pd=P.pend,ak=P.atkT>0,
-        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),UP=pk.Up||pk.Pow,atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(varAnim(pk,'Kick',P.atkV)||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(varAnim(pk,'Attack',P.atkV)||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&UP?UP:pk.Cast):P.cast?(pk.Beam||pk.Cast):P.hitT>0?pk.Hurt:P.dash&&pk.Dash?pk.Dash:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&(A===pk.Pow||A===UP)?((time*8|0)%A.R.length):A===pk.Dash?0:pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
+        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),UP=pk.Up||pk.Pow,atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(varAnim(pk,'Kick',P.atkV)||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(varAnim(pk,'Attack',P.atkV)||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:P.throwT>0&&pk.Throw&&!pd?pk.Throw:pd?(P.pend.pose==='up'&&UP?UP:pk.Cast):P.cast?(pk.Beam||pk.Cast):P.hitT>0?pk.Hurt:P.dash&&pk.Dash?pk.Dash:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&(A===pk.Pow||A===UP)?((time*8|0)%A.R.length):A===pk.Dash?0:pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
         // vuelo bajo al moverse: la pose de impulso se despega 3 px de la sombra y flota (0, 1, 2, 1 px) a 8 pasos por segundo;
         // sube y baja poco a poco al arrancar y al pararse, y la sombra se queda en el suelo
         A0=pk.Idle,bob=-Math.round(P.hov=(P.hov||0)+(0-(P.hov||0))*0.25),
@@ -3063,7 +3064,10 @@ function render(time){
         if(P.shieldT>0){ctx.globalAlpha=0.35+0.25*Math.sin(time*20);ctx.strokeStyle='#bfe6ff';ctx.lineWidth=2;ctx.beginPath();ctx.arc(Math.round(x),Math.round(y-im.height/2),Math.max(im.width,im.height)*0.62,0,TAU);ctx.stroke();ctx.globalAlpha=1}
         if(P.kaioT>0){const fl=auraFlames('red')[(time*14|0)%3];ctx.globalAlpha=0.85;ctx.drawImage(fl,Math.round(x-fl.width/2),Math.round(y-fl.height+3));ctx.globalAlpha=1}
         if(SP)ctx.drawImage(LS.low,lx,ly);ctx.drawImage(ri,rx,ry);
-        if(pd){const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(x+(up?0:(left?-1:1)*im.width*0.3)-kb.width/2),Math.round(up?y-im.height-kb.height*0.6:y-im.height*0.5-kb.height/2));ctx.globalAlpha=1}
+        // Genkidama con la esfera del propio pack (Goku base, 53-55): crece sobre la cabeza mientras sube los brazos
+        if(pd&&pd.id==='genki'&&pk.FxGenki){const k=1-pd.t/pd.T,F=pk.FxGenki.R,g=F[Math.min(F.length-1,k*F.length|0)],s=0.12+0.38*k,gw=Math.round(g.width*s),gh=Math.round(g.height*s);
+          ctx.globalAlpha=0.92;ctx.drawImage(g,Math.round(x-gw/2),Math.round(y-im.height-gh*0.92+2),gw,gh);ctx.globalAlpha=1;P.gkY=(-im.height-gh*0.42+2)*0.5;P.gkD=gw*0.5}
+        else if(pd){const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(x+(up?0:(left?-1:1)*im.width*0.3)-kb.width/2),Math.round(up?y-im.height-kb.height*0.6:y-im.height*0.5-kb.height/2));ctx.globalAlpha=1}
         if(chg&&!bm){const r=4+((time*14|0)%3),kb=kiSprite(r,['#1a5ad8','#6ac8ff','#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.9;ctx.drawImage(kb,Math.round(x+(left?-1:1)*im.width*0.12-kb.width/2),Math.round(y-im.height*0.42-kb.height/2));ctx.globalAlpha=1}}
       // mientras carga su pack no se dibuja ningún muñeco hecho por código
       ctx.restore();continue}
@@ -3091,7 +3095,10 @@ function render(time){
       ring(x,y,r+1+((time*12|0)%3),p.col[0],1)}
     else if(p.k==='disc'){const im=discSprite(Math.round(p.r)+2,p.col,(time*24|0)%4);ctx.globalAlpha=0.35;ctx.drawImage(im,x-(im.width>>1)-Math.round(p.vx*0.02),y-(im.height>>1)-Math.round(p.vy*0.02));ctx.globalAlpha=1;ctx.drawImage(im,x-(im.width>>1),y-(im.height>>1))}}
   for(const b of beams)drawBeam(b);
-  for(const b of bombs){const k=b.t/b.fall,r=Math.round(b.rad*0.45),x=X(b.x),y=Y(b.y)-Math.round((1-k)*160);
+  for(const b of bombs){const k=b.t/b.fall;
+    if(b.fx){const pk=scHero(S.hid,P.form),F=pk&&pk.FxGenki;if(F){const g=F.R[F.R.length-1],e=0.4*k+0.6*k*k,bx=X(b.sx+(b.x-b.sx)*e),by=Y(b.sy+(b.y-b.sy)*e)-Math.round(Math.sin(k*Math.PI)*14),d=Math.round(b.d0+(b.rad*1.6-b.d0)*k),gh=Math.round(g.height*d/g.width);
+      ring(X(b.x),Y(b.y),Math.round(b.rad*k),'rgba(150,210,255,.7)');ctx.globalAlpha=0.95;ctx.drawImage(g,bx-(d>>1),by-(gh>>1),d,gh);ctx.globalAlpha=1;continue}}
+    const r=Math.round(b.rad*0.45),x=X(b.x),y=Y(b.y)-Math.round((1-k)*160);
     ring(X(b.x),Y(b.y),Math.round(b.rad*k),'rgba(150,210,255,.7)');const im=kiSprite(Math.min(16,r),[b.col[0],b.col[1],b.col[2]],(time*10|0)%2);ctx.drawImage(im,x-(im.width>>1),y-(im.height>>1));for(let i=0;i<6;i++){const q=time*3+i*1.05,d=r+6+((i*5+time*20|0)%5);ctx.fillStyle=b.col[3];ctx.fillRect(Math.round(x+Math.cos(q)*d),Math.round(y+Math.sin(q)*d*0.8),1,2)}}
   // orbs
   if(P.moves.orbs){const m=P.moves.orbs,st=MV.orbs.st(m.lv),n=st.count+(m.evo?2:0),rad=st.rad*stats().area;
