@@ -1,0 +1,6 @@
+{
+ "_ayuda": "Ataques extra de cada pack (4 nov. 2026): attack2/attack3 = otros combos (el juego los alterna golpe a golpe), kick2 = otra patada, beam = [carga, disparo] propios de los rayos tipo Kamehameha, up = brazos arriba (Genkidama, Kienzan...), dash = embestida. Si falta alguno, el juego usa el de siempre.",
+ "heroes": {
+  "goku": {"0": {"attack2": [17, 19, 20], "attack3": [62, 63], "up": [45, 46], "beam": [48, 37]}}
+ }
+}

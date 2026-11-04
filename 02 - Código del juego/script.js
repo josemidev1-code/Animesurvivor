@@ -1497,7 +1497,7 @@ function sigUpdate(dt,ps){
       for(let i=0;i<5;i++)parts.push({x:hx+C.d*rnd(4,12),y:hy-rnd(4,16),vx:C.d*rnd(20,70),vy:rnd(-40,10),t:0.22,c:C.col[i%2],s:2});
       if(tocado&&window.PFX)PFX.hit(hx,P.y,C.d,last);
       if(C.dragon&&last){fxRg.push({x:hx,y:hy-6,t:0,dur:0.5,rad:C.rad*1.6,col:C.col});cam.shake=Math.max(cam.shake||0,6)}
-      P.atkT=P.atkD=0.16;P.atkK=C.kick?2:0;P.atkA=C.d>0?0:Math.PI;if(last)P.combo=null}}
+      P.atkT=P.atkD=0.16;P.atkK=C.kick?2:0;P.atkV=(C.v||0)+C.i;P.atkA=C.d>0?0:Math.PI;if(last)P.combo=null}}
   if(P.swing&&!P.dash&&(P.swing.t-=dt)<=0){const G=P.swing,t=G.tg,a=Math.atan2(t.y-P.y,t.x-P.x);P.swing=null;
     near(P.x,P.y-6,G.rad+14,e=>{const ea=Math.atan2(e.y-P.y,e.x-P.x),df=Math.abs(((ea-a)%TAU+TAU*1.5)%TAU-Math.PI);if(df<G.arc/2&&Math.hypot(e.x-P.x,e.y-P.y)<G.rad+e.r)hurt(e,G.dmg,Math.cos(a)*90,Math.sin(a)*90)});
     fxSl.push({x:P.x,y:P.y-10,a,arc:G.arc,r:G.rad,t:0,dur:0.22,col:G.col});P.atkT=P.atkD=0.25;P.atkK=0;P.atkA=a;sfx('shot')}
@@ -1516,7 +1516,7 @@ function fireSig(W,st,dmg,ps){
   if(W.kind==='melee'){const far=Math.hypot(t.x-P.x,t.y-P.y)>st.rad*0.8,tx=t.x-d*MELEE_AJ.parada,ty=t.y+1;
     if(far&&W.tp){for(let i=0;i<10;i++)parts.push({x:P.x+rnd(-6,6),y:P.y-rnd(0,30),vx:rnd(-24,24),vy:-rnd(10,34),t:0.35,c:W.col[0],s:2});P.x=tx;P.y=ty;solidPlace(P,5,1)}
     else if(far)P.dash={x:tx,y:ty,t:0.12,c:W.col[0]};
-    P.combo={n:st.hits,i:0,t:0,d,dmg,rad:st.rad*ps.area,kb:st.kb,col:W.col,kick:W.pose==='kick',dragon:W.dragon};P.iframe=Math.max(P.iframe,st.hits*0.09+MELEE_AJ.guardaExtra);
+    P.combo={v:Math.random()*3|0,n:st.hits,i:0,t:0,d,dmg,rad:st.rad*ps.area,kb:st.kb,col:W.col,kick:W.pose==='kick',dragon:W.dragon};P.iframe=Math.max(P.iframe,st.hits*0.09+MELEE_AJ.guardaExtra);
     if(W.kaio)P.kaioT=1.4;if(W.dragon)sfx('charge');return}
   if(W.kind==='sword'){let dd=Math.hypot(t.x-P.x,t.y-P.y);const rad=st.rad*ps.area;
     if(dd>rad*0.8){const a0=Math.atan2(t.y-P.y,t.x-P.x),k=(dd-rad*0.6)/dd;P.dash={x:P.x+(t.x-P.x)*k,y:P.y+(t.y-P.y)*k,t:0.1,c:W.col[0]}}
@@ -2810,7 +2810,9 @@ function drawWorld(time){
   for(let ty=ty0-3;ty<=ty1+1;ty++)for(let tx=tx0-3;tx<=tx1+1;tx++){if(W.special(tx,ty))continue;const d=W.decor(tx,ty,h2(tx,ty,3));
     if(d)ctx.drawImage(d,tx*T-cx+((h2(tx,ty,4)*8)|0)-d.width/2+8,ty*T-cy+((h2(tx,ty,6)*8)|0)-d.height/2+8)}}
 // punto de las manos en el frame de cargar (0) o de lanzar (1) de la animación Cast del héroe (el héroe se dibuja a 0.5)
-function heroHand(i,left){const pk=scHero(S.hid,P.form);if(!pk||!pk.Cast)return null;const c=pk.Cast.R[Math.min(i,pk.Cast.R.length-1)];
+// variantes de una animación (Attack, Attack2, Attack3…): el combo las va alternando golpe a golpe
+function varAnim(pk,base,v){const L=[pk[base],pk[base+'2'],pk[base+'3']].filter(Boolean);return L.length?L[(v||0)%L.length]:null}
+function heroHand(i,left){const pk=scHero(S.hid,P.form);if(!pk||!pk.Cast)return null;const CA=(P.cast&&pk.Beam)||pk.Cast,c=CA.R[Math.min(i,CA.R.length-1)];
   if(!c._hand){const W=c.width,H=c.height,d=c.getContext('2d').getImageData(0,0,W,H).data;let y0=H,y1=0;
     for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(d[(y*W+x)*4+3]>40){if(y<y0)y0=y;if(y>y1)y1=y}
     if(i===0)c._hand=[W/2+W*0.12,H-(H-y0)*0.42];
@@ -2979,7 +2981,7 @@ function render(time){
         ctx.drawImage(im,0,Math.round(im.height*0.6),im.width,im.height-Math.round(im.height*0.6),Math.round(x-w/2),Math.round(y-h+bobY+h*0.6),w,h-Math.round(h*0.6))}
       else if(pk){// moverse y atacar a la vez (Josemi, 2 nov.): golpes, patadas, ki y preparación de técnicas se ven también en vuelo; el aura de poder solo quieto
         const mv=P.moving&&!P.cast&&!P.dead,pw=!mv&&P.powT>0,pd=P.pend,ak=P.atkT>0,
-        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(pk.Kick||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(pk.Attack||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&pk.Pow?pk.Pow:pk.Cast):P.cast?pk.Cast:P.hitT>0?pk.Hurt:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&pk.Pow?((time*8|0)%pk.Pow.R.length):pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
+        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),UP=pk.Up||pk.Pow,atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(varAnim(pk,'Kick',P.atkV)||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(varAnim(pk,'Attack',P.atkV)||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&UP?UP:pk.Cast):P.cast?(pk.Beam||pk.Cast):P.hitT>0?pk.Hurt:P.dash&&pk.Dash?pk.Dash:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&(A===pk.Pow||A===UP)?((time*8|0)%A.R.length):A===pk.Dash?0:pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
         // vuelo bajo al moverse: la pose de impulso se despega 3 px de la sombra y flota (0, 1, 2, 1 px) a 8 pasos por segundo;
         // sube y baja poco a poco al arrancar y al pararse, y la sombra se queda en el suelo
         bob=-Math.round(P.hov=(P.hov||0)+((fly?3+[0,1,2,1][(time*8|0)%4]:0)-(P.hov||0))*0.25),

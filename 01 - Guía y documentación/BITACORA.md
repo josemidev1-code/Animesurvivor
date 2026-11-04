@@ -1206,3 +1206,14 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - No lo ha jugado una persona: falta que Josemi diga si el tope de 50° y el balanceo del vuelo le gustan.
 - Al disparar hacia abajo, la pose de carga (manos atrás) girada se lee peor que la de disparo; dura solo la carga.
 - No se usó ningún efecto nuevo de pixelfx en esta parte (era animación del cuerpo).
+
+### Nueva petición (misma sesión)
+- «aprovecha todos los ataques que tiene cada personaje para animarlos ingame y eso con todos los sprites».
+
+### Lo que hice (ataques extra, prueba con Goku base)
+- Nuevas animaciones opcionales por forma en `herramientas/animaciones/ataques.json`: `attack2`, `attack3`, `kick2`, `beam`, `up`, `dash` (montador y guía actualizados). El juego (`script.js?v=138`): el combo alterna los combos golpe a golpe (`varAnim`), los rayos usan `Beam` (y la mano del rayo sale de esa pose), las técnicas de brazos arriba usan `Up`, la embestida `Dash`; si faltan, lo de siempre.
+- Goku base (pack 215): segundo combo `[17, 19, 20]` (rodilla, gancho con estela, puño arriba), tercero `[62, 63]` (gancho saltando y palma), Genkidama `[45, 46]`, Kamehameha `[48, 37]` (carga con las manos en la cadera). Descartados el 43 (algo rojo en la mano) y el 14 como embestida (parece un paso). Animaciones de siempre idénticas byte a byte. `animaciones_juego.js?v=110`.
+- Pruebas: 6 comprobaciones correctas; en partida (Playwright) el combo usa las tres variantes y la Genkidama la pose de brazo arriba, sin errores.
+
+### Siguiente paso
+- Hacer lo mismo con el resto de formas por tandas (cada forma: ver su pack entero, elegir y revisar la hoja). Orden propuesto: línea de Goku, de Vegeta, villanos principales, resto.

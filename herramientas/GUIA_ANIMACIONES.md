@@ -88,3 +88,11 @@ Para packs nuevos o para repasar los que hay, en este orden:
    en `"<anim>Antes"` si la forma ya estaba en el juego).
 4. `python herramientas/validar_propuestas.py` mide las reglas frente a lo elegido a mano (`_revisar/validacion.md`).
 5. `python herramientas/medir_formas.py` lista polvo, poses agachadas y tamaños desiguales en el juego.
+
+## Ataques extra (4/11/2026)
+
+En `herramientas/animaciones/ataques.json`, opcionales por forma (el juego usa los de siempre si faltan):
+`attack2`, `attack3` (otros combos de puñetazos: el combo los alterna golpe a golpe), `kick2` (otra patada),
+`beam` = `[carga, disparo]` propios de los rayos tipo Kamehameha (si falta, se usa `ki`), `up` = brazos arriba para
+Genkidama, Kienzan… (si falta, `pow`) y `dash` = embestida. Mismas reglas que el resto: un solo pack, la forma del nombre,
+nada de efectos sueltos. Ejemplo revisado: `goku` forma `0`.
