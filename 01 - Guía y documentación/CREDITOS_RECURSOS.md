@@ -195,3 +195,9 @@ Descartados por ser sprites grandes o HD (Josemi, 4 nov.: «solo los pequeñitos
 | Recurso | Fuente | Uso |
 |---|---|---|
 | Efectos de explosión, implosión, estallido arcano y golpes | [pixelfx — Patch (patch.gg)](https://github.com/patch-gg/pixelfx), licencia MIT; método de [Hugo Duprez](https://www.spritefusion.com/blog/how-to-make-good-pixel-art-effects-with-claude) | Incorporados por código en `02 - Código del juego/efectos_pixelfx.js` (origen en `herramientas/efectos_pixelfx/`). La fuente Patch Pixel de pixelfx no se usa |
+
+## Biblioteca externa de hojas LSW (DeviantArt) — 05/11/2026
+
+Recopilación de 146 hojas de sprites 2D en tamaño original completo ubicadas en la carpeta `antigravity sprites/`. El listado completo de autores, obras, dimensiones y enlaces a sus fichas originales en DeviantArt se detalla en:
+- `antigravity sprites/INDICE_SPRITES.md`
+

@@ -54,3 +54,8 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - Cinco arenas emblemáticas, legados de jefe, combo ki/patada, suministros y vegetación animada. script.js?v=147.
 - Siete comprobaciones y pruebas Chrome HTTP correctas; detalle en CAMBIOS_COMBATE_2026-11-04.md. No balance completo ni revisión visual de todas las formas. No créditos de Sprite Fusion gastados.
 - Siguiente: selección visual de ataques extra por packs y valoración jugando. Los consejos antiguos de vuelo obligatorio se matizan por la elección actual: caminar cuando exista buen ciclo y vuelo en su ausencia.
+
+## 5 nov. — Antigravity: biblioteca de sprites LSW de DeviantArt
+- Descargada y organizada la carpeta `antigravity sprites/` con 146 hojas de sprites completas en tamaño original (~67 MB) de Dragon Ball en estilo LSW/ULSW/SWL desde DeviantArt.
+- Estructurado por categorías (Goku, Vegeta, Gohan, Trunks, Fusiones, Villanos DBZ, DBS, GT/Daima, Aliados y Packs de Ataque/FX).
+- Índice maestro navegable con autorías y enlaces en `antigravity sprites/INDICE_SPRITES.md`.

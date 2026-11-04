@@ -1290,15 +1290,6 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Valorar jugando dificultad, ritmo y ciclo importado de Goku. Doble clic no verificable mediante el navegador automatizado (bloquea file://); probado por HTTP local.
 - Cambios previos en andar.js, andar_frames.js y salida/goku_0 preservados; no pertenecen a este cambio.
 
-## 2026-11-05 — Antigravity / Gemini
-
-### Lo que pidió el usuario
-- Buscar en DeviantArt (vía Google / web) todos los sprites 2D de Dragon Ball estilo LSW (Legendary Super Warriors) buenos que haya, y guardarlos en una carpeta aparte llamada `antigravity sprites`.
-
-### Lo que hice
-- En curso.
-
-
 ## 2026-11-05 — Claude (sesión ataques propios por familias)
 
 ### Lo que pidió el usuario
@@ -1313,3 +1304,34 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Seguir por `gokugt` (259/260/261), `gokuui`, `gokusuper`… con `ver_pack.py` y luego Vegeta.
+
+## 2026-11-05 — Antigravity / Gemini (sesión recopilación LSW DeviantArt)
+
+### Lo que pidió el usuario
+- Buscar en DeviantArt (a través de búsqueda web/Google) todos los sprites 2D de Dragon Ball estilo LSW (Legendary Super Warriors) buenos que haya y guardarlos en una carpeta aparte llamada `antigravity sprites`.
+
+### Lo que hice
+- Desarrolladas herramientas de descubrimiento y descarga en resolución original completa desde DeviantArt:
+  - `herramientas/descubrir_deviantart.py`: búsqueda multiconsulta (36 términos de sagas, personajes y creadores reconocidos como Strice12, MrDryy, SonGoku0911, BlackSanYT, ErickJCrack507, etc.), localizando 1.089 candidatos únicos.
+  - `herramientas/filtrar_candidatos.py`: filtrado estricto por palabras clave LSW/ULSW/SWL, sagas de Dragon Ball y hojas de sprites (840 hojas prometedoras identificadas).
+  - `herramientas/descargar_todos_lsw.py`: extractor que procesa el estado inicial de DeviantArt (`window.__INITIAL_STATE__`), descarga la imagen `fullview` de máxima resolución original, valida las dimensiones de hoja de sprites y organiza por categorías.
+  - `herramientas/limpiar_no_db.py`: filtrado final para descartar falsos positivos no pertenecientes a Dragon Ball.
+- Creada la carpeta `antigravity sprites/` con **146 hojas de sprites completas en tamaño original** (~67 MB), organizadas en subcarpetas:
+  - `01_Goku` (14 hojas: UI, True UI, SSJ God, SSJ Blue 2 Whis Gi, SSJ SWL+, DBZ Goku, etc.)
+  - `02_Vegeta` (9 hojas: Ultra Ego, Majin Vegeta, Blue Evolution, SSJ2, Super Vegeta, King Vegeta, etc.)
+  - `03_Gohan` (3 hojas: Mirai Gohan, Gohan del Futuro Blue Kaioken, etc.)
+  - `04_Trunks` (2 hojas: Trunks upgrade y efectos separados por JustOruma)
+  - `05_Guerreros_Z_y_Aliados` (4 hojas: Bardock All Forms, SwlPlus Bardock, Tao Pai Pai, Hercule Satan)
+  - `06_Fusiones` (7 hojas: Gogeta Blue, Gogeta SSJ, Gogeta SSJ4, Gotenks SSJ3, Kefla Blue, etc.)
+  - `07_Villanos_DBZ` (15 hojas: Broly LSSJ, Black Frieza, Frieza Final Form, Metal Cooler, Turles, Janemba, Kid Buu, Majin Buu, Recoome, Cumber Evil Saiyan, etc.)
+  - `08_Dragon_Ball_Super` (38 hojas: Beast Gohan, Beerus, Hit, Jiren, Caulifla base/SSJ/SSJ2, Kale & Kale LSS, Goku Black SSJ3/Rose/base, Zamasu, Merged Zamasu, Androide 17 DBS, Androide 21 LabCoat, etc.)
+  - `09_Dragon_Ball_GT_y_Daima` (14 hojas: Daima ULSW, Kid Vegeta Daima, SSJ3 Vegeta Daima, Super Baby Vegeta, Oozaru Goku, Gogeta SSJ4, etc.)
+  - `10_Colecciones_y_Packs` (40 hojas: Dragon Ball Z LSW Attack Sprites 4050x3400, Tougarashi Ultimate LSW 1086x3501, Hearts Deicida 1024x3774, Mafuba, etc.)
+- Creado el índice maestro `antigravity sprites/INDICE_SPRITES.md` con enlaces directos a cada hoja descargada, autor acreditado, dimensiones en píxeles y enlace a la ficha original en DeviantArt.
+
+### A medias / problemas
+- Ninguno para esta tarea; la carpeta `antigravity sprites/` está completamente estructurada, descargada y documentada.
+
+### Siguiente paso recomendado
+- El usuario puede explorar la carpeta `antigravity sprites` y elegir qué hojas o animaciones concretas desea integrar en `sprites/` para personajes jugables o enemigos, o continuar con la integración de ataques por familias.
+
