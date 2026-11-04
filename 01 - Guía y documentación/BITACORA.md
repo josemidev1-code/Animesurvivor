@@ -1263,3 +1263,29 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Josemi: «¿y tú con MCP no puedes controlar mi navegador y hacerlo para todos los personajes?». Claude in Chrome no está conectado. Sprite Fusion tiene **API** (`https://www.spritefusion.com/api/v1`, `POST /generate`, clave `Authorization: Bearer`) pensada para agentes: se puede automatizar sin navegador. Coste: **15 créditos por animación** (planes: Starter 9 $/450 créditos, Creator 19 $/1050, Pro 49 $/3000). 193 formas jugables ≈ 2900 créditos. Pendiente: que Josemi elija plan y cree la clave (la compra y la clave las hace él).
 - Josemi: «Sí, prueba con 3». Hecho `herramientas/sprite_fusion_api.py` (anima por la API con `operation: animate`, 8 fotogramas, la imagen como `data_url`; clave desde `.env`, nunca se muestra; sin reintentos). Esperando a que Josemi cree la clave en `.env` para probar con goku_0, vegeta_0 y freezer_2.
 - 4 nov. (tarde): `.env` con la clave de Josemi en la raíz (ignorado por Git). `sprite_fusion_api.py` admite `--todos` y `--max N`: salta las 23 formas que flotan y las ya hechas, espera si hay 429 y se para con 401/402. Quedan 279 formas = 4185 créditos. La cuenta tenía 15: generado `goku_0` (8 fotogramas, webp 124x208) e importado (`andar_frames.js?v=2`). Comparado a escala de juego con el paso por código: conserva bien al personaje, pero el paso es flojo (casi no avanza la pierna y en los fotogramas centrales se gira hacia la cámara). La documentación de Sprite Fusion recomienda para andar hacer antes un `edit` a pose de paso (30 créditos por forma en total). Pendiente: que Josemi decida si recarga y prueba edit+animate, o se queda el paso por código.
+
+## 2026-11-04 — Codex: identidad de combate y escenarios
+
+### Lo que pidió el usuario
+- Aprovechar el máximo de animaciones coherentes; ataques diferentes para cada personaje (Goku: ki y Genkidama; Freezer: rayo rojo), daño útil y ritmo constante con enemigos atacando continuamente.
+- Entorno animado, jefes en Kame House y lugares emblemáticos, recompensas que combinen ki y cuerpo a cuerpo, más cofres, objetos y mecánicas de Dragon Ball.
+- Buscar sprites Dragon Ball LSW y usar Sprite Fusion solo para las animaciones necesarias. Referencia PMD: https://sprites.pmdcollab.org/#/0775?form=0 y consejos de animación adjuntos.
+
+### Lo que hice
+- Revisado el relevo actual y localizado el repositorio confirmado por el usuario. Hay cambios previos sin commit en andar.js, andar_frames.js, index.html y salida/goku_0; se preservan.
+- Detectadas listas genéricas, disparo de una sola técnica seleccionada y arenas genéricas ya implementadas. Investigación de fuentes LSW iniciada.
+
+### A medias / problemas
+- Implementación y comprobaciones en curso; ninguna revisión visual nueva completada todavía.
+
+### Resultado de esta sesión
+- Josemi eligió caminar cuando exista un ciclo bueno y vuelo cuando el pack lo permita.
+- Implementadas recargas independientes y rotación automática de técnicas, conexión de técnicas propias ya definidas, arenas emblemáticas, legados de jefe, combo ki/patada, suministros y vegetación animada.
+- Movimiento con fotogramas completos: se conserva el ciclo importado y se usa el movimiento del pack en ausencia de este; no se corta el tronco al disparar.
+- Siete comprobaciones automáticas correctas. Chrome HTTP: rotación de ataques, cinco arenas, cofre/legado, combo, retorno y victoria final sin errores de consola. Pruebas de combate con estados controlados, no balance definitivo.
+- Detalle y fuentes: CAMBIOS_COMBATE_2026-11-04.md. No se gastaron créditos ni se incorporaron hojas nuevas.
+
+### Pendiente y siguiente paso
+- Revisar visualmente ataques extra por forma (solo Goku base los tenía seleccionados), comenzando Vegeta, Freezer y Piccolo. No se afirma revisión de las 193 formas.
+- Valorar jugando dificultad, ritmo y ciclo importado de Goku. Doble clic no verificable mediante el navegador automatizado (bloquea file://); probado por HTTP local.
+- Cambios previos en andar.js, andar_frames.js y salida/goku_0 preservados; no pertenecen a este cambio.

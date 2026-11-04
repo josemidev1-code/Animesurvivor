@@ -47,3 +47,10 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - 4 nov. (noche): al disparar arriba/abajo solo gira el tronco (hasta 40°); el paso tiene rodilla, balanceo, polvo y sombra (`script.js?v=142`).
 - 4 nov. (noche): andar revisado personaje a personaje con `andar.js` + `herramientas/andar_revision.js`; disparan andando. Tanda 1 (línea de Goku, 14 formas) hecha; siguiente: línea de Vegeta.
 - 4 nov. (noche): sin giro al disparar. Preparado Sprite Fusion: imágenes en `Recursos pendientes/sprite_fusion/entrada/`, importador `herramientas/importar_sprite_fusion.py` → `andar_frames.js`. Esperando los primeros ciclos de Josemi.
+
+## 4 nov. — Codex: combate y legados
+- Técnicas con recargas independientes, rotación automática y teclas de prioridad. Tres técnicas iniciales. Listas específicas conectadas para personajes que todavía usaban genéricas.
+- Movimiento del pack o ciclo importado; sin separación artificial de tronco/piernas en partida.
+- Cinco arenas emblemáticas, legados de jefe, combo ki/patada, suministros y vegetación animada. script.js?v=147.
+- Siete comprobaciones y pruebas Chrome HTTP correctas; detalle en CAMBIOS_COMBATE_2026-11-04.md. No balance completo ni revisión visual de todas las formas. No créditos de Sprite Fusion gastados.
+- Siguiente: selección visual de ataques extra por packs y valoración jugando. Los consejos antiguos de vuelo obligatorio se matizan por la elección actual: caminar cuando exista buen ciclo y vuelo en su ausencia.

@@ -33,7 +33,10 @@ Juego de supervivencia (estilo PokéSurvivor / Vampire Survivors) con personajes
 Lo viejo que no usa el juego (copias antiguas, capturas, fondos sueltos, la importación de Gemini/Codex y la
 carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por si algún día hace falta.
 
-## Cómo está ahora (01/11/2026)
+## Cómo está ahora (04/11/2026)
+
+- Actualización Codex: técnicas automáticas con recargas individuales, arenas emblemáticas, legados de jefe, combo ki/patada, más cofres y vegetación animada. Detalle, pruebas y límites en `01 - Guía y documentación/CAMBIOS_COMBATE_2026-11-04.md`.
+- Pendiente principal: revisar y seleccionar los ataques extra de cada pack; todavía no se ha hecho para todo el catálogo.
 
 - **62 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
 - Nuevos de la sesión 7: Goku película Broly (4 formas), Vegeta Blue manga (2), Vegeta Dios de Broly (1),
