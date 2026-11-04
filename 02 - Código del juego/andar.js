@@ -14,4 +14,26 @@ window.ANDAR={
  'gokugt/1':{cadera:0.68},
  'gokugt/2':{cadera:0.7},      // SSJ3 GT: pelo largo y piernas cortas
  'gokugt/3':{cadera:0.66},     // SSJ4: la cola cuelga a la altura de la cadera
+ // tanda 2: línea de Vegeta (la cintura se sube cuando la mano o la cola cuelgan a la altura de la cadera)
+ 'vegeta/1':{cadera:0.68},     // SSJ: manos en la cintura
+ 'vegeta/2':{cadera:0.7},      // SSJ2: mano colgando junto a la cadera
+ 'vegeta/3':{cadera:0.7},      // Super Vegeta: puño en la cintura
+ 'vegeta/4':{cadera:0.68},     // Blue: puño en la cintura
+ 'vegetaue/2':{cadera:0.66},
+ 'vegetagt/0':{cadera:0.66},   // GT: guantes a la altura de la cadera
+ 'vegetagt/1':{cadera:0.66},
+ 'vegetagt/2':{cadera:0.76},   // SSJ4: la cola cuelga a la altura de la cadera
+ 'vegetasuper/0':{cadera:0.7}, // guante colgando
+ 'vegetasuper/1':{cadera:0.7},
+ 'vegetasuper/2':{cadera:0.68},
+ 'vegetasuper/3':{cadera:0.68},
+ 'vegetto/1':{cadera:0.68},
+ 'vegetto/2':{cadera:0.68},
+ 'vegetto/3':{cadera:0.7},     // Blue: piernas juntas
+ 'vegetabroly/0':{cadera:0.66},
+ 'vegetamanga/0':{cadera:0.7}, // guardia agachada
+ 'vegetamanga/1':{cadera:0.66},
+ 'vegettofan/0':{cadera:0.68},
+ 'vegettofan/2':{cadera:0.74}, // SSJ4: cola
+ 'vegettofan/3':{cadera:0.68},
 };
