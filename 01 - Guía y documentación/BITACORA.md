@@ -1227,3 +1227,4 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Enemigos: al acercarse andan con el mismo ciclo (antes, pose de vuelo). Arreglado un índice negativo con x < 0. `comprobar_enemigos.cjs` actualizado.
 - Pruebas: 6 comprobaciones correctas; partida en Playwright andando en las cuatro direcciones sin errores y sin inclinación (0°). GIF: `herramientas/_revisar/andar_personajes.gif` (Goku, Vegeta, Freezer, Piccolo, Cell, Gohan, Broly, A18).
 - Limitación: es un paso generado, no dibujado a mano; en personajes con cola o capa (Freezer, Piccolo) la cola/capa se mueve con la pierna de atrás.
+- Josemi: «Mantenerla» → se queda la inclinación al disparar (hasta 50°); al andar, sin inclinación.
