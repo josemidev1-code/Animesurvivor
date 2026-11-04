@@ -3375,77 +3375,70 @@
     ]
    }
   },
-  "hildegarn": {
+  "trunksgt": {
    "0": {
-    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/471_HILDEGARN (azazel300)",
+    "pack": "02_GT/DeviantArt/474_TRUNKS GT (Breckhhh)",
     "idle": [
-     0
+     0,
+     1
     ],
     "move": [
-     3,
-     4
+     16
     ],
     "attack": [
-     8,
-     9,
      6,
-     7
+     7,
+     24
     ],
     "kick": [
-     12,
-     13
+     11,
+     12
     ],
     "ki": [
-     16,
-     17,
-     18,
-     19
+     21,
+     22,
+     23
     ],
     "pow": [
-     14
+     32
     ],
     "hurt": [
-     21
-    ],
-    "faint": [
-     20
+     28,
+     30
     ]
    }
   },
-  "cellmax": {
+  "hatchiyack": {
    "0": {
-    "pack": "01_Dragon_Ball_Super/DeviantArt/472_CELL MAX (azazel300)",
+    "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/475_HATCHIYACK (BLZofOZ)",
     "idle": [
-     7,
-     8,
-     9,
-     10
+     0,
+     1
     ],
     "move": [
-     21
+     4
     ],
     "attack": [
-     38,
-     39,
-     40
+     9,
+     10,
+     11
     ],
     "kick": [
-     47,
-     48
+     14,
+     15
     ],
     "ki": [
-     87,
-     88,
-     89,
-     90
+     33,
+     34
     ],
     "pow": [
-     76,
-     77
+     6,
+     7,
+     8
     ],
     "hurt": [
-     67,
-     68
+     24,
+     25
     ]
    }
   }

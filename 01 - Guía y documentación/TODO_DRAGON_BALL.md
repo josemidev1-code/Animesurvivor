@@ -32,7 +32,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Maestro Grulla |
 | ✅ jugable | Tao Pai Pai |
 | — | Jackie Chun |
-| — | Nam |
+| ✅ élite | Nam |
 | — | Giran |
 | — | Bacterian |
 | — | Ranfan |
@@ -178,9 +178,9 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Bio-Broly |
 | ✅ jugable y enemigo | Janemba |
 | ✅ jugable | Gogeta |
-| ✅ jugable y jefe | Hildegarn |
+| — | Hildegarn |
 | — | Tapion |
-| — | Hatchiyack |
+| ✅ jugable y élite | Hatchiyack |
 
 ### Dragon Ball GT (5/20)
 
@@ -189,7 +189,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | ✅ jugable | Goku GT (niño y SSJ4) |
 | ✅ jugable | Pan |
 | ✅ técnica de Pan | Giru |
-| — | Trunks GT |
+| ✅ jugable | Trunks GT |
 | — | Pilaf GT |
 | ✅ jugable y enemigo | Baby |
 | ✅ jefe | Dr. Myuu |
@@ -247,7 +247,7 @@ Lista de control para meter en el juego «literalmente todo» (petición de Jose
 | — | Macki |
 | — | Gamma 1 |
 | — | Gamma 2 |
-| ✅ jugable y jefe | Cell Max |
+| — | Cell Max |
 | — | Dr. Hedo |
 | — | Magenta |
 | ✅ jugable | Gohan Bestia |

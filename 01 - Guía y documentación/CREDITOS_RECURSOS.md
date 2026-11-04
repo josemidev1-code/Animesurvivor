@@ -173,11 +173,14 @@ Cuarta tanda (3 nov.):
 | Tambourine y Drum | **KrystalDragonX546** (créditos a los autores originales) | [Lsw Tambourine and drum Sprite Sheet Pack](https://www.deviantart.com/krystaldragonx546/art/Lsw-Tambourine-and-drum-Sprite-Sheet-Pack-1364244605) | Élites en Kame House, Paoz, Budokai y Templo |
 | Rey Gomah | **ChrisReinerVV** | [hoja en DeviantArt](https://www.deviantart.com/chrisreinervv/art/1261501464) | Jugable y jefe del Mundo Kaioshin |
 | Nuova Shenron | **azazel300** (ULSW) | [nova shenrong](https://www.deviantart.com/azazel300/art/806976617) | Jugable y élite en la Sala del Tiempo y la Tierra Volcánica. JPEG limpiado |
-| Hildegarn (forma final) | **azazel300** (ULSW) | [hileghan (hirudegarn)](https://www.deviantart.com/azazel300/art/855092418) | Jugable y jefe de la Ciudad del Oeste. JPEG limpiado |
-| Cell Max | **azazel300** (ULSW; créditos a jcob2003, erickjcrack, orumaito y otros) | [cell max](https://www.deviantart.com/azazel300/art/937353553) | Jugable y jefe de la Base Red Ribbon. JPEG limpiado |
+| Trunks GT | **Breckhhh** | [hoja en DeviantArt](https://www.deviantart.com/breckhhh/art/1131247491) | Jugable |
+| Hatchiyack | **BLZofOZ** (base de Freezer de Legendary Super Warriors; auras de Devons, rayos de Angryboy) | [hoja en DeviantArt](https://www.deviantart.com/blzofozz/art/208215858) | Jugable y élite en la Ciudad del Oeste, el Desierto y el Infierno |
+| Nam | **LSW-Sprite** (autor original anónimo) | [DB Nam sprite sheet](https://www.deviantart.com/lsw-sprite/art/635413041) | Élite en el Budokai, Kame House y el Templo (sin ki ni aura: no es jugable) |
 
 Sin usar: la hoja de Bojack de sonictheminecrafthog pide permiso antes de usarla; los namekianos de ziglepaz y los hijos del Rey Piccolo de CaptainDutch son dibujos sueltos sin animación. Ribrianne (JPEG muy pequeño y con ruido) y Zeno (solo 3 poses) se descartan. «Yakon y otros» (suten94) y «DAIMA varios» (AS02X) son una pose por personaje: quedan para enemigos de una sola pose.
 
 Descartados también: Bujin (animaciones demasiado pobres), Gine de SuperSaiyanPanda175 (JPEG con mucho ruido) y Launch de LavenderBlueDreams (pide permiso).
 
 Descartada: «DBUL - Tora (Reformed)» de Yumejoki (el sprite se parece demasiado a Vegeta y confundiría en partida).
+
+Descartados por ser sprites grandes o HD (Josemi, 4 nov.: «solo los pequeñitos»): Hildegarn y Cell Max de azazel300, Anilaza de Arisrad y Gohan del futuro (JUS) de Shubuster. También descartados: Tapion de SuperSaiyanPanda175 (JPEG con ruido, sin patada ni aura), Nail de VegetaBlack162 y Kaio-sama de MrRuben7 (solo poses de guardia), «Bubbles» de Alex2497 (es un personaje fanmade, no el mono de Kaio), Shugesh y Borgos de Karitz54 (una pose por personaje) y Dr. Wheelo de DeviantArter1236 (sprites grandes y solo guardia).

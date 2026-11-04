@@ -711,8 +711,8 @@ const NUEVOS={
  mrsatan:{name:'MR. SATÁN',rar:3,hp:130,spd:60,atk:0.95,start:'megaton',desc:'El campeón del mundo. Sin ki: puñetazos, patadas y regalos explosivos.',forms:['BASE'],aura:['white'],sig:['punch','kick','megaton','dynamite','presentbomb']},
  a21:{name:'ANDROIDE 21',rar:5,hp:125,spd:66,atk:1.25,start:'photonwave',desc:'La androide con hambre de Majin. Convierte a sus rivales en dulces.',forms:['MAJIN'],aura:['purple'],sig:['kiblast','punch','kick','choco','photonwave','fullcourse']},
  // «todos los personajes» (2 nov.): un pack completo = un personaje propio; animaciones en herramientas/animaciones/todos.json
- cellmax:{name:'CELL MAX',rar:5,hp:150,spd:62,atk:1.35,start:'cmaxbeam',desc:'El arma definitiva de la Red Ribbon en Super Hero: gigante, salvaje y sin control.',forms:['BASE'],aura:['purple'],sig:['kiblast','cmaxtail','cmaxbeam','punch','cmaxwave']},
- hildegarn:{name:'HILDEGARN',rar:4,hp:160,spd:56,atk:1.25,start:'hildeflame',desc:'El monstruo de la película de Tapion: enorme, rápido y con llamaradas.',forms:['FORMA FINAL'],aura:['gold'],sig:['hildeclaw','hildetail','hildeflame','kiblast','kick']},
+ hatchiyack:{name:'HATCHIYACK',rar:4,hp:135,spd:62,atk:1.2,start:'revenger',desc:'La máquina de venganza tsufur: se alimenta de odio y lanza el Revenger Cannon.',forms:['BASE'],aura:['green'],sig:['kiblast','punch','revenger','kick','tsufurwave','hatchiwave']},
+ trunksgt:{name:'TRUNKS GT',rar:3,hp:110,spd:68,atk:1.1,start:'trunksbuster',desc:'Trunks adulto en el viaje de GT: presidente de la Corporación Cápsula y guerrero veterano.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','trunksbuster','kick','trunksflash']},
  nuova:{name:'NUOVA SHENRON',rar:4,hp:135,spd:64,atk:1.2,start:'nuovafire',desc:'El dragón de la Esfera de Cuatro Estrellas: guerrero de fuego con honor.',forms:['BASE'],aura:['red'],sig:['nuovafire','novastrike','kick','nuovasun','punch']},
  gomah:{name:'REY GOMAH',rar:4,hp:125,spd:66,atk:1.2,start:'gomahwave',desc:'El Rey Demonio del Reino Demoníaco en Daima: bastón, magia y un aura morada.',forms:['BASE'],aura:['purple'],sig:['kiblast','gomahstaff','gomahwave','kick','gomahball']},
  merus:{name:'MERUS',rar:4,hp:120,spd:70,atk:1.2,start:'merusgun',desc:'Ángel en formación y agente de la Patrulla Galáctica: bastón, pistola y reflejos divinos.',forms:['BASE'],aura:['white'],sig:['kiblast','punch','kick','kame','renzoku']},
@@ -1262,15 +1262,14 @@ Object.assign(MV,{
  gomahstaff:MELEE('Bastón de Gomah',['#d8d0c0','#ffffff'],'punch',0.9,13,5,2,110,28,{kb:110}),
  gomahwave:BEAM('Onda Demoníaca',['#8a20d8','#e06aff','#ffffff'],2.8,26,10,240,8,0.25),
  gomahball:BIG('Esfera del Rey Demonio',['#6a10a0','#c050ff','#f0c0ff','#ffffff'],3.4,34,12,32,120),
+ trunksbuster:BEAM('Buster Cannon',['#3a8aff','#a0d0ff','#ffffff'],2.6,26,10,250,8,0.2),
+ trunksflash:SHOT('Ráfaga de Trunks',['#ffd23f','#fff3a0','#ffffff'],0.9,10,4,3,360),
+ revenger:BEAM('Revenger Cannon',['#3ad83a','#a0ffa0','#ffffff'],2.8,28,10,260,10,0.3),
+ tsufurwave:BIG('Onda Tsufur',['#d82a2a','#ff8a5a','#ffe0c0','#ffffff'],3.4,32,12,32,115),
+ hatchiwave:NOVA('Aura de Venganza',['#3ad83a','#c0ffa0','#ffffff'],7,22,8,70,0.3),
  nuovafire:SHOT('Disparo Ígneo',['#ff6a10','#ffc040','#fff3c0'],1.0,13,5,2,330),
  novastrike:MELEE('Nova Strike',['#ff8a20','#ffe0a0'],'punch',1.3,18,7,2,150,34,{kb:160}),
  nuovasun:BIG('Gran Bola de Fuego',['#d84010','#ff9a3a','#ffe080','#ffffff'],3.6,38,13,36,110),
- hildeclaw:MELEE('Zarpazo de Hildegarn',['#e0c050','#ffffff'],'punch',1.0,16,6,2,100,32,{kb:150}),
- hildetail:MELEE('Coletazo',['#3a3050','#a090c0'],'kick',1.2,18,6,2,120,38,{kb:180}),
- hildeflame:BEAM('Llamarada de Hildegarn',['#ff3a3a','#ffd23f','#fff8d0'],3.0,30,11,260,12,0.3),
- cmaxtail:MELEE('Aguijón de Cell Max',['#ff3a5a','#ffd0d8'],'kick',1.0,15,6,2,120,30,{kb:130}),
- cmaxbeam:BEAM('Rayo de Cell Max',['#c020d8','#ff6aff','#ffffff'],2.6,28,10,260,9,0.2),
- cmaxwave:NOVA('Onda de Cell Max',['#a020d8','#e0a0ff','#ffffff'],6,26,9,80,0.4),
  cuiblast:SHOT('Ráfaga de Cui',['#8a3ad8','#d0a0ff','#ffffff'],1.2,12,5,2,300),
  // ataques propios de cada personaje (sesión 9)
  deathbeam:{...BEAM('Rayo Mortal',['#a0207a','#ff6ad0','#ffffff'],1.6,24,9,260,3,0.15),st:l=>({cd:1.6-l*0.08,dmg:24+l*9,len:260,wid:4,dur:0.22,charge:0.15})},
@@ -1443,8 +1442,8 @@ const SIGS_SERIE={raditz:['kiblast','punch','saturday','doublesunday','kick','re
  merus:['kiblast','punch','kick','kame','renzoku'],
  gomah:['kiblast','gomahstaff','gomahwave','kick','gomahball'],
  nuova:['nuovafire','novastrike','kick','nuovasun','punch'],
- hildegarn:['hildeclaw','hildetail','hildeflame','kiblast','kick'],
- cellmax:['kiblast','cmaxtail','cmaxbeam','punch','cmaxwave']};
+ trunksgt:['kiblast','punch','trunksbuster','kick','trunksflash'],
+ hatchiyack:['kiblast','punch','revenger','kick','tsufurwave','hatchiwave']};
 for(const id in NUEVOS)SIGS[id]=SIGS_SERIE[id]||NUEVOS[id].sig;
 // 3 nov.: técnicas propias del plan «sprites para casa»
 Object.assign(SIGS,{yamcha:['kiblast','rogafu','kick','sokidan','kame'],tenshinhan:['kiblast','punch','kikoho','taiyoken','dodonpa','kick'],
@@ -1598,8 +1597,8 @@ const ET={
  a14E:{n:'ANDROIDE 14',hp:560,spd:54,dmg:16,xp:46,r:9,elite:1},
  metalcoolerB:{n:'METAL COOLER',boss:1,ai:'frieza'},
  gomahB:{n:'REY GOMAH',boss:1,ai:'frieza'},
- cellmaxB:{n:'CELL MAX',boss:1,ai:'cell'},
- hildegarnB:{n:'HILDEGARN',boss:1,ai:'dash'},
+ hatchiyackE:{n:'HATCHIYACK',hp:520,spd:62,dmg:15,xp:46,r:8,elite:1,shoot:1.8},
+ namE:{n:'NAM',hp:380,spd:66,dmg:13,xp:36,r:8,elite:1},
  nuovaE:{n:'NUOVA SHENRON',hp:560,spd:60,dmg:16,xp:48,r:9,elite:1,shoot:1.9},
  magettaE:{n:'MAGETTA',hp:600,spd:48,dmg:16,xp:48,r:10,elite:1,shoot:2.2},
  zangyaE:{n:'ZANGYA',hp:420,spd:64,dmg:14,xp:42,r:8,elite:1,shoot:1.6},
@@ -1725,7 +1724,7 @@ const NOSPR={}; // Los tipos sin secuencia propia se retiran tras cargar ANIM_SE
     const R={freezer:[[0,'frzS2',4],[120,'frzS4',3],[260,'saiyanLow',2]],tierra:[[60,'frzS2',2],[260,'saiyanLow',2]],buu:[[90,'garlicH1',3],[200,'demonS',3],[320,'garlicH2',2],[420,'demonS2',3]],super:[[0,'frzS2',3],[200,'demonS',2],[360,'demonS2',2]]}[WSAGA[k]||'tierra'];
     R.forEach(p=>MAPS[k].pool.push(p.slice()))}
   const B={namek:['dodoria','zarbon','ginyu','freeza3B','frieza100'],vegetasei:['freeza1B','coolerB','raditz','ozaruB','frieza100'],yardrat:['ginyu','freeza1B','freeza2B','freeza3B','frieza'],
-    tierra:['raditz','reycoldB','mecha','a21B','cell'],redribbon:['a16B','a19','a21B','cellmaxB','cell'],capsule:['a16B','hildegarnB','cell','trunksB','black'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
+    tierra:['raditz','reycoldB','mecha','a21B','cell'],redribbon:['a16B','a19','mecha','a21B','cell'],futuro:['black','blackssjB','zamasuB','rose','zamasufB'],
     kaioshin:['dabura','gomahB','majinv','buugohanB','buu'],infierno:['garlicB','metalcoolerB','superbuuB','ozarugB','janemba'],time:['myuuB','babyB','super17B','moroB','omegaB'],lookout:['garlicB','turles','cell','fatbuu','buu'],
     bills:['golden','toppoB','whisB','gasB','billsB'],poder:['kalessjB','hitB','toppoB','brolyssj4B','jiren'],desierto:['raditz','a16B','broly2B','mecha','cell'],
     pradera:['raditz','slugB','vegetaB','broly3B','frieza'],bosque:['raditz','ozaruB','a16B','piccoloB','cell']};
@@ -3168,10 +3167,11 @@ Object.assign(ENEMIGO_HEROE,{silverE:['e_silver',0],tambourineE:['e_tambourine',
 for(const k of ['redribbon','musculo'])if(MAPS[k])MAPS[k].pool.push([150,'silverE',2]);for(const k of ['budokai','lookout','kame','paoz'])if(MAPS[k])MAPS[k].pool.push([160,'tambourineE',2],[280,'drumE',2]);
 Object.assign(ENEMIGO_HEROE,{recoomeE:['e_recoome',0],a13E:['a13',0],a14E:['a14',0],metalcoolerB:['metalcooler',0]});Object.assign(ET.recoomeE,{col:'#ff5aa0'});Object.assign(ET.a13E,{col:'#ff3a4a'});Object.assign(ET.metalcoolerB,{col:'#ff6ad0',col2:'#ffd0f0'});
 for(const k of ['namek','freezer','yardrat'])if(MAPS[k])MAPS[k].pool.push([260,'recoomeE',2]);for(const k of ['tierra','redribbon','desierto'])if(MAPS[k])MAPS[k].pool.push([200,'a14E',2],[300,'a13E',2]);Object.assign(ET.magettaE,{col:'#ff7a2a'});for(const k of ['poder','bills'])if(MAPS[k])MAPS[k].pool.push([240,'magettaE',2]);Object.assign(ET.gasB,{col:'#ff6aff'});Object.assign(ET.super17B,{col:'#ffd23f'});Object.assign(ET.omegaB,{col:'#ff5aa0',col2:'#ffb040'});if(ET.geroE)ET.geroE.col='#ff5a8a'; // Androide 20: rayo de los ojos
-// 4 nov.: Rey Gomah, Cell Max, Hildegarn (jefes) y Nuova Shenron (élite)
-Object.assign(ENEMIGO_HEROE,{gomahB:['gomah',0],cellmaxB:['cellmax',0],hildegarnB:['hildegarn',0],nuovaE:['nuova',0]});
-Object.assign(ET.gomahB,{col:'#c050ff'});Object.assign(ET.cellmaxB,{col:'#ff6aff',col2:'#ffd0f0'});Object.assign(ET.hildegarnB,{col:'#ffd23f',col2:'#ff3a3a'});Object.assign(ET.nuovaE,{col:'#ff8a20'});
+// 4 nov.: Rey Gomah (jefe) y Nuova Shenron (élite)
+Object.assign(ENEMIGO_HEROE,{gomahB:['gomah',0],nuovaE:['nuova',0],namE:['e_nam',0],hatchiyackE:['hatchiyack',0]});
+Object.assign(ET.gomahB,{col:'#c050ff'});Object.assign(ET.nuovaE,{col:'#ff8a20'});
 for(const k of ['time','volcan'])if(MAPS[k])MAPS[k].pool.push([220,'nuovaE',2]);
+for(const k of ['budokai','kame','lookout'])if(MAPS[k])MAPS[k].pool.push([140,'namE',2]);for(const k of ['capsule','desierto','infierno'])if(MAPS[k])MAPS[k].pool.push([260,'hatchiyackE',2]);Object.assign(ET.hatchiyackE,{col:'#3ad83a'});
 if(ET.majin)ET.majin.n='Fragmento de Buu';for(const [id,z] of [['celljr',0.45],['celljrE',0.47]])if(ET[id])ET[id].z=z;
 for(const k in MAPS){const M=MAPS[k],saga=WSAGA[k]||'tierra';M.pool.push([90,'zombi',3],[300,'zombiR',2]);
   if(saga==='super'||k==='futuro')M.pool.push([60,'zamasuC',4],[360,'zamasuC',3]);

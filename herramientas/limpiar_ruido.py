@@ -1,6 +1,6 @@
 """Limpia el ruido de JPEG que dejan algunas hojas de DeviantArt al recortarlas (4 nov. 2026).
 
-Uso:  python herramientas/limpiar_ruido.py "<pack dentro de sprites>" [claridad=200] [pasadas=2] [motas=4]
+Uso:  python herramientas/limpiar_ruido.py "<pack dentro de sprites>" [claridad=200] [pasadas=2] [motas=4] [fondo=rrggbb]
   - Quita el halo claro y gris pegado al borde transparente (píxeles muy claros y poco saturados).
   - Quita las motas sueltas de `motas` píxeles o menos.
 Reescribe los PNG del pack. Revisar siempre después con ver_pack.py o previsualizar.py.
@@ -13,6 +13,15 @@ pack = os.path.join(RAIZ, 'sprites', sys.argv[1])
 CLARO = int(sys.argv[2]) if len(sys.argv) > 2 else 200
 PASADAS = int(sys.argv[3]) if len(sys.argv) > 3 else 2
 MOTAS = int(sys.argv[4]) if len(sys.argv) > 4 else 4
+# opcional: color del fondo de la hoja (p. ej. 22b14c) para quitar también el halo teñido de ese color
+FONDO = tuple(int(sys.argv[5][i:i + 2], 16) for i in (0, 2, 4)) if len(sys.argv) > 5 else None
+
+
+def _tenido(c):
+    # se parece al fondo: el canal dominante del fondo destaca igual que en el fondo
+    k = max(range(3), key=lambda i: FONDO[i])
+    otros = [c[i] for i in range(3) if i != k]
+    return c[k] > 90 and c[k] - max(otros) > 45
 
 
 def limpiar(im):
@@ -24,8 +33,9 @@ def limpiar(im):
             for x in range(W):
                 r, g, b, a = px[x, y]
                 if a < 20: continue
-                if min(r, g, b) >= CLARO - 40 and (r + g + b) / 3 >= CLARO and max(r, g, b) - min(r, g, b) < 40 \
-                        and any(vacio(x + dx, y + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                claro = min(r, g, b) >= CLARO - 40 and (r + g + b) / 3 >= CLARO and max(r, g, b) - min(r, g, b) < 40
+                tenido = FONDO and _tenido((r, g, b))
+                if (claro or tenido) and any(vacio(x + dx, y + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
                     quitar.append((x, y))
         for x, y in quitar: px[x, y] = (0, 0, 0, 0)
     vis = set()

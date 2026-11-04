@@ -995,6 +995,41 @@
      12
     ]
    }
+  },
+  "e_nam": {
+   "0": {
+    "pack": "07_Personajes_sin_saga_concreta/DeviantArt/477_NAM (LSW-Sprite)",
+    "idle": [
+     4,
+     5
+    ],
+    "move": [
+     21
+    ],
+    "attack": [
+     11,
+     12
+    ],
+    "kick": [
+     13,
+     14
+    ],
+    "ki": [
+     19,
+     20
+    ],
+    "pow": [
+     7,
+     8
+    ],
+    "hurt": [
+     26,
+     27
+    ],
+    "faint": [
+     30
+    ]
+   }
   }
  }
 }
