@@ -1420,19 +1420,73 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
     - Menús del hub (`.hubMenu`, `.hubStats`, `.rPrev`) con degradado cálido naranja-tierra y borde crema/oro.
     - Botones `#hudBtns` con fondo naranja Dragon Ball y borde dorado.
   - Versiones actualizadas en `index.html` (`style.css?v=77`, `script.js?v=148`, `animaciones_juego.js?v=111`).
+  - Commit `76772d8` subido con éxito a GitHub en la rama `main`.
 
+### Nueva petición del usuario
+- Josemi: «me encanta todo, ahora tenemos que hacer algo mejor, que los enemigos tambien tengan ataques orgiinales, que cada enemigot enga sua taque que hayan mas cosas dentro del juego tipo arboles que se menean en pixel art, mas jefes y mas mejroas y cosas»
+- Objetivos solicitados:
+  1. **Ataques originales propios para cada enemigo**: dotar a cada enemigo de sus técnicas y proyectiles característicos de la serie (ej. Saibaman ácido/autodestrucción, Raditz Double Sunday, Nappa Bomber DX, Dodoria, Zarbon, Fuerzas Especiales Ginyu con Crusher Ball y Eraser Gun, etc.) eliminando bolas genéricas.
+  2. **Decoración viva en pixel art**: vegetación y árboles que se mecen con el viento en pixel art (ondulación de copas, hojas cayendo sutilmente).
+  3. **Más jefes de fase**: incorporar nuevos jefes emblemáticos en los mapas con patrones y técnicas específicas.
+  4. **Más mejoras y habilidades**: nuevas técnicas pasivas, cápsulas Hoi-Poi y evoluciones estilo Survivor.
+### Lo que se ha hecho (Sesión Ataques de Enemigos, Entorno Vivo, Jefes y Reliquias)
+1. **Ataques originales propios para cada enemigo (`enemyPerformAttack` en `script.js`):**
+   - Se erradicaron las balas genéricas idénticas para todos los enemigos.
+   - Cada tipo de enemigo cuenta ahora con su ataque característico con físicas, formas y efectos propios:
+     - **Saibaman (`saiba`, `saibaB`, `saibaR`, `saibaX`)**: Escupitajo de ácido corrosivo verde (`#84cc16`). Al impactar o expirar en el suelo deja un charco de ácido (`hazards`) con burbujeo animado que daña al jugador si lo pisa.
+     - **Raditz (`raditz`, `raditzE`, `raditzssjE`)**: ¡Double Sunday! Dos rayos de energía magenta paralelos (`#d946ef`) que viajan a alta velocidad.
+     - **Nappa (`nappa`, `nappaE`)**: ¡Bomber DX! Onda expansiva dorada gigante (`#fbbf24`, radio 7) de gran impacto.
+     - **Guldo (`guldo`)**: Agujas psíquicas paralizantes (`#a3e635`). Ralentizan la velocidad del jugador un 35% durante 1,6 s si impactan.
+     - **Jeice (`jeice`)**: ¡Crusher Ball! Esfera de fuego roja ardiente (`#ef4444`) con trayectoria curva teledirigida hacia el jugador.
+     - **Recoome y Dodoria (`recoomeE`, `dodoria`)**: Eraser Gun y Cañón bucal de alta velocidad (`#ec4899` / `#f97316`).
+     - **Burter (`burter`)**: Huracán Azul: ráfaga de 3 agujas de ki hiperveloces en abanico (`#38bdf8`).
+     - **Zarbon (`zarbon`)**: Saetas de ki violeta perforante (`#c084fc`).
+     - **Cell Jr. (`celljr`, `celljrE`)**: Mini-Kamehameha veloz azul (`#60a5fa`).
+     - **Androides 17, 18 y 16 (`a17e`, `a18e`, `a16E`)**: Ráfagas fotónicas gemelas, Destructo Disc cortante rosa y microcohetes con estela de humo.
+     - **Freezer, Cooler y Frost (`frieza`, `coolerB`, `frost`)**: Rayos de la muerte perforantes instantáneos (`#f43f5e`) y Death Saucers giratorios (`#ef4444`).
+     - **Majin Buu (`fatbuu`, `buu`, `superbuuB`, `majin`)**: Rayo mágico rosa transfigurador en zigzag (`#ec4899`).
+     - **Goku Black y Zamasu (`black`, `zamasuB`, `rose`)**: Cuchillas de energía oscura curva God Slicer (`#c084fc`).
+     - **Broly y Kale (`brolyB`, `kalessjB`)**: ¡Omega Blaster! Esfera cataclísmica verde que crece de radio 5 a radio 11 mientras viaja.
+     - **Ejército Red Ribbon (`rrsoldier`, `blueE`, `murasakiE`)**: Microcohetes con fuego propulsor y shurikens giratorios.
+   - Renderizado en pixel art para cada tipo (`laser`, `disc`, `acid`, `missile`, `slicer`, `candy`, `omega`, `bomber`, `needle`) con estelas, núcleos incandescentes y rotación.
 
+2. **Entorno vivo con balanceo de vegetación y partículas de viento en pixel art:**
+   - Rediseño de `drawLivingDecor`:
+     - El balanceo ahora analiza por capas finas de 2 píxeles (`row += 2`) con amplitud natural de hasta 3,2 píxeles en la copa mediante ondas senoidales dobles.
+     - Detección automática de todo tipo de árboles, palmeras, pinos, helechos, juncos y cactus de `DECOR` y `ESC_DECOR`.
+   - Nuevo sistema de partículas ambientales de viento (`drawEnvWind` en `drawWorld`):
+     - Bosques y praderas (Paoz, Praderas, Bosque, Kame): hojas verdes y pétalos de cerezo rosa revoloteando en el viento.
+     - Namek: esporas bioluminiscentes turquesas flotantes.
+     - Volcán e Infierno: ascuas y chispas de fuego ascendentes.
+     - Desierto y Yermo: motas de arena y polvo meciéndose en rachas de viento.
+     - Sala del Tiempo, Kaioshin y Bills: destellos místicos de ki divino.
 
+3. **Ampliación a 7 jefes de fase por escenario y técnicas definitivas (`BBEAM`):**
+   - Intervalos de jefes reajustados en `BOSS_T` a `[120, 240, 360, 480, 600, 750, 900]` (minutos 2, 4, 6, 8, 10, 12:30 y 15).
+   - `BOSS_SLOT` escalado a 7 peldaños progresivos de vida, daño y recompensas.
+   - Plantilla de jefes `B` ampliada con 7 jefes por mapa cubriendo todas las sagas (King Cold, Metal Cooler, Bojack, Lord Slug, Garlic Jr., Janemba, Omega Shenron, Moro, etc.).
+   - Mapeo `BBEAM` completado para todos los jefes con líneas de aviso, nombres canónicos y rayos colosales de contacto.
 
+4. **Nuevas cartas pasivas de nivel y reliquias icónicas de Dragon Ball:**
+   - Nuevas cartas pasivas en `CARDS`:
+     - `crit` (*Espíritu Saiyan*): +8% probabilidad de crítico (daño x2.2 con números dorados).
+     - `knockback` (*Kiai de Choque*): +30% de fuerza de empuje para controlar hordas.
+     - `zenkai` (*Poder Zenkai*): +15% de daño y velocidad cuando la vida cae por debajo del 35%.
+     - `aura_burst` (*Aura Destructora*): El aura quema continuamente a cualquier enemigo a menos de 30 px.
+   - Nuevas reliquias de jefes en `RELICS`:
+     - `radar` (*Radar del Dragón de Bulma*): Atrae bolas y cápsulas desde un 70% más de distancia.
+     - `kinton` (*Nube Kinton*): +20% velocidad de vuelo y estela de nubes que confunde y ralentiza rivales.
+     - `scouter` (*Scouter Saiyan*): +20% de probabilidad de golpe crítico y revela debilidades.
+     - `pesas` (*Pesas de Entrenamiento Kaio*): +25% de experiencia y +5% de daño extra por cada nivel.
+     - `bastongoku` (*Bastón Mágico Nyoibo*): Barre a los enemigos en área cada 3,5 s con empuje masivo.
+     - `capsulacorp` (*Cápsula Hoi-Poi Multiusos*): Acelera la llegada de cofres y suministros de vida y ki.
+     - `mafuba` (*Vasija del Mafuba*): Atrapa a un jefe o élite cercano en un vórtice sagrado (aturdimiento y daño masivo).
+   - Iconos propios dibujados en pixel art en `icon(id)`.
+   - Soporte en `stats()`, `options()`, `applyOpt()` y bucle de combate.
+   - Subida de versión en `index.html` a `script.js?v=149`.
 
+### A medias / problemas
+- Ninguno: `node --check "02 - Código del juego/script.js"` superado sin advertencias ni errores de sintaxis. Se mantiene la compatibilidad de ejecución local con doble clic (sin `fetch`).
 
-
-
-
-
-
-
-
-
-
-
+### Siguiente paso recomendado
+- Probar en partida las nuevas mecánicas y reliquias en los diferentes escenarios.

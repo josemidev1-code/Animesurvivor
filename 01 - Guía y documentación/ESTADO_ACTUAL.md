@@ -65,3 +65,19 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 
 - Índice maestro navegable y verificado con autorías y enlaces en `antigravity sprites/INDICE_SPRITES.md`.
 - Siguiente paso acordado con Josemi: animación sistemática en Piskel de cada personaje y sus técnicas especiales.
+## 5 nov. — Antigravity: Ataques únicos de enemigos, vegetación viva, 7 jefes por mapa y nuevas reliquias
+- **Ataques propios por enemigo (`enemyPerformAttack` en `script.js?v=149`):**
+  - Fin de proyectiles genéricos: ácido con charcos corrosivos en el suelo para Saibamen, Double Sunday gemelo para Raditz, Bomber DX colosal para Nappa, Crusher Ball teledirigida para Jeice, agujas paralizantes para Guldo (-35% vel), Cañón bucal para Recoome y Dodoria, Huracán Azul para Burter, Mini-Kamehameha para Cell Jr., discos destructores y saetas para Androides 17/18, Death Beams y Death Saucers para Freezer/Cooler/Frost, rayos de caramelo zigzagueantes para Buu, cuchillas God Slicer para Black/Zamasu, y Omega Blaster expansivo para Broly/Kale.
+  - Proyectiles con renderizado pixel art temático (`laser`, `disc`, `acid`, `missile`, `slicer`, `candy`, `omega`, `bomber`, `needle`) con físicas y partículas propias.
+- **Entorno vivo y árboles que se mecen con el viento:**
+  - `drawLivingDecor` mejorado: balanceo continuo en capas finas de 2 píxeles con amplitud de hasta 3,2 px en la copa y detección de toda la vegetación (`tree`, `palm`, `pine`, `fern`, `reed`, `cactus`, `bush`).
+  - Partículas de viento ambientales (`drawEnvWind`): hojas verdes y pétalos de cerezo en bosques/praderas, esporas luminiscentes en Namek, ascuas en Volcán/Infierno, polvo en desiertos y destellos de ki divino en Sala del Tiempo/Bills.
+- **7 Jefes de fase por escenario (`BOSS_T`, `BOSS_SLOT` y `BBEAM`):**
+  - Jefes a los minutos 2, 4, 6, 8, 10, 12:30 y 15 con escala progresiva de vida y recompensas.
+  - Mapeo de jefes completo para todos los mapas (King Cold, Metal Cooler, Bojack, Lord Slug, Garlic Jr., Janemba, Omega Shenron, Moro, etc.).
+  - `BBEAM` configurado para todos los jefes con aviso visual, nombres canónicos y rayos colosales de daño masivo.
+- **Nuevas cartas pasivas y reliquias icónicas:**
+  - Cartas: *Espíritu Saiyan* (críticos x2.2), *Kiai de Choque* (+30% empuje), *Poder Zenkai* (+15% stats con poca vida), *Aura Destructora* (daño pasivo por contacto de aura).
+  - Reliquias: *Radar de Bulma* (+70% alcance de recogida), *Nube Kinton* (+20% vel y estela de nubes ralentizante), *Scouter Saiyan* (+20% crítico), *Pesas de Entrenamiento Kaio* (+25% xp y +5% daño/nivel), *Bastón Mágico Nyoibo* (barrido circular cada 3,5 s), *Cápsula Hoi-Poi* (suministros frecuentes) y *Vasija del Mafuba* (vórtice que atrapa y daña jefes y élites).
+  - Iconos pixel art dedicados en `icon(id)`.
+  - Versión actualizada en `index.html` a `script.js?v=149`.
