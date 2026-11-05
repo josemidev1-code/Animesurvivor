@@ -1371,6 +1371,11 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Siguiente paso
 - Iniciar la fase de animación en Piskel (piskelapp / archivos .piskel y exportación de secuencias): tomar los spritesheets de la biblioteca `antigravity sprites/` para montar, sincronizar y afinar los ciclos de guardia, combos, ráfagas ki y ataques especiales de cada personaje del juego.
 
+### Nueva petición del usuario
+- Josemi: «nose, comienza con lso que quieras»
+- Acción: empezar por la línea principal de combate (Goku Base y sus transformaciones clásicas / ataques icónicos: combo de golpes, patada, Kamehameha y Genkidama), estableciendo el estándar de animación de ataques propios.
+
+
 
 
 
