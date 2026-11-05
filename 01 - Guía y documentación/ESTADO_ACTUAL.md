@@ -89,3 +89,17 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
   - Sombras tridimensionales neutrales en el suelo para personajes y objetos flotantes.
   - HUD con avisos luminosos de recarga completa y atajos numéricos claros.
   - Versiones: `style.css?v=78`, `script.js?v=150`.
+
+## 5 nov. — Antigravity: Selección Directa de Transformaciones y Fotos Estáticas de Perfil
+- **Foto fija de perfil en la lista de personajes (`#chars .cardSpr`)**:
+  - `drawCardSprites` usa el fotograma estático de perfil `A.R[0]`. La cuadrícula muestra un plantel limpio y sin animaciones en bucle simultáneas.
+  - El personaje seleccionado se destaca con marco dorado y flecha `▶` (`.card.selected`).
+- **Animación en movimiento al seleccionar**:
+  - En el panel de vista previa `#rPrevC`, el héroe seleccionado se reproduce con su animación dinámica completa de combate (`Idle`, `Attack`, `Kick`, `Cast`, `Pow`).
+  - El compañero del menú principal (`#hCompC`) muestra la forma seleccionada en movimiento.
+- **Selección directa de transformaciones para jugar**:
+  - Nuevo botón `#rPlayForm` (`JUGAR CON ESTA FORMA` / `JUGAR COMO [FORMA]`).
+  - Las transformaciones se eligen libremente con `◀` y `▶` y se guardan en `s.selForm`.
+  - Sin bloqueos restrictivos: la partida arranca de inmediato con la transformación elegida (`P.form` y `P.startForm`).
+  - `checkForm()` no degrada la transformación inicial elegida al subir de nivel.
+  - Versiones: `style.css?v=79`, `script.js?v=151`.

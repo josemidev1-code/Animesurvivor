@@ -280,3 +280,10 @@ body.high-contrast .up .nm,body.high-contrast .card h3{color:#ffffff!important;t
 #hFace{display:none!important}
 #hCompC{display:block;width:180px;height:180px;image-rendering:pixelated;background:#0c1448;border:3px solid #f8f8f8;box-shadow:0 0 0 2px #000,4px 4px 0 2px #000}
 #hCompC{border:0;box-shadow:none;background:transparent;width:180px;height:180px}
+
+/* Selección de personaje y botón directo de jugar forma */
+#rPlayForm{width:100%;font-family:var(--pix);font-size:9px;padding:9px 6px;margin:4px 0 6px 0;letter-spacing:1px;text-align:center;background:linear-gradient(180deg,#ffd23f,#e59500);color:#100600;border:2px solid #fff;box-shadow:0 0 0 2px #000,3px 3px 0 2px #000;cursor:pointer;transition:transform .1s,filter .1s,box-shadow .1s}
+#rPlayForm:hover,#rPlayForm:focus-visible{filter:brightness(1.15);transform:translateY(-2px);box-shadow:0 0 0 2px #fff,0 0 14px var(--ki),3px 5px 0 2px #000}
+#rPlayForm:active{transform:translateY(1px);box-shadow:0 0 0 2px #000,1px 1px 0 2px #000}
+#roster .card.selected{border-color:var(--w16sel)!important;box-shadow:inset 0 0 0 3px var(--w16b),inset 0 0 0 5px var(--w16sel),0 0 0 2px #000,5px 5px 0 2px #000!important}
+#roster .card.selected::before{content:'▶';position:absolute;left:-18px;top:44px;color:var(--w16sel);font-family:var(--pix);font-size:12px;text-shadow:2px 2px 0 #000}

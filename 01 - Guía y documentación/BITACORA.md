@@ -1538,3 +1538,39 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Probar los ajustes de accesibilidad en el menú y disfrutar de las partidas con las nuevas cartas de subida de nivel.
+### Nueva petición del usuario
+- Josemi: «vamos a hacer que cuando selecciones el personaje y pongas la transformacion te deje elegirla para jugarla, y que la foto de perfil del personaje sea el personaje de perfil y ya cuando lo elijas es cuando puedes verlo en movimiento»
+- Objetivos solicitados:
+  1. **Elegir la transformación directamente para jugar**: al seleccionar el personaje y cambiar entre sus transformaciones con las flechas, permitir elegir esa forma directamente para empezar la partida con esa transformación activa.
+  2. **Foto estática de perfil en la lista**: en la cuadrícula de personajes, la tarjeta muestra una foto fija de perfil (primer fotograma nítido o retrato), y solo al elegirlo o tenerlo en la vista previa grande se muestra animado en movimiento.
+
+
+### Lo que se ha hecho (Sesión Selección Directa de Formas y Perfil Estático)
+1. **Pose estática de perfil en la cuadrícula del plantel (`#chars .cardSpr`)**:
+   - Modificado `drawCardSprites(t)` en `script.js` para usar `A.R[0]` (fotograma estático de perfil/guardia en reposo) en lugar de reproducir la animación en bucle para los más de 20 personajes a la vez.
+   - Las tarjetas de la lista ahora tienen una foto fija de perfil limpia, nítida y fiel a la estética de los juegos de lucha clásicos.
+   - Si el personaje tiene una transformación elegida en `selForm`, la tarjeta muestra esa forma seleccionada en su pose de perfil estática.
+   - Añadida clase y estilos CSS `#roster .card.selected` con flecha `▶` y marco brillante para destacar el héroe seleccionado.
+
+2. **Visualización en movimiento dinámico al seleccionarlo (`#rPrevC` y `#hCompC`)**:
+   - Solo al seleccionar/inspeccionar el personaje en el panel de detalle izquierdo (`#rPrev`), el canvas `#rPrevC` reproduce su animación completa en movimiento dinámico con su secuencia de combos, patadas y ki (`seq = ['Idle','Attack','Idle','Kick','Cast','Pow']`).
+   - El compañero seleccionado en el menú principal (`#hCompC`) también se reproduce en movimiento con la forma y transformación exacta elegida.
+
+3. **Selección directa de transformaciones para jugar (`#rPlayForm`)**:
+   - Añadido el botón dorado brillante `JUGAR CON ESTA FORMA` (o `JUGAR COMO [FORMA]`) en la ficha de selección `#rPrev` en `index.html`.
+   - Al pulsar `◀` y `▶` en `#rPrev`, se actualiza la forma en tiempo real, el botón refleja dinámicamente el nombre de la forma (ej. `JUGAR COMO SSJ BLUE`), y se guarda de forma persistente en `localStorage` (`selForm`).
+   - Se eliminó el bloqueo restrictivo de Shenron para que cualquier forma disponible pueda seleccionarse directamente para jugar.
+   - Al hacer clic en el botón o doble clic en la tarjeta, se inicia la selección de mapa y la partida comienza de inmediato en dicha transformación (`P.form = initForm`, `P.startForm = initForm`).
+   - El motor de juego ajusta de inmediato la vida máxima (`stats().maxhp`), daño, velocidad, aura y ataques correspondientes a la forma elegida desde el segundo 0.
+   - Se ajustó `checkForm()` para respetar `P.startForm` y nunca degradar la transformación inicial seleccionada por el jugador.
+
+4. **Verificación y versiones**:
+   - Sintaxis validada con `node --check "02 - Código del juego/script.js"`.
+   - Pruebas automatizadas de persistencia y nivel de formas completadas con éxito.
+   - `index.html` actualizado con `style.css?v=79` y `script.js?v=151`.
+
+### A medias / problemas
+- Ninguno. La selección directa de transformaciones y las fotos fijas de perfil funcionan sin bloqueos ni recargas externas, manteniendo compatibilidad con doble clic.
+
+### Siguiente paso recomendado
+- Abrir `index.html`, probar en la pantalla de personajes la selección de cualquier transformación (ej. Goku SSJ Blue, Vegeta Ego SSJ Blue) y comprobar el arranque directo de la partida en dicha forma.

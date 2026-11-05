@@ -1882,7 +1882,10 @@ function newGame(hid,map){
   solidReset();
   const H=HEROES[hid];
   S={map:MAPK,bossN:0,t:0,kills:0,spawnT:0,bossIdx:0,ringIdx:0,boss:null,banner:null,flash:0,pending:0,hid,won:false,endless:false,nextEndless:0,zeni:0,freeze:0,diff:pickedDiff,meta:metaBonus(),mr:1+0.01*mastRank(hid),aw:awaken(hid),saiba:0,forms:0,evos:0,balls:0,ballN:0,wishes:0,bank:{t:0,kills:0,boss:0,saiba:0,forms:0,evos:0,zeni:0,wishes:0}};S.revives=S.meta.revive;
-  P={dir:'down',cast:null,x:0,y:0,hp:H.hp,face:1,anim:0,moving:false,iframe:0,lvl:1,xp:0,need:need(1),form:0,
+  const s=loadSave();
+  const chosenForm=(s.selForm&&s.selForm[hid]!==undefined)?s.selForm[hid]:(rosterAnim.id===hid?(rosterAnim.form||0):0);
+  const initForm=clamp(chosenForm,0,(H.forms?H.forms.length-1:0));
+  P={dir:'down',cast:null,x:0,y:0,hp:H.hp,face:1,anim:0,moving:false,iframe:0,lvl:1,xp:0,need:need(1),form:initForm,startForm:initForm,
      moves:{},order:[],cards:{},orbA:0,hitT:0,sel:0,sigT:0.6,sigCD:1,sigN:0,sigU:3,sigB:[],sigTimers:{},sigCursor:0,relics:{},powT:1.2};
   P.hp=stats().maxhp;fxSl.length=0;fxRg.length=0;if(window.PFX)PFX.clear();
   fxs=[];ebeams=[];enemies=[];projs=[];eshots=[];beams=[];bombs=[];gems=[];pickups=[];parts=[];texts=[];
@@ -2349,8 +2352,7 @@ function formaUI(){const b=$('#gForma');if(!b)return;const hid=companion(),H=HER
   b.onclick=()=>{const r=pedirForma(hid);gachaInfo();formaUI();
     $('#gInfo').textContent=r==='ok'?`¡Deseo cumplido! ${H.name} ya puede transformarse en ${H.forms[n]} al subir de nivel.`:`Te faltan tickets: necesitas ${FORMA_TK*n}. Gana más jugando partidas.`;if(r==='ok')sfx('trans')}}
 // ---------- fin del deseo de transformación
-function checkForm(){const lv=FORM_LV.filter(l=>P.lvl>=l).length-1,f=Math.min(HEROES[S.hid].forms.length-1,formasAbiertas(S.hid),lv);
-  if(lv>f&&f<HEROES[S.hid].forms.length-1&&!S.formAviso){S.formAviso=1;S.banner={t:2.6,text:'FORMA BLOQUEADA',sub:'Pídesela a Shenron en el menú'}}
+function checkForm(){const lv=FORM_LV.filter(l=>P.lvl>=l).length-1,f=Math.min(HEROES[S.hid].forms.length-1,Math.max(P.startForm||0,lv));
   if(f>P.form){S.forms+=f-P.form;P.form=f;P.hp=stats().maxhp;
   S.banner={t:2.6,text:HEROES[S.hid].forms[f]+'!',sub:'¡Transformación!',trans:1};S.flash=0.5;S.freeze=0.6;P.powT=1.6;cam.shake=8;sfx('trans');
   burst(P.x,P.y-10,60,['#ffd23f','#ffffff','#fff6a8'])}}
@@ -3787,7 +3789,7 @@ function resume(){state='play';$('#pause').hidden=true;last=performance.now()}
 // ---------- save (tickets, zeni, owned heroes, pity, records) ----------
 let SAVE=null;
 function loadSave(){if(SAVE)return SAVE;let d={};try{d=JSON.parse(localStorage.getItem('animesurvivor-save')||'{}')}catch(e){}
-  SAVE={tickets:d.tickets??10,zeni:d.zeni||0,pity:d.pity||0,pulls:d.pulls||0,owned:d.owned||{goku:1,vegeta:1,piccolo:1},best:d.best||{},up:d.up||{},mis:d.mis||{},st:d.st||{},mast:d.mast||{},daily:d.daily||'',streak:d.streak||0,clear:d.clear||{},bes:d.bes||{},mprog:d.mprog||{},lockv:d.lockv||0};return SAVE}
+  SAVE={tickets:d.tickets??10,zeni:d.zeni||0,pity:d.pity||0,pulls:d.pulls||0,owned:d.owned||{goku:1,vegeta:1,piccolo:1},best:d.best||{},up:d.up||{},mis:d.mis||{},st:d.st||{},mast:d.mast||{},daily:d.daily||'',streak:d.streak||0,clear:d.clear||{},bes:d.bes||{},mprog:d.mprog||{},lockv:d.lockv||0,sel:d.sel||'goku',selForm:d.selForm||{}};return SAVE}
 function writeSave(){try{localStorage.setItem('animesurvivor-save',JSON.stringify(SAVE))}catch(e){}}
 function loadBest(){return loadSave().best}
 function saveBest(b){loadSave().best=b;writeSave()}
@@ -3973,17 +3975,18 @@ function showTitle(){state='title';if(started)openHub();else{hideMenus();$('#sta
 const cardTimers=[];
 // estadísticas con colores: vida verde, velocidad azul, ataque rojo; la barra compara con el resto de personajes
 // forma que enseña la tarjeta: la más alta que tengas despertada con Shenron y que tenga cara propia
-function topForm(id){const H=HEROES[id];if(!H||!H.forms)return 0;for(let f=formasAbiertas(id);f>0;f--)if(faceExact(id,f))return f;return 0}
+function topForm(id){const s=loadSave();if(s.selForm&&s.selForm[id]!==undefined)return s.selForm[id];const H=HEROES[id];if(!H||!H.forms)return 0;for(let f=formasAbiertas(id);f>0;f--)if(faceExact(id,f))return f;return 0}
 let STAT_RANGE=null;
 function statRange(){if(STAT_RANGE)return STAT_RANGE;const r={hp:[1e9,0],spd:[1e9,0],atk:[1e9,0]};
   for(const id in HEROES){const H=HEROES[id];if(H.npc||H.custom||!spriteHero(id))continue;for(const k in r){r[k][0]=Math.min(r[k][0],H[k]);r[k][1]=Math.max(r[k][1],H[k])}}return STAT_RANGE=r}
 function statBars(H){const r=statRange(),row=(k,cl,lb,v)=>{const[a,b]=r[k],f=b>a?(H[k]-a)/(b-a):1,pc=Math.round(15+85*clamp(f,0,1));
     return `<span class="sb ${cl}"><b>${lb}</b><i><em style="width:${pc}%"></em></i><span>${v}</span></span>`};
   return `<span class="sBars">${row('hp','hp','VIDA',H.hp)}${row('spd','spd','VEL',H.spd)}${row('atk','atk','ATQ','x'+H.atk)}</span>`}
-// el personaje como en partida dentro de cada tarjeta (guardia de la forma base); solo se dibujan las tarjetas visibles
+// el personaje en pose fija de perfil dentro de cada tarjeta; solo se dibujan las tarjetas visibles
 function drawCardSprites(t){const vh=innerHeight;document.querySelectorAll('#chars .cardSpr').forEach(c=>{const r=c.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;
   const id=c.dataset.id,g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);g.imageSmoothingEnabled=false;let im=null;
-  const o=scHero(id,+c.dataset.f||0);if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[Math.floor(t*6)%A.R.length]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
+  const s=loadSave();const curF=(s.selForm&&s.selForm[id]!==undefined)?s.selForm[id]:(+c.dataset.f||0);
+  const o=scHero(id,curF)||scHero(id,0);if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[0]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
   if(!im)return;const fit=Math.min((c.height-6)/im.height,(c.width-6)/im.width),k=fit>=2?2:fit>=1.5?1.5:Math.min(1,fit);
   g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-4,28,5,0,0,TAU);g.fill();
   g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-2-im.height*k),Math.round(im.width*k),Math.round(im.height*k))})}
@@ -3995,7 +3998,20 @@ function buildCards(){const box=$('#chars');box.innerHTML='';cardTimers.forEach(
     img.src=f0||'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEAAAAALAAAAAABAAEAAAIBAAA=';img.alt=f0?H.name:'';if(!f0)img.classList.add('noFace');
     b.appendChild(img);const spr=mk(150,170);spr.className='cardSpr';spr.dataset.id=id;spr.dataset.f=fTop;b.appendChild(spr);const stars=H.rar?`<span class="rar">${'★'.repeat(H.rar)}</span>`:'';
     b.insertAdjacentHTML('beforeend',own?`${stars}<h3>${H.name}</h3><p>${H.desc}</p>${statBars(H)}${mastRank(id)?`<span class="rar">MAESTRIA ${mastRank(id)}</span>`:''}${awaken(id)?`<span class="rar">DESPERTAR +${awaken(id)}</span>`:''}`:`${stars}<h3>${H.name}</h3><p>Pídeselo a Shenron.</p>`);
-    b.dataset.id=id;b.onclick=()=>own?pickHero(id):openGacha();box.appendChild(b);
+    b.dataset.id=id;
+    b.onclick=()=>{
+      if(!own){openGacha();return}
+      const s=loadSave();s.sel=id;
+      const f=(s.selForm&&s.selForm[id]!==undefined)?s.selForm[id]:0;
+      rosterAnim.id=id;rosterAnim.form=f;writeSave();
+      prev(id);sfx('select');
+    };
+    b.ondblclick=()=>{
+      if(!own)return;
+      const f=(loadSave().selForm&&loadSave().selForm[id]!==undefined)?loadSave().selForm[id]:0;
+      pickHero(id,f);chooseMap(id);
+    };
+    box.appendChild(b);
     }
   $('#wallet').textContent=`Tickets: ${sv.tickets} · Zeni: ${sv.zeni} · Personajes: ${Object.keys(HEROES).filter(k=>spriteHero(k)&&sv.owned[k]).length}/${Object.keys(HEROES).filter(spriteHero).length}`}
 // ---------- Crea tu guerrero: player-made heroes from any PNG, stored only in this browser ----------
@@ -4078,7 +4094,12 @@ function drawHeroInto(c,id,form,t,anim){const g=c.getContext('2d');g.imageSmooth
 function companion(){const s=loadSave();if(s.sel&&s.owned[s.sel]&&spriteHero(s.sel))return s.sel;return Object.keys(HEROES).find(k=>s.owned[k]&&spriteHero(k))||'goku'}
 // every character with sprites is playable from the start (the gacha now only awakens them)
 function unlockAll(sv){let n=0;for(const k in HEROES)if(spriteHero(k)&&!sv.owned[k]){sv.owned[k]=1;n++}if(n)writeSave()}
-function pickHero(id){const s=loadSave();s.sel=id;writeSave();showTitle()}
+function pickHero(id,form){
+  const s=loadSave();s.sel=id;
+  const f=form!==undefined?form:(rosterAnim.id===id?(rosterAnim.form||0):((s.selForm&&s.selForm[id]!==undefined)?s.selForm[id]:0));
+  s.selForm=s.selForm||{};s.selForm[id]=f;writeSave();
+  sfx('trans');showTitle();
+}
 function countdown(ms){ms=Math.max(0,ms);const d=Math.floor(ms/864e5),h=Math.floor(ms/36e5)%24,m=Math.floor(ms/6e4)%60,s=Math.floor(ms/1e3)%60,p=n=>String(n).padStart(2,'0');return(d?d+'d ':'')+p(h)+':'+p(m)+':'+p(s)}
 const HUB_ITEMS=[
   ['play','kame','JUGAR','Elige escenario y lucha',()=>chooseMap(companion())],
@@ -4095,7 +4116,9 @@ function buildHub(){const nav=$('#hubMenu');nav.innerHTML='';
     b.insertAdjacentHTML('beforeend',`<span><b>${t}</b><small>${typeof sub==='function'?sub():sub}</small></span>`);b.onclick=()=>{initAudio();sfx('shot');fn()};nav.appendChild(b)}}
 function hubRefresh(){const s=loadSave(),best=loadBest(),id=companion(),H=HEROES[id],all=Object.keys(HEROES).filter(spriteHero);
   $('#cZeni').textContent='ZENI '+s.zeni;$('#cTix').textContent='TICKETS '+s.tickets;$('#cHeroes').textContent='GUERREROS '+all.filter(k=>s.owned[k]).length+'/'+all.length;
-  $('#hCompName').textContent=H.name;{const f=faceOf(id,0);$('#hFace').src=f||'';$('#hFace').hidden=!f}const aw=awaken(id),mr=mastRank(id);
+  const curF=(s.selForm&&s.selForm[id]!==undefined)?s.selForm[id]:0;
+  $('#hCompName').textContent=H.name+(curF>0&&H.forms&&H.forms[curF]?` (${H.forms[curF]})`:'');
+  {const f=faceExact(id,curF)||faceOf(id,0);$('#hFace').src=f||'';$('#hFace').hidden=!f}const aw=awaken(id),mr=mastRank(id);
   $('#hCompTags').innerHTML=(H.rar?`<span class="pill r${H.rar}">${'★'.repeat(H.rar)}</span>`:'')+(aw?`<span class="pill">DESPERTAR +${aw}</span>`:'')+(mr?`<span class="pill">MAESTRÍA ${mr}</span>`:'');
   const bt=Object.values(best).reduce((m,b)=>Math.max(m,b.t||0),0),st=s.st||{};
   $('#hubStats').innerHTML=`Tiempo jugado <b>${fmt(st.secs||0)}</b> · Mejor tiempo <b>${fmt(bt)}</b><br>Derrotados <b>${st.kills||0}</b> · Jefes <b>${st.boss||0}</b> · Deseos <b>${s.pulls||0}</b>`;
@@ -4105,7 +4128,8 @@ function openHub(){hideMenus();state='title';$('#hub').hidden=false;hubRefresh()
   let n=0;hubTimer=setInterval(()=>{if($('#hub').hidden)return;drawHubComp();if(++n%8===0)evTick()},120)}
 // compañero del menú de lado, como en partida (igual que la selección)
 function drawHubComp(){const c=$('#hCompC');if(!c)return;const id=companion(),g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);g.imageSmoothingEnabled=false;
-  const o=scHero(id,topForm(id));let im=null;if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[Math.floor(performance.now()/160)%A.R.length]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
+  const s=loadSave();const curF=(s.selForm&&s.selForm[id]!==undefined)?s.selForm[id]:topForm(id);
+  const o=scHero(id,curF)||scHero(id,0);let im=null;if(o){const A=o.Idle||o.Attack;if(A&&A.R.length)im=A.R[Math.floor(performance.now()/160)%A.R.length]}else if(MYC['h:'+id+':0'])im=MYC['h:'+id+':0'].c;
   if(!im)return;const fit=Math.min((c.height-8)/im.height,(c.width-8)/im.width),k=fit>=2?2:fit>=1.5?1.5:Math.min(1,fit);
   g.fillStyle='rgba(0,0,0,.35)';g.beginPath();g.ellipse(c.width/2,c.height-5,30,5,0,0,TAU);g.fill();g.drawImage(im,Math.round(c.width/2-im.width*k/2),Math.round(c.height-3-im.height*k),Math.round(im.width*k),Math.round(im.height*k))}
 function enterGame(){if(started)return;started=true;initAudio();sfx('level');openHub()}
@@ -4119,15 +4143,22 @@ function drawRosterAnim(){const c=$('#rPrevC'),g=c.getContext('2d'),id=rosterAni
 // forma que se ve en la ficha: la cara es la de esa forma; si no tiene retrato propio no se pone ninguno
 function rosterForm(d){const id=rosterAnim.id,H=HEROES[id];if(!H)return;const n=(H.forms||[0]).length;rosterAnim.form=((rosterAnim.form||0)+d+n)%n;const f=rosterAnim.form;
   const face=faceExact(id,f)||(f===0&&MYC['h:'+id+':0']?MYC['h:'+id+':0'].c.toDataURL():null);$('#rPrevImg').src=face||'';$('#rPrevImg').hidden=!face;$('#rNoFace').hidden=!!face;
-  $('#rFormN').textContent=(H.forms||[])[f]||'BASE';$('#rFormL').disabled=$('#rFormR').disabled=n<2;$('#rForm').classList.toggle('one',n<2);
-  const own=!!loadSave().owned[id];$('#rFormLock').hidden=!(own&&f>formasAbiertas(id));if(d)rosterAnim.t0=performance.now()}
+  const formName=(H.forms||[])[f]||'BASE';$('#rFormN').textContent=formName;$('#rFormL').disabled=$('#rFormR').disabled=n<2;$('#rForm').classList.toggle('one',n<2);
+  $('#rFormLock').hidden=true;
+  const bPlayF=$('#rPlayForm');if(bPlayF)bPlayF.textContent=n>1?`JUGAR COMO ${formName}`:'JUGAR CON ESTE GUERRERO';
+  const cardSpr=document.querySelector(`#chars .cardSpr[data-id="${id}"]`);if(cardSpr)cardSpr.dataset.f=f;
+  if(d){rosterAnim.t0=performance.now();const s=loadSave();s.selForm=s.selForm||{};s.selForm[id]=f;writeSave();sfx('select')}}
 function openRoster(){hideMenus();state='title';$('#roster').hidden=false;buildCards();const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);
-  const prev=id=>{const H=HEROES[id];if(rosterAnim.id!==id)rosterAnim.form=topForm(id);$('#rPrevName').textContent=H.name;$('#rPrev').dataset.id=id;$('#rPrevStats').innerHTML=statBars(H);
+  const prev=id=>{const H=HEROES[id];if(!H)return;
+    const sv=loadSave();if(rosterAnim.id!==id)rosterAnim.form=(sv.selForm&&sv.selForm[id]!==undefined)?sv.selForm[id]:0;
+    $('#rPrevName').textContent=H.name;$('#rPrev').dataset.id=id;$('#rPrevStats').innerHTML=statBars(H);
     // sus técnicas de la serie y el nivel en que se aprenden
-    $('#rPrevMoves').innerHTML=sigList(id).map((m,i)=>MV[m]?`<li><b>Nv ${UNLOCK_LV[i]||1}</b> ${MV[m].name}</li>`:'').join('');rosterAnim.id=id;rosterAnim.t0=performance.now();rosterForm(0)};
+    $('#rPrevMoves').innerHTML=sigList(id).map((m,i)=>MV[m]?`<li><b>Nv ${UNLOCK_LV[i]||1}</b> ${MV[m].name}</li>`:'').join('');rosterAnim.id=id;rosterAnim.t0=performance.now();rosterForm(0);
+    document.querySelectorAll('#chars .card').forEach(c=>c.classList.toggle('selected',c.dataset.id===id));
+  };
   if(!rosterAnim.on){rosterAnim.on=1;const loop=()=>{if($('#roster').hidden){rosterAnim.on=0;return}drawRosterAnim();drawCardSprites(performance.now()/1000);requestAnimationFrame(loop)};loop()}
   $('#chars').querySelectorAll('.card').forEach(b=>{b.onmouseenter=b.onfocus=()=>prev(b.dataset.id)});prev(companion());
-  $('#rInfo').innerHTML=`Tienes <b>${all.filter(k=>s.owned[k]).length}</b> de <b>${all.length}</b>. Toca uno tuyo para llevarlo de compañero; los que te faltan se consiguen pidiendo deseos a Shenron.`}
+  $('#rInfo').innerHTML=`Tienes <b>${all.filter(k=>s.owned[k]).length}</b> de <b>${all.length}</b>. Toca uno tuyo para seleccionarlo o cambiar su forma; pulsa JUGAR para saltar directo a la batalla.`}
 const SHOP=[{n:'1 TICKET',d:'Un deseo a Shenron',c:120,t:1},{n:'10 TICKETS',d:'Diez deseos con descuento',c:1100,t:10},{n:'50 TICKETS',d:'El pack del guerrero',c:5000,t:50}];
 function openShop(){hideMenus();state='title';$('#shop').hidden=false;drawShop()}
 function drawShop(){const s=loadSave();$('#shInfo').innerHTML=`Tienes <b>${s.zeni}</b> zeni y <b>${s.tickets}</b> tickets. El zeni se gana jugando partidas y con los repetidos al máximo despertar.`;
@@ -4154,7 +4185,9 @@ function toggleFull(){if(document.fullscreenElement)document.exitFullscreen();el
   $('#start').onclick=enterGame;addEventListener('keydown',e=>{if(!started&&state==='title'&&!$('#start').hidden)enterGame()});
   $('#hComp').onclick=openRoster;$('#hEvent').onclick=()=>openGacha();
   $('#hSave').onclick=()=>$('#bkSave').click();$('#hMute').onclick=()=>{$('#bMute').click();$('#hMute').textContent=$('#bMute').textContent==='MUDO'?'MUDO':'SONIDO'};$('#hFull').onclick=toggleFull;$('#hSet').onclick=openSettings;
-  $('#rBack').onclick=showTitle;$('#rFormL').onclick=()=>rosterForm(-1);$('#rFormR').onclick=()=>rosterForm(1);$('#shBack').onclick=showTitle;$('#rkBack').onclick=showTitle;$('#sBack').onclick=showTitle;
+  $('#rBack').onclick=showTitle;$('#rFormL').onclick=()=>rosterForm(-1);$('#rFormR').onclick=()=>rosterForm(1);
+  const bPlayF=$('#rPlayForm');if(bPlayF)bPlayF.onclick=()=>{const id=rosterAnim.id||companion(),f=rosterAnim.form!==undefined?rosterAnim.form:0;pickHero(id,f);chooseMap(id)};
+  $('#shBack').onclick=showTitle;$('#rkBack').onclick=showTitle;$('#sBack').onclick=showTitle;
   $('#sMute').onclick=()=>{$('#bMute').click();setLabels()};
   const bVol=$('#sVol');if(bVol)bVol.onclick=()=>{const seq=[1,0.7,0.4,0];let idx=(seq.indexOf(ACC_CFG.vol)+1)%seq.length;ACC_CFG.vol=seq[idx];if(ACC_CFG.vol===0)muted=true;else muted=false;saveAcc();setLabels();sfx('hit')};
   const bShk=$('#sShake');if(bShk)bShk.onclick=()=>{const seq=[1,0.5,0];let idx=(seq.indexOf(ACC_CFG.shake)+1)%seq.length;ACC_CFG.shake=seq[idx];saveAcc();setLabels();sfx('hit')};
