@@ -1375,7 +1375,34 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 - Josemi: «nose, comienza con lso que quieras»
 - Acción: empezar por la línea principal de combate (Goku Base y sus transformaciones clásicas / ataques icónicos: combo de golpes, patada, Kamehameha y Genkidama), estableciendo el estándar de animación de ataques propios.
 - Josemi: «vale hazlos para todos y no pares»
-- Acción en curso: configurar ataques especiales y combos (attack2, attack3, kick2, beam, up, dash) para todos los personajes de la plantilla, compilar `animaciones_juego.js` y generar los paquetes listos para Piskel (.piskel, .gif, spritesheets y guías) de forma sistemática y continua para todo el elenco.
+- Acción: configuración y exportación masiva y sistemática de animaciones de ataque y paquetes Piskel para el elenco entero:
+  1. **Línea de Vegeta** (`vegeta` 0, 1, 2, 3, 4): Base, SSJ Freezer, Super Vegeta, Majin Vegeta y SSJ Blue completados con `attack2`, `attack3`, `kick2`, `beam`, `up`, `dash`. Compilado en `animaciones_juego.js` y exportado a `piskel_animaciones/` (commit `9609cc4d`).
+  2. **Línea de Gohan** (`gohan` 0, 1, 2, 3): Gohan Niño (Masenko y cabezazo), Teen SSJ, SSJ2 (Kamehameha Padre-Hijo) y Definitivo/Místico. Configurados, compilados y exportados a Piskel.
+  3. **Línea de Piccolo** (`piccolo` 0, 1): Piccolo clásico (brazo extensible, Makankosappo, ráfagas) y Piccolo Naranja. Configurados, compilados y exportados a Piskel.
+  4. **Línea de Trunks** (`trunks` 0, 1, 2): Trunks del Futuro con espada, SSJ Trunks y SSJ2 Manga. Configurados, compilados y exportados a Piskel.
+  5. **Guerreros Z Principales**:
+     - `krilin` 0 (Kienzan con pose arriba, combos de golpes y patadas)
+     - `yamcha` 0 (Rogafufuken, Sokidan)
+     - `goten` 0 (Kamehameha, pose de brazos alzados)
+     - `a18` 0 (Destructora de alta intensidad, ráfagas)
+     Configurados, compilados y exportados a Piskel.
+  6. **Fusiones y Saiyans Legendarios**:
+     - `vegetto` 0, 1, 2, 3 (Espada de ki, Big Bang Attack, Final Kamehameha)
+     - `gogeta` 0, 1, 2 (Soul Punisher / Stardust Breaker, Big Bang Kamehameha)
+     - `bardock` 0, 1, 3 (Riot Javelin, combos salvajes)
+     - `broly` 0, 1, 2, 3 (Eraser Cannon, Omega Blaster, Gigantic Roar)
+     Configurados, compilados y exportados a Piskel.
+  7. **Línea de Goku** (`goku` 0, 1, 2, 3, 4): Base, SSJ1, SSJ2, SSJ3 y SSJ Blue completados con todas sus variantes de ataque y exportados a Piskel.
+  8. **Grandes Villanos**:
+     - `freezer` 0, 1, 2, 3, 4, 5 (1ª forma, 3ª forma, Final, Full Power, Golden y Black Freezer)
+     - `cell` 0, 1, 2, 3, 4 (Imperfecto, Semi-perfecto, Perfecto, Golden Kaioken y Majin Cell)
+     - `buu` 0, 1, 2, 3, 4 (Majin Buu gordo, Buu malo, Super Buu, Buu Gohan y Kid Buu)
+     - `jiren` 0, 1, 2 (Base, Full Power y Hakaishin)
+     - `black` 0, 1, 2 (Base, SSJ y Rosé)
+     Configurados, compilados y exportados a Piskel.
+  - Total acumulado: **59 paquetes completos de personajes listos para Piskel** en `piskel_animaciones/` con `.piskel`, `.gif`, spritesheet `.png` y fotogramas individuales.
+  - `animaciones_juego.js` actualizado a ~10.3 MB sin alterar el soporte de ejecución local con doble clic (sin `fetch`).
+
 
 
 
