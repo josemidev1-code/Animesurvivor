@@ -59,11 +59,11 @@ def main():
                     recortar(hoja, caja).save(salida)
                     imagenes[clave] = uri(salida)
 
-    # Añadir objetos ya recortados en ui/objetos (como kinton, bastongoku)
-    for extra in ["kinton", "bastongoku", "senzuBolsa", "scouter", "scouterRojo", "pesas", "mafuba", "capsulacorp", "capsulaDorada", "capsulaRoja", "armaduraSaiyan"]:
-        salida = OBJETOS / f"{extra}.png"
-        if salida.exists():
-            imagenes[extra] = uri(salida)
+    # Añadir todos los objetos e iconos en ui/objetos/*.png
+    for png in OBJETOS.glob("*.png"):
+        clave = png.stem
+        if clave not in imagenes:
+            imagenes[clave] = uri(png)
 
     # Añadir sprites de Shenron para la cinemática
     for shen_part in ["shenron", "shenron_pose1", "shenron_pose2", "shenron_nubes", "shenron_rayos"]:
