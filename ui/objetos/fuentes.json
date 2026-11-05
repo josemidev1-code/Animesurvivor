@@ -1,5 +1,5 @@
 {
-  "fechaRevision": "2026-10-31",
+  "fechaRevision": "2026-11-05",
   "fuentes": [
     {
       "id": "log2",
@@ -12,7 +12,16 @@
         "senzu": [59, 29, 26, 27],
         "capsulaVida": [1, 30, 17, 30],
         "capsulaKi": [19, 122, 17, 30],
-        "radar": [97, 29, 26, 27]
+        "radar": [97, 29, 26, 27],
+        "scouter": [38, 110, 28, 25],
+        "scouterRojo": [107, 87, 30, 16],
+        "pesas": [80, 110, 31, 21],
+        "mafuba": [141, 56, 32, 29],
+        "capsulacorp": [20, 30, 16, 30],
+        "senzuBolsa": [59, 30, 26, 25],
+        "capsulaDorada": [19, 154, 16, 30],
+        "capsulaRoja": [2, 92, 16, 30],
+        "armaduraSaiyan": [181, 147, 28, 32]
       }
     },
     {
@@ -23,6 +32,22 @@
       "url": "https://www.deviantart.com/lady-pixel/art/Dragon-Radar-891273130",
       "condiciones": "La descripción permite usarlo, prohíbe copiar, calcar, editar o atribuírselo. Se conserva el GIF original íntegro y se muestra como imagen animada, sin recortar ni recolorear.",
       "imagenIntegra": "radarAnimado"
+    },
+    {
+      "id": "strice12_nino",
+      "archivo": "../../sprites/07_Personajes_sin_saga_concreta/DeviantArt/435_GOKU NINO (Strice12)/099.png",
+      "nombre": "Nube Kinton y Bastón Mágico Nyoibo",
+      "autor": "Strice12 (DeviantArt)",
+      "url": "https://www.deviantart.com/strice12",
+      "condiciones": "Sprites de estilo LSW/anime Dragon Ball. Uso acreditado al autor en el proyecto."
+    },
+    {
+      "id": "sw2_shenron",
+      "archivo": "../../sprites/shenron/shenron_sw2_oficial.png",
+      "nombre": "Shenron el Dragón Sagrado (animación de deseos)",
+      "autor": "Grim (extracción); Arc System Works / Bandai Namco (juego original Supersonic Warriors 2)",
+      "url": "https://spritedatabase.net/file/17590",
+      "condiciones": "Sprites oficiales de Nintendo DS de Shenron, nubes místicas y relámpagos para la cinemática de deseos del gachapón y las esferas del dragón."
     }
   ]
 }

@@ -1088,7 +1088,8 @@ const onRing=(tx,ty)=>Math.abs(tx)<=11&&Math.abs(ty)<=11;
 })();
 // Objetos reales: fuentes, originales y recortes en ui/objetos/.
 const OBJ_IMG={};
-for(const id of ['senzu','capsulaVida','capsulaKi','radar']){
+const ALL_OBJ_KEYS=['senzu','capsulaVida','capsulaKi','radar','kinton','bastongoku','scouter','scouterRojo','pesas','mafuba','capsulacorp','senzuBolsa','capsulaDorada','capsulaRoja','armaduraSaiyan'];
+for(const id of ALL_OBJ_KEYS){
   if(!window.UI_IMG?.[id])continue;
   const im=new Image();im.onload=()=>{delete ICON_C[id];if(id==='radar')delete ICON_C.magnet};im.src=window.UI_IMG[id];OBJ_IMG[id]=im;
 }
@@ -1097,8 +1098,15 @@ function drawObjeto(id,x,y,w=14){const im=OBJ_IMG[id];if(!im?.complete||!im.natu
 // ---------- icons ----------
 function icon(id){
   const c=mk(16,16),g=c.getContext('2d');const px=(x,y,w,h,col)=>{g.fillStyle=col;g.fillRect(x,y,w,h)};
-  const objeto=OBJ_IMG[id==='magnet'?'radar':id];
-  if(objeto){if(objeto.complete&&objeto.naturalWidth){const z=Math.min(16/objeto.naturalWidth,16/objeto.naturalHeight),w=objeto.naturalWidth*z,h=objeto.naturalHeight*z;g.drawImage(objeto,(16-w)/2,(16-h)/2,w,h)}return c}
+  const objKey=id==='magnet'?'radar':id;
+  const objeto=OBJ_IMG[objKey]||(objKey==='senzu'?OBJ_IMG['senzuBolsa']:null);
+  if(objeto&&objeto.complete&&objeto.naturalWidth){
+    const z=Math.min(15/objeto.naturalWidth,15/objeto.naturalHeight);
+    const w=Math.max(1,Math.round(objeto.naturalWidth*z)),h=Math.max(1,Math.round(objeto.naturalHeight*z));
+    g.imageSmoothingEnabled=false;
+    g.drawImage(objeto,Math.round((16-w)/2),Math.round((16-h)/2),w,h);
+    return addOutline(c);
+  }
   switch(id){
    case 'kiblast':pball(g,9,8,4,['#e09a1a','#ffd23f','#fff3a0','#ffffff']);px(1,7,4,2,'#ffd23f');px(2,10,3,1,'#ffb020');break;
    case 'kame':px(0,6,12,4,'#3aa8ff');px(0,7,12,2,'#bff0ff');pball(g,12,8,3,['#3aa8ff','#9fe8ff','#ffffff']);break;
@@ -2286,15 +2294,16 @@ function bossAI(e,dt){
 function gainXP(v){if(S.ev&&S.ev.k==='gravedad')v*=2;P.xp+=v*stats().xp;while(P.xp>=P.need){P.xp-=P.need;P.lvl++;P.need=need(P.lvl);S.pending++}}
 const RELICS={
  combo:{name:'Dojo de la Tortuga',desc:'Tras disparar ki, encadenas una patada si hay un rival cerca. Cada 2 segundos.',ic:'kick'},
- capsule:{name:'Motor de ki Capsule Corp.',desc:'Tus técnicas recargan un 12% más rápido. Se acumula hasta 3 veces.',ic:'cd'},
- senzu:{name:'Bolsa de Karin',desc:'+20 de vida máxima y +0,5 de regeneración por segundo. Se acumula hasta 3 veces.',ic:'senzu'},
- radar:{name:'Radar del Dragón de Bulma',desc:'Atrae las Bolas de Dragón y cápsulas desde un 70% más lejos.',ic:'magnet'},
- kinton:{name:'Nube Kinton',desc:'+20% de velocidad y deja una estela de nubes que ralentiza a los enemigos.',ic:'speed'},
- scouter:{name:'Scouter de Rastreo',desc:'+20% de probabilidad de golpe crítico y revela puntos débiles.',ic:'power'},
- pesas:{name:'Pesas de Entrenamiento Kaio',desc:'+25% de experiencia y +5% de daño acumulable por cada nivel alcanzado.',ic:'xp'},
- bastongoku:{name:'Bastón Mágico Nyoibo',desc:'Cada 3,5s barre a los enemigos cercanos con un golpe circular que los repele.',ic:'area'},
- capsulacorp:{name:'Cápsula Hoi-Poi Multiusos',desc:'Lanza suministros periódicos con botiquines, ki o zeni.',ic:'cd'},
- mafuba:{name:'Vasija del Mafuba',desc:'Genera un vórtice sagrado que encierra y daña a élites o jefes cercanos.',ic:'armor'}
+ capsule:{name:'Motor de ki Capsule Corp.',desc:'Tus técnicas recargan un 12% más rápido. Se acumula hasta 3 veces.',ic:'capsulacorp'},
+ senzu:{name:'Bolsa de Karin',desc:'+20 de vida máxima y +0,5 de regeneración por segundo. Se acumula hasta 3 veces.',ic:'senzuBolsa'},
+ radar:{name:'Radar del Dragón de Bulma',desc:'Atrae las Bolas de Dragón y cápsulas desde un 70% más lejos.',ic:'radar'},
+ kinton:{name:'Nube Kinton',desc:'+20% de velocidad y deja una estela de nubes que ralentiza a los enemigos.',ic:'kinton'},
+ scouter:{name:'Scouter de Rastreo',desc:'+20% de probabilidad de golpe crítico y revela puntos débiles.',ic:'scouter'},
+ pesas:{name:'Pesas de Entrenamiento Kaio',desc:'+25% de experiencia y +5% de daño acumulable por cada nivel alcanzado.',ic:'pesas'},
+ bastongoku:{name:'Bastón Mágico Nyoibo',desc:'Cada 3,5s barre a los enemigos cercanos con un golpe circular que los repele.',ic:'bastongoku'},
+ capsulacorp:{name:'Cápsula Hoi-Poi Multiusos',desc:'Lanza suministros periódicos con botiquines, ki o zeni.',ic:'capsulacorp'},
+ mafuba:{name:'Vasija del Mafuba',desc:'Genera un vórtice sagrado que encierra y daña a élites o jefes cercanos.',ic:'mafuba'},
+ armadura:{name:'Armadura de Combate Saiyan',desc:'Reduce un 20% todo el daño recibido y resiste el empuje.',ic:'armaduraSaiyan'}
 };
 
 // ---------- FUSIONES DE TÉCNICAS (Recompensa de derrotar jefes) ----------
@@ -2552,7 +2561,7 @@ function update(dt){
   for(const k of pickups){const d=Math.hypot(P.x-k.x,P.y-k.y);
     if(k.k==='magnet'||d<ps.mag*0.6){k.x+=(P.x-k.x)*dt*6;k.y+=(P.y-k.y)*dt*6}
     if(d<12){k.got=1;
-      if(k.k==='senzu'||k.k==='capsulaVida'||k.k==='capsulaKi'||k.k==='radar')recogerObjeto(k.k,ps);
+      if(k.k==='senzu'||k.k==='capsulaVida'||k.k==='capsulaKi'||k.k==='radar'||k.k==='capsulaDorada'||k.k==='capsulaRoja'||k.k==='senzuBolsa')recogerObjeto(k.k,ps);
       if(k.k==='zeni'){S.zeni+=10;sfx('gem')}
       if(k.k==='dball'){S.balls++;sfx('level');S.banner={t:1.6,text:'¡BOLA DE '+k.n+' ESTRELLA'+(k.n>1?'S':'')+'!',sub:S.balls+' de 7'};if(S.balls>=7){S.balls=0;S.wish=true}}
       if(k.k==='chest'){S.zeni+=60;S.pending++;S.chest=true;if(k.bossReward)S.mastery=(S.mastery||0)+1;for(const g of gems)g.mag=true}}}
@@ -2563,11 +2572,24 @@ function update(dt){
   if(S.pending>0&&state==='play'){openLevelUp(S.chest?'¡COFRE DEL VILLANO!':null);S.chest=false}
 }
 function recogerObjeto(id,ps){
-  if(id==='senzu'||id==='capsulaVida'){const fraccion=id==='senzu'?0.5:0.25;P.hp=Math.min(ps.maxhp,P.hp+ps.maxhp*fraccion);
-    S.banner={t:1.4,text:id==='senzu'?'¡SEMILLA SENZU!':'¡CÁPSULA DE VITALIDAD!',sub:'+'+(fraccion*100)+'% vida'}}
+  if(id==='senzu'||id==='capsulaVida'||id==='senzuBolsa'){
+    const fraccion=id==='senzuBolsa'?1.0:id==='senzu'?0.5:0.25;
+    P.hp=Math.min(ps.maxhp,P.hp+ps.maxhp*fraccion);
+    const nom=id==='senzuBolsa'?'¡BOLSA SAGRADA DE SENZU!':id==='senzu'?'¡SEMILLA SENZU!':'¡CÁPSULA DE VITALIDAD!';
+    S.banner={t:1.6,text:nom,sub:'+'+Math.round(fraccion*100)+'% vida'};
+  }
   else if(id==='capsulaKi'){P.sigT=0;P.sigTimers={};S.banner={t:1.4,text:'¡CÁPSULA DE KI!',sub:'Tu técnica especial está lista'}}
   else if(id==='radar'){for(const g of gems)g.mag=true;S.radarHasta=S.t+4;
     S.banner={t:1.4,text:'¡RADAR DEL DRAGÓN!',sub:'Atrae toda la experiencia del suelo'}}
+  else if(id==='capsulaDorada'){
+    const s=loadSave();s.tickets=(s.tickets||0)+1;s.zeni+=80;writeSave();
+    S.tickets=(S.tickets||0)+1;S.zeni+=80;cam.shake=4;sfx('trans');
+    S.banner={t:2.0,text:'¡CÁPSULA HOI-POI DORADA!',sub:'+1 Ticket de Shenron y +80 Zeni'};return;
+  }
+  else if(id==='capsulaRoja'){
+    P.rageT=9.0;sfx('boss');cam.shake=5;burst(P.x,P.y-8,30,['#ef4444','#fbbf24','#ffffff']);
+    S.banner={t:2.0,text:'¡CÁPSULA DE FURIA SAIYAN!',sub:'+50% de poder durante 9 segundos'};return;
+  }
   sfx('level');
 }
 function updateFx(dt){
@@ -3003,11 +3025,13 @@ const CRATESPR=[];
 function spawnCrate(x,y){if(!SPR.crate)SPR.crate=CRATESPR[0];const e=spawn('crate',x,y);e.crate=1;e.spr=CRATESPR[Math.random()<0.7?0:1];e.h=18;e.hp=e.maxhp=20+S.t/8;e.spd=0;e.dmg=0;e.kx=e.ky=0;return e}
 function crateLoot(e){burst(e.x,e.y-8,14,['#d8a060','#8a5a2a','#ffe060']);sfx('gem');const r=Math.random(),x=e.x,y=e.y;
   if(r<0.05&&S.balls<7)putPickup({k:'dball',n:(S.ballN++%7)+1,x,y});
-  else if(r<0.15)putPickup({k:'chest',x,y});
-  else if(r<0.30)putPickup({k:'senzu',x,y});
-  else if(r<0.40)putPickup({k:'capsulaVida',x,y});
-  else if(r<0.50)putPickup({k:'capsulaKi',x,y});
-  else if(r<0.58)putPickup({k:'radar',x,y});
+  else if(r<0.13)putPickup({k:'chest',x,y});
+  else if(r<0.22)putPickup({k:'senzu',x,y});
+  else if(r<0.30)putPickup({k:'capsulaVida',x,y});
+  else if(r<0.38)putPickup({k:'capsulaKi',x,y});
+  else if(r<0.45)putPickup({k:'radar',x,y});
+  else if(r<0.52)putPickup({k:'capsulaRoja',x,y});
+  else if(r<0.58)putPickup({k:'capsulaDorada',x,y});
   else if(r<0.78){for(let i=0;i<6;i++)dropGem(x+rnd(-10,10),y+rnd(-10,10),3+(S.t/60|0))}
   else for(let i=0;i<3;i++)putPickup({k:'zeni',x:x+rnd(-8,8),y:y+rnd(-6,6)})}
 function crateTick(dt){if(state==='play')progTick();if(S.isl||state!=='play')return;S.crateT=(S.crateT??1)-dt;S.dbT=(S.dbT===undefined?60:S.dbT)-dt;
@@ -3098,29 +3122,119 @@ function heroMigrate(sv){if(sv.lockv)return;sv.lockv=1;const keep={goku:1,vegeta
 function wish(n,free){const s=loadSave();if(free?!freeReady():s.tickets<n){$('#gInfo').textContent=`Te faltan tickets: tienes ${s.tickets} y necesitas ${n}. Gana más jugando partidas.`;return}
   const m=muted;muted=true;doPull(n,free);muted=m;const box=$('#gRes'),top=box.querySelector('.r5')?5:box.querySelector('.r4')?4:3,news=box.querySelectorAll('.gcard').length;box.style.display='none';
   const W=320,H=180,c=mk(W,H);c.id='wishFx';const g=c.getContext('2d');g.imageSmoothingEnabled=false;document.body.appendChild(c);
-  const COL={3:['#3a8aff','#bfe6ff'],4:['#b04aff','#f0c0ff'],5:['#ffb020','#fff6a0']}[top],shen=shenlong(),t0=performance.now(),dur=top===5?4.2:3.6,cf=[],sd=[];let done=false,ph=0;
-  for(let i=0;i<60;i++)sd.push([Math.random()*W,Math.random()*H,Math.random()]);
+  const COL={3:['#3a8aff','#bfe6ff'],4:['#b04aff','#f0c0ff'],5:['#ffb020','#fff6a0']}[top],t0=performance.now(),dur=top===5?4.8:4.2,cf=[],sd=[];let done=false,ph=0;
+  for(let i=0;i<70;i++)sd.push([Math.random()*W,Math.random()*H,Math.random()]);
   const end=()=>{if(done)return;done=true;c.remove();box.style.display='';if(top===5)sfx('trans');else sfx('level')};c.onclick=end;
   const fr=()=>{if(done)return;const t=(performance.now()-t0)/1000;if(t>dur){end();return}
-    const sky=t<1?0:Math.min(1,(t-1)*2);g.fillStyle='#04060e';g.fillRect(0,0,W,H);
-    for(const [x,y,k] of sd){g.fillStyle=((t*4+k*7)|0)%3?'#3a4060':'#c0c8ff';g.fillRect(x|0,y|0,1,1)}
-    if(sky){g.globalAlpha=sky*0.35;g.fillStyle=top===5?'#3a2a00':top===4?'#2a0a3a':'#0a1a3a';g.fillRect(0,0,W,H);g.globalAlpha=1}
-    // the seven balls spiral in and fuse
-    if(t<1.5){const k=Math.min(1,t/1.2),r=90*(1-k)+6;for(let i=0;i<7;i++){const a=i/7*TAU+t*(2+k*6),x=W/2+Math.cos(a)*r,y=H*0.62+Math.sin(a)*r*0.5;pball(g,Math.round(x),Math.round(y),5,['#c85a10','#f2911a','#ffc44a','#fff0b0']);g.fillStyle='#d81e1e';g.fillRect(Math.round(x)-1,Math.round(y)-1,2,2)}
-      if(ph<1&&t>0.05){ph=1;sfx('gem')}}
-    // pillar of light
-    if(t>1.1){if(ph<2){ph=2;sfx('boss')}const k=Math.min(1,(t-1.1)/0.4),w=Math.round(6+k*22+Math.sin(t*30)*2);g.fillStyle=COL[0];g.fillRect(W/2-w/2,0,w,H*0.66);g.fillStyle=COL[1];g.fillRect(W/2-w/4,0,w/2,H*0.66);
-      for(let i=0;i<4;i++){g.fillStyle=COL[1];g.fillRect(W/2-w/2-4+((t*90+i*37)%(w+8)),(H*0.66-((t*160+i*41)%(H*0.66)))|0,2,6)}}
-    // Shenron rises
-    if(t>1.6){const k=Math.min(1,(t-1.6)/0.8),sx=1.6,sw=Math.round(shen.width*sx),y=Math.round(6+(1-k)*70);g.globalAlpha=k;g.drawImage(shen,Math.round(W/2-sw/2),y,sw,Math.round(shen.height*sx));g.globalAlpha=1;
-      if(t>2.1&&t<2.9){text2(g,'¡DI TU DESEO!',W/2,H-22,'#ffffff')}}
-    // reveal
-    if(t>2.9){if(ph<3){ph=3;sfx(top>=4?'trans':'level');if(top>=4)for(let i=0;i<(top===5?120:50);i++)cf.push([W/2,H*0.5,(Math.random()-0.5)*260,-Math.random()*220,Math.random()])}
-      const f=Math.max(0,1-(t-2.9)*2.2);if(f>0){g.globalAlpha=f;g.fillStyle=top===5?'#fff6c0':'#ffffff';g.fillRect(0,0,W,H);g.globalAlpha=1}
-      text2(g,top===5?'¡DESEO LEGENDARIO!':top===4?'¡DESEO ÉPICO!':'DESEO CONCEDIDO',W/2,H-30,COL[1]);text2(g,top+' ESTRELLAS',W/2,H-16,COL[0]);
-      for(const p of cf){const dt=1/60;p[0]+=p[2]*dt;p[1]+=p[3]*dt;p[3]+=300*dt;g.fillStyle=p[4]<0.33?'#ffd23f':p[4]<0.66?COL[1]:'#ff6ad0';g.fillRect(p[0]|0,p[1]|0,2,2)}}
-    if(t>1.1&&t<2.2){const sh=top===5?3:2;c.style.transform=`translate(${(Math.random()-0.5)*sh*2}px,${(Math.random()-0.5)*sh*2}px)`}else c.style.transform='';
-    requestAnimationFrame(fr)};fr()}
+    // Oscuridad del cielo místico
+    g.fillStyle='#02040a';g.fillRect(0,0,W,H);
+    for(const [x,y,k] of sd){
+      const tw=((t*6+k*9)|0)%3===0;
+      g.fillStyle=tw?'#ffeaa7':((t*3+k*5)|0)%2?'#3a4060':'#818cf8';
+      g.fillRect(x|0,y|0,1,1);
+    }
+    // Nubes oscuras de tormenta rodando en el horizonte
+    if(SHENCLOUDS.complete&&SHENCLOUDS.naturalWidth){
+      g.globalAlpha=0.45;
+      const cw=SHENCLOUDS.naturalWidth*1.4, ch=SHENCLOUDS.naturalHeight*1.4;
+      const offX=(t*28)%cw;
+      for(let cx=-cw;cx<W+cw;cx+=cw){
+        g.drawImage(SHENCLOUDS,Math.round(cx+offX),H-Math.round(ch)+10,Math.round(cw),Math.round(ch));
+      }
+      g.globalAlpha=1;
+    }
+    // Relámpagos rasgando el firmamento
+    const boltFlash=((t>0.6&&t<0.75)||(t>1.2&&t<1.38)||(t>1.8&&t<1.95)||(t>2.6&&t<2.72));
+    if(boltFlash){
+      g.globalAlpha=0.22;g.fillStyle='#fef08a';g.fillRect(0,0,W,H);g.globalAlpha=1;
+      if(SHENBOLT.complete&&SHENBOLT.naturalWidth){
+        const bx=t<1.5?W*0.18:W*0.72;
+        g.drawImage(SHENBOLT,Math.round(bx),10,Math.round(SHENBOLT.naturalWidth*1.5),Math.round(SHENBOLT.naturalHeight*1.5));
+      }
+    }
+    // Las 7 Dragon Balls luminosas giran e iluminan la escena
+    if(t<1.8){
+      const k=Math.min(1,t/1.4),r=95*(1-k)+8;
+      for(let i=0;i<7;i++){
+        const a=i/7*TAU+t*(2.5+k*7),x=W/2+Math.cos(a)*r,y=H*0.62+Math.sin(a)*r*0.48;
+        const starN=((i%7)+1);
+        if(window.UI_IMG?.[`esfera${starN}`]){
+          const ballImg=new Image();ballImg.src=window.UI_IMG[`esfera${starN}`];
+          if(ballImg.complete&&ballImg.naturalWidth)g.drawImage(ballImg,Math.round(x-6),Math.round(y-6),12,12);
+          else pball(g,Math.round(x),Math.round(y),5,['#c85a10','#f2911a','#ffc44a','#fff0b0']);
+        } else {
+          pball(g,Math.round(x),Math.round(y),5,['#c85a10','#f2911a','#ffc44a','#fff0b0']);
+          g.fillStyle='#d81e1e';g.fillRect(Math.round(x)-1,Math.round(y)-1,2,2);
+        }
+      }
+      if(ph<1&&t>0.05){ph=1;sfx('gem')}
+    }
+    // Columna sagrada de energía dorada / divina
+    if(t>1.1){
+      if(ph<2){ph=2;sfx('boss')}
+      const k=Math.min(1,(t-1.1)/0.5),w=Math.round(8+k*26+Math.sin(t*32)*3);
+      g.fillStyle=COL[0];g.fillRect(W/2-w/2,0,w,H*0.68);
+      g.fillStyle=COL[1];g.fillRect(W/2-w/4,0,w/2,H*0.68);
+      for(let i=0;i<5;i++){
+        g.fillStyle='#ffffff';
+        g.fillRect(W/2-w/2-6+((t*110+i*31)%(w+12)),(H*0.68-((t*180+i*39)%(H*0.68)))|0,2,8);
+      }
+    }
+    // Ascenso majestuoso de Shenron (animación multi-frame con ojos y dragón)
+    if(t>1.5){
+      const k=Math.min(1,(t-1.5)/0.9);
+      const shenFrame=((t*3.5)|0)%2;
+      const curShen=(shenFrame===1&&SHENIMG2.complete&&SHENIMG2.naturalWidth)?SHENIMG2:SHENIMG;
+      if(curShen.complete&&curShen.naturalWidth){
+        const sc=1.15;
+        const sw=Math.round(curShen.naturalWidth*sc), sh=Math.round(curShen.naturalHeight*sc);
+        const floatY=Math.round(Math.sin(t*4.2)*3);
+        const y=Math.round(10+(1-k)*80)+floatY;
+        const x=Math.round(W/2-sw/2);
+        g.globalAlpha=k;
+        g.drawImage(curShen,x,y,sw,sh);
+        // Ojos carmesí brillantes de Shenron
+        if(t>2.2){
+          const eyeGlow=0.7+0.3*Math.sin(t*18);
+          g.globalAlpha=k*eyeGlow;
+          g.fillStyle='#ef4444';
+          // Píxeles de resplandor sobre los ojos del dragón
+          g.fillRect(x+Math.round(sw*0.48),y+Math.round(sh*0.38),3,2);
+          g.fillStyle='#fef08a';
+          g.fillRect(x+Math.round(sw*0.49),y+Math.round(sh*0.39),1,1);
+        }
+        g.globalAlpha=1;
+      }
+      if(t>2.0&&t<3.2){
+        text2(g,'¡CONCEDERÉ CUALQUIER DESEO!',W/2,H-26,'#fef08a');
+        text2(g,'¡DI TU DESEO AHORA!',W/2,H-14,'#ffffff');
+      }
+    }
+    // Deseo revelado con estallido celestial y estrellas
+    if(t>3.2){
+      if(ph<3){
+        ph=3;sfx(top>=4?'trans':'level');
+        for(let i=0;i<(top===5?140:65);i++)
+          cf.push([W/2,H*0.45,(Math.random()-0.5)*280,-Math.random()*240,Math.random(),Math.random()<0.3?'#ffd23f':COL[1]]);
+      }
+      const f=Math.max(0,1-(t-3.2)*2.0);
+      if(f>0){g.globalAlpha=f;g.fillStyle=top===5?'#fffbeb':'#ffffff';g.fillRect(0,0,W,H);g.globalAlpha=1}
+      text2(g,top===5?'¡DESEO LEGENDARIO CONCEDIDO!':top===4?'¡DESEO ÉPICO CONCEDIDO!':'¡DESEO CONCEDIDO!',W/2,H-32,COL[1]);
+      text2(g,top===5?'★★★★★':top===4?'★★★★':'★★★',W/2,H-18,'#ffd23f');
+      for(const p of cf){
+        const dt=1/60;p[0]+=p[2]*dt;p[1]+=p[3]*dt;p[3]+=280*dt;
+        g.fillStyle=p[5];g.fillRect(p[0]|0,p[1]|0,2,2);
+      }
+    }
+    // Sacudida sísmica épica durante la invocación y la revelación
+    if((t>1.1&&t<2.2)||(t>3.2&&t<3.45)){
+      const sh=top===5?4:2.5;
+      c.style.transform=`translate(${(Math.random()-0.5)*sh*2}px,${(Math.random()-0.5)*sh*2}px)`;
+    } else c.style.transform='';
+    requestAnimationFrame(fr);
+  };
+  fr();
+}
 function text2(g,s,x,y,col){s=s.normalize('NFD').replace(/[̀-ͯ]/g,'');g.font='8px "Press Start 2P", monospace';g.textAlign='center';g.textBaseline='top';g.fillStyle='#000';for(const [a,b] of [[-1,0],[1,0],[0,-1],[0,1]])g.fillText(s,x+a,y+b);g.fillStyle=col;g.fillText(s,x,y)}
 function edges(tx,ty,x,y,f,c1,c2){const n=f(tx,ty-1),s=f(tx,ty+1),w=f(tx-1,ty),e=f(tx+1,ty);if(!(n||s||w||e))return;
   ctx.fillStyle=c1;if(n)ctx.fillRect(x,y,T,3);if(s)ctx.fillRect(x,y+T-3,T,3);if(w)ctx.fillRect(x,y,3,T);if(e)ctx.fillRect(x+T-3,y,3,T);
@@ -3346,10 +3460,25 @@ function actualizarRadarAnimado(){if(!radarAviso)return;
 const DBIMG=[];if(window.UI_IMG)for(let k=1;k<=7;k++){const im=new Image();im.src=UI_IMG['esfera'+k];DBIMG[k]=im}
 function drawDBall(x,y,n){const im=DBIMG[n];if(im&&im.complete&&im.naturalWidth){ctx.drawImage(im,Math.round(x*2-9)/2,Math.round(y*2-9)/2,9,9);return}
   circ(x,y,5,OUTL);circ(x,y,4,'#e0761a');circ(x-1,y-1,3,'#f2a02a')}
-let SHEN=null;const SHENIMG=new Image();if(window.SHENRON_IMG)SHENIMG.src=SHENRON_IMG;
-// Shenron: sprite de sprites/shenron (herramientas/montar_shenron.py), sin dibujos por código
-function shenlong(){if(SHEN)return SHEN;const c=mk(170,96),g=c.getContext('2d');if(!(SHENIMG.complete&&SHENIMG.naturalWidth))return c;const k=96/SHENIMG.naturalHeight;g.imageSmoothingEnabled=false;g.drawImage(SHENIMG,Math.round(85-SHENIMG.naturalWidth*k/2),0,Math.round(SHENIMG.naturalWidth*k),96);return SHEN=c}
-function openWish(){state='levelup';const box=$('#ups');box.innerHTML='';{const sc=document.createElement('canvas');sc.width=170;sc.height=96;sc.getContext('2d').drawImage(shenlong(),0,0);sc.style.cssText='max-width:510px;width:100%;image-rendering:pixelated';const wr=document.createElement('div');wr.style.cssText='flex-basis:100%;display:flex;justify-content:center';wr.appendChild(sc);box.appendChild(wr)}$('#luTitle').textContent='¡SHENLONG! PIDE UN DESEO';S.flash=0.6;cam.shake=6;sfx('trans');
+let SHEN=null;
+const SHENIMG=new Image();if(window.SHENRON_IMG)SHENIMG.src=window.SHENRON_IMG;
+const SHENIMG2=new Image();if(window.SHENRON_POSE2)SHENIMG2.src=window.SHENRON_POSE2;
+const SHENCLOUDS=new Image();if(window.SHENRON_NUBES)SHENCLOUDS.src=window.SHENRON_NUBES;
+const SHENBOLT=new Image();if(window.SHENRON_RAYOS)SHENBOLT.src=window.SHENRON_RAYOS;
+// Shenron: sprite oficial de Nintendo DS SW2 con animaciones y nubes
+function shenlong(f=0){
+  const img=(f%2===1&&SHENIMG2.complete&&SHENIMG2.naturalWidth)?SHENIMG2:SHENIMG;
+  if(SHEN&&f===0)return SHEN;
+  const c=mk(170,120),g=c.getContext('2d');
+  if(!img.complete||!img.naturalWidth)return c;
+  const k=Math.min(170/img.naturalWidth, 120/img.naturalHeight);
+  const w=Math.round(img.naturalWidth*k), h=Math.round(img.naturalHeight*k);
+  g.imageSmoothingEnabled=false;
+  g.drawImage(img,Math.round((170-w)/2),Math.round(120-h),w,h);
+  if(f===0)SHEN=c;
+  return c;
+}
+function openWish(){state='levelup';const box=$('#ups');box.innerHTML='';{const sc=document.createElement('canvas');sc.width=170;sc.height=120;sc.getContext('2d').drawImage(shenlong(),0,0);sc.style.cssText='max-width:510px;width:100%;image-rendering:pixelated';const wr=document.createElement('div');wr.style.cssText='flex-basis:100%;display:flex;justify-content:center';wr.appendChild(sc);box.appendChild(wr)}$('#luTitle').textContent='¡SHENLONG! PIDE UN DESEO';S.flash=0.6;cam.shake=6;sfx('trans');
   const W=[['wPow','PODER ILIMITADO','Todas tus técnicas suben 1 nivel.',()=>{for(const id of P.order){const m=P.moves[id];if(m.lv<5)m.lv++}}],
     ['wLife','VIDA ETERNA','Vida al máximo y una resurrección extra en esta partida.',()=>{S.revives++;P.hp=stats().maxhp}],
     ['wGold','RIQUEZA','+15 tickets y +500 zeni ahora mismo.',()=>{const s=loadSave();s.tickets+=15;s.zeni+=500;writeSave()}]];
