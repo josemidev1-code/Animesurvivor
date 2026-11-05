@@ -1736,3 +1736,34 @@ Ginyu y Jeice desde DeviantArt, y suelos/Ã¡rboles/rocas reales (Ninja Adventur
 
 ### Siguiente paso recomendado
 - Validar visualmente en el navegador la nueva presentación limpia del menú de inicio.
+
+
+## 2026-11-05 — Antigravity (sesión 15 - Rediseño y tipografía legible del panel de subida de nivel)
+
+### Lo que pidió el usuario
+- «EN LO DE MEJORAR NO ESTA BIEN HECHO EL CUADRO , SE VEN TEXTOS MUY PEQUENOS MEJORA ESO»
+- Adjuntó captura del panel `#levelup`: los textos de los nombres de técnica, niveles, descripciones y teclas se ven diminutos, con mala distribución en el cuadro y espacio vacío desaprovechado.
+- Objetivo: Rediseñar el panel de subida de nivel (`#levelup .lupanel`, `.up`, `.nm`, `.lv`, `.ds`, `.key`, iconos):
+  - Aumentar el tamaño de fuente de todos los textos (título, subtítulo, nombre de técnica, etiqueta de nivel, descripción y tecla).
+  - Maximizar legibilidad y contraste.
+  - Tarjetas más grandes, proporcionadas y con iconos más nítidos y grandes (aprovechando los nuevos sprites de objetos y técnicas).
+  - Distribución armónica dentro del cuadro.
+
+### Lo que hice
+- **Rediseño completo de la tipografía y proporciones del panel de subida de nivel (`#levelup`)**:
+  - Se eliminaron las reglas de fuentes microscópicas (7px, 7.5px y 8px) que volvían el texto casi ilegible.
+  - **Título `#levelup h2` / `#luTitle`**: aumentado a **16px** con `Press Start 2P`, sombra épica naranja/negra y espaciado de 1.5px.
+  - **Subtítulo `.lusub` y `<kbd>`**: aumentados a **10px** con recuadros de teclas doradas bien contrastadas.
+  - **Nombre de la técnica / reliquia (`.up .nm`)**: aumentado de 9px a **12px** en negrita con sombra negra y espaciado nítido.
+  - **Etiqueta de nivel (`.up .lv`)**: aumentada de 7px a **9px** con borde dorado y fondo naranja intenso.
+  - **Descripción de la técnica (`.up .ds`)**: aumentada de 7.5px a **16px** usando la tipografía retro arcade `VT323` en tono dorado suave (`#fef3c7`), logrando una lectura cómoda e instantánea.
+  - **Teclas de acceso rápido (`.up .key`)**: aumentadas a **12px** dentro de un recuadro dorado de 30×30 px centrado.
+  - **Iconos de técnica/objeto (`.up canvas`)**: aumentados de 38×38 px a **48×48 px** con marco dorado pulido.
+  - **Cuadro contenedor (`#levelup .lupanel`)**: ajustado a `width: min(520px, 94vw); min-height: min(480px, 90vh); aspect-ratio: 1 / 1.05;` con padding de 18px 20px, logrando que las 3 opciones llenen el espacio de forma equilibrada y elegante sin huecos vacíos ni textos apretujados.
+  - Actualizado `index.html` con versión de caché de estilos (`style.css?v=81`).
+
+### A medias / problemas
+- Ninguno. El panel ahora tiene excelente legibilidad y estética Dragon Ball.
+
+### Siguiente paso recomendado
+- Subir de nivel en partida para ver las opciones con los textos grandes y legibles.
