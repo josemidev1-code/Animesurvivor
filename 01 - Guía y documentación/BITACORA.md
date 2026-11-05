@@ -1403,6 +1403,28 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
   - Total acumulado: **59 paquetes completos de personajes listos para Piskel** en `piskel_animaciones/` con `.piskel`, `.gif`, spritesheet `.png` y fotogramas individuales.
   - `animaciones_juego.js` actualizado a ~10.3 MB sin alterar el soporte de ejecución local con doble clic (sin `fetch`).
 
+### Nueva consulta del usuario
+- Josemi: «falta algo mas?»
+- Revisión del estado global del proyecto y de la lista de pendientes según las prioridades establecidas por Josemi y la hoja de ruta: efectos dibujados por código (Makankosappo, auras, proyectiles), rediseño del HUD y pantalla de selección estilo PokéSurvivor, ajuste del combate cuerpo a cuerpo y personajes secundarios.
+- Josemi: «el HUD tiene que ser naranja p[roque queda con la estetica de dragon ball»
+- Acción completada:
+  - Rediseño del HUD en partida (`hud(time)` en `script.js`):
+    - Placa del héroe con marco naranja Dragon Ball (`#c2410c`, `#ea580c`) y fondo oscuro cálido (`#140903`).
+    - Chapa de nivel en naranja intenso y oro (`#9a3412` / `#fef08a`).
+    - Barra de vida en verde Dragon Ball nítido (`#22c55e`), ámbar a media vida y roja crítica.
+    - Barra de experiencia en oro Super Saiyan (`#ffd23f`).
+    - Casillas de técnicas de combate abajo con marcos naranja cálido (`#c2410c`) y resaltado dorado brillante (`#ffd23f`) en la técnica seleccionada.
+    - Cuadros de inventario de mejoras con bordes naranja y estrellas evolutivas doradas.
+  - Rediseño de variables y menús en `style.css`:
+    - Variables `:root` adaptadas al tema Dragon Ball Naranja (paleta Gi Tortuga `#f97316` / `#c2410c`, ki dorado `#ffd23f`, fondos cálidos `#0c0602` / `#1e0e04`).
+    - Menús del hub (`.hubMenu`, `.hubStats`, `.rPrev`) con degradado cálido naranja-tierra y borde crema/oro.
+    - Botones `#hudBtns` con fondo naranja Dragon Ball y borde dorado.
+  - Versiones actualizadas en `index.html` (`style.css?v=77`, `script.js?v=148`, `animaciones_juego.js?v=111`).
+
+
+
+
+
 
 
 
