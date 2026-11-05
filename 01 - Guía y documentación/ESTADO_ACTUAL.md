@@ -81,3 +81,11 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
   - Reliquias: *Radar de Bulma* (+70% alcance de recogida), *Nube Kinton* (+20% vel y estela de nubes ralentizante), *Scouter Saiyan* (+20% crítico), *Pesas de Entrenamiento Kaio* (+25% xp y +5% daño/nivel), *Bastón Mágico Nyoibo* (barrido circular cada 3,5 s), *Cápsula Hoi-Poi* (suministros frecuentes) y *Vasija del Mafuba* (vórtice que atrapa y daña jefes y élites).
   - Iconos pixel art dedicados en `icon(id)`.
   - Versión actualizada en `index.html` a `script.js?v=149`.
+## 5 nov. — Antigravity: Mejoras de Accesibilidad y Estética Dragon Ball Carddass
+- **Panel de Accesibilidad y Comodidad en Ajustes (`#settings`):**
+  - Control de temblor de pantalla (100%, 50%, 0%), fotosensibilidad sin destellos intensos, modo alto contraste, números de daño configurables (normal/grandes/desactivados), auto-apuntado asistido y control escalonado de volumen (100%, 70%, 40%, mudo). Persistencia en `localStorage`.
+- **Estética de subida de nivel (Dragon Ball Carddass / PokéSurvivor):**
+  - Tarjetas de mejora `.up` rediseñadas como cartas coleccionables doradas con marcos pulidos, estrellas evolutivas, medallas de nivel y resplandor.
+  - Sombras tridimensionales neutrales en el suelo para personajes y objetos flotantes.
+  - HUD con avisos luminosos de recarga completa y atajos numéricos claros.
+  - Versiones: `style.css?v=78`, `script.js?v=150`.

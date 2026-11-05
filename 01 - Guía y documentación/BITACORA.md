@@ -1490,3 +1490,51 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Probar en partida las nuevas mecánicas y reliquias en los diferentes escenarios.
+### Nueva petición del usuario
+- Josemi: «VAMOSA  MEJORAR LA ACCESIBILIDAD Y LA ESTETICA»
+- Objetivos solicitados:
+  1. **Accesibilidad**:
+     - Opciones accesibles en el panel de Ajustes:
+       - Filtro de Alto Contraste para proyectiles, héroes y enemigos.
+       - Control de Temblor de Pantalla (Screen Shake): 100%, 50%, 0% (para evitar mareos/cinetosis).
+       - Reducción de Destellos / Modo Fotosensibilidad (reducir parpadeos intensos de pantalla completa al morir o transformarse).
+       - Disparo Automático / Apuntado Asistido (Auto-aim asistido para mayor comodidad o control con una mano).
+       - Modo Números de Daño Grandes / Reducidos (legibilidad clara de cifras de daño).
+       - Controles claros y personalización (WASD + Flechas, soporte táctil responsivo, atajos numéricos visibles).
+  2. **Estética (Dragon Ball / PokéSurvivor)**:
+     - Rediseño estético y pulido visual de la interfaz:
+       - Panel de Subida de Nivel (`#levelup` / `.lupanel` / `.ups`): tarjetas doradas coleccionables estilo *Carddass* de Dragon Ball con marcos brillantes, estrellas evolutivas ★, tipografía pixel art cuidada y resaltado hover naranja.
+       - Panel de Pausa y Fin de partida con estética de torneo de artes marciales y cápsula espacial.
+       - Sombras proyectadas de pixel art bajo héroes, enemigos, cajas y proyectiles para dotar de profundidad y tridimensionalidad al escenario.
+       - Indicadores visuales de peligro y HUD refinado con barras de recarga pulidas y resplandor cuando una técnica está lista para usarse.
+### Lo que se ha hecho (Sesión Accesibilidad y Estética)
+1. **Sistema integral de accesibilidad y persistencia (`ACC_CFG` en `script.js`):**
+   - Configuración persistente guardada en `localStorage` (`animesurvivor-accessibility-v1`).
+   - Opciones activas en el panel de Ajustes (`#settings`):
+     - **Control de temblor de pantalla (`shake`)**: Ajustable entre 100% (normal), 50% (suave) o 0% (desactivado) para evitar mareos y cinetosis.
+     - **Modo fotosensibilidad / Reducción de destellos (`photosens`)**: Limita drásticamente el fogonazo blanco de pantalla completa en transformaciones y explosiones grandes.
+     - **Modo Alto Contraste (`contrast`)**: Añade la clase `.high-contrast` al cuerpo con filtros de saturación y bordes reforzados para mayor legibilidad sobre cualquier mapa.
+     - **Números de daño configurables (`dmgNum`)**: Opciones de 'Normal', 'Grandes' (+40% escala para personas con visión reducida) y 'Desactivados' (para una pantalla despejada).
+     - **Apuntado asistido / Auto-Aim (`autoAim`)**: Orientación automática inteligente hacia el enemigo más cercano o manual con teclas de dirección.
+     - **Control de volumen de sonido (`vol`)**: Graduación por pasos (100%, 70%, 40%, MUDO) escalando la ganancia tanto de efectos SFX como de la música chiptune.
+2. **Estética y rediseño estilo Dragon Ball Carddass / PokéSurvivor:**
+   - **Subida de nivel (`#levelup`, `.lupanel`, `.ups`, `.up`)**:
+     - Rediseño de las tarjetas como cartas doradas coleccionables *Carddass* de Dragon Ball.
+     - Marcos dorados y naranjas (#f97316 / #ffd23f), fondo con degradado de piedra de dragón, medallas de nivel y estrellas.
+     - Tarjetas evolutivas con animación de resplandor dorado `glowEvo`.
+     - Contenedor de iconos enmarcado en altar de ki con relieve 16 bits.
+     - Chapa de atajo numérico (`.key`) destacada en la esquina superior derecha con estilo tecla arcade `kbd`.
+   - **Profundidad y sombras en el mundo de juego (`shadow` y pickups)**:
+     - Sombra neutral universal de suelo de dos densidades para el héroe, enemigos, cajas y pickups flotantes (esferas de dragón, cápsulas y cofres).
+   - **HUD de técnicas de combate**:
+     - Resplandor pulsante dorado en el borde de cada casilla cuando la técnica está lista al 100% (sin cooldown).
+     - Chapas oscuras con número de atajo (1, 2, 3...) de alto contraste en cada técnica.
+3. **Versiones actualizadas**:
+   - `style.css?v=78`, `script.js?v=150` en `index.html`.
+   - Comprobación de sintaxis: `node --check "02 - Código del juego/script.js"` superada con código 0.
+
+### A medias / problemas
+- Ninguno. Las opciones se guardan inmediatamente y surten efecto al instante en tiempo real.
+
+### Siguiente paso recomendado
+- Probar los ajustes de accesibilidad en el menú y disfrutar de las partidas con las nuevas cartas de subida de nivel.

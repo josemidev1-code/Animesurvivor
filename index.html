@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
-<link rel="stylesheet" href="02 - Código del juego/style.css?v=77">
+<link rel="stylesheet" href="02 - Código del juego/style.css?v=78">
 
 <canvas id="game" aria-label="DragonBall Survivor, juego"></canvas>
 <div id="radarAviso" hidden><img data-ui="radarAnimado" alt="Radar del Dragón animado de Lady-Pixel"><span>RADAR ACTIVO</span></div>
@@ -58,18 +58,32 @@
   <div class="btns"><button class="btn alt" id="rkBack" type="button">VOLVER</button></div>
 </div>
 <div id="settings" class="ov dark" hidden>
-  <h2>AJUSTES</h2>
-  <div class="setList">
-    <button class="btn alt" id="sMute" type="button">SONIDO</button>
-    <button class="btn alt" id="sFull" type="button">PANTALLA COMPLETA</button>
-    <button class="btn alt" id="sCol" type="button">VER COLISIONES</button>
-    <button class="btn alt" id="sSave" type="button">GUARDAR COPIA</button>
-    <button class="btn alt" id="sLoad" type="button">CARGAR COPIA</button>
-    <button class="btn alt" id="sForge" type="button">CREA TU GUERRERO</button>
-    <button class="btn alt" id="sMine" type="button">MIS SPRITES</button>
-    <button class="btn alt" id="sCred" type="button">CRÉDITOS</button>
+  <h2>AJUSTES Y ACCESIBILIDAD</h2>
+  <div class="setSection">
+    <h3 class="sub">ACCESIBILIDAD Y COMODIDAD</h3>
+    <div class="setList">
+      <button class="btn alt" id="sShake" type="button">TEMBLOR: 100%</button>
+      <button class="btn alt" id="sFlash" type="button">FOTOSENSIBILIDAD: NO</button>
+      <button class="btn alt" id="sContrast" type="button">ALTO CONTRASTE: NO</button>
+      <button class="btn alt" id="sDmgNum" type="button">NÚMEROS DAÑO: NORMAL</button>
+      <button class="btn alt" id="sAutoAim" type="button">AUTO-APUNTADO: SÍ</button>
+      <button class="btn alt" id="sVol" type="button">VOLUMEN: 100%</button>
+    </div>
   </div>
-  <div class="btns"><button class="btn" id="sBack" type="button">VOLVER</button></div>
+  <div class="setSection">
+    <h3 class="sub">SISTEMA Y PARTIDA</h3>
+    <div class="setList">
+      <button class="btn alt" id="sMute" type="button">SONIDO: SÍ</button>
+      <button class="btn alt" id="sFull" type="button">PANTALLA COMPLETA</button>
+      <button class="btn alt" id="sCol" type="button">VER COLISIONES: NO</button>
+      <button class="btn alt" id="sSave" type="button">GUARDAR COPIA</button>
+      <button class="btn alt" id="sLoad" type="button">CARGAR COPIA</button>
+      <button class="btn alt" id="sForge" type="button">CREA TU GUERRERO</button>
+      <button class="btn alt" id="sMine" type="button">MIS SPRITES</button>
+      <button class="btn alt" id="sCred" type="button">CRÉDITOS</button>
+    </div>
+  </div>
+  <div class="btns"><button class="btn" id="sBack" type="button">VOLVER AL MENÚ</button></div>
 </div>
 <div id="title" class="ov" hidden>
   <h1 class="logo">DBZ<span>SURVIVOR</span></h1>
@@ -177,4 +191,4 @@
 <script src="02 - Código del juego/efectos_pixelfx.js?v=1"></script>
 <script src="02 - Código del juego/andar.js?v=5"></script>
 <script src="02 - Código del juego/andar_frames.js?v=2"></script>
-<script src="02 - Código del juego/script.js?v=149"></script>
+<script src="02 - Código del juego/script.js?v=150"></script>
