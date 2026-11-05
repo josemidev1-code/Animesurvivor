@@ -1374,6 +1374,9 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Nueva petición del usuario
 - Josemi: «nose, comienza con lso que quieras»
 - Acción: empezar por la línea principal de combate (Goku Base y sus transformaciones clásicas / ataques icónicos: combo de golpes, patada, Kamehameha y Genkidama), estableciendo el estándar de animación de ataques propios.
+- Josemi: «vale hazlos para todos y no pares»
+- Acción en curso: configurar ataques especiales y combos (attack2, attack3, kick2, beam, up, dash) para todos los personajes de la plantilla, compilar `animaciones_juego.js` y generar los paquetes listos para Piskel (.piskel, .gif, spritesheets y guías) de forma sistemática y continua para todo el elenco.
+
 
 
 
