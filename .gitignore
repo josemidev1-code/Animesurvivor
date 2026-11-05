@@ -1,4 +1,4 @@
-# Bibliotecas de recursos grandes (no se versionan). sprites/ sí se sube desde el 2 nov. 2026 (lo pidió Josemi; repo privado)
+# Bibliotecas de recursos grandes y temporales
 /ESCENARIOS/
 /animaciones/
 copias/
@@ -6,13 +6,25 @@ fotos/
 tomarreferencia/
 _organizacion_sprites/
 __pycache__/
-# salidas regenerables
-personajes/
-.personajes_importando/
-# herramientas/_revisar/ se sube desde el 2 nov. 2026 (contiene revisiones de fotogramas)
+*.pyc
 herramientas/__pycache__/
 
-# Bocetos del acompañante visual (Superpowers)
+# Salidas regenerables
+personajes/
+.personajes_importando/
+
+# Archivos de sistema y miniaturas
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+*.tmp
+*.bak
+*.log
+
+# Entornos y temporales de herramientas / IAs
+.claude/worktrees/
 .superpowers/
 .playwright-mcp/
 .env

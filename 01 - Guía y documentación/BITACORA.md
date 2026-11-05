@@ -1619,3 +1619,44 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Continuar refinando las recetas de fusión visuales con sprites específicos adicionales si el usuario lo solicita.
+
+
+## 2026-11-05 — Antigravity (sesión 12 - Organización en carpetas, limpieza de archivos sobrantes y subida a GitHub)
+
+### Lo que pidió el usuario
+- «ORGANIZAME MUY BIEN EN CARPETAS EN PROYECTO Y LO SUBIMOS A GITHUB BIEN ORGANIZADO TODO Y QUITAMOS LO QUE NO SIRV»
+- Objetivos:
+  1. Revisar y organizar minuciosamente toda la estructura del proyecto en carpetas claras, limpias y profesionales.
+  2. Identificar y eliminar archivos temporales, scripts huérfanos, cachés, duplicados, archivos rotos o restos que no sirvan para el juego.
+  3. Asegurar que `index.html` siga funcionando a la perfección al abrir con doble clic sin romper rutas.
+  4. Actualizar `.gitignore` y la documentación del proyecto.
+  5. Hacer commit claro y subir a GitHub (`git push origin main`).
+
+
+### Qué se hizo
+- **Limpieza de archivos residuales e inútiles**:
+  - Eliminados 186 archivos `Thumbs.db` y `.DS_Store` que contaminaban el repositorio en las subcarpetas de `sprites/`.
+  - Eliminada la carpeta muerta `.claude/worktrees/quizzical-gates-9cf9c0` (39 MB de copias viejas y duplicadas de código).
+  - Eliminada la carpeta vacía y huérfana `Tus dibujos pixel art` de la raíz.
+  - Eliminadas las carpetas de caché `__pycache__` y `.superpowers/`.
+- **Organización y protección del repositorio**:
+  - Actualizado `.gitignore` con reglas exhaustivas contra archivos de sistema (`Thumbs.db`, `ehthumbs.db`, `Desktop.ini`, `.DS_Store`), temporales (`*.tmp`, `*.bak`, `*.log`), cachés de python y worktrees.
+  - Comprobada la estructura de carpetas:
+    - `01 - Guía y documentación/`: Bitácoras, manuales, inventarios y guías.
+    - `02 - Código del juego/`: Scripts y hojas de estilo que ejecutan el juego.
+    - `sprites/`: Packs activos de sprites de personajes y enemigos limpios de archivos basura.
+    - `ui/`: Iconos, logotipos, bolas de dragón y suministros.
+    - `antigravity sprites/`: Biblioteca canónica de 770 hojas LSW catalogadas.
+    - `piskel_animaciones/`: Paquetes Piskel listos para edición.
+    - `Recursos pendientes/`: Recursos pendientes de recorte e integración.
+    - `herramientas/`: Scripts de pipeline de montaje, previsualización y comprobación.
+    - `Planes y diseños/`: Especificaciones históricas de diseño.
+- **Verificación**:
+  - `node --check "02 - Código del juego/script.js"` ejecutado sin errores.
+  - Comprobado que `index.html` sigue enlazando todas sus dependencias correctamente para doble clic directo.
+
+### A medias / problemas
+- Ninguno. El proyecto ha quedado completamente limpio, depurado y organizado.
+
+### Siguiente paso recomendado
+- Continuar con las sugerencias o siguientes peticiones que el usuario indique.
