@@ -198,6 +198,6 @@ Descartados por ser sprites grandes o HD (Josemi, 4 nov.: «solo los pequeñitos
 
 ## Biblioteca externa de hojas LSW (DeviantArt) — 05/11/2026
 
-Recopilación de 146 hojas de sprites 2D en tamaño original completo ubicadas en la carpeta `antigravity sprites/`. El listado completo de autores, obras, dimensiones y enlaces a sus fichas originales en DeviantArt se detalla en:
+Recopilación exhaustiva de 770 hojas de sprites 2D en tamaño original completo (~318 MB) ubicadas en la carpeta `antigravity sprites/`. El listado completo de autores, obras, dimensiones y enlaces a sus fichas originales en DeviantArt se detalla en:
 - `antigravity sprites/INDICE_SPRITES.md`
 

@@ -5,7 +5,13 @@ import re
 INDEX_PATH = "antigravity sprites/INDICE_SPRITES.md"
 CACHE_PATH = "herramientas/descargados_cache.json"
 
-NON_DB = ['spider-man', 'spiderman', 'miles morales', 'sonic', 'mario', 'naruto', 'cinder', 'ruby spears', 'doropie']
+NON_DB = [
+    'spider-man', 'spiderman', 'miles morales', 'sonic', 'mario', 'naruto', 'cinder',
+    'ruby spears', 'doropie', 'seiya', 'shiryu', 'hyoga', 'andromeda', 'fenix',
+    'saint seiya', 'midoriya', 'deku', 'zenitsu', 'uzui', 'dante', 'dmc', 'bleach',
+    'one piece', 'luffy', 'pokemon', 'roblox', 'minecraft', 'undertale', 'fnf',
+    'friday night', 'nagatoro'
+]
 
 with open(CACHE_PATH, 'r', encoding='utf-8') as f:
     items = json.load(f)

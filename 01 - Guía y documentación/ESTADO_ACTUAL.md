@@ -55,7 +55,8 @@ Actualizado: 1 de noviembre de 2026. Organización: índice de selecciones (170 
 - Siete comprobaciones y pruebas Chrome HTTP correctas; detalle en CAMBIOS_COMBATE_2026-11-04.md. No balance completo ni revisión visual de todas las formas. No créditos de Sprite Fusion gastados.
 - Siguiente: selección visual de ataques extra por packs y valoración jugando. Los consejos antiguos de vuelo obligatorio se matizan por la elección actual: caminar cuando exista buen ciclo y vuelo en su ausencia.
 
-## 5 nov. — Antigravity: biblioteca de sprites LSW de DeviantArt
-- Descargada y organizada la carpeta `antigravity sprites/` con 146 hojas de sprites completas en tamaño original (~67 MB) de Dragon Ball en estilo LSW/ULSW/SWL desde DeviantArt.
-- Estructurado por categorías (Goku, Vegeta, Gohan, Trunks, Fusiones, Villanos DBZ, DBS, GT/Daima, Aliados y Packs de Ataque/FX).
-- Índice maestro navegable con autorías y enlaces en `antigravity sprites/INDICE_SPRITES.md`.
+## 5 nov. — Antigravity: biblioteca masiva de sprites LSW de DeviantArt
+- Completada la descarga masiva exhaustiva en `antigravity sprites/`: **770 hojas de sprites completas** (~318 MB) en máxima resolución original de Dragon Ball (estilo LSW/ULSW/SWL).
+- Estructurado en 10 categorías cubriendo todas las sagas: Goku (84), Vegeta (31), Gohan (16), Trunks (9), Guerreros Z y Aliados (13), Fusiones (40), Villanos DBZ (94), DBS (194), GT y Daima (60), Colecciones y FX de Ataques (229).
+- Índice maestro navegable y verificado con autorías y enlaces en `antigravity sprites/INDICE_SPRITES.md`.
+- Siguiente paso acordado con Josemi: animación sistemática en Piskel de cada personaje y sus técnicas especiales.

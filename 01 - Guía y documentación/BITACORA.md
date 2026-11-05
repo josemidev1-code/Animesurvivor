@@ -1335,3 +1335,47 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 ### Siguiente paso recomendado
 - El usuario puede explorar la carpeta `antigravity sprites` y elegir qué hojas o animaciones concretas desea integrar en `sprites/` para personajes jugables o enemigos, o continuar con la integración de ataques por familias.
 
+### Nueva consulta y petición del usuario
+- Josemi: «los has buscado literalmente todos los que se podian?»
+- Respuesta y estado: se le explicó con total transparencia que en la primera batida se detectaron 840 candidatos y se puso un tope de 150 para validar calidad y evitar bloqueos de IP en DeviantArt; quedan 690 de esa lista más todas las galerías completas de autores de LSW y tags de DeviantArt.
+- Josemi: «vamos a por todos los personajes de dragon ball bien hechos en sprite»
+- Acción: descarga masiva completa de todos los candidatos de la lista (sin tope) más expansión a través de galerías de creadores y tags especializados, asegurando máxima calidad y resolución en `antigravity sprites/`.
+- Josemi: «COMO VA ESO»
+- Estado y reporte: consulta de progreso de la tarea de descarga masiva (más de 650 hojas descargadas).
+- Josemi: «eres el mejor!!!, despues de eso en aniemsurvivor lo que vamos a hacer es te vas a ir a una pagina que se llama piskel y ahi vamos a animar cada uno de todos los personajes que hay y sus ataques asi que preparate»
+- Próximo gran objetivo: tras consolidar la colección masiva de `antigravity sprites/`, organizar el flujo de trabajo con Piskel (piskelapp / archivos .piskel y exportación de fotogramas) para animar a cada personaje del juego con sus ataques propios y combos únicos.
+- Josemi: «AMDREMIA, ESTAN TODOS LOS PERSONAJES DE DRAGON BALL?»
+- Reporte detallado de cobertura: desglose de personajes por sagas (Goku, Vegeta, Gohan, Trunks, Fusiones, Villanos DBZ, DBS, GT, Daima y Guerreros Z con más de 660 hojas completas).
+- Josemi: «perfectro, sabes de que va mi juego»
+- Explicación de la visión y mecánicas del juego: Vampire/PokéSurvivor de Dragon Ball en pixel art, supervivencia contra hordas, ataques icónicos, recargas independientes, transformaciones en partida, arenas emblemáticas, esferas del dragón y cero código dibujado sin sprites.
+- Josemi: «si me consigues hacer un buen juego con buenas animaciones y todo te lo juro que me encanta»
+- Compromiso y foco: construir el juego con animaciones de máxima calidad, respetando cada saga y estilo, encadenando golpes y ataques especiales sin fallos visuales.
+
+### Qué se ha completado
+- Búsqueda masiva y descarga exhaustiva concluida con éxito:
+  - 119 consultas cubriendo todas las sagas y todos los creadores destacados de DeviantArt.
+  - Total de **770 hojas completas de sprites de Dragon Ball** (~318 MB) en máxima resolución original organizadas en `antigravity sprites/`:
+    - `01_Goku` (84 hojas)
+    - `02_Vegeta` (31 hojas)
+    - `03_Gohan` (16 hojas)
+    - `04_Trunks` (9 hojas)
+    - `05_Guerreros_Z_y_Aliados` (13 hojas)
+    - `06_Fusiones` (40 hojas)
+    - `07_Villanos_DBZ` (94 hojas)
+    - `08_Dragon_Ball_Super` (194 hojas)
+    - `09_Dragon_Ball_GT_y_Daima` (60 hojas)
+    - `10_Colecciones_y_Packs` (229 hojas)
+  - Índice maestro interactivo completamente regenerado en `antigravity sprites/INDICE_SPRITES.md` con enlaces directos, dimensiones y autorías.
+  - Script de descarga masiva guardado en `herramientas/descargar_todo_db_lsw.py`.
+
+### Siguiente paso
+- Iniciar la fase de animación en Piskel (piskelapp / archivos .piskel y exportación de secuencias): tomar los spritesheets de la biblioteca `antigravity sprites/` para montar, sincronizar y afinar los ciclos de guardia, combos, ráfagas ki y ataques especiales de cada personaje del juego.
+
+
+
+
+
+
+
+
+
