@@ -40,6 +40,10 @@ carpeta de referencia de 3,6 GB) está en `Desktop/AnimeSurvivor_archivo/`, por 
 - Actualización Codex: técnicas automáticas con recargas individuales, arenas emblemáticas, legados de jefe, combo ki/patada, más cofres y vegetación animada. Detalle, pruebas y límites en `01 - Guía y documentación/CAMBIOS_COMBATE_2026-11-04.md`.
 - Pendiente principal: revisar y seleccionar los ataques extra de cada pack; todavía no se ha hecho para todo el catálogo.
 
+- **Ataques seleccionables y activos**: El jugador comienza cada partida con 2 ataques base. Los ataques son seleccionables (teclas 1, 2... o toque en el HUD) con prioridad absoluta al ataque elegido para decidir qué técnica ejecutar.
+- **Fusión de técnicas al derrotar jefes**: Al vencer al jefe de mapa y abrir su cofre, se activa la opción estelar de fusionar dos ataques del jugador en una técnica legendaria superior con efectos expansivos y multiplicadores de daño.
+- **Panel de subida de nivel cuadrado**: Interfaz de recompensas y nivel rediseñada en formato estrictamente cuadrado (aspect-ratio 1:1) con estética Dragon Ball, sin expandirse horizontalmente hacia los lados.
+- **Plantel unificado ('vienen de una')**: Eliminadas las tarjetas redundantes sueltas (Goku GT, Goku UI, Goku Super, Vegeta Ego, Vegeta GT, etc.). Cada héroe aparece una sola vez con todas sus formas integradas y elegibles directamente (Goku con 10 transformaciones, Vegeta con 9, Gohan con 5, Trunks con 4).
 - **Selección de personajes y transformaciones**: Foto de perfil fija en la cuadrícula del plantel y animación en movimiento dinámico al seleccionarlo. Se puede elegir cualquier transformación disponible para empezar a jugar directamente en esa forma con sus estadísticas y auras activas.
 - **62 personajes jugables**, con sus formas, todos sacados de `sprites/` y revisados a ojo. Nadie encoge al transformarse.
 - Nuevos de la sesión 7: Goku película Broly (4 formas), Vegeta Blue manga (2), Vegeta Dios de Broly (1),

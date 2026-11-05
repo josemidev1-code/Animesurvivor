@@ -197,23 +197,25 @@ body.high-contrast .up .nm,body.high-contrast .card h3{color:#ffffff!important;t
 #cList{max-width:750px}
 #cList a{color:var(--namek)}
 /* subida de nivel como el panel azul de PokéSurvivor */
-#levelup{background:rgba(4,8,20,.55)}
-#levelup .lupanel{display:flex;flex-direction:column;align-items:center;gap:6px;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);overflow:auto;padding:20px 24px;background:linear-gradient(#2c4fa8,#1c3274);border:3px solid #6f8fe0;border-radius:6px;box-shadow:0 0 0 3px #0a1230,0 10px 40px rgba(0,0,0,.6)}
-#levelup h2{color:#fff;font-size:11px;text-shadow:2px 2px 0 #0a1230;margin:0;line-height:1.7}
-#levelup .lusub{font-family:var(--pix);font-size:9px;color:#dfe8ff;margin:4px 0 6px}
-#levelup kbd{display:inline-block;border:2px solid #b8c8f0;border-radius:4px;padding:3px 5px;margin:0 2px;font-family:var(--pix);font-size:8px;color:#fff}
-#levelup .ups{flex-direction:column;flex-wrap:nowrap;gap:10px;width:min(560px,calc(100vw - 64px))}
-#levelup .up{width:100%;flex-direction:row;align-items:center;gap:12px;padding:10px 14px;background:rgba(18,34,86,.55);border:2px solid #4a66b8;border-radius:8px;box-shadow:none;text-align:left;transform:none}
-#levelup .up:hover,#levelup .up:focus-visible{border-color:var(--ki);background:rgba(20,32,80,.85);transform:none}
-#levelup .up canvas{flex:none;width:44px;height:44px;padding:6px;background:rgba(10,20,60,.6);border-radius:6px}
-#levelup .up .tx{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}
-#levelup .up .hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-#levelup .up .nm{font-size:11px;color:#fff}
-#levelup .up .lv{font-size:7px;color:#fff;background:#3f63c8;border:1px solid #8fa8f0;border-radius:4px;padding:3px 5px}
-#levelup .up.new .lv{background:#2f8ad8;color:#fff}
-#levelup .up .ds{font-size:9px;color:#c8d4f4;line-height:1.7}
-#levelup .up .key{flex:none;border:2px solid #b8c8f0;border-radius:5px;padding:6px 7px;color:#fff;font-size:9px}
-#levelup .up.evo{background:linear-gradient(90deg,rgba(90,64,8,.85),rgba(40,30,6,.85));border-color:var(--ki)}
+/* subida de nivel: formato cuadrado compacto Dragon Ball sin expandirse hacia los lados */
+#levelup{background:rgba(4,8,20,.65);display:flex;align-items:center;justify-content:center}
+#levelup .lupanel{display:flex;flex-direction:column;align-items:center;justify-content:space-between;box-sizing:border-box;width:min(440px,90vw);height:min(440px,90vw);max-width:440px;max-height:min(440px,90vh);aspect-ratio:1 / 1;overflow-y:auto;overflow-x:hidden;padding:14px 16px;background:linear-gradient(180deg,#1c1208,#2a180b 45%,#150904);border:3px solid #f59e0b;border-radius:10px;box-shadow:0 0 0 3px #451a03,0 0 24px rgba(245,158,11,.35),0 16px 48px rgba(0,0,0,.85)}
+#levelup h2{color:#fef08a;font-size:10px;text-shadow:2px 2px 0 #451a03;margin:0;line-height:1.4;text-align:center;letter-spacing:1px}
+#levelup .lusub{font-family:var(--pix);font-size:8px;color:#fed7aa;margin:2px 0 4px;text-align:center}
+#levelup kbd{display:inline-block;border:1px solid #f59e0b;border-radius:3px;padding:2px 4px;margin:0 2px;font-family:var(--pix);font-size:7px;color:#fff;background:rgba(69,26,3,.7)}
+#levelup .ups{display:flex;flex-direction:column;flex-wrap:nowrap;gap:7px;width:100%;flex:1;justify-content:center}
+#levelup .up{width:100%;box-sizing:border-box;display:flex;flex-direction:row;align-items:center;gap:8px;padding:7px 9px;background:rgba(45,26,10,.75);border:2px solid #b45309;border-radius:6px;box-shadow:none;text-align:left;transform:none;cursor:pointer;transition:border-color .15s, background .15s}
+#levelup .up:hover,#levelup .up:focus-visible{border-color:#fbbf24;background:rgba(180,83,9,.88);box-shadow:0 0 10px rgba(251,191,36,.4);transform:none}
+#levelup .up canvas{flex:none;width:38px;height:38px;padding:4px;background:rgba(20,10,4,.8);border:2px solid #78350f;border-radius:4px;box-sizing:border-box}
+#levelup .up .tx{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+#levelup .up .hd{display:flex;align-items:center;gap:6px;flex-wrap:nowrap}
+#levelup .up .nm{font-size:9px;color:#fff;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#levelup .up .lv{font-size:7px;color:#fff;background:#b45309;border:1px solid #f59e0b;border-radius:3px;padding:2px 4px;flex:none}
+#levelup .up.new .lv{background:#ea580c;color:#fff}
+#levelup .up .ds{font-size:7.5px;color:#fed7aa;line-height:1.4;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+#levelup .up .key{flex:none;border:1px solid #f59e0b;background:rgba(69,26,3,.8);border-radius:4px;padding:4px 6px;color:#ffd23f;font-size:8px;font-family:var(--pix)}
+#levelup .up.evo{background:linear-gradient(90deg,rgba(120,53,15,.9),rgba(69,26,3,.9));border-color:#fbbf24}
+#levelup .up.fusion{background:linear-gradient(90deg,rgba(180,83,9,.95),rgba(147,51,234,.85));border:2px solid #ffd23f;box-shadow:0 0 12px rgba(251,191,36,.6)}
 /* selección: personaje como en partida y estadísticas con colores (vida verde, velocidad azul, ataque rojo) */
 :root{--hp:#4cd964;--spd:#4aa8ff;--atk:#ff4d5e}
 .card canvas.cardSpr{width:150px;height:120px;max-width:100%;background:radial-gradient(ellipse at 50% 85%,#ea580c,#1f0a02 75%);border-radius:4px}

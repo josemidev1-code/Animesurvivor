@@ -1,0 +1,38 @@
+{
+ "started": {
+  "type": "started",
+  "request_id": "req_0e18823d-3d98-4725-8e05-4a96318ca636",
+  "operation": "animate",
+  "credits": {
+   "reserved": 15,
+   "remaining": 0
+  }
+ },
+ "completed": {
+  "type": "completed",
+  "status": "succeeded",
+  "output_count": 1,
+  "credits": {
+   "remaining": 0
+  }
+ },
+ "outputs": [
+  {
+   "id": "f41027ba-5c15-4b24-b620-c5cbff494d84",
+   "type": "animation",
+   "createdAt": "2026-11-04T15:24:53.607Z",
+   "updatedAt": "2026-11-04T15:24:53.607Z",
+   "prompt": "Side view walk cycle, the character walks to the right, seamless loop. Keep exactly the same character, outfit, hair, colors, proportions and pixel size. Natural steps with the feet touching the ground, arms swinging slightly. No effects, no aura, no background.",
+   "width": 124,
+   "height": 208,
+   "assetUrl": "https://media.spritefusion.com/pixel-art-assets/1a6af3a7-111a-4778-be74-d47b306d8ed5/f41027ba-5c15-4b24-b620-c5cbff494d84/animation.webp?v=1793805893607",
+   "style": "animation",
+   "tags": [],
+   "contentType": "image/webp",
+   "frameCount": 8,
+   "sourceImageUrl": "https://media.spritefusion.com/pixel-art-assets/1a6af3a7-111a-4778-be74-d47b306d8ed5/f41027ba-5c15-4b24-b620-c5cbff494d84/source.png?v=1793805893607",
+   "spritesheetUrl": "https://media.spritefusion.com/pixel-art-assets/1a6af3a7-111a-4778-be74-d47b306d8ed5/f41027ba-5c15-4b24-b620-c5cbff494d84/spritesheet.png?v=1793805893607",
+   "fps": 8
+  }
+ ]
+}

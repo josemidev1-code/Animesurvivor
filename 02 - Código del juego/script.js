@@ -596,10 +596,10 @@ const DARKH={d:'#0a0812',h:'#1c1a2c',H:'#34334f',l:'#4c4b70',B:'#1c1a2c'};
 const ORANGEGI={o:'#f2771a',O:'#c0500c',q:'#ffa64a',b:'#2747b5',D:'#16307a',n:'#4f74e0',w:'#f4f4f4'};
 const HDEF={
  goku:{name:'GOKU',rar:0,hp:120,spd:64,atk:1.0,start:'kame',desc:'Equilibrado. Empieza con Kamehameha.',
-   forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 2','SUPER SAIYAN 3','SSJ BLUE'],hair:[SPK.goku,SPK.gokuSSJ,SPK.gokuSSJ2,SPK.gokuSSJ3,SPK.gokuSSJ],hc:['dark','ssj','ssj','ssj3','blue'],
+   forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 2','SUPER SAIYAN 3','SSJ BLUE','UI SEÑAL','UI DOMINADO','SSJ4 GT','KAIOKEN','SSJ DIOS'],aura:['white','gold','gold','gold','blue','white','white','red','red','red'],hair:[SPK.goku,SPK.gokuSSJ,SPK.gokuSSJ2,SPK.gokuSSJ3,SPK.gokuSSJ],hc:['dark','ssj','ssj','ssj3','blue'],
    mats:GI,pal:{...DARKH,...SKIN,...ORANGEGI}},
  vegeta:{name:'VEGETA',rar:0,hp:100,spd:66,atk:1.15,start:'galick',desc:'Más ataque, menos vida. Empieza con Galick Gun.',face:'V',majin:3,
-   forms:['BASE','SUPER SAIYAN','SUPER VEGETA','MAJIN VEGETA','SSJ BLUE'],hair:[SPK.vegeta,SPK.vegetaSSJ,SPK.vegetaSSJ,SPK.vegetaSSJ,SPK.vegetaSSJ],hc:['dark','ssj','ssj','ssj','blue'],
+   forms:['BASE','SUPER SAIYAN','SUPER VEGETA','MAJIN VEGETA','SSJ BLUE','ULTRA EGO','SSJ4 GT','SSJ DIOS','BLUE EVOLUTION'],aura:['white','gold','gold','gold','blue','purple','red','red','blue'],hair:[SPK.vegeta,SPK.vegetaSSJ,SPK.vegetaSSJ,SPK.vegetaSSJ,SPK.vegetaSSJ],hc:['dark','ssj','ssj','ssj','blue'],
    mats:matsFor('vegeta'),pal:{...HPAL.vegeta}},
  piccolo:{name:'PICCOLO',rar:0,hp:140,spd:58,atk:0.95,start:'makanko',regen:0.6,desc:'Resistente y se regenera. Empieza con Makankosappo.',head:'turban',
    forms:['BASE','FUSIÓN CON NAIL','FUSIÓN CON KAMI','PICCOLO NARANJA'],mats:matsFor('piccolo'),pal:{...HPAL.piccolo},aura:['white','white','white','orange'],
@@ -1524,12 +1524,19 @@ MV.deathbeam.col=['#b51025','#ff354b','#ffffff'];
 // Una técnica característica desde el inicio; variantes del mismo luchador conservan su escuela.
 for(const id in SIGS){const L=SIGS[id],i=L.findIndex(x=>!['kiblast','punch','kick','renzoku'].includes(x));
  if(i>1){const [x]=L.splice(i,1);L.splice(1,0,x)}}
-const UNLOCK_LV=[1,1,3,6,10,15];
+const UNLOCK_LV=[1,1,4,8,12,16];
 let FO=null;const fxSl=[],fxRg=[];
 function sigList(hid=S.hid){if(SIGS[hid])return SIGS[hid];const st=HEROES[hid]&&HEROES[hid].start;return['kiblast','punch',MV[st]&&st!=='kiblast'?st:'kame','kick','renzoku']}
 function sigOpen(){return sigList().slice(0,P.sigU||2)}
 function sigLv(i){return clamp(1+((P.sigB&&P.sigB[i])||0)+Math.floor(P.lvl/12),1,5)}
-function sigSelect(n){if(state!=='play'||!P)return;const L=sigOpen();if(n<0||n>=L.length||n===P.sel)return;P.sel=n;P.sigCursor=n;P.sigT=Math.min(P.sigT,0.18);sfx('shot')}
+function sigSelect(n){
+  if(state!=='play'||!P)return;
+  const L=sigOpen();if(n<0||n>=L.length)return;
+  P.sel=n;P.sigCursor=n;
+  const id=L[n],W=MV[id];
+  if(W&&(!P.sigTimers[id]||P.sigTimers[id]<=0.15)){P.sigTimers[id]=0;P.sigT=0}else{P.sigT=Math.min(P.sigT||0,0.08)}
+  sfx('shot');
+}
 function sigReach(W,st){return W.kind==='melee'?st.reach:W.kind==='sword'?st.rad+70:W.kind==='beam'?Math.min(st.len,300):W.kind==='nova'?st.rad:W.kind==='big'?220:260}
 // hand position: chest height, a little in front of the hero; 'up' attacks come from above the head
 // si el enemigo está encima o debajo, la bola sale de la mano por arriba o por abajo
@@ -1561,9 +1568,26 @@ function sigUpdate(dt,ps){
 
   if(P.sigT>0)return;
   // La cola rota: una técnica rápida no puede impedir las demás.
-  let chosen=-1,t=null;for(let n=0;n<L.length;n++){const i=((P.sigCursor||0)+n)%L.length,id=L[i],W=MV[id];
-    if(!W||P.sigTimers[id]>0)continue;const st=W.st(sigLv(i));
-    t=nearest(P.x,P.y,sigReach(W,st));if(t){chosen=i;break}}
+  let chosen=-1,t=null;
+  // Prioridad absoluta a la técnica seleccionada por el jugador
+  const selId=L[P.sel],selW=MV[selId];
+  if(selW&&(!P.sigTimers[selId]||P.sigTimers[selId]<=0)){
+    const st=selW.st(sigLv(P.sel));
+    t=nearest(P.x,P.y,sigReach(selW,st));
+    if(t)chosen=P.sel;
+  }
+  // Si la técnica seleccionada está en enfriamiento o fuera de alcance, disparar las otras disponibles
+  if(chosen<0){
+    for(let n=0;n<L.length;n++){
+      const i=((P.sigCursor||0)+n)%L.length;
+      if(i===P.sel)continue;
+      const id=L[i],W=MV[id];
+      if(!W||P.sigTimers[id]>0)continue;
+      const st=W.st(sigLv(i));
+      t=nearest(P.x,P.y,sigReach(W,st));
+      if(t){chosen=i;break}
+    }
+  }
   if(chosen<0)return;
   const id=L[chosen],W=MV[id],st=W.st(sigLv(chosen)),m={lv:sigLv(chosen),evo:false};
   P.sigCursor=(chosen+1)%L.length;P.lastSig=chosen;
@@ -1886,7 +1910,7 @@ function newGame(hid,map){
   const chosenForm=(s.selForm&&s.selForm[hid]!==undefined)?s.selForm[hid]:(rosterAnim.id===hid?(rosterAnim.form||0):0);
   const initForm=clamp(chosenForm,0,(H.forms?H.forms.length-1:0));
   P={dir:'down',cast:null,x:0,y:0,hp:H.hp,face:1,anim:0,moving:false,iframe:0,lvl:1,xp:0,need:need(1),form:initForm,startForm:initForm,
-     moves:{},order:[],cards:{},orbA:0,hitT:0,sel:0,sigT:0.6,sigCD:1,sigN:0,sigU:3,sigB:[],sigTimers:{},sigCursor:0,relics:{},powT:1.2};
+     moves:{},order:[],cards:{},orbA:0,hitT:0,sel:0,sigT:0.6,sigCD:1,sigN:0,sigU:2,sigB:[],sigTimers:{},sigCursor:0,relics:{},powT:1.2};
   P.hp=stats().maxhp;fxSl.length=0;fxRg.length=0;if(window.PFX)PFX.clear();
   fxs=[];ebeams=[];enemies=[];projs=[];eshots=[];beams=[];bombs=[];gems=[];pickups=[];parts=[];texts=[];
   cam.x=-VW/2;cam.y=-VH/2;
@@ -2272,17 +2296,50 @@ const RELICS={
  capsulacorp:{name:'Cápsula Hoi-Poi Multiusos',desc:'Lanza suministros periódicos con botiquines, ki o zeni.',ic:'cd'},
  mafuba:{name:'Vasija del Mafuba',desc:'Genera un vórtice sagrado que encierra y daña a élites o jefes cercanos.',ic:'armor'}
 };
+
+// ---------- FUSIONES DE TÉCNICAS (Recompensa de derrotar jefes) ----------
+const FUSION_RECIPES = {
+  'kame+galick': {id:'finalkame',name:'FINAL KAMEHAMEHA',desc:'Fusión de Kamehameha y Galick Gun. Haz gigantesco de energía divina que desintegra todo (+150% daño).',col:['#60a5fa','#a855f7'],pose:'beam',kind:'beam',len:480,w:32,hits:14,dmg:4.5,cd:3.2},
+  'galick+kame': {id:'finalkame',name:'FINAL KAMEHAMEHA',desc:'Fusión de Kamehameha y Galick Gun. Haz gigantesco de energía divina que desintegra todo (+150% daño).',col:['#60a5fa','#a855f7'],pose:'beam',kind:'beam',len:480,w:32,hits:14,dmg:4.5,cd:3.2},
+  'kame+punch': {id:'dragonfist',name:'PUÑO DEL DRAGÓN DORADO',desc:'Fusión de Kamehameha y Golpe. Embestida meteórica envuelta en un dragón dorado colosal.',col:['#fbbf24','#f59e0b'],pose:'kick',kind:'melee',reach:240,hits:10,kb:120,dmg:5.0,cd:3.5,tp:true,dragon:true},
+  'punch+kame': {id:'dragonfist',name:'PUÑO DEL DRAGÓN DORADO',desc:'Fusión de Golpe y Kamehameha. Embestida meteórica envuelta en un dragón dorado colosal.',col:['#fbbf24','#f59e0b'],pose:'kick',kind:'melee',reach:240,hits:10,kb:120,dmg:5.0,cd:3.5,tp:true,dragon:true},
+  'kame+kiblast': {id:'kame_rapid',name:'SUPER KAMEHAMEHA RÁPIDO',desc:'Kamehameha condensado con ráfagas continuas de ki. Disparo casi instantáneo con gran penetración.',col:['#38bdf8','#fbbf24'],pose:'beam',kind:'beam',len:420,w:26,hits:10,dmg:3.8,cd:1.8},
+  'kiblast+kame': {id:'kame_rapid',name:'SUPER KAMEHAMEHA RÁPIDO',desc:'Kamehameha condensado con ráfagas continuas de ki. Disparo casi instantáneo con gran penetración.',col:['#38bdf8','#fbbf24'],pose:'beam',kind:'beam',len:420,w:26,hits:10,dmg:3.8,cd:1.8},
+  'bigbang+kame': {id:'bbkame',name:'BIG BANG KAMEHAMEHA',desc:'Fusión legendaria de Gogeta. Una esfera Big Bang que estalla en un rayo cósmico devastador.',col:['#38bdf8','#f43f5e'],pose:'beam',kind:'beam',len:450,w:34,hits:12,dmg:4.8,cd:3.2},
+  'kame+bigbang': {id:'bbkame',name:'BIG BANG KAMEHAMEHA',desc:'Fusión legendaria de Gogeta. Una esfera Big Bang que estalla en un rayo cósmico devastador.',col:['#38bdf8','#f43f5e'],pose:'beam',kind:'beam',len:450,w:34,hits:12,dmg:4.8,cd:3.2},
+  'punch+kick': {id:'meteorcombo',name:'COMBO METEÓRICO SUPREMO',desc:'Fusión marcial de puñetazos y patadas con teletransporte continuo y ráfagas demoledoras.',col:['#f59e0b','#ef4444'],pose:'kick',kind:'melee',reach:200,hits:16,kb:100,dmg:4.2,cd:2.2,tp:true},
+  'kick+punch': {id:'meteorcombo',name:'COMBO METEÓRICO SUPREMO',desc:'Fusión marcial de puñetazos y patadas con teletransporte continuo y ráfagas demoledoras.',col:['#f59e0b','#ef4444'],pose:'kick',kind:'melee',reach:200,hits:16,kb:100,dmg:4.2,cd:2.2,tp:true},
+  'kiblast+kick': {id:'ki_kick',name:'ASALTO DE KI VELOZ',desc:'Patadas impulsadas con ondas de choque de ki expansivas que barren a todos los enemigos alrededor.',col:['#fbbf24','#38bdf8'],pose:'kick',kind:'nova',rad:180,dmg:3.6,cd:2.0},
+  'kick+kiblast': {id:'ki_kick',name:'ASALTO DE KI VELOZ',desc:'Patadas impulsadas con ondas de choque de ki expansivas que barren a todos los enemigos alrededor.',col:['#fbbf24','#38bdf8'],pose:'kick',kind:'nova',rad:180,dmg:3.6,cd:2.0},
+  'kiblast+punch': {id:'rapid_punch',name:'GEKIRETSU MADAN METEÓRICO',desc:'Lluvia densa de esferas de energía combinada con ráfaga de puños de alta velocidad.',col:['#f59e0b','#3b82f6'],pose:'cast',kind:'scatter',n:18,dmg:2.8,cd:2.2},
+  'punch+kiblast': {id:'rapid_punch',name:'GEKIRETSU MADAN METEÓRICO',desc:'Lluvia densa de esferas de energía combinada con ráfaga de puños de alta velocidad.',col:['#f59e0b','#3b82f6'],pose:'cast',kind:'scatter',n:18,dmg:2.8,cd:2.2}
+};
+
 function options(){
   if(S.mastery){
-    const out=Object.keys(RELICS).filter(id=>{
+    const out=[];
+    const openSigs=sigOpen();
+    if(openSigs.length>=2 && !P.fusionUsed){
+      const s1=openSigs[0], s2=openSigs[1];
+      const key1=s1+'+'+s2, key2=s2+'+'+s1;
+      const rec=FUSION_RECIPES[key1]||FUSION_RECIPES[key2];
+      if(rec){
+        out.push({t:'fusion',idA:s1,idB:s2,fusId:rec.id,fusName:rec.name,fusDesc:rec.desc,rec});
+      } else {
+        const nA=MV[s1]?MV[s1].name:'Técnica 1', nB=MV[s2]?MV[s2].name:'Técnica 2';
+        const combId=s1+'_'+s2;
+        out.push({t:'fusion',idA:s1,idB:s2,fusId:combId,fusName:'FUSIÓN: '+nA+' × '+nB,fusDesc:'Fusión devastadora de '+nA+' y '+nB+': +70% daño y radio expansivo aumentado.',rec:{id:combId,name:'FUSIÓN: '+nA+' × '+nB,dmg:4.2,cd:2.4,kind:MV[s1]?.kind||'beam',pose:MV[s1]?.pose||'beam',col:MV[s1]?.col||['#fbbf24','#60a5fa']}});
+      }
+    }
+    const rOpts=Object.keys(RELICS).filter(id=>{
       const maxSt=['combo','kinton','scouter','mafuba','bastongoku'].includes(id)?1:3;
       return (P.relics?.[id]||0)<maxSt;
     }).map(id=>({t:'relic',id}));
-    if(out.length){
-      // Barajar y ofrecer hasta 3 reliquias distintas
-      const sh=[...out].sort(()=>Math.random()-0.5);
-      return sh.slice(0,3);
+    if(rOpts.length){
+      const sh=[...rOpts].sort(()=>Math.random()-0.5);
+      out.push(...sh.slice(0,out.length?2:3));
     }
+    if(out.length)return out;
     return [{t:'heal'},{t:'zeni'}];
   }
 
@@ -2301,6 +2358,22 @@ function options(){
   return pick}
 function applyOpt(op){
   switch(op.t){
+   case 'fusion':
+     P.fusionUsed=true;
+     if(!MV[op.fusId] && op.rec){
+       MV[op.fusId]={name:op.fusName,kind:op.rec.kind||'beam',pose:op.rec.pose||'beam',col:op.rec.col||['#fbbf24','#60a5fa'],st:(lv)=>({dmg:(op.rec.dmg||4.0)*(1+lv*0.25),cd:Math.max(0.6,(op.rec.cd||2.5)*(1-lv*0.05)),len:480,w:34,hits:12,rad:180,reach:220,kb:100})};
+     }
+     {
+       const cur=sigList();
+       const idxA=cur.indexOf(op.idA);
+       if(idxA!==-1)cur[idxA]=op.fusId;else cur[0]=op.fusId;
+       SIGS[S.hid]=cur;
+       P.sigTimers[op.fusId]=0;P.sel=idxA!==-1?idxA:0;P.sigCursor=P.sel;P.sigT=0;
+       S.banner={t:3.5,text:'¡FUSIÓN DE TÉCNICAS DESATADA!',sub:op.fusName};
+       for(let i=0;i<45;i++){const a=rnd(TAU),sp=rnd(70,200);parts.push({x:P.x,y:P.y-14,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,t:0.65,c:i%2?'#fbbf24':'#38bdf8',s:3})}
+       cam.shake=Math.max(cam.shake||0,14);sfx('trans');
+     }
+     break;
    case 'relic':
      P.relics=P.relics||{};P.relics[op.id]=(P.relics[op.id]||0)+1;
      if(op.id==='senzu'){P.cards.hp=(P.cards.hp||0)+1;P.cards.regen=(P.cards.regen||0)+1;P.hp+=20}
@@ -2321,6 +2394,7 @@ function applyOpt(op){
   }
   P.hp=Math.min(P.hp,stats().maxhp)}
 function optInfo(op){
+  if(op.t==='fusion'){const cv=mk(16,16),g=cv.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(sigIcon(op.idA||'kame'),0,0,16,16);return{cv,nm:op.fusName,lv:'¡FUSIÓN DE TÉCNICAS!',ds:op.fusDesc,cls:'fusion evo'}}
   if(op.t==='relic'){const R=RELICS[op.id];return{ic:R.ic,nm:R.name,lv:'LEGADO DEL JEFE',ds:R.desc,cls:'evo'}}
   if(op.t==='move'||op.t==='new'){const W=MV[op.id],lv=P.moves[op.id]?P.moves[op.id].lv+1:1;return{ic:op.id,nm:W.name,lv:op.t==='new'?'¡NUEVA TÉCNICA!':'NIVEL '+lv,ds:W.ds[lv-1]+(lv===5?' · Evoluciona con '+CARDS[W.req].name:''),cls:op.t==='new'?'new':''}}
   if(op.t==='evo'){const W=MV[op.id];return{ic:op.id,nm:W.evo,lv:'CARTA DORADA',ds:'Evoluciona '+W.name+': mucho más daño y tamaño.',cls:'evo'}}
@@ -2331,7 +2405,7 @@ function optInfo(op){
   if(op.t==='heal')return{ic:'senzu',nm:'Semilla Senzu',lv:'CURA',ds:'Recupera toda la vida.',cls:''};
   return{ic:'xp',nm:'Zeni',lv:'+50',ds:'Monedas para la tienda.',cls:''}}
 function openLevelUp(title){
-  state='levelup';const box=$('#ups');box.innerHTML='';$('#luTitle').textContent=S.mastery?'¡ELIGE EL LEGADO DEL JEFE!':title||'¡Nivel '+P.lvl+'!';
+  state='levelup';const box=$('#ups');box.innerHTML='';$('#luTitle').textContent=S.mastery?'¡FUSIÓN Y LEGADO DEL JEFE!':title||'¡Nivel '+P.lvl+'!';
   options().forEach((op,i)=>{const inf=optInfo(op),b=document.createElement('button');b.type='button';b.className='up '+inf.cls;
     const ic=inf.cv||icon(inf.ic);ic.setAttribute('aria-hidden','true');b.appendChild(ic);
     b.insertAdjacentHTML('beforeend',`<span class="tx"><span class="hd"><span class="nm">${inf.nm}</span><span class="lv">${inf.lv}</span></span><span class="ds">${inf.ds}</span></span><span class="key">${i+1}</span>`);
@@ -3550,12 +3624,34 @@ Object.assign(SCPACK.h,{trunks:{0:'mtrunks',1:'trunks-ssj',2:'smtrunks'},gohan:{
 SCPACK.h.vegeta[2]='vegeta-grade';SCPACK.h.gokuui[4]='goku-uic';
 // hand-picked animations (herramientas/animaciones.json -> animaciones_juego.js) replace the pack of that form
 const PORTRAIT={},BUSTO={};
+// Unificación de personajes ("que vengan de una"): consolidar formas variantes en sus héroes canónicos
+if(window.ANIM_SET && ANIM_SET.h){
+  const ah=ANIM_SET.h;
+  if(ah.goku){
+    if(ah.gokuui){ah.goku[5]=ah.gokuui[3];ah.goku[6]=ah.gokuui[4]}
+    if(ah.gokugt){ah.goku[7]=ah.gokugt[3]}
+    if(ah.gokusuper){ah.goku[8]=ah.gokusuper[1];ah.goku[9]=ah.gokusuper[3]}
+  }
+  if(ah.vegeta){
+    if(ah.vegetaue){ah.vegeta[5]=ah.vegetaue[3]}
+    if(ah.vegetagt){ah.vegeta[6]=ah.vegetagt[2]}
+    if(ah.vegetasuper){ah.vegeta[7]=ah.vegetasuper[2];ah.vegeta[8]=ah.vegetasuper[4]}
+  }
+  if(ah.gohan && ah.gohanadult){
+    ah.gohan[3]=ah.gohanadult[1];ah.gohan[4]=ah.gohanadult[2];
+  }
+  if(ah.trunks && ah.trunkscell){
+    ah.trunks[2]=ah.trunkscell[0];ah.trunks[3]=ah.trunkscell[2];
+  }
+}
 if(window.ANIM_SET)for(const id in ANIM_SET.h)for(const f in ANIM_SET.h[id]){const F=ANIM_SET.h[id][f],k='as-'+id+'-'+f;SCPACK.s[k]={};
   for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}
   // pasos de verdad generados con Sprite Fusion (andar_frames.js): si están, sustituyen al paso generado por código
   {const AF=(window.ANDAR_FRAMES||{})[id+'/'+f];if(AF)SCPACK.s[k].Paso=[AF.w,AF.h,AF.du,AF.url,0]}(SCPACK.h[id]=SCPACK.h[id]||{})[f]=k;if(F.portrait)(PORTRAIT[id]=PORTRAIT[id]||{})[f]=F.portrait;if(F.busto)BUSTO[id+'/'+f]=1}
 // only hand-picked forms stay: missing forms leave the transformation chain, characters with none leave the game
+const DUPLICADOS_ROSTER = new Set(['gokugt','gokusuper','gokuui','vegetagt','vegetasuper','vegetaue','vegetaego','gohanadult','trunkscell']);
 var FUERA=new Set(); // Roshi ya tiene sprites propios (3 nov.); antes se ocultaba aquí
+DUPLICADOS_ROSTER.forEach(k=>FUERA.add(k));
 for(const id in HDEF){const D=HDEF[id],A=window.ANIM_SET&&ANIM_SET.h[id];if(D.npc||D.custom)continue;
   if(!A){FUERA.add(id);continue}const keep=Object.keys(A).map(Number).sort((a,b)=>a-b);
   if(keep.length!==D.forms.length||keep.some((f,i)=>f!==i)){for(const k of ['forms','aura','hair','hc','formPal'])if(Array.isArray(D[k]))D[k]=keep.map(f=>D[k][Math.min(f,D[k].length-1)]);

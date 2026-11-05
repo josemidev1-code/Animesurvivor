@@ -1574,3 +1574,48 @@ Ginyu y Jeice desde DeviantArt, y suelos/árboles/rocas reales (Ninja Adventure,
 
 ### Siguiente paso recomendado
 - Abrir `index.html`, probar en la pantalla de personajes la selección de cualquier transformación (ej. Goku SSJ Blue, Vegeta Ego SSJ Blue) y comprobar el arranque directo de la partida en dicha forma.
+
+
+## 2026-11-05 — Antigravity (sesión 11 - Ataques seleccionables, fusión de técnicas en jefes, mejoras en cuadrado y revisión de carpeta en escritorio)
+
+### Lo que pidió el usuario
+- «esta muy bien todo pero los ataques tienen que ser seleccionables, es decir si yo comienzo como goku solo puedes tener 2 ataques y seleccionas si hacer unoi o otro y a medida que vas matando enemigos vas subiendo de nivel desbloqueando otros ataques y cosas, y cuando derrotas a un jefe se te da la oportunidad de juntar ataques, por ejemplo sobrevivo al primer jefe y se me da la opcion de poder juntar 2 atasques que antes no podia, y para otra cosa para lo de seleccionar mejora noi lo expandas hacia los lados que quede como un cuadrado, y mirqa la version de escritorio que tengo que caht gpt me cambio los perosnajes, porque quiero que los personajes vengan de una, mira la version de la carpeta en mie scritorio»
+- Objetivos solicitados:
+  1. **Ataques seleccionables y activos**: Comenzar solo con 2 ataques al iniciar partida (ej. Goku con puñetazo y ráfaga/kame), y poder seleccionar cuál ejecutar (ataque activo / selector directo 1 y 2 o botón).
+  2. **Progresión por nivel**: Al matar enemigos y subir de nivel, ir desbloqueando y mejorando nuevos ataques y técnicas progresivamente.
+  3. **Fusión / Combinación de ataques al derrotar jefes**: Al vencer a un jefe de fase (ej. minuto 2 o primer jefe), otorgar la oportunidad de fusionar/juntar 2 ataques existentes en una técnica combinada superior.
+  4. **Panel de selección de mejora cuadrado**: Modificar la pantalla de subida de nivel para que no se expanda horizontalmente hacia los lados, sino que mantenga un formato de panel cuadrado y compacto.
+  5. **Revisar versión en el escritorio**: Comprobar la carpeta en el escritorio (`Desktop`) donde ChatGPT cambió los personajes, para ver qué personajes y configuraciones tenía y hacer que vengan de una.
+
+
+### Qué se hizo
+- **Ataques seleccionables y activos**:
+  - `P.sigU = 2`: los personajes comienzan con solo 2 ataques al iniciar la partida (ranuras 1 y 2).
+  - `UNLOCK_LV = [1, 1, 4, 8, 12, 16]`: progresión desbloqueable a medida que matas enemigos y subes de nivel.
+  - `sigSelect(n)`: al pulsar las teclas numéricas (1, 2, 3...) o pulsar/tocar la casilla en el HUD, el ataque se selecciona inmediatamente; si ya estaba seleccionado o disponible, se desata de inmediato.
+  - `sigUpdate`: prioridad absoluta a la técnica seleccionada (`P.sel`), eliminando la rotación automática descontrolada para que el jugador elija táctica y directamente qué ataque ejecutar.
+- **Fusión de ataques al derrotar jefes**:
+  - Implementada la tabla de recetas y combinaciones `FUSION_RECIPES` (Final Kamehameha, Puño del Dragón Dorado, Super Kamehameha Rápido, Big Bang Kamehameha, Combo Meteórico Supremo, Asalto de Ki Veloz, etc., más fusión dinámica Z para combinaciones únicas).
+  - Al derrotar al jefe y abrir su cofre (`S.mastery`), se ofrece la opción especial dorada/púrpura de **FUSIÓN DE TÉCNICAS** junto a las reliquias legendarias.
+  - Al seleccionar la fusión, se desata un banner `¡FUSIÓN DE TÉCNICAS DESATADA!`, explosión de partículas en 360°, sacudida de cámara y sonido de transformación, equipando la técnica legendaria fusionada en la ranura activa.
+- **Panel de subida de nivel cuadrado**:
+  - En `02 - Código del juego/style.css`, `#levelup .lupanel` ahora tiene formato estrictamente cuadrado (`aspect-ratio: 1 / 1; width: min(440px, 90vw); height: min(440px, 90vw); max-width: 440px;`) con diseño Dragon Ball naranja/dorado oscuro, sin expandirse horizontalmente a los lados.
+- **Unificación de personajes ("que vengan de una")**:
+  - Revisada la versión de escritorio en `C:\Users\soyjo\Desktop\ANIMESURVIVOR-CLAUDE`.
+  - Se eliminaron las tarjetas desmembradas que ChatGPT/Codex había creado como personajes sueltos (`gokugt`, `gokusuper`, `gokuui`, `vegetagt`, `vegetasuper`, `vegetaue`, `vegetaego`, `gohanadult`, `trunkscell`).
+  - Todas sus formas se integraron directamente dentro de sus personajes canónicos:
+    - **Goku**: 10 transformaciones (Base, Super Saiyan, SSJ2, SSJ3, SSJ Blue, UI Señal, UI Dominado, SSJ4 GT, Kaioken, SSJ Dios) con sus animaciones completas y fotos fijas de perfil.
+    - **Vegeta**: 9 transformaciones (Base, Super Saiyan, Super Vegeta, Majin Vegeta, SSJ Blue, Ultra Ego, SSJ4 GT, SSJ Dios, Blue Evolution) con sus animaciones y fotos de perfil.
+    - **Gohan**: 5 transformaciones (Base Joven, SSJ, SSJ2, Adulto Místico, Bestia).
+    - **Trunks**: 4 transformaciones (Espada, SSJ, Armadura Cell, Ultra SSJ).
+  - El selector de personajes (`#chars`) muestra cada héroe una sola vez de forma limpia, y el selector de formas `◀` `▶` permite elegir cualquiera y saltar a jugar directamente con ella.
+- **Verificación**:
+  - `node --check "02 - Código del juego/script.js"` validado con 0 errores.
+  - Simulada la ejecución y arranque completo en Node mock DOM, verificando las 10 formas de Goku, 9 de Vegeta, arranque en `sigU: 2` y sistema de fusiones.
+  - Actualizado `index.html` con `style.css?v=80` y `script.js?v=152`.
+
+### A medias / problemas
+- Ninguno detectado; todos los puntos pedidos por el usuario quedaron implementados y comprobados.
+
+### Siguiente paso recomendado
+- Continuar refinando las recetas de fusión visuales con sprites específicos adicionales si el usuario lo solicita.
