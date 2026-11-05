@@ -2,7 +2,16 @@
 
 Actualizado: 5 de noviembre de 2026.
 
-## Últimas novedades implementadas (Sesión 13 - Antigravity)
+## Últimas novedades implementadas (Sesión 14 - Antigravity)
+1. **Rediseño estético y limpieza del fondo de la pantalla de inicio**:
+   - Eliminado el desfile desordenado de personajes y sus sombras rectangulares oscuras (`drawTitleDemo`), que ensuciaban la hierba y entorpecían la visión del menú.
+   - Sustituido por una presentación limpia, cinematográfica y elegante:
+     - Paneo suave del escenario panorámico de Dragon Ball con vegetación ondeando al viento.
+     - Viñeta y atenuación ambiental suave que proporciona contraste y legibilidad al logo dorado y al menú lateral naranja.
+     - Partículas doradas de energía ki flotando con suavidad en el ambiente.
+     - El recuadro del héroe seleccionado en el centro ahora destaca con nitidez absoluta y elegancia.
+
+## Novedades anteriores (Sesión 13 - Antigravity)
 1. **Colección de Sprites Pixel Art de Objetos de Dragon Ball**:
    - Integrados 11 objetos y reliquias en pixel art auténtico (eliminando los dibujos por código):
      - `kinton.png`: Nube Kinton auténtica de Goku Niño (Strice12).
@@ -24,27 +33,10 @@ Actualizado: 5 de noviembre de 2026.
      - `ui/shenron_pose2.png`: Pose serpenteante / rugido con boca abierta (80×128 px).
      - `ui/shenron_nubes.png`: Nubes oscuras de tormenta rodando en el horizonte místico (83×42 px).
      - `ui/shenron_rayos.png`: Relámpagos dorados rasgando el firmamento (46×34 px).
-   - Cinemática de deseos del Gachapón (`wish`) totalmente renovada:
-     - Cielo nocturno místico con estrellas centelleantes y relámpagos que iluminan la pantalla con sacudida (`cam.shake`).
-     - Nubes oscuras de tormenta rodando en el horizonte.
-     - Las 7 Dragon Balls luminosas girando en vórtice concéntrico antes de converger.
-     - Columna sagrada de luz divina y ascenso majestuoso de Shenron con ondulación, alternancia de poses y ojos carmesí brillantes.
-     - Texto místico: «¡CONCEDERÉ CUALQUIER DESEO! ¡DI TU DESEO AHORA!» y lluvia de confeti de estrellas al conceder el deseo.
+   - Cinemática de deseos del Gachapón (`wish`) totalmente renovada.
    - Pantalla de deseos en partida (`openWish`) actualizada con el nuevo sprite a tamaño proporcional (170×120 px).
 3. **Recordatorio especial de lanzamiento — Escuadrón Ginyu**:
    - Comprometido e inmortalizado en `CREDITOS_RECURSOS.md` y `BITACORA.md`: al publicar el juego, todas las IAs del desarrollo colaborativo (Claude, Codex, Antigravity...) serán homenajeadas y caracterizadas como el mítico **Escuadrón Ginyu (Tokusentai!)** en pose heroica especial.
-
-## Novedades anteriores (Sesión 11 - Antigravity)
-1. **Ataques seleccionables y activos**:
-   - Cada personaje inicia la partida con solo **2 ataques** (`P.sigU = 2`, ranuras 1 y 2).
-   - Los ataques son **seleccionables**: el jugador elige cuál usar (teclas 1, 2, 3... o clic/touch en las casillas del HUD).
-   - Desbloqueo progresivo por nivel: `UNLOCK_LV = [1, 1, 4, 8, 12, 16]`.
-2. **Fusión de técnicas al derrotar jefes**:
-   - Al derrotar a un jefe y recoger su cofre (`S.mastery`), se abre la pantalla especial donde se ofrece la **FUSIÓN DE TÉCNICAS** (Kamehameha + Galick Gun -> Final Kamehameha; Puño del Dragón Dorado; Super Kamehameha Rápido; etc.).
-3. **Panel de selección de mejora cuadrado**:
-   - `#levelup .lupanel` con formato cuadrado con diseño Dragon Ball naranja/dorado oscuro.
-4. **Unificación de personajes ("vienen de una")**:
-   - Todas las transformaciones consolidadas en sus personajes canónicos (Goku 10 formas, Vegeta 9 formas, Gohan 5 formas, Trunks 4 formas), elegibles con flechas antes de empezar.
 
 ## Proyecto y reglas
 - Juego de supervivencia Dragon Ball para navegador. Debe funcionar abriendo `index.html` con doble clic (sin servidores ni fetch runtime).

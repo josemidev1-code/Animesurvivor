@@ -3984,10 +3984,19 @@ function loop(now){
   requestAnimationFrame(loop)}
 const demo=[];
 function drawTitleDemo(time){
-  if(!demo.length){const ids=Object.keys(SCPACK.h).filter(k=>HEROES[k]);for(let i=0;i<11&&ids.length;i++){const id=ids[(Math.random()*ids.length)|0],f=Object.keys(SCPACK.h[id]);demo.push({id,form:+f[(Math.random()*f.length)|0],x:rnd(VW),y:rnd(VH),vx:rnd(-14,14),vy:rnd(-6,6),k:Math.random()})}}
-  demo.sort((a,b)=>a.y-b.y);
-  for(const d of demo){d.x+=d.vx/60;d.y+=d.vy/60;if(d.x<-30)d.x=VW+30;if(d.x>VW+30)d.x=-30;if(d.y<10)d.y=VH+30;if(d.y>VH+40)d.y=10;
-    const A=heroAnim(d.id,d.form,'Walk');if(!A)continue;const fr=(d.vx<0?A.L:A.R)[scFrame(A,time+d.k*3)];shadow(d.x,d.y,fr.width*0.6);ctx.drawImage(fr,Math.round(d.x-fr.width/2),Math.round(d.y-fr.height))}}
+  // Fondo cinematográfico limpio sin desfile caótico de personajes ni sombras oscuras rotas
+  ctx.fillStyle = 'rgba(6, 10, 24, 0.42)';
+  ctx.fillRect(0, 0, VW, VH);
+  // Partículas doradas de ki y destellos místicos sutiles en la pantalla de inicio
+  const n = 18;
+  for(let i = 0; i < n; i++){
+    const px = (Math.sin(i * 17.1 + time * 0.35) * 0.5 + 0.5) * VW;
+    const py = ((i * 31.3 - time * 16) % (VH + 20) + (VH + 20)) % (VH + 20);
+    const sz = (i % 3 === 0) ? 2 : 1;
+    ctx.fillStyle = (i % 2 === 0) ? 'rgba(251, 191, 36, 0.40)' : 'rgba(254, 240, 138, 0.30)';
+    ctx.fillRect(px | 0, py | 0, sz, sz);
+  }
+}
 let pickedHero='goku';
 function drawDiffs(){const box=$('#diffs'),top=DIFF.length;box.innerHTML='';
   DIFF.forEach((D,i)=>{const b=document.createElement('button');b.type='button';b.className='btn '+(i===pickedDiff?'':'alt');b.textContent=i>top?'???':D.n;b.disabled=i>top;if(i>top)b.style.opacity=.45;

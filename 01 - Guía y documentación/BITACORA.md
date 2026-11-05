@@ -1712,3 +1712,27 @@ Ginyu y Jeice desde DeviantArt, y suelos/Ã¡rboles/rocas reales (Ninja Adventur
 
 ### Siguiente paso recomendado
 - Probar una partida y abrir el gachapón para contemplar la nueva cinemática animada de Shenron y los nuevos objetos y reliquias en acción.
+
+
+## 2026-11-05 — Antigravity (sesión 14 - Rediseño estético del fondo de la pantalla de inicio)
+
+### Lo que pidió el usuario
+- «EN LA PANTALL DE INICIONO ME GUSTA COMO SE VEN LOS PERSONAJES POR DETRAS»
+- Adjuntó captura mostrando los personajes cruzando desordenadamente el fondo con líneas/sombras oscuras en la hierba detrás del logo y menú de inicio, generando ruido visual y suciedad estética.
+- Objetivo: Limpiar o rediseñar el fondo de la pantalla de título para que sea elegante, limpio, con estética Dragon Ball profesional (fondo de escenario atmosférico, cielo/nubes o efecto sutil sin desfile caótico de personajes y sombras rotas).
+
+### Lo que hice
+- **Eliminado el desfile caótico de personajes y sombras rotas del fondo del menú de inicio**:
+  - Se retiró la función `drawTitleDemo` que generaba 11 personajes aleatorios cruzando la pantalla en direcciones erráticas con sombras rectangulares oscuras (`shadow`) sobre la hierba.
+  - Se sustituyó por una ambientación de fondo limpia, cinematográfica y elegante:
+    - Paneo suave del escenario natural de Dragon Ball sin estorbos.
+    - Suave filtro de viñeta y atenuación (`rgba(6, 10, 24, 0.42)`) que realza el contraste y legibilidad del logo dorado "DRAGON BALL SURVIVOR", el panel lateral naranja de opciones y el héroe seleccionado en el centro.
+    - Partículas flotantes sutiles de energía ki dorada que dan un ambiente místico y pulido estilo juego oficial de Dragon Ball.
+- **Comprobación**:
+  - `node --check "02 - Código del juego/script.js"` superado sin errores.
+
+### A medias / problemas
+- Ninguno. La pantalla de inicio ahora luce impecable, sin ruido visual ni sombras superpuestas.
+
+### Siguiente paso recomendado
+- Validar visualmente en el navegador la nueva presentación limpia del menú de inicio.
