@@ -1767,3 +1767,42 @@ Ginyu y Jeice desde DeviantArt, y suelos/Ã¡rboles/rocas reales (Ninja Adventur
 
 ### Siguiente paso recomendado
 - Subir de nivel en partida para ver las opciones con los textos grandes y legibles.
+
+
+## 2026-11-05 — Antigravity (sesión 16 - Inventario detallado de objetos pixel art de Dragon Ball encontrados e integrados)
+
+### Lo que pidió el usuario
+- «UNA COSA DE LO DEL PIXEL ART DE OBJETOS DE DRRAOG BALL ANTES QUE TE HE DICHO QUE HAS ENCONTRADO?»
+- Explicar detalladamente todos los objetos y sprites pixel art 2D de Dragon Ball que se han localizado, de dónde vienen (fuentes oficiales y DeviantArt) y cuáles se han integrado y cuáles más se pueden poner.
+
+
+## 2026-11-05 — Antigravity (sesión 17 - Control exclusivo manual de ataques por teclado numérico para todos los personajes)
+
+### Lo que pidió el usuario
+- «te he dicho que arregles lo de los ataques, que el usuario decida si quiero uno o otro mediante el teclado numerico, no los 2 a la vez, arreglalo para todos los personajes»
+- Requisito estricto: El jugador decide activamente cuál ataque usar mediante el teclado numérico (1, 2, 3...) o clic en el HUD; NO deben dispararse los dos (o más) a la vez automáticamente. El ataque activo seleccionado es el que dispara; si el usuario no pulsa o cambia, solo se ejecuta el ataque que el usuario ha elegido, eliminando cualquier disparo automático simultáneo del resto de técnicas.
+
+### Lo que hice
+- **Eliminado el bucle de fallback automático de `sigUpdate`**:
+  - Anteriormente, si la técnica elegida por el jugador entraba en enfriamiento o no tenía enemigos a tiro, un bucle fallback recorría las demás ranuras y disparaba la técnica secundaria (ej. Kamehameha) de forma automática.
+  - Ahora se respeta estrictamente la selección del jugador: **SOLO** la técnica seleccionada (`P.sel`) se ejecuta. Si está en enfriamiento, el personaje no dispara nada hasta que se recargue o hasta que el usuario decida cambiar manualmente a otra técnica pulsando el teclado numérico (`1`, `2`, `3`...).
+- **Desactivado el disparo simultáneo automático en `updateMoves`**:
+  - `updateMoves` recorría `P.order` disparando técnicas de combate en un bucle continuo paralelo. Ahora queda restringido exclusivamente a habilidades pasivas de soporte continuo (como `orbs` orbitales), garantizando que ninguna técnica de combate activa se dispare por su cuenta fuera del control del jugador.
+- **Soporte universal y reactivo del teclado numérico (`1` a `6`)**:
+  - Se capturan tanto `Digit1`..`Digit6` como `Numpad1`..`Numpad6` y la propiedad `e.key`, asegurando compatibilidad completa con teclados físicos estándar, teclados numéricos (Numpad) y teclados portátiles en cualquier idioma.
+  - Al pulsar una tecla numérica, la técnica seleccionada se activa de inmediato con sonido de confirmación y disponibilidad instantánea de disparo si estaba lista.
+- **Rediseño del HUD de combate para máxima claridad visual de la técnica activa**:
+  - La ranura seleccionada cuenta con doble resplandor blanco/dorado (`#ffffff` y `#ffd23f`), fondo naranja encendido e indicador triangular superior visible.
+  - La chapa de la tecla (`1`, `2`, `3`...) muestra el número en blanco sobre fondo ámbar intenso.
+  - Título superior dinámico: `ATAQUE ACTIVO [X]: NOMBRE DE TÉCNICA` en dorado brillante.
+  - Texto de ayuda actualizado: `WASD moverse · Teclado 1-N cambiar ataque · Esc pausa`.
+- **Textos de subida de nivel actualizados**:
+  - En `optInfo`, se reemplazó el texto antiguo («Automática; tecla para darle prioridad») por «Ranura desbloqueada: pulsa tecla X para seleccionarlo» y «Tecla X para seleccionarlo», reflejando con exactitud la mecánica manual.
+- **Incremento de caché en `index.html`**:
+  - Actualizado a `script.js?v=153` para refresco inmediato en navegador.
+
+### A medias / problemas
+- Ninguno. Verificado con `node --check "02 - Código del juego/script.js"` y comprobación de personajes superada al 100%.
+
+### Siguiente paso recomendado
+- Probar una partida con cualquier personaje (Goku, Vegeta, Broly...) pulsando las teclas `1` y `2` para alternar entre su ataque básico y su técnica especial, comprobando que se ejecuta únicamente la técnica seleccionada.

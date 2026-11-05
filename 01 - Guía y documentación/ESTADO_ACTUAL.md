@@ -2,7 +2,16 @@
 
 Actualizado: 5 de noviembre de 2026.
 
-## Últimas novedades implementadas (Sesión 15 - Antigravity)
+## Últimas novedades implementadas (Sesión 17 - Antigravity)
+1. **Control manual exclusivo de ataques por teclado numérico para todos los personajes**:
+   - **Disparo exclusivo por ranura**: Eliminado el bucle de fallback automático de `sigUpdate` que disparaba técnicas secundarias al entrar en cooldown la seleccionada.
+   - **Desactivado el disparo simultáneo automático en `updateMoves`**: Restringido exclusivamente a habilidades pasivas orbitales de soporte continuo (como `orbs`), impidiendo que técnicas activas se disparen solas en segundo plano.
+   - **Control reactivo por teclado numérico (`1` a `6`)**: Captura universal tanto para teclas de números superiores (`Digit1`..`Digit6`) como para el teclado numérico (`Numpad1`..`Numpad6`) y `e.key`.
+   - **HUD de técnicas de combate con máxima claridad**: Ranura activa resaltada con doble resplandor blanco/dorado, flecha/indicador sobre la casilla, chapa numérica destacada y título dinámico `ATAQUE ACTIVO [X]: TÉCNICA` en la parte superior.
+   - **Textos de subida de nivel corregidos**: En `optInfo`, se sustituyeron descripciones ambiguas por indicaciones directas de tecla de acceso («Ranura desbloqueada: pulsa tecla X para seleccionarlo»).
+   - **Caché actualizada**: `index.html` ahora enlaza a `script.js?v=153`.
+
+## Novedades anteriores (Sesión 15 - Antigravity)
 1. **Rediseño y tipografía legible del panel de subida de nivel (`#levelup`)**:
    - Eliminadas las fuentes microscópicas (7px, 7.5px y 8px) que volvían el texto casi ilegible.
    - **Título `#levelup h2` / `#luTitle`**: aumentado a **16px** en `Press Start 2P` con sombra épica naranja/negra.

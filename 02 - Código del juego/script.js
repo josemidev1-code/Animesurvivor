@@ -1540,10 +1540,11 @@ function sigLv(i){return clamp(1+((P.sigB&&P.sigB[i])||0)+Math.floor(P.lvl/12),1
 function sigSelect(n){
   if(state!=='play'||!P)return;
   const L=sigOpen();if(n<0||n>=L.length)return;
+  const prevSel=P.sel;
   P.sel=n;P.sigCursor=n;
   const id=L[n],W=MV[id];
-  if(W&&(!P.sigTimers[id]||P.sigTimers[id]<=0.15)){P.sigTimers[id]=0;P.sigT=0}else{P.sigT=Math.min(P.sigT||0,0.08)}
-  sfx('shot');
+  if(W&&(!P.sigTimers[id]||P.sigTimers[id]<=0.25)){P.sigTimers[id]=0;P.sigT=0}else{P.sigT=Math.min(P.sigT||0,0.08)}
+  if(prevSel!==n)sfx('shot');
 }
 function sigReach(W,st){return W.kind==='melee'?st.reach:W.kind==='sword'?st.rad+70:W.kind==='beam'?Math.min(st.len,300):W.kind==='nova'?st.rad:W.kind==='big'?220:260}
 // hand position: chest height, a little in front of the hero; 'up' attacks come from above the head
@@ -1577,28 +1578,17 @@ function sigUpdate(dt,ps){
   if(P.sigT>0)return;
   // La cola rota: una técnica rápida no puede impedir las demás.
   let chosen=-1,t=null;
-  // Prioridad absoluta a la técnica seleccionada por el jugador
+  // Control exclusivo manual por teclado: SOLO se ejecuta el ataque seleccionado por el jugador
   const selId=L[P.sel],selW=MV[selId];
   if(selW&&(!P.sigTimers[selId]||P.sigTimers[selId]<=0)){
     const st=selW.st(sigLv(P.sel));
     t=nearest(P.x,P.y,sigReach(selW,st));
     if(t)chosen=P.sel;
   }
-  // Si la técnica seleccionada está en enfriamiento o fuera de alcance, disparar las otras disponibles
-  if(chosen<0){
-    for(let n=0;n<L.length;n++){
-      const i=((P.sigCursor||0)+n)%L.length;
-      if(i===P.sel)continue;
-      const id=L[i],W=MV[id];
-      if(!W||P.sigTimers[id]>0)continue;
-      const st=W.st(sigLv(i));
-      t=nearest(P.x,P.y,sigReach(W,st));
-      if(t){chosen=i;break}
-    }
-  }
+  // Si la técnica seleccionada está en enfriamiento o fuera de alcance, NO disparar nada más de forma automática
   if(chosen<0)return;
   const id=L[chosen],W=MV[id],st=W.st(sigLv(chosen)),m={lv:sigLv(chosen),evo:false};
-  P.sigCursor=(chosen+1)%L.length;P.lastSig=chosen;
+  P.sigCursor=chosen;P.lastSig=chosen;
   const a=Math.atan2(t.y-6-(P.y-13),t.x-P.x);
   P.sigTimers[id]=Math.max(0.4,st.cd*ps.cd);P.sigCD=P.sigTimers[id];P.sigT=0.18;
   if(W.pose==='up'||W.kind==='nova'||(W.kind!=='beam'&&W.kind!=='melee'&&W.kind!=='sword'&&W.pose==='cast')){
@@ -1952,7 +1942,7 @@ function stats(){
 const keys={};
 addEventListener('keydown',e=>{keys[e.code]=true;
   if(e.code==='F2'){debugSolid=!debugSolid;e.preventDefault()}
-  if(state==='play'){const m=/^(Digit|Numpad)([1-6])$/.exec(e.code);if(m)sigSelect(+m[2]-1)}
+  if(state==='play'){let num=-1;const m=/^(Digit|Numpad)([1-6])$/.exec(e.code);if(m)num=+m[2];else if(/^[1-6]$/.test(e.key))num=+e.key;if(num>=1&&num<=6){sigSelect(num-1);e.preventDefault()}}
   if(state==='levelup'&&/^Digit[1-4]$/.test(e.code)){const b=$('#ups').querySelectorAll('button')[+e.code.slice(5)-1];if(b)b.click()}
   if((e.code==='Escape'||e.code==='KeyP')){if(state==='play')pauseGame();else if(state==='pause')resume()}
   if(e.code==='KeyM')toggleMute();
@@ -2091,9 +2081,9 @@ function manual(k){if(state!=='play'||!P)return;const ps=stats();P.mcd=P.mcd||[0
     const dmg=(26+4*P.lvl)*ps.dmg;near(t.x,t.y,36,e=>{if(Math.hypot(e.x-t.x,e.y-t.y)<36+e.r)hurt(e,dmg,d*60,0)});
     P.atkT=P.atkD=0.32;P.atkK=0;P.atkA=d>0?0:Math.PI;cam.shake=Math.max(cam.shake||0,3);P.mcd[2]=P.mcdM[2]=MCD[2]}}
 function updateMoves(dt,ps){
-  for(const id of P.order){const m=P.moves[id],W=MV[id],st=W.st(m.lv);
-    if(W.kind==='orbit'){continue}
-    if(W.kind==='beam'){m.t-=dt;continue}
+  // Solo habilidades pasivas orbitales de soporte continuo
+  // Las técnicas de combate se controlan exclusivamente por el jugador mediante el teclado numérico en sigUpdate
+  for(const id of P.order){const m=P.moves[id],W=MV[id];if(!W||W.kind!=='orbit')continue;const st=W.st(m.lv);
     m.t-=dt;if(m.t<=0){m.t=st.cd*ps.cd*(m.evo?0.8:1);fire(id,m,st,ps)}}
   if(P.moves.orbs){const m=P.moves.orbs,st=MV.orbs.st(m.lv),n=st.count+(m.evo?2:0),rad=st.rad*ps.area;
     P.orbA+=dt*st.spd;const dmg=st.dmg*ps.dmg*(m.evo?1.7:1);
@@ -2409,8 +2399,8 @@ function optInfo(op){
   if(op.t==='evo'){const W=MV[op.id];return{ic:op.id,nm:W.evo,lv:'CARTA DORADA',ds:'Evoluciona '+W.name+': mucho más daño y tamaño.',cls:'evo'}}
   if(op.t==='card'){const C=CARDS[op.id],lv=(P.cards[op.id]||0)+1;return{ic:op.id,nm:C.name,lv:'NIVEL '+lv,ds:C.ds,cls:''}}
   if(op.t==='sig'||op.t==='sigup'){const W=MV[op.id],cv=mk(16,16),KD={beam:'Onda de energía gigante',big:'Esfera de energía que estalla',shot:'Ráfaga de bolas de ki',melee:'Golpes cuerpo a cuerpo',sword:'Corte en arco',nova:'Onda de choque a tu alrededor',disc:'Disco cortante',bomb:'Esfera gigante que cae del cielo'};cv.getContext('2d').drawImage(sigIcon(op.id),0,0);
-    if(op.t==='sig')return{cv,nm:W.name,lv:'¡NUEVO ATAQUE!',ds:KD[W.kind]+'. Automática; tecla '+((P.sigU||2)+1)+' para darle prioridad.',cls:'evo'};
-    return{cv,nm:W.name,lv:'NIVEL '+(sigLv(op.i)+1),ds:'Más daño y alcance. Tecla '+(op.i+1)+'.',cls:''}}
+    if(op.t==='sig')return{cv,nm:W.name,lv:'¡NUEVO ATAQUE!',ds:KD[W.kind]+'. Ranura desbloqueada: pulsa tecla '+((P.sigU||2)+1)+' para seleccionarlo.',cls:'evo'};
+    return{cv,nm:W.name,lv:'NIVEL '+(sigLv(op.i)+1),ds:'Más daño y alcance. Tecla '+(op.i+1)+' para seleccionarlo.',cls:''}}
   if(op.t==='heal')return{ic:'senzu',nm:'Semilla Senzu',lv:'CURA',ds:'Recupera toda la vida.',cls:''};
   return{ic:'xp',nm:'Zeni',lv:'+50',ds:'Monedas para la tienda.',cls:''}}
 function openLevelUp(title){
@@ -3693,14 +3683,18 @@ function hud(time){
       ctx.drawImage(sigIcon(L[i]),x+4,y+4,16*t2,16*t2);
       if((P.sigTimers||{})[L[i]]>0){ctx.fillStyle='rgba(0,0,0,.58)';ctx.fillRect(x,y,w,Math.round(w*clamp(P.sigTimers[L[i]]/Math.max(0.4,MV[L[i]].st(sigLv(i)).cd*ps.cd),0,1)))}
       const cdReady=((P.sigTimers||{})[L[i]]||0)<=0;
-      ctx.fillStyle=on?'#ffd23f':(cdReady?'#f59e0b':'#c2410c');
+      ctx.fillStyle=on?'#ffd23f':(cdReady?'#f59e0b':'#78350f');
       ctx.fillRect(x,y,w,1);ctx.fillRect(x,y+w-1,w,1);ctx.fillRect(x,y,1,w);ctx.fillRect(x+w-1,y,1,w);
-      if(on||cdReady){ctx.fillStyle=on?'#fed7aa':'#fef08a';ctx.fillRect(x+1,y+1,w-2,1)}
+      if(on){
+        // Doble resplandor dorado y flecha sobre el ataque activo
+        ctx.strokeStyle='#ffffff';ctx.lineWidth=1;ctx.strokeRect(x+1,y+1,w-2,w-2);
+        ctx.fillStyle='#ffd23f';ctx.fillRect(x+w/2-2,y-4,4,2);ctx.fillRect(x+w/2-1,y-2,2,2);
+      } else if(cdReady){ctx.fillStyle='#fed7aa';ctx.fillRect(x+1,y+1,w-2,1)}
       // chapa de atajo numérico en la esquina superior izquierda
-      ctx.fillStyle='rgba(15,7,3,.88)';ctx.fillRect(x+1,y+1,8,8);
-      text(String(i+1),x+2,y+2,on?'#ffd23f':'#fed7aa',8,'left')}
-    if(L[P.sel])text(MV[L[P.sel]].name,HW/2,y-11,'#ffedd5',8);
-    if(S.t<30)text('WASD moverse · 1-'+n+' priorizar ataque · Esc pausa',HW/2,HH-10,'#fed7aa',8);
+      ctx.fillStyle=on?'#b45309':'rgba(15,7,3,.88)';ctx.fillRect(x+1,y+1,9,9);
+      text(String(i+1),x+2,y+2,on?'#ffffff':'#fed7aa',8,'left')}
+    if(L[P.sel])text('ATAQUE ACTIVO ['+(P.sel+1)+']: '+MV[L[P.sel]].name,HW/2,y-11,'#ffd23f',8);
+    if(S.t<30)text('WASD moverse · Teclado 1-'+n+' cambiar ataque · Esc pausa',HW/2,HH-10,'#fed7aa',8);
     if(!(S.boss&&!S.boss.dead)&&S.bossIdx<BOSS_T.length){const left=BOSS_T[S.bossIdx]-S.t;if(left<20)text('SE ACERCA '+ET[MAPS[S.map].bosses[S.bossIdx]].n+' '+Math.ceil(left),HW/2,y-32,(time*4|0)%2?'#ff4d5e':'#ffffff',16)}
     if(P.newSig){const id=L[P.newSig.i];if(id&&((P.newSig.t*4|0)%2||P.newSig.t<2.2)){text('¡NUEVO ATAQUE: '+MV[id].name.toUpperCase()+'!',HW/2,y-52,'#ffd23f',16);text('PULSA '+(P.newSig.i+1)+' PARA USARLO',HW/2,y-30,'#ffffff',8)}}}
   // aviso grande en el centro (jefe, oleada, emboscada…): una franja fina con el título y el subtítulo
