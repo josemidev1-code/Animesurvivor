@@ -2,7 +2,21 @@
 
 Actualizado: 5 de noviembre de 2026.
 
-## Últimas novedades implementadas (Sesión 18 - Antigravity)
+## Últimas novedades implementadas (Sesión 19 - Antigravity)
+1. **Accesibilidad total de menús para niños de 5 años y navegación intuitiva**:
+   - **Barra universal de navegación superior (`.menuTopBar`)**: Implementada en todos los 10 menús y modales del juego (`#roster`, `#shop`, `#rank`, `#settings`, `#mine`, `#gacha`, `#forge`, `#train`, `#credits`, `#maps`). Cuenta con un botón grande, táctil y evidente `◀ VOLVER` a la izquierda, título nítido en el centro y botón de cierre `✕` en rojo de alto contraste a la derecha. La barra es fija (`position: sticky`), garantizando que aunque haya scroll siempre esté visible y al alcance de un clic o toque con el dedo.
+   - **Salida universal por teclado (`Escape` y `Backspace`)**: Cualquier modal o menú abierto se cierra de inmediato regresando al menú principal sin posibilidad de atascarse o perderse.
+   - **Botón de jugar pulsante estilo PokéSurvivor**: Botón principal del Hub con la Nube Kinton dorada (`¡A LUCHAR! / JUGAR`), tamaño aumentado y halo de luz vibrante para atracción visual inmediata.
+2. **Integración completa de Pixel Arts de Dragon Ball en menús y mejoras**:
+   - **Menú Principal (Hub)**: Sustitución de iconos genéricos o emojis por pixel arts oficiales cargados desde `OBJ_IMG`: Nube Kinton (`kinton`), Scouter (`scouter`), Pesas de Kaio (`pesas`), Cápsula Hoi-Poi (`capsulacorp`), Esfera de 4 estrellas (`esfera4`), Radar del Dragón (`radar`), Bastón Nyoibo (`bastongoku`) y Scouter Rojo (`scouterRojo`).
+   - **Mejoras permanentes (`drawTrain`)**: Las 10 mejoras de entrenamiento ahora muestran sus sprites de Dragon Ball a 36x36px: Pesas de Kaio (Daño), Cápsula Médica (Salud), Armadura Saiyan (Defensa), Nube Kinton (Velocidad), Cápsula de Ki (Recarga), Radar del Dragón (Atracción), Bolsa de Senzus (Regeneración), Cápsula Dorada (Sabiduría/XP), Corporación Cápsula (Fortuna/Zeni) y Esfera de 4 estrellas (Poder Crítico).
+   - **Tienda Hoi-Poi (`drawShop`)**: Iconos de Cápsulas Hoi-Poi (`capsulacorp`), Cápsulas Doradas (`capsulaDorada`) y Esferas (`esfera7`) para adquisición de tickets de deseo.
+3. **Cinemática de Shenron limpia y deseos exclusivos de personajes**:
+   - **Shenron como protagonista exclusivo**: Se eliminaron elementos recargados (nubes de tormenta, bolas giratorias y destellos cegadores). Ahora se muestra únicamente la silueta imponente de Shenron flotando sobre un cielo nocturno estrellado con sus ojos carmesí iluminados.
+   - **Deseos centrados 100% en personajes**: Eliminada cualquier recompensa de monedas Zeni del dragón sagrado. Shenron ahora otorga recompensas directas de guerreros: Desbloqueo de nuevo personaje, Despertar de atributos (+8%), Maestría de combate o Tickets sagrados de deseos.
+4. **Caché actualizada**: `script.js?v=155` y `style.css?v=83`.
+
+## Novedades anteriores (Sesión 18 - Antigravity)
 1. **Rediseño integral de HUD, pixel art de mejoras y menú de subida de nivel estilo PokéSurvivor**:
    - **Sustitución de todas las mejoras pasivas (`CARDS`) por sprites oficiales en pixel art auténtico**: Eliminados por completo los dibujos procedimentales rudimentarios con `px()` y `pball()` (corazón de 8 bits, cubo rojo plano, reloj azul). Ahora cada mejora tiene un sprite oficial de 32x32 de Dragon Ball:
      - `power` («Entrenamiento»): Pesas pesadas de combate de Kaio (`pesas`).

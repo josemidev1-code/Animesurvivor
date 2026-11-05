@@ -3749,3 +3749,34 @@ Ginyu y Jeice desde DeviantArt, y suelos/Ã¡rboles/rocas reales (Ninja Adventur
 
 ### Siguiente paso recomendado
 - Implementar la pantalla modal de `#scr-bond` (¡Vínculo de Técnicas!) al derrotar a un jefe para permitir unir dos técnicas en un solo hueco como en PokéSurvivor, y dotar a la pantalla de pausa del desglose completo de DPS y estadísticas.
+
+
+## 2026-11-05 — Antigravity / Gemini (sesión 19)
+
+### Lo que pidió el usuario
+- Ver los menús y hacerlos muy intuitivos y muy accesibles, para que un niño de 5 años se pueda guiar y salir de los menús y todo.
+- Implementar todos los pixel arts de objetos de Dragon Ball en los menús y en las mejoras.
+- Que en la animación de Shenron solo esté Shenron, y el deseo que te conceda sea cosas de personajes.
+- Mejorar todo un poco, tipo a Poké Survivor.
+
+### Qué se ha hecho
+1. **Accesibilidad total de menús y navegación intuitiva para niños**:
+   - Barra superior universal (.menuTopBar) con botón gigante y táctil ◀ VOLVER, título centrado y botón de cierre ✕ en rojo en todos los 10 menús (#roster, #shop, #rank, #settings, #mine, #gacha, #forge, #train, #credits, #maps). Barra fija (position: sticky) siempre visible ante cualquier desplazamiento.
+   - Teclas universales de escape (Escape y Backspace) para regresar al Hub principal al instante desde cualquier pantalla modal sin atascarse.
+   - Botón principal de jugar pulsante con la Nube Kinton (¡A LUCHAR! / JUGAR) destacado y visible estilo PokéSurvivor.
+2. **Integración de Pixel Arts de Dragon Ball en menús y mejoras**:
+   - Botones del Hub principal con iconos pixel art de Dragon Ball: Nube Kinton (kinton), Scouter Saiyan (scouter), Pesas de Kaio (pesas), Cápsula Hoi-Poi (capsulacorp), Esfera de 4 estrellas (esfera4), Radar del Dragón (
+adar), Bastón Nyoibo (astongoku) y Scouter Rojo (scouterRojo).
+   - Las 10 mejoras de entrenamiento permanente (drawTrain) con sprites oficiales de 36x36px: Pesas de Kaio, Cápsula Médica, Armadura Saiyan, Nube Kinton, Cápsula de Ki, Radar, Senzu, Cápsula Dorada, Cápsula Corp y Esfera 4★.
+   - Tienda Hoi-Poi (drawShop) con iconos de Cápsula Corp (1 ticket), Cápsula Dorada (10 tickets) y Esfera 7★ (50 tickets).
+3. **Cinemática de Shenron limpia y deseos de personajes**:
+   - Cinemática de invocación (wish): Eliminados relámpagos, nubes densas y bolas giratorias superpuestas. Ahora se presenta exclusivamente la silueta majestuosa de Shenron flotando sobre un cielo nocturno estrellado con sus ojos carmesí brillantes y opción de saltar con un clic.
+   - Deseos de Shenron (pullOne / doPull): Eliminadas todas las recompensas de monedas Zeni. Todos los deseos conceden progresión de guerreros (Desbloqueo de personaje, Despertar +8% a atributos, Rango de maestría para técnicas o Tickets sagrados de deseos).
+4. **Caché actualizada**: script.js?v=155 y style.css?v=83.
+
+### A medias / problemas
+- Ninguno. Todo implementado, probado y validado con 
+ode --check.
+
+### Siguiente paso recomendado
+- Abrir index.html con doble clic para probar la nueva barra universal de navegación, los iconos pixel art de Dragon Ball en las mejoras y la invocación de Shenron.

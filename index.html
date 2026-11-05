@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
-<link rel="stylesheet" href="02 - Código del juego/style.css?v=82">
+<link rel="stylesheet" href="02 - Código del juego/style.css?v=83">
 
 <canvas id="game" aria-label="DragonBall Survivor, juego"></canvas>
 <div id="radarAviso" hidden><img data-ui="radarAnimado" alt="Radar del Dragón animado de Lady-Pixel"><span>RADAR ACTIVO</span></div>
@@ -41,24 +41,24 @@
   <div class="hubStats" id="hubStats"></div>
 </div>
 <div id="roster" class="ov dark" hidden>
-  <h2>PERSONAJES</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>PERSONAJES</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <p class="help" id="rInfo"></p>
   <div class="rWrap"><div class="rPrev" id="rPrev"><div class="rFace"><img id="rPrevImg" alt=""><span id="rNoFace" hidden>SIN RETRATO</span></div><p id="rPrevName"></p><canvas id="rPrevC" width="200" height="190"></canvas><div class="rForm" id="rForm"><button type="button" id="rFormL" aria-label="Forma anterior">◀</button><span id="rFormN"></span><button type="button" id="rFormR" aria-label="Forma siguiente">▶</button></div><p class="rLock" id="rFormLock" hidden>Despiértala con un deseo a Shenron</p><button type="button" class="btn gold" id="rPlayForm">JUGAR CON ESTA FORMA</button><div class="sBars" id="rPrevStats"></div><ul id="rPrevMoves"></ul></div><div id="rosterBox"></div></div>
   <div class="btns"><button class="btn alt" id="rBack" type="button">VOLVER</button></div>
 </div>
 <div id="shop" class="ov dark" hidden>
-  <h2>TIENDA DE BULMA</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>TIENDA DE BULMA</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <p class="help" id="shInfo"></p>
   <div class="chars" id="shList"></div>
   <div class="btns"><button class="btn alt" id="shBack" type="button">VOLVER</button></div>
 </div>
 <div id="rank" class="ov dark" hidden>
-  <h2>RANKING</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>RANKING</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <div id="rkList" class="help"></div>
   <div class="btns"><button class="btn alt" id="rkBack" type="button">VOLVER</button></div>
 </div>
 <div id="settings" class="ov dark" hidden>
-  <h2>AJUSTES Y ACCESIBILIDAD</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>AJUSTES</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <div class="setSection">
     <h3 class="sub">ACCESIBILIDAD Y COMODIDAD</h3>
     <div class="setList">
@@ -95,7 +95,7 @@
   <p class="help"><b>Flechas / WASD</b> o arrastra para moverte. Las bolas de ki salen solas; pulsa <b>1</b> para una ráfaga de ki, <b>2</b> para tu onda (Kamehameha, Galick Gun...) y <b>3</b> para teletransportarte al enemigo más cercano y golpearle. Recoge orbes de ki, sube de nivel, elige técnicas y transfórmate. Cada 3 minutos llega un villano. Reúne las 7 Bolas de Dragón para pedir un deseo a Shenlong.</p>
 </div>
 <div id="mine" class="ov dark" hidden>
-  <h2>MIS SPRITES</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>MIS SPRITES</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <p class="help">1. Elige a quién cambiar. 2. Sube una imagen PNG; puede ser una hoja con muchos personajes. 3. Toca el sprite que quieres usar. Se guarda solo en este navegador.</p>
   <div class="btns">
     <label class="sel"><span>Personaje</span><select id="mWho"></select></label>
@@ -108,7 +108,7 @@
   <div class="btns"><button class="btn alt" id="mClear" type="button">BORRAR TODOS</button><button class="btn" id="mBack" type="button">LISTO</button></div>
 </div>
 <div id="gacha" class="ov dark" hidden>
-  <h2>GACHAPÓN DE SHENLONG</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>DESEOS DE SHENRON</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <div class="btns" id="gTabs"></div>
   <canvas id="gBanner" width="220" height="60" aria-hidden="true"></canvas>
   <p class="stat" id="gInfo"></p>
@@ -120,7 +120,7 @@
   <div class="gres" id="gRes"></div>
 </div>
 <div id="forge" class="ov dark" hidden>
-  <h2>CREA TU GUERRERO</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>CREA TU GUERRERO</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <p class="help">Sube la imagen de cualquier personaje, ponle nombre y elige su técnica. El juego lo anima solo. Se guarda únicamente en este navegador.</p>
   <canvas id="fPrev" width="180" height="200" style="image-rendering:pixelated;border:3px solid var(--edge)"></canvas>
   <p class="help" id="fInfo"></p>
@@ -135,7 +135,7 @@
   <div class="tgrid" id="fList"></div>
 </div>
 <div id="train" class="ov dark" hidden>
-  <h2>SALA DE ENTRENAMIENTO</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>SALA DE ENTRENAMIENTO</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <p class="help" id="tInfo"></p>
   <h3 class="sub">MEJORAS PERMANENTES</h3>
   <div class="tgrid" id="tList"></div>
@@ -150,14 +150,14 @@
   <div class="btns"><button class="btn alt" id="bkSave" type="button">GUARDAR COPIA</button><label class="btn alt" style="cursor:pointer">CARGAR COPIA<input id="bkLoad" type="file" accept=".json,application/json" hidden></label><button class="btn alt" id="trBack" type="button">VOLVER</button></div>
 </div>
 <div id="credits" class="ov dark" hidden>
-  <h2>CRÉDITOS</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>CRÉDITOS</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <div id="cList" class="help"></div>
   <p class="help">Sprites animados a partir de "Dragon Ball Sagas": qsab101, LukasAhl1, thekrillmaster, Manikdx2000, gogeta68, MV95, PeculiarDoc, LICHT y YoloKing777.</p>
   <p class="help">Juego de fans sin ánimo de lucro. Dragon Ball pertenece a Bird Studio, Shueisha y Toei Animation.</p>
   <div class="btns"><button class="btn alt" id="cBack" type="button">VOLVER</button></div>
 </div>
 <div id="maps" class="ov" hidden>
-  <h2>ELIGE ESCENARIO</h2>
+  <div class="menuTopBar"><button class="btnBack" type="button" aria-label="Volver">◀ VOLVER</button><h2>ELIGE ESCENARIO</h2><button class="btnClose" type="button" aria-label="Cerrar">✕</button></div>
   <div class="btns" id="diffs"></div>
   <p class="help" id="diffInfo"></p>
   <div class="chars" id="mapCards"></div>
@@ -191,4 +191,4 @@
 <script src="02 - Código del juego/efectos_pixelfx.js?v=1"></script>
 <script src="02 - Código del juego/andar.js?v=5"></script>
 <script src="02 - Código del juego/andar_frames.js?v=2"></script>
-<script src="02 - Código del juego/script.js?v=154"></script>
+<script src="02 - Código del juego/script.js?v=155"></script>

@@ -291,3 +291,198 @@ body.high-contrast .up .nm,body.high-contrast .card h3{color:#ffffff!important;t
 #rPlayForm:active{transform:translateY(1px);box-shadow:0 0 0 2px #000,1px 1px 0 2px #000}
 #roster .card.selected{border-color:var(--w16sel)!important;box-shadow:inset 0 0 0 3px var(--w16b),inset 0 0 0 5px var(--w16sel),0 0 0 2px #000,5px 5px 0 2px #000!important}
 #roster .card.selected::before{content:'▶';position:absolute;left:-18px;top:44px;color:var(--w16sel);font-family:var(--pix);font-size:12px;text-shadow:2px 2px 0 #000}
+
+/* Barra de navegación superior fija en cada menú modal */
+.menuTopBar {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(18, 10, 4, 0.96);
+  backdrop-filter: blur(6px);
+  padding: 10px 16px;
+  border-bottom: 3px solid #fed7aa;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px #000;
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+.menuTopBar h2 {
+  margin: 0;
+  font-family: var(--pix);
+  font-size: clamp(13px, 2.8vw, 20px);
+  color: var(--ki);
+  text-shadow: 2px 2px 0 #7a2405, 0 0 8px rgba(255, 210, 63, .4);
+  text-align: center;
+  flex: 1;
+  letter-spacing: 1px;
+}
+.btnBack {
+  font-family: var(--pix);
+  font-size: 11px;
+  background: linear-gradient(180deg, #ea580c, #c2410c);
+  color: #fff;
+  border: 2px solid #fef08a;
+  box-shadow: 0 3px 0 #7c2d12, 0 0 0 2px #000;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform .08s, filter .08s;
+  flex: none;
+  text-shadow: 1px 1px 0 #000;
+}
+.btnBack:hover, .btnBack:focus-visible {
+  filter: brightness(1.18);
+  transform: translateY(-2px);
+  outline: none;
+  box-shadow: 0 4px 0 #7c2d12, 0 0 10px rgba(254, 240, 138, .5), 0 0 0 2px #fff;
+}
+.btnBack:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #7c2d12, 0 0 0 2px #000;
+}
+.btnClose {
+  font-family: var(--pix);
+  font-size: 14px;
+  background: linear-gradient(180deg, #dc2626, #991b1b);
+  color: #fff;
+  border: 2px solid #fca5a5;
+  box-shadow: 0 3px 0 #7f1d1d, 0 0 0 2px #000;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  flex: none;
+  transition: transform .08s, filter .08s;
+  text-shadow: 1px 1px 0 #000;
+}
+.btnClose:hover, .btnClose:focus-visible {
+  filter: brightness(1.22);
+  transform: scale(1.08);
+  outline: none;
+  box-shadow: 0 4px 0 #7f1d1d, 0 0 10px rgba(239, 68, 68, .6), 0 0 0 2px #fff;
+}
+.btnClose:active {
+  transform: scale(0.95);
+}
+
+/* Botón estelar ¡A LUCHAR! / JUGAR estilo PokéSurvivor */
+.hitemPlay {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  border: 3px solid #fef08a !important;
+  box-shadow: 0 0 14px rgba(245, 158, 11, .7), 0 4px 0 #92400e, 0 0 0 2px #000 !important;
+  padding: 12px 14px !important;
+  margin-bottom: 6px !important;
+  animation: pulsePlay 2.6s infinite ease-in-out;
+}
+.hitemPlay b {
+  font-size: 16px !important;
+  color: #fff !important;
+  text-shadow: 2px 2px 0 #78350f, 0 0 6px #000 !important;
+  letter-spacing: 1px !important;
+}
+.hitemPlay small {
+  color: #fef3c7 !important;
+  font-size: 9px !important;
+  text-shadow: 1px 1px 0 #000 !important;
+}
+@keyframes pulsePlay {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.025); box-shadow: 0 0 20px rgba(251, 191, 36, .9), 0 4px 0 #92400e, 0 0 0 2px #fff !important; }
+}
+
+/* Mejoras permanentes de la sala de entrenamiento con pixel art de Dragon Ball */
+.up.train {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 14px !important;
+  text-align: left !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: rgba(30, 16, 8, 0.9) !important;
+  border: 3px solid #fed7aa !important;
+  border-radius: 10px !important;
+  box-shadow: 0 3px 0 #7c2d12, 0 0 0 2px #000 !important;
+  transition: transform .08s, border-color .1s, filter .08s !important;
+}
+.up.train:hover:not(:disabled) {
+  border-color: var(--ki) !important;
+  transform: translateY(-2px) !important;
+  filter: brightness(1.1) !important;
+}
+.up.train:disabled {
+  opacity: 0.65;
+  filter: grayscale(0.5);
+  cursor: not-allowed;
+}
+.up.train .trainIco {
+  width: 38px !important;
+  height: 38px !important;
+  flex: 0 0 38px !important;
+  image-rendering: pixelated !important;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.7));
+}
+.up.train .trainBody {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+.up.train .nm {
+  font-family: var(--pix) !important;
+  font-size: 12px !important;
+  color: var(--ki) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.up.train .nm i {
+  color: #fed7aa !important;
+  font-style: normal !important;
+  font-size: 10px !important;
+}
+.up.train .ds {
+  font-family: var(--retro) !important;
+  font-size: 16px !important;
+  color: #fff !important;
+  line-height: 1.1 !important;
+}
+.up.train .pr {
+  font-family: var(--pix) !important;
+  font-size: 9px !important;
+  color: #ffd23f !important;
+}
+
+/* Tarjetas de la tienda de Bulma */
+.card.shopCard {
+  background: linear-gradient(180deg, #1e293b, #0f172a) !important;
+  border: 3px solid #38bdf8 !important;
+  box-shadow: 0 0 10px rgba(56, 189, 248, .3), 0 4px 0 #0369a1, 0 0 0 2px #000 !important;
+}
+.card.shopCard:hover:not(.locked) {
+  border-color: #fde047 !important;
+  box-shadow: 0 0 16px rgba(253, 224, 71, .5), 0 4px 0 #ca8a04, 0 0 0 2px #fff !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Iconos en la barra de recursos superior */
+.hubTop .chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 11px !important;
+}
+.chipIcon {
+  font-size: 14px;
+}
