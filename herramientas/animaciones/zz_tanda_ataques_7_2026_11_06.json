@@ -1,0 +1,21 @@
+{
+  "_nota": "Séptima tanda de ataques que estaban en las hojas y no en el juego (6 nov. 2026). Revisada a ojo.",
+  "heroes": {
+    "vegetasuper": {
+      "0": { "attack2": [23, 24], "attack3": [11, 12], "kick2": [14, 15], "beam": [33, 34], "up": [20] },
+      "1": { "attack2": [23, 24], "attack3": [11, 12], "kick2": [14, 15], "beam": [33, 34], "up": [20] },
+      "2": { "attack2": [93, 94], "attack3": [104, 106], "kick2": [88, 89], "beam": [53, 54], "up": [117] },
+      "3": { "attack2": [80, 81], "attack3": [71, 72], "kick2": [37, 38], "beam": [57, 58], "up": [88] },
+      "4": { "attack2": [40, 41], "attack3": [68, 69], "kick2": [57, 58], "beam": [24, 25], "up": [42] }
+    },
+    "vegetaue": {
+      "0": { "attack2": [82, 83], "attack3": [61, 62], "kick2": [34, 35], "beam": [56, 30], "up": [53] },
+      "1": { "attack2": [71, 72], "attack3": [45, 46], "kick2": [58, 59], "beam": [42, 73], "up": [43] },
+      "2": { "attack2": [21, 33], "beam": [44, 46] },
+      "3": { "attack2": [31, 33], "attack3": [37, 38], "kick2": [40, 44], "beam": [86, 81], "up": [67] }
+    },
+    "gohanadult": {
+      "0": { "attack2": [46, 47], "attack3": [48, 49], "kick2": [45, 41], "beam": [79, 83], "up": [15] }
+    }
+  }
+}

@@ -6,8 +6,8 @@ Generada con `python herramientas/auditar_animaciones.py`. Compara `sprites/` co
 
 - Carpetas con imágenes: **405** (37468 imágenes). En el juego: **302**. Sin usar: **103**.
 - De las 103 sin usar, 10 son escenarios, referencias o Shenron; quedan **93** con personajes (6655 imágenes).
-- En los packs usados hay 30590 imágenes y el juego usa **5847** (19 %).
-- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **71**. Sin ninguno: **123**.
+- En los packs usados hay 30590 imágenes y el juego usa **5926** (19 %).
+- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **80**. Sin ninguno: **113**.
 - Formas solo de enemigo u otras: 40.
 
 Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no cuenta porque reutiliza el cuerpo del vuelo.
@@ -16,15 +16,13 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 
 | Personaje | Formas | Fotogramas en sus packs | Usados | Ataques extra que faltan |
 |---|---:|---:|---:|---:|
-| vegetasuper | 5 | 459 | 90 | 25 |
 | blackfan | 4 | 522 | 74 | 20 |
-| vegetaue | 4 | 406 | 76 | 20 |
 | gokumoro | 5 | 445 | 80 | 19 |
 | blacktime | 3 | 514 | 55 | 15 |
-| gohanadult | 3 | 341 | 51 | 15 |
 | trunkscell | 3 | 177 | 48 | 15 |
 | vegetagt | 3 | 236 | 55 | 15 |
 | gokuui | 5 | 357 | 107 | 11 |
+| gohanadult | 3 | 341 | 60 | 10 |
 | gokubroly | 4 | 286 | 86 | 10 |
 | kale | 2 | 100 | 31 | 10 |
 | kefla | 2 | 253 | 35 | 10 |
@@ -126,6 +124,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokugt | 4 | 422 | 106 | 3 |
 | jiren | 3 | 295 | 62 | 3 |
 | moro | 1 | 52 | 20 | 3 |
+| vegetaue | 4 | 406 | 107 | 3 |
 | a17 | 1 | 41 | 21 | 2 |
 | bardock | 3 | 271 | 70 | 2 |
 | black | 3 | 359 | 68 | 2 |
@@ -180,6 +179,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | toppo | 1 | 77 | 27 | 0 |
 | turles | 2 | 166 | 51 | 0 |
 | uub | 1 | 93 | 28 | 0 |
+| vegetasuper | 5 | 459 | 133 | 0 |
 | vegettofan | 4 | 691 | 98 | 0 |
 | yamcha | 1 | 79 | 22 | 0 |
 | zombies | 3 | 396 | 74 | 0 |

@@ -4007,3 +4007,19 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Tanda 7: elegir diez formas de la tabla de `AUDITORIA_ANIMACIONES.md`, empezando por las que más ataques extra tienen pendientes. También queda pendiente el camino de vuelta de Piskel al juego.
+
+## 2026-11-06 — Claude Opus 5.5 (tanda 7 de ataques)
+
+### Lo que pidió el usuario
+- Josemi: «Sí, tanda 7».
+
+### Lo que hice
+- `herramientas/animaciones/zz_tanda_ataques_7_2026_11_06.json`: 47 animaciones en 10 formas (las cinco de `vegetasuper`, las cuatro de `vegetaue` y `gohanadult/0`). Revisadas a ojo y vistas en partida con Playwright, sin errores de consola. Exportadas a `piskel_animaciones/`.
+- Formas jugables sin ningún ataque extra: de 123 a 113. Con los 5 completos: de 71 a 80.
+
+### A medias / problemas
+- `vegetaue/2` solo recibe `attack2` y `beam`: el pack es corto y casi todo lo útil ya está en uso.
+- Las poses `Beam` y `Up` se probaron forzando el estado de la técnica; los combos, por el motor. No se ha jugado una partida completa.
+
+### Siguiente paso recomendado
+- Tanda 8: elegir diez formas de la lista de pendientes de `AUDITORIA_ANIMACIONES.md`. También queda pendiente el camino de vuelta de Piskel al juego.
