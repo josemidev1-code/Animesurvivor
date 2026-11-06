@@ -3,10 +3,13 @@ import sys
 import json
 import base64
 import io
+import math
+from functools import reduce
 from PIL import Image
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from montar_animaciones import leer_config, cargar_forma, tira, CLAVES, DUR, RAIZ
+from importar_piskel import huella
+from montar_animaciones import leer_config, cargar_forma, tira, CLAVES, DUR, RAIZ, claves_forma
 
 def export_to_piskel(heroe, forma, out_dir="piskel_animaciones"):
     config = leer_config()
@@ -15,6 +18,7 @@ def export_to_piskel(heroe, forma, out_dir="piskel_animaciones"):
         return False
         
     f = config[heroe][forma]
+    claves = claves_forma(f)
     anims, portrait, scale = cargar_forma(f)
     
     char_dir = os.path.join(RAIZ, out_dir, f"{heroe}_{forma}")
@@ -24,6 +28,7 @@ def export_to_piskel(heroe, forma, out_dir="piskel_animaciones"):
     print(f"Guardando en: {char_dir}")
     
     exported = []
+    manifest = {'heroe': heroe, 'forma': forma, 'pack': f['pack'], 'frames': []}
     
     for anim_name, frames in anims.items():
         if not frames:
@@ -48,16 +53,20 @@ def export_to_piskel(heroe, forma, out_dir="piskel_animaciones"):
             # Align bottom-center (feet on ground)
             x = (box_size - fr.width) // 2
             y = box_size - fr.height
-            frame_img.paste(fr, (x, y), fr)
+            frame_img.paste(fr, (x, y))
             frame_path = os.path.join(anim_dir, f"frame_{idx:02d}.png")
             frame_img.save(frame_path)
             aligned_frames.append(frame_img)
+            clave = next(k for k, v in claves.items() if v == anim_name)
+            manifest['frames'].append({'sha256': huella(frame_img), 'indice': f[clave][idx]})
             
         # 2. Save Animated GIF (Drag & drop into Piskel)
         gif_path = os.path.join(anim_dir, f"{heroe}_{anim_name}.gif")
-        durations = [120] * len(aligned_frames)
+        clave = next(k for k, v in claves.items() if v == anim_name)
+        ticks = f.get(clave + 'Du') or [DUR.get(anim_name, 12)] * len(aligned_frames)
+        durations = [round(t * 1000 / 60) for t in ticks]
         # Check specific durations from config
-        clave = [k for k, v in CLAVES.items() if v == anim_name]
+        clave = [k for k, v in claves.items() if v == anim_name]
         if clave:
             du_key = clave[0] + 'Du'
             if du_key in f:
@@ -80,18 +89,24 @@ def export_to_piskel(heroe, forma, out_dir="piskel_animaciones"):
         strip.save(strip_path)
         
         # 4. Generate native .piskel file
+        # Piskel tiene una sola velocidad: repetir celdas conserva los tiempos de cada pose.
+        step = reduce(math.gcd, ticks)
+        timeline = [i for i, duration in enumerate(ticks) for _ in range(duration // step)]
+        native_strip = Image.new('RGBA', (box_size * len(timeline), box_size))
+        for cell, index in enumerate(timeline):
+            native_strip.paste(aligned_frames[index], (cell * box_size, 0))
         buf = io.BytesIO()
-        strip.save(buf, format='PNG')
+        native_strip.save(buf, format='PNG')
         b64_png = "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode('ascii')
         
         layer_dict = {
             "name": f"{anim_name} Layer",
             "opacity": 1,
-            "frameCount": len(aligned_frames),
+            "frameCount": len(timeline),
             "chunks": [
                 {
                     # Piskel divide el ancho entre len(layout): una entrada por fotograma de la tira
-                    "layout": [[i] for i in range(len(aligned_frames))],
+                    "layout": [[i] for i in range(len(timeline))],
                     "base64PNG": b64_png
                 }
             ]
@@ -102,7 +117,7 @@ def export_to_piskel(heroe, forma, out_dir="piskel_animaciones"):
             "piskel": {
                 "name": f"{heroe}_{anim_name}",
                 "description": f"Animación {anim_name} de {heroe} para AnimeSurvivor",
-                "fps": 8,
+                "fps": 60 / step,
                 "height": box_size,
                 "width": box_size,
                 "layers": [
@@ -125,6 +140,9 @@ def export_to_piskel(heroe, forma, out_dir="piskel_animaciones"):
         })
         print(f"  [{anim_name}]: {len(frames)} frames -> GIF, Sheet PNG y .piskel generados ({box_size}x{box_size})")
         
+    with open(os.path.join(char_dir, 'origen.json'), 'w', encoding='utf-8') as mf:
+        json.dump(manifest, mf, ensure_ascii=False, indent=2)
+
     # Generate README for this character in piskel_animaciones
     readme_path = os.path.join(char_dir, "LEEME_PISKEL.md")
     lines = [
@@ -133,12 +151,16 @@ def export_to_piskel(heroe, forma, out_dir="piskel_animaciones"):
         "Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).",
         "",
         "## Cómo abrir en Piskel:",
-        "1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.",
+        "1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.",
         "2. Haz clic en el icono de carpeta de la barra derecha (**Import**).",
         "3. Elige cualquiera de estas opciones:",
         "   - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.",
         "   - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).",
         "   - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).",
+        "",
+        "## Volver al juego:",
+        f"`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/{heroe}_{forma}/origen.json --heroe {heroe} --forma {forma} --anim attack --aplicar`",
+        f"Después: `python herramientas/montar_animaciones.py {heroe}` y revisión visual. Solo se aceptan sprites originales exportados.",
         "",
         "## Animaciones disponibles:",
         "",
