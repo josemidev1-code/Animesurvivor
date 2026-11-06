@@ -25,5 +25,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 3 | 96x96 | [`piccolo_Attack3.piskel`](Attack3/piccolo_Attack3.piskel) | [`piccolo_Attack3.gif`](Attack3/piccolo_Attack3.gif) | [`piccolo_Attack3_sheet.png`](Attack3/piccolo_Attack3_sheet.png) |
 | **Kick2** | 3 | 60x60 | [`piccolo_Kick2.piskel`](Kick2/piccolo_Kick2.piskel) | [`piccolo_Kick2.gif`](Kick2/piccolo_Kick2.gif) | [`piccolo_Kick2_sheet.png`](Kick2/piccolo_Kick2_sheet.png) |
 | **Beam** | 2 | 70x70 | [`piccolo_Beam.piskel`](Beam/piccolo_Beam.piskel) | [`piccolo_Beam.gif`](Beam/piccolo_Beam.gif) | [`piccolo_Beam_sheet.png`](Beam/piccolo_Beam_sheet.png) |
-| **Up** | 1 | 62x62 | [`piccolo_Up.piskel`](Up/piccolo_Up.piskel) | [`piccolo_Up.gif`](Up/piccolo_Up.gif) | [`piccolo_Up_sheet.png`](Up/piccolo_Up_sheet.png) |
-| **Dash** | 1 | 70x70 | [`piccolo_Dash.piskel`](Dash/piccolo_Dash.piskel) | [`piccolo_Dash.gif`](Dash/piccolo_Dash.gif) | [`piccolo_Dash_sheet.png`](Dash/piccolo_Dash_sheet.png) |
+| **Dash** | 1 | 62x62 | [`piccolo_Dash.piskel`](Dash/piccolo_Dash.piskel) | [`piccolo_Dash.gif`](Dash/piccolo_Dash.gif) | [`piccolo_Dash_sheet.png`](Dash/piccolo_Dash_sheet.png) |

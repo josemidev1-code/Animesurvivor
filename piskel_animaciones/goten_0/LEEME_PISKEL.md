@@ -27,4 +27,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Kick2** | 2 | 56x56 | [`goten_Kick2.piskel`](Kick2/goten_Kick2.piskel) | [`goten_Kick2.gif`](Kick2/goten_Kick2.gif) | [`goten_Kick2_sheet.png`](Kick2/goten_Kick2_sheet.png) |
 | **Beam** | 2 | 84x84 | [`goten_Beam.piskel`](Beam/goten_Beam.piskel) | [`goten_Beam.gif`](Beam/goten_Beam.gif) | [`goten_Beam_sheet.png`](Beam/goten_Beam_sheet.png) |
 | **Up** | 1 | 52x52 | [`goten_Up.piskel`](Up/goten_Up.piskel) | [`goten_Up.gif`](Up/goten_Up.gif) | [`goten_Up_sheet.png`](Up/goten_Up_sheet.png) |
-| **Dash** | 1 | 102x102 | [`goten_Dash.piskel`](Dash/goten_Dash.piskel) | [`goten_Dash.gif`](Dash/goten_Dash.gif) | [`goten_Dash_sheet.png`](Dash/goten_Dash_sheet.png) |
+| **Dash** | 1 | 44x44 | [`goten_Dash.piskel`](Dash/goten_Dash.piskel) | [`goten_Dash.gif`](Dash/goten_Dash.gif) | [`goten_Dash_sheet.png`](Dash/goten_Dash_sheet.png) |

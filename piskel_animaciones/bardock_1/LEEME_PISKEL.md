@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 54x54 | [`bardock_Attack3.piskel`](Attack3/bardock_Attack3.piskel) | [`bardock_Attack3.gif`](Attack3/bardock_Attack3.gif) | [`bardock_Attack3_sheet.png`](Attack3/bardock_Attack3_sheet.png) |
 | **Kick2** | 2 | 54x54 | [`bardock_Kick2.piskel`](Kick2/bardock_Kick2.piskel) | [`bardock_Kick2.gif`](Kick2/bardock_Kick2.gif) | [`bardock_Kick2_sheet.png`](Kick2/bardock_Kick2_sheet.png) |
 | **Beam** | 2 | 58x58 | [`bardock_Beam.piskel`](Beam/bardock_Beam.piskel) | [`bardock_Beam.gif`](Beam/bardock_Beam.gif) | [`bardock_Beam_sheet.png`](Beam/bardock_Beam_sheet.png) |
-| **Up** | 1 | 58x58 | [`bardock_Up.piskel`](Up/bardock_Up.piskel) | [`bardock_Up.gif`](Up/bardock_Up.gif) | [`bardock_Up_sheet.png`](Up/bardock_Up_sheet.png) |
-| **Dash** | 1 | 56x56 | [`bardock_Dash.piskel`](Dash/bardock_Dash.piskel) | [`bardock_Dash.gif`](Dash/bardock_Dash.gif) | [`bardock_Dash_sheet.png`](Dash/bardock_Dash_sheet.png) |
+| **Dash** | 1 | 62x62 | [`bardock_Dash.piskel`](Dash/bardock_Dash.piskel) | [`bardock_Dash.gif`](Dash/bardock_Dash.gif) | [`bardock_Dash_sheet.png`](Dash/bardock_Dash_sheet.png) |

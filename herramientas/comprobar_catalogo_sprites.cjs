@@ -35,4 +35,8 @@ const duration=actor.atkD;
 actor.atkT-=.1;
 vm.runInContext(source.slice(begin,end),sandbox);
 assert.equal(actor.atkV,2);assert.equal(actor.atkD,duration);assert(actor.atkT<duration,'El segundo impacto no debe reiniciar el clip');
-console.log('Combo: conserva variante y progreso entre impactos.');
+// Un disparo automático a mitad de combo (atkK=1) no debe pisar la animación del combo.
+const antes=actor.atkT;actor.atkK=1;actor.atkT=actor.atkD=0.24;actor.atkA=Math.PI;
+vm.runInContext(source.slice(begin,end),sandbox);
+assert.equal(actor.atkK,0);assert.equal(actor.atkD,duration);assert(actor.atkT<antes,'El combo sigue su propio reloj');assert.equal(actor.atkA,0);
+console.log('Combo: conserva variante y progreso entre impactos, aunque salte un disparo.');

@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 70x70 | [`black_Attack3.piskel`](Attack3/black_Attack3.piskel) | [`black_Attack3.gif`](Attack3/black_Attack3.gif) | [`black_Attack3_sheet.png`](Attack3/black_Attack3_sheet.png) |
 | **Kick2** | 2 | 70x70 | [`black_Kick2.piskel`](Kick2/black_Kick2.piskel) | [`black_Kick2.gif`](Kick2/black_Kick2.gif) | [`black_Kick2_sheet.png`](Kick2/black_Kick2_sheet.png) |
 | **Beam** | 2 | 76x76 | [`black_Beam.piskel`](Beam/black_Beam.piskel) | [`black_Beam.gif`](Beam/black_Beam.gif) | [`black_Beam_sheet.png`](Beam/black_Beam_sheet.png) |
-| **Up** | 1 | 64x64 | [`black_Up.piskel`](Up/black_Up.piskel) | [`black_Up.gif`](Up/black_Up.gif) | [`black_Up_sheet.png`](Up/black_Up_sheet.png) |
-| **Dash** | 1 | 64x64 | [`black_Dash.piskel`](Dash/black_Dash.piskel) | [`black_Dash.gif`](Dash/black_Dash.gif) | [`black_Dash_sheet.png`](Dash/black_Dash_sheet.png) |
+| **Dash** | 2 | 66x66 | [`black_Dash.piskel`](Dash/black_Dash.piskel) | [`black_Dash.gif`](Dash/black_Dash.gif) | [`black_Dash_sheet.png`](Dash/black_Dash_sheet.png) |

@@ -27,4 +27,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Kick2** | 2 | 58x58 | [`gohan_Kick2.piskel`](Kick2/gohan_Kick2.piskel) | [`gohan_Kick2.gif`](Kick2/gohan_Kick2.gif) | [`gohan_Kick2_sheet.png`](Kick2/gohan_Kick2_sheet.png) |
 | **Beam** | 2 | 60x60 | [`gohan_Beam.piskel`](Beam/gohan_Beam.piskel) | [`gohan_Beam.gif`](Beam/gohan_Beam.gif) | [`gohan_Beam_sheet.png`](Beam/gohan_Beam_sheet.png) |
 | **Up** | 1 | 58x58 | [`gohan_Up.piskel`](Up/gohan_Up.piskel) | [`gohan_Up.gif`](Up/gohan_Up.gif) | [`gohan_Up_sheet.png`](Up/gohan_Up_sheet.png) |
-| **Dash** | 1 | 56x56 | [`gohan_Dash.piskel`](Dash/gohan_Dash.piskel) | [`gohan_Dash.gif`](Dash/gohan_Dash.gif) | [`gohan_Dash_sheet.png`](Dash/gohan_Dash_sheet.png) |
+| **Dash** | 1 | 48x48 | [`gohan_Dash.piskel`](Dash/gohan_Dash.piskel) | [`gohan_Dash.gif`](Dash/gohan_Dash.gif) | [`gohan_Dash_sheet.png`](Dash/gohan_Dash_sheet.png) |

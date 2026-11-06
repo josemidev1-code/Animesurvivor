@@ -23,8 +23,8 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Hurt** | 2 | 62x62 | [`gohan_Hurt.piskel`](Hurt/gohan_Hurt.piskel) | [`gohan_Hurt.gif`](Hurt/gohan_Hurt.gif) | [`gohan_Hurt_sheet.png`](Hurt/gohan_Hurt_sheet.png) |
 | **Faint** | 1 | 60x60 | [`gohan_Faint.piskel`](Faint/gohan_Faint.piskel) | [`gohan_Faint.gif`](Faint/gohan_Faint.gif) | [`gohan_Faint_sheet.png`](Faint/gohan_Faint_sheet.png) |
 | **Attack2** | 3 | 62x62 | [`gohan_Attack2.piskel`](Attack2/gohan_Attack2.piskel) | [`gohan_Attack2.gif`](Attack2/gohan_Attack2.gif) | [`gohan_Attack2_sheet.png`](Attack2/gohan_Attack2_sheet.png) |
-| **Attack3** | 2 | 70x70 | [`gohan_Attack3.piskel`](Attack3/gohan_Attack3.piskel) | [`gohan_Attack3.gif`](Attack3/gohan_Attack3.gif) | [`gohan_Attack3_sheet.png`](Attack3/gohan_Attack3_sheet.png) |
+| **Attack3** | 2 | 66x66 | [`gohan_Attack3.piskel`](Attack3/gohan_Attack3.piskel) | [`gohan_Attack3.gif`](Attack3/gohan_Attack3.gif) | [`gohan_Attack3_sheet.png`](Attack3/gohan_Attack3_sheet.png) |
 | **Kick2** | 2 | 64x64 | [`gohan_Kick2.piskel`](Kick2/gohan_Kick2.piskel) | [`gohan_Kick2.gif`](Kick2/gohan_Kick2.gif) | [`gohan_Kick2_sheet.png`](Kick2/gohan_Kick2_sheet.png) |
 | **Beam** | 2 | 64x64 | [`gohan_Beam.piskel`](Beam/gohan_Beam.piskel) | [`gohan_Beam.gif`](Beam/gohan_Beam.gif) | [`gohan_Beam_sheet.png`](Beam/gohan_Beam_sheet.png) |
-| **Up** | 1 | 70x70 | [`gohan_Up.piskel`](Up/gohan_Up.piskel) | [`gohan_Up.gif`](Up/gohan_Up.gif) | [`gohan_Up_sheet.png`](Up/gohan_Up_sheet.png) |
+| **Up** | 3 | 68x68 | [`gohan_Up.piskel`](Up/gohan_Up.piskel) | [`gohan_Up.gif`](Up/gohan_Up.gif) | [`gohan_Up_sheet.png`](Up/gohan_Up_sheet.png) |
 | **Dash** | 1 | 70x70 | [`gohan_Dash.piskel`](Dash/gohan_Dash.piskel) | [`gohan_Dash.gif`](Dash/gohan_Dash.gif) | [`gohan_Dash_sheet.png`](Dash/gohan_Dash_sheet.png) |

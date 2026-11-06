@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 80x80 | [`freezer_Attack3.piskel`](Attack3/freezer_Attack3.piskel) | [`freezer_Attack3.gif`](Attack3/freezer_Attack3.gif) | [`freezer_Attack3_sheet.png`](Attack3/freezer_Attack3_sheet.png) |
 | **Kick2** | 2 | 80x80 | [`freezer_Kick2.piskel`](Kick2/freezer_Kick2.piskel) | [`freezer_Kick2.gif`](Kick2/freezer_Kick2.gif) | [`freezer_Kick2_sheet.png`](Kick2/freezer_Kick2_sheet.png) |
 | **Beam** | 2 | 102x102 | [`freezer_Beam.piskel`](Beam/freezer_Beam.piskel) | [`freezer_Beam.gif`](Beam/freezer_Beam.gif) | [`freezer_Beam_sheet.png`](Beam/freezer_Beam_sheet.png) |
-| **Up** | 1 | 54x54 | [`freezer_Up.piskel`](Up/freezer_Up.piskel) | [`freezer_Up.gif`](Up/freezer_Up.gif) | [`freezer_Up_sheet.png`](Up/freezer_Up_sheet.png) |
-| **Dash** | 1 | 50x50 | [`freezer_Dash.piskel`](Dash/freezer_Dash.piskel) | [`freezer_Dash.gif`](Dash/freezer_Dash.gif) | [`freezer_Dash_sheet.png`](Dash/freezer_Dash_sheet.png) |
+| **Dash** | 1 | 82x82 | [`freezer_Dash.piskel`](Dash/freezer_Dash.piskel) | [`freezer_Dash.gif`](Dash/freezer_Dash.gif) | [`freezer_Dash_sheet.png`](Dash/freezer_Dash_sheet.png) |

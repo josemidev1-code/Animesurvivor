@@ -103,3 +103,8 @@ Actualizado: 5 de noviembre de 2026.
 ## 6 nov. — Enemigos que vienen a por ti
 - Sprint de llegada y sin paradas; los tiradores ya no huyen. Primer contacto a los 2,7-5,5 s (antes 7,5-11,5 s). Pendiente de que Josemi lo valore jugando. Sustituye la decisión del 2 nov. de tiradores a distancia y avisos que paran.
 - script.js?v=172.
+
+## 6 nov. — Auditoría de sprites y primera tanda de ataques
+
+- Auditoría en `AUDITORIA_ANIMACIONES.md` (`python herramientas/auditar_animaciones.py`): 93 carpetas con personajes sin usar, 17 % de imágenes usadas en los packs montados, 173 de 273 formas jugables sin ataques extra.
+- Montados 31 ataques en 10 formas (`zz_tanda_ataques_2026_11_06.json`). El combo ya no lo pisa el disparo automático. Exportador a Piskel corregido. Falta el camino de vuelta de Piskel al juego.

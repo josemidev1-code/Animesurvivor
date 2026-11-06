@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 62x62 | [`gogeta_Attack3.piskel`](Attack3/gogeta_Attack3.piskel) | [`gogeta_Attack3.gif`](Attack3/gogeta_Attack3.gif) | [`gogeta_Attack3_sheet.png`](Attack3/gogeta_Attack3_sheet.png) |
 | **Kick2** | 2 | 70x70 | [`gogeta_Kick2.piskel`](Kick2/gogeta_Kick2.piskel) | [`gogeta_Kick2.gif`](Kick2/gogeta_Kick2.gif) | [`gogeta_Kick2_sheet.png`](Kick2/gogeta_Kick2_sheet.png) |
 | **Beam** | 2 | 64x64 | [`gogeta_Beam.piskel`](Beam/gogeta_Beam.piskel) | [`gogeta_Beam.gif`](Beam/gogeta_Beam.gif) | [`gogeta_Beam_sheet.png`](Beam/gogeta_Beam_sheet.png) |
-| **Up** | 1 | 62x62 | [`gogeta_Up.piskel`](Up/gogeta_Up.piskel) | [`gogeta_Up.gif`](Up/gogeta_Up.gif) | [`gogeta_Up_sheet.png`](Up/gogeta_Up_sheet.png) |
 | **Dash** | 1 | 58x58 | [`gogeta_Dash.piskel`](Dash/gogeta_Dash.piskel) | [`gogeta_Dash.gif`](Dash/gogeta_Dash.gif) | [`gogeta_Dash_sheet.png`](Dash/gogeta_Dash_sheet.png) |

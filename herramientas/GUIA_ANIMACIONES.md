@@ -96,3 +96,10 @@ En `herramientas/animaciones/ataques.json`, opcionales por forma (el juego usa l
 `beam` = `[carga, disparo]` propios de los rayos tipo Kamehameha (si falta, se usa `ki`), `up` = brazos arriba para
 Genkidama, Kienzan… (si falta, `pow`) y `dash` = embestida. Mismas reglas que el resto: un solo pack, la forma del nombre,
 nada de efectos sueltos. Ejemplo revisado: `goku` forma `0`.
+
+## Auditoría y Piskel (6/11/2026)
+
+- `python herramientas/auditar_animaciones.py` lista los packs sin usar y los ataques que faltan por personaje (`01 - Guía y documentación/AUDITORIA_ANIMACIONES.md`).
+- Las tandas nuevas van en un `herramientas/animaciones/zz_*.json`: se mezcla el último, campo a campo. Ejemplo: `zz_tanda_ataques_2026_11_06.json`.
+- `dash` no aporta ataque nuevo: la prueba del catálogo exige que sea igual que el vuelo.
+- `python herramientas/exportar_piskel_lote.py <heroe>` genera `piskel_animaciones/<heroe>_<forma>/` con `.piskel`, GIF y hoja. Es solo de ida: lo retocado en Piskel aún no vuelve al juego.

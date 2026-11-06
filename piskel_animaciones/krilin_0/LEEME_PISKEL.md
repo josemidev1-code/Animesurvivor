@@ -27,4 +27,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Kick2** | 2 | 62x62 | [`krilin_Kick2.piskel`](Kick2/krilin_Kick2.piskel) | [`krilin_Kick2.gif`](Kick2/krilin_Kick2.gif) | [`krilin_Kick2_sheet.png`](Kick2/krilin_Kick2_sheet.png) |
 | **Beam** | 2 | 50x50 | [`krilin_Beam.piskel`](Beam/krilin_Beam.piskel) | [`krilin_Beam.gif`](Beam/krilin_Beam.gif) | [`krilin_Beam_sheet.png`](Beam/krilin_Beam_sheet.png) |
 | **Up** | 1 | 48x48 | [`krilin_Up.piskel`](Up/krilin_Up.piskel) | [`krilin_Up.gif`](Up/krilin_Up.gif) | [`krilin_Up_sheet.png`](Up/krilin_Up_sheet.png) |
-| **Dash** | 1 | 96x96 | [`krilin_Dash.piskel`](Dash/krilin_Dash.piskel) | [`krilin_Dash.gif`](Dash/krilin_Dash.gif) | [`krilin_Dash_sheet.png`](Dash/krilin_Dash_sheet.png) |
+| **Dash** | 1 | 58x58 | [`krilin_Dash.piskel`](Dash/krilin_Dash.piskel) | [`krilin_Dash.gif`](Dash/krilin_Dash.gif) | [`krilin_Dash_sheet.png`](Dash/krilin_Dash_sheet.png) |

@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 62x62 | [`jiren_Attack3.piskel`](Attack3/jiren_Attack3.piskel) | [`jiren_Attack3.gif`](Attack3/jiren_Attack3.gif) | [`jiren_Attack3_sheet.png`](Attack3/jiren_Attack3_sheet.png) |
 | **Kick2** | 2 | 60x60 | [`jiren_Kick2.piskel`](Kick2/jiren_Kick2.piskel) | [`jiren_Kick2.gif`](Kick2/jiren_Kick2.gif) | [`jiren_Kick2_sheet.png`](Kick2/jiren_Kick2_sheet.png) |
 | **Beam** | 2 | 78x78 | [`jiren_Beam.piskel`](Beam/jiren_Beam.piskel) | [`jiren_Beam.gif`](Beam/jiren_Beam.gif) | [`jiren_Beam_sheet.png`](Beam/jiren_Beam_sheet.png) |
-| **Up** | 1 | 60x60 | [`jiren_Up.piskel`](Up/jiren_Up.piskel) | [`jiren_Up.gif`](Up/jiren_Up.gif) | [`jiren_Up_sheet.png`](Up/jiren_Up_sheet.png) |
 | **Dash** | 1 | 54x54 | [`jiren_Dash.piskel`](Dash/jiren_Dash.piskel) | [`jiren_Dash.gif`](Dash/jiren_Dash.gif) | [`jiren_Dash_sheet.png`](Dash/jiren_Dash_sheet.png) |

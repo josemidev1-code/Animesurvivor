@@ -26,4 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 56x56 | [`goku_Attack3.piskel`](Attack3/goku_Attack3.piskel) | [`goku_Attack3.gif`](Attack3/goku_Attack3.gif) | [`goku_Attack3_sheet.png`](Attack3/goku_Attack3_sheet.png) |
 | **Beam** | 2 | 52x52 | [`goku_Beam.piskel`](Beam/goku_Beam.piskel) | [`goku_Beam.gif`](Beam/goku_Beam.gif) | [`goku_Beam_sheet.png`](Beam/goku_Beam_sheet.png) |
 | **Up** | 2 | 68x68 | [`goku_Up.piskel`](Up/goku_Up.piskel) | [`goku_Up.gif`](Up/goku_Up.gif) | [`goku_Up_sheet.png`](Up/goku_Up_sheet.png) |
-| **Dash** | 2 | 78x78 | [`goku_Dash.piskel`](Dash/goku_Dash.piskel) | [`goku_Dash.gif`](Dash/goku_Dash.gif) | [`goku_Dash_sheet.png`](Dash/goku_Dash_sheet.png) |
+| **Dash** | 1 | 66x66 | [`goku_Dash.piskel`](Dash/goku_Dash.piskel) | [`goku_Dash.gif`](Dash/goku_Dash.gif) | [`goku_Dash_sheet.png`](Dash/goku_Dash_sheet.png) |

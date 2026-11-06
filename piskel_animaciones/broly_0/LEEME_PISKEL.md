@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 76x76 | [`broly_Attack3.piskel`](Attack3/broly_Attack3.piskel) | [`broly_Attack3.gif`](Attack3/broly_Attack3.gif) | [`broly_Attack3_sheet.png`](Attack3/broly_Attack3_sheet.png) |
 | **Kick2** | 2 | 76x76 | [`broly_Kick2.piskel`](Kick2/broly_Kick2.piskel) | [`broly_Kick2.gif`](Kick2/broly_Kick2.gif) | [`broly_Kick2_sheet.png`](Kick2/broly_Kick2_sheet.png) |
 | **Beam** | 2 | 90x90 | [`broly_Beam.piskel`](Beam/broly_Beam.piskel) | [`broly_Beam.gif`](Beam/broly_Beam.gif) | [`broly_Beam_sheet.png`](Beam/broly_Beam_sheet.png) |
-| **Up** | 1 | 84x84 | [`broly_Up.piskel`](Up/broly_Up.piskel) | [`broly_Up.gif`](Up/broly_Up.gif) | [`broly_Up_sheet.png`](Up/broly_Up_sheet.png) |
-| **Dash** | 1 | 130x130 | [`broly_Dash.piskel`](Dash/broly_Dash.piskel) | [`broly_Dash.gif`](Dash/broly_Dash.gif) | [`broly_Dash_sheet.png`](Dash/broly_Dash_sheet.png) |
+| **Dash** | 1 | 88x88 | [`broly_Dash.piskel`](Dash/broly_Dash.piskel) | [`broly_Dash.gif`](Dash/broly_Dash.gif) | [`broly_Dash_sheet.png`](Dash/broly_Dash_sheet.png) |

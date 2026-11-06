@@ -90,7 +90,8 @@ def export_to_piskel(heroe, forma, out_dir="piskel_animaciones"):
             "frameCount": len(aligned_frames),
             "chunks": [
                 {
-                    "layout": [[0]],
+                    # Piskel divide el ancho entre len(layout): una entrada por fotograma de la tira
+                    "layout": [[i] for i in range(len(aligned_frames))],
                     "base64PNG": b64_png
                 }
             ]

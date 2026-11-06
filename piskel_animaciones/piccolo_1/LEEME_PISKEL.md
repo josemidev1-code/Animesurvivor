@@ -22,9 +22,8 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Pow** | 2 | 62x62 | [`piccolo_Pow.piskel`](Pow/piccolo_Pow.piskel) | [`piccolo_Pow.gif`](Pow/piccolo_Pow.gif) | [`piccolo_Pow_sheet.png`](Pow/piccolo_Pow_sheet.png) |
 | **Hurt** | 2 | 62x62 | [`piccolo_Hurt.piskel`](Hurt/piccolo_Hurt.piskel) | [`piccolo_Hurt.gif`](Hurt/piccolo_Hurt.gif) | [`piccolo_Hurt_sheet.png`](Hurt/piccolo_Hurt_sheet.png) |
 | **Faint** | 1 | 66x66 | [`piccolo_Faint.piskel`](Faint/piccolo_Faint.piskel) | [`piccolo_Faint.gif`](Faint/piccolo_Faint.gif) | [`piccolo_Faint_sheet.png`](Faint/piccolo_Faint_sheet.png) |
-| **Attack2** | 3 | 134x134 | [`piccolo_Attack2.piskel`](Attack2/piccolo_Attack2.piskel) | [`piccolo_Attack2.gif`](Attack2/piccolo_Attack2.gif) | [`piccolo_Attack2_sheet.png`](Attack2/piccolo_Attack2_sheet.png) |
-| **Attack3** | 2 | 86x86 | [`piccolo_Attack3.piskel`](Attack3/piccolo_Attack3.piskel) | [`piccolo_Attack3.gif`](Attack3/piccolo_Attack3.gif) | [`piccolo_Attack3_sheet.png`](Attack3/piccolo_Attack3_sheet.png) |
+| **Attack2** | 3 | 66x66 | [`piccolo_Attack2.piskel`](Attack2/piccolo_Attack2.piskel) | [`piccolo_Attack2.gif`](Attack2/piccolo_Attack2.gif) | [`piccolo_Attack2_sheet.png`](Attack2/piccolo_Attack2_sheet.png) |
+| **Attack3** | 2 | 112x112 | [`piccolo_Attack3.piskel`](Attack3/piccolo_Attack3.piskel) | [`piccolo_Attack3.gif`](Attack3/piccolo_Attack3.gif) | [`piccolo_Attack3_sheet.png`](Attack3/piccolo_Attack3_sheet.png) |
 | **Kick2** | 2 | 62x62 | [`piccolo_Kick2.piskel`](Kick2/piccolo_Kick2.piskel) | [`piccolo_Kick2.gif`](Kick2/piccolo_Kick2.gif) | [`piccolo_Kick2_sheet.png`](Kick2/piccolo_Kick2_sheet.png) |
 | **Beam** | 2 | 58x58 | [`piccolo_Beam.piskel`](Beam/piccolo_Beam.piskel) | [`piccolo_Beam.gif`](Beam/piccolo_Beam.gif) | [`piccolo_Beam_sheet.png`](Beam/piccolo_Beam_sheet.png) |
-| **Up** | 1 | 72x72 | [`piccolo_Up.piskel`](Up/piccolo_Up.piskel) | [`piccolo_Up.gif`](Up/piccolo_Up.gif) | [`piccolo_Up_sheet.png`](Up/piccolo_Up_sheet.png) |
-| **Dash** | 1 | 94x94 | [`piccolo_Dash.piskel`](Dash/piccolo_Dash.piskel) | [`piccolo_Dash.gif`](Dash/piccolo_Dash.gif) | [`piccolo_Dash_sheet.png`](Dash/piccolo_Dash_sheet.png) |
+| **Dash** | 1 | 60x60 | [`piccolo_Dash.piskel`](Dash/piccolo_Dash.piskel) | [`piccolo_Dash.gif`](Dash/piccolo_Dash.gif) | [`piccolo_Dash_sheet.png`](Dash/piccolo_Dash_sheet.png) |

@@ -27,4 +27,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Kick2** | 2 | 62x62 | [`trunks_Kick2.piskel`](Kick2/trunks_Kick2.piskel) | [`trunks_Kick2.gif`](Kick2/trunks_Kick2.gif) | [`trunks_Kick2_sheet.png`](Kick2/trunks_Kick2_sheet.png) |
 | **Beam** | 2 | 72x72 | [`trunks_Beam.piskel`](Beam/trunks_Beam.piskel) | [`trunks_Beam.gif`](Beam/trunks_Beam.gif) | [`trunks_Beam_sheet.png`](Beam/trunks_Beam_sheet.png) |
 | **Up** | 1 | 68x68 | [`trunks_Up.piskel`](Up/trunks_Up.piskel) | [`trunks_Up.gif`](Up/trunks_Up.gif) | [`trunks_Up_sheet.png`](Up/trunks_Up_sheet.png) |
-| **Dash** | 1 | 60x60 | [`trunks_Dash.piskel`](Dash/trunks_Dash.piskel) | [`trunks_Dash.gif`](Dash/trunks_Dash.gif) | [`trunks_Dash_sheet.png`](Dash/trunks_Dash_sheet.png) |
+| **Dash** | 1 | 68x68 | [`trunks_Dash.piskel`](Dash/trunks_Dash.piskel) | [`trunks_Dash.gif`](Dash/trunks_Dash.gif) | [`trunks_Dash_sheet.png`](Dash/trunks_Dash_sheet.png) |

@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 64x64 | [`a18_Attack3.piskel`](Attack3/a18_Attack3.piskel) | [`a18_Attack3.gif`](Attack3/a18_Attack3.gif) | [`a18_Attack3_sheet.png`](Attack3/a18_Attack3_sheet.png) |
 | **Kick2** | 2 | 52x52 | [`a18_Kick2.piskel`](Kick2/a18_Kick2.piskel) | [`a18_Kick2.gif`](Kick2/a18_Kick2.gif) | [`a18_Kick2_sheet.png`](Kick2/a18_Kick2_sheet.png) |
 | **Beam** | 2 | 60x60 | [`a18_Beam.piskel`](Beam/a18_Beam.piskel) | [`a18_Beam.gif`](Beam/a18_Beam.gif) | [`a18_Beam_sheet.png`](Beam/a18_Beam_sheet.png) |
-| **Up** | 1 | 64x64 | [`a18_Up.piskel`](Up/a18_Up.piskel) | [`a18_Up.gif`](Up/a18_Up.gif) | [`a18_Up_sheet.png`](Up/a18_Up_sheet.png) |
-| **Dash** | 1 | 64x64 | [`a18_Dash.piskel`](Dash/a18_Dash.piskel) | [`a18_Dash.gif`](Dash/a18_Dash.gif) | [`a18_Dash_sheet.png`](Dash/a18_Dash_sheet.png) |
+| **Dash** | 1 | 60x60 | [`a18_Dash.piskel`](Dash/a18_Dash.piskel) | [`a18_Dash.gif`](Dash/a18_Dash.gif) | [`a18_Dash_sheet.png`](Dash/a18_Dash_sheet.png) |

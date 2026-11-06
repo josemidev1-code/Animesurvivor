@@ -27,4 +27,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Kick2** | 2 | 48x48 | [`yamcha_Kick2.piskel`](Kick2/yamcha_Kick2.piskel) | [`yamcha_Kick2.gif`](Kick2/yamcha_Kick2.gif) | [`yamcha_Kick2_sheet.png`](Kick2/yamcha_Kick2_sheet.png) |
 | **Beam** | 2 | 58x58 | [`yamcha_Beam.piskel`](Beam/yamcha_Beam.piskel) | [`yamcha_Beam.gif`](Beam/yamcha_Beam.gif) | [`yamcha_Beam_sheet.png`](Beam/yamcha_Beam_sheet.png) |
 | **Up** | 1 | 52x52 | [`yamcha_Up.piskel`](Up/yamcha_Up.piskel) | [`yamcha_Up.gif`](Up/yamcha_Up.gif) | [`yamcha_Up_sheet.png`](Up/yamcha_Up_sheet.png) |
-| **Dash** | 1 | 52x52 | [`yamcha_Dash.piskel`](Dash/yamcha_Dash.piskel) | [`yamcha_Dash.gif`](Dash/yamcha_Dash.gif) | [`yamcha_Dash_sheet.png`](Dash/yamcha_Dash_sheet.png) |
+| **Dash** | 1 | 44x44 | [`yamcha_Dash.piskel`](Dash/yamcha_Dash.piskel) | [`yamcha_Dash.gif`](Dash/yamcha_Dash.gif) | [`yamcha_Dash_sheet.png`](Dash/yamcha_Dash_sheet.png) |

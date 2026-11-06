@@ -3899,3 +3899,25 @@ ode --check.
 
 ### A medias / problemas
 - Medido con el jugador quieto, no jugando de verdad: el ajuste fino de dificultad necesita que Josemi lo juegue. Los valores están en `ROL_AJ` (`turbo`, `aviso`, `cargaAviso`); se pueden probar en marcha con `window.AS.rol`.
+
+## 2026-11-06 — Claude Opus 5.5 (auditoría de sprites y primera tanda de ataques)
+
+### Lo que pidió el usuario
+- Josemi: «Quiero que de los sprites buenos hagas las animaciones en el juego, con Piskel. Y si ya hay animaciones, haz las que quedan». Cree que no están todos los sprites dentro del juego, ni animados, y que hay muchos ataques en las hojas que no salen en partida. Pide comprobarlo.
+
+### Lo que hice
+- Auditoría repetible: `python herramientas/auditar_animaciones.py` escribe `AUDITORIA_ANIMACIONES.md`. Josemi tiene razón: 93 carpetas con personajes sin usar (6.655 imágenes), el juego usa el 17 % de las imágenes de los packs que sí usa y 173 de 273 formas jugables no tienen ningún ataque extra.
+- Primera tanda en `herramientas/animaciones/zz_tanda_ataques_2026_11_06.json`: 31 animaciones en 10 formas (Goku SSJ2 y SSJ3, Vegeta base y SSJ, Piccolo naranja con brazo elástico, Gohan SSJ2, Hit, Bills, Raditz y Cooler). Revisadas a ojo y probadas en partida en el navegador.
+- Error corregido: `vegeta/1` usaba en sus combos fotogramas de Vegeta tumbado, con pelo negro y con pelo blanco.
+- Error del motor corregido: un disparo automático pisaba la animación del combo cuerpo a cuerpo. Ahora el combo lleva su propio reloj. Prueba añadida en `comprobar_catalogo_sprites.cjs`.
+- Piskel: `preparar_piskel.py` escribía `layout: [[0]]` y los `.piskel` de varios fotogramas se abrían como uno solo. Corregido y comprobado con el deserializador real de piskelapp.com. Reexportadas las 63 carpetas de `piskel_animaciones/`, cuatro de ellas nuevas (Hit, Bills, Raditz y Cooler).
+
+### A medias / problemas
+- Quedan 32 carpetas de animación sobrantes en `piskel_animaciones/` (29 `Up` y 3 `Attack` que ya no tienen selección en el juego). El borrado automático quedó bloqueado por permisos: decide Josemi.
+- Sin material en el pack: `kick2` de `goku/0`, `attack3` y `up` de `goku/1`. `up` de `piccolo/1` sin pose clara.
+- `goku/1` tiene en `hurt` un fotograma tumbado (26), contra la regla de la guía. Sin tocar.
+- No hay vuelta de Piskel al juego: `montar_animaciones.py` solo lee `sprites/`, así que un retoque en Piskel todavía no llega a partida.
+- Las poses `Up` y `Beam` se probaron forzando el estado de la técnica; los combos, por el motor. No se ha jugado una partida completa.
+
+### Siguiente paso recomendado
+- Tanda 2: Nappa, Ginyu, A16, A17, Turles, Zamasu, Toppo, Moro, Janemba y Frost. Después, los packs grandes con pocos fotogramas usados (`gokubluedbfz`, `gokussj2buu`).

@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 68x68 | [`buu_Attack3.piskel`](Attack3/buu_Attack3.piskel) | [`buu_Attack3.gif`](Attack3/buu_Attack3.gif) | [`buu_Attack3_sheet.png`](Attack3/buu_Attack3_sheet.png) |
 | **Kick2** | 2 | 88x88 | [`buu_Kick2.piskel`](Kick2/buu_Kick2.piskel) | [`buu_Kick2.gif`](Kick2/buu_Kick2.gif) | [`buu_Kick2_sheet.png`](Kick2/buu_Kick2_sheet.png) |
 | **Beam** | 2 | 66x66 | [`buu_Beam.piskel`](Beam/buu_Beam.piskel) | [`buu_Beam.gif`](Beam/buu_Beam.gif) | [`buu_Beam_sheet.png`](Beam/buu_Beam_sheet.png) |
-| **Up** | 1 | 54x54 | [`buu_Up.piskel`](Up/buu_Up.piskel) | [`buu_Up.gif`](Up/buu_Up.gif) | [`buu_Up_sheet.png`](Up/buu_Up_sheet.png) |
-| **Dash** | 1 | 94x94 | [`buu_Dash.piskel`](Dash/buu_Dash.piskel) | [`buu_Dash.gif`](Dash/buu_Dash.gif) | [`buu_Dash_sheet.png`](Dash/buu_Dash_sheet.png) |
+| **Dash** | 1 | 68x68 | [`buu_Dash.piskel`](Dash/buu_Dash.piskel) | [`buu_Dash.gif`](Dash/buu_Dash.gif) | [`buu_Dash_sheet.png`](Dash/buu_Dash_sheet.png) |

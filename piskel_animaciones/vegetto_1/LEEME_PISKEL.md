@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 56x56 | [`vegetto_Attack3.piskel`](Attack3/vegetto_Attack3.piskel) | [`vegetto_Attack3.gif`](Attack3/vegetto_Attack3.gif) | [`vegetto_Attack3_sheet.png`](Attack3/vegetto_Attack3_sheet.png) |
 | **Kick2** | 2 | 52x52 | [`vegetto_Kick2.piskel`](Kick2/vegetto_Kick2.piskel) | [`vegetto_Kick2.gif`](Kick2/vegetto_Kick2.gif) | [`vegetto_Kick2_sheet.png`](Kick2/vegetto_Kick2_sheet.png) |
 | **Beam** | 2 | 68x68 | [`vegetto_Beam.piskel`](Beam/vegetto_Beam.piskel) | [`vegetto_Beam.gif`](Beam/vegetto_Beam.gif) | [`vegetto_Beam_sheet.png`](Beam/vegetto_Beam_sheet.png) |
-| **Up** | 1 | 54x54 | [`vegetto_Up.piskel`](Up/vegetto_Up.piskel) | [`vegetto_Up.gif`](Up/vegetto_Up.gif) | [`vegetto_Up_sheet.png`](Up/vegetto_Up_sheet.png) |
-| **Dash** | 1 | 78x78 | [`vegetto_Dash.piskel`](Dash/vegetto_Dash.piskel) | [`vegetto_Dash.gif`](Dash/vegetto_Dash.gif) | [`vegetto_Dash_sheet.png`](Dash/vegetto_Dash_sheet.png) |
+| **Dash** | 1 | 60x60 | [`vegetto_Dash.piskel`](Dash/vegetto_Dash.piskel) | [`vegetto_Dash.gif`](Dash/vegetto_Dash.gif) | [`vegetto_Dash_sheet.png`](Dash/vegetto_Dash_sheet.png) |

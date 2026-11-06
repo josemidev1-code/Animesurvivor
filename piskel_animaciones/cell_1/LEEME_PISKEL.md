@@ -26,5 +26,4 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Attack3** | 2 | 68x68 | [`cell_Attack3.piskel`](Attack3/cell_Attack3.piskel) | [`cell_Attack3.gif`](Attack3/cell_Attack3.gif) | [`cell_Attack3_sheet.png`](Attack3/cell_Attack3_sheet.png) |
 | **Kick2** | 2 | 74x74 | [`cell_Kick2.piskel`](Kick2/cell_Kick2.piskel) | [`cell_Kick2.gif`](Kick2/cell_Kick2.gif) | [`cell_Kick2_sheet.png`](Kick2/cell_Kick2_sheet.png) |
 | **Beam** | 2 | 64x64 | [`cell_Beam.piskel`](Beam/cell_Beam.piskel) | [`cell_Beam.gif`](Beam/cell_Beam.gif) | [`cell_Beam_sheet.png`](Beam/cell_Beam_sheet.png) |
-| **Up** | 1 | 166x166 | [`cell_Up.piskel`](Up/cell_Up.piskel) | [`cell_Up.gif`](Up/cell_Up.gif) | [`cell_Up_sheet.png`](Up/cell_Up_sheet.png) |
-| **Dash** | 1 | 158x158 | [`cell_Dash.piskel`](Dash/cell_Dash.piskel) | [`cell_Dash.gif`](Dash/cell_Dash.gif) | [`cell_Dash_sheet.png`](Dash/cell_Dash_sheet.png) |
+| **Dash** | 1 | 62x62 | [`cell_Dash.piskel`](Dash/cell_Dash.piskel) | [`cell_Dash.gif`](Dash/cell_Dash.gif) | [`cell_Dash_sheet.png`](Dash/cell_Dash_sheet.png) |

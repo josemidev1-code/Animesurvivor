@@ -3127,7 +3127,9 @@ function sigUpdate(dt,ps){
     if(!C.animStarted){
       C.animStarted=true;
       P.atkT=P.atkD=C.n*0.09+0.1;
-      P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;
+      P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;C.aD=C.aT=P.atkD;
+    }else{// el combo manda en la animación: un disparo automático no le pisa la pose (lleva su propio reloj)
+      C.aT-=dt;P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;P.atkD=C.aD;P.atkT=C.aT;
     }
     if((C.t-=dt)<=0){C.t=0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;let tocado=0;
 
@@ -7094,6 +7096,7 @@ function render(time){
 
       else if(pk){// moverse y atacar a la vez (Josemi, 2 nov.): golpes, patadas, ki y preparación de técnicas se ven también en vuelo; el aura de poder solo quieto
 
+        if(P.combo&&P.combo.animStarted){const C=P.combo;P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;P.atkD=C.aD;P.atkT=C.aT}
         const mv=P.moving&&!P.cast&&!P.dead,pw=!mv&&P.powT>0,pd=P.pend,ak=P.atkT>0,
 
         left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),UP=pk.Up||pk.Pow,atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(varAnim(pk,'Kick',P.atkV)||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(varAnim(pk,'Attack',P.atkV)||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&UP?UP:pk.Cast):P.cast?(pk.Beam||pk.Cast):P.hitT>0?pk.Hurt:P.dash&&pk.Dash?pk.Dash:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&(A===pk.Pow||A===UP)?((time*8|0)%A.R.length):A===pk.Dash?0:pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
