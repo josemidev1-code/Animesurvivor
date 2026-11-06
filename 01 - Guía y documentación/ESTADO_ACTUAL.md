@@ -94,3 +94,7 @@ Actualizado: 5 de noviembre de 2026.
 - Cuatro comprobaciones (`enemigos`, `formas`, `objetos`, `rotacion`) ya fallaban antes de este trabajo y siguen pendientes.
 - script.js?v=167, style.css?v=90, ui_imagenes.js?v=67.
 
+
+## 6 nov. — Resto de menús
+- Josemi aprobó el estilo de la interfaz. Tienda, Ranking, Elige escenario, Cápsulas y Ajustes ya lo siguen. Personajes conserva las ventanas azules por decisión suya.
+- script.js?v=170, style.css?v=91.

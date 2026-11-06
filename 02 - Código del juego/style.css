@@ -380,18 +380,6 @@ body.high-contrast .up .nm,body.high-contrast .card h3{color:#ffffff!important;t
   50% { transform: scale(1.025); box-shadow: 0 0 20px rgba(251, 191, 36, .9), 0 4px 0 #92400e, 0 0 0 2px #fff !important; }
 }
 
-/* Tarjetas de la tienda de Bulma */
-.card.shopCard {
-  background: linear-gradient(180deg, #1e293b, #0f172a) !important;
-  border: 3px solid #38bdf8 !important;
-  box-shadow: 0 0 10px rgba(56, 189, 248, .3), 0 4px 0 #0369a1, 0 0 0 2px #000 !important;
-}
-.card.shopCard:hover:not(.locked) {
-  border-color: #fde047 !important;
-  box-shadow: 0 0 16px rgba(253, 224, 71, .5), 0 4px 0 #ca8a04, 0 0 0 2px #fff !important;
-  transform: translateY(-3px) !important;
-}
-
 /* Iconos en la barra de recursos superior */
 .hubTop .chip {
   display: inline-flex !important;
@@ -604,3 +592,55 @@ body.high-contrast .up .nm,body.high-contrast .card h3{color:#ffffff!important;t
 #levelup .up.wish .lv{order:-1}
 #levelup .up.wish canvas{width:48px!important;height:48px!important;margin-top:4px}
 .comp{aspect-ratio:1.2}
+
+/* --- tienda --- */
+#shInfo{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;max-width:none}
+#shInfo small{flex-basis:100%;font-family:var(--vt);font-size:18px;line-height:1;color:#b9c6f5}
+#shList{gap:16px}
+.card.shopCard{--c:#fb923c;position:relative;width:210px;padding:8px 12px 12px;gap:6px;align-items:center;text-align:center;background:linear-gradient(180deg,var(--navy3),var(--navy));border:3px solid #f97316;border-radius:0;box-shadow:0 0 0 2px var(--ink0),0 6px 0 2px var(--ink0);transition:transform .08s,filter .08s,border-color .08s}
+.card.shopCard:hover:not(.locked),.card.shopCard:focus-visible:not(.locked){transform:translateY(-5px);filter:brightness(1.12);border-color:var(--gold);outline:none}
+.card.shopCard canvas{width:64px;height:64px;image-rendering:pixelated;filter:drop-shadow(0 3px 0 rgba(0,0,0,.55))}
+.card.shopCard h3{font-size:12px;color:#fff;text-shadow:2px 2px 0 var(--ink0)}
+.card.shopCard p{font-family:var(--vt);font-size:18px;line-height:1;color:var(--txt);min-height:2em}
+.card.shopCard .stats{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;background:#16a34a;box-shadow:inset 0 1px 0 #86efac,inset 0 -2px 0 #14532d;font-family:var(--pix);font-size:10px;color:#fff}
+.card.shopCard.locked{border-color:#3b4a9c;cursor:not-allowed}
+.card.shopCard.locked canvas{filter:grayscale(.55) opacity(.65) drop-shadow(0 3px 0 rgba(0,0,0,.55))}
+.card.shopCard.locked h3,.card.shopCard.locked p{opacity:.65}
+.card.shopCard.locked .stats{background:var(--ink0);box-shadow:none;color:#fca5a5}
+
+/* --- ranking --- */
+#rkList{display:flex;flex-direction:column;align-items:center;gap:10px;width:min(900px,100%);max-width:none;color:var(--txt)}
+.rkRows{display:flex;flex-direction:column;gap:6px;width:min(620px,100%)}
+.rkRow{display:grid;grid-template-columns:28px 40px minmax(0,1fr) auto auto;align-items:center;gap:10px;padding:4px 12px 4px 6px;background:linear-gradient(180deg,var(--navy3),var(--navy2));box-shadow:0 0 0 2px #3b4a9c,0 0 0 4px var(--ink0);font-family:var(--pix);font-size:10px;color:#fff}
+.rkRow img{width:40px;height:40px;object-fit:contain;image-rendering:pixelated;background:var(--ink0)}
+.rkRow b{font-weight:400;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;text-shadow:2px 2px 0 var(--ink0)}
+.rkPos{display:grid;place-items:center;height:26px;background:var(--ink0);color:#b9c6f5}
+.rkT{color:var(--gold)}.rkK{font-family:var(--vt);font-size:18px;color:#b9c6f5}
+.rkRow.top1{box-shadow:0 0 0 2px var(--gold),0 0 0 4px var(--ink0)}.rkRow.top1 .rkPos{background:var(--gold);color:#3a2300}
+.rkRow.top2{box-shadow:0 0 0 2px #cbd5e1,0 0 0 4px var(--ink0)}.rkRow.top2 .rkPos{background:#cbd5e1;color:#1e293b}
+.rkRow.top3{box-shadow:0 0 0 2px #d97706,0 0 0 4px var(--ink0)}.rkRow.top3 .rkPos{background:#d97706;color:#fff7ed}
+.rkMaps{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;width:100%}
+.rkMap{display:grid;grid-template-columns:48px minmax(0,1fr);grid-template-rows:auto auto;column-gap:8px;align-items:center;padding:3px 8px 3px 3px;background:var(--navy2);box-shadow:inset 0 0 0 1px #2c3570;text-align:left}
+.rkMap img{grid-row:1/span 2;width:48px;height:32px;object-fit:cover;filter:grayscale(.75) brightness(.6)}
+.rkMap.ok{box-shadow:inset 0 0 0 1px var(--gold2)}.rkMap.ok img{filter:none}
+.rkMap span{font-family:var(--vt);font-size:17px;line-height:1;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rkMap b{font-family:var(--pix);font-size:7px;font-weight:400;line-height:1.3}
+
+/* --- escenarios --- */
+#mapCards{gap:12px}
+#mapCards .card{width:176px;padding:0 0 8px;gap:4px;overflow:hidden;background:linear-gradient(180deg,var(--navy2),var(--navy));border:3px solid #3b4a9c;border-radius:0;box-shadow:0 0 0 2px var(--ink0),0 5px 0 2px var(--ink0);transition:transform .08s,border-color .08s,filter .08s}
+#mapCards .card:hover:not(.locked),#mapCards .card:focus-visible:not(.locked){transform:translateY(-4px);filter:brightness(1.1);border-color:var(--gold);outline:none}
+#mapCards .card .map{display:block;width:100%;height:96px;object-fit:cover;border:0;border-bottom:3px solid var(--ink0)}
+#mapCards .card h3{padding:4px 8px 0;font-size:10px;line-height:1.35;color:var(--gold);text-shadow:2px 2px 0 var(--ink0)}
+#mapCards .card p{padding:0 8px;font-family:var(--vt);font-size:17px;line-height:1;color:var(--txt)}
+#mapCards .card .bosses{padding:0 8px;font-family:var(--vt);font-size:15px;line-height:1.02;color:#fca5a5}
+#mapCards .card .stats.clr{margin-top:auto;padding:0 8px;font-family:var(--pix);font-size:7px;color:#9db4f5}
+#diffInfo{font-family:var(--vt);font-size:19px;line-height:1.05;color:var(--txt)}
+
+/* --- cápsulas y textos de ayuda --- */
+#gInfo{font-family:var(--pix);font-size:10px;padding:6px 12px;background:var(--navy);box-shadow:0 0 0 2px #3b4a9c,0 0 0 4px var(--ink0)}
+#gRates{font-family:var(--vt);font-size:18px;line-height:1.08;color:var(--txt);max-width:680px}
+#gBanner{box-shadow:0 0 0 3px #f97316,0 0 0 6px var(--ink0)}
+#gTabs .btn,#diffs .btn{padding:9px 12px}
+.setSection .sub{font-size:9px;color:var(--gold);text-align:center;border-bottom:0;padding-bottom:0}
+.setList .btn{font-size:10px;padding:11px 10px}

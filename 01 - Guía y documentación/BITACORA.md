@@ -3872,3 +3872,14 @@ ode --check.
 ### Siguiente paso recomendado
 - Que Josemi juegue y valore el nuevo aspecto; ajustar según su opinión.
 
+
+## 2026-11-06 — Claude Opus 5.5 (resto de menús)
+
+### Lo que pidió el usuario
+- Tras ver la interfaz nueva: «Me gusta, sigue».
+
+### Lo que hice
+- Tienda con tarjetas y precio verde o rojo; los iconos ya no se vuelven manchas negras al no llegar al precio. Añadida `esfera7`, que mostraba el cuadrado provisional.
+- Ranking con filas, retrato y medallas para los tres primeros, y escenarios superados en cuadrícula con portada.
+- Elige escenario en azul marino con jefes legibles. Retoques en cápsulas y ajustes. Personajes no se toca: sus ventanas azules las eligió Josemi.
+- Probado a 1280x720 y 390x844 sin desbordes ni errores de consola, con datos de ranking de prueba solo en el navegador de pruebas.

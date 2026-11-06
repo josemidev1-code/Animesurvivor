@@ -2247,7 +2247,7 @@ const CARD_ICONS={
 
 };
 
-const ALL_OBJ_KEYS=['senzu','capsulaVida','capsulaKi','radar','kinton','bastongoku','scouter','scouterRojo','pesas','mafuba','capsulacorp','senzuBolsa','capsulaDorada','capsulaRoja','armaduraSaiyan','crit','knockback','zenkai','area','aura_burst','melee','sword','esfera4'];
+const ALL_OBJ_KEYS=['senzu','capsulaVida','capsulaKi','radar','kinton','bastongoku','scouter','scouterRojo','pesas','mafuba','capsulacorp','senzuBolsa','capsulaDorada','capsulaRoja','armaduraSaiyan','crit','knockback','zenkai','area','aura_burst','melee','sword','esfera4','esfera7'];
 
 for(const id of ALL_OBJ_KEYS){
 
@@ -8763,18 +8763,18 @@ const SHOP=[
 
 function openShop(){hideMenus();state='title';$('#shop').hidden=false;drawShop()}
 
-function drawShop(){const s=loadSave();$('#shInfo').innerHTML=`Tienes <b>🪙 ${s.zeni}</b> zeni y <b>🎫 ${s.tickets}</b> tickets. El zeni se gana jugando partidas y derrotando enemigos.`;
+function drawShop(){const s=loadSave();$('#shInfo').innerHTML=`<span class="resChip"><i class="pxCoin"></i>${s.zeni}<em>ZENI</em></span><span class="resChip"><i class="pxTick"></i>${s.tickets}<em>TICKETS</em></span><small>El zeni se gana jugando partidas y derrotando enemigos.</small>`;
   const box=$('#shList');box.innerHTML='';SHOP.forEach(it=>{const b=document.createElement('button');b.type='button';b.className='card shopCard';const ok=s.zeni>=it.c;if(!ok)b.classList.add('locked');
-    const z=icon(it.ic||'capsulacorp',48);
-    b.appendChild(z);
-    b.insertAdjacentHTML('beforeend',`<h3>${it.n}</h3><p>${it.d}</p><span class="stats">🪙 ${it.c} ZENI</span>`);
+    const fr=document.createElement('span');fr.className='upIco';fr.appendChild(icon(it.ic||'capsulacorp',32));
+    b.appendChild(fr);
+    b.insertAdjacentHTML('beforeend',`<h3>${it.n}</h3><p>${it.d}</p><span class="stats"><i class="pxCoin"></i>${it.c}</span>`);
     b.onclick=()=>{const s=loadSave();if(s.zeni<it.c){sfx('hurt');return}s.zeni-=it.c;s.tickets+=it.t;writeSave();sfx('gem');drawShop()};box.appendChild(b)})}
 
 function openRank(){hideMenus();state='title';$('#rank').hidden=false;const best=loadBest(),rows=Object.keys(best).filter(k=>HEROES[k]).sort((a,b)=>best[b].t-best[a].t);
 
-  $('#rkList').innerHTML=(rows.length?rows.map((k,i)=>`<p class="stat">${i+1}. <b>${HEROES[k].name}</b> · ${fmt(best[k].t)} · ${best[k].k} derrotados</p>`).join(''):'<p class="help">Juega una partida para entrar en el ranking.</p>')
+  $('#rkList').innerHTML=(rows.length?'<div class="rkRows">'+rows.map((k,i)=>`<div class="rkRow${i<3?' top'+(i+1):''}"><span class="rkPos">${i+1}</span><img src="${portrait(k,0)}" alt=""><b>${HEROES[k].name}</b><span class="rkT">${fmt(best[k].t)}</span><span class="rkK">${best[k].k} KO</span></div>`).join('')+'</div>':'<p class="help">Juega una partida para entrar en el ranking.</p>')
 
-    +'<h3 class="sub">ESCENARIOS SUPERADOS</h3>'+Object.keys(MAPS).map(k=>{const c=mapClear(k);return `<p class="stat">${MAPS[k].name} · <b style="color:${c>=0?DIFF[c].c:'var(--dim)'}">${c>=0?DIFF[c].n:'—'}</b></p>`}).join('')}
+    +'<h3 class="sub">ESCENARIOS SUPERADOS</h3><div class="rkMaps">'+Object.keys(MAPS).map(k=>{const c=mapClear(k);return `<div class="rkMap${c>=0?' ok':''}">${window.MAP_COVER&&MAP_COVER[k]?`<img src="${MAP_COVER[k]}" alt="">`:''}<span>${MAPS[k].name}</span><b style="color:${c>=0?DIFF[c].c:'#7c8bc4'}">${c>=0?DIFF[c].n:'—'}</b></div>`}).join('')+'</div>'}
 
 function openSettings(){hideMenus();state='title';$('#settings').hidden=false;setLabels()}
 
