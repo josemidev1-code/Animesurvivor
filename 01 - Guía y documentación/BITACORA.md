@@ -4088,3 +4088,18 @@ ode --check.
 - La fila «antes» de la comparación se recreó llamando al efecto antiguo; no es una captura de la versión anterior.
 - Otras explosiones, como la bola de Slug, pueden seguir tapando al personaje. No se han tocado.
 - Falta que Josemi lo valore jugando.
+
+
+## 2026-11-06 — Codex (coherencia entre técnicas y animaciones)
+
+### Lo que pidió el usuario
+- «Que las animaciones de ataque coincidan con el ataque»: ha visto muchas incoherencias. Animar todos los personajes con los sprites existentes y aprovechar Piskel para juntar fotogramas y montar ataques bonitos.
+
+### Lo que hice
+- Motor común: mantiene la postura al lanzar bolas/discos/bombas, separa aura de disparo, respeta tiempos de fotogramas, retrasa daño del combo hasta finalizar la preparación y conserva las animaciones de espada durante el impacto.
+- Secuencias específicas `tecnica_ID` y anclas de carga/lanzamiento. Correcciones en 24 formas de 17 IDs, incluidas variantes de puño que eran patadas/espada y efectos sueltos que sustituían al personaje.
+- Piskel: exportación con tiempos originales mediante repetición de fotogramas, manifiesto de procedencia e importación validada de secuencias originales. Pruebas específicas correctas; revisión y publicación en curso.
+
+### A medias / problemas
+- El motor se aplica a todo el plantel; la prueba del navegador recorrió 270 formas visibles y 1.522 combinaciones forma/técnica, sin errores de carga. Esto no equivale a revisar todos los fotogramas ni todos los ataques nuevos a ojo.
+- Siguen formas sin poses extra propias: no se rellenan con selecciones automáticas sin revisión. Suite Python general en ejecución; una comprobación de línea base ya indica fallo y se está contrastando con la versión anterior.

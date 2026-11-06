@@ -25,6 +25,12 @@ ALTO_BASE = 52  # alto en píxeles de la postura de guardia de un adulto (ver "a
 nat = lambda s: [int(t) if t.isdigit() else t.lower() for t in re.split(r'(\d+)', s)]
 
 
+def claves_forma(f):
+    """Permite poses propias de una técnica, sin mezclar packs ni modificar el runtime."""
+    return {**CLAVES, **{k: 'Tecnica_' + k[len('tecnica_'):] for k, v in f.items()
+                        if k.startswith('tecnica_') and isinstance(v, list) and not k.endswith(('Du', 'Origen'))}}
+
+
 def frames_del_pack(pack):
     d = os.path.join(SPRITES, pack)
     if not os.path.isdir(d):
@@ -140,10 +146,11 @@ def data_url(im):
 
 def cargar_forma(f):
     """Fotogramas ya limpios y reducidos de cada animación de una forma: {'Idle': [img,...], ...}, retrato."""
+    claves = claves_forma(f)
     rutas = frames_del_pack(f['pack'])
     if f.get('pack2'):  # pack hermano (p. ej. el de daño aparte): sus fotogramas se numeran desde 1000
         rutas = dict(enumerate(rutas)); rutas.update({1000 + j: r for j, r in enumerate(frames_del_pack(f['pack2']))})
-    usados = sorted({i for k in CLAVES for i in f.get(k, [])} | ({f['portrait']} if 'portrait' in f else set()))
+    usados = sorted({i for k in claves for i in f.get(k, [])} | ({f['portrait']} if 'portrait' in f else set()))
     malos = [i for i in usados if i not in rutas] if isinstance(rutas, dict) else [i for i in usados if i >= len(rutas)]
     if malos: raise SystemExit(f"{f['pack']}: el pack solo tiene {len(rutas)} fotogramas (0-{len(rutas) - 1}); no existen {malos}")
     crudos = {i: limpiar(rutas[i]) for i in usados}
@@ -174,7 +181,7 @@ def cargar_forma(f):
     k = (f.get('altura') or ALTO_BASE) / altos[len(altos) // 2] if altos else 1
     if abs(k - 1) > 0.04:
         peq = {i: im.resize((max(1, round(im.width * k)), max(1, round(im.height * k))), Image.NEAREST) for i, im in peq.items()}
-    anims = {nombre: [peq[i] for i in f[k2]] for k2, nombre in CLAVES.items() if f.get(k2)}
+    anims = {nombre: [peq[i] for i in f[k2]] for k2, nombre in claves.items() if f.get(k2)}
     if 'Hurt' in anims:  # nunca tumbado en el suelo: si un fotograma de daño está tumbado se usa el de pie
         de_pie = [im for im in anims['Hurt'] if (lambda b: (b[2] - b[0]) <= 1.35 * (b[3] - b[1]))(im.getbbox())]
         if de_pie: anims['Hurt'] = [de_pie[min(j, len(de_pie) - 1)] for j in range(len(anims['Hurt']))]
@@ -196,11 +203,13 @@ def cargar_forma(f):
 def montar_forma(f):
     anims, ret, _ = cargar_forma(f)
     out = {}
-    for k, nombre in CLAVES.items():
+    for k, nombre in claves_forma(f).items():
         if nombre not in anims: continue
         im, cw, ch = tira(anims[nombre])
-        du = f.get(k + 'Du') or [DUR[nombre]] * len(anims[nombre])
+        du = f.get(k + 'Du') or [DUR.get(nombre, 12)] * len(anims[nombre])
         out[nombre] = {'w': cw, 'h': ch, 'du': du, 'url': data_url(im)}
+        if f.get(k + 'Origen'):
+            out[nombre]['origen'] = f[k + 'Origen']
     res = {'anims': out, 'pack': f['pack']}
     if ret: res['portrait'] = data_url(ret)
     # sin cara grande propia ni de otro pack: el retrato es un recorte del sprite; la selección no lo enseña

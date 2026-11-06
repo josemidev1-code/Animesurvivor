@@ -3099,6 +3099,36 @@ function sigReach(W,st){return W.kind==='melee'?st.reach:W.kind==='sword'?st.rad
 
 // si el enemigo está encima o debajo, la bola sale de la mano por arriba o por abajo
 
+// La misma selección de pose se usa al preparar, soltar y dibujar una técnica.
+function attackPose(W){
+  if(W.pose==='kick')return 'kick';
+  if(W.kind==='melee'||W.kind==='sword')return 'atk';
+  if(W.pose==='up')return 'up';
+  if(W.kind==='nova'||W.kind==='aura')return 'pow';
+  return W.pose==='beam'||W.kind==='beam'?'beam':'cast';
+}
+function attackClip(pk,pose,variant=0,technique=null){
+  if(!pk)return null;
+  if(technique&&pk['Tecnica_'+technique])return pk['Tecnica_'+technique];
+  if(pose==='kick')return varAnim(pk,'Kick',variant)||pk.Kick||pk.Idle;
+  if(pose==='atk')return varAnim(pk,'Attack',variant)||pk.Attack||pk.Idle;
+  if(pose==='up')return pk.Up||pk.Pow||pk.Cast||pk.Idle;
+  if(pose==='pow')return pk.Pow||pk.Cast||pk.Idle;
+  if(pose==='beam')return pk.Beam||pk.Cast||pk.Idle;
+  return pk.Cast||pk.Idle;
+}
+// Reproducción de una pasada, ponderada por las duraciones elegidas en los sprites/Piskel.
+function attackFrame(A,progress){
+  const du=A.du||A.R.map(()=>1),total=du.reduce((n,d)=>n+d,0);
+  let t=clamp(progress,0,1)*total;
+  for(let i=0;i<du.length;i++){t-=du[i];if(t<0)return i}
+  return A.R.length-1;
+}
+function attackRelease(W,a,duration=0.24){
+  P.atkPose=attackPose(W);P.atkId=Object.keys(MV).find(id=>MV[id]===W)||null;P.atkV=0;P.atkT=P.atkD=duration;P.atkA=a;
+  P.atkK=P.atkPose==='kick'?2:P.atkPose==='atk'?0:1;
+}
+
 function sigOrigin(pose,a){const f=pose==='beam'?13:8;return pose==='up'?{x:P.x,y:P.y-34}:{x:P.x+Math.cos(a)*f,y:P.y-13+Math.sin(a)*(pose==='beam'?3:9)}}
 
 function sigUpdate(dt,ps){
@@ -3125,13 +3155,17 @@ function sigUpdate(dt,ps){
 
   if(P.combo&&!P.dash){const C=P.combo;
     if(!C.animStarted){
-      C.animStarted=true;
-      P.atkT=P.atkD=C.n*0.09+0.1;
-      P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;C.aD=C.aT=P.atkD;
+      C.animStarted=true;P.atkId=C.id;P.atkPose=C.kick?'kick':'atk';
+      const pk=typeof scHero==='function'?scHero(S.hid,P.form):null,A=pk&&attackClip(pk,C.kick?'kick':'atk',C.v||0,C.id);
+      const ticks=A?(A.du||A.R.map(()=>5)):null,total=ticks&&ticks.reduce((n,d)=>n+d,0);
+      P.atkT=P.atkD=Math.max(C.n*0.09+0.1,total?total/60:0);
+      // El primer impacto espera a que termine la preparación del clip; los siguientes respetan su duración.
+      if(total){C.t=Math.max(0.05,P.atkD*ticks[0]/total);C.step=Math.max(0.04,(P.atkD-C.t-0.04)/Math.max(1,C.n-1))}
+      P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;C.aD=P.atkD;C.aT=P.atkT=Math.max(0,P.atkD-dt);
     }else{// el combo manda en la animación: un disparo automático no le pisa la pose (lleva su propio reloj)
-      C.aT-=dt;P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;P.atkD=C.aD;P.atkT=C.aT;
+      C.aT-=dt;P.atkId=C.id;P.atkPose=C.kick?'kick':'atk';P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;P.atkD=C.aD;P.atkT=C.aT;
     }
-    if((C.t-=dt)<=0){C.t=0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;let tocado=0,impX=hx,impY=P.y;
+    if((C.t-=dt)<=0){C.t+=C.step||0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;let tocado=0,impX=hx,impY=P.y;
 
       near(hx,hy,C.rad+14,e=>{if(Math.hypot(e.x-hx,e.y-hy)<C.rad+e.r){if(!tocado){impX=e.x;impY=e.y}tocado=1;hurt(e,C.dmg,C.d*C.kb*(last?1:MELEE_AJ.empuje),0);if(!e.boss&&(!ET[e.type].elite||(e.golpesR=(e.golpesR||0)+1)%2===0))e.stun=Math.max(e.stun||0,MELEE_AJ.aturde)}});
 
@@ -3148,7 +3182,7 @@ function sigUpdate(dt,ps){
 
     near(P.x,P.y-6,G.rad+14,e=>{const ea=Math.atan2(e.y-P.y,e.x-P.x),df=Math.abs(((ea-a)%TAU+TAU*1.5)%TAU-Math.PI);if(df<G.arc/2&&Math.hypot(e.x-P.x,e.y-P.y)<G.rad+e.r)hurt(e,G.dmg,Math.cos(a)*90,Math.sin(a)*90)});
 
-    fxSl.push({x:P.x,y:P.y-10,a,arc:G.arc,r:G.rad,t:0,dur:0.22,col:G.col});P.atkT=P.atkD=0.25;P.atkK=0;P.atkA=a;sfx('shot')}
+    fxSl.push({x:P.x,y:P.y-10,a,arc:G.arc,r:G.rad,t:0,dur:0.22,col:G.col});if(!(P.atkT>0))attackRelease(MV[G.id]||{kind:'sword'},a,0.25);sfx('shot')}
 
   if(P.pend){const Q=P.pend;if((Q.t-=dt)<=0){P.pend=null;FO=sigOrigin(Q.pose,Q.a);fire(Q.id,Q.m,Q.st,ps);FO=null}return}
 
@@ -3196,7 +3230,7 @@ function sigUpdate(dt,ps){
 
     const up=W.pose==='up',wind=up?0.5:W.kind==='nova'?0.3:0.12;
 
-    P.pend={id,m,st,t:wind,T:wind,pose:up?'up':W.pose,a,col:W.col};{const d=Math.cos(a)<0?-1:1;if(!P.moving){P.face=d;P.dir='side'}}return}
+    P.pend={id,m,st,t:wind,T:wind,pose:attackPose(W),a,col:W.col};{const d=Math.cos(a)<0?-1:1;if(!P.moving){P.face=d;P.dir='side'}}return}
 
   FO=sigOrigin(W.pose,a);fire(id,m,st,ps);FO=null}
 
@@ -3210,7 +3244,7 @@ function fireSig(W,st,dmg,ps){
 
     else if(far)P.dash={x:tx,y:ty,t:0.12,c:W.col[0]};
 
-    P.combo={v:Math.random()*3|0,n:st.hits,i:0,t:0,d,dmg,rad:st.rad*ps.area,kb:st.kb,col:W.col,kick:W.pose==='kick',dragon:W.dragon};P.iframe=Math.max(P.iframe,st.hits*0.09+MELEE_AJ.guardaExtra);
+    P.combo={id:Object.keys(MV).find(id=>MV[id]===W),v:(P.comboSerial=(P.comboSerial||0)+1)-1,n:st.hits,i:0,t:0.08,d,dmg,rad:st.rad*ps.area,kb:st.kb,col:W.col,kick:W.pose==='kick',dragon:W.dragon};P.iframe=Math.max(P.iframe,st.hits*0.09+MELEE_AJ.guardaExtra);
 
     if(W.kaio)P.kaioT=1.4;if(W.dragon)sfx('charge');return}
 
@@ -3218,7 +3252,7 @@ function fireSig(W,st,dmg,ps){
 
     if(dd>rad*0.8){const a0=Math.atan2(t.y-P.y,t.x-P.x),k=(dd-rad*0.6)/dd;P.dash={x:P.x+(t.x-P.x)*k,y:P.y+(t.y-P.y)*k,t:0.1,c:W.col[0]}}
 
-    P.swing={t:0.12,tg:t,rad,arc:st.arc,dmg,col:W.col};return}
+    P.swing={id:Object.keys(MV).find(id=>MV[id]===W),t:0.12,tg:t,rad,arc:st.arc,dmg,col:W.col};attackRelease(W,Math.atan2(t.y-P.y,t.x-P.x),0.37);return}
 
   if(W.kind==='nova'){const rad=st.rad*ps.area;let hit=0;near(P.x,P.y-6,rad+14,e=>{const dx=e.x-P.x,dy=e.y-P.y,dd=Math.hypot(dx,dy)||1;if(dd<rad+e.r){hurt(e,dmg,dx/dd*180,dy/dd*180);hit++;if(st.stun)e.stun=st.stun}});
 
@@ -3228,7 +3262,7 @@ function fireSig(W,st,dmg,ps){
 
     if(W.heal&&hit){const mx=stats().maxhp;P.hp=Math.min(mx,P.hp+mx*0.03*Math.min(hit,8)*W.heal*4);fx(P.x,P.y-12,'green',18,0.5)}
 
-    fxRg.push({x:P.x,y:P.y-10,t:0,dur:0.45,rad,col:W.col});if(window.PFX)PFX.nova(P.x,P.y-10,rad,W.col,W===MV.hakai?'hakai':W===MV.finalexp||W===MV.jibaku?'final':'');if(st.stun)S.flash=Math.max(S.flash,0.25);cam.shake=Math.max(cam.shake||0,5);P.atkT=P.atkD=0.3;P.atkK=1;P.atkA=d>0?0:Math.PI;sfx('charge')}}
+    fxRg.push({x:P.x,y:P.y-10,t:0,dur:0.45,rad,col:W.col});if(window.PFX)PFX.nova(P.x,P.y-10,rad,W.col,W===MV.hakai?'hakai':W===MV.finalexp||W===MV.jibaku?'final':'');if(st.stun)S.flash=Math.max(S.flash,0.25);cam.shake=Math.max(cam.shake||0,5);attackRelease(W,d>0?0:Math.PI,0.3);sfx('charge')}}
 
 function sigIcon(id,size=32){
 
@@ -4227,6 +4261,12 @@ function fire(id,m,st,ps){
   let ox=FO?FO.x:P.x,oy=FO?FO.y:P.y-18;
 
   const aimAt=t=>t?Math.atan2(t.y-6-oy,t.x-ox):(P.face>0?0:Math.PI);
+  if(['shot','big','disc','bomb'].includes(W.kind)){
+    const target=nearest(ox,oy,sigReach(W,st)),a=aimAt(target);
+    attackRelease(W,a,W.pose==='up'?0.32:0.24);
+    const hand=heroHand(1,Math.cos(a)<0,P.atkPose);
+    if(hand){ox=hand[0];oy=hand[1]}
+  }
 
   switch(W.kind){
 
@@ -4238,13 +4278,13 @@ function fire(id,m,st,ps){
 
        // el cuerpo se inclina hacia el enemigo y la bola sale de la mano girada
 
-       P.atkT=P.atkD=0.24;P.atkK=1;P.atkA=aimAt(ts[0]);P.tilt=heroTilt(d<0,0,0);const hh=heroHand(1,d<0);if(hh){ox=hh[0];oy=hh[1]}}
+       attackRelease(W,aimAt(ts[0]));P.tilt=heroTilt(d<0,0,0);const hh=heroHand(1,d<0);if(hh){ox=hh[0];oy=hh[1]}}
 
      for(let i=0;i<n;i++){const t=ts[i%Math.max(1,ts.length)];const a=W.ring?i*TAU/n+rnd(-0.05,0.05):aimAt(t)+(ts.length<n?(i-(n-1)/2)*0.18:rnd(-0.05,0.05));
 
        projs.push({k:'ki',x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:4*ps.area,dmg,pierce:st.pierce+(ev?2:0),life:W.home?2.2:1.3,home:W.home?(t||true):null,age:0,hit:new Set(),col:W.col,spr:FO&&KI_REAL.has(id)?heroKi():null})}
 
-     P.atkT=P.atkD=0.24;P.atkK=1;P.atkA=aimAt(ts[0]);sfx('shot');break}
+     attackRelease(W,aimAt(ts[0]));sfx('shot');break}
 
    case 'beam':{const t=nearest(ox,oy,st.len);const a=aimAt(t);shout(id,ev);
 
@@ -4254,9 +4294,9 @@ function fire(id,m,st,ps){
 
      beams.push({x:ox,y:oy,a,len:st.len*ps.area*(ev?1.25:1),wid:st.wid*ps.area*evm,dur,t:-ch,T:ch,tick:0,dmg:dmg*0.45,col:W.col,spiral:W.spiral,hero:1,big:!W.spiral,mv:id});
 
-     P.cast={a,t:ch+dur};sfx('charge');setTimeout(()=>sfx('beam'),ch*1000);break}
+     P.cast={a,t:ch+dur,pose:attackPose(W),id};sfx('charge');setTimeout(()=>sfx('beam'),ch*1000);break}
 
-   case 'big':{const t=nearest(ox,oy,220);const a=aimAt(t);shout(id,ev);P.atkT=P.atkD=0.3;P.atkK=1;P.atkA=a;
+   case 'big':{const t=nearest(ox,oy,220);const a=aimAt(t);shout(id,ev);attackRelease(W,a,0.3);
 
      projs.push({k:'big',packFx:id==='masenko'?'masenko':null,x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:(ev?9:6)*ps.area,dmg,rad:st.rad*ps.area*(ev?1.4:1),life:1.8,hit:new Set(),col:W.col,pierce:0});
 
@@ -4306,7 +4346,7 @@ function manual(k){if(state!=='play'||!P)return;const ps=stats();P.mcd=P.mcd||[0
 
     const dmg=(26+4*P.lvl)*ps.dmg;near(t.x,t.y,36,e=>{if(Math.hypot(e.x-t.x,e.y-t.y)<36+e.r)hurt(e,dmg,d*60,0)});
 
-    P.atkT=P.atkD=0.32;P.atkK=0;P.atkA=d>0?0:Math.PI;cam.shake=Math.max(cam.shake||0,3);P.mcd[2]=P.mcdM[2]=MCD[2]}}
+    attackRelease({kind:'melee'},d>0?0:Math.PI,0.32);cam.shake=Math.max(cam.shake||0,3);P.mcd[2]=P.mcdM[2]=MCD[2]}}
 
 function updateMoves(dt,ps){
 
@@ -4748,9 +4788,9 @@ const FUSION_RECIPES = {
 
   'galick+kame': {id:'finalkame',name:'FINAL KAMEHAMEHA',desc:'Fusión de Kamehameha y Galick Gun. Haz gigantesco de energía divina que desintegra todo (+150% daño).',col:['#60a5fa','#a855f7'],pose:'beam',kind:'beam',len:480,w:32,hits:14,dmg:4.5,cd:3.2},
 
-  'kame+punch': {id:'dragonfist',name:'PUÑO DEL DRAGÓN DORADO',desc:'Fusión de Kamehameha y Golpe. Embestida meteórica envuelta en un dragón dorado colosal.',col:['#fbbf24','#f59e0b'],pose:'kick',kind:'melee',reach:240,hits:10,kb:120,dmg:5.0,cd:3.5,tp:true,dragon:true},
+  'kame+punch': {id:'dragonfist',name:'PUÑO DEL DRAGÓN DORADO',desc:'Fusión de Kamehameha y Golpe. Embestida meteórica envuelta en un dragón dorado colosal.',col:['#fbbf24','#f59e0b'],pose:'atk',kind:'melee',reach:240,hits:10,kb:120,dmg:5.0,cd:3.5,tp:true,dragon:true},
 
-  'punch+kame': {id:'dragonfist',name:'PUÑO DEL DRAGÓN DORADO',desc:'Fusión de Golpe y Kamehameha. Embestida meteórica envuelta en un dragón dorado colosal.',col:['#fbbf24','#f59e0b'],pose:'kick',kind:'melee',reach:240,hits:10,kb:120,dmg:5.0,cd:3.5,tp:true,dragon:true},
+  'punch+kame': {id:'dragonfist',name:'PUÑO DEL DRAGÓN DORADO',desc:'Fusión de Golpe y Kamehameha. Embestida meteórica envuelta en un dragón dorado colosal.',col:['#fbbf24','#f59e0b'],pose:'atk',kind:'melee',reach:240,hits:10,kb:120,dmg:5.0,cd:3.5,tp:true,dragon:true},
 
   'kame+kiblast': {id:'kame_rapid',name:'SUPER KAMEHAMEHA RÁPIDO',desc:'Kamehameha condensado con ráfagas continuas de ki. Disparo casi instantáneo con gran penetración.',col:['#38bdf8','#fbbf24'],pose:'beam',kind:'beam',len:420,w:26,hits:10,dmg:3.8,cd:1.8},
 
@@ -6705,23 +6745,29 @@ function walkCycle(c,cfg={}){const key=JSON.stringify(cfg),K=c._wk||(c._wk={});i
 
 function varAnim(pk,base,v){const L=[pk[base],pk[base+'2'],pk[base+'3']].filter(Boolean);return L.length?L[(v||0)%L.length]:null}
 
-function heroHand(i,left){const pk=scHero(S.hid,P.form);if(!pk||!pk.Cast)return null;const CA=(P.cast&&pk.Beam)||pk.Cast,c=CA.R[Math.min(i,CA.R.length-1)];
+function heroHand(i,left,pose){const pk=scHero(S.hid,P.form);if(!pk)return null;
+  const CA=attackClip(pk,pose||P.cast?.pose||P.atkPose||'cast',0,P.cast?.id||P.pend?.id||P.atkId);if(!CA)return null;
+  // Las técnicas sobre la cabeza nacen en el centro superior del sprite de lanzamiento.
+  const c=CA.R[i>0?CA.R.length-1:0];
 
-  if(!c._hand){const W=c.width,H=c.height,d=c.getContext('2d').getImageData(0,0,W,H).data;let y0=H,y1=0;
+  const handKey=(pose||P.cast?.pose||P.atkPose||'cast')+':'+i;const anchors=c._hands||(c._hands={});
+  if(CA.origen){const point=CA.origen[i>0?1:0];anchors[handKey]=[point[0]*c.width,point[1]*c.height]}
+  if(!anchors[handKey]){const W=c.width,H=c.height,d=c.getContext('2d').getImageData(0,0,W,H).data;let y0=H,y1=0;
 
     for(let y=0;y<H;y++)for(let x=0;x<W;x++)if(d[(y*W+x)*4+3]>40){if(y<y0)y0=y;if(y>y1)y1=y}
 
-    if(i===0)c._hand=[W/2+W*0.12,H-(H-y0)*0.42];
+    if((pose||P.cast?.pose||P.atkPose)==='up')anchors[handKey]=[W/2,y0+2];
+    else if(i===0)anchors[handKey]=[W/2+W*0.12,H-(H-y0)*0.42];
 
     else{const ya=y0+(y1-y0)*0.25|0,yb=y0+(y1-y0)*0.7|0;let bx=-1,sy=0,n=0;
 
       for(let x=W-1;x>=0&&bx<0;x--)for(let y=ya;y<=yb;y++)if(d[(y*W+x)*4+3]>40){bx=x;sy+=y;n++}
 
-      c._hand=bx<0?[W*0.75,H*0.6]:[bx,sy/n]}}
+      anchors[handKey]=bx<0?[W*0.75,H*0.6]:[bx,sy/n]}}
 
   // el cuerpo se dibuja girado P.tilt alrededor de su centro (rotSpr): la mano gira con él y el rayo sale de ella
 
-  const r=Math.round((P.tilt||0)/ROT_PASO)*ROT_PASO,BS=bodySplit(c,walkCfg(S.hid,P.form).cadera),hip=BS.hip,piv=P.pivDY!=null,vx=(left?-1:1)*(c._hand[0]-(piv?BS.cx:c.width/2)),vy=c._hand[1]-hip,cs=Math.cos(r),sn=Math.sin(r),bob=P.hov||0;
+  const r=Math.round((P.tilt||0)/ROT_PASO)*ROT_PASO,BS=bodySplit(c,walkCfg(S.hid,P.form).cadera),hip=BS.hip,piv=P.pivDY!=null,vx=(left?-1:1)*(anchors[handKey][0]-(piv?BS.cx:c.width/2)),vy=anchors[handKey][1]-hip,cs=Math.cos(r),sn=Math.sin(r),bob=P.hov||0;
 
   return[P.x+((piv?P.pivDX:0)+vx*cs-vy*sn)*0.5,P.y+((piv?P.pivDY:hip-c.height+1-bob)+vx*sn+vy*cs)*0.5]}
 
@@ -7097,10 +7143,16 @@ function render(time){
 
       else if(pk){// moverse y atacar a la vez (Josemi, 2 nov.): golpes, patadas, ki y preparación de técnicas se ven también en vuelo; el aura de poder solo quieto
 
-        if(P.combo&&P.combo.animStarted){const C=P.combo;P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;P.atkD=C.aD;P.atkT=C.aT}
-        const mv=P.moving&&!P.cast&&!P.dead,pw=!mv&&P.powT>0,pd=P.pend,ak=P.atkT>0,
+        if(P.combo&&P.combo.animStarted){const C=P.combo;P.atkId=C.id;P.atkPose=C.kick?'kick':'atk';P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;P.atkD=C.aD;P.atkT=C.aT}
+        const mv=P.moving&&!P.cast&&!P.dead,pw=!mv&&P.powT>0&&!P.pend&&!P.cast&&!(P.atkT>0),pd=P.pend,ak=P.atkT>0,
 
-        left=pd&&!(P.moving&&P.pend.pose==='up')?Math.cos(P.pend.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),UP=pk.Up||pk.Pow,atk=!P.cast&&!(P.hitT>0)&&ak&&(P.atkK===2?(varAnim(pk,'Kick',P.atkV)||pk.Attack):P.atkK?(pk.Cast||pk.Attack):(varAnim(pk,'Attack',P.atkV)||pk.Cast)),A=P.dead?(pk.Faint||pk.Hurt):pw&&pk.Pow?pk.Pow:pd?(P.pend.pose==='up'&&UP?UP:pk.Cast):P.cast?(pk.Beam||pk.Cast):P.hitT>0?pk.Hurt:P.dash&&pk.Dash?pk.Dash:atk?atk:P.moving?pk.Walk:pk.Idle,i=P.dead?Math.min((pk.Faint||pk.Hurt).R.length-1,Math.floor(P.dead*3)):(pw||(pd&&P.pend.pose==='up'))&&(A===pk.Pow||A===UP)?((time*8|0)%A.R.length):A===pk.Dash?0:pd?0:P.cast?(chg?0:1):P.hitT>0?1:atk?(A===pk.Cast?((1-P.atkT/P.atkD)<0.3?0:Math.min(1,A.R.length-1)):Math.min(A.R.length-1,Math.floor((1-P.atkT/P.atkD)*A.R.length))):P.moving?0:scFrame(A,time),im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
+        left=pd?Math.cos(pd.a)<0:P.cast?Math.cos(P.cast.a)<0:ak?Math.cos(P.atkA)<0:P.face<0,
+        bm=P.cast?beams.find(q=>q.hero):null,chg=P.cast&&(!bm||bm.t<0),
+        pose=P.atkPose||(P.atkK===2?'kick':P.atkK?'cast':'atk'),
+        atk=!P.cast&&!(P.hitT>0)&&ak&&attackClip(pk,pose,P.atkV,P.atkId),
+        A=P.dead?(pk.Faint||pk.Hurt):P.hitT>0?pk.Hurt:pd?attackClip(pk,pd.pose,0,pd.id):P.cast?attackClip(pk,P.cast.pose||'beam',0,P.cast.id):P.dash?(pk.Dash||pk.Walk):atk||((pw&&pk.Pow)?pk.Pow:P.moving?pk.Walk:pk.Idle),
+        i=P.dead?Math.min(A.R.length-1,Math.floor(P.dead*3)):P.hitT>0?Math.min(1,A.R.length-1):pd?attackFrame(A,Math.min(0.49,(1-pd.t/pd.T)*0.5)):P.cast?(chg?0:A.R.length-1):P.dash?scFrame(A,time):atk?(['cast','beam','up'].includes(pose)?A.R.length-1:attackFrame(A,1-P.atkT/P.atkD)):scFrame(A,time),
+        im=(left?A.L:A.R)[Math.max(0,Math.min(A.R.length-1,i|0))],fly=P.moving&&!P.cast&&!(P.hitT>0)&&A===pk.Walk,
 
         // vuelo bajo al moverse: la pose de impulso se despega 3 px de la sombra y flota (0, 1, 2, 1 px) a 8 pasos por segundo;
 
@@ -7556,7 +7608,7 @@ if(window.ANIM_SET && ANIM_SET.h){
 
 if(window.ANIM_SET)for(const id in ANIM_SET.h)for(const f in ANIM_SET.h[id]){const F=ANIM_SET.h[id][f],k='as-'+id+'-'+f;SCPACK.s[k]={};
 
-  for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0]}
+  for(const a in F.anims){const A=F.anims[a];SCPACK.s[k][a]=[A.w,A.h,A.du,A.url,0,A.origen]}
 
   // pasos de verdad generados con Sprite Fusion (andar_frames.js): si están, sustituyen al paso generado por código
 
@@ -7602,11 +7654,11 @@ Object.assign(SCPACK.e,{frieza:'freeza-final2',gokuB:'goku-ssjn',vegetaB:'vegeta
 
 function scLoad(k){if(SCC[k])return SCC[k];const o=SCC[k]={ok:0};let n=0;
 
-  for(const a in SCPACK.s[k]){const [fw,fh,du,url,row]=SCPACK.s[k][a],im=new Image();
+  for(const a in SCPACK.s[k]){const [fw,fh,du,url,row,origen]=SCPACK.s[k][a],im=new Image();
 
     im.onload=()=>{const cut=r=>{const L=[];for(let i=0;i<(row===undefined?im.width/fw:du.length);i++){const c=mk(fw,fh-4);c.getContext('2d').drawImage(im,i*fw,r*fh,fw,fh-4,0,0,fw,fh-4);L.push(c)}return L};
 
-      const R=cut(row===undefined?0:row);o[a]={R,L:row===undefined?cut(1):R.map(flipC),du,tot:du.reduce((p,q)=>p+q,0)};if(++n===Object.keys(SCPACK.s[k]).length){o.ok=1;for(const id in ET)if(id!=='shadow'&&scKeyE(id)===k)delete SPR[id]}};im.src=url}
+      const R=cut(row===undefined?0:row);o[a]={R,L:row===undefined?cut(1):R.map(flipC),du,origen,tot:du.reduce((p,q)=>p+q,0)};if(++n===Object.keys(SCPACK.s[k]).length){o.ok=1;for(const id in ET)if(id!=='shadow'&&scKeyE(id)===k)delete SPR[id]}};im.src=url}
 
   return o}
 

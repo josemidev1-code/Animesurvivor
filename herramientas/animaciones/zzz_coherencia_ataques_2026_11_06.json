@@ -1,0 +1,398 @@
+{
+  "_ayuda": "Correcciones visuales. tecnica_ID selecciona una secuencia propia para esa técnica. Variantes de patada/espada no aparecen en puñetazos; efectos aislados no sustituyen el cuerpo.",
+  "heroes": {
+    "gohan": {
+      "0": {
+        "pack": "07_Personajes_sin_saga_concreta/Gohan/033_Gohan",
+        "attack3": [],
+        "up": [
+          19
+        ],
+        "tecnica_masenko": [
+          19,
+          39
+        ],
+        "tecnica_masenkoDu": [
+          14,
+          12
+        ],
+        "tecnica_kame": [
+          57,
+          59
+        ],
+        "tecnica_kiblast": [
+          36,
+          38
+        ],
+        "tecnica_masenkoOrigen": [
+          [
+            0.35,
+            0.1
+          ],
+          [
+            0.9,
+            0.48
+          ]
+        ],
+        "tecnica_kameOrigen": [
+          [
+            0.18,
+            0.45
+          ],
+          [
+            0.9,
+            0.45
+          ]
+        ]
+      },
+      "3": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico",
+        "attack2": [],
+        "attack3": []
+      }
+    },
+    "buu": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/077_Majin Buu",
+        "attack2": [
+          34,
+          37,
+          36
+        ],
+        "attack2Du": [
+          6,
+          7,
+          5
+        ],
+        "tecnica_choco": [
+          54,
+          57
+        ],
+        "tecnica_chocoOrigen": [
+          [
+            0.6,
+            0.2
+          ],
+          [
+            0.88,
+            0.15
+          ]
+        ]
+      }
+    },
+    "gohanadult": {
+      "1": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico",
+        "attack2": [],
+        "attack3": []
+      },
+      "0": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Gohan/034_Gohan Adulto",
+        "attack2": []
+      }
+    },
+    "broly": {
+      "1": {
+        "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/019_Broly Terceira forma",
+        "attack3": []
+      },
+      "3": {
+        "pack": "05_Fanmade_y_alternativos/Broly/018_Broly Ssj4",
+        "attack3": []
+      },
+      "2": {
+        "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/016_Broly Full Power",
+        "attack3": []
+      }
+    },
+    "janemba": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Janemba/068_Janemba",
+        "attack2": [],
+        "attack3": [],
+        "tecnica_dimsword": [
+          57,
+          58,
+          60,
+          61
+        ],
+        "tecnica_dimswordDu": [
+          8,
+          5,
+          5,
+          8
+        ],
+        "tecnica_rakshasa": [
+          57,
+          58,
+          60,
+          61
+        ],
+        "tecnica_rakshasaDu": [
+          8,
+          5,
+          5,
+          8
+        ]
+      }
+    },
+    "vegeta": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/00_Saiyans/Vegeta/097_Vegeta Sayajin Saga",
+        "tecnica_galick": [
+          33,
+          35
+        ],
+        "tecnica_bigbang": [
+          43,
+          44
+        ],
+        "tecnica_finalflash": [
+          34,
+          35
+        ]
+      },
+      "3": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Vegeta/090_Majin Vegeta",
+        "attack3": [],
+        "beam": [
+          34,
+          36
+        ],
+        "tecnica_galick": [
+          34,
+          36
+        ],
+        "tecnica_finalflash": [
+          29,
+          36
+        ]
+      }
+    },
+    "tenshinhan": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/432_TENSHINHAN (Dryy7)",
+        "tecnica_kikoho": [
+          37,
+          38
+        ],
+        "tecnica_dodonpa": [
+          51,
+          55
+        ],
+        "tecnica_taiyoken": [
+          59,
+          60
+        ],
+        "ki": [
+          51,
+          55
+        ],
+        "tecnica_dodonpaOrigen": [
+          [
+            0.55,
+            0.1
+          ],
+          [
+            0.92,
+            0.52
+          ]
+        ],
+        "tecnica_kikohoOrigen": [
+          [
+            0.45,
+            0.5
+          ],
+          [
+            0.95,
+            0.4
+          ]
+        ]
+      }
+    },
+    "krilin": {
+      "0": {
+        "pack": "07_Personajes_sin_saga_concreta/Krilin/075_Kuririn",
+        "attack2": [],
+        "up": [
+          66,
+          67
+        ],
+        "tecnica_kienzan": [
+          67,
+          69
+        ],
+        "tecnica_kienzanDu": [
+          18,
+          10
+        ],
+        "tecnica_taiyoken": [
+          32
+        ],
+        "tecnica_kienzanOrigen": [
+          [
+            0.5,
+            0.08
+          ],
+          [
+            0.6,
+            0.32
+          ]
+        ]
+      }
+    },
+    "goku": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "tecnica_kame": [
+          48,
+          37
+        ],
+        "tecnica_genki": [
+          45,
+          46
+        ],
+        "tecnica_genkiDu": [
+          20,
+          12
+        ],
+        "tecnica_kameOrigen": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0.92,
+            0.45
+          ]
+        ],
+        "tecnica_genkiOrigen": [
+          [
+            0.28,
+            0.25
+          ],
+          [
+            0.28,
+            0.25
+          ]
+        ]
+      }
+    },
+    "gokuui": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "tecnica_kame": [
+          48,
+          37
+        ],
+        "tecnica_genki": [
+          45,
+          46
+        ],
+        "tecnica_genkiDu": [
+          20,
+          12
+        ]
+      },
+      "4": {
+        "pack": "05_Fanmade_y_alternativos/Goku/218_GOKU, ULTRA INSTINTO DOMINADO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "attack2": []
+      },
+      "3": {
+        "pack": "05_Fanmade_y_alternativos/Goku/219_GOKU, ULTRA INSTINTO SEÑAL,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "attack2": []
+      }
+    },
+    "gokubroly": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+        "tecnica_kame": [
+          48,
+          37
+        ],
+        "tecnica_genki": [
+          45,
+          46
+        ],
+        "tecnica_genkiDu": [
+          20,
+          12
+        ]
+      }
+    },
+    "cell": {
+      "2": {
+        "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Cell/023_cell Perfeito",
+        "attack3": []
+      }
+    },
+    "goten": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/433_GOTEN (ThatonePeepDA)",
+        "attack3": []
+      }
+    },
+    "gogeta": {
+      "0": {
+        "pack": "07_Personajes_sin_saga_concreta/Gogeta/064_Gogeta",
+        "attack3": []
+      }
+    },
+    "freezer": {
+      "1": {
+        "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/029_Freeza Terceira Forma",
+        "attack3": []
+      }
+    },
+    "black": {
+      "1": {
+        "pack": "01_Dragon_Ball_Super/09_Generales_y_manga/Goku Black/043_Goku Black SSJ(versión 2)",
+        "attack3": []
+      }
+    },
+    "piccolo": {
+      "0": {
+        "tecnica_makanko": [
+          61,
+          40
+        ],
+        "tecnica_eyebeam": [
+          61,
+          63
+        ],
+        "tecnica_hellzone": [
+          92,
+          93
+        ],
+        "tecnica_lightgren": [
+          104,
+          106
+        ],
+        "tecnica_kiblast": [
+          42,
+          40
+        ],
+        "tecnica_makankoOrigen": [
+          [
+            0.6,
+            0.28
+          ],
+          [
+            0.92,
+            0.38
+          ]
+        ],
+        "tecnica_eyebeamOrigen": [
+          [
+            0.6,
+            0.3
+          ],
+          [
+            0.63,
+            0.3
+          ]
+        ]
+      }
+    }
+  }
+}

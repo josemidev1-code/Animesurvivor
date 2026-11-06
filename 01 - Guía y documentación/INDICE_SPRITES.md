@@ -22,6 +22,7 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | bills | 0 | `01_Dragon_Ball_Super/00_Dioses_y_Super_Saiyan_God/Bills/020_Bills` | `nuevos.json` | Existe |
 | black | 0 | `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/040_Goku Black 2` | `goku_linea.json` | Existe |
 | black | 1 | `01_Dragon_Ball_Super/09_Generales_y_manga/Goku Black/043_Goku Black SSJ(versión 2)` | `goku_linea.json` | Existe |
+| black | 1 | `01_Dragon_Ball_Super/09_Generales_y_manga/Goku Black/043_Goku Black SSJ(versión 2)` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | black | 2 | `01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/041_Goku Black Rose` | `goku_linea.json` | Existe |
 | blackfalso | 0 | `05_Fanmade_y_alternativos/Goku Black/177_Goku black ssj falso.Andres Gamen` | `todos.json` | Existe |
 | blackfan | 0 | `05_Fanmade_y_alternativos/Goku Black/123_GOKU BLACK SSJ RAGE, ANDRÉS GAMEN ANIMATIONS (SPRITE HD )` | `variantes.json` | Existe |
@@ -41,12 +42,16 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | bramajin | 0 | `05_Fanmade_y_alternativos/Bra/189_Majin bra,sprite(db multiverse) Andrés` | `todos.json` | Existe |
 | broly | 0 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/017_Broly Segunda Forma` | `nuevos.json` | Existe |
 | broly | 1 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/019_Broly Terceira forma` | `nuevos.json` | Existe |
+| broly | 1 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/019_Broly Terceira forma` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | broly | 2 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/016_Broly Full Power` | `recuperados.json` | Existe |
+| broly | 2 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/016_Broly Full Power` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | broly | 3 | `05_Fanmade_y_alternativos/Broly/018_Broly Ssj4` | `nuevos.json` | Existe |
+| broly | 3 | `05_Fanmade_y_alternativos/Broly/018_Broly Ssj4` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | brolyfan | 0 | `05_Fanmade_y_alternativos/Broly/211_BROLY SSJ FALSO,DBZ, ANDRÉS GAMEN ANIMATIONS` | `variantes.json` | Existe |
 | brolyfan | 1 | `05_Fanmade_y_alternativos/Broly/006_BROLY SSJ 3 DBZ ANDRES GAMEN ANIMATIONS` | `variantes.json` | Existe |
 | bulma | 0 | `07_Personajes_sin_saga_concreta/DeviantArt/459_BULMA (ChipsoDebik)` | `todos.json` | Existe |
 | buu | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/077_Majin Buu` | `nuevos.json` | Existe |
+| buu | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/077_Majin Buu` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | buu | 1 | `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/079_Majin Buu(Flaco)` | `nuevos.json` | Existe |
 | buu | 2 | `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/080_Super Buu` | `nuevos.json` | Existe |
 | buu | 3 | `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/078_Majin Buu Gohan` | `nuevos.json` | Existe |
@@ -55,6 +60,7 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | cell | 0 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Cell/021_Cell Imperfeito` | `nuevos.json` | Existe |
 | cell | 1 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Cell/022_Cell Semi Perfeito` | `nuevos.json` | Existe |
 | cell | 2 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Cell/023_cell Perfeito` | `nuevos.json` | Existe |
+| cell | 2 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Cell/023_cell Perfeito` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | cell | 3 | `05_Fanmade_y_alternativos/Cell/154_GOLDEN CELL +KAIOKEN REMASTERIZADO, ANDRÉS GAMEN ANIMATIONS` | `nuevos.json` | Existe |
 | cell | 4 | `05_Fanmade_y_alternativos/Cell/204_Majin Cell, ANDRÉS GAMEN` | `variantes.json` | Existe |
 | cooler | 0 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/Cooler/025_Cooler` | `nuevos.json` | Existe |
@@ -94,6 +100,7 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | e_zarbon | 0 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/412_ZARBON (FilipeSpriter)` | `enemigos.json` | Existe |
 | freezer | 0 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/028_Freeza Primeira Forma` | `nuevos.json` | Existe |
 | freezer | 1 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/029_Freeza Terceira Forma` | `nuevos.json` | Existe |
+| freezer | 1 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/029_Freeza Terceira Forma` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | freezer | 2 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/026_Freeza Forma Final` | `nuevos.json` | Existe |
 | freezer | 3 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/Freezer/027_Freeza Full Power` | `nuevos.json` | Existe |
 | freezer | 4 | `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Freezer/030_Golden Freeza` | `nuevos.json` | Existe |
@@ -102,19 +109,25 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | frost | 1 | `01_Dragon_Ball_Super/02_Universo_6/Frost/032_Frost Ultima Forma` | `nuevos.json` | Existe |
 | gas | 0 | `01_Dragon_Ball_Super/DeviantArt/453_GAS (VairenMorningstar)` | `todos.json` | Existe |
 | ginyu | 0 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/401_CAPITAN GINYU (Strice12)` | `deviantart.json` | Existe |
+| ginyucuerpogoku | 0 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/Goku/128_GOKU GINYU, ANDRÉS GAMEN ANIMATIONS ✓ SPRITE HD` | `pendientes_2026_11_06.json` | Existe |
 | glorio | 0 | `03_Daima/DeviantArt/478_GLORIO (ChrisReinerVV)` | `todos.json` | Existe |
 | gogeta | 0 | `07_Personajes_sin_saga_concreta/Gogeta/064_Gogeta` | `vegeta_linea.json` | Existe |
+| gogeta | 0 | `07_Personajes_sin_saga_concreta/Gogeta/064_Gogeta` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gogeta | 1 | `02_GT/Gogeta/257_GOGETA SSJ4 GT` | `nuevos.json` | Existe |
 | gogeta | 2 | `01_Dragon_Ball_Super/09_Generales_y_manga/Gogeta/252_gogeta.ssj blue HD.andres Game` | `nuevos.json` | Existe |
 | gogetafan | 0 | `04_Heroes_y_videojuegos/Gogeta/156_Gogeta ssj blue evolution,DBH, Andrés Gamen animation` | `variantes.json` | Existe |
 | gogetafan | 1 | `05_Fanmade_y_alternativos/Gogeta/118_GOGETA SSJ4 BLUE, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )` | `variantes.json` | Existe |
 | gogetafan | 2 | `05_Fanmade_y_alternativos/Gogeta/117_GOGETA MUI+MEGA INSTINTO,BY ANDRÉS GAMEN ANIMATIONS` | `variantes.json` | Existe |
 | gohan | 0 | `07_Personajes_sin_saga_concreta/Gohan/033_Gohan` | `recuperados.json` | Existe |
+| gohan | 0 | `07_Personajes_sin_saga_concreta/Gohan/033_Gohan` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gohan | 1 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Gohan/037_Teen Gohan SSJ` | `resto.json` | Existe |
 | gohan | 2 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Gohan/038_Teen Gohan SSJ2` | `resto.json` | Existe |
 | gohan | 3 | `00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico` | `resto.json` | Existe |
+| gohan | 3 | `00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gohanadult | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/Gohan/034_Gohan Adulto` | `resto.json` | Existe |
+| gohanadult | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/Gohan/034_Gohan Adulto` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gohanadult | 1 | `00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico` | `resto.json` | Existe |
+| gohanadult | 1 | `00_Dragon_Ball_Z/03_Majin_Buu/Gohan/035_Gohan Mistico` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gohanadult | 2 | `01_Dragon_Ball_Super/08_Super_Hero/Gohan/119_GOHAN BESTIA VERSIÓN 2 (ANDRÉS GAMEN ANIMATIONS)` | `nuevos.json` | Existe |
 | gohandbs | 0 | `01_Dragon_Ball_Super/09_Generales_y_manga/Gohan/112_GOHAN BASE DBS ANDRÉS GAMEN ANIMATIONS` | `variantes.json` | Existe |
 | gohandbs | 1 | `01_Dragon_Ball_Super/09_Generales_y_manga/Gohan/114_GOHAN MÍSTICO DBS ANDRÉS GAMEN ANIMATIONS` | `variantes.json` | Existe |
@@ -124,6 +137,7 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | gohanfut | 0 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/476_GOHAN DEL FUTURO (BlackSanYT)` | `todos.json` | Existe |
 | gohanmanga | 0 | `01_Dragon_Ball_Super/06_Moro/Gohan/121_GOHAN SAGA MORO MANGA,BY ANDRÉS GAMEN ANIMATIONS , SPRITE HD` | `variantes.json` | Existe |
 | gohanposeido | 0 | `05_Fanmade_y_alternativos/Gohan/036_Gohan Possuido` | `variantes.json` | Existe |
+| goku | 0 | `01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | goku | 1 | `01_Dragon_Ball_Super/05_Broly/Goku/220_GOKU,SSJ 1,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `goku_linea.json` | Existe |
 | goku | 2 | `00_Dragon_Ball_Z/03_Majin_Buu/Goku/055_Goku SSJ 2` | `goku_linea.json` | Existe |
 | goku | 3 | `00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/147_GOKU SSJ3,SAGA MAJIN BUU,DBZ, ANDRÉS GAMEN ANIMATIONS` | `goku_linea.json` | Existe |
@@ -137,6 +151,7 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | gokubluemoro | 0 | `01_Dragon_Ball_Super/06_Moro/Goku/144_GOKU SSJ BLUE SAGA,MORO,MANGA,(ANDRÉS GAMEN ANIMACIÓNS)` | `todos.json` | Existe |
 | gokubluewhis | 0 | `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Goku/049_Goku Blue Whis Gi` | `todos.json` | Existe |
 | gokubroly | 0 | `01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `variantes.json` | Existe |
+| gokubroly | 0 | `01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gokubroly | 1 | `01_Dragon_Ball_Super/05_Broly/Goku/220_GOKU,SSJ 1,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `variantes.json` | Existe |
 | gokubroly | 2 | `01_Dragon_Ball_Super/05_Broly/Goku/216_GOKU, SSJ GOD,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `variantes.json` | Existe |
 | gokubroly | 3 | `01_Dragon_Ball_Super/05_Broly/Goku/221_GOKU,SSJ BLUE PERFECTO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `variantes.json` | Existe |
@@ -156,7 +171,9 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | gokumuidios | 0 | `05_Fanmade_y_alternativos/Goku/135_GOKU MUI DIOS, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )` | `todos.json` | Existe |
 | gokumuifp | 0 | `01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/148_GOKU ULTRA INSTINTO FULL POWER,NEW VERSIÓN BY ANDRÉS GAMEN ANIMATIONS` | `todos.json` | Existe |
 | gokumuigranola | 0 | `01_Dragon_Ball_Super/07_Granola/Goku/132_GOKU MUI ( SAGA GRANOLA ) Andrés Gamen ANIMATIONS ( SPRITE HD )` | `todos.json` | Existe |
+| gokumuigranolav2 | 0 | `01_Dragon_Ball_Super/07_Granola/Goku/136_GOKU MUI SAGA GRANOLA,V2,BY ANDRÉS GAMEN ANIMATIONS` | `pendientes_2026_11_06.json` | Existe |
 | gokumuimanga | 0 | `01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/270_GOKU MUI TDP MANGA` | `todos.json` | Existe |
+| gokumuitorneoanime | 0 | `01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/153_GOKU,MUI,TORNEO DEL PODER (ANIME) ANDRES GAMEN ANIMATIONS` | `pendientes_2026_11_06.json` | Existe |
 | gokunino | 0 | `07_Personajes_sin_saga_concreta/DeviantArt/435_GOKU NINO (Strice12)` | `todos.json` | Existe |
 | gokupatrulla | 0 | `01_Dragon_Ball_Super/06_Moro/Goku/174_Goku base.patrullero galáctico.dbs moro.andres Gamen` | `todos.json` | Existe |
 | gokureymono | 0 | `05_Fanmade_y_alternativos/Goku/138_GOKU REY MONO,DB TALE, HECHO POR ANDRÉSITO GAMEN ANIMATIONS` | `todos.json` | Existe |
@@ -179,10 +196,13 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | gokusuper | 3 | `01_Dragon_Ball_Super/00_Dioses_y_Super_Saiyan_God/Goku/050_Goku God` | `goku_linea.json` | Existe |
 | gokusuper | 4 | `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Goku/048_Goku Blue Kaioken Whis Gi` | `goku_linea.json` | Existe |
 | gokuui | 0 | `01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `goku_linea.json` | Existe |
+| gokuui | 0 | `01_Dragon_Ball_Super/05_Broly/Goku/215_GOKU BASE,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gokuui | 1 | `01_Dragon_Ball_Super/05_Broly/Goku/220_GOKU,SSJ 1,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `goku_linea.json` | Existe |
 | gokuui | 2 | `01_Dragon_Ball_Super/05_Broly/Goku/141_GOKU SSJ BLUE ,DBS BROLY, MEJORADO, BY ANDRÉS GAMEN ANIMATIONS` | `goku_linea.json` | Existe |
 | gokuui | 3 | `05_Fanmade_y_alternativos/Goku/219_GOKU, ULTRA INSTINTO SEÑAL,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `goku_linea.json` | Existe |
+| gokuui | 3 | `05_Fanmade_y_alternativos/Goku/219_GOKU, ULTRA INSTINTO SEÑAL,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gokuui | 4 | `05_Fanmade_y_alternativos/Goku/218_GOKU, ULTRA INSTINTO DOMINADO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `goku_linea.json` | Existe |
+| gokuui | 4 | `05_Fanmade_y_alternativos/Goku/218_GOKU, ULTRA INSTINTO DOMINADO,DBS BROLY, ANDRÉS GAMEN ANIMATIONS` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gokuuimanga | 0 | `01_Dragon_Ball_Super/09_Generales_y_manga/Goku/280_GOKU UI SEÑAL DEL MANGA V1 SWL+ DBS MANGA` | `todos.json` | Existe |
 | gokuuisign | 0 | `01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/051_Goku Instinto Superior` | `todos.json` | Existe |
 | gokuuiverdadero | 0 | `01_Dragon_Ball_Super/07_Granola/Goku/149_GOKU ULTRA INSTINTO VERDADERO,MANGA,BY ANDRÉS GAMEN ANIMATIONS` | `todos.json` | Existe |
@@ -195,12 +215,14 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | gokuyardratswl | 0 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Goku/283_GOKU YADRAT SSJ SWL +` | `todos.json` | Existe |
 | gomah | 0 | `03_Daima/DeviantArt/469_REY GOMAH (ChrisReinerVV)` | `todos.json` | Existe |
 | goten | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/433_GOTEN (ThatonePeepDA)` | `todos.json` | Existe |
+| goten | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/433_GOTEN (ThatonePeepDA)` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | gotenks | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/Gotenks/065_Gotenks Base` | `recuperados.json` | Existe |
 | granola | 0 | `01_Dragon_Ball_Super/DeviantArt/454_GRANOLA (AThePro013)` | `todos.json` | Existe |
 | guldo | 0 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/404_GULDO (Strice12)` | `deviantart.json` | Existe |
 | hatchiyack | 0 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/DeviantArt/475_HATCHIYACK (BLZofOZ)` | `todos.json` | Existe |
 | hit | 0 | `01_Dragon_Ball_Super/02_Universo_6/Hit/066_Hitto` | `nuevos.json` | Existe |
 | janemba | 0 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/Janemba/068_Janemba` | `nuevos.json` | Existe |
+| janemba | 0 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/Janemba/068_Janemba` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | jeice | 0 | `00_Dragon_Ball_Z/01_Namek_y_Freezer/DeviantArt/402_JEICE (MrDryy)` | `deviantart.json` | Existe |
 | jiren | 0 | `01_Dragon_Ball_Super/04_Torneo_del_Poder/Jiren/182_Jiren HD` | `nuevos.json` | Existe |
 | jiren | 1 | `01_Dragon_Ball_Super/04_Torneo_del_Poder/Jiren/209_JIREN FULL POWER,MEJORADO, ANDRÉS GAMEN ANIMATIONS` | `nuevos.json` | Existe |
@@ -213,6 +235,7 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | kibito | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/479_KIBITO (Dryy7)` | `todos.json` | Existe |
 | kibitoshin | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/438_KIBITOSHIN (ErickFl)` | `todos.json` | Existe |
 | krilin | 0 | `07_Personajes_sin_saga_concreta/Krilin/075_Kuririn` | `recuperados.json` | Existe |
+| krilin | 0 | `07_Personajes_sin_saga_concreta/Krilin/075_Kuririn` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | kyabe | 0 | `01_Dragon_Ball_Super/02_Universo_6/Cabba/072_Kyabe` | `recuperados.json` | Existe |
 | kyabe | 0 | `01_Dragon_Ball_Super/02_Universo_6/DeviantArt/452_KYABE SSJ (MrDryy)` | `todos.json` | Existe |
 | kyabe | 1 | `01_Dragon_Ball_Super/02_Universo_6/Cabba/073_Kyabe ssj` | `recuperados.json` | Existe |
@@ -242,6 +265,7 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | taopaipai | 0 | `07_Personajes_sin_saga_concreta/DeviantArt/426_TAO PAI PAI (ChrisReinerVV)` | `todos.json` | Existe |
 | tarble | 0 | `01_Dragon_Ball_Super/DeviantArt/444_TARBLE SSJ (LSW-Sprite)` | `todos.json` | Existe |
 | tenshinhan | 0 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/432_TENSHINHAN (Dryy7)` | `todos.json` | Existe |
+| tenshinhan | 0 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/432_TENSHINHAN (Dryy7)` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | toppo | 0 | `01_Dragon_Ball_Super/04_Torneo_del_Poder/Toppo/087_Toppo` | `nuevos.json` | Existe |
 | tora | 0 | `00_Dragon_Ball_Z/00_Saiyans/DeviantArt/428_TORA (Yumejoki)` | `revision_2026_11_06.json` | Existe |
 | trunks | 0 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Trunks/081_Mirai Trunks` | `recuperados.json` | Existe |
@@ -258,9 +282,11 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | turles | 1 | `00_Dragon_Ball_Z/04_Peliculas_y_especiales/Turles/236_TURLES SSJ MALIGNO, ANDRÉS GAMEN ANIMATIONS ✓` | `nuevos.json` | Existe |
 | uub | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/DeviantArt/408_UUB (Strice12)` | `deviantart.json` | Existe |
 | vegeta | 0 | `00_Dragon_Ball_Z/00_Saiyans/Vegeta/097_Vegeta Sayajin Saga` | `vegeta_linea.json` | Existe |
+| vegeta | 0 | `00_Dragon_Ball_Z/00_Saiyans/Vegeta/097_Vegeta Sayajin Saga` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | vegeta | 1 | `05_Fanmade_y_alternativos/Vegeta/237_VEGETA ( SAGA FREEZER ) SSJ 1, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )` | `vegeta_linea.json` | Existe |
 | vegeta | 2 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Vegeta/099_Vegeta Ssj Grade` | `vegeta_linea.json` | Existe |
 | vegeta | 3 | `00_Dragon_Ball_Z/03_Majin_Buu/Vegeta/090_Majin Vegeta` | `recuperados.json` | Existe |
+| vegeta | 3 | `00_Dragon_Ball_Z/03_Majin_Buu/Vegeta/090_Majin Vegeta` | `zzz_coherencia_ataques_2026_11_06.json` | Existe |
 | vegeta | 4 | `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/242_VEGETA SSJ BLUE PERFECTO ( MANGA ) ANDRÉS GAMEN ANIMATIONS ( SPRITE HD ) ✓` | `vegeta_linea.json` | Existe |
 | vegetabaseulsw | 0 | `07_Personajes_sin_saga_concreta/Vegeta/295_Vegeta Base Ulsw HD` | `todos.json` | Existe |
 | vegetablue092 | 0 | `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/092_Vegeta Blue` | `todos.json` | Existe |
@@ -278,7 +304,9 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | vegetamanga | 0 | `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/243_VEGETA SSJ BLUE,TRAJE,DAÑADO,MANGA VERSION(ANDRES GAMEN ANIMATIONS)` | `variantes.json` | Existe |
 | vegetamanga | 1 | `01_Dragon_Ball_Super/09_Generales_y_manga/Vegeta/245_VEGETA SSJB PERFECTO, MANGA , MEJORADO, ANDRÉS GAMEN ANIMATIONS ( SPRITE HD )` | `variantes.json` | Existe |
 | vegetamui | 0 | `05_Fanmade_y_alternativos/Vegeta/303_vegeta mui` | `todos.json` | Existe |
+| vegetasinarmadura | 0 | `07_Personajes_sin_saga_concreta/Vegeta/301_Vegeta Sem Camisa HD` | `pendientes_2026_11_06.json` | Existe |
 | vegetassj2hd | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/Vegeta/298_Vegeta SSJ2 HD` | `revision_2026_11_06.json` | Existe |
+| vegetassj3daima | 0 | `03_Daima/Vegeta/238_VEGETA ADULTO SSJ3 (DAIMA) ANDRÉS GAMEN ANIMATION` | `pendientes_2026_11_06.json` | Existe |
 | vegetassj4gt | 0 | `02_GT/Vegeta/264_VEGETA SSJ4 GT` | `todos.json` | Existe |
 | vegetassjhd | 0 | `07_Personajes_sin_saga_concreta/Vegeta/297_Vegeta SSJ1` | `todos.json` | Existe |
 | vegetassjwhis | 0 | `01_Dragon_Ball_Super/01_Resurreccion_de_Freezer_y_Whis/Vegeta/315_Vegeta ssj` | `todos.json` | Existe |
@@ -293,6 +321,7 @@ Regenerar: `python herramientas/indice_sprites.py`. Si un pack no aparece, busca
 | vegetaue | 3 | `01_Dragon_Ball_Super/07_Granola/Vegeta/239_VEGETA MEGA INSTINTO, COLOR OFICIAL BY ANDRÉS GAMEN ANIMATIONS` | `vegeta_linea.json` | Existe |
 | vegetauihd | 0 | `05_Fanmade_y_alternativos/Vegeta/302_Vegeta UI HD` | `todos.json` | Existe |
 | vegetaxeno | 0 | `04_Heroes_y_videojuegos/Vegeta/267_VEGETA BASE XENO ULSW` | `todos.json` | Existe |
+| vegetaxenossj4 | 0 | `04_Heroes_y_videojuegos/Vegeta/311_vegeta xeno ssj4` | `pendientes_2026_11_06.json` | Existe |
 | vegetayardrat | 0 | `00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/Vegeta/312_vegeta yardrat` | `todos.json` | Existe |
 | vegetto | 0 | `00_Dragon_Ball_Z/03_Majin_Buu/Vegetto/100_Vegito` | `vegeta_linea.json` | Existe |
 | vegetto | 1 | `00_Dragon_Ball_Z/03_Majin_Buu/Vegetto/102_Vegito Ssj1` | `vegeta_linea.json` | Existe |
