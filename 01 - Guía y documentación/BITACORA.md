@@ -4074,3 +4074,17 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Antes de hacer más animaciones, comprobar que la forma es visible y valorar si conviene reducir el destello. Las tandas siguen paradas.
+
+## 2026-11-06 — Claude Opus 5.5 (destello de los combos)
+
+### Lo que pidió el usuario
+- Josemi: «Sí, redúcelo», sobre el destello que tapa al personaje en los combos.
+
+### Lo que hice
+- En el bloque del combo de `script.js`, el destello salía a 10 píxeles del personaje, en cada golpe, y el último usaba el efecto grande `crit`. Ahora sale sobre el primer enemigo tocado, en un golpe de cada dos y en el último, y `crit` queda solo para técnicas de dragón. El daño y el empuje no cambian.
+- Comprobado con Playwright en Hit, Janemba y Slug: 3 destellos en un combo de 6 golpes, sobre el enemigo, y sin errores de consola.
+
+### A medias / problemas
+- La fila «antes» de la comparación se recreó llamando al efecto antiguo; no es una captura de la versión anterior.
+- Otras explosiones, como la bola de Slug, pueden seguir tapando al personaje. No se han tocado.
+- Falta que Josemi lo valore jugando.

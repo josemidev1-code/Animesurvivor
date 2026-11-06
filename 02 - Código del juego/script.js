@@ -3131,13 +3131,14 @@ function sigUpdate(dt,ps){
     }else{// el combo manda en la animación: un disparo automático no le pisa la pose (lleva su propio reloj)
       C.aT-=dt;P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;P.atkD=C.aD;P.atkT=C.aT;
     }
-    if((C.t-=dt)<=0){C.t=0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;let tocado=0;
+    if((C.t-=dt)<=0){C.t=0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;let tocado=0,impX=hx,impY=P.y;
 
-      near(hx,hy,C.rad+14,e=>{if(Math.hypot(e.x-hx,e.y-hy)<C.rad+e.r){tocado=1;hurt(e,C.dmg,C.d*C.kb*(last?1:MELEE_AJ.empuje),0);if(!e.boss&&(!ET[e.type].elite||(e.golpesR=(e.golpesR||0)+1)%2===0))e.stun=Math.max(e.stun||0,MELEE_AJ.aturde)}});
+      near(hx,hy,C.rad+14,e=>{if(Math.hypot(e.x-hx,e.y-hy)<C.rad+e.r){if(!tocado){impX=e.x;impY=e.y}tocado=1;hurt(e,C.dmg,C.d*C.kb*(last?1:MELEE_AJ.empuje),0);if(!e.boss&&(!ET[e.type].elite||(e.golpesR=(e.golpesR||0)+1)%2===0))e.stun=Math.max(e.stun||0,MELEE_AJ.aturde)}});
 
       for(let i=0;i<5;i++)parts.push({x:hx+C.d*rnd(4,12),y:hy-rnd(4,16),vx:C.d*rnd(20,70),vy:rnd(-40,10),t:0.22,c:C.col[i%2],s:2});
 
-      if(tocado&&window.PFX)PFX.hit(hx,P.y,C.d,last);
+      // El destello va sobre el enemigo y no en cada golpe, para que se vea la animación del personaje.
+      if(tocado&&window.PFX&&(last||C.i%2===0))PFX.hit(impX,impY,C.d,last&&!!C.dragon);
 
       if(C.dragon&&last){fxRg.push({x:hx,y:hy-6,t:0,dur:0.5,rad:C.rad*1.6,col:C.col});cam.shake=Math.max(cam.shake||0,6)}
 
