@@ -6,8 +6,8 @@ Generada con `python herramientas/auditar_animaciones.py`. Compara `sprites/` co
 
 - Carpetas con imágenes: **405** (37468 imágenes). En el juego: **302**. Sin usar: **103**.
 - De las 103 sin usar, 10 son escenarios, referencias o Shenron; quedan **93** con personajes (6655 imágenes).
-- En los packs usados hay 30590 imágenes y el juego usa **5676** (18 %).
-- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **53**. Sin ninguno: **143**.
+- En los packs usados hay 30590 imágenes y el juego usa **5767** (18 %).
+- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **63**. Sin ninguno: **133**.
 - Formas solo de enemigo u otras: 40.
 
 Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no cuenta porque reutiliza el cuerpo del vuelo.
@@ -17,21 +17,18 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | Personaje | Formas | Fotogramas en sus packs | Usados | Ataques extra que faltan |
 |---|---:|---:|---:|---:|
 | vegetasuper | 5 | 459 | 90 | 25 |
-| bardockalt | 4 | 329 | 63 | 20 |
 | blackfan | 4 | 522 | 74 | 20 |
 | gokumoro | 5 | 445 | 78 | 20 |
 | vegetaue | 4 | 406 | 76 | 20 |
 | vegettofan | 4 | 691 | 63 | 20 |
 | blacktime | 3 | 514 | 55 | 15 |
-| gogetafan | 3 | 573 | 49 | 15 |
 | gohanadult | 3 | 341 | 51 | 15 |
-| gokuxeno | 3 | 355 | 44 | 15 |
 | trunkscell | 3 | 177 | 48 | 15 |
 | vegetagt | 3 | 236 | 55 | 15 |
 | zombies | 3 | 396 | 47 | 15 |
 | gokuui | 5 | 357 | 107 | 11 |
-| brolyfan | 2 | 241 | 33 | 10 |
 | gokubroly | 4 | 286 | 86 | 10 |
+| gokuxeno | 3 | 355 | 54 | 10 |
 | kale | 2 | 100 | 31 | 10 |
 | kefla | 2 | 253 | 35 | 10 |
 | kyabe | 2 | 162 | 30 | 10 |
@@ -166,10 +163,13 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | zamasu | 2 | 168 | 51 | 1 |
 | a21 | 1 | 195 | 29 | 0 |
 | babyvegeta | 1 | 57 | 22 | 0 |
+| bardockalt | 4 | 329 | 97 | 0 |
 | bills | 1 | 78 | 27 | 0 |
+| brolyfan | 2 | 241 | 50 | 0 |
 | cooler | 1 | 81 | 27 | 0 |
 | frost | 2 | 106 | 48 | 0 |
 | ginyu | 1 | 111 | 26 | 0 |
+| gogetafan | 3 | 573 | 79 | 0 |
 | gohandbs | 5 | 603 | 128 | 0 |
 | goku044 | 1 | 71 | 23 | 0 |
 | gokubluewhis | 1 | 70 | 21 | 0 |

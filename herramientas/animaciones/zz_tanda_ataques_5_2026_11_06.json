@@ -1,0 +1,23 @@
+{
+  "_nota": "Quinta tanda de ataques que estaban en las hojas y no en el juego (6 nov. 2026). Revisada a ojo.",
+  "heroes": {
+    "bardockalt": {
+      "0": { "attack2": [29, 31], "attack3": [14, 15], "kick2": [19, 26], "beam": [49, 52], "up": [25] },
+      "1": { "attack2": [58, 60], "attack3": [34, 61], "kick2": [51, 52], "beam": [42, 58], "up": [30, 31] },
+      "2": { "attack2": [60, 61], "attack3": [55, 56], "kick2": [48, 49], "beam": [32, 34], "up": [15, 16] },
+      "3": { "attack2": [84, 85], "attack3": [66, 81], "kick2": [62, 63], "beam": [12, 61], "up": [71] }
+    },
+    "brolyfan": {
+      "0": { "attack2": [20, 21], "attack3": [48, 51], "kick2": [54, 56], "beam": [9, 12], "up": [6] },
+      "1": { "attack2": [109, 110], "attack3": [96, 97], "kick2": [87, 88], "beam": [52, 101], "up": [102] }
+    },
+    "gogetafan": {
+      "0": { "attack2": [45, 46], "attack3": [123, 125], "kick2": [104, 105], "beam": [13, 14], "up": [50, 51] },
+      "1": { "attack2": [186, 187, 188], "attack3": [200, 201], "kick2": [183, 184], "beam": [144, 145], "up": [147] },
+      "2": { "attack2": [75, 76], "attack3": [18, 19], "kick2": [79, 83], "beam": [23, 24], "up": [42, 43] }
+    },
+    "gokuxeno": {
+      "0": { "attack2": [19, 20], "attack3": [27, 30], "kick2": [28, 31], "beam": [80, 84], "up": [93, 94] }
+    }
+  }
+}

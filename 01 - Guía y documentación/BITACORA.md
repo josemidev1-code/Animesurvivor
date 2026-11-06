@@ -3973,3 +3973,20 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Tanda 5: las cuatro formas de `bardockalt`, las dos de `brolyfan`, las tres de `gogetafan` y `gokuxeno/0`.
+
+## 2026-11-06 — Claude Opus 5.5 (tanda 5 de ataques)
+
+### Lo que pidió el usuario
+- Josemi: «Sí, tanda 5».
+
+### Lo que hice
+- `herramientas/animaciones/zz_tanda_ataques_5_2026_11_06.json`: 50 animaciones en 10 formas (las cuatro de `bardockalt`, las dos de `brolyfan`, las tres de `gogetafan` y `gokuxeno/0`). Revisadas a ojo y vistas en partida con Playwright, sin errores de consola. Exportadas a `piskel_animaciones/`.
+- Corregidos en la revisión fotogramas con otra escala en `bardockalt/1` y `brolyfan/1`: esos packs mezclan tamaños y el montaje no siempre los iguala, así que hay que mirar la altura en las tiras montadas.
+- Formas jugables sin ningún ataque extra: de 143 a 133. Con los 5 completos: de 53 a 63.
+
+### A medias / problemas
+- La segunda patada de `bardockalt/2` es floja: el pack no tiene una patada clara que no esté ya en uso.
+- Las poses `Beam` y `Up` se probaron forzando el estado de la técnica; los combos, por el motor. No se ha jugado una partida completa.
+
+### Siguiente paso recomendado
+- Tanda 6: las cuatro formas de `vegettofan`, `gokuxeno/1` y `gokuxeno/2`, las tres de `zombies` y `gokumoro/3`.
