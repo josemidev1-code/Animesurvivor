@@ -3937,3 +3937,21 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Tanda 3: segundas formas de Raditz, Turles, Frost y Zamasu, más Saibaman, Baby Vegeta, Bra, Uub, Mr. Satán y A21.
+
+## 2026-11-06 — Claude Opus 5.5 (tanda 3 de ataques)
+
+### Lo que pidió el usuario
+- Josemi: «Sí, tanda 3» y, tras parar un comando, «sigue».
+
+### Lo que hice
+- `herramientas/animaciones/zz_tanda_ataques_3_2026_11_06.json`: 48 animaciones en 10 formas (Raditz SSJ, Turles SSJ maligno, Frost última forma, fusión de Zamasu, Saibaman, Baby Vegeta, Bra, Uub, Mr. Satán y A21). Revisadas a ojo y vistas en partida en el navegador, sin errores. Exportadas a `piskel_animaciones/`.
+- Corregidas en la revisión varias poses de la primera selección: Bra (pelo azul), Uub (de espaldas), A21 y Baby Vegeta.
+- Formas jugables sin ningún ataque extra: de 163 a 153. Con los 5 completos: de 38 a 46. Informe regenerado en `AUDITORIA_ANIMACIONES.md`.
+
+### A medias / problemas
+- Sin pose adecuada en el pack: `kick2` de Saibaman y `up` de Raditz SSJ.
+- El primer combo nuevo de la fusión de Zamasu (`attack2`) se lee más como un salto que como un golpe. Se deja porque el pack no tiene una alternativa mejor.
+- Las poses `Beam` y `Up` se probaron forzando el estado de la técnica; los combos, por el motor. No se ha jugado una partida completa.
+
+### Siguiente paso recomendado
+- Tanda 4: Jeice, Guldo, segunda forma de Bra, Cumber, Dr. Lrx (`dlrx`) y las cinco formas de Gohan DBS.

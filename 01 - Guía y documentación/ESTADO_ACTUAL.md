@@ -112,3 +112,7 @@ Actualizado: 5 de noviembre de 2026.
 ## 6 nov. — Tanda 2 de ataques
 
 - 41 animaciones más en Nappa, Ginyu, A16, A17, Turles, Zamasu, Toppo, Moro, Janemba y Frost (`zz_tanda_ataques_2_2026_11_06.json`). Quedan 163 de 273 formas jugables sin ataques extra. Tanda 3 propuesta en la bitácora.
+
+## 6 nov. — Tanda 3 de ataques
+
+- 48 animaciones más en 10 formas (`zz_tanda_ataques_3_2026_11_06.json`). Quedan 153 de 273 formas jugables sin ataques extra. Tanda 4 propuesta en la bitácora.

@@ -1,0 +1,15 @@
+{
+  "_nota": "Tercera tanda de ataques que estaban en las hojas y no en el juego (6 nov. 2026). Revisada a ojo.",
+  "heroes": {
+    "raditz": { "1": { "attack2": [9, 10], "attack3": [24, 25], "kick2": [19, 20], "beam": [31, 32] } },
+    "turles": { "1": { "attack2": [67, 68, 69], "attack3": [60, 63], "kick2": [52, 55], "beam": [29, 34], "up": [30] } },
+    "frost": { "1": { "attack2": [19, 20], "attack3": [21, 22], "kick2": [30, 31], "beam": [42, 46], "up": [6] } },
+    "zamasu": { "1": { "attack2": [44, 45, 46], "attack3": [47, 49], "kick2": [37, 40], "beam": [69, 71], "up": [86, 87] } },
+    "saibaman": { "0": { "attack2": [10, 11], "attack3": [14, 16], "beam": [34, 40], "up": [33] } },
+    "babyvegeta": { "0": { "attack2": [31, 32], "attack3": [41, 42], "kick2": [36, 37], "beam": [39, 41], "up": [48] } },
+    "bra": { "0": { "attack2": [37, 38], "attack3": [79, 81, 82], "kick2": [33, 34], "beam": [58, 51], "up": [20, 21] } },
+    "uub": { "0": { "attack2": [24, 25], "attack3": [15, 16], "kick2": [32, 35], "beam": [37, 79], "up": [7] } },
+    "mrsatan": { "0": { "attack2": [329, 330, 331], "attack3": [307, 309, 310], "kick2": [19, 20], "beam": [249, 250], "up": [257, 258] } },
+    "a21": { "0": { "attack2": [33, 34], "attack3": [37, 38], "kick2": [43, 44], "beam": [102, 103], "up": [94] } }
+  }
+}
