@@ -6,8 +6,8 @@ Generada con `python herramientas/auditar_animaciones.py`. Compara `sprites/` co
 
 - Carpetas con imágenes: **405** (37468 imágenes). En el juego: **302**. Sin usar: **103**.
 - De las 103 sin usar, 10 son escenarios, referencias o Shenron; quedan **93** con personajes (6655 imágenes).
-- En los packs usados hay 30590 imágenes y el juego usa **5926** (19 %).
-- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **80**. Sin ninguno: **113**.
+- En los packs usados hay 30590 imágenes y el juego usa **6008** (19 %).
+- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **87**. Sin ninguno: **103**.
 - Formas solo de enemigo u otras: 40.
 
 Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no cuenta porque reutiliza el cuerpo del vuelo.
@@ -19,15 +19,13 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | blackfan | 4 | 522 | 74 | 20 |
 | gokumoro | 5 | 445 | 80 | 19 |
 | blacktime | 3 | 514 | 55 | 15 |
-| trunkscell | 3 | 177 | 48 | 15 |
-| vegetagt | 3 | 236 | 55 | 15 |
 | gokuui | 5 | 357 | 107 | 11 |
 | gohanadult | 3 | 341 | 60 | 10 |
 | gokubroly | 4 | 286 | 86 | 10 |
-| kale | 2 | 100 | 31 | 10 |
-| kefla | 2 | 253 | 35 | 10 |
 | kyabe | 2 | 162 | 30 | 10 |
+| trunkscell | 3 | 177 | 57 | 10 |
 | trunksnino | 2 | 346 | 29 | 10 |
+| vegetagt | 3 | 236 | 63 | 10 |
 | vegetamanga | 2 | 250 | 36 | 10 |
 | gokualt | 3 | 302 | 67 | 7 |
 | gokusuper | 5 | 371 | 118 | 7 |
@@ -40,7 +38,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | blackrosen | 1 | 48 | 14 | 5 |
 | bramajin | 1 | 315 | 15 | 5 |
 | bulma | 1 | 16 | 12 | 5 |
-| caulifla | 1 | 103 | 16 | 5 |
 | cui | 1 | 46 | 15 | 5 |
 | daishinkan | 1 | 86 | 15 | 5 |
 | dyspo | 1 | 128 | 18 | 5 |
@@ -69,7 +66,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokuuimanga | 1 | 270 | 14 | 5 |
 | gokuuiverdadero | 1 | 140 | 15 | 5 |
 | gomah | 1 | 38 | 18 | 5 |
-| gotenks | 1 | 108 | 17 | 5 |
 | granola | 1 | 137 | 15 | 5 |
 | hatchiyack | 1 | 56 | 15 | 5 |
 | jirengray | 1 | 73 | 15 | 5 |
@@ -85,13 +81,11 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | pangt | 1 | 99 | 15 | 5 |
 | paragus | 1 | 99 | 15 | 5 |
 | reycold | 1 | 59 | 15 | 5 |
-| roshi | 1 | 82 | 14 | 5 |
 | shin | 1 | 51 | 15 | 5 |
 | slug | 1 | 46 | 15 | 5 |
 | super17 | 1 | 51 | 15 | 5 |
 | taopaipai | 1 | 78 | 14 | 5 |
 | tarble | 1 | 31 | 15 | 5 |
-| tenshinhan | 1 | 77 | 15 | 5 |
 | trunksarmor | 1 | 74 | 14 | 5 |
 | trunksgt | 1 | 39 | 14 | 5 |
 | vegetabaseulsw | 1 | 121 | 14 | 5 |
@@ -123,6 +117,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokudiosberserk | 1 | 46 | 16 | 3 |
 | gokugt | 4 | 422 | 106 | 3 |
 | jiren | 3 | 295 | 62 | 3 |
+| kale | 2 | 100 | 45 | 3 |
 | moro | 1 | 52 | 20 | 3 |
 | vegetaue | 4 | 406 | 107 | 3 |
 | a17 | 1 | 41 | 21 | 2 |
@@ -135,6 +130,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokuyardratswl | 1 | 169 | 20 | 2 |
 | piccolo | 2 | 179 | 46 | 2 |
 | raditz | 2 | 92 | 48 | 2 |
+| roshi | 1 | 82 | 19 | 2 |
 | vegeta | 5 | 421 | 130 | 2 |
 | vegetto | 4 | 446 | 97 | 2 |
 | a16 | 1 | 64 | 24 | 1 |
@@ -163,6 +159,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | bardockalt | 4 | 329 | 97 | 0 |
 | bills | 1 | 78 | 27 | 0 |
 | brolyfan | 2 | 241 | 50 | 0 |
+| caulifla | 1 | 103 | 25 | 0 |
 | cooler | 1 | 81 | 27 | 0 |
 | frost | 2 | 106 | 48 | 0 |
 | ginyu | 1 | 111 | 26 | 0 |
@@ -172,10 +169,13 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokubluewhis | 1 | 70 | 21 | 0 |
 | gokuuisign | 1 | 114 | 23 | 0 |
 | goten | 1 | 89 | 20 | 0 |
+| gotenks | 1 | 108 | 26 | 0 |
 | guldo | 1 | 103 | 28 | 0 |
 | jeice | 1 | 79 | 26 | 0 |
+| kefla | 2 | 253 | 53 | 0 |
 | krilin | 1 | 81 | 20 | 0 |
 | mrsatan | 1 | 371 | 31 | 0 |
+| tenshinhan | 1 | 77 | 25 | 0 |
 | toppo | 1 | 77 | 27 | 0 |
 | turles | 2 | 166 | 51 | 0 |
 | uub | 1 | 93 | 28 | 0 |

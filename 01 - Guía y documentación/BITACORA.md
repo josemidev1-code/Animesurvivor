@@ -4023,3 +4023,19 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Tanda 8: elegir diez formas de la lista de pendientes de `AUDITORIA_ANIMACIONES.md`. También queda pendiente el camino de vuelta de Piskel al juego.
+
+## 2026-11-06 — Claude Opus 5.5 (tanda 8 de ataques)
+
+### Lo que pidió el usuario
+- Josemi: «Sí, tanda 8».
+
+### Lo que hice
+- `herramientas/animaciones/zz_tanda_ataques_8_2026_11_06.json`: 45 animaciones en 10 formas (Ten Shin Han, Roshi, Gotenks, las dos de Kefla, Caulifla, las dos de Kale, `trunkscell/0` y `vegetagt/0`). Revisadas a ojo y vistas en partida con Playwright, sin errores de consola. Exportadas a `piskel_animaciones/`.
+- Formas jugables sin ningún ataque extra: de 113 a 103. Con los 5 completos: de 80 a 87.
+
+### A medias / problemas
+- Roshi queda sin `attack3` ni `beam` propios: sus poses de rayo del pack salen pálidas. Kale base queda sin `attack3` ni `up`, y Kale SSJ sin `up`.
+- Las poses `Beam` y `Up` se probaron forzando el estado de la técnica; los combos, por el motor. No se ha jugado una partida completa.
+
+### Siguiente paso recomendado
+- Tanda 9: `trunkscell/1` y `/2`, `vegetagt/1` y `/2`, `gohanadult/1`, `videl`, `gokunino`, `slug`, `gas` y `granola`. También queda pendiente el camino de vuelta de Piskel al juego.
