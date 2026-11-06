@@ -5016,7 +5016,11 @@ function checkForm(){const lv=FORM_LV.filter(l=>P.lvl>=l).length-1,f=Math.min(HE
 
 // roce: daño por segundo de cada enemigo pegado (sin invulnerabilidad), así rodearte de muchos es peligroso y uno suelto no
 
-const ROL_AJ={aviso:0.5,avisoE:0.3,golpe:0.18,encadena:0.45,golpesE:3,alcance:22,cdGolpe:1.1,cargaAviso:0.6,cargaVel:200,cargaDur:0.45,cargaMin:30,cargaMax:110,cdCarga:1.8,tiroMin:90,tiroMax:150,roce:0.5,maxBalas:6};
+const ROL_AJ={aviso:0.25,avisoE:0.15,golpe:0.18,encadena:0.45,golpesE:3,alcance:22,cdGolpe:1.1,cargaAviso:0.25,cargaVel:200,cargaDur:0.45,cargaMin:30,cargaMax:110,cdCarga:1.8,turbo:2.2,turboCerca:50,turboLejos:110,roce:0.5,maxBalas:6};
+
+// sprint de llegada (lo pidió Josemi: «los enemigos tienen que venirte»): lejos corren para alcanzarte y al llegar recuperan su velocidad, así se les puede seguir esquivando
+
+function rolTurbo(e,d){if(e.boss)return 1;const A=ROL_AJ;return 1+(A.turbo-1)*clamp((d-A.turboCerca)/(A.turboLejos-A.turboCerca),0,1)}
 
 function rolE(e){if(e.rol)return e.rol;const T=ET[e.type]||{};return e.rol=T.boss?'jefe':T.kami?'kami':T.elite?'elite':T.shoot?'tirador':T.spd>=44?'embestidor':'pegador'}
 
@@ -5030,23 +5034,22 @@ function rolAI(e,d,dx,dy,dt){const r=rolE(e),A=ROL_AJ;if(r==='jefe'||r==='kami')
 
   if(a){a.t-=dt;
 
-    if(a.f==='aviso'){if(a.t<=0){a.f='golpe';a.t=A.golpe;a.k=!a.k;if(d<A.alcance+e.r)hitPlayer(e.dmg,false)}return[0,0]}
+    if(a.f==='aviso'){if(a.t<=0){a.f='golpe';a.t=A.golpe;a.k=!a.k;if(d<A.alcance+e.r)hitPlayer(e.dmg,false)}return null}
 
-    if(a.f==='golpe'){if(a.t<=0){if(--a.n>0){a.f='aviso';a.t=A.encadena}else{e.atk=null;e.atkCd=A.cdGolpe}}return[0,0]}
+    if(a.f==='golpe'){if(a.t<=0){if(--a.n>0){a.f='aviso';a.t=A.encadena}else{e.atk=null;e.atkCd=A.cdGolpe}}return null}
 
-    if(a.f==='carga'){if(a.t<=0){a.f='embiste';a.t=A.cargaDur}return[0,0]}
+    if(a.f==='carga'){if(a.t<=0){a.f='embiste';a.t=A.cargaDur}return null}
 
     if(!a.hit&&d<e.r+8){a.hit=1;hitPlayer(e.dmg,false)}
 
-    if(a.t<=0){e.atk=null;e.atkCd=A.cdCarga;return[0,0]}return[a.ux*A.cargaVel,a.uy*A.cargaVel]}
+    if(a.t<=0){e.atk=null;e.atkCd=A.cdCarga;return null}return[a.ux*A.cargaVel,a.uy*A.cargaVel]}
 
   const ux=dx/d,uy=dy/d,listo=!(e.atkCd>0);
 
-  if(r==='tirador'){if(d<A.tiroMin)return[-ux*e.spd*1.1,-uy*e.spd*1.1];if(d<A.tiroMax){const q=e.avoid||1;return[-uy*e.spd*0.5*q,ux*e.spd*0.5*q]}return null}
 
-  if(listo&&d<A.alcance+e.r){e.atk={f:'aviso',t:r==='elite'?A.avisoE:A.aviso,n:r==='elite'?A.golpesE:1};return[0,0]}
+  if(listo&&d<A.alcance+e.r){e.atk={f:'aviso',t:r==='elite'?A.avisoE:A.aviso,n:r==='elite'?A.golpesE:1};return null}
 
-  if(r==='embestidor'&&listo&&d>A.cargaMin&&d<A.cargaMax){e.atk={f:'carga',t:A.cargaAviso,ux,uy};return[0,0]}
+  if(r==='embestidor'&&listo&&d>A.cargaMin&&d<A.cargaMax){e.atk={f:'carga',t:A.cargaAviso,ux,uy};return null}
 
   return null}
 
@@ -5106,7 +5109,7 @@ function update(dt){
 
     const dx=P.x-e.x,dy=P.y-e.y,d=Math.hypot(dx,dy)||1;
 
-    let vx=0,vy=0;if(e.stun>0){rolCancel(e);e.stun-=dt}else if(!skip){const v=rolAI(e,d,dx,dy,dt);if(v){vx=v[0];vy=v[1]}else{vx=dx/d*e.spd;vy=dy/d*e.spd;if(e.avoidT>0){e.avoidT-=dt;const q=e.avoid||1,nx=-dy/d*q,ny=dx/d*q;vx=vx*0.3+nx*e.spd*0.95;vy=vy*0.3+ny*e.spd*0.95}}}
+    let vx=0,vy=0;if(e.stun>0){rolCancel(e);e.stun-=dt}else if(!skip){const v=rolAI(e,d,dx,dy,dt);if(v){vx=v[0];vy=v[1]}else{const tb=rolTurbo(e,d);vx=dx/d*e.spd*tb;vy=dy/d*e.spd*tb;if(e.avoidT>0){e.avoidT-=dt;const q=e.avoid||1,nx=-dy/d*q,ny=dx/d*q;vx=vx*0.3+nx*e.spd*0.95;vy=vy*0.3+ny*e.spd*0.95}}}
 
     if(!skip){vx+=e.kx;vy+=e.ky;const hit=solidMove(e,vx*dt,vy*dt,e.r);if(hit){e.avoidT=0.45;e.avoid=e.avoid||(((e.x*13+e.y*7)|0)&1?1:-1)}}else solidResolve(e,e.r);e.kx*=0.86;e.ky*=0.86;
 
@@ -7211,7 +7214,7 @@ function render(time){
 
   // las explosiones grandes, algo transparentes para que se vea lo que pasa debajo
 
-  for(const f of fxs){const c=f.fr[Math.min(f.fr.length-1,f.t/f.T*f.fr.length|0)];if(c.width>40)ctx.globalAlpha=0.85;ctx.drawImage(c,X(f.x)-(c.width>>1),Y(f.y)-(c.height>>1));ctx.globalAlpha=1}
+  for(const f of fxs){const c=f.fr[Math.min(f.fr.length-1,f.t/f.T*f.fr.length|0)];if(!c)continue;if(c.width>40)ctx.globalAlpha=0.85;ctx.drawImage(c,X(f.x)-(c.width>>1),Y(f.y)-(c.height>>1));ctx.globalAlpha=1}
 
   // números de daño a la mitad: un píxel de la imagen por píxel del número, como el HUD (si la pantalla va a x1, como antes)
 

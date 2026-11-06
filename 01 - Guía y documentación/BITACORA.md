@@ -3883,3 +3883,19 @@ ode --check.
 - Ranking con filas, retrato y medallas para los tres primeros, y escenarios superados en cuadrícula con portada.
 - Elige escenario en azul marino con jefes legibles. Retoques en cápsulas y ajustes. Personajes no se toca: sus ventanas azules las eligió Josemi.
 - Probado a 1280x720 y 390x844 sin desbordes ni errores de consola, con datos de ranking de prueba solo en el navegador de pruebas.
+
+
+## 2026-11-06 — Claude Opus 5.5 (enemigos que vienen)
+
+### Lo que pidió el usuario
+- «Me encanta todo, pero los enemigos tienen que venirte».
+
+### Lo que hice
+- Causas: aparecen en el borde de la pantalla y caminan despacio (primer contacto a los 7,5-11,5 s con el jugador quieto); los tiradores retrocedían y orbitaban; pegadores y embestidores se paraban para avisar.
+- Sprint de llegada (`rolTurbo`): x2,2 lejos, velocidad normal al llegar, para poder seguir esquivando; no afecta a jefes.
+- Ya nadie se para: avisan, golpean y se preparan caminando, con avisos más cortos (0,25 s; élite 0,15 s; carga 0,25 s). Los tiradores avanzan disparando y de cerca pegan. No se ha tocado el daño.
+- Primer contacto ahora a los 2,7-5,5 s (8 partidas). Quieto se cae hacia los 30-38 s; antes hacia los 30-45 s (solo 2 partidas de referencia).
+- Protección en `render` contra efectos sin imagen cargada todavía (error de consola al empezar partida muy deprisa).
+
+### A medias / problemas
+- Medido con el jugador quieto, no jugando de verdad: el ajuste fino de dificultad necesita que Josemi lo juegue. Los valores están en `ROL_AJ` (`turbo`, `aviso`, `cargaAviso`); se pueden probar en marcha con `window.AS.rol`.

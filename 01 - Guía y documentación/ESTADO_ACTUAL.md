@@ -98,3 +98,8 @@ Actualizado: 5 de noviembre de 2026.
 ## 6 nov. — Resto de menús
 - Josemi aprobó el estilo de la interfaz. Tienda, Ranking, Elige escenario, Cápsulas y Ajustes ya lo siguen. Personajes conserva las ventanas azules por decisión suya.
 - script.js?v=170, style.css?v=91.
+
+
+## 6 nov. — Enemigos que vienen a por ti
+- Sprint de llegada y sin paradas; los tiradores ya no huyen. Primer contacto a los 2,7-5,5 s (antes 7,5-11,5 s). Pendiente de que Josemi lo valore jugando. Sustituye la decisión del 2 nov. de tiradores a distancia y avisos que paran.
+- script.js?v=172.

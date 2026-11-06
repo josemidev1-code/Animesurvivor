@@ -4,7 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),asse
 const raiz=path.resolve(__dirname,'..'),src=fs.readFileSync(path.join(raiz,'02 - Código del juego/script.js'),'utf8');
 function tramo(desde,hasta){const a=src.indexOf(desde),b=src.indexOf(hasta,a);assert(a>=0&&b>a,`No se encuentra ${desde}`);return src.slice(a,b)}
 let golpes=[];
-const c=vm.createContext({Math,ET:{saiba:{spd:32},celljr:{spd:50},soldier:{spd:28,shoot:3.6},vegetaE:{elite:1,shoot:1.8,spd:56},sb:{kami:1,spd:40},cell:{boss:1,spd:50}},
+const c=vm.createContext({Math,clamp:(v,a,b)=>v<a?a:v>b?b:v,ET:{saiba:{spd:32},celljr:{spd:50},soldier:{spd:28,shoot:3.6},vegetaE:{elite:1,shoot:1.8,spd:56},sb:{kami:1,spd:40},cell:{boss:1,spd:50}},
   hitPlayer:(d,big)=>golpes.push(d),parts:[],texts:[],sfx:()=>{},cam:{shake:0}});
 vm.runInContext(tramo('const ROL_AJ=','// ---------- fin de los tipos de enemigo')+';this.ROL_AJ=ROL_AJ',c);
 const A=c.ROL_AJ,dt=1/30;
@@ -18,9 +18,9 @@ assert.equal(c.rolE(en('saiba')),'pegador');assert.equal(c.rolE(en('celljr')),'e
 assert.equal(c.rolE(en('soldier')),'tirador');assert.equal(c.rolE(en('vegetaE')),'elite');
 assert.equal(c.rolE(en('sb')),'kami');assert.equal(c.rolE(en('cell')),'jefe');
 
-// Pegador: lejos persigue; cerca se para, avisa y golpea una vez al acabar el aviso
+// Pegador: persigue siempre; cerca avisa sin pararse y golpea una vez al acabar el aviso
 {const e=en('saiba');assert.equal(paso(e,100),null);
-  golpes=[];assert.deepEqual([...paso(e,20)],[0,0]);assert.equal(e.atk.f,'aviso');
+  golpes=[];assert.equal(paso(e,20),null,'se para al avisar');assert.equal(e.atk.f,'aviso');
   durante(e,20,A.aviso-0.1);assert.equal(golpes.length,0,'golpea antes de acabar el aviso');
   durante(e,20,0.2);assert.deepEqual(golpes,[10],'no golpea al acabar el aviso');
   durante(e,20,0.3);assert.equal(golpes.length,1,'golpea más de una vez seguida');}
@@ -30,19 +30,22 @@ assert.equal(c.rolE(en('sb')),'kami');assert.equal(c.rolE(en('cell')),'jefe');
 {const e=en('saiba');paso(e,20);e.stun=0.2;c.rolCancel(e);assert.equal(e.atk,null);}
 
 // Élite: avisa menos y encadena golpes separados lo bastante para que cada uno cuente
-{const e=en('vegetaE');golpes=[];paso(e,20);assert.equal(e.atk.t,A.avisoE);durante(e,20,3);assert.equal(golpes.length,A.golpesE);
+{const e=en('vegetaE');golpes=[];paso(e,20);assert.equal(e.atk.t,A.avisoE);durante(e,20,2);assert.equal(golpes.length,A.golpesE);
   assert(A.encadena+A.golpe>=0.6,'los golpes encadenados caen dentro de la invulnerabilidad del jugador');}
 
-// Embestidor: se carga sin moverse y luego embiste en la dirección fijada al empezar
-{const e=en('celljr');golpes=[];assert.deepEqual([...paso(e,80)],[0,0]);assert.equal(e.atk.f,'carga');
+// Embestidor: se carga caminando y luego embiste en la dirección fijada al empezar
+{const e=en('celljr');golpes=[];assert.equal(paso(e,80),null,'se para al cargar');assert.equal(e.atk.f,'carga');
   durante(e,80,A.cargaAviso-0.05);const v=durante(e,-80,0.1);assert.equal(e.atk.f,'embiste');
   assert(v[0]>0&&Math.abs(Math.hypot(v[0],v[1])-A.cargaVel)<1e-6,'no embiste recto hacia donde apuntó');}
 // Embestidor: acierta una sola vez si te pilla
 {const e=en('celljr');golpes=[];paso(e,80);durante(e,80,A.cargaAviso+0.01);e.x=75;durante(e,80,0.2);assert.deepEqual(golpes,[10]);}
 
-// Tirador: demasiado cerca retrocede; a media distancia no se acerca más; lejos persigue
-{const e=en('soldier');const v=paso(e,50);assert(v[0]<0,'no retrocede');
-  const m=paso(e,120);assert(m&&m[0]<=0,'se acerca a media distancia');assert.equal(paso(e,300),null);}
+// Tirador: nunca huye ni orbita; siempre avanza, y de cerca también pega
+{const e=en('soldier');for(const px of [300,120,50])assert.equal(paso(e,px),null,'el tirador no avanza a '+px);
+  golpes=[];paso(e,20);assert.equal(e.atk.f,'aviso');durante(e,20,A.aviso+0.1);assert.deepEqual(golpes,[10]);}
+
+// Sprint de llegada: lejos corren, cerca van a su velocidad, los jefes no lo usan
+{const e=en('saiba');assert.equal(c.rolTurbo(e,300),A.turbo);assert.equal(c.rolTurbo(e,A.turboCerca),1);assert.equal(c.rolTurbo({boss:1},300),1);}
 
 // Kamikaze y jefes conservan su lógica
 assert.equal(paso(en('sb'),20),null);assert.equal(paso(en('cell'),20),null);
