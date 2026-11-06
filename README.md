@@ -128,3 +128,9 @@ El gachapón ahora presenta una máquina Hoi-Poi en pixel art con caída, rebote
 
 ### 6 de noviembre — Revisión de sprites en partida
 Se corrigieron 125 selecciones en 91 formas, la continuidad de los combos y las secuencias de ataque de los enemigos. Se incorporaron Tora, Vegeta explorador HD, Vegeta SSJ2 HD, Kyabe clásico y Goku Black LSW. El catálogo incluye 307 formas. Véase `01 - Guía y documentación/REVISION_SPRITES_2026-11-06.md` para pruebas, limpieza y material pendiente.
+
+
+### 6 de noviembre — Correspondencia de técnicas y sprites
+El motor conserva la postura al lanzar proyectiles y respeta los tiempos de los fotogramas; los combos esperan a terminar su preparación antes de causar daño. Se corrigieron selecciones en 24 formas, separando puños, patadas y espadas y añadiendo poses específicas por técnica. Piskel permite devolver secuencias reordenadas al juego y conserva las pausas del original. Guía: `herramientas/GUIA_ANIMACIONES.md`.
+
+Pendiente: continuar la revisión visual del resto del catálogo, especialmente técnicas que todavía usan una pose de reserva. Las comprobaciones de carga de todo el plantel no sustituyen esa revisión.

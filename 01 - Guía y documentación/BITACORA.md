@@ -4102,4 +4102,16 @@ ode --check.
 
 ### A medias / problemas
 - El motor se aplica a todo el plantel; la prueba del navegador recorrió 270 formas visibles y 1.522 combinaciones forma/técnica, sin errores de carga. Esto no equivale a revisar todos los fotogramas ni todos los ataques nuevos a ojo.
-- Siguen formas sin poses extra propias: no se rellenan con selecciones automáticas sin revisión. Suite Python general en ejecución; una comprobación de línea base ya indica fallo y se está contrastando con la versión anterior.
+- Siguen formas sin poses extra propias: no se rellenan con selecciones automáticas sin revisión. Suite Python general interrumpida tras confirmar un fallo previo de línea base; pruebas específicas correctas.
+
+- Primer commit: `cfe001e2` (motor, selecciones y pruebas de sincronización). El daño del combo espera al primer fotograma de acción. Las 13 técnicas específicas de la prueba cargan sus secuencias propias sin errores.
+- Contrastada la línea base de medición con `fe3baa0d`: mismos resultados antes/después (1 suelto, 33 agachadas, 10 desiguales); fallo previo confirmado. La suite general se interrumpió después de confirmar el fallo previo: estaba recalculando cachés ajenas al cambio durante más de veinte minutos. Las pruebas específicas de Piskel, motor, combate, personajes y catálogo pasan.
+
+- Piskel y sus artefactos guardados en `52e24e21` y `ea64ea2b`. 322 animaciones activas de las formas corregidas validadas de ida/vuelta. Se probó importar el Kamehameha nativo en la web real de Piskel: 2 fotogramas, 52×52 y 5 FPS, reproducidos en el editor.
+- Prueba completa de combate en navegador: 1.522 combinaciones de técnica/forma de 270 formas visibles ejecutadas durante 0,65 s cada una y renderizadas; sin errores ni coordenadas inválidas.
+- Ajuste final: las esferas de preparación usan las mismas anclas que el disparo; no se dibuja una bola de ki genérica al preparar poder o espada.
+
+### Cierre
+- Hecho: motor común, correcciones de 24 selecciones de forma, 27 secuencias por técnica, emisión alineada y vuelta validada de Piskel. Pruebas específicas y navegador correctos. Cachés y hojas temporales apartadas del cambio.
+- A medias: la revisión manual exhaustiva de todo el catálogo, especialmente las técnicas que todavía usan una pose de reserva. No se afirma que todas las formas estén revisadas a ojo. La suite Python general se interrumpió durante el recálculo de cachés, después de confirmar su fallo de línea base previo.
+- Siguiente paso: revisar las técnicas de reserva por personaje y transformación visibles, aprovechando las secuencias `tecnica_ID`; no volver a generar tandas genéricas ni contar variantes ocultas como mejoras del plantel.
