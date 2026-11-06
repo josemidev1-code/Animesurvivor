@@ -73,3 +73,16 @@ Actualizado: 5 de noviembre de 2026.
 - Juego de supervivencia Dragon Ball para navegador. Debe funcionar abriendo `index.html` con doble clic (sin servidores ni fetch runtime).
 - Personajes y enemigos: usar sprites de `sprites/`, no dibujarlos por código. Revisar animaciones visualmente; anotar recursos pendientes en `01 - Guía y documentación/SPRITES_PENDIENTES.md`.
 - Lee `AGENTS.md` para las reglas completas. Todo en español para el usuario.
+
+
+## 6 nov. — El invento de Bulma
+- Gachapón con máquina Hoi-Poi pixel art, cápsula que cae y rebota, humo y revelación del guerrero con su ataque/guardia. Apertura x1/x10, resumen de x100, salto, Escape, foco contenido y preferencia de movimiento reducido.
+- Recompensas guardadas al tirar una sola vez. Pruebas navegador x1/x10/gratis, persistencia y saldo correctos. script.js?v=157, style.css?v=84. GitHub Pages no verificado en esta sesión.
+- Revisión visual del gachapón: nuevo laboratorio y cápsula raster en ui/gacha, humo y trayectoria mejorados, personaje mayor sobre plataforma. script.js?v=158. Prueba visual correcta en móvil, sin errores de consola.
+
+
+## 6 nov. — Auditoría e integración de sprites
+- 125 selecciones corregidas en 91 formas. Combos continuos y enemigos con secuencias de ataque. Cinco incorporaciones desde packs locales completos.
+- 307 formas montadas, índice sin rutas faltantes. Catálogo y pruebas de navegador sin errores de carga de sprites. Detalle y límites en REVISION_SPRITES_2026-11-06.md.
+- Siete archivos vacíos sin extensión apartados con manifest recuperable. Créditos y fotogramas duplicados conservados para mantener procedencia e índices.
+- script.js?v=160, animaciones_juego.js?v=112. Guardado local, publicación pendiente.

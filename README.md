@@ -120,3 +120,11 @@ el GIF de Lady-Pixel se conserva íntegro. Falta revisar estos objetos en una pa
 - Todo tiene que funcionar con doble clic en `index.html`.
 
 > 3 nov.: las estadísticas de selección usan verde para vida, azul para velocidad y rojo para ataque. Pendiente revisión visual; siguen pendientes el retrato y el personaje completo en selección.
+
+
+### 6 de noviembre — Cápsulas de Bulma
+El gachapón ahora presenta una máquina Hoi-Poi en pixel art con caída, rebote, humo y revelación animada. Los lotes de diez se pueden abrir individualmente o saltar a los resultados. El lote de cien presenta su recompensa destacada y el resumen.
+
+
+### 6 de noviembre — Revisión de sprites en partida
+Se corrigieron 125 selecciones en 91 formas, la continuidad de los combos y las secuencias de ataque de los enemigos. Se incorporaron Tora, Vegeta explorador HD, Vegeta SSJ2 HD, Kyabe clásico y Goku Black LSW. El catálogo incluye 307 formas. Véase `01 - Guía y documentación/REVISION_SPRITES_2026-11-06.md` para pruebas, limpieza y material pendiente.

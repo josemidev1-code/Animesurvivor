@@ -203,3 +203,9 @@ Descartados por ser sprites grandes o HD (Josemi, 4 nov.: Â«solo los pequeÃ±
 RecopilaciÃ³n exhaustiva de 770 hojas de sprites 2D en tamaÃ±o original completo (~318 MB) ubicadas en la carpeta `antigravity sprites/`. El listado completo de autores, obras, dimensiones y enlaces a sus fichas originales en DeviantArt se detalla en:
 - `antigravity sprites/INDICE_SPRITES.md`
 
+
+## Packs locales integrados el 6 de noviembre de 2026
+- Tora, pack 428: Yumejoki, según el nombre del pack.
+- Kyabe clásico, pack 072: MV95, según el archivo de autor conservado.
+- Goku Black LSW, pack 255: GohanAnimations, según el nombre del pack.
+- Vegeta explorador HD (309) y Vegeta SSJ2 HD (298): procedentes de la biblioteca local original; autor específico no identificado en estos packs. Se conservan los originales y cualquier metadato de procedencia.

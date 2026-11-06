@@ -1,0 +1,842 @@
+{
+  "_ayuda": "Selecciones corregidas tras revisión visual del 6/11. [] desactiva un extra incorrecto y usa la animación principal del propio pack. No borrar estos overrides al regenerar.",
+  "heroes": {
+    "goku": {
+      "0": {
+        "dash": [
+          7
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          11
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "2": {
+        "dash": [
+          9
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "3": {
+        "dash": [
+          32
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokussj4gt": {
+      "0": {
+        "dash": [
+          5
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokussj3mais": {
+      "0": {
+        "dash": [
+          6
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokugt": {
+      "1": {
+        "dash": [
+          18
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "2": {
+        "dash": [
+          24
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "3": {
+        "dash": [
+          76
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "0": {
+        "dash": [
+          8
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokuui": {
+      "0": {
+        "dash": [
+          7
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          11
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "3": {
+        "dash": [
+          15
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "4": {
+        "dash": [
+          18
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokubroly": {
+      "0": {
+        "dash": [
+          7
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          11
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "2": {
+        "dash": [
+          18
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokusuper": {
+      "0": {
+        "dash": [
+          14
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          20
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "3": {
+        "dash": [
+          29
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "4": {
+        "dash": [
+          6,
+          7
+        ],
+        "dashDu": [
+          8,
+          8
+        ]
+      }
+    },
+    "gokubluewhis": {
+      "0": {
+        "dash": [
+          29
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokuuisign": {
+      "0": {
+        "dash": [
+          18
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokuyardrat": {
+      "0": {
+        "dash": [
+          18
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokuyardratssj": {
+      "0": {
+        "dash": [
+          21
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokuyardratswl": {
+      "0": {
+        "dash": [
+          26
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokussj3swl": {
+      "0": {
+        "dash": [
+          62
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokussj053": {
+      "0": {
+        "dash": [
+          5
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokussjkaioken": {
+      "0": {
+        "dash": [
+          5
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokuultradios": {
+      "0": {
+        "dash": [
+          10
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokupatrulla": {
+      "0": {
+        "dash": [
+          8
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokudiosberserk": {
+      "0": {
+        "dash": [
+          14
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokussjchaqueta": {
+      "0": {
+        "dash": [
+          60
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokussj4dios": {
+      "0": {
+        "dash": [
+          84
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokumuigranola": {
+      "0": {
+        "dash": [
+          11
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "goku044": {
+      "0": {
+        "dash": [
+          10
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokumoro": {
+      "0": {
+        "dash": [
+          6
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          10
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "2": {
+        "dash": [
+          12
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gokualt": {
+      "0": {
+        "dash": [
+          87
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          66
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "vegeta": {
+      "1": {
+        "dash": [
+          103
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": [],
+        "beam": [
+          17,
+          21
+        ],
+        "beamDu": [
+          12,
+          12
+        ]
+      },
+      "2": {
+        "dash": [
+          10
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "3": {
+        "dash": [
+          5
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "4": {
+        "dash": [
+          97
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": [],
+        "beam": [
+          32,
+          24
+        ],
+        "beamDu": [
+          12,
+          12
+        ]
+      }
+    },
+    "gohan": {
+      "0": {
+        "dash": [
+          5
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          6
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "2": {
+        "dash": [
+          6
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": [],
+        "attack3": []
+      },
+      "3": {
+        "dash": [
+          24
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "piccolo": {
+      "0": {
+        "dash": [
+          21
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "1": {
+        "dash": [
+          59
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": [],
+        "attack2": [],
+        "attack3": []
+      }
+    },
+    "trunks": {
+      "0": {
+        "dash": [
+          21
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          24
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "2": {
+        "dash": [
+          80
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      }
+    },
+    "krilin": {
+      "0": {
+        "dash": [
+          11
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "yamcha": {
+      "0": {
+        "dash": [
+          12
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "goten": {
+      "0": {
+        "dash": [
+          23
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "a18": {
+      "0": {
+        "dash": [
+          6
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      }
+    },
+    "bardock": {
+      "1": {
+        "dash": [
+          11
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "3": {
+        "dash": [
+          5
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      }
+    },
+    "broly": {
+      "0": {
+        "dash": [
+          4
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "1": {
+        "dash": [
+          3
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "3": {
+        "dash": [
+          4
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "2": {
+        "dash": [
+          13
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      }
+    },
+    "vegetto": {
+      "0": {
+        "dash": [
+          60
+        ],
+        "dashDu": [
+          8
+        ],
+        "attack3": []
+      },
+      "1": {
+        "dash": [
+          15
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "2": {
+        "dash": [
+          25
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "3": {
+        "dash": [
+          24
+        ],
+        "dashDu": [
+          8
+        ]
+      }
+    },
+    "gogeta": {
+      "0": {
+        "dash": [
+          35
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "2": {
+        "dash": [
+          68
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "1": {
+        "up": []
+      }
+    },
+    "freezer": {
+      "0": {
+        "dash": [
+          4
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          1
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "2": {
+        "dash": [
+          5
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "3": {
+        "dash": [
+          34
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "4": {
+        "dash": [
+          15
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "5": {
+        "up": []
+      }
+    },
+    "cell": {
+      "0": {
+        "dash": [
+          5
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "1": {
+        "dash": [
+          3
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "2": {
+        "dash": [
+          6
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "3": {
+        "up": []
+      }
+    },
+    "buu": {
+      "0": {
+        "dash": [
+          13
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "1": {
+        "dash": [
+          7
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "2": {
+        "dash": [
+          9
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "3": {
+        "dash": [
+          4
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "4": {
+        "dash": [
+          8
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      }
+    },
+    "black": {
+      "0": {
+        "dash": [
+          29
+        ],
+        "dashDu": [
+          8
+        ],
+        "up": []
+      },
+      "1": {
+        "dash": [
+          142
+        ],
+        "dashDu": [
+          8
+        ]
+      },
+      "2": {
+        "dash": [
+          21,
+          22
+        ],
+        "dashDu": [
+          8,
+          8
+        ],
+        "up": []
+      }
+    },
+    "jiren": {
+      "0": {
+        "up": []
+      },
+      "1": {
+        "attack2": [],
+        "attack3": []
+      }
+    }
+  }
+}

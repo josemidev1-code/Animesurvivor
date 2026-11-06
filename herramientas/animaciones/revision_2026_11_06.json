@@ -1,0 +1,226 @@
+{
+  "heroes": {
+    "tora": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/00_Saiyans/DeviantArt/428_TORA (Yumejoki)",
+        "idle": [
+          8
+        ],
+        "move": [
+          10
+        ],
+        "attack": [
+          32,
+          33,
+          31
+        ],
+        "attack2": [
+          34,
+          35,
+          36,
+          37
+        ],
+        "kick": [
+          38,
+          39
+        ],
+        "kick2": [
+          40,
+          41,
+          42
+        ],
+        "ki": [
+          57,
+          58
+        ],
+        "beam": [
+          57,
+          58
+        ],
+        "pow": [
+          62
+        ],
+        "up": [
+          60,
+          61
+        ],
+        "dash": [
+          10
+        ],
+        "hurt": [
+          67,
+          68
+        ],
+        "faint": [
+          65
+        ]
+      }
+    },
+    "vegetaexploradorhd": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/00_Saiyans/Vegeta/309_Vegeta explorador HD",
+        "idle": [
+          61
+        ],
+        "move": [
+          39
+        ],
+        "attack": [
+          62,
+          63,
+          64
+        ],
+        "kick": [
+          47,
+          46,
+          45
+        ],
+        "ki": [
+          135,
+          136
+        ],
+        "pow": [
+          27,
+          28
+        ],
+        "hurt": [
+          34,
+          35
+        ],
+        "faint": [
+          29
+        ],
+        "portrait": 40,
+        "up": [
+          11
+        ],
+        "dash": [
+          39
+        ]
+      }
+    },
+    "vegetassj2hd": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Vegeta/298_Vegeta SSJ2 HD",
+        "idle": [
+          9,
+          10
+        ],
+        "move": [
+          12
+        ],
+        "attack": [
+          26,
+          27,
+          28
+        ],
+        "kick": [
+          40,
+          41,
+          42
+        ],
+        "ki": [
+          75,
+          77
+        ],
+        "pow": [
+          71,
+          72
+        ],
+        "hurt": [
+          64,
+          65
+        ],
+        "faint": [
+          68
+        ],
+        "portrait": 0,
+        "dash": [
+          12
+        ]
+      }
+    },
+    "kyabeclasico": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/02_Universo_6/Cabba/072_Kyabe",
+        "idle": [
+          0,
+          1
+        ],
+        "move": [
+          3,
+          4
+        ],
+        "attack": [
+          9,
+          10,
+          11
+        ],
+        "kick": [
+          16,
+          17,
+          18
+        ],
+        "ki": [
+          39,
+          40
+        ],
+        "pow": [
+          36,
+          37
+        ],
+        "hurt": [
+          32,
+          33
+        ],
+        "faint": [
+          35
+        ],
+        "dash": [
+          3,
+          4
+        ]
+      }
+    },
+    "blacklsw": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/03_Trunks_del_futuro/Goku Black/255_Black Goku Pack de sprites By GohanAnimations",
+        "idle": [
+          9,
+          10
+        ],
+        "move": [
+          18
+        ],
+        "attack": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "kick": [
+          35,
+          36,
+          37,
+          38
+        ],
+        "ki": [
+          59,
+          61
+        ],
+        "pow": [
+          53,
+          54
+        ],
+        "hurt": [
+          47,
+          48
+        ],
+        "portrait": 12,
+        "dash": [
+          18
+        ]
+      }
+    }
+  }
+}

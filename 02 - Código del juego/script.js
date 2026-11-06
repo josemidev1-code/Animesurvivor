@@ -1648,6 +1648,23 @@ const NUEVOS={
 
 };
 
+// Pack completo revisado: Tora, Yumejoki (428).
+NUEVOS.tora={name:'TORA',rar:3,hp:120,spd:65,atk:1.08,start:'riot',desc:'Compañero de Bardock. Combos saiyan y ráfagas de ki.',forms:['BASE'],aura:['white'],sig:['kiblast','riot','punch','renzoku','finalspirit','kick']};
+
+NUEVOS.vegetaexploradorhd={name:'VEGETA EXPLORADOR (HD)',rar:4,hp:120,spd:65,atk:1.1,start:'galick',desc:'Armadura de explorador y técnicas de la invasión saiyan.',forms:['BASE'],aura:['white'],sig:['kiblast','galick','punch','renzoku','bigbang','kick']};
+NUEVOS.vegetassj2hd={name:'VEGETA SUPER SAIYAN 2 (HD)',rar:4,hp:125,spd:67,atk:1.2,start:'galick',desc:'La segunda fase Super Saiyan con el traje de combate azul.',forms:['SUPER SAIYAN 2'],aura:['gold'],sig:['kiblast','galick','punch','bigbang','finalflash','kick']};
+NUEVOS.kyabeclasico={name:'KYABE (CLÁSICO)',rar:3,hp:110,spd:69,atk:1.05,start:'galick',desc:'El saiyan del Universo 6, con su pack clásico de combate.',forms:['BASE'],aura:['white'],sig:['kiblast','galick','punch','renzoku','kyabecannon','kick']};
+NUEVOS.blacklsw={name:'GOKU BLACK (LSW)',rar:4,hp:120,spd:67,atk:1.15,start:'blackkame',desc:'El cuerpo de Goku y el ki oscuro de Zamasu.',forms:['BASE'],aura:['purple'],sig:['lances','blackkame','kiblade','punch','scythe','kick']};
+
+
+// Packs pendientes recuperados mediante revision visual (6/11/2026).
+NUEVOS.ginyucuerpogoku={"name":"GINYU (CUERPO DE GOKU)","rar":4,"hp":125,"spd":67,"atk":1.2,"start":"milky","desc":"Ginyu conserva su ki y sus tecnicas en el cuerpo de Goku.","forms":["BASE"],"aura":["purple"],"sig":["milky","bodychange","punch","kick","kiblast"]};
+NUEVOS.vegetasinarmadura={"name":"VEGETA SIN ARMADURA","rar":4,"hp":125,"spd":67,"atk":1.2,"start":"galick","desc":"Vegeta sin peto de combate, con el pack HD completo.","forms":["BASE"],"aura":["white"],"sig":["galick","punch","kick","renzoku","bigbang","finalflash"]};
+NUEVOS.vegetaxenossj4={"name":"VEGETA XENO SSJ4","rar":5,"hp":125,"spd":67,"atk":1.2,"start":"finalshine","desc":"El patrullero del tiempo en Super Saiyan 4.","forms":["SUPER SAIYAN 4"],"aura":["red"],"sig":["finalshine","punch","kick","galick","bigbang","finalflash"]};
+NUEVOS.vegetassj3daima={"name":"VEGETA SSJ3 (DAIMA)","rar":5,"hp":125,"spd":67,"atk":1.2,"start":"galick","desc":"El Super Saiyan 3 adulto de Daima.","forms":["SUPER SAIYAN 3"],"aura":["gold"],"sig":["galick","punch","kick","bigbang","finalflash","finalexp"]};
+NUEVOS.gokumuigranolav2={"name":"GOKU UI GRANOLA (V2)","rar":5,"hp":125,"spd":67,"atk":1.2,"start":"silver","desc":"Ultra Instinto en la saga de Granola, variante V2.","forms":["ULTRA INSTINTO"],"aura":["silver"],"sig":["silver","instant","punch","kick","kame","genki"]};
+NUEVOS.gokumuitorneoanime={"name":"GOKU UI TORNEO (ANIME)","rar":5,"hp":125,"spd":67,"atk":1.2,"start":"silver","desc":"Ultra Instinto del Torneo del Poder con sus secuencias del anime.","forms":["ULTRA INSTINTO"],"aura":["silver"],"sig":["silver","punch","kick","instant","kame","genki"]};
+
 // formas añadidas a personajes que ya estaban
 
 Object.assign(HDEF.gokugt,{forms:['BASE','SUPER SAIYAN','SUPER SAIYAN 3','SUPER SAIYAN 4'],aura:['white','gold','gold','red']});
@@ -3106,7 +3123,13 @@ function sigUpdate(dt,ps){
 
     if(solidMove(P,(D.x-P.x)*k,(D.y-P.y)*k,5))P.dash=null;else if((D.t-=dt)<=0)P.dash=null}
 
-  if(P.combo&&!P.dash){const C=P.combo;if((C.t-=dt)<=0){C.t=0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;let tocado=0;
+  if(P.combo&&!P.dash){const C=P.combo;
+    if(!C.animStarted){
+      C.animStarted=true;
+      P.atkT=P.atkD=C.n*0.09+0.1;
+      P.atkK=C.kick?2:0;P.atkV=C.v||0;P.atkA=C.d>0?0:Math.PI;
+    }
+    if((C.t-=dt)<=0){C.t=0.09;C.i++;const last=C.i>=C.n,hx=P.x+C.d*10,hy=P.y-6;let tocado=0;
 
       near(hx,hy,C.rad+14,e=>{if(Math.hypot(e.x-hx,e.y-hy)<C.rad+e.r){tocado=1;hurt(e,C.dmg,C.d*C.kb*(last?1:MELEE_AJ.empuje),0);if(!e.boss&&(!ET[e.type].elite||(e.golpesR=(e.golpesR||0)+1)%2===0))e.stun=Math.max(e.stun||0,MELEE_AJ.aturde)}});
 
@@ -3116,7 +3139,7 @@ function sigUpdate(dt,ps){
 
       if(C.dragon&&last){fxRg.push({x:hx,y:hy-6,t:0,dur:0.5,rad:C.rad*1.6,col:C.col});cam.shake=Math.max(cam.shake||0,6)}
 
-      P.atkT=P.atkD=0.16;P.atkK=C.kick?2:0;P.atkV=(C.v||0)+C.i;P.atkA=C.d>0?0:Math.PI;if(last)P.combo=null}}
+      if(last)P.combo=null}}
 
   if(P.swing&&!P.dash&&(P.swing.t-=dt)<=0){const G=P.swing,t=G.tg,a=Math.atan2(t.y-P.y,t.x-P.x);P.swing=null;
 
@@ -4232,7 +4255,7 @@ function fire(id,m,st,ps){
 
    case 'big':{const t=nearest(ox,oy,220);const a=aimAt(t);shout(id,ev);P.atkT=P.atkD=0.3;P.atkK=1;P.atkA=a;
 
-     projs.push({k:'big',x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:(ev?9:6)*ps.area,dmg,rad:st.rad*ps.area*(ev?1.4:1),life:1.8,hit:new Set(),col:W.col,pierce:0});
+     projs.push({k:'big',packFx:id==='masenko'?'masenko':null,x:ox,y:oy,vx:Math.cos(a)*st.spd,vy:Math.sin(a)*st.spd,r:(ev?9:6)*ps.area,dmg,rad:st.rad*ps.area*(ev?1.4:1),life:1.8,hit:new Set(),col:W.col,pierce:0});
 
      sfx('shot');break}
 
@@ -5324,9 +5347,19 @@ function drawPkEnemy(e,x,y){const o=e.spr.pk,t=e.anim/6,left=e.x>P.x,d=Math.hypo
 
   if(e.powT>0&&o.Pow){A=o.Pow;i=(e.anim*1.4|0)%A.R.length}
 
-  else if(eb){A=o.Cast;i=eb.t<0?0:Math.min(1,A.R.length-1)}
+  else if(eb){A=o.Beam||o.Cast;i=eb.t<0?0:Math.min(1,A.R.length-1)}
 
-  else if(e.atk&&o.Attack){const f=e.atk.f;if(f==='aviso'){A=o.Attack;i=0}else if(f==='golpe'){A=e.atk.k&&o.Kick?o.Kick:o.Attack;i=A.R.length-1}else if(f==='carga'){A=o.Pow||o.Attack;i=0}else{A=o.Walk||o.Attack;i=scFrame(A,t)}}
+  else if(e.atk&&o.Attack){
+    const attack=e.atk,phase=attack.f,variant=attack.n||0;
+    if(phase==='aviso'){
+      A=varAnim(o,!attack.k&&o.Kick?'Kick':'Attack',variant)||o.Attack;i=0;
+    }else if(phase==='golpe'){
+      A=varAnim(o,attack.k&&o.Kick?'Kick':'Attack',variant)||o.Attack;
+      const progress=clamp(1-attack.t/ROL_AJ.golpe,0,1);
+      i=Math.min(A.R.length-1,Math.floor(progress*A.R.length));
+    }else if(phase==='carga'){A=o.Pow||o.Attack;i=0}
+    else{A=o.Dash||o.Walk||o.Attack;i=scFrame(A,t)}
+  }
 
   else if(e.flash>0&&o.Hurt){A=o.Hurt;i=1}
 
@@ -6332,83 +6365,139 @@ function heroMigrate(sv){if(sv.lockv)return;sv.lockv=1;const keep={goku:1,vegeta
 
 // ---------- Shenron wish: the summoning plays out, the colour of the light tells the rarity ----------
 
-(function wishUI(){const h=$('#gacha h2');if(h)h.textContent='PIDE UN DESEO A SHENRON';const hp=$('#gacha .help');if(hp)hp.textContent='Junta las 7 bolas y pide tu deseo. Luz azul: 3★ · luz morada: 4★ · luz dorada: 5★.';
+(function wishUI(){const h=$('#gacha h2');if(h)h.textContent='EL INVENTO DE BULMA';const hp=$('#gacha .help');if(hp)hp.textContent='Abre cápsulas Hoi-Poi y descubre guerreros. Azul: 3★ · morado: 4★ · dorado: 5★.';
 
-  const L={gPull1:'1 DESEO · 1 TICKET',gPull10:'10 DESEOS · 10 TICKETS',gPull100:'100 DESEOS · 100 TICKETS'};setTimeout(()=>{for(const id in L){const b=$('#'+id);if(b){b.textContent=L[id];b.onclick=()=>wish(+id.slice(5))}}},0);
+  const L={gPull1:'1 CÁPSULA · 1 TICKET',gPull10:'10 CÁPSULAS · 10 TICKETS',gPull100:'100 CÁPSULAS · 100 TICKETS'};setTimeout(()=>{for(const id in L){const b=$('#'+id);if(b){b.textContent=L[id];b.onclick=()=>wish(+id.slice(5))}}},0);
 
-  const bg=$('#bGacha');if(bg)bg.textContent='SHENRON';
+  const bg=$('#bGacha');if(bg)bg.textContent='CÁPSULAS DE BULMA';
 
-  const st=document.createElement('style');st.textContent='#wishFx{position:fixed;inset:0;z-index:50;width:100vw;height:100vh;image-rendering:pixelated;cursor:pointer;background:#04060e;object-fit:contain}';document.head.appendChild(st)})();
+})();
 
-function wish(n,free){const s=loadSave();if(free?!freeReady():s.tickets<n){$('#gInfo').textContent=`Te faltan tickets: tienes ${s.tickets} y necesitas ${n}. Gana más jugando partidas.`;return}
-  const m=muted;muted=true;doPull(n,free);muted=m;const box=$('#gRes'),top=box.querySelector('.r5')?5:box.querySelector('.r4')?4:3,news=box.querySelectorAll('.gcard').length;box.style.display='none';
-  const W=320,H=180,c=mk(W,H);c.id='wishFx';const g=c.getContext('2d');g.imageSmoothingEnabled=false;document.body.appendChild(c);
-  const COL={3:['#3a8aff','#bfe6ff'],4:['#b04aff','#f0c0ff'],5:['#ffb020','#fff6a0']}[top],t0=performance.now(),TF=3.3,dur=TF+(top===5?2.2:1.6),cf=[];let done=false,ph=0;
-  const end=()=>{if(done)return;done=true;c.remove();box.style.display='';if(top===5)sfx('trans');else sfx('level')};c.onclick=end;
-  const rnd=a=>{const x=Math.sin(a*127.1+311.7)*43758.5453;return x-Math.floor(x)},sm=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x)};
-  // elipse rellena en píxeles enteros (nubes, esferas, contornos)
-  const disc=(cx,cy,rx,ry,col)=>{g.fillStyle=col;ry=Math.max(1,Math.round(ry));for(let dy=-ry;dy<=ry;dy++){const w=Math.round(rx*Math.sqrt(Math.max(0,1-(dy*dy)/(ry*ry+0.5))));g.fillRect(Math.round(cx)-w,Math.round(cy)+dy,w*2+1,1)}};
-  // esfera del dragón con k estrellas rojas
-  const ball=(x,y,r,k)=>{disc(x,y,r+1,r+1,'#5a1c00');disc(x,y,r,r,'#f29a14');disc(x+r*0.15,y+r*0.2,r*0.8,r*0.75,'#e07a0a');disc(x-r*0.35,y-r*0.4,r*0.38,r*0.32,'#ffe49a');
-    g.fillStyle='#d01818';const q=k===7?6:k,pts=k===1?[[0,0]]:Array.from({length:q},(_,i)=>{const a=i/q*6.283+0.4;return[Math.cos(a)*r*0.55,Math.sin(a)*r*0.55]}).concat(k===7?[[0,0]]:[]);
-    for(const[a,b]of pts)g.fillRect(Math.round(x+a),Math.round(y+b),r>=6?2:1,r>=6?2:1)};
-  const cloud=(x,y,w,col,hi)=>{disc(x,y,w,w*0.26,col);disc(x-w*0.35,y-w*0.12,w*0.45,w*0.26,col);disc(x+w*0.25,y-w*0.18,w*0.5,w*0.3,col);g.fillStyle=hi;g.fillRect(Math.round(x-w*0.3),Math.round(y-w*0.38),Math.round(w*0.6),1)};
-  const bolt=id=>{let x=40+rnd(id)*240,y=0;while(y<125){const nx=x+(rnd(id*7+y)-0.5)*20,x0=Math.min(x,nx);g.fillStyle='#8fa6ff';g.fillRect(Math.round(x0)-1,y,1,6);g.fillStyle='#fff6b0';g.fillRect(Math.round(x0),y,Math.round(Math.abs(nx-x))+2,6);x=nx;y+=6}};
-  const SPR=SHENIMG,BOLTS=[0.30,0.78,1.6,2.45];
-  const fr=()=>{if(done)return;const t=(performance.now()-t0)/1000;if(t>dur){end();return}
-    // cielo de tormenta en bandas
-    const bands=['#04050f','#070a1c','#0b1030','#141a44','#1f2058','#2b2260'];
-    for(let i=0;i<bands.length;i++){g.fillStyle=bands[i];g.fillRect(0,Math.round(i*H/bands.length),W,Math.ceil(H/bands.length))}
-    for(let i=0;i<46;i++){if(((t*5+rnd(i)*9)|0)%3===0){g.fillStyle='#ffeaa7';g.fillRect(Math.floor(rnd(i+1)*W),Math.floor(rnd(i+2)*H*0.5),1,1)}}
-    // nubes lejanas (parallax lento)
-    for(let i=0;i<6;i++){cloud(((i*70+t*9)%(W+120))-60,24+(i%3)*14,34+(i%2)*10,'#0d1233','#1e2658')}
-    // columna de luz que sube de las esferas
-    if(t<1.5){const wd=Math.round(4+22*sm(t/0.9)),a=0.35*(1-sm((t-0.9)/0.6))*(0.8+0.2*Math.sin(t*40));g.globalAlpha=Math.max(0,a);g.fillStyle='#ffe27a';g.fillRect(W/2-(wd>>1),0,wd,100);g.fillStyle='#fffbe0';g.fillRect(W/2-(wd>>2),0,wd>>1,100);g.globalAlpha=1}
-    // rayos
-    let fl=0;BOLTS.forEach((b,i)=>{if(t>b&&t<b+0.14){bolt(i+3);if(t<b+0.05)fl=0.22}});
-    // esferas orbitando
-    const R=sm(t/0.9),orb=[];for(let i=0;i<7;i++){const a=t*2.4+i*0.8976,rr=20+110*R;orb.push([W/2+Math.cos(a)*rr,100+Math.sin(a)*rr*0.2,Math.sin(a),i+1])}
-    const sc=t>TF?(t-TF):0;
-    const drawBalls=front=>{for(const[x,y,d,k]of orb){if((d>=0)!==front)continue;if(sc>0){const a=(k-1)/7*6.283,v=sc*230,bx=x+Math.cos(a)*v,by=y+Math.sin(a)*v-30*sc;if(bx<-12||bx>W+12||by<-12||by>H+12)continue;g.fillStyle='#fffbe0';for(let j=1;j<5;j++)g.fillRect(Math.round(bx-Math.cos(a)*j*7),Math.round(by-Math.sin(a)*j*7),2,2);ball(bx,by,7,k)}else{if(t<0.15)continue;g.globalAlpha=Math.min(1,t/0.4);ball(x,y,front?8:6,k);g.globalAlpha=1}}};
-    drawBalls(false);
-    // Shenron: cuerpo serpenteante hecho con segmentos y la cabeza del sprite oficial
-    const k=sm((t-0.9)/1.1),hx=Math.round(W/2-34+Math.sin(t*2.1)*2),hy=Math.round(44-(1-k)*210+Math.sin(t*3)*3);
-    if(k>0&&SPR.complete&&SPR.naturalWidth){
-      const P=[];let x=hx+24,y=hy+2;for(let i=0;i<92;i++){const u=i*3,a=-2.09-u*0.0125+Math.sin(u/26-t*3.2)*0.5*Math.min(1,u/45);P.push([x,y,a,22-19*Math.pow(u/276,0.8)]);x+=Math.cos(a)*3;y+=Math.sin(a)*3}
-      for(let i=3;i<P.length;i+=4){const[px,py,a,r]=P[i],nx=-Math.sin(a),ny=Math.cos(a);for(let j=0;j<5;j++){g.fillStyle=j<3?'#3c9be0':'#a8dcff';const w=Math.max(1,3-(j>>1));g.fillRect(Math.round(px+nx*(r+1+j))-1,Math.round(py+ny*(r+1+j))-1,w,w+1)}}
-      for(let i=P.length-1;i>=0;i--)disc(P[i][0],P[i][1],P[i][3]+1,P[i][3]+1,'#0b2412');
-      for(let i=P.length-1;i>=0;i--){const[px,py,,r]=P[i],ri=Math.round(r);for(let dy=-ri;dy<=ri;dy++){const f=dy/r,w=Math.round(r*Math.sqrt(Math.max(0,1-f*f)));g.fillStyle=f<-0.55?'#63c24f':f<0.25?'#3a9a3e':f<0.7?'#2a7a31':'#1f5f27';g.fillRect(Math.round(px)-w,Math.round(py)+dy,w*2+1,1)}}
-      for(let i=P.length-1;i>=0;i--){const[px,py,a,r]=P[i],nx=-Math.sin(a),ny=Math.cos(a);if(r>6){g.fillStyle='#d6c56c';g.fillRect(Math.round(px-nx*r*0.62)-1,Math.round(py-ny*r*0.62)-1,3,3);if(i%3===0){g.fillStyle='#8a7a38';g.fillRect(Math.round(px-nx*r*0.62),Math.round(py-ny*r*0.62),1,1)}}
-        if(i%2===0){g.fillStyle='#1d6a28';g.fillRect(Math.round(px+nx*r*0.3),Math.round(py+ny*r*0.3),1,1)}}
-      g.drawImage(SPR,hx,hy);
-      // ojos carmesí que brillan al hablar
-      if(t>1.9&&t<TF+0.3){g.globalAlpha=0.6+0.4*Math.sin(t*18);g.fillStyle='#ff5a5a';g.fillRect(hx+97,hy+76,4,3);g.fillStyle='#fff2a0';g.fillRect(hx+98,hy+77,2,1);g.globalAlpha=1}
+// Máquina Hoi-Poi. Las recompensas se resuelven una sola vez antes de animarlas.
+let capsuleSession=null;
+const BULMA_LAB=new Image(),BULMA_CAPSULE=new Image();
+BULMA_LAB.src='ui/gacha/laboratorio-bulma-v2.png';
+BULMA_CAPSULE.src='ui/gacha/capsula-hoipoi-v2.png';
+function drawCapsuleLab(g,time,phase=0,rarity=3){
+  g.fillStyle='#101b30';g.fillRect(0,0,384,216);
+  if(!BULMA_LAB.complete||!BULMA_LAB.naturalWidth)return;
+  g.drawImage(BULMA_LAB,0,0,384,216);
+  const accent={3:'#67deff',4:'#cb8aff',5:'#ffd878'}[rarity]||'#67deff';
+  // Iluminación sobre el arte, con pulsos contenidos en las lámparas.
+  g.globalAlpha=0.12+Math.sin(time*2)*0.06;g.fillStyle=accent;
+  g.fillRect(69,130,28,6);g.fillRect(71,29,28,4);
+  if(phase>0&&phase<1.7){
+    g.globalAlpha=0.15+Math.sin(time*22)*0.12;
+    g.fillRect(34,72,95,41);
+  }
+  g.globalAlpha=1;
+  if(phase>1.7){
+    g.globalAlpha=Math.min(0.3,(phase-1.7)*0.25);
+    g.fillStyle=accent;g.fillRect(250,181,64,1);g.fillRect(258,178,48,1);
+    g.globalAlpha=1;
+  }
+}
+function drawCapsuleSmoke(g,progress,color){
+  // Racimos de píxeles de tres tonos, con silueta escalonada y disipación.
+  const shades=['#708ca3','#adcad5','#edf7ef'];
+  const opacity=Math.min(1,(1-progress)*2.5);
+  g.globalAlpha=opacity;
+  for(let layer=0;layer<3;layer++){
+    g.fillStyle=shades[layer];
+    for(let cloud=0;cloud<7;cloud++){
+      const angle=cloud/7*TAU,radius=12+progress*42;
+      const cx=282+Math.cos(angle)*radius,cy=166+Math.sin(angle)*radius*0.5-progress*21;
+      const size=Math.max(2,13-progress*7-layer*2);
+      for(let row=-size;row<=size;row+=2){
+        const width=Math.floor(Math.sqrt(Math.max(0,size*size-row*row))/2)*2;
+        g.fillRect(Math.round(cx-width/2),Math.round(cy+row-layer*2),width,2);
+      }
     }
-    drawBalls(true);
-    // nubes delanteras: Shenron emerge entre ellas
-    for(let i=0;i<5;i++){cloud(((i*88-t*22)%(W+140)+W+140)%(W+140)-70,H+6,46,'#1a2150','#3b4580')}
-    // lluvia
-    if(t<TF)for(let i=0;i<46;i++){const yy=(rnd(i+5)*H+t*230)%H,xx=((rnd(i)*W-yy*0.3)%W+W)%W;g.globalAlpha=0.5;g.fillStyle='#7f8fd0';g.fillRect(Math.round(xx),Math.round(yy),1,3);g.globalAlpha=1}
-    if(fl){g.globalAlpha=fl;g.fillStyle='#cfdcff';g.fillRect(0,0,W,H);g.globalAlpha=1}
-    // texto arriba, sobre una franja oscura
-    g.globalAlpha=0.6;g.fillStyle='#000';g.fillRect(0,0,W,t<TF?24:34);g.globalAlpha=1;
-    if(t<TF){
-      if(t>0.15&&ph<1){ph=1;sfx('boss')}
-      if(t>0.9&&ph<2){ph=2;sfx('boss')}
-      const msg=t<1.9?'LAS 7 ESFERAS BRILLAN...':'¡HABLA! ¡CONCEDERE TU DESEO!',n2=t<1.9?msg.length:Math.min(msg.length,((t-1.9)*26)|0);
-      text2(g,msg.slice(0,n2),W/2,9,'#fef08a');
-    } else {
-      if(ph<3){ph=3;sfx(top>=4?'trans':'level');for(let i=0;i<(top===5?90:44);i++)cf.push([W/2,H*0.45,(Math.random()-0.5)*280,-Math.random()*220,Math.random(),Math.random()<0.3?'#ffd23f':COL[1]])}
-      const f=Math.max(0,1-(t-TF)*1.8);
-      if(f>0){g.globalAlpha=f;g.fillStyle=top===5?'#fffbeb':'#ffffff';g.fillRect(0,0,W,H);g.globalAlpha=1}
-      text2(g,top===5?'¡DESEO LEGENDARIO CONCEDIDO!':top===4?'¡DESEO EPICO CONCEDIDO!':'¡TU DESEO HA SIDO CONCEDIDO!',W/2,7,COL[1]);
-      text2(g,top===5?'★★★★★':top===4?'★★★★':'★★★',W/2,20,'#ffd23f');
-      for(const p of cf){const dt=1/60;p[0]+=p[2]*dt;p[1]+=p[3]*dt;p[3]+=280*dt;g.fillStyle=p[5];g.fillRect(p[0]|0,p[1]|0,2,2)}
+  }
+  g.globalAlpha=opacity*0.5;g.fillStyle=color;
+  for(let i=0;i<12;i++){
+    const angle=i/12*TAU;
+    g.fillRect(Math.round(282+Math.cos(angle)*progress*65),Math.round(168+Math.sin(angle)*progress*42),2,2);
+  }
+  g.globalAlpha=1;
+}
+function wish(n,free){
+  if(capsuleSession)return;
+  const save=loadSave();
+  if(free?!freeReady():save.tickets<n){
+    $('#gInfo').textContent=free?'Ya has recogido la cápsula gratuita de hoy.':`Te faltan tickets: tienes ${save.tickets} y necesitas ${n}.`;
+    return;
+  }
+  let results;const previousMute=muted;
+  try{muted=true;results=doPull(n,free)}finally{muted=previousMute}
+  if(!results?.length)return;
+  const box=$('#gRes');box.style.display='none';const menu=$('#gacha'),wasInert=menu.inert;menu.inert=true;
+  const overlay=document.createElement('div');overlay.id='capsuleLab';overlay.setAttribute('role','dialog');
+  overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label','El invento de Bulma');
+  overlay.innerHTML='<div class="capsulePanel"><h2>EL INVENTO DE BULMA</h2><p class="capsuleStatus" aria-live="polite"></p><canvas width="384" height="216" aria-label="Máquina de cápsulas y guerrero conseguido"></canvas><div class="capsuleActions"><button class="btn capsuleNext" type="button">ABRIR CÁPSULA</button><button class="btn alt capsuleSkip" type="button">VER RESULTADOS</button></div><p class="capsuleHint">Tus recompensas ya están guardadas.</p></div>';
+  document.body.appendChild(overlay);
+  const canvas=overlay.querySelector('canvas'),g=canvas.getContext('2d'),status=overlay.querySelector('.capsuleStatus'),next=overlay.querySelector('.capsuleNext');
+  g.imageSmoothingEnabled=false;
+  const previousFocus=document.activeElement;
+  let index=0,started=0,finished=false,frame=0,announced=false;
+  // El lote de 100 conserva su resumen existente y revela primero su mejor resultado.
+  const sequence=n>10?[results.reduce((best,r)=>r.rar>best.rar?r:best)]:results;
+  function close(){
+    if(finished)return;finished=true;cancelAnimationFrame(frame);document.removeEventListener('keydown',keyboard,true);
+    overlay.remove();box.style.display='';menu.inert=wasInert;capsuleSession=null;
+    if(previousFocus?.isConnected)previousFocus.focus();
+  }
+  function keyboard(event){
+    if(event.key==='Escape'){event.preventDefault();event.stopImmediatePropagation();close()}
+    if(event.key==='Tab'){
+      const buttons=[next,overlay.querySelector('.capsuleSkip')],current=buttons.indexOf(document.activeElement);
+      event.preventDefault();buttons[(current+(event.shiftKey?-1:1)+2)%2].focus();
     }
-    if(t>TF-0.05&&t<TF+0.2){const sh=top===5?3.5:2;c.style.transform=`translate(${(Math.random()-0.5)*sh*2}px,${(Math.random()-0.5)*sh*2}px)`}else c.style.transform='';
-    requestAnimationFrame(fr);
+  }
+  document.addEventListener('keydown',keyboard,true);
+  capsuleSession={close};
+  overlay.querySelector('.capsuleSkip').onclick=close;
+  next.onclick=()=>{
+    if(!started){started=performance.now()-(matchMedia('(prefers-reduced-motion: reduce)').matches?2600:0);announced=false;sfx('shot');return}
+    if(performance.now()-started<2600){started=performance.now()-2600;return}
+    if(index+1>=sequence.length){close();return}
+    index++;started=0;announced=false;next.textContent='ABRIR SIGUIENTE';
   };
-  fr();
+  next.focus();
+  function draw(now){
+    if(finished)return;
+    if(state!=='gacha'){close();return}
+    const result=sequence[index],elapsed=started?(now-started)/1000:0,color={3:'#54c8ff',4:'#c38aff',5:'#ffd36a'}[result.rar]||'#54c8ff';
+    drawCapsuleLab(g,now/1000,elapsed,result.rar);
+    if(!started){status.textContent=`Cápsula ${index+1} de ${sequence.length} · Pulsa para abrir`;}
+    else if(elapsed<2.6){
+      status.textContent='Bulma está preparando tu cápsula…';next.textContent='SALTAR ANIMACIÓN';
+      if(elapsed>0.55&&elapsed<1.9){
+        const travel=Math.min(1,(elapsed-0.55)/1.1);
+        const x=90+192*travel;
+        const bounce=Math.abs(Math.sin(travel*Math.PI*3))*(1-travel)*43;
+        const y=183-bounce;
+        if(BULMA_CAPSULE.complete&&BULMA_CAPSULE.naturalWidth){
+          g.save();g.translate(Math.round(x),Math.round(y));
+          g.rotate(travel*TAU);
+          g.drawImage(BULMA_CAPSULE,-10,-20,20,32);g.restore();
+        }
+      }
+      if(elapsed>1.7)drawCapsuleSmoke(g,Math.min(1,(elapsed-1.7)/0.9),color);
+    }else{
+      const name=HDEF[result.id].name;
+      if(!announced){announced=true;sfx(result.rar===5?'trans':'level');status.textContent=`${name} · ${result.rar} estrellas${result.isNew?' · ¡Nuevo guerrero!':result.aw?' · ¡Despertar!':' · Progreso de guerrero'}`;next.textContent=index+1<sequence.length?'SIGUIENTE CÁPSULA':'VER MIS RECOMPENSAS'}
+      const pack=scHero(result.id,0),anim=pack&&pack.Idle;
+      if(anim?.R.length){
+        const sprite=anim.R[0],scale=Math.min(2,105/sprite.height,105/sprite.width);
+        g.drawImage(sprite,Math.round(282-sprite.width*scale/2),Math.round(185-sprite.height*scale),Math.round(sprite.width*scale),Math.round(sprite.height*scale));
+      }
+      g.font='bold 9px monospace';g.textAlign='center';g.fillStyle=color;g.fillText('★'.repeat(result.rar),282,72);
+      if(result.rar===5){for(let i=0;i<12;i++){const angle=i/12*TAU+elapsed,r=43+Math.sin(elapsed*3)*3;g.fillRect(Math.round(282+Math.cos(angle)*r),Math.round(126+Math.sin(angle)*r),2,2)}}
+    }
+    frame=requestAnimationFrame(draw);
+  }
+  frame=requestAnimationFrame(draw);
 }
 
 function text2(g,s,x,y,col){s=s.normalize('NFD').replace(/[̀-ͯ]/g,'');g.font='8px "Press Start 2P", monospace';g.textAlign='center';g.textBaseline='top';g.fillStyle='#000';for(const [a,b] of [[-1,0],[1,0],[0,-1],[0,1]])g.fillText(s,x+a,y+b);g.fillStyle=col;g.fillText(s,x,y)}
@@ -6729,6 +6818,8 @@ function drawBeam(b){
 
     ctx.restore();return}
 
+  if(window.PACK_FX&&PACK_FX.drawBeam(ctx,b,L,W,t,fade)){ctx.restore();return}
+
   if((b.hero||b.e)&&FXI.kame&&FXI.galick){const sh=b.e?(/GALICK|FLASH|SUPERNOVA/.test(b.name)?'galick':'kame'):GALICK_SET.has(b.mv)?'galick':'kame',fi=(t*14|0)%FXI[sh].length,im=fxTint(FXI[sh][fi],C,sh+fi+C.join()),sw=im.width,shh=im.height,
 
       k=Math.max(0.3,W*1.9/shh),H=Math.round(shh*k),tx=Math.round(sw*0.14*k),back=-2,
@@ -6829,7 +6920,7 @@ function kiOrb(C){const b=FXI['ki-buu-thin'];return b?fxTint(b[0],C,'orb'+C.join
 
 function kiShot(C){const b=FXI['ki-goku'];return b?fxTint(b[0],C,'shot'+C.join()):null}
 
-function drawKi(p,x,y,time){if(!p.spr&&p.col){const im=p.k==='big'?kiOrb(p.col):kiShot(p.col);if(im){const k=p.k==='big'?Math.max(1,p.r*2.4/im.height):Math.max(0.6,p.r/6.5),w=Math.round(im.width*k),h=Math.round(im.height*k);
+function drawKi(p,x,y,time){if(window.PACK_FX&&PACK_FX.drawShot(ctx,p,x,y,time))return;if(!p.spr&&p.col){const im=p.k==='big'?kiOrb(p.col):kiShot(p.col);if(im){const k=p.k==='big'?Math.max(1,p.r*2.4/im.height):Math.max(0.6,p.r/6.5),w=Math.round(im.width*k),h=Math.round(im.height*k);
 
     ctx.save();ctx.translate(x,y);if(p.k!=='big')ctx.rotate(Math.atan2(p.vy,p.vx));ctx.drawImage(im,p.k==='big'?-(w>>1):-Math.round(w*0.7),-(h>>1),w,h);ctx.restore();return}}
 
@@ -8127,7 +8218,7 @@ function gBanners(){const per=Math.floor(Date.now()/864e5/3),p5=GPOOL[5],p4=GPOO
 
   const f5=p5.length?p5[per%p5.length]:null,f4=[...new Set([p4[per%p4.length],p4[(per+3)%p4.length]])].filter(Boolean);
 
-  return[{id:'feat',name:'DESEO DESTACADO',f5,f4,ends:(per+1)*3*864e5},{id:'perm',name:'DESEO PERMANENTE',f4:[]}]}
+  return[{id:'feat',name:'CÁPSULA DESTACADA',f5,f4,ends:(per+1)*3*864e5},{id:'perm',name:'CÁPSULA PERMANENTE',f4:[]}]}
 
 let gSel='feat';
 
@@ -8177,7 +8268,7 @@ function doPull(n,free){const s=loadSave();if(free){if(!freeReady())return;s.fre
     d.insertAdjacentHTML('beforeend',`<span class="st">${'★'.repeat(r.rar)}</span><span class="nm">${HDEF[r.id].name}</span><span class="tag">${wishTag}</span>${r.feat?'<span class="st">DESTACADO</span>':''}`);box.appendChild(d)});
   if(n>10)box.insertAdjacentHTML('beforeend',`<p class="help" style="grid-column:1/-1">Mostrando lo nuevo y los 4★ y 5★ de ${n} tiradas.</p>`);
   if(res.some(r=>r.rar===5)){sfx('trans')}else sfx('level');
-  gachaInfo();buildCards()}
+  gachaInfo();buildCards();return res}
 
 function gachaInfo(){const s=loadSave(),bn=gBanner(),hr=Math.max(0,Math.ceil(((bn.ends||0)-Date.now())/36e5)),nm=id=>HDEF[id]?HDEF[id].name:id;
 
@@ -8197,29 +8288,14 @@ function gachaInfo(){const s=loadSave(),bn=gBanner(),hr=Math.max(0,Math.ceil(((b
 
 let bannerT=0;
 
-function drawBanner(){const c=$('#gBanner'),g=c.getContext('2d'),bn=gBanner();g.setTransform(1,0,0,1,0,0);g.imageSmoothingEnabled=false;g.fillStyle=bn.id==='feat'?'#22143a':'#0c1630';g.fillRect(0,0,c.width,60);
-
-  bannerT++;
-
-  // Shenron pixelado (sprites/shenron) detrás y las 7 esferas del usuario girando a su alrededor
-
-  if(SHENIMG.complete&&SHENIMG.naturalWidth){const k=56/SHENIMG.naturalHeight,fl=Math.round(Math.sin(bannerT*0.05)*2);g.drawImage(SHENIMG,4,2+fl,Math.round(SHENIMG.naturalWidth*k),56)}g.setTransform(1,0,0,1,c.width-160,0);
-
-  for(let i=0;i<7;i++){const a=i/7*TAU+bannerT*0.02,x=80+Math.cos(a)*64,y=30+Math.sin(a)*22,im=DBIMG[i+1];
-
-    if(im&&im.complete&&im.naturalWidth)g.drawImage(im,Math.round(x-5),Math.round(y-5),10,10);else{pball(g,Math.round(x),Math.round(y),5,['#c85a10','#f2911a','#ffc44a','#fff0b0'])}}
-
-  // héroes con sus sprites reales (guardia del pack); mientras cargan no se dibuja nada
-
-  const fr=(id,f)=>{const o=scHero(id,f),A=o&&(o.Idle||o.Walk);return A&&A.R.length?A.R[(bannerT>>4)%A.R.length]:null};
-
-  const put=(im,cx,hh)=>{if(!im)return;const k=Math.min(1,hh/im.height);g.drawImage(im,Math.round(cx-im.width*k/2),Math.round(60-im.height*k),Math.round(im.width*k),Math.round(im.height*k))};
-
-  if(bn.id==='feat'&&bn.f5){bn.f4.forEach((id,i)=>put(fr(id,0),i?136:24,42));
-
-    const fl=auraFlames(heroAura(bn.f5,1))[(bannerT>>2)%3];g.globalAlpha=0.8;g.drawImage(fl,80-fl.width/2,60-fl.height);g.globalAlpha=1;put(fr(bn.f5,Math.min(1,HDEF[bn.f5].forms.length-1)),80,56);return}
-
-  const ids=GPOOL[5];ids.forEach((id,i)=>put(fr(id,1),14+i*Math.min(26,132/Math.max(1,ids.length-1)),40))}
+function drawBanner(){
+  const canvas=$('#gBanner'),g=canvas.getContext('2d');
+  g.setTransform(1,0,0,1,0,0);g.imageSmoothingEnabled=false;
+  drawCapsuleLab(g,performance.now()/1000);
+  g.font='bold 9px monospace';g.textAlign='center';g.fillStyle='#edf5f4';
+  g.fillText('¿QUÉ GUERRERO SALDRÁ?',282,112);
+  g.font='8px monospace';g.fillStyle='#9ab8cc';g.fillText('ELIGE TUS CÁPSULAS',282,130);
+}
 
 function openGacha(){initAudio();state='gacha';$('#gFree').onclick=()=>wish(1,true);$('#gHist').onclick=()=>{const h=$('#gHistBox');h.hidden=!h.hidden};hideMenus();$('#gacha').hidden=false;$('#gRes').innerHTML='';gachaInfo();formaUI();
 
@@ -8531,7 +8607,7 @@ $('#fMake').onclick=()=>{const name=$('#fName').value.trim();if(!forgeImg){$('#f
 
 $('#fImport').onchange=e=>{const f=e.target.files[0];if(!f)return;f.text().then(t=>{const j=JSON.parse(t),d=j&&j.hero;if(!d||typeof d.img!=='string'||!d.img.startsWith('data:image/'))throw 0;
 
-  addCustom({id:'c'+Date.now().toString(36),name:String(d.name||'Guerrero').slice(0,14),img:d.img,type:CTYPES[d.type]?d.type:'bal',move:CMOVES.includes(d.move)?d.move:'kame',aura:CAURAS[d.aura]?d.aura:'gold'})}).catch(()=>{$('#fInfo').textContent='Ese archivo no es un guerrero válido.'});e.target.value=''};$('#trBack').onclick=()=>{$('#train').hidden=true;showTitle()};$('#gBack').onclick=()=>{$('#gacha').hidden=true;showTitle()};$('#gPull1').onclick=()=>doPull(1);$('#gPull10').onclick=()=>doPull(10);$('#gPull100').onclick=()=>doPull(100);
+  addCustom({id:'c'+Date.now().toString(36),name:String(d.name||'Guerrero').slice(0,14),img:d.img,type:CTYPES[d.type]?d.type:'bal',move:CMOVES.includes(d.move)?d.move:'kame',aura:CAURAS[d.aura]?d.aura:'gold'})}).catch(()=>{$('#fInfo').textContent='Ese archivo no es un guerrero válido.'});e.target.value=''};$('#trBack').onclick=()=>{$('#train').hidden=true;showTitle()};$('#gBack').onclick=()=>{$('#gacha').hidden=true;showTitle()};$('#gPull1').onclick=()=>wish(1);$('#gPull10').onclick=()=>wish(10);$('#gPull100').onclick=()=>wish(100);
 
 $('#bCredits').onclick=openCredits;$('#cBack').onclick=()=>{$('#credits').hidden=true;showTitle()};
 
@@ -8592,7 +8668,7 @@ const HUB_ITEMS=[
   ['roster','scouter','PERSONAJES',()=>{const s=loadSave(),all=Object.keys(HEROES).filter(spriteHero);return `${all.filter(k=>s.owned[k]).length} / ${all.length} guerreros`},openRoster],
   ['train','pesas','MEJORAS','Hazte más fuerte en cada partida',()=>openTrain()],
   ['shop','capsulacorp','TIENDA','Cambia zeni por tickets de Bulma',openShop],
-  ['wish','esfera4','SHENRON',()=>{const b=gBanners()[0];return b.f5&&HEROES[b.f5]?'Destacado: '+HEROES[b.f5].name:'Pide tus deseos al Dragón'},()=>openGacha()],
+  ['wish','capsulacorp','CÁPSULAS DE BULMA',()=>{const b=gBanners()[0];return b.f5&&HEROES[b.f5]?'Destacado: '+HEROES[b.f5].name:'Pide tus deseos al Dragón'},()=>openGacha()],
   ['mis','radar','MISIONES',()=>{const n=misReady();return n?`¡${n} recompensa${n>1?'s':''} lista${n>1?'s':''}!`:'Misiones y recompensas'},()=>{openTrain();setTimeout(()=>$('#tMis').scrollIntoView({block:'start'}),30)}],
   ['rank','bastongoku','RANKING','Tus mejores marcas',openRank],
   ['set','scouterRojo','AJUSTES','Sonido, pantalla y opciones',openSettings]];
@@ -8612,7 +8688,7 @@ function hubRefresh(){const s=loadSave(),best=loadBest(),id=companion(),H=HEROES
   $('#hubStats').innerHTML=`Tiempo jugado <b>${fmt(st.secs||0)}</b> · Mejor tiempo <b>${fmt(bt)}</b><br>Derrotados <b>${st.kills||0}</b> · Jefes <b>${st.boss||0}</b> · Deseos <b>${s.pulls||0}</b>`;
   buildHub();evTick()}
 
-function evTick(){const b=gBanners()[0];if(!b.f5||!HEROES[b.f5]){$('#hEvent').hidden=true;return}$('#hEvent').hidden=false;$('#hEvent').innerHTML=`<b>¡DESEO DESTACADO: ${HEROES[b.f5].name}!</b> Termina en ${countdown(b.ends-Date.now())}`}
+function evTick(){const b=gBanners()[0];if(!b.f5||!HEROES[b.f5]){$('#hEvent').hidden=true;return}$('#hEvent').hidden=false;$('#hEvent').innerHTML=`<b>¡CÁPSULA DESTACADA: ${HEROES[b.f5].name}!</b> Termina en ${countdown(b.ends-Date.now())}`}
 
 function openHub(){hideMenus();state='title';$('#hub').hidden=false;hubRefresh();
 

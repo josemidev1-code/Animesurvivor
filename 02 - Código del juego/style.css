@@ -486,3 +486,16 @@ body.high-contrast .up .nm,body.high-contrast .card h3{color:#ffffff!important;t
 .chipIcon {
   font-size: 14px;
 }
+
+/* El invento de Bulma: escena pixel art y controles accesibles. */
+#capsuleLab{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(4,9,19,.95);padding:16px;box-sizing:border-box;overflow:auto}
+.capsulePanel{width:min(900px,100%);border:4px solid #65849b;background:#101b30;padding:16px;box-sizing:border-box;box-shadow:0 0 0 4px #070e1c;text-align:center}
+.capsulePanel h2{font-size:clamp(12px,2.4vw,20px);color:#f6bd58;line-height:1.6;margin:0 0 12px}
+.capsulePanel canvas{display:block;width:100%;height:auto;image-rendering:pixelated;aspect-ratio:16/9;border:2px solid #29445b;box-sizing:border-box}
+.capsuleStatus{min-height:3em;font:20px VT323,monospace;color:#e6edf2;margin:8px 0;line-height:1.3}
+.capsuleActions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:16px}
+.capsuleActions button{min-height:48px;white-space:normal;line-height:1.5}
+.capsuleHint{font:16px VT323,monospace;color:#9fb7c9;margin:12px 0 0}
+@media(prefers-reduced-motion:reduce){.capsulePanel *{animation:none!important}}
+
+#gBanner{width:min(640px,100%);height:auto;max-height:none;image-rendering:pixelated;aspect-ratio:16/9}

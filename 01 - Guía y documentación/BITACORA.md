@@ -3795,3 +3795,62 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Rediseñar el HUD de partida con estética Dragon Ball.
+
+
+## 2026-11-06 — Codex: máquina de cápsulas de Bulma
+### Petición
+- Implementar «El invento de Bulma»: máquina pixel art, cápsula Hoi-Poi que cae y rebota, humo y aparición del guerrero usando sus sprites.
+### Trabajo
+- Nueva escena y vista de laboratorio, aperturas individuales y por diez, resumen para lotes de cien, salto y navegación por teclado. Recompensas resueltas y guardadas una sola vez al tirar. Probabilidades y economía existentes conservadas.
+- Comprobación visual y pruebas en curso.
+
+- Verificado en navegador integrado por HTTP local: tirada x1, revelación animada, lote x10 y avance a la segunda cápsula sin recobro, salto a resultados, persistencia tras recargar, cápsula gratuita sin gasto y cierre con Escape. Sin errores de consola. Sintaxis correcta.
+- Arte de máquina dibujado en Canvas con cuadrícula pixel art; guerreros con sus sprites existentes. Lotes de 100 muestran una apertura destacada y su resumen, evitando cien aperturas obligatorias.
+### Pendiente
+- Valoración visual de Josemi. No se ha comprobado visualmente cada personaje ni el lote de cien. Publicación de GitHub Pages pendiente de verificar por separado.
+
+
+### Revisión visual pedida por Josemi
+- La primera animación le parece barata. Pide buscar pixel art o crearlo.
+- Generados laboratorio Capsule Corp. y cápsula transparente como imágenes raster. Integrados en ui/gacha, sustituyendo la máquina de rectángulos. Mejorada trayectoria, humo escalonado y escala del personaje. script.js?v=158. Pendiente comprobación visual final.
+- Revisión final: apertura y personaje sobre plataforma comprobados en navegador integrado con vista móvil, sin errores de consola. Sintaxis correcta. Arte generado con image_gen, originales conservados. Publicación sigue pendiente.
+
+
+## 2026-11-06 — Codex: auditoría completa de sprites y animación en partida
+### Petición
+- Analizar toda sprites/, animar los recursos útiles en partida y eliminar basura.
+### Trabajo en curso
+- Inventario de 37.888 archivos, 37.468 imágenes y 405 carpetas con imágenes. Verificados formatos y referencias de las 302 formas montadas: cero imágenes corruptas o referencias inexistentes.
+- Detectados 221 grupos de archivos idénticos. No se eliminan fotogramas PNG por posición: hacerlo desplaza los índices de animación. Los TXT vacíos se conservan porque sus nombres acreditan autores.
+- Siete archivos vacíos sin extensión trasladados a Recursos pendientes/cuarentena_sprites_2026-11-06 con manifest recuperable.
+- Corregida la secuencia de cuerpo a cuerpo: conserva una variante por combo y recorre el clip completo sin reiniciarlo con cada impacto.
+- Tora (pack 428, Yumejoki) seleccionado para integración y revisión visual. Pruebas en curso.
+
+### Resultado
+- 125 correcciones visuales en 91 formas. Eliminados extras que mostraban efectos sin cuerpo, retratos, caídas o formas distintas. Selecciones persistidas en zz_revision_visual_2026_11_06.json.
+- Cinco packs nuevos seleccionados y revisados: Tora, Vegeta explorador HD, Vegeta SSJ2 HD, Kyabe clásico, Goku Black LSW. Los dos Vegeta HD conservan el pack original; autor pendiente de identificar si no figura en sus archivos. Kyabe: MV95, Tora: Yumejoki, Black: GohanAnimations.
+- Animación de combate continua por combo. Enemigos con avance de fotogramas de golpe/patada, poses de rayo y embestida propias.
+- Catálogo final 307 formas, 2.893 clips, 5.663 fotogramas. En navegador, incluyendo alias: 318 formas / 5.873 fotogramas decodificados y dibujados; 289 formas de combate ejercitadas y 132 tipos enemigos cargados sin excepciones.
+- Informes en REVISION_SPRITES_2026-11-06.md y outputs del chat. Scripts auditar_sprites.py y comprobar_catalogo_sprites.cjs para repetir comprobaciones.
+### Pendiente / límites
+- 108 carpetas de referencia, escenarios, efectos, hojas mixtas o incompletas siguen fuera de la selección de personajes. No todas sus imágenes se han revisado manualmente una por una.
+- Las comprobaciones históricas de oleadas, formas, objetos y rotación conservan discrepancias previas. No se ha validado una partida completa por personaje. Cambios guardados en local, publicación pendiente.
+
+
+## 2026-11-06 — Codex: aprovechar los recursos pendientes
+### Petición
+- «pues vamos a implementarlo no?» tras comentar las 108 carpetas sin selección como personaje.
+### Trabajo en curso
+- Revisar qué material es utilizable en personajes, técnicas y escenarios. Respaldo de código, selecciones y documentación guardado antes de editar. Las carpetas sin selección no equivalen a 108 personajes completos.
+
+### Cambio pedido durante el trabajo
+- Josemi: «animalas con piskel q es una herramienta gratis». Continuar la revisión y edición de secuencias con Piskel; conservar las seis variantes y los efectos ya preparados, todavía pendientes de cerrar la comprobación visual y documentar su integración.
+
+
+## 2026-11-06 — Claude Opus 5.5 (HUD e interfaz)
+
+### Lo que pidió el usuario
+- «Sube los cambios que ha hecho ChatGPT y vamos a centrarnos en el HUD y la interfaz y las mejoras, mejóralo mucho visualmente».
+
+### Lo que hice
+- Subidos a GitHub los cambios de ChatGPT (gachapón «El invento de Bulma» y auditoría de sprites) tras comprobar sintaxis, catálogo, personajes y carga en navegador.

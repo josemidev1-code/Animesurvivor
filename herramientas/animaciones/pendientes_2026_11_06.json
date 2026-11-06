@@ -1,0 +1,263 @@
+{
+  "_ayuda": "Packs recuperados tras revision visual directa; un pack por forma.",
+  "heroes": {
+    "ginyucuerpogoku": {
+      "0": {
+        "pack": "00_Dragon_Ball_Z/01_Namek_y_Freezer/Goku/128_GOKU GINYU, ANDRÉS GAMEN ANIMATIONS ✓ SPRITE HD",
+        "idle": [
+          13
+        ],
+        "move": [
+          32
+        ],
+        "attack": [
+          51,
+          52,
+          53
+        ],
+        "kick": [
+          42,
+          43,
+          44
+        ],
+        "ki": [
+          6,
+          8
+        ],
+        "beam": [
+          6,
+          8
+        ],
+        "pow": [
+          15,
+          16
+        ],
+        "hurt": [
+          26,
+          27
+        ],
+        "faint": [
+          25
+        ],
+        "portrait": 0,
+        "dash": [
+          32
+        ]
+      }
+    },
+    "vegetasinarmadura": {
+      "0": {
+        "pack": "07_Personajes_sin_saga_concreta/Vegeta/301_Vegeta Sem Camisa HD",
+        "idle": [
+          55
+        ],
+        "move": [
+          68
+        ],
+        "attack": [
+          55,
+          56,
+          47
+        ],
+        "kick": [
+          27,
+          28,
+          29
+        ],
+        "ki": [
+          8,
+          9
+        ],
+        "pow": [
+          12,
+          13
+        ],
+        "hurt": [
+          15,
+          17
+        ],
+        "faint": [
+          16
+        ],
+        "portrait": 80,
+        "dash": [
+          68
+        ]
+      }
+    },
+    "vegetaxenossj4": {
+      "0": {
+        "pack": "04_Heroes_y_videojuegos/Vegeta/311_vegeta xeno ssj4",
+        "idle": [
+          6
+        ],
+        "move": [
+          21
+        ],
+        "attack": [
+          39,
+          40,
+          41
+        ],
+        "kick": [
+          60,
+          61,
+          62
+        ],
+        "ki": [
+          96,
+          100
+        ],
+        "pow": [
+          89,
+          90
+        ],
+        "hurt": [
+          75,
+          74
+        ],
+        "faint": [
+          77
+        ],
+        "portrait": 0,
+        "dash": [
+          21
+        ],
+        "conservarSueltos": true,
+        "escalaFrames": {
+          "21": 6.0,
+          "96": 6.0,
+          "89": 7.0,
+          "90": 7.0
+        }
+      }
+    },
+    "vegetassj3daima": {
+      "0": {
+        "pack": "03_Daima/Vegeta/238_VEGETA ADULTO SSJ3 (DAIMA) ANDRÉS GAMEN ANIMATION",
+        "idle": [
+          105,
+          106
+        ],
+        "move": [
+          107
+        ],
+        "attack": [
+          123,
+          124,
+          125
+        ],
+        "kick": [
+          116,
+          118
+        ],
+        "ki": [
+          94,
+          92
+        ],
+        "pow": [
+          79,
+          80
+        ],
+        "hurt": [
+          98,
+          100
+        ],
+        "faint": [
+          96
+        ],
+        "portrait": 0,
+        "dash": [
+          107
+        ],
+        "escalaFrames": {
+          "107": 9,
+          "123": 4.5,
+          "124": 8,
+          "125": 5.8,
+          "116": 5.5,
+          "118": 9
+        }
+      }
+    },
+    "gokumuigranolav2": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/07_Granola/Goku/136_GOKU MUI SAGA GRANOLA,V2,BY ANDRÉS GAMEN ANIMATIONS",
+        "idle": [
+          113,
+          114
+        ],
+        "move": [
+          105
+        ],
+        "attack": [
+          77,
+          78,
+          76
+        ],
+        "kick": [
+          67,
+          68,
+          69
+        ],
+        "ki": [
+          23,
+          24
+        ],
+        "pow": [
+          34,
+          35
+        ],
+        "hurt": [
+          18,
+          20
+        ],
+        "faint": [
+          17
+        ],
+        "portrait": 0,
+        "dash": [
+          105
+        ]
+      }
+    },
+    "gokumuitorneoanime": {
+      "0": {
+        "pack": "01_Dragon_Ball_Super/04_Torneo_del_Poder/Goku/153_GOKU,MUI,TORNEO DEL PODER (ANIME) ANDRES GAMEN ANIMATIONS",
+        "idle": [
+          17
+        ],
+        "move": [
+          22
+        ],
+        "attack": [
+          30,
+          31,
+          29
+        ],
+        "kick": [
+          49,
+          48
+        ],
+        "ki": [
+          62,
+          63
+        ],
+        "pow": [
+          73,
+          74
+        ],
+        "hurt": [
+          68,
+          69
+        ],
+        "faint": [
+          70
+        ],
+        "dash": [
+          22
+        ]
+      }
+    }
+  }
+}
