@@ -1,0 +1,15 @@
+{
+  "_nota": "Segunda tanda de ataques que estaban en las hojas y no en el juego (6 nov. 2026). Revisada a ojo.",
+  "heroes": {
+    "nappa": { "0": { "attack2": [26, 25], "attack3": [33, 35], "beam": [53, 89], "up": [63] } },
+    "ginyu": { "0": { "attack2": [23, 25], "attack3": [30, 31], "kick2": [28, 29], "beam": [62, 66], "up": [18] } },
+    "a16": { "0": { "attack2": [17, 25], "attack3": [26, 27], "kick2": [28, 29], "beam": [42, 50] } },
+    "a17": { "0": { "attack2": [25, 30], "kick2": [11, 22], "beam": [33, 30] } },
+    "turles": { "0": { "attack2": [14, 15], "attack3": [20, 21], "kick2": [19, 25], "beam": [47, 54], "up": [64] } },
+    "zamasu": { "0": { "attack2": [18, 19], "attack3": [57, 58, 60], "kick2": [21, 24], "beam": [53, 55] } },
+    "toppo": { "0": { "attack2": [27, 28, 29], "attack3": [33, 34], "kick2": [21, 22], "beam": [72, 75], "up": [73, 74] } },
+    "moro": { "0": { "attack2": [28, 29], "beam": [37, 31] } },
+    "janemba": { "0": { "attack2": [11, 12], "attack3": [57, 61, 59], "kick2": [16, 14], "beam": [27, 28] } },
+    "frost": { "0": { "attack2": [20, 21], "attack3": [22, 23], "kick2": [17, 18], "beam": [48, 43], "up": [8] } }
+  }
+}

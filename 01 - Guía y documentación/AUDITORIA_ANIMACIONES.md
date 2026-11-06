@@ -6,8 +6,8 @@ Generada con `python herramientas/auditar_animaciones.py`. Compara `sprites/` co
 
 - Carpetas con imágenes: **405** (37468 imágenes). En el juego: **302**. Sin usar: **103**.
 - De las 103 sin usar, 10 son escenarios, referencias o Shenron; quedan **93** con personajes (6655 imágenes).
-- En los packs usados hay 30590 imágenes y el juego usa **5419** (17 %).
-- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **34**. Sin ninguno: **173**.
+- En los packs usados hay 30590 imágenes y el juego usa **5497** (17 %).
+- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **38**. Sin ninguno: **163**.
 - Formas solo de enemigo u otras: 40.
 
 Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no cuenta porque reutiliza el cuerpo del vuelo.
@@ -33,22 +33,18 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokuui | 5 | 357 | 107 | 11 |
 | bra | 2 | 217 | 32 | 10 |
 | brolyfan | 2 | 241 | 33 | 10 |
-| frost | 2 | 106 | 32 | 10 |
 | gokubroly | 4 | 286 | 86 | 10 |
 | kale | 2 | 100 | 31 | 10 |
 | kefla | 2 | 253 | 35 | 10 |
 | kyabe | 2 | 162 | 30 | 10 |
 | trunksnino | 2 | 346 | 29 | 10 |
-| turles | 2 | 166 | 32 | 10 |
 | vegetamanga | 2 | 250 | 36 | 10 |
-| zamasu | 2 | 168 | 31 | 10 |
 | gokualt | 3 | 302 | 67 | 7 |
 | gokusuper | 5 | 371 | 118 | 7 |
 | raditz | 2 | 92 | 40 | 6 |
+| zamasu | 2 | 168 | 40 | 6 |
 | a13 | 1 | 142 | 14 | 5 |
 | a14 | 1 | 57 | 14 | 5 |
-| a16 | 1 | 64 | 16 | 5 |
-| a17 | 1 | 41 | 16 | 5 |
 | a21 | 1 | 195 | 20 | 5 |
 | babyvegeta | 1 | 57 | 15 | 5 |
 | blackfalso | 1 | 41 | 16 | 5 |
@@ -64,8 +60,8 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | daishinkan | 1 | 86 | 15 | 5 |
 | dlrx | 1 | 86 | 16 | 5 |
 | dyspo | 1 | 128 | 18 | 5 |
+| frost | 2 | 106 | 40 | 5 |
 | gas | 1 | 44 | 15 | 5 |
-| ginyu | 1 | 111 | 17 | 5 |
 | glorio | 1 | 90 | 16 | 5 |
 | gohanfut | 1 | 123 | 17 | 5 |
 | gohanmanga | 1 | 87 | 16 | 5 |
@@ -94,7 +90,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | granola | 1 | 137 | 15 | 5 |
 | guldo | 1 | 103 | 19 | 5 |
 | hatchiyack | 1 | 56 | 15 | 5 |
-| janemba | 1 | 72 | 16 | 5 |
 | jeice | 1 | 79 | 16 | 5 |
 | jirengray | 1 | 73 | 15 | 5 |
 | kibito | 1 | 85 | 16 | 5 |
@@ -104,9 +99,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | majinkuu | 1 | 50 | 14 | 5 |
 | merus | 1 | 48 | 15 | 5 |
 | metalcooler | 1 | 56 | 14 | 5 |
-| moro | 1 | 52 | 17 | 5 |
 | mrsatan | 1 | 371 | 19 | 5 |
-| nappa | 1 | 104 | 20 | 5 |
 | nuova | 1 | 14 | 13 | 5 |
 | omega | 1 | 56 | 14 | 5 |
 | pangt | 1 | 99 | 15 | 5 |
@@ -120,9 +113,9 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | taopaipai | 1 | 78 | 14 | 5 |
 | tarble | 1 | 31 | 15 | 5 |
 | tenshinhan | 1 | 77 | 15 | 5 |
-| toppo | 1 | 77 | 16 | 5 |
 | trunksarmor | 1 | 74 | 14 | 5 |
 | trunksgt | 1 | 39 | 14 | 5 |
+| turles | 2 | 166 | 41 | 5 |
 | uub | 1 | 93 | 19 | 5 |
 | vegetabaseulsw | 1 | 121 | 14 | 5 |
 | vegetablue092 | 1 | 107 | 16 | 5 |
@@ -153,6 +146,8 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokudiosberserk | 1 | 46 | 16 | 3 |
 | gokugt | 4 | 422 | 106 | 3 |
 | jiren | 3 | 295 | 62 | 3 |
+| moro | 1 | 52 | 20 | 3 |
+| a17 | 1 | 41 | 21 | 2 |
 | bardock | 3 | 271 | 70 | 2 |
 | black | 3 | 359 | 68 | 2 |
 | gokumuigranola | 1 | 91 | 20 | 2 |
@@ -162,6 +157,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | piccolo | 2 | 179 | 46 | 2 |
 | vegeta | 5 | 421 | 130 | 2 |
 | vegetto | 4 | 446 | 97 | 2 |
+| a16 | 1 | 64 | 24 | 1 |
 | a18 | 1 | 47 | 21 | 1 |
 | gohan | 4 | 278 | 96 | 1 |
 | gokussj053 | 1 | 55 | 21 | 1 |
@@ -174,14 +170,18 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokuyardrat | 1 | 113 | 23 | 1 |
 | gokuyardratssj | 1 | 96 | 23 | 1 |
 | hit | 1 | 98 | 26 | 1 |
+| janemba | 1 | 72 | 25 | 1 |
+| nappa | 1 | 104 | 27 | 1 |
 | trunks | 3 | 312 | 72 | 1 |
 | bills | 1 | 78 | 27 | 0 |
 | cooler | 1 | 81 | 27 | 0 |
+| ginyu | 1 | 111 | 26 | 0 |
 | goku044 | 1 | 71 | 23 | 0 |
 | gokubluewhis | 1 | 70 | 21 | 0 |
 | gokuuisign | 1 | 114 | 23 | 0 |
 | goten | 1 | 89 | 20 | 0 |
 | krilin | 1 | 81 | 20 | 0 |
+| toppo | 1 | 77 | 27 | 0 |
 | yamcha | 1 | 79 | 22 | 0 |
 
 ## Packs de personajes sin usar

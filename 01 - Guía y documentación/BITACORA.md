@@ -3921,3 +3921,19 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Tanda 2: Nappa, Ginyu, A16, A17, Turles, Zamasu, Toppo, Moro, Janemba y Frost. Después, los packs grandes con pocos fotogramas usados (`gokubluedbfz`, `gokussj2buu`).
+
+## 2026-11-06 — Claude Opus 5.5 (tanda 2 de ataques)
+
+### Lo que pidió el usuario
+- Josemi: «Sí, tanda 2».
+
+### Lo que hice
+- `herramientas/animaciones/zz_tanda_ataques_2_2026_11_06.json`: 41 animaciones en 10 personajes (Nappa, Ginyu, A16, A17, Turles, Zamasu, Toppo, Moro, Janemba y Frost). Revisadas a ojo y vistas en partida en el navegador, sin errores. Exportadas a `piskel_animaciones/`.
+- Formas jugables sin ningún ataque extra: de 173 a 163. Con los 5 completos: de 34 a 38. Informe regenerado en `AUDITORIA_ANIMACIONES.md`.
+
+### A medias / problemas
+- Sin pose adecuada en el pack: `kick2` de Nappa; `up` de A16, A17, Zamasu, Moro y Janemba; `attack3` de A17 y Moro; `kick2` de Moro.
+- Las poses `Beam` y `Up` se probaron forzando el estado de la técnica; los combos, por el motor. No se ha jugado una partida completa.
+
+### Siguiente paso recomendado
+- Tanda 3: segundas formas de Raditz, Turles, Frost y Zamasu, más Saibaman, Baby Vegeta, Bra, Uub, Mr. Satán y A21.

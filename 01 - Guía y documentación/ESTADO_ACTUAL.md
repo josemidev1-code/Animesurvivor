@@ -108,3 +108,7 @@ Actualizado: 5 de noviembre de 2026.
 
 - Auditoría en `AUDITORIA_ANIMACIONES.md` (`python herramientas/auditar_animaciones.py`): 93 carpetas con personajes sin usar, 17 % de imágenes usadas en los packs montados, 173 de 273 formas jugables sin ataques extra.
 - Montados 31 ataques en 10 formas (`zz_tanda_ataques_2026_11_06.json`). El combo ya no lo pisa el disparo automático. Exportador a Piskel corregido. Falta el camino de vuelta de Piskel al juego.
+
+## 6 nov. — Tanda 2 de ataques
+
+- 41 animaciones más en Nappa, Ginyu, A16, A17, Turles, Zamasu, Toppo, Moro, Janemba y Frost (`zz_tanda_ataques_2_2026_11_06.json`). Quedan 163 de 273 formas jugables sin ataques extra. Tanda 3 propuesta en la bitácora.
