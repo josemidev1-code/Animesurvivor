@@ -1,0 +1,99 @@
+{
+  "heroe": "broly",
+  "forma": "3",
+  "pack": "05_Fanmade_y_alternativos/Broly/018_Broly Ssj4",
+  "frames": [
+    {
+      "sha256": "65fcb4315d3735911227afa374483c8242e5cc43a8cc236074e3adfa5648c37f",
+      "indice": 0
+    },
+    {
+      "sha256": "69f9ff647e2ea29de7ccd9bcc116af8ed71852209debf35da45ab57f4b4df983",
+      "indice": 1
+    },
+    {
+      "sha256": "6d5c0aefa4388b5d70567f4cb03347d91ad78aaa7d56b17da7f6e4bae7b14d9d",
+      "indice": 4
+    },
+    {
+      "sha256": "70a2c89646978c5a220068855915d25e6da8fc7639076766ad1f73a8572a98df",
+      "indice": 9
+    },
+    {
+      "sha256": "4befa8fcdd104305ba73f34f035f7e208d76f8fccff7167a70448f0ea9a614b0",
+      "indice": 10
+    },
+    {
+      "sha256": "4ab8f4b233daf0511ce4c247f9050f50c4e9dc30970da88e0d73291958d7412c",
+      "indice": 11
+    },
+    {
+      "sha256": "385f0eb273d87211cad2a4013834e2ddad99b5ac0a06b75df8ac20d24a95e088",
+      "indice": 13
+    },
+    {
+      "sha256": "c08f85bfe7db5e6c822eb1cefd1f9093e857365b331aadbdb2a0b0ed0aeb7ed6",
+      "indice": 15
+    },
+    {
+      "sha256": "3b37ce6121c2945717644b5925284c487d28731d0a56972d49e5e097cd0b6222",
+      "indice": 43
+    },
+    {
+      "sha256": "1247fae2759ffba937ed91f71853e193e53665f1ab2f7bd30463dd313500f3ee",
+      "indice": 45
+    },
+    {
+      "sha256": "c092e65191df8ad2fa658fb0d006556a8be16620e5993db67b955d620ced0de3",
+      "indice": 37
+    },
+    {
+      "sha256": "1e4b89b3cd4374b87b3c516995ba3ef2e819b38bb36639ef50a4e2b0686fefe0",
+      "indice": 38
+    },
+    {
+      "sha256": "83026b308245118bab3dc5e83018c8d9afb621ef48433c44b7a9a69fb8f09439",
+      "indice": 28
+    },
+    {
+      "sha256": "fe4cf7394dfbf6c43b9f5924f25af0d7c7e2a3a97d3c34112521314b4105ae8e",
+      "indice": 29
+    },
+    {
+      "sha256": "e3161351933b0e4939ab3f08621b90007597bf0f2fec1410b0497f0da9fe97ac",
+      "indice": 30
+    },
+    {
+      "sha256": "c36d8394a4ddaa366c1061ba853eaab5173557194ce417d59e759490cbbf1c18",
+      "indice": 12
+    },
+    {
+      "sha256": "c0bb8360390c7b027b365357a71d9866fbc587bdcc121d510bc5638f2d1a8711",
+      "indice": 14
+    },
+    {
+      "sha256": "bfae6bc9969e8d1619383b38b31dcc5a1e3edda827c9b39d28f17825c1be5d1e",
+      "indice": 16
+    },
+    {
+      "sha256": "141cc003bc40e279f1da1a1f3fc1f20a40f39ec853c8313f8ec5501e0bf8c4ae",
+      "indice": 17
+    },
+    {
+      "sha256": "3b37ce6121c2945717644b5925284c487d28731d0a56972d49e5e097cd0b6222",
+      "indice": 43
+    },
+    {
+      "sha256": "1247fae2759ffba937ed91f71853e193e53665f1ab2f7bd30463dd313500f3ee",
+      "indice": 45
+    },
+    {
+      "sha256": "3fcdd3fa5f8ec5a8a097dba9732b9ed309e0b4827af4146f38bb68f05b031bfa",
+      "indice": 2
+    },
+    {
+      "sha256": "6d5c0aefa4388b5d70567f4cb03347d91ad78aaa7d56b17da7f6e4bae7b14d9d",
+      "indice": 4
+    }
+  ]
+}

@@ -3,12 +3,16 @@
 Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).
 
 ## Cómo abrir en Piskel:
-1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.
+1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.
 2. Haz clic en el icono de carpeta de la barra derecha (**Import**).
 3. Elige cualquiera de estas opciones:
    - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.
    - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).
    - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).
+
+## Volver al juego:
+`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/goten_0/origen.json --heroe goten --forma 0 --anim attack --aplicar`
+Después: `python herramientas/montar_animaciones.py goten` y revisión visual. Solo se aceptan sprites originales exportados.
 
 ## Animaciones disponibles:
 
@@ -23,7 +27,6 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Hurt** | 2 | 50x50 | [`goten_Hurt.piskel`](Hurt/goten_Hurt.piskel) | [`goten_Hurt.gif`](Hurt/goten_Hurt.gif) | [`goten_Hurt_sheet.png`](Hurt/goten_Hurt_sheet.png) |
 | **Faint** | 1 | 58x58 | [`goten_Faint.piskel`](Faint/goten_Faint.piskel) | [`goten_Faint.gif`](Faint/goten_Faint.gif) | [`goten_Faint_sheet.png`](Faint/goten_Faint_sheet.png) |
 | **Attack2** | 2 | 52x52 | [`goten_Attack2.piskel`](Attack2/goten_Attack2.piskel) | [`goten_Attack2.gif`](Attack2/goten_Attack2.gif) | [`goten_Attack2_sheet.png`](Attack2/goten_Attack2_sheet.png) |
-| **Attack3** | 2 | 56x56 | [`goten_Attack3.piskel`](Attack3/goten_Attack3.piskel) | [`goten_Attack3.gif`](Attack3/goten_Attack3.gif) | [`goten_Attack3_sheet.png`](Attack3/goten_Attack3_sheet.png) |
 | **Kick2** | 2 | 56x56 | [`goten_Kick2.piskel`](Kick2/goten_Kick2.piskel) | [`goten_Kick2.gif`](Kick2/goten_Kick2.gif) | [`goten_Kick2_sheet.png`](Kick2/goten_Kick2_sheet.png) |
 | **Beam** | 2 | 84x84 | [`goten_Beam.piskel`](Beam/goten_Beam.piskel) | [`goten_Beam.gif`](Beam/goten_Beam.gif) | [`goten_Beam_sheet.png`](Beam/goten_Beam_sheet.png) |
 | **Up** | 1 | 52x52 | [`goten_Up.piskel`](Up/goten_Up.piskel) | [`goten_Up.gif`](Up/goten_Up.gif) | [`goten_Up_sheet.png`](Up/goten_Up_sheet.png) |

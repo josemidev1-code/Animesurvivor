@@ -1,0 +1,151 @@
+{
+  "heroe": "piccolo",
+  "forma": "0",
+  "pack": "07_Personajes_sin_saga_concreta/Piccolo/083_Piccolo",
+  "frames": [
+    {
+      "sha256": "3d6add844dd803ef4d4f33c11b07a02bec57cbb3ab71b8f82500cd2927908588",
+      "indice": 1
+    },
+    {
+      "sha256": "055129a68a19681ea839471a8f397152eb244f395653dab305fd398d4f90c2d3",
+      "indice": 2
+    },
+    {
+      "sha256": "f732deddc910a42a010d1f677401b6551dd1e98f978db1f885af3f5c6035c192",
+      "indice": 21
+    },
+    {
+      "sha256": "261478f24de14a4d1dd18b43f38d401d468820d07eb37e5823cf2f7a58ec3401",
+      "indice": 16
+    },
+    {
+      "sha256": "e139531d32de47ece0c39e068594871868f906a9f1266abe470efbcd1e3654b9",
+      "indice": 17
+    },
+    {
+      "sha256": "a00128c179652dbc8904bd9e967ed4fb9e542c7068e62504f724543f98bdaab6",
+      "indice": 18
+    },
+    {
+      "sha256": "e102b5beddbb669ecbe51ea2fe7a9fec01e2942d3f25bab1a6eb9e9c6f0198fb",
+      "indice": 25
+    },
+    {
+      "sha256": "40524babe7d3c9cc22da43f21e8541c02f2f7b4e06ea274bef990b062a33bd81",
+      "indice": 26
+    },
+    {
+      "sha256": "dda01e6022a736352b50f01dd5914a0a0bc7c206421e28a8800112567204e4c9",
+      "indice": 27
+    },
+    {
+      "sha256": "f925b31cc68edd37fe836c0301e10a15090c8907557ef75075d408aaebd5c68c",
+      "indice": 42
+    },
+    {
+      "sha256": "494758620cdc030028da3593ad017aaf162e36e263e65130fc8a722256c0875d",
+      "indice": 41
+    },
+    {
+      "sha256": "8a890294b2dadf5a7a5d2d4eaf15f1832d3fbd65f7a762e6b5cce3b76f06586b",
+      "indice": 51
+    },
+    {
+      "sha256": "b1bb994bc269a2110039ef05aa01c259ad5cc339ae4a4e891919c23d21d4f179",
+      "indice": 52
+    },
+    {
+      "sha256": "490d59581fcf014a3f663fe093a8300a9dd03d5d811b33480d55c1779da06653",
+      "indice": 34
+    },
+    {
+      "sha256": "490d59581fcf014a3f663fe093a8300a9dd03d5d811b33480d55c1779da06653",
+      "indice": 38
+    },
+    {
+      "sha256": "de94c0298e8aed6df59af650c8940defb3801dcd176ae212275e046df7ab2ecb",
+      "indice": 19
+    },
+    {
+      "sha256": "d4037e1eebbd7e383e983125799c9c2ab20515591bc7ec73cf780f7ea12ed3b6",
+      "indice": 20
+    },
+    {
+      "sha256": "e7f00ee23446d2b2066390c840fdbc05479e9396bab21ccbf998889d3bbec3e2",
+      "indice": 73
+    },
+    {
+      "sha256": "593c866189684f085f7ae798905b990239beed3d20514b2a4ba669ee9ae07cc3",
+      "indice": 74
+    },
+    {
+      "sha256": "84095406a8a6b199c7ada34d9a1947bfebd07027a39afd365e3cb0ac4f0c154c",
+      "indice": 75
+    },
+    {
+      "sha256": "efdf5c79286cda6ff396667169996a0241f4539d47396cecf65c26ceb6f2014d",
+      "indice": 28
+    },
+    {
+      "sha256": "1fe2c857c5e5d3767a76001309c240afca93109a0b5d4ce5f1405cf520256448",
+      "indice": 29
+    },
+    {
+      "sha256": "53e40954d104028e211765ce2270f5c0a2808d6ef1e532c35092e8f16a50a638",
+      "indice": 30
+    },
+    {
+      "sha256": "f925b31cc68edd37fe836c0301e10a15090c8907557ef75075d408aaebd5c68c",
+      "indice": 42
+    },
+    {
+      "sha256": "494758620cdc030028da3593ad017aaf162e36e263e65130fc8a722256c0875d",
+      "indice": 41
+    },
+    {
+      "sha256": "f732deddc910a42a010d1f677401b6551dd1e98f978db1f885af3f5c6035c192",
+      "indice": 21
+    },
+    {
+      "sha256": "59b25b53a28a94ee83ab7b468da895118b4e619fd623f932f61af1ef340c72c2",
+      "indice": 61
+    },
+    {
+      "sha256": "90d6c25742dabd0ac8d937b06339085ef8ff5f09a480e6aeb425bd40802515c1",
+      "indice": 40
+    },
+    {
+      "sha256": "59b25b53a28a94ee83ab7b468da895118b4e619fd623f932f61af1ef340c72c2",
+      "indice": 61
+    },
+    {
+      "sha256": "ed2194f2ae3173899a4d60747c6889be4b9dff24e67387257f5530f915ad6e5c",
+      "indice": 63
+    },
+    {
+      "sha256": "90a530fcf5b41cbd7cdd902baa3622b2b5ea7c989bba51ec1629354ff99d5537",
+      "indice": 92
+    },
+    {
+      "sha256": "e60e323c7fa92a79111ae95337f62976d790c28d32d20e18349327c1631d4ed7",
+      "indice": 93
+    },
+    {
+      "sha256": "829249d9aa2457bee7026a40ac55e948196c4370514fbfa8f407e82dce72fef2",
+      "indice": 104
+    },
+    {
+      "sha256": "bcd351e9a0abc4a3dbc224a97ccd660b7459b7d8aec11f07ae01c9c79b869abf",
+      "indice": 106
+    },
+    {
+      "sha256": "f925b31cc68edd37fe836c0301e10a15090c8907557ef75075d408aaebd5c68c",
+      "indice": 42
+    },
+    {
+      "sha256": "90d6c25742dabd0ac8d937b06339085ef8ff5f09a480e6aeb425bd40802515c1",
+      "indice": 40
+    }
+  ]
+}

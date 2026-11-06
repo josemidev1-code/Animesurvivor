@@ -1,0 +1,119 @@
+{
+  "heroe": "janemba",
+  "forma": "0",
+  "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Janemba/068_Janemba",
+  "frames": [
+    {
+      "sha256": "afb2b1fae040374bb9df32716b3eade56a56aca2077e002a12ef1f8e578718e4",
+      "indice": 0
+    },
+    {
+      "sha256": "ab4cb0fe41223a7f0f71b1db80c44a1cce5cb7d50867fe8f3c5b680f1f6b8cf0",
+      "indice": 1
+    },
+    {
+      "sha256": "461a667d6e27ea2998cb0378eb2b7fd7bcb2b9a73bc18829751df01a4bb74b7d",
+      "indice": 5
+    },
+    {
+      "sha256": "202af211224ba06bada15094b30297b7b796b77fd1e6c7dca82ca7601fcc73d4",
+      "indice": 8
+    },
+    {
+      "sha256": "fd72688b1ad557b9d0175d069b3be374c0ae537f8d7867e442616ffb5884a09c",
+      "indice": 9
+    },
+    {
+      "sha256": "2a16b0e24fb6fecee8f3878c2d0e292d7e322549e93b44b27345c7864fb03f43",
+      "indice": 10
+    },
+    {
+      "sha256": "2e68f0e8183b5d2d951792e39368f562ece7b80887a574ff1974ed1113be7ff7",
+      "indice": 13
+    },
+    {
+      "sha256": "e74e039192d989f9d7bd5cdc28aa267397498abd94b4a13b313a80f2254bfe58",
+      "indice": 15
+    },
+    {
+      "sha256": "b512219af3a1e17e825b33c502f1b8e7932bcaac6d34d734369af8e6c9996a40",
+      "indice": 33
+    },
+    {
+      "sha256": "17e65d04c39d8bdf8b2ca7df7a5b8b007d38fec98c57b52b19772df96ddeef54",
+      "indice": 34
+    },
+    {
+      "sha256": "99a6170b5c60d01ea596133056638ee5326441de50cbc08da418b6acd28a4dfe",
+      "indice": 30
+    },
+    {
+      "sha256": "7a35b0718ea6535a5ba960acc50bbe8d869a02747f3c277bfc9544dd3b63c278",
+      "indice": 31
+    },
+    {
+      "sha256": "2d05200a8f7fbc0f7414bb37f4011a1800d48b07557e599bce4393060d807670",
+      "indice": 32
+    },
+    {
+      "sha256": "11698c959d9a6f79bcbbb5f2a0ed6ec1290e15c7fd940a39d1868d212794b2da",
+      "indice": 22
+    },
+    {
+      "sha256": "d91ed6e6d6ce72691b7dc4818197246cfff492a596d6ad472b9ce4b46dbd987a",
+      "indice": 23
+    },
+    {
+      "sha256": "95174f2e30ef60664fec1ee0d9408c130c79beb6663cae70c1bab732f63c3b8c",
+      "indice": 26
+    },
+    {
+      "sha256": "7061a437070732f71cba2d90c7c2a83b31173b177ecbe5d9a97ee7dd1075e4d8",
+      "indice": 16
+    },
+    {
+      "sha256": "54e012b7ae0dd143e1c5206afa6a5081cbbedf6984b05c0efe84f330e3babaa7",
+      "indice": 14
+    },
+    {
+      "sha256": "8d8cf05a7be58e57d3036e734b6addce4492a32c4da8704a7ebb7f69c026fa53",
+      "indice": 27
+    },
+    {
+      "sha256": "a8bd1a9b492266f6de788706dc4aca90a3ffb2ad4c849be4b9b356c80aad2bd7",
+      "indice": 28
+    },
+    {
+      "sha256": "dfa1c7f0fe1336be90d5c40c24ebdb2d8ebd5e255487be0baaca513717757564",
+      "indice": 57
+    },
+    {
+      "sha256": "a2b3a46942f9f0bbc22e8fad79e0cc33b254b05a0f015b1645f1d24d5b2eae43",
+      "indice": 58
+    },
+    {
+      "sha256": "0c3c6a793155a9b841a301adeacd0bf9818de4d166758abfb749ea75b9de5ceb",
+      "indice": 60
+    },
+    {
+      "sha256": "8e4e5243872f36496ac846fdb33ed8a251bb5cda7ebd4fe73ec0c9a8c8f11c7f",
+      "indice": 61
+    },
+    {
+      "sha256": "dfa1c7f0fe1336be90d5c40c24ebdb2d8ebd5e255487be0baaca513717757564",
+      "indice": 57
+    },
+    {
+      "sha256": "a2b3a46942f9f0bbc22e8fad79e0cc33b254b05a0f015b1645f1d24d5b2eae43",
+      "indice": 58
+    },
+    {
+      "sha256": "0c3c6a793155a9b841a301adeacd0bf9818de4d166758abfb749ea75b9de5ceb",
+      "indice": 60
+    },
+    {
+      "sha256": "8e4e5243872f36496ac846fdb33ed8a251bb5cda7ebd4fe73ec0c9a8c8f11c7f",
+      "indice": 61
+    }
+  ]
+}

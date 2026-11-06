@@ -3,12 +3,16 @@
 Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).
 
 ## Cómo abrir en Piskel:
-1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.
+1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.
 2. Haz clic en el icono de carpeta de la barra derecha (**Import**).
 3. Elige cualquiera de estas opciones:
    - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.
    - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).
    - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).
+
+## Volver al juego:
+`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/tenshinhan_0/origen.json --heroe tenshinhan --forma 0 --anim attack --aplicar`
+Después: `python herramientas/montar_animaciones.py tenshinhan` y revisión visual. Solo se aceptan sprites originales exportados.
 
 ## Animaciones disponibles:
 
@@ -18,7 +22,7 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Walk** | 1 | 70x70 | [`tenshinhan_Walk.piskel`](Walk/tenshinhan_Walk.piskel) | [`tenshinhan_Walk.gif`](Walk/tenshinhan_Walk.gif) | [`tenshinhan_Walk_sheet.png`](Walk/tenshinhan_Walk_sheet.png) |
 | **Attack** | 3 | 54x54 | [`tenshinhan_Attack.piskel`](Attack/tenshinhan_Attack.piskel) | [`tenshinhan_Attack.gif`](Attack/tenshinhan_Attack.gif) | [`tenshinhan_Attack_sheet.png`](Attack/tenshinhan_Attack_sheet.png) |
 | **Kick** | 2 | 54x54 | [`tenshinhan_Kick.piskel`](Kick/tenshinhan_Kick.piskel) | [`tenshinhan_Kick.gif`](Kick/tenshinhan_Kick.gif) | [`tenshinhan_Kick_sheet.png`](Kick/tenshinhan_Kick_sheet.png) |
-| **Cast** | 2 | 64x64 | [`tenshinhan_Cast.piskel`](Cast/tenshinhan_Cast.piskel) | [`tenshinhan_Cast.gif`](Cast/tenshinhan_Cast.gif) | [`tenshinhan_Cast_sheet.png`](Cast/tenshinhan_Cast_sheet.png) |
+| **Cast** | 2 | 56x56 | [`tenshinhan_Cast.piskel`](Cast/tenshinhan_Cast.piskel) | [`tenshinhan_Cast.gif`](Cast/tenshinhan_Cast.gif) | [`tenshinhan_Cast_sheet.png`](Cast/tenshinhan_Cast_sheet.png) |
 | **Pow** | 2 | 114x114 | [`tenshinhan_Pow.piskel`](Pow/tenshinhan_Pow.piskel) | [`tenshinhan_Pow.gif`](Pow/tenshinhan_Pow.gif) | [`tenshinhan_Pow_sheet.png`](Pow/tenshinhan_Pow_sheet.png) |
 | **Hurt** | 2 | 48x48 | [`tenshinhan_Hurt.piskel`](Hurt/tenshinhan_Hurt.piskel) | [`tenshinhan_Hurt.gif`](Hurt/tenshinhan_Hurt.gif) | [`tenshinhan_Hurt_sheet.png`](Hurt/tenshinhan_Hurt_sheet.png) |
 | **Faint** | 1 | 40x40 | [`tenshinhan_Faint.piskel`](Faint/tenshinhan_Faint.piskel) | [`tenshinhan_Faint.gif`](Faint/tenshinhan_Faint.gif) | [`tenshinhan_Faint_sheet.png`](Faint/tenshinhan_Faint_sheet.png) |
@@ -27,3 +31,6 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Kick2** | 2 | 52x52 | [`tenshinhan_Kick2.piskel`](Kick2/tenshinhan_Kick2.piskel) | [`tenshinhan_Kick2.gif`](Kick2/tenshinhan_Kick2.gif) | [`tenshinhan_Kick2_sheet.png`](Kick2/tenshinhan_Kick2_sheet.png) |
 | **Beam** | 2 | 52x52 | [`tenshinhan_Beam.piskel`](Beam/tenshinhan_Beam.piskel) | [`tenshinhan_Beam.gif`](Beam/tenshinhan_Beam.gif) | [`tenshinhan_Beam_sheet.png`](Beam/tenshinhan_Beam_sheet.png) |
 | **Up** | 2 | 64x64 | [`tenshinhan_Up.piskel`](Up/tenshinhan_Up.piskel) | [`tenshinhan_Up.gif`](Up/tenshinhan_Up.gif) | [`tenshinhan_Up_sheet.png`](Up/tenshinhan_Up_sheet.png) |
+| **Tecnica_kikoho** | 2 | 50x50 | [`tenshinhan_Tecnica_kikoho.piskel`](Tecnica_kikoho/tenshinhan_Tecnica_kikoho.piskel) | [`tenshinhan_Tecnica_kikoho.gif`](Tecnica_kikoho/tenshinhan_Tecnica_kikoho.gif) | [`tenshinhan_Tecnica_kikoho_sheet.png`](Tecnica_kikoho/tenshinhan_Tecnica_kikoho_sheet.png) |
+| **Tecnica_dodonpa** | 2 | 56x56 | [`tenshinhan_Tecnica_dodonpa.piskel`](Tecnica_dodonpa/tenshinhan_Tecnica_dodonpa.piskel) | [`tenshinhan_Tecnica_dodonpa.gif`](Tecnica_dodonpa/tenshinhan_Tecnica_dodonpa.gif) | [`tenshinhan_Tecnica_dodonpa_sheet.png`](Tecnica_dodonpa/tenshinhan_Tecnica_dodonpa_sheet.png) |
+| **Tecnica_taiyoken** | 2 | 46x46 | [`tenshinhan_Tecnica_taiyoken.piskel`](Tecnica_taiyoken/tenshinhan_Tecnica_taiyoken.piskel) | [`tenshinhan_Tecnica_taiyoken.gif`](Tecnica_taiyoken/tenshinhan_Tecnica_taiyoken.gif) | [`tenshinhan_Tecnica_taiyoken_sheet.png`](Tecnica_taiyoken/tenshinhan_Tecnica_taiyoken_sheet.png) |

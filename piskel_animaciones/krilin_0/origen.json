@@ -1,0 +1,119 @@
+{
+  "heroe": "krilin",
+  "forma": "0",
+  "pack": "07_Personajes_sin_saga_concreta/Krilin/075_Kuririn",
+  "frames": [
+    {
+      "sha256": "c04e6a685f24b81c548688d3603f78153e5fdbf8e0f83bc0ea1a3376e7860609",
+      "indice": 7
+    },
+    {
+      "sha256": "763d56550ac1ef9bb55aaac65ad0dc5308f305aa05f1f3aa6ed5027ef682aef9",
+      "indice": 8
+    },
+    {
+      "sha256": "838fab5f3d4d4abbf14004da2a5739549f2646031e19d53386b513d6fab96237",
+      "indice": 11
+    },
+    {
+      "sha256": "e460ee13cd49a1218add0ab67a036c2b089585aff1a174d0a013f5baa1ad6044",
+      "indice": 14
+    },
+    {
+      "sha256": "59332a9851c448c43d7b739c1193bb16327edd4db3f0db561e4955c9de8cc91f",
+      "indice": 15
+    },
+    {
+      "sha256": "37fc73299f1265705fe6fcfae780ae2c9a38052ff64695686c33c1807c1c5e85",
+      "indice": 16
+    },
+    {
+      "sha256": "cc23743584e8edb23da15df4d6655674348262f48f0f9db888e6e1e7ca2f185a",
+      "indice": 17
+    },
+    {
+      "sha256": "eb617564f30a86825ce4f792220ffe44c1cfbbaee164d6b10dc0b0d374ecec55",
+      "indice": 18
+    },
+    {
+      "sha256": "83fd98afab4d7285a1e6beeb4417ef2e9a3c3435f327ab5b5382b00e1c7ac369",
+      "indice": 44
+    },
+    {
+      "sha256": "3d9f39cbd5b906bb96edafaa6adbcb7f5536102d0510bfb25d9ea60d5a575349",
+      "indice": 56
+    },
+    {
+      "sha256": "fece926065e33887a0d693f3dd7bf2c0e7daa2c5ee336b5aa81a9be2f52b0e2f",
+      "indice": 2
+    },
+    {
+      "sha256": "8de2d263dca9a042177974c182647555e30d703464ac4364c8faa0a38ed45361",
+      "indice": 3
+    },
+    {
+      "sha256": "fa6c42c3f69b18e988197d4085b1555f5be27f91ce4c6621b269fa0c435fa672",
+      "indice": 4
+    },
+    {
+      "sha256": "69d18aec795d9dbdc29239f82eb7d0756c6881605508ddb80da598ba7a84f648",
+      "indice": 21
+    },
+    {
+      "sha256": "95aaeba0fd71869fa7322770eb41728063293d153939a425e50d0979ef4e971f",
+      "indice": 22
+    },
+    {
+      "sha256": "5dba69718e9873e7ee450987e1f2e5aa9e2c8c7ffa220800cb7b37ae5f7f5c34",
+      "indice": 31
+    },
+    {
+      "sha256": "5f6b70bbc828e8083bcbc29f4103bc3ea657c4f50ccd93375dbbee7d7a2eb3f8",
+      "indice": 23
+    },
+    {
+      "sha256": "8410a8853949bb5ad28ff0171299ecfd2cac2a9cdb878db67292d077d5502b47",
+      "indice": 24
+    },
+    {
+      "sha256": "c265fb63fb1bf7fb32e33e1db242a38356282cdb9294f74fd2da5e12d8f72f90",
+      "indice": 19
+    },
+    {
+      "sha256": "449bf64854f7fa649d2aa5db2fee69e4c12b1b7ef97d012b40c73b01f65be728",
+      "indice": 20
+    },
+    {
+      "sha256": "83fd98afab4d7285a1e6beeb4417ef2e9a3c3435f327ab5b5382b00e1c7ac369",
+      "indice": 44
+    },
+    {
+      "sha256": "3d9f39cbd5b906bb96edafaa6adbcb7f5536102d0510bfb25d9ea60d5a575349",
+      "indice": 56
+    },
+    {
+      "sha256": "fe79a4be784af665fa8ad6c1c3e8527fcc5ec56a0635ee7889d376ccbcd3287e",
+      "indice": 66
+    },
+    {
+      "sha256": "0fcd4239fe279ef67dd4714e9ade6ae86dffea3e5ca35af5dce136ddf0f6bf0f",
+      "indice": 67
+    },
+    {
+      "sha256": "838fab5f3d4d4abbf14004da2a5739549f2646031e19d53386b513d6fab96237",
+      "indice": 11
+    },
+    {
+      "sha256": "0fcd4239fe279ef67dd4714e9ade6ae86dffea3e5ca35af5dce136ddf0f6bf0f",
+      "indice": 67
+    },
+    {
+      "sha256": "402b9c1762f7c6b22cba0b933e7b66a480578bf08489a23de3da9a117dcd7c21",
+      "indice": 69
+    },
+    {
+      "sha256": "f73d0ff36d708ae10d8bc161b3a0c3e3d152f929e027f79c7b31165ad1692d86",
+      "indice": 32
+    }
+  ]
+}

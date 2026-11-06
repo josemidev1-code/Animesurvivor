@@ -1,0 +1,83 @@
+{
+  "heroe": "gokuui",
+  "forma": "3",
+  "pack": "05_Fanmade_y_alternativos/Goku/219_GOKU, ULTRA INSTINTO SEÑAL,DBS BROLY, ANDRÉS GAMEN ANIMATIONS",
+  "frames": [
+    {
+      "sha256": "94ece02c21bf1f0c8e8a3100e7684026419c5716021cf82542d7e05103f786c3",
+      "indice": 9
+    },
+    {
+      "sha256": "33f53eb7a54474c35d88a23530ffbee4d572556e70f83826c1dbf660a5132ebb",
+      "indice": 10
+    },
+    {
+      "sha256": "98fa12fc7a8ace9fe2d91b46d1c18b010c7fff2911190ec47f20d5a04b990aa8",
+      "indice": 15
+    },
+    {
+      "sha256": "1600746e557a990817d57409071f27fd9f6a6b051ce12b02cc167ff9155a3106",
+      "indice": 22
+    },
+    {
+      "sha256": "198604b7cbb6f96af17992bc13a9a8d1218378b340480f5e1881239a5e1d50dd",
+      "indice": 23
+    },
+    {
+      "sha256": "ca108faaf63f0dae3ee31a6f70534e07483152624b936fb8e01d289e830fe97b",
+      "indice": 24
+    },
+    {
+      "sha256": "9540aec3ec06a4a8fd7d013bc714a9c5dbaec7546e7d809cc55ae7d34efc779b",
+      "indice": 31
+    },
+    {
+      "sha256": "3491dac5eb976e9b8470a468c488f84180939775f535eb806f101a70874a5e18",
+      "indice": 35
+    },
+    {
+      "sha256": "fad6d4264019f6b69114b06ed783ed9ffaaea100e53e8835a7af5d8c3173f5ff",
+      "indice": 55
+    },
+    {
+      "sha256": "cea8abab21fdd66a317187ffb9ace266a8a12bfdf7bb8c273ee30e0bb7c70fc0",
+      "indice": 62
+    },
+    {
+      "sha256": "b791248fe602a293b7b969754126dae88b07332af2a1220006b62f4535dab7f5",
+      "indice": 36
+    },
+    {
+      "sha256": "2ba59c6dc0fd25c109d21bcb5f010bcee800d69139d97356e39f1da33803b6d7",
+      "indice": 37
+    },
+    {
+      "sha256": "53549084f7e9787fbce655f3706f45439f5bcd0a1b75ecc8d4498783878009cd",
+      "indice": 46
+    },
+    {
+      "sha256": "c1436140fffc8361150dab7aaeed26823751f796928f2552514b4234089c308c",
+      "indice": 47
+    },
+    {
+      "sha256": "ec6095f3e426ef10b1f62f53f5dde42384c3dc75df6309c1e56f857443c54bd0",
+      "indice": 27
+    },
+    {
+      "sha256": "9bc678ca52e90b61c3994d25a32d80e9a66aacfaac1f2dced55bbfa5cbb2c459",
+      "indice": 29
+    },
+    {
+      "sha256": "827a174d2e0410aa8514484ea43a20029341dd96f25db25db71e6419ccbbcd5d",
+      "indice": 30
+    },
+    {
+      "sha256": "347c0029ba4dc6e8c1a9f6817d957a33f7a8d4a7e103ec17a9d4c6de67060f38",
+      "indice": 32
+    },
+    {
+      "sha256": "98fa12fc7a8ace9fe2d91b46d1c18b010c7fff2911190ec47f20d5a04b990aa8",
+      "indice": 15
+    }
+  ]
+}

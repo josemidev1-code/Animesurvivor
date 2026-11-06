@@ -1,0 +1,123 @@
+{
+  "heroe": "vegeta",
+  "forma": "3",
+  "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Vegeta/090_Majin Vegeta",
+  "frames": [
+    {
+      "sha256": "e046087f0003c0e10c1717ac6be208b28963bc0bc982214266997d97972ab942",
+      "indice": 0
+    },
+    {
+      "sha256": "d7127301f6d46d6029783309c0bd5cc37963167529d4cb1beada8014ff012f55",
+      "indice": 1
+    },
+    {
+      "sha256": "30cf3412a5e0d80964dd59ae59dac8240be57881721ac6d0723eca18bde668d4",
+      "indice": 5
+    },
+    {
+      "sha256": "3e426c121c7bd3c6327e55b01d7d65471e2a5de5819c12c2bbe346bc0e171acb",
+      "indice": 10
+    },
+    {
+      "sha256": "79b1446697cf5f8cb4a11c356810fb5cd69007d84d345b32dc5736da1ab8e047",
+      "indice": 11
+    },
+    {
+      "sha256": "b547eff04b09bd9bbe1ac78204f449a4ae221b4a23c447176cdcaaa08b1938bc",
+      "indice": 12
+    },
+    {
+      "sha256": "6aa2c491eedbd9788508b61cd096aa7b870124f283ab3c81220c1190ac53313e",
+      "indice": 13
+    },
+    {
+      "sha256": "b87cb86d73cc8e5bacff59fa9ea77b2f866260a51309b3cdaaf5b0909b0c5613",
+      "indice": 16
+    },
+    {
+      "sha256": "0d96bd4a7a32033db87fad1d351d20c867bc065f0a692591fa612c105f3c3b87",
+      "indice": 17
+    },
+    {
+      "sha256": "6709138d2bc7174ecb7a6a86a3954b8750d333563dbfa221a3ae53c0403bda95",
+      "indice": 34
+    },
+    {
+      "sha256": "00987a916d00fd7e3864308f082edcf182cececd79c2e1ff351be24af8c4839b",
+      "indice": 36
+    },
+    {
+      "sha256": "74e7137d99968a355150f7ad04604d835cf3aa1539c8cc63a3e618385b59dcf1",
+      "indice": 6
+    },
+    {
+      "sha256": "1117baa26dc817875401b07beb659c0404d230ed1bcee0688e4b3a4e6b561337",
+      "indice": 7
+    },
+    {
+      "sha256": "af693b2bc59280b341264c9e870834dc6b8cf1411ee76325f9189da4fdf2a59a",
+      "indice": 8
+    },
+    {
+      "sha256": "b7f2de3d1c77d1f995c33cc38ce6584e4d20c92f0d7cf14f34ada0361d0bfe93",
+      "indice": 23
+    },
+    {
+      "sha256": "8b043866f7004055c00fdb60921786d5abcecf79a381fcc8b164e787360c5b92",
+      "indice": 24
+    },
+    {
+      "sha256": "65ac80cc2b9e1d5861690d6ac6083689cd4de43e8170ada538e1cfe1adcd2c97",
+      "indice": 28
+    },
+    {
+      "sha256": "8cba1b97a284f826acec36dfe5635675be29f9d67e8eb76c9de8d524e53bb187",
+      "indice": 14
+    },
+    {
+      "sha256": "f66b939d5a50b0f119de748a0b73bfd7967384bbbad5bdb5c018e2699b3adea7",
+      "indice": 15
+    },
+    {
+      "sha256": "9a02aebef216ca3475477fb059f2e0144c0c36534d4e861ba1d186fd31b9ec39",
+      "indice": 20
+    },
+    {
+      "sha256": "c0c1f933aa73b3957ecf391c0203d6c7190e3a06a8144677ddb743e0bc70bd57",
+      "indice": 21
+    },
+    {
+      "sha256": "6709138d2bc7174ecb7a6a86a3954b8750d333563dbfa221a3ae53c0403bda95",
+      "indice": 34
+    },
+    {
+      "sha256": "00987a916d00fd7e3864308f082edcf182cececd79c2e1ff351be24af8c4839b",
+      "indice": 36
+    },
+    {
+      "sha256": "2c3988f4dd35c3c8264d507f8a16ea48838f7d950160601b3b30bf97e70f9790",
+      "indice": 2
+    },
+    {
+      "sha256": "30cf3412a5e0d80964dd59ae59dac8240be57881721ac6d0723eca18bde668d4",
+      "indice": 5
+    },
+    {
+      "sha256": "6709138d2bc7174ecb7a6a86a3954b8750d333563dbfa221a3ae53c0403bda95",
+      "indice": 34
+    },
+    {
+      "sha256": "00987a916d00fd7e3864308f082edcf182cececd79c2e1ff351be24af8c4839b",
+      "indice": 36
+    },
+    {
+      "sha256": "bc76865755209a32d4e1dff7fe4e6e1f49b1f0aa17d24ac2d28689236bf84c2c",
+      "indice": 29
+    },
+    {
+      "sha256": "00987a916d00fd7e3864308f082edcf182cececd79c2e1ff351be24af8c4839b",
+      "indice": 36
+    }
+  ]
+}

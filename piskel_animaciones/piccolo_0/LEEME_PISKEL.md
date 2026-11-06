@@ -3,12 +3,16 @@
 Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).
 
 ## Cómo abrir en Piskel:
-1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.
+1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.
 2. Haz clic en el icono de carpeta de la barra derecha (**Import**).
 3. Elige cualquiera de estas opciones:
    - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.
    - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).
    - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).
+
+## Volver al juego:
+`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/piccolo_0/origen.json --heroe piccolo --forma 0 --anim attack --aplicar`
+Después: `python herramientas/montar_animaciones.py piccolo` y revisión visual. Solo se aceptan sprites originales exportados.
 
 ## Animaciones disponibles:
 
@@ -26,3 +30,8 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Kick2** | 3 | 60x60 | [`piccolo_Kick2.piskel`](Kick2/piccolo_Kick2.piskel) | [`piccolo_Kick2.gif`](Kick2/piccolo_Kick2.gif) | [`piccolo_Kick2_sheet.png`](Kick2/piccolo_Kick2_sheet.png) |
 | **Beam** | 2 | 70x70 | [`piccolo_Beam.piskel`](Beam/piccolo_Beam.piskel) | [`piccolo_Beam.gif`](Beam/piccolo_Beam.gif) | [`piccolo_Beam_sheet.png`](Beam/piccolo_Beam_sheet.png) |
 | **Dash** | 1 | 62x62 | [`piccolo_Dash.piskel`](Dash/piccolo_Dash.piskel) | [`piccolo_Dash.gif`](Dash/piccolo_Dash.gif) | [`piccolo_Dash_sheet.png`](Dash/piccolo_Dash_sheet.png) |
+| **Tecnica_makanko** | 2 | 70x70 | [`piccolo_Tecnica_makanko.piskel`](Tecnica_makanko/piccolo_Tecnica_makanko.piskel) | [`piccolo_Tecnica_makanko.gif`](Tecnica_makanko/piccolo_Tecnica_makanko.gif) | [`piccolo_Tecnica_makanko_sheet.png`](Tecnica_makanko/piccolo_Tecnica_makanko_sheet.png) |
+| **Tecnica_eyebeam** | 2 | 64x64 | [`piccolo_Tecnica_eyebeam.piskel`](Tecnica_eyebeam/piccolo_Tecnica_eyebeam.piskel) | [`piccolo_Tecnica_eyebeam.gif`](Tecnica_eyebeam/piccolo_Tecnica_eyebeam.gif) | [`piccolo_Tecnica_eyebeam_sheet.png`](Tecnica_eyebeam/piccolo_Tecnica_eyebeam_sheet.png) |
+| **Tecnica_hellzone** | 2 | 58x58 | [`piccolo_Tecnica_hellzone.piskel`](Tecnica_hellzone/piccolo_Tecnica_hellzone.piskel) | [`piccolo_Tecnica_hellzone.gif`](Tecnica_hellzone/piccolo_Tecnica_hellzone.gif) | [`piccolo_Tecnica_hellzone_sheet.png`](Tecnica_hellzone/piccolo_Tecnica_hellzone_sheet.png) |
+| **Tecnica_lightgren** | 2 | 76x76 | [`piccolo_Tecnica_lightgren.piskel`](Tecnica_lightgren/piccolo_Tecnica_lightgren.piskel) | [`piccolo_Tecnica_lightgren.gif`](Tecnica_lightgren/piccolo_Tecnica_lightgren.gif) | [`piccolo_Tecnica_lightgren_sheet.png`](Tecnica_lightgren/piccolo_Tecnica_lightgren_sheet.png) |
+| **Tecnica_kiblast** | 2 | 70x70 | [`piccolo_Tecnica_kiblast.piskel`](Tecnica_kiblast/piccolo_Tecnica_kiblast.piskel) | [`piccolo_Tecnica_kiblast.gif`](Tecnica_kiblast/piccolo_Tecnica_kiblast.gif) | [`piccolo_Tecnica_kiblast_sheet.png`](Tecnica_kiblast/piccolo_Tecnica_kiblast_sheet.png) |

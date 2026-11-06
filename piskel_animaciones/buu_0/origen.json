@@ -1,0 +1,119 @@
+{
+  "heroe": "buu",
+  "forma": "0",
+  "pack": "00_Dragon_Ball_Z/03_Majin_Buu/Majin Buu/077_Majin Buu",
+  "frames": [
+    {
+      "sha256": "8a53a85a9bf07c00c02f732e003464ee56c9832f1eb355c12c2be31b1d0a1dc1",
+      "indice": 1
+    },
+    {
+      "sha256": "844dfcd16078f90d9e91f2e87adf06e6e03de51244ad56d395c7a58b1760c4ce",
+      "indice": 2
+    },
+    {
+      "sha256": "a6add7172d6b5e0a98498d0793122ef9d957600868143bf5124de42a59defc6d",
+      "indice": 13
+    },
+    {
+      "sha256": "3f498e141c69b85bfb833d6214da6e2a086881509caa30a5f2d16fd126da8148",
+      "indice": 34
+    },
+    {
+      "sha256": "f80854e1f12d19b829b417ad1c0b24252008777b16e3f832315f644b09142d5f",
+      "indice": 35
+    },
+    {
+      "sha256": "033066835ae9debbc536d82b76e642914cf44c892f7953c8f2efde8124668813",
+      "indice": 36
+    },
+    {
+      "sha256": "27960c04928cead1d9f2f991beb26652f0339a9e30ff5beb1c4eb0d18f64fd06",
+      "indice": 19
+    },
+    {
+      "sha256": "9afbced07161725540f9d3d7fe533fbc6db037198e2a315661f28fc38189f219",
+      "indice": 20
+    },
+    {
+      "sha256": "16249ee1655de25d50a8fa4d56b3407b2de6e7ba8ebf8b48c0e11a71d3ea4b74",
+      "indice": 56
+    },
+    {
+      "sha256": "a1c75bdd84d3092f7bb6a1c31ad620f525c65ce8550d84e8a9e3038be09078ca",
+      "indice": 57
+    },
+    {
+      "sha256": "54951d4c2f1d0ef261ce60f14f03367f22a2152e0805916828d781d41fd060c8",
+      "indice": 39
+    },
+    {
+      "sha256": "bc16a6e250279e76b2434978d45207623230b93209702783887976b809c3fb0e",
+      "indice": 40
+    },
+    {
+      "sha256": "cfdf2beb53c1908d46534f8bb8476ee8750f512b6e7f3b41d06e20f0c1a336de",
+      "indice": 41
+    },
+    {
+      "sha256": "bab7c8e3fe0836c0c07a9e60aed618f6d1fc13903b06bc7cfa090a55d3fc4f63",
+      "indice": 31
+    },
+    {
+      "sha256": "1c82b0f99dff4adc58efbc4f8706c800263f6c831a82e310fc580872aa5e940d",
+      "indice": 32
+    },
+    {
+      "sha256": "f3687cd3fb6d841bc5e1de86013e68cfd00d92679f90d8f264cad981276cfba7",
+      "indice": 33
+    },
+    {
+      "sha256": "3f498e141c69b85bfb833d6214da6e2a086881509caa30a5f2d16fd126da8148",
+      "indice": 34
+    },
+    {
+      "sha256": "62275141cecf4973bc7951129e6944421bd5226a31c2c30e9d92773065d1a473",
+      "indice": 37
+    },
+    {
+      "sha256": "033066835ae9debbc536d82b76e642914cf44c892f7953c8f2efde8124668813",
+      "indice": 36
+    },
+    {
+      "sha256": "e1645ac9392b9bda4aef9e377ca5051d6e9b360f00c8a827756f6614c2514ccf",
+      "indice": 42
+    },
+    {
+      "sha256": "ddc414bd1c9ef8c4c71a912ed28fc2e4059d30b7cd34bc121a00c8fda6c466c1",
+      "indice": 43
+    },
+    {
+      "sha256": "2d9cc76f41aeeff9d08eba6c055d0771a9a015fc4ceb32ea1fdd56ad1d6de4ae",
+      "indice": 21
+    },
+    {
+      "sha256": "34a03966ce9521bfb93d0e721d68245fc040435ba21413c2c41f314d8ac01fb7",
+      "indice": 22
+    },
+    {
+      "sha256": "16249ee1655de25d50a8fa4d56b3407b2de6e7ba8ebf8b48c0e11a71d3ea4b74",
+      "indice": 56
+    },
+    {
+      "sha256": "a1c75bdd84d3092f7bb6a1c31ad620f525c65ce8550d84e8a9e3038be09078ca",
+      "indice": 57
+    },
+    {
+      "sha256": "a6add7172d6b5e0a98498d0793122ef9d957600868143bf5124de42a59defc6d",
+      "indice": 13
+    },
+    {
+      "sha256": "83466bd30d29c50a293c4adf8436c19cb63a21206a8dde46a6f0b4ec6def4e52",
+      "indice": 54
+    },
+    {
+      "sha256": "a1c75bdd84d3092f7bb6a1c31ad620f525c65ce8550d84e8a9e3038be09078ca",
+      "indice": 57
+    }
+  ]
+}

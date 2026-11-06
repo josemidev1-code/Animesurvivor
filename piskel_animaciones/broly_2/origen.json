@@ -1,0 +1,99 @@
+{
+  "heroe": "broly",
+  "forma": "2",
+  "pack": "00_Dragon_Ball_Z/04_Peliculas_y_especiales/Broly/016_Broly Full Power",
+  "frames": [
+    {
+      "sha256": "8824fae3ea4fc820af108b8c36c200bec89a4cf464118523b00d54cd285de8a7",
+      "indice": 69
+    },
+    {
+      "sha256": "ffa8540acdf2e533e857428556bf116f491ec98934d77d8820263d1b2ed8d602",
+      "indice": 70
+    },
+    {
+      "sha256": "64a1c7f693466dbcac938ba4893713460fe27eb4e5ec94c0d838058095f16752",
+      "indice": 13
+    },
+    {
+      "sha256": "469ade7c475ebdb28e7ae0d4ab7e141b11bd57497e00228a8b6ec5212ab6e9bc",
+      "indice": 20
+    },
+    {
+      "sha256": "2f11cb04ef7707ee58dad698faa00d2b91f621910e225a6f766466e8726cabfa",
+      "indice": 21
+    },
+    {
+      "sha256": "a3e4a600d566f55814f311c721d1af778d3422ca37205ef0835baa85b50ba0d6",
+      "indice": 22
+    },
+    {
+      "sha256": "738beb536d4523fd9a3b780e7de6c201f0a92bec618d8809205afeca726d5a42",
+      "indice": 34
+    },
+    {
+      "sha256": "dfc1ed6c1edbd1e159f67869e4144ad5d5faa34e1658695bb39120da811ce613",
+      "indice": 35
+    },
+    {
+      "sha256": "bcf930a62f041d659d5242088fa834b286fff26c9158773bd6daaa0c8cffd2f3",
+      "indice": 36
+    },
+    {
+      "sha256": "532e6b8e72bb54f0a766a73c1ea38e9cf8d02d2696c793ce83a5eec0159c7cc1",
+      "indice": 66
+    },
+    {
+      "sha256": "b1ce141da6ec4479c35bea11dbe320e21fc437fcff5122e3beb0e0f3bdfb121a",
+      "indice": 68
+    },
+    {
+      "sha256": "6b1d4f2b68155b48344f120286d895ed58734f4f99ad474ed57d78af85a228ae",
+      "indice": 56
+    },
+    {
+      "sha256": "dadb907d4482bccd449a084c666746729757d0c146c3f5f34a7b5581d16e5668",
+      "indice": 57
+    },
+    {
+      "sha256": "5ec1be854ba30756fe473527faff02f473a7216d72b67b18f83e4c054a19e077",
+      "indice": 38
+    },
+    {
+      "sha256": "ca42f0483f56ce40604f8ed0a69f2e78e076c012197ed029ae4736e25449e369",
+      "indice": 39
+    },
+    {
+      "sha256": "696efce33b5fe4abb79b0ec373b94eb514df6600d33fbff9d7bca4ad4c26d8e2",
+      "indice": 41
+    },
+    {
+      "sha256": "7b60560d5bcbdef31d1d4090a2f196b6acce9aa769e8f14fe96ed9087acedc06",
+      "indice": 23
+    },
+    {
+      "sha256": "6c7d3413c7a333d1c17f9ef0734b806af88d30ad7c68fd6e842ce2b966482a1f",
+      "indice": 24
+    },
+    {
+      "sha256": "0ab600476570926cc5c454672abb8f74631de897c2cbc2665435c2f0924071f3",
+      "indice": 37
+    },
+    {
+      "sha256": "1ba1a3b5d8474d75936fd63a48276dea827ec9be933a5d9fa62aef9975f498b4",
+      "indice": 40
+    },
+    {
+      "sha256": "532e6b8e72bb54f0a766a73c1ea38e9cf8d02d2696c793ce83a5eec0159c7cc1",
+      "indice": 66
+    },
+    {
+      "sha256": "b1ce141da6ec4479c35bea11dbe320e21fc437fcff5122e3beb0e0f3bdfb121a",
+      "indice": 68
+    },
+    {
+      "sha256": "64a1c7f693466dbcac938ba4893713460fe27eb4e5ec94c0d838058095f16752",
+      "indice": 13
+    }
+  ]
+}

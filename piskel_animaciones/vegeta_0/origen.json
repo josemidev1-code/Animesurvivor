@@ -1,0 +1,143 @@
+{
+  "heroe": "vegeta",
+  "forma": "0",
+  "pack": "00_Dragon_Ball_Z/00_Saiyans/Vegeta/097_Vegeta Sayajin Saga",
+  "frames": [
+    {
+      "sha256": "a5850b5a2e435427aee9d241db2428a41ebb2e9d6f41289c987aeaacd8156a5b",
+      "indice": 0
+    },
+    {
+      "sha256": "0cb6156d0065293d4d19942e69df99af50de6f45873aa8e0522ba6b3e86a9c6b",
+      "indice": 1
+    },
+    {
+      "sha256": "7537271f3499d38b22077ce911f689e78b6ca09aae0640eed18baad5a6351150",
+      "indice": 5
+    },
+    {
+      "sha256": "a1d4fb5fe6735fa127e66445aa9c000bde9d3904238f7ff9bf48e0509c8dd1be",
+      "indice": 9
+    },
+    {
+      "sha256": "600be0a7e83ef6ccc7f9a67290052425ab589db0e1e98562e1270d1e3c77650a",
+      "indice": 10
+    },
+    {
+      "sha256": "958408d3c74b45ff69ff29403df9694a27eacc0ddbc884e382cead0fff1f0ced",
+      "indice": 12
+    },
+    {
+      "sha256": "e9f7f55a7d358ef3cd06c935c9a6735b693ac02c8639a50c82b888aab489793a",
+      "indice": 13
+    },
+    {
+      "sha256": "d24423a398e2ddfa2003123d9c9505f156fd397923a4c8ab24cbd5967ba3e60a",
+      "indice": 16
+    },
+    {
+      "sha256": "ee5db608f24e418eec7a0dcfa201f42043def2adb32a376fb3ed9d19413892c8",
+      "indice": 17
+    },
+    {
+      "sha256": "aa6d3f2951305d3222f6bfa3edef18ee8e7d64189025fa5e3799ee03279e8281",
+      "indice": 18
+    },
+    {
+      "sha256": "bc3e66c64f21a3e87ef96bb0037aa47dac4de99e7d28d1262258c37ddb8576ae",
+      "indice": 39
+    },
+    {
+      "sha256": "f30c40fb2138d90accab65c4d4e7d3363957426b36b33c710c7b89be01861976",
+      "indice": 34
+    },
+    {
+      "sha256": "8b59cbbd6bee1798de84111c5bd9e8984b414a645742069dd8cc66fe2b1d7dad",
+      "indice": 6
+    },
+    {
+      "sha256": "44642bbf0db638e3ebf263af85fb39dc8a3ec9c3c4195485b3b5c033cd25f301",
+      "indice": 7
+    },
+    {
+      "sha256": "a29dca3bcd1d707c60652d7b2d773f8da4fefa6579374e9476381faafc6d9292",
+      "indice": 8
+    },
+    {
+      "sha256": "3b3f3dde3078a3b66ca886951c3fbd1bdc600c3fc0c93c568b4ecda16a853489",
+      "indice": 27
+    },
+    {
+      "sha256": "080c357fa43d4d41dda095cd981e341ac2706aef087ac5c1ee0094b453c1a2aa",
+      "indice": 28
+    },
+    {
+      "sha256": "ebed61d4ef541e090d024305e7b1eee66ea2cc51c5b25656f70624400865d4af",
+      "indice": 32
+    },
+    {
+      "sha256": "0737405fccacc1421f741c041b61a81dc8bd3483fc70490e225bcdd61aebadde",
+      "indice": 25
+    },
+    {
+      "sha256": "134c37fdfe50f3ed5f6650b6a21bb706ecbbb2866a978ca953b3f031575e2c64",
+      "indice": 26
+    },
+    {
+      "sha256": "1938aa3ab75da7c274e008645fdafb82a241167288038b927634cd2629548a87",
+      "indice": 23
+    },
+    {
+      "sha256": "c04e48a7d9f7b32f53f5d0112a94e53eb11703b4f32802e7a58c93c42d5cf2f1",
+      "indice": 24
+    },
+    {
+      "sha256": "d061d954231b8ace41d9e3e2ab6bad009f321d87aad31c1f8be46ec463b376cb",
+      "indice": 14
+    },
+    {
+      "sha256": "9069e409baa0cf9f0dd5222cdaf6420d0a4c50fa75c913ecbc20d1d1e74eeaa7",
+      "indice": 15
+    },
+    {
+      "sha256": "6398eb5defa82774ed8bf5173e5a94623cfa8805e30a02b7723ba487e002d1d1",
+      "indice": 33
+    },
+    {
+      "sha256": "f30c40fb2138d90accab65c4d4e7d3363957426b36b33c710c7b89be01861976",
+      "indice": 34
+    },
+    {
+      "sha256": "07c50ee314be81cd4eb69220c045592313ac89f7f21303720295b90b45f02aaf",
+      "indice": 20
+    },
+    {
+      "sha256": "7537271f3499d38b22077ce911f689e78b6ca09aae0640eed18baad5a6351150",
+      "indice": 5
+    },
+    {
+      "sha256": "6398eb5defa82774ed8bf5173e5a94623cfa8805e30a02b7723ba487e002d1d1",
+      "indice": 33
+    },
+    {
+      "sha256": "b3e0837797c658d49e405ef91ec1430c94135df99590341044f830d98b4c6b14",
+      "indice": 35
+    },
+    {
+      "sha256": "a8bc504320b2774e960d62868bfe053962d22deedea0de659e398e89dd00df2d",
+      "indice": 43
+    },
+    {
+      "sha256": "63c509fb700bb44339058c2fce64cf36bdb986c06ec311d9f027f77d24fb847d",
+      "indice": 44
+    },
+    {
+      "sha256": "f30c40fb2138d90accab65c4d4e7d3363957426b36b33c710c7b89be01861976",
+      "indice": 34
+    },
+    {
+      "sha256": "b3e0837797c658d49e405ef91ec1430c94135df99590341044f830d98b4c6b14",
+      "indice": 35
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "heroe": "gohan",
+  "forma": "0",
+  "pack": "07_Personajes_sin_saga_concreta/Gohan/033_Gohan",
+  "frames": [
+    {
+      "sha256": "dc89a2c80fc3ddebb7686b94b6316e65c704e884dbe431ff343ee12d13c7a38d",
+      "indice": 0
+    },
+    {
+      "sha256": "59bf39815df2ee0bb05571a98a0f1155e403652608fc5422003db916a9b63ec7",
+      "indice": 1
+    },
+    {
+      "sha256": "224bc679412107763439e6d459739d51de3afd3846866aee2901d08dcc1a1c10",
+      "indice": 5
+    },
+    {
+      "sha256": "43da3c0f0426ba8d752d84f4d2b04d14c31dd3daba75c0c805d145983081bda3",
+      "indice": 24
+    },
+    {
+      "sha256": "19db764b04bc2729b336d216613e15881ce3902bb81ea3a5a4d10f896ad539aa",
+      "indice": 25
+    },
+    {
+      "sha256": "8f379f124d1bd2c920a025ad15c4493aeb033cc48eb600ee1f2f29c6a2d2f28a",
+      "indice": 26
+    },
+    {
+      "sha256": "9767cf0c0d60e802066199a2ae4759e56ffe9ac21b1d958c36bf3f0f83cff325",
+      "indice": 30
+    },
+    {
+      "sha256": "9c2b18ee2e846d327dd9746531df06d881af4afcd2f487eebbb9f6d119ce53d4",
+      "indice": 32
+    },
+    {
+      "sha256": "5902bfaeb25fdd85aa11cdd8893b02f9e9ad4e7a4fc8cdbec2b626fe422060f4",
+      "indice": 56
+    },
+    {
+      "sha256": "cfcca91886aeb6d7bd8098d7b729afc15f2f7862f500787e186e40415d8c5e99",
+      "indice": 57
+    },
+    {
+      "sha256": "ff72461e90e08d779b417f53f692539aaace84cd14df09fa4f2d2bd830686e28",
+      "indice": 34
+    },
+    {
+      "sha256": "1fcb4f6588a3eba5829d2044713a357219bcf182bb6c03edfbc4c83664ecdb31",
+      "indice": 35
+    },
+    {
+      "sha256": "826591cd6c934c6d5cfdeec0d5b65d3bbd9fffed652622d04e9cf17e446a4150",
+      "indice": 47
+    },
+    {
+      "sha256": "dbbdf542466fd229db55f274cc09638968b9f94f83bbd4ac7672c55de66bb750",
+      "indice": 49
+    },
+    {
+      "sha256": "d5cc5b96b412770a51fae57e991ba371d3e0ffb3875465dd77f4fe0acfee435d",
+      "indice": 53
+    },
+    {
+      "sha256": "75640ce3aad083e5641a2b37c4d2cccc1d80722cf427bb3da848e0ba66169c2a",
+      "indice": 27
+    },
+    {
+      "sha256": "9efd1e9093016186c4504a3c4092bcf3010c713993f60bea6a80438f42077818",
+      "indice": 28
+    },
+    {
+      "sha256": "1784f6f394691d942ea1d210b69c48e744b12237dc45732adba18be9719bcc75",
+      "indice": 29
+    },
+    {
+      "sha256": "9767cf0c0d60e802066199a2ae4759e56ffe9ac21b1d958c36bf3f0f83cff325",
+      "indice": 30
+    },
+    {
+      "sha256": "67cad2120a1402d42c710854e59068277b257c200b5707b49e511839a41aa371",
+      "indice": 31
+    },
+    {
+      "sha256": "9c2b18ee2e846d327dd9746531df06d881af4afcd2f487eebbb9f6d119ce53d4",
+      "indice": 32
+    },
+    {
+      "sha256": "5902bfaeb25fdd85aa11cdd8893b02f9e9ad4e7a4fc8cdbec2b626fe422060f4",
+      "indice": 56
+    },
+    {
+      "sha256": "c918de933a0e4bbeb4085279a97c4376ea2acaaa0576595dd77acf651ec13155",
+      "indice": 58
+    },
+    {
+      "sha256": "222c0dbbdd635f7b657b916722554844a7675092f4e354207c15043c3a8bc856",
+      "indice": 19
+    },
+    {
+      "sha256": "224bc679412107763439e6d459739d51de3afd3846866aee2901d08dcc1a1c10",
+      "indice": 5
+    },
+    {
+      "sha256": "222c0dbbdd635f7b657b916722554844a7675092f4e354207c15043c3a8bc856",
+      "indice": 19
+    },
+    {
+      "sha256": "8e31b0c8e377f2e847713a27ed8ced4f2f98874987f32120c442f74bc2df9424",
+      "indice": 39
+    },
+    {
+      "sha256": "cfcca91886aeb6d7bd8098d7b729afc15f2f7862f500787e186e40415d8c5e99",
+      "indice": 57
+    },
+    {
+      "sha256": "a8ced763d77984df2ececd5d1ddd3c0b69cd7ec4e5f18738a80ce5656e47ce6e",
+      "indice": 59
+    },
+    {
+      "sha256": "5fb0fd20cae04871033fe00162d110354eb82824302836e7493d228d6a4b4f0f",
+      "indice": 36
+    },
+    {
+      "sha256": "30873b8796bb4ac588ad59dc4d821e9a4498d3b5c5b5108dd3533c9c5416ef29",
+      "indice": 38
+    }
+  ]
+}

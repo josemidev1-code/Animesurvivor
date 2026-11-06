@@ -3,12 +3,16 @@
 Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).
 
 ## Cómo abrir en Piskel:
-1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.
+1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.
 2. Haz clic en el icono de carpeta de la barra derecha (**Import**).
 3. Elige cualquiera de estas opciones:
    - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.
    - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).
    - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).
+
+## Volver al juego:
+`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/vegeta_0/origen.json --heroe vegeta --forma 0 --anim attack --aplicar`
+Después: `python herramientas/montar_animaciones.py vegeta` y revisión visual. Solo se aceptan sprites originales exportados.
 
 ## Animaciones disponibles:
 
@@ -28,3 +32,6 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Beam** | 2 | 58x58 | [`vegeta_Beam.piskel`](Beam/vegeta_Beam.piskel) | [`vegeta_Beam.gif`](Beam/vegeta_Beam.gif) | [`vegeta_Beam_sheet.png`](Beam/vegeta_Beam_sheet.png) |
 | **Up** | 1 | 60x60 | [`vegeta_Up.piskel`](Up/vegeta_Up.piskel) | [`vegeta_Up.gif`](Up/vegeta_Up.gif) | [`vegeta_Up_sheet.png`](Up/vegeta_Up_sheet.png) |
 | **Dash** | 1 | 56x56 | [`vegeta_Dash.piskel`](Dash/vegeta_Dash.piskel) | [`vegeta_Dash.gif`](Dash/vegeta_Dash.gif) | [`vegeta_Dash_sheet.png`](Dash/vegeta_Dash_sheet.png) |
+| **Tecnica_galick** | 2 | 60x60 | [`vegeta_Tecnica_galick.piskel`](Tecnica_galick/vegeta_Tecnica_galick.piskel) | [`vegeta_Tecnica_galick.gif`](Tecnica_galick/vegeta_Tecnica_galick.gif) | [`vegeta_Tecnica_galick_sheet.png`](Tecnica_galick/vegeta_Tecnica_galick_sheet.png) |
+| **Tecnica_bigbang** | 2 | 56x56 | [`vegeta_Tecnica_bigbang.piskel`](Tecnica_bigbang/vegeta_Tecnica_bigbang.piskel) | [`vegeta_Tecnica_bigbang.gif`](Tecnica_bigbang/vegeta_Tecnica_bigbang.gif) | [`vegeta_Tecnica_bigbang_sheet.png`](Tecnica_bigbang/vegeta_Tecnica_bigbang_sheet.png) |
+| **Tecnica_finalflash** | 2 | 60x60 | [`vegeta_Tecnica_finalflash.piskel`](Tecnica_finalflash/vegeta_Tecnica_finalflash.piskel) | [`vegeta_Tecnica_finalflash.gif`](Tecnica_finalflash/vegeta_Tecnica_finalflash.gif) | [`vegeta_Tecnica_finalflash_sheet.png`](Tecnica_finalflash/vegeta_Tecnica_finalflash_sheet.png) |

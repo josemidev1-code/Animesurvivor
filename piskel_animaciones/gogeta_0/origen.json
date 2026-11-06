@@ -1,0 +1,103 @@
+{
+  "heroe": "gogeta",
+  "forma": "0",
+  "pack": "07_Personajes_sin_saga_concreta/Gogeta/064_Gogeta",
+  "frames": [
+    {
+      "sha256": "3695f9af36683d62d9acc3eb8eb591b5a596f263d486b2b60d47adaafb5880ee",
+      "indice": 31
+    },
+    {
+      "sha256": "1932f6a70d51e72143b378906d07f706550b7b48c8f0fe8bd9d5414b75b14807",
+      "indice": 32
+    },
+    {
+      "sha256": "44eb71c9b52db35bba5e7ad152d521d4916515627fba39b28c721f0c7a0d8b58",
+      "indice": 35
+    },
+    {
+      "sha256": "e0d3b168dda18932bf647d9a3c8b3076086c51ad24f3d7d1f0ee66ec0d8d4848",
+      "indice": 49
+    },
+    {
+      "sha256": "171182c0af84576061ff319f7d89c38ac0098a6f186ff354df9421098b0b7161",
+      "indice": 50
+    },
+    {
+      "sha256": "d7a1c0aa2a6a0592e3435555f4211d182d97dee45b4fa556279e5f535c500a3e",
+      "indice": 51
+    },
+    {
+      "sha256": "52b1058aac51df903071ba3e4f4e2d9779eb575aeec9f7a433e880136de07aa6",
+      "indice": 54
+    },
+    {
+      "sha256": "bd341e92363e12527f47c5c230ba3f7dd3f465d7561348cf5a03ed101e2c25f5",
+      "indice": 55
+    },
+    {
+      "sha256": "ccb5c7fd3d1475bc043f1663cf3912595098b121849b266d3cae242f1cf31558",
+      "indice": 56
+    },
+    {
+      "sha256": "a1915fcc1a01ff61c325ef7f320ec95813a7b1b697d3bbce0ba7dca54d201592",
+      "indice": 90
+    },
+    {
+      "sha256": "3469aa9a3a949e702d2f23045227b6bf663c074dc124ac53090e61f3e6659ba4",
+      "indice": 93
+    },
+    {
+      "sha256": "6e2b435456e182f02bb403fe3013b1c33554e9fd3b4884482f634d8e2bb6a3ea",
+      "indice": 66
+    },
+    {
+      "sha256": "66bbb3750551177f4b18d6e6013804fe71380721db7e1772966c5db5ee44ff9b",
+      "indice": 67
+    },
+    {
+      "sha256": "183c2408edb7cdf0d12058b003f14d59b20f43a260727afb149280eefbc57025",
+      "indice": 68
+    },
+    {
+      "sha256": "661879f665ff15477721ae8eebc154c54e4e818521ca2cea1e19ccc69959bd51",
+      "indice": 61
+    },
+    {
+      "sha256": "bd0ede88d2bc8ffeb552b7dbe04231798ebbfe593870f95770435defdeed9a25",
+      "indice": 63
+    },
+    {
+      "sha256": "38c4f3b84f196c16db764f06a5b1b537c62db0f07afe487aa9affa8dbf54bc0e",
+      "indice": 65
+    },
+    {
+      "sha256": "4f72226514c9eef0111e17eb7018717e54a2d76212a0c67d5656dc0ee8cf5d7f",
+      "indice": 52
+    },
+    {
+      "sha256": "af2904f1e9c021f0c4a115181e22884f5d62ef4a8ecdabdb5253d65c42670586",
+      "indice": 53
+    },
+    {
+      "sha256": "20d5d84699ebc307c422e78b3955e71d31664aae63d35d49163996204d48dd31",
+      "indice": 57
+    },
+    {
+      "sha256": "bfe6ca8c73ef7ac332042122a910c43f5e18ee1c6b36650bbba720f12995d4ba",
+      "indice": 58
+    },
+    {
+      "sha256": "a1915fcc1a01ff61c325ef7f320ec95813a7b1b697d3bbce0ba7dca54d201592",
+      "indice": 90
+    },
+    {
+      "sha256": "3469aa9a3a949e702d2f23045227b6bf663c074dc124ac53090e61f3e6659ba4",
+      "indice": 93
+    },
+    {
+      "sha256": "44eb71c9b52db35bba5e7ad152d521d4916515627fba39b28c721f0c7a0d8b58",
+      "indice": 35
+    }
+  ]
+}

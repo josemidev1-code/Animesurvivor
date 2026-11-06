@@ -3,12 +3,16 @@
 Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).
 
 ## Cómo abrir en Piskel:
-1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.
+1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.
 2. Haz clic en el icono de carpeta de la barra derecha (**Import**).
 3. Elige cualquiera de estas opciones:
    - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.
    - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).
    - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).
+
+## Volver al juego:
+`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/gohan_0/origen.json --heroe gohan --forma 0 --anim attack --aplicar`
+Después: `python herramientas/montar_animaciones.py gohan` y revisión visual. Solo se aceptan sprites originales exportados.
 
 ## Animaciones disponibles:
 
@@ -23,8 +27,10 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Hurt** | 2 | 54x54 | [`gohan_Hurt.piskel`](Hurt/gohan_Hurt.piskel) | [`gohan_Hurt.gif`](Hurt/gohan_Hurt.gif) | [`gohan_Hurt_sheet.png`](Hurt/gohan_Hurt_sheet.png) |
 | **Faint** | 1 | 72x72 | [`gohan_Faint.piskel`](Faint/gohan_Faint.piskel) | [`gohan_Faint.gif`](Faint/gohan_Faint.gif) | [`gohan_Faint_sheet.png`](Faint/gohan_Faint_sheet.png) |
 | **Attack2** | 3 | 52x52 | [`gohan_Attack2.piskel`](Attack2/gohan_Attack2.piskel) | [`gohan_Attack2.gif`](Attack2/gohan_Attack2.gif) | [`gohan_Attack2_sheet.png`](Attack2/gohan_Attack2_sheet.png) |
-| **Attack3** | 3 | 86x86 | [`gohan_Attack3.piskel`](Attack3/gohan_Attack3.piskel) | [`gohan_Attack3.gif`](Attack3/gohan_Attack3.gif) | [`gohan_Attack3_sheet.png`](Attack3/gohan_Attack3_sheet.png) |
 | **Kick2** | 3 | 52x52 | [`gohan_Kick2.piskel`](Kick2/gohan_Kick2.piskel) | [`gohan_Kick2.gif`](Kick2/gohan_Kick2.gif) | [`gohan_Kick2_sheet.png`](Kick2/gohan_Kick2_sheet.png) |
 | **Beam** | 2 | 56x56 | [`gohan_Beam.piskel`](Beam/gohan_Beam.piskel) | [`gohan_Beam.gif`](Beam/gohan_Beam.gif) | [`gohan_Beam_sheet.png`](Beam/gohan_Beam_sheet.png) |
-| **Up** | 1 | 56x56 | [`gohan_Up.piskel`](Up/gohan_Up.piskel) | [`gohan_Up.gif`](Up/gohan_Up.gif) | [`gohan_Up_sheet.png`](Up/gohan_Up_sheet.png) |
+| **Up** | 1 | 80x80 | [`gohan_Up.piskel`](Up/gohan_Up.piskel) | [`gohan_Up.gif`](Up/gohan_Up.gif) | [`gohan_Up_sheet.png`](Up/gohan_Up_sheet.png) |
 | **Dash** | 1 | 52x52 | [`gohan_Dash.piskel`](Dash/gohan_Dash.piskel) | [`gohan_Dash.gif`](Dash/gohan_Dash.gif) | [`gohan_Dash_sheet.png`](Dash/gohan_Dash_sheet.png) |
+| **Tecnica_masenko** | 2 | 80x80 | [`gohan_Tecnica_masenko.piskel`](Tecnica_masenko/gohan_Tecnica_masenko.piskel) | [`gohan_Tecnica_masenko.gif`](Tecnica_masenko/gohan_Tecnica_masenko.gif) | [`gohan_Tecnica_masenko_sheet.png`](Tecnica_masenko/gohan_Tecnica_masenko_sheet.png) |
+| **Tecnica_kame** | 2 | 56x56 | [`gohan_Tecnica_kame.piskel`](Tecnica_kame/gohan_Tecnica_kame.piskel) | [`gohan_Tecnica_kame.gif`](Tecnica_kame/gohan_Tecnica_kame.gif) | [`gohan_Tecnica_kame_sheet.png`](Tecnica_kame/gohan_Tecnica_kame_sheet.png) |
+| **Tecnica_kiblast** | 2 | 86x86 | [`gohan_Tecnica_kiblast.piskel`](Tecnica_kiblast/gohan_Tecnica_kiblast.piskel) | [`gohan_Tecnica_kiblast.gif`](Tecnica_kiblast/gohan_Tecnica_kiblast.gif) | [`gohan_Tecnica_kiblast_sheet.png`](Tecnica_kiblast/gohan_Tecnica_kiblast_sheet.png) |

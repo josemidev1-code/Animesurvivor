@@ -3,12 +3,16 @@
 Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).
 
 ## Cómo abrir en Piskel:
-1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.
+1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.
 2. Haz clic en el icono de carpeta de la barra derecha (**Import**).
 3. Elige cualquiera de estas opciones:
    - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.
    - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).
    - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).
+
+## Volver al juego:
+`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/cell_2/origen.json --heroe cell --forma 2 --anim attack --aplicar`
+Después: `python herramientas/montar_animaciones.py cell` y revisión visual. Solo se aceptan sprites originales exportados.
 
 ## Animaciones disponibles:
 
@@ -23,7 +27,6 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Hurt** | 2 | 64x64 | [`cell_Hurt.piskel`](Hurt/cell_Hurt.piskel) | [`cell_Hurt.gif`](Hurt/cell_Hurt.gif) | [`cell_Hurt_sheet.png`](Hurt/cell_Hurt_sheet.png) |
 | **Faint** | 1 | 72x72 | [`cell_Faint.piskel`](Faint/cell_Faint.piskel) | [`cell_Faint.gif`](Faint/cell_Faint.gif) | [`cell_Faint_sheet.png`](Faint/cell_Faint_sheet.png) |
 | **Attack2** | 2 | 62x62 | [`cell_Attack2.piskel`](Attack2/cell_Attack2.piskel) | [`cell_Attack2.gif`](Attack2/cell_Attack2.gif) | [`cell_Attack2_sheet.png`](Attack2/cell_Attack2_sheet.png) |
-| **Attack3** | 2 | 66x66 | [`cell_Attack3.piskel`](Attack3/cell_Attack3.piskel) | [`cell_Attack3.gif`](Attack3/cell_Attack3.gif) | [`cell_Attack3_sheet.png`](Attack3/cell_Attack3_sheet.png) |
 | **Kick2** | 2 | 66x66 | [`cell_Kick2.piskel`](Kick2/cell_Kick2.piskel) | [`cell_Kick2.gif`](Kick2/cell_Kick2.gif) | [`cell_Kick2_sheet.png`](Kick2/cell_Kick2_sheet.png) |
 | **Beam** | 2 | 70x70 | [`cell_Beam.piskel`](Beam/cell_Beam.piskel) | [`cell_Beam.gif`](Beam/cell_Beam.gif) | [`cell_Beam_sheet.png`](Beam/cell_Beam_sheet.png) |
 | **Dash** | 1 | 62x62 | [`cell_Dash.piskel`](Dash/cell_Dash.piskel) | [`cell_Dash.gif`](Dash/cell_Dash.gif) | [`cell_Dash_sheet.png`](Dash/cell_Dash_sheet.png) |

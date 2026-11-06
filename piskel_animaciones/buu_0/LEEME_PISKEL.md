@@ -3,12 +3,16 @@
 Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).
 
 ## Cómo abrir en Piskel:
-1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.
+1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.
 2. Haz clic en el icono de carpeta de la barra derecha (**Import**).
 3. Elige cualquiera de estas opciones:
    - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.
    - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).
    - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).
+
+## Volver al juego:
+`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/buu_0/origen.json --heroe buu --forma 0 --anim attack --aplicar`
+Después: `python herramientas/montar_animaciones.py buu` y revisión visual. Solo se aceptan sprites originales exportados.
 
 ## Animaciones disponibles:
 
@@ -22,8 +26,9 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Pow** | 3 | 100x100 | [`buu_Pow.piskel`](Pow/buu_Pow.piskel) | [`buu_Pow.gif`](Pow/buu_Pow.gif) | [`buu_Pow_sheet.png`](Pow/buu_Pow_sheet.png) |
 | **Hurt** | 2 | 64x64 | [`buu_Hurt.piskel`](Hurt/buu_Hurt.piskel) | [`buu_Hurt.gif`](Hurt/buu_Hurt.gif) | [`buu_Hurt_sheet.png`](Hurt/buu_Hurt_sheet.png) |
 | **Faint** | 1 | 64x64 | [`buu_Faint.piskel`](Faint/buu_Faint.piskel) | [`buu_Faint.gif`](Faint/buu_Faint.gif) | [`buu_Faint_sheet.png`](Faint/buu_Faint_sheet.png) |
-| **Attack2** | 2 | 76x76 | [`buu_Attack2.piskel`](Attack2/buu_Attack2.piskel) | [`buu_Attack2.gif`](Attack2/buu_Attack2.gif) | [`buu_Attack2_sheet.png`](Attack2/buu_Attack2_sheet.png) |
+| **Attack2** | 3 | 76x76 | [`buu_Attack2.piskel`](Attack2/buu_Attack2.piskel) | [`buu_Attack2.gif`](Attack2/buu_Attack2.gif) | [`buu_Attack2_sheet.png`](Attack2/buu_Attack2_sheet.png) |
 | **Attack3** | 2 | 68x68 | [`buu_Attack3.piskel`](Attack3/buu_Attack3.piskel) | [`buu_Attack3.gif`](Attack3/buu_Attack3.gif) | [`buu_Attack3_sheet.png`](Attack3/buu_Attack3_sheet.png) |
 | **Kick2** | 2 | 88x88 | [`buu_Kick2.piskel`](Kick2/buu_Kick2.piskel) | [`buu_Kick2.gif`](Kick2/buu_Kick2.gif) | [`buu_Kick2_sheet.png`](Kick2/buu_Kick2_sheet.png) |
 | **Beam** | 2 | 66x66 | [`buu_Beam.piskel`](Beam/buu_Beam.piskel) | [`buu_Beam.gif`](Beam/buu_Beam.gif) | [`buu_Beam_sheet.png`](Beam/buu_Beam_sheet.png) |
 | **Dash** | 1 | 68x68 | [`buu_Dash.piskel`](Dash/buu_Dash.piskel) | [`buu_Dash.gif`](Dash/buu_Dash.gif) | [`buu_Dash_sheet.png`](Dash/buu_Dash_sheet.png) |
+| **Tecnica_choco** | 2 | 66x66 | [`buu_Tecnica_choco.piskel`](Tecnica_choco/buu_Tecnica_choco.piskel) | [`buu_Tecnica_choco.gif`](Tecnica_choco/buu_Tecnica_choco.gif) | [`buu_Tecnica_choco_sheet.png`](Tecnica_choco/buu_Tecnica_choco_sheet.png) |

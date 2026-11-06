@@ -3,12 +3,16 @@
 Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).
 
 ## Cómo abrir en Piskel:
-1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.
+1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.
 2. Haz clic en el icono de carpeta de la barra derecha (**Import**).
 3. Elige cualquiera de estas opciones:
    - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.
    - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).
    - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).
+
+## Volver al juego:
+`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/freezer_1/origen.json --heroe freezer --forma 1 --anim attack --aplicar`
+Después: `python herramientas/montar_animaciones.py freezer` y revisión visual. Solo se aceptan sprites originales exportados.
 
 ## Animaciones disponibles:
 
@@ -23,7 +27,6 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Hurt** | 2 | 84x84 | [`freezer_Hurt.piskel`](Hurt/freezer_Hurt.piskel) | [`freezer_Hurt.gif`](Hurt/freezer_Hurt.gif) | [`freezer_Hurt_sheet.png`](Hurt/freezer_Hurt_sheet.png) |
 | **Faint** | 1 | 88x88 | [`freezer_Faint.piskel`](Faint/freezer_Faint.piskel) | [`freezer_Faint.gif`](Faint/freezer_Faint.gif) | [`freezer_Faint_sheet.png`](Faint/freezer_Faint_sheet.png) |
 | **Attack2** | 2 | 82x82 | [`freezer_Attack2.piskel`](Attack2/freezer_Attack2.piskel) | [`freezer_Attack2.gif`](Attack2/freezer_Attack2.gif) | [`freezer_Attack2_sheet.png`](Attack2/freezer_Attack2_sheet.png) |
-| **Attack3** | 2 | 80x80 | [`freezer_Attack3.piskel`](Attack3/freezer_Attack3.piskel) | [`freezer_Attack3.gif`](Attack3/freezer_Attack3.gif) | [`freezer_Attack3_sheet.png`](Attack3/freezer_Attack3_sheet.png) |
 | **Kick2** | 2 | 80x80 | [`freezer_Kick2.piskel`](Kick2/freezer_Kick2.piskel) | [`freezer_Kick2.gif`](Kick2/freezer_Kick2.gif) | [`freezer_Kick2_sheet.png`](Kick2/freezer_Kick2_sheet.png) |
 | **Beam** | 2 | 102x102 | [`freezer_Beam.piskel`](Beam/freezer_Beam.piskel) | [`freezer_Beam.gif`](Beam/freezer_Beam.gif) | [`freezer_Beam_sheet.png`](Beam/freezer_Beam_sheet.png) |
 | **Dash** | 1 | 82x82 | [`freezer_Dash.piskel`](Dash/freezer_Dash.piskel) | [`freezer_Dash.gif`](Dash/freezer_Dash.gif) | [`freezer_Dash_sheet.png`](Dash/freezer_Dash_sheet.png) |

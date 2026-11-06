@@ -1,0 +1,131 @@
+{
+  "heroe": "tenshinhan",
+  "forma": "0",
+  "pack": "00_Dragon_Ball_Z/02_Androides_Cell_y_Trunks/DeviantArt/432_TENSHINHAN (Dryy7)",
+  "frames": [
+    {
+      "sha256": "4ad60cbd084c169e21aa30219ea316046630f7ad40439fde756a31a6e45fd133",
+      "indice": 0
+    },
+    {
+      "sha256": "4a03830d430967c9a81df75df51b5de96822ea6652179355a76c43bf73e611dd",
+      "indice": 1
+    },
+    {
+      "sha256": "933aa9fe321e47d22a223a82672cd01877512068f851298eb25a1cefbd13fb77",
+      "indice": 10
+    },
+    {
+      "sha256": "15209b51c52fbb141353a25b585f0e163345cdad4bdeceea81087d7ff92bffbc",
+      "indice": 25
+    },
+    {
+      "sha256": "f720fe83cbaa79f7f60834600c3b770605e11a1d340ce3fb29ec0183af1da863",
+      "indice": 26
+    },
+    {
+      "sha256": "54262b72204c30047b6b0006da23c7c45edd56a100a9ef3456a4db9b795ccbab",
+      "indice": 38
+    },
+    {
+      "sha256": "69e06599c7a7f7cffd56950be16a2349c08ddf5119636f2af549feb286b3f249",
+      "indice": 28
+    },
+    {
+      "sha256": "050dec01bdde5b229115873b0be485319c47ff55b5d9579fd84d07c1927485a1",
+      "indice": 29
+    },
+    {
+      "sha256": "f246376be8f0d805d5b626ddc37dd4b45569ad3ec10b03893f4d22c7d5329ee0",
+      "indice": 51
+    },
+    {
+      "sha256": "09157d9b65bbc4a9204d40c6404acd71b738da2959afae7677c2a827485636db",
+      "indice": 55
+    },
+    {
+      "sha256": "cf59969c186b6427dca1bb2447dbdf48a6337796c1ccca4ce7ad126947e68a05",
+      "indice": 48
+    },
+    {
+      "sha256": "9a7f1ed053c3e128589bd6e728206dae3bb8f58b215079818981879a8b30542e",
+      "indice": 49
+    },
+    {
+      "sha256": "8c92de9641a6ab2977d7bf170dd7a30e9545c623d5d338d470f2a92e31c4f8b1",
+      "indice": 21
+    },
+    {
+      "sha256": "06029e81b9d19b41918ba3c95ece7deb93a6f331bf4e8e0bf49e5ce16e04e969",
+      "indice": 23
+    },
+    {
+      "sha256": "a12f7bda69e0d3f637b97ce2ac081f005132844083f73205daaf9790a4bd532d",
+      "indice": 22
+    },
+    {
+      "sha256": "2622d3d43e76aa4a6ab8a8975efa1073ace13f07913bfccbe938e358760c09e5",
+      "indice": 32
+    },
+    {
+      "sha256": "fa5b13ece1b0b651beef915d3b8634470c50b4ec0665071896cad49cba4fa15f",
+      "indice": 39
+    },
+    {
+      "sha256": "1bf06e3d3d0d4744c7b944844c92ccf56cc026d1246205a68b3fdff2405ef217",
+      "indice": 41
+    },
+    {
+      "sha256": "321a5fb0c6983e40f1d04b15aa19cd2fc5ff43ed801928a3974d4291672e863b",
+      "indice": 43
+    },
+    {
+      "sha256": "f3ca999250c2f5c7232fc301611521e793d3a6b9e4e63b892584acd51b89cec4",
+      "indice": 34
+    },
+    {
+      "sha256": "eb74cda14414f61511a6c31f703f02a42f0b27d8747cd3acd65e44cf862697be",
+      "indice": 35
+    },
+    {
+      "sha256": "6cdbee39022849b666f4f3aa01cb1749d3c572b52afaf19237df1e7c2fa25f3c",
+      "indice": 5
+    },
+    {
+      "sha256": "89bf1de7cc828bb330bcf9b2eb8042d0cfe26c73b8a85e6dfcc608f5f23c6805",
+      "indice": 69
+    },
+    {
+      "sha256": "9619fee1607d98e8a24cb38c30ad1bbc1ba2d9af22519922ee24268e9d486914",
+      "indice": 66
+    },
+    {
+      "sha256": "59f0fab742d17214b88543a743d08c236f65daba4dd7f95c69096b6b1dd86e73",
+      "indice": 67
+    },
+    {
+      "sha256": "aa503515a1be8eeb9abe4c828d4235048288500ec8e521eeea77fcd73cf64f5a",
+      "indice": 37
+    },
+    {
+      "sha256": "54262b72204c30047b6b0006da23c7c45edd56a100a9ef3456a4db9b795ccbab",
+      "indice": 38
+    },
+    {
+      "sha256": "f246376be8f0d805d5b626ddc37dd4b45569ad3ec10b03893f4d22c7d5329ee0",
+      "indice": 51
+    },
+    {
+      "sha256": "09157d9b65bbc4a9204d40c6404acd71b738da2959afae7677c2a827485636db",
+      "indice": 55
+    },
+    {
+      "sha256": "233e313d2d69dc872fa45a2c60128c1f6b7606549a4b016ad9950e1382c0234a",
+      "indice": 59
+    },
+    {
+      "sha256": "91f17d663783b08c3c761d9c3eba5bb6d0844ce8a381bc2daa3583077881c4c6",
+      "indice": 60
+    }
+  ]
+}

@@ -3,12 +3,16 @@
 Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (https://www.piskelapp.com/).
 
 ## Cómo abrir en Piskel:
-1. Entra a **https://www.piskelapp.com/p/create** en tu navegador.
+1. Entra a **https://www.piskelapp.com/p/create/sprite** en tu navegador.
 2. Haz clic en el icono de carpeta de la barra derecha (**Import**).
 3. Elige cualquiera de estas opciones:
    - **Import .piskel file**: selecciona el archivo `.piskel` de cualquier animación.
    - **Import animated GIF**: selecciona el archivo `.gif` (Piskel importa todos los fotogramas y la velocidad al instante).
    - **Import from picture**: selecciona el `_sheet.png` (pon el Frame size que se indica abajo).
+
+## Volver al juego:
+`python herramientas/importar_piskel.py editado.piskel --manifiesto piskel_animaciones/goku_0/origen.json --heroe goku --forma 0 --anim attack --aplicar`
+Después: `python herramientas/montar_animaciones.py goku` y revisión visual. Solo se aceptan sprites originales exportados.
 
 ## Animaciones disponibles:
 
@@ -27,3 +31,5 @@ Esta carpeta contiene las animaciones listas para abrir y editar en **Piskel** (
 | **Beam** | 2 | 52x52 | [`goku_Beam.piskel`](Beam/goku_Beam.piskel) | [`goku_Beam.gif`](Beam/goku_Beam.gif) | [`goku_Beam_sheet.png`](Beam/goku_Beam_sheet.png) |
 | **Up** | 2 | 68x68 | [`goku_Up.piskel`](Up/goku_Up.piskel) | [`goku_Up.gif`](Up/goku_Up.gif) | [`goku_Up_sheet.png`](Up/goku_Up_sheet.png) |
 | **Dash** | 1 | 66x66 | [`goku_Dash.piskel`](Dash/goku_Dash.piskel) | [`goku_Dash.gif`](Dash/goku_Dash.gif) | [`goku_Dash_sheet.png`](Dash/goku_Dash_sheet.png) |
+| **Tecnica_kame** | 2 | 52x52 | [`goku_Tecnica_kame.piskel`](Tecnica_kame/goku_Tecnica_kame.piskel) | [`goku_Tecnica_kame.gif`](Tecnica_kame/goku_Tecnica_kame.gif) | [`goku_Tecnica_kame_sheet.png`](Tecnica_kame/goku_Tecnica_kame_sheet.png) |
+| **Tecnica_genki** | 2 | 68x68 | [`goku_Tecnica_genki.piskel`](Tecnica_genki/goku_Tecnica_genki.piskel) | [`goku_Tecnica_genki.gif`](Tecnica_genki/goku_Tecnica_genki.gif) | [`goku_Tecnica_genki_sheet.png`](Tecnica_genki/goku_Tecnica_genki_sheet.png) |
