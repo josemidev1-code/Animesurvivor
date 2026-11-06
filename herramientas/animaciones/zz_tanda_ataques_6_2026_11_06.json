@@ -1,0 +1,23 @@
+{
+  "_nota": "Sexta tanda de ataques que estaban en las hojas y no en el juego (6 nov. 2026). Revisada a ojo.",
+  "heroes": {
+    "vegettofan": {
+      "0": { "attack2": [83, 84], "attack3": [77, 78], "kick2": [117, 116], "beam": [95, 71], "up": [92] },
+      "1": { "attack2": [105, 106], "attack3": [98, 99], "kick2": [87, 89], "beam": [45, 46], "up": [18] },
+      "2": { "attack2": [113, 114], "attack3": [109, 110], "kick2": [38, 39], "beam": [93, 101], "up": [67] },
+      "3": { "attack2": [18, 19], "attack3": [81, 82], "kick2": [75, 79], "beam": [21, 22], "up": [91] }
+    },
+    "gokuxeno": {
+      "1": { "attack2": [37, 38], "attack3": [32, 36], "kick2": [42, 45], "beam": [71, 65], "up": [22] },
+      "2": { "attack2": [35, 36], "kick2": [49, 32], "beam": [41, 43], "up": [28] }
+    },
+    "zombies": {
+      "0": { "attack2": [25, 31], "attack3": [23, 29], "kick2": [32, 38], "beam": [83, 84], "up": [90] },
+      "1": { "attack2": [44, 46], "attack3": [33, 36], "kick2": [30, 42], "beam": [73, 75], "up": [78] },
+      "2": { "attack2": [46, 47], "attack3": [31, 37], "kick2": [44, 45], "beam": [102, 104], "up": [30] }
+    },
+    "gokumoro": {
+      "3": { "beam": [112, 110] }
+    }
+  }
+}

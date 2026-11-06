@@ -6,8 +6,8 @@ Generada con `python herramientas/auditar_animaciones.py`. Compara `sprites/` co
 
 - Carpetas con imágenes: **405** (37468 imágenes). En el juego: **302**. Sin usar: **103**.
 - De las 103 sin usar, 10 son escenarios, referencias o Shenron; quedan **93** con personajes (6655 imágenes).
-- En los packs usados hay 30590 imágenes y el juego usa **5767** (18 %).
-- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **63**. Sin ninguno: **133**.
+- En los packs usados hay 30590 imágenes y el juego usa **5847** (19 %).
+- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **71**. Sin ninguno: **123**.
 - Formas solo de enemigo u otras: 40.
 
 Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no cuenta porque reutiliza el cuerpo del vuelo.
@@ -18,17 +18,14 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 |---|---:|---:|---:|---:|
 | vegetasuper | 5 | 459 | 90 | 25 |
 | blackfan | 4 | 522 | 74 | 20 |
-| gokumoro | 5 | 445 | 78 | 20 |
 | vegetaue | 4 | 406 | 76 | 20 |
-| vegettofan | 4 | 691 | 63 | 20 |
+| gokumoro | 5 | 445 | 80 | 19 |
 | blacktime | 3 | 514 | 55 | 15 |
 | gohanadult | 3 | 341 | 51 | 15 |
 | trunkscell | 3 | 177 | 48 | 15 |
 | vegetagt | 3 | 236 | 55 | 15 |
-| zombies | 3 | 396 | 47 | 15 |
 | gokuui | 5 | 357 | 107 | 11 |
 | gokubroly | 4 | 286 | 86 | 10 |
-| gokuxeno | 3 | 355 | 54 | 10 |
 | kale | 2 | 100 | 31 | 10 |
 | kefla | 2 | 253 | 35 | 10 |
 | kyabe | 2 | 162 | 30 | 10 |
@@ -153,6 +150,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokussjchaqueta | 1 | 76 | 23 | 1 |
 | gokussjkaioken | 1 | 76 | 22 | 1 |
 | gokuultradios | 1 | 55 | 21 | 1 |
+| gokuxeno | 3 | 355 | 70 | 1 |
 | gokuyardrat | 1 | 113 | 23 | 1 |
 | gokuyardratssj | 1 | 96 | 23 | 1 |
 | hit | 1 | 98 | 26 | 1 |
@@ -182,7 +180,9 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | toppo | 1 | 77 | 27 | 0 |
 | turles | 2 | 166 | 51 | 0 |
 | uub | 1 | 93 | 28 | 0 |
+| vegettofan | 4 | 691 | 98 | 0 |
 | yamcha | 1 | 79 | 22 | 0 |
+| zombies | 3 | 396 | 74 | 0 |
 
 ## Packs de personajes sin usar
 

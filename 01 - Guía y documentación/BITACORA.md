@@ -3990,3 +3990,20 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Tanda 6: las cuatro formas de `vegettofan`, `gokuxeno/1` y `gokuxeno/2`, las tres de `zombies` y `gokumoro/3`.
+
+## 2026-11-06 — Claude Opus 5.5 (tanda 6 de ataques)
+
+### Lo que pidió el usuario
+- Josemi: «Sí, tanda 6».
+
+### Lo que hice
+- `herramientas/animaciones/zz_tanda_ataques_6_2026_11_06.json`: 45 animaciones en 10 formas (las cuatro de `vegettofan`, `gokuxeno/1` y `gokuxeno/2`, las tres de `zombies` y `gokumoro/3`). Revisadas a ojo y vistas en partida con Playwright, sin errores de consola. Exportadas a `piskel_animaciones/`.
+- Formas jugables sin ningún ataque extra: de 133 a 123. Con los 5 completos: de 63 a 71.
+
+### A medias / problemas
+- `gokuxeno/2` queda sin `attack3`: los candidatos salían de espaldas o mirando a la izquierda.
+- `gokumoro/3` solo recibe `beam`: el pack mezcla fases de Goku y tiene muy pocos fotogramas de esa forma.
+- Las poses `Beam` y `Up` se probaron forzando el estado de la técnica; los combos, por el motor. No se ha jugado una partida completa.
+
+### Siguiente paso recomendado
+- Tanda 7: elegir diez formas de la tabla de `AUDITORIA_ANIMACIONES.md`, empezando por las que más ataques extra tienen pendientes. También queda pendiente el camino de vuelta de Piskel al juego.
