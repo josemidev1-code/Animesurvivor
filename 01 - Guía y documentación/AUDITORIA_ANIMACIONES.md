@@ -6,8 +6,8 @@ Generada con `python herramientas/auditar_animaciones.py`. Compara `sprites/` co
 
 - Carpetas con imágenes: **405** (37468 imágenes). En el juego: **302**. Sin usar: **103**.
 - De las 103 sin usar, 10 son escenarios, referencias o Shenron; quedan **93** con personajes (6655 imágenes).
-- En los packs usados hay 30590 imágenes y el juego usa **6008** (19 %).
-- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **87**. Sin ninguno: **103**.
+- En los packs usados hay 30590 imágenes y el juego usa **6093** (19 %).
+- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **93**. Sin ninguno: **93**.
 - Formas solo de enemigo u otras: 40.
 
 Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no cuenta porque reutiliza el cuerpo del vuelo.
@@ -20,15 +20,13 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokumoro | 5 | 445 | 80 | 19 |
 | blacktime | 3 | 514 | 55 | 15 |
 | gokuui | 5 | 357 | 107 | 11 |
-| gohanadult | 3 | 341 | 60 | 10 |
 | gokubroly | 4 | 286 | 86 | 10 |
 | kyabe | 2 | 162 | 30 | 10 |
-| trunkscell | 3 | 177 | 57 | 10 |
 | trunksnino | 2 | 346 | 29 | 10 |
-| vegetagt | 3 | 236 | 63 | 10 |
 | vegetamanga | 2 | 250 | 36 | 10 |
 | gokualt | 3 | 302 | 67 | 7 |
 | gokusuper | 5 | 371 | 118 | 7 |
+| gohanadult | 3 | 341 | 67 | 6 |
 | a13 | 1 | 142 | 14 | 5 |
 | a14 | 1 | 57 | 14 | 5 |
 | blackfalso | 1 | 41 | 16 | 5 |
@@ -41,7 +39,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | cui | 1 | 46 | 15 | 5 |
 | daishinkan | 1 | 86 | 15 | 5 |
 | dyspo | 1 | 128 | 18 | 5 |
-| gas | 1 | 44 | 15 | 5 |
 | glorio | 1 | 90 | 16 | 5 |
 | gohanfut | 1 | 123 | 17 | 5 |
 | gohanmanga | 1 | 87 | 16 | 5 |
@@ -55,7 +52,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokumuidios | 1 | 173 | 14 | 5 |
 | gokumuifp | 1 | 151 | 15 | 5 |
 | gokumuimanga | 1 | 273 | 15 | 5 |
-| gokunino | 1 | 133 | 15 | 5 |
 | gokureymono | 1 | 114 | 15 | 5 |
 | gokussj2buu | 1 | 641 | 14 | 5 |
 | gokussj4daima | 1 | 281 | 14 | 5 |
@@ -66,7 +62,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokuuimanga | 1 | 270 | 14 | 5 |
 | gokuuiverdadero | 1 | 140 | 15 | 5 |
 | gomah | 1 | 38 | 18 | 5 |
-| granola | 1 | 137 | 15 | 5 |
 | hatchiyack | 1 | 56 | 15 | 5 |
 | jirengray | 1 | 73 | 15 | 5 |
 | kibito | 1 | 85 | 16 | 5 |
@@ -82,7 +77,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | paragus | 1 | 99 | 15 | 5 |
 | reycold | 1 | 59 | 15 | 5 |
 | shin | 1 | 51 | 15 | 5 |
-| slug | 1 | 46 | 15 | 5 |
 | super17 | 1 | 51 | 15 | 5 |
 | taopaipai | 1 | 78 | 14 | 5 |
 | tarble | 1 | 31 | 15 | 5 |
@@ -106,7 +100,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | vegetayardrat | 1 | 90 | 14 | 5 |
 | vegettofalso | 1 | 124 | 15 | 5 |
 | vegitoblue254 | 1 | 546 | 14 | 5 |
-| videl | 1 | 83 | 15 | 5 |
 | zamasufusion | 1 | 136 | 12 | 5 |
 | freezer | 6 | 443 | 127 | 4 |
 | broly | 4 | 234 | 82 | 3 |
@@ -138,6 +131,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | bra | 2 | 217 | 50 | 1 |
 | dlrx | 1 | 86 | 25 | 1 |
 | gohan | 4 | 278 | 96 | 1 |
+| gokunino | 1 | 133 | 23 | 1 |
 | gokussj053 | 1 | 55 | 21 | 1 |
 | gokussj3mais | 1 | 74 | 22 | 1 |
 | gokussj4dios | 1 | 102 | 24 | 1 |
@@ -148,11 +142,13 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gokuxeno | 3 | 355 | 70 | 1 |
 | gokuyardrat | 1 | 113 | 23 | 1 |
 | gokuyardratssj | 1 | 96 | 23 | 1 |
+| granola | 1 | 137 | 23 | 1 |
 | hit | 1 | 98 | 26 | 1 |
 | janemba | 1 | 72 | 25 | 1 |
 | nappa | 1 | 104 | 27 | 1 |
 | saibaman | 1 | 46 | 22 | 1 |
 | trunks | 3 | 312 | 72 | 1 |
+| vegetagt | 3 | 236 | 79 | 1 |
 | zamasu | 2 | 168 | 51 | 1 |
 | a21 | 1 | 195 | 29 | 0 |
 | babyvegeta | 1 | 57 | 22 | 0 |
@@ -162,6 +158,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | caulifla | 1 | 103 | 25 | 0 |
 | cooler | 1 | 81 | 27 | 0 |
 | frost | 2 | 106 | 48 | 0 |
+| gas | 1 | 44 | 24 | 0 |
 | ginyu | 1 | 111 | 26 | 0 |
 | gogetafan | 3 | 573 | 79 | 0 |
 | gohandbs | 5 | 603 | 128 | 0 |
@@ -175,12 +172,15 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | kefla | 2 | 253 | 53 | 0 |
 | krilin | 1 | 81 | 20 | 0 |
 | mrsatan | 1 | 371 | 31 | 0 |
+| slug | 1 | 46 | 25 | 0 |
 | tenshinhan | 1 | 77 | 25 | 0 |
 | toppo | 1 | 77 | 27 | 0 |
+| trunkscell | 3 | 177 | 76 | 0 |
 | turles | 2 | 166 | 51 | 0 |
 | uub | 1 | 93 | 28 | 0 |
 | vegetasuper | 5 | 459 | 133 | 0 |
 | vegettofan | 4 | 691 | 98 | 0 |
+| videl | 1 | 83 | 24 | 0 |
 | yamcha | 1 | 79 | 22 | 0 |
 | zombies | 3 | 396 | 74 | 0 |
 

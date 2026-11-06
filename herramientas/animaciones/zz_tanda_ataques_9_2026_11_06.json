@@ -1,0 +1,19 @@
+{
+  "_nota": "Novena tanda de ataques que estaban en las hojas y no en el juego (6 nov. 2026). Revisada a ojo.",
+  "heroes": {
+    "trunkscell": {
+      "1": { "attack2": [16, 20], "attack3": [34, 35], "kick2": [21, 24], "beam": [39, 41], "up": [48, 51] },
+      "2": { "attack2": [19, 23], "attack3": [47, 25], "kick2": [28, 63], "beam": [53, 54], "up": [46] }
+    },
+    "vegetagt": {
+      "1": { "attack2": [18, 22], "kick2": [31, 35], "beam": [57, 62], "up": [77] },
+      "2": { "attack2": [14, 15], "attack3": [21, 22], "kick2": [20, 23], "beam": [35, 40], "up": [51] }
+    },
+    "gohanadult": { "1": { "attack2": [44, 47], "kick2": [48, 54], "beam": [83, 86], "up": [32] } },
+    "videl": { "0": { "attack2": [78, 80], "attack3": [21, 22], "kick2": [15, 16], "beam": [43, 58], "up": [23] } },
+    "gokunino": { "0": { "attack2": [23, 24], "attack3": [22, 58], "kick2": [27, 28], "beam": [78, 84] } },
+    "slug": { "0": { "attack2": [16, 17], "attack3": [9, 10], "kick2": [18, 19], "beam": [33, 38], "up": [42, 43] } },
+    "gas": { "0": { "attack2": [16, 17], "attack3": [28, 18], "kick2": [14, 15], "beam": [33, 37], "up": [27] } },
+    "granola": { "0": { "attack2": [36, 43], "attack3": [58, 59], "kick2": [88, 89], "beam": [50, 51] } }
+  }
+}

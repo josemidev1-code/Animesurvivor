@@ -4039,3 +4039,21 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Tanda 9: `trunkscell/1` y `/2`, `vegetagt/1` y `/2`, `gohanadult/1`, `videl`, `gokunino`, `slug`, `gas` y `granola`. También queda pendiente el camino de vuelta de Piskel al juego.
+
+## 2026-11-06 — Claude Opus 5.5 (tanda 9 de ataques y parada)
+
+### Lo que pidió el usuario
+- Josemi: «Sí, tanda 9». A mitad preguntó si estas animaciones ya estaban en el juego y si estaba gastando tokens a lo tonto. Después: «Sí, cierra y para».
+
+### Lo que hice
+- Medido contra el código anterior a la primera tanda (`0853d253`): las animaciones ocupan huecos vacíos salvo los dos combos corregidos de `vegeta/1`. Dos formas comparten pack con otras que ya tenían extras (`vegetasuper/3` con `vegeta/4`, `gohanadult/1` con `gohan/3`).
+- `herramientas/animaciones/zz_tanda_ataques_9_2026_11_06.json`: 46 animaciones en 10 formas (`trunkscell/1` y `/2`, `vegetagt/1` y `/2`, `gohanadult/1`, Videl, Goku niño, Slug, Gas y Granola). Revisadas a ojo y vistas en partida con Playwright, sin errores de consola. Exportadas a `piskel_animaciones/`.
+- Total de las nueve tandas: 399 animaciones. Formas jugables sin ningún ataque extra: de 103 a 93. Con los 5 completos: de 87 a 93.
+
+### A medias / problemas
+- Sin pose adecuada: `attack3` de `vegetagt/1` y `gohanadult/1`; `up` de Goku niño y Granola.
+- Las poses `Beam` y `Up` se probaron forzando el estado de la técnica; los combos, por el motor. No se ha jugado una partida completa.
+- En `piskel_animaciones/` siguen 32 carpetas sobrantes de animaciones que ya no tienen selección. No hay vuelta de Piskel al juego.
+
+### Siguiente paso recomendado
+- **Parar las tandas por decisión de Josemi.** Que él juegue y valore si la diferencia se nota antes de gastar más en las formas restantes.

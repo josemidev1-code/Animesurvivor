@@ -136,3 +136,7 @@ Actualizado: 5 de noviembre de 2026.
 ## 6 nov. — Tanda 8 de ataques
 
 - 45 animaciones más en 10 formas (`zz_tanda_ataques_8_2026_11_06.json`). Quedan 103 de 273 formas jugables sin ataques extra. Tanda 9 propuesta en la bitácora.
+
+## 6 nov. — Tandas de ataques paradas
+
+- Tanda 9 cerrada (`zz_tanda_ataques_9_2026_11_06.json`). Total: 399 animaciones nuevas en nueve tandas. Quedan 93 de 273 formas jugables sin ataques extra. **Josemi pidió parar aquí:** no seguir con más tandas hasta que juegue y lo valore.
