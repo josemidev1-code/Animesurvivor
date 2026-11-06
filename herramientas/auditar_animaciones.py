@@ -22,6 +22,10 @@ for d, _, fs in os.walk(SP):
 src = open(os.path.join(M.RAIZ, '02 - Código del juego', 'script.js'), encoding='utf-8').read()
 jugables = set(re.findall(r"\b(\w+):\{name:'[^']+',rar:", src)) | set(re.findall(r"\bHDEF\.(\w+)=\{", src))
 
+# Estos personajes no se pueden elegir: solo cuentan las formas que el juego usa como transformación de otro.
+ocultos = set(re.findall(r"'(\w+)'", re.search(r"DUPLICADOS_ROSTER = new Set\(\[(.*?)\]\)", src).group(1)))
+alias = {(h, f) for h, f in re.findall(r"ah\.\w+\[\d+\]=ah\.(\w+)\[(\d+)\]", src)}
+visible = lambda h, f: h in jugables and (h not in ocultos or (h, f) in alias)
 usados = collections.defaultdict(set)
 heroes = collections.defaultdict(lambda: {'formas': [], 'n': 0, 'sel': 0, 'falta': collections.Counter()})
 filas = []
@@ -41,7 +45,8 @@ for h, formas in M.leer_config().items():
 sin = {k: v for k, v in packs.items() if k not in usados}
 pers = {k: v for k, v in sin.items() if not k.startswith(NO_PERSONAJE)}
 tot = sum(packs[p] for p in usados); sel = sum(len(v) for v in usados.values())
-jug = [r for r in filas if r[0] in jugables]; ene = [r for r in filas if r[0] not in jugables]
+jug = [r for r in filas if visible(r[0], r[1])]; ene = [r for r in filas if r[0] not in jugables]
+ocu = [r for r in filas if r[0] in jugables and not visible(r[0], r[1])]
 sin0 = [r for r in jug if len(r[4]) == len(EXTRA)]; compl = [r for r in jug if not r[4]]
 
 L = [f'# Auditoría de animaciones ({datetime.date.today()})', '',
@@ -52,10 +57,10 @@ L = [f'# Auditoría de animaciones ({datetime.date.today()})', '',
      f'- De las {len(sin)} sin usar, {len(sin) - len(pers)} son escenarios, referencias o Shenron; quedan **{len(pers)}** con personajes ({sum(pers.values())} imágenes).',
      f'- En los packs usados hay {tot} imágenes y el juego usa **{sel}** ({sel * 100 // tot} %).',
      f'- Formas de personajes jugables: {len(jug)}. Con los 5 ataques extra completos: **{len(compl)}**. Sin ninguno: **{len(sin0)}**.',
-     f'- Formas solo de enemigo u otras: {len(ene)}.', '',
+     f'- Formas de personajes ocultos que no se ven en el juego: {len(ocu)}. Formas solo de enemigo u otras: {len(ene)}.', '',
      'Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no cuenta porque reutiliza el cuerpo del vuelo.', '',
      '## Personajes jugables, de menos a más completos', '', '| Personaje | Formas | Fotogramas en sus packs | Usados | Ataques extra que faltan |', '|---|---:|---:|---:|---:|']
-for h, d in sorted(((h, d) for h, d in heroes.items() if h in jugables), key=lambda x: (-sum(x[1]['falta'].values()), x[0])):
+for h, d in sorted(((h, d) for h, d in heroes.items() if h in jugables and h not in ocultos), key=lambda x: (-sum(x[1]['falta'].values()), x[0])):
     L.append(f"| {h} | {len(d['formas'])} | {d['n']} | {d['sel']} | {sum(d['falta'].values())} |")
 L += ['', '## Packs de personajes sin usar', '', '| Imágenes | Pack |', '|---:|---|']
 L += [f'| {v} | `{k}` |' for k, v in sorted(pers.items())]

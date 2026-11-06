@@ -4057,3 +4057,20 @@ ode --check.
 
 ### Siguiente paso recomendado
 - **Parar las tandas por decisión de Josemi.** Que él juegue y valore si la diferencia se nota antes de gastar más en las formas restantes.
+
+## 2026-11-06 — Claude Opus 5.5 (partidas de prueba, aura de Ultra Ego y GitHub)
+
+### Lo que pidió el usuario
+- Josemi: «JUEGA Y MIRA LAS ANIMACIONES QUE HAS HECHO, MIRA LO DE LA AURA DE ULTRA EGO Y SOLUCIONAMOS LO DE GITHUB». Las carpetas sobrantes de Piskel no las pidió: siguen ahí.
+
+### Lo que hice
+- Partidas automáticas de 9 segundos con Playwright: Hit, Janemba, Slug, Cooler, Toppo, Vegeta Ultra Ego y Blue Evolution, Gohan definitivo, Trunks SSJ2 manga y Goku SSJ3. Salen combos, patadas, rayos y brazos en alto, sin errores de consola, y el disparo automático nunca pisó un combo. Se forzó tener todas las técnicas abiertas y la vida alta, así que no equivale a una partida normal.
+- Aura de Ultra Ego: en el juego real es morada (`vegeta/5`). La rojiza era de `vegetaue`, un personaje oculto que no se puede elegir. Sin cambios.
+- Error mío de cálculo: `DUPLICADOS_ROSTER` oculta `vegetasuper`, `vegetaue`, `vegetagt`, `gohanadult`, `trunkscell`, `gokugt`, `gokusuper`, `gokuui` y `vegetaego`; solo se ven sus formas usadas como transformación de otro héroe. 46 de las 399 animaciones no se ven en el juego: `vegetasuper/0,1,3`, `vegetaue/0,1,2`, `vegetagt/0,1`, `gohanadult/0` y `trunkscell/1`. Corregida la auditoría: 253 formas jugables, 82 con los 5 extras y 90 sin ninguno.
+
+### A medias / problemas
+- En los combos, el destello de impacto tapa parte del personaje, sobre todo en el primer golpe. Puede restar visibilidad a los ataques nuevos. Falta que Josemi lo valore.
+- `gohan/4` usa `gohanadult/2`, que no tiene extras.
+
+### Siguiente paso recomendado
+- Antes de hacer más animaciones, comprobar que la forma es visible y valorar si conviene reducir el destello. Las tandas siguen paradas.

@@ -7,8 +7,8 @@ Generada con `python herramientas/auditar_animaciones.py`. Compara `sprites/` co
 - Carpetas con imágenes: **405** (37468 imágenes). En el juego: **302**. Sin usar: **103**.
 - De las 103 sin usar, 10 son escenarios, referencias o Shenron; quedan **93** con personajes (6655 imágenes).
 - En los packs usados hay 30590 imágenes y el juego usa **6093** (19 %).
-- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **93**. Sin ninguno: **93**.
-- Formas solo de enemigo u otras: 40.
+- Formas de personajes jugables: 253. Con los 5 ataques extra completos: **82**. Sin ninguno: **90**.
+- Formas de personajes ocultos que no se ven en el juego: 20. Formas solo de enemigo u otras: 40.
 
 Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no cuenta porque reutiliza el cuerpo del vuelo.
 
@@ -19,14 +19,11 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | blackfan | 4 | 522 | 74 | 20 |
 | gokumoro | 5 | 445 | 80 | 19 |
 | blacktime | 3 | 514 | 55 | 15 |
-| gokuui | 5 | 357 | 107 | 11 |
 | gokubroly | 4 | 286 | 86 | 10 |
 | kyabe | 2 | 162 | 30 | 10 |
 | trunksnino | 2 | 346 | 29 | 10 |
 | vegetamanga | 2 | 250 | 36 | 10 |
 | gokualt | 3 | 302 | 67 | 7 |
-| gokusuper | 5 | 371 | 118 | 7 |
-| gohanadult | 3 | 341 | 67 | 6 |
 | a13 | 1 | 142 | 14 | 5 |
 | a14 | 1 | 57 | 14 | 5 |
 | blackfalso | 1 | 41 | 16 | 5 |
@@ -90,7 +87,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | vegetablueulsw | 1 | 124 | 15 | 5 |
 | vegetabluewhis | 1 | 114 | 15 | 5 |
 | vegetabroly | 1 | 101 | 18 | 5 |
-| vegetaego | 1 | 84 | 15 | 5 |
 | vegetamui | 1 | 115 | 15 | 5 |
 | vegetassj4gt | 1 | 116 | 15 | 5 |
 | vegetassjhd | 1 | 115 | 15 | 5 |
@@ -108,11 +104,9 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gogeta | 3 | 565 | 65 | 3 |
 | goku | 5 | 393 | 117 | 3 |
 | gokudiosberserk | 1 | 46 | 16 | 3 |
-| gokugt | 4 | 422 | 106 | 3 |
 | jiren | 3 | 295 | 62 | 3 |
 | kale | 2 | 100 | 45 | 3 |
 | moro | 1 | 52 | 20 | 3 |
-| vegetaue | 4 | 406 | 107 | 3 |
 | a17 | 1 | 41 | 21 | 2 |
 | bardock | 3 | 271 | 70 | 2 |
 | black | 3 | 359 | 68 | 2 |
@@ -148,7 +142,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | nappa | 1 | 104 | 27 | 1 |
 | saibaman | 1 | 46 | 22 | 1 |
 | trunks | 3 | 312 | 72 | 1 |
-| vegetagt | 3 | 236 | 79 | 1 |
 | zamasu | 2 | 168 | 51 | 1 |
 | a21 | 1 | 195 | 29 | 0 |
 | babyvegeta | 1 | 57 | 22 | 0 |
@@ -175,10 +168,8 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | slug | 1 | 46 | 25 | 0 |
 | tenshinhan | 1 | 77 | 25 | 0 |
 | toppo | 1 | 77 | 27 | 0 |
-| trunkscell | 3 | 177 | 76 | 0 |
 | turles | 2 | 166 | 51 | 0 |
 | uub | 1 | 93 | 28 | 0 |
-| vegetasuper | 5 | 459 | 133 | 0 |
 | vegettofan | 4 | 691 | 98 | 0 |
 | videl | 1 | 83 | 24 | 0 |
 | yamcha | 1 | 79 | 22 | 0 |
