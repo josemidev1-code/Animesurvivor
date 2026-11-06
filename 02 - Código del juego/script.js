@@ -4322,7 +4322,7 @@ function fire(id,m,st,ps){
 
    case 'melee':case 'sword':case 'nova':fireSig(W,st,dmg,ps);break;
 
-   case 'aura':{const rad=st.rad*ps.area*(ev?1.3:1);near(P.x,P.y-4,rad+12,e=>{if(Math.hypot(e.x-P.x,e.y-P.y)<rad+e.r)hurt(e,dmg,0,0)});break}
+   case 'aura':{attackRelease(W,P.face<0?Math.PI:0,0.3);const rad=st.rad*ps.area*(ev?1.3:1);near(P.x,P.y-4,rad+12,e=>{if(Math.hypot(e.x-P.x,e.y-P.y)<rad+e.r)hurt(e,dmg,0,0)});break}
 
   }}
 
@@ -6741,7 +6741,7 @@ function walkCycle(c,cfg={}){const key=JSON.stringify(cfg),K=c._wk||(c._wk={});i
 
   out.hip=hip;out.M=M;out.lab=lab;out.split=split;return K[key]=out}
 
-// variantes de una animación (Attack, Attack2, Attack3…): el combo las va alternando golpe a golpe
+// Cada combo elige una variante de su acción y reproduce la secuencia completa.
 
 function varAnim(pk,base,v){const L=[pk[base],pk[base+'2'],pk[base+'3']].filter(Boolean);return L.length?L[(v||0)%L.length]:null}
 
@@ -7200,7 +7200,13 @@ function render(time){
 
         if(SP)ctx.drawImage(LS.low,lx,ly);ctx.drawImage(ri,rx,ry);
 
-        if(pd){const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(x+(up?0:(left?-1:1)*im.width*0.3)-kb.width/2),Math.round(up?y-im.height-kb.height*0.6:y-im.height*0.5-kb.height/2));ctx.globalAlpha=1}
+        if(pd&&['cast','beam','up'].includes(pd.pose)){
+          const Q=P.pend,k=1-Q.t/Q.T,up=Q.pose==='up',r=Math.round(up?3+k*(Q.id==='genki'?14:8):2+k*3),
+          kb=kiSprite(r,[Q.col[0],Q.col[1],'#ffffff'],(time*16|0)%2),hand=heroHand(0,left,Q.pose),
+          hx=hand?x+(hand[0]-P.x)*2:x+(left?-1:1)*im.width*0.3,
+          hy=hand?y+(hand[1]-P.y)*2:y-im.height*0.5;
+          ctx.globalAlpha=0.95;ctx.drawImage(kb,Math.round(hx-kb.width/2),Math.round(hy-kb.height*(up?0.85:0.5)));ctx.globalAlpha=1
+        }
 
         if(chg&&!bm){const r=4+((time*14|0)%3),kb=kiSprite(r,['#1a5ad8','#6ac8ff','#ffffff'],(time*16|0)%2);ctx.globalAlpha=0.9;ctx.drawImage(kb,Math.round(x+(left?-1:1)*im.width*0.12-kb.width/2),Math.round(y-im.height*0.42-kb.height/2));ctx.globalAlpha=1}}
 
