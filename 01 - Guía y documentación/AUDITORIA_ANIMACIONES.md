@@ -6,8 +6,8 @@ Generada con `python herramientas/auditar_animaciones.py`. Compara `sprites/` co
 
 - Carpetas con imágenes: **405** (37468 imágenes). En el juego: **302**. Sin usar: **103**.
 - De las 103 sin usar, 10 son escenarios, referencias o Shenron; quedan **93** con personajes (6655 imágenes).
-- En los packs usados hay 30590 imágenes y el juego usa **5588** (18 %).
-- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **46**. Sin ninguno: **153**.
+- En los packs usados hay 30590 imágenes y el juego usa **5676** (18 %).
+- Formas de personajes jugables: 273. Con los 5 ataques extra completos: **53**. Sin ninguno: **143**.
 - Formas solo de enemigo u otras: 40.
 
 Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no cuenta porque reutiliza el cuerpo del vuelo.
@@ -16,7 +16,6 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 
 | Personaje | Formas | Fotogramas en sus packs | Usados | Ataques extra que faltan |
 |---|---:|---:|---:|---:|
-| gohandbs | 5 | 603 | 78 | 25 |
 | vegetasuper | 5 | 459 | 90 | 25 |
 | bardockalt | 4 | 329 | 63 | 20 |
 | blackfan | 4 | 522 | 74 | 20 |
@@ -47,14 +46,11 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | blackmajin | 1 | 37 | 14 | 5 |
 | blackrose290 | 1 | 300 | 15 | 5 |
 | blackrosen | 1 | 48 | 14 | 5 |
-| bra | 2 | 217 | 42 | 5 |
 | bramajin | 1 | 315 | 15 | 5 |
 | bulma | 1 | 16 | 12 | 5 |
 | caulifla | 1 | 103 | 16 | 5 |
 | cui | 1 | 46 | 15 | 5 |
-| cumber | 1 | 26 | 13 | 5 |
 | daishinkan | 1 | 86 | 15 | 5 |
-| dlrx | 1 | 86 | 16 | 5 |
 | dyspo | 1 | 128 | 18 | 5 |
 | gas | 1 | 44 | 15 | 5 |
 | glorio | 1 | 90 | 16 | 5 |
@@ -83,9 +79,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | gomah | 1 | 38 | 18 | 5 |
 | gotenks | 1 | 108 | 17 | 5 |
 | granola | 1 | 137 | 15 | 5 |
-| guldo | 1 | 103 | 19 | 5 |
 | hatchiyack | 1 | 56 | 15 | 5 |
-| jeice | 1 | 79 | 16 | 5 |
 | jirengray | 1 | 73 | 15 | 5 |
 | kibito | 1 | 85 | 16 | 5 |
 | kibitoshin | 1 | 22 | 15 | 5 |
@@ -141,6 +135,7 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | a17 | 1 | 41 | 21 | 2 |
 | bardock | 3 | 271 | 70 | 2 |
 | black | 3 | 359 | 68 | 2 |
+| cumber | 1 | 26 | 15 | 2 |
 | gokumuigranola | 1 | 91 | 20 | 2 |
 | gokupatrulla | 1 | 53 | 21 | 2 |
 | gokussj3swl | 1 | 238 | 22 | 2 |
@@ -151,6 +146,8 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | vegetto | 4 | 446 | 97 | 2 |
 | a16 | 1 | 64 | 24 | 1 |
 | a18 | 1 | 47 | 21 | 1 |
+| bra | 2 | 217 | 50 | 1 |
+| dlrx | 1 | 86 | 25 | 1 |
 | gohan | 4 | 278 | 96 | 1 |
 | gokussj053 | 1 | 55 | 21 | 1 |
 | gokussj3mais | 1 | 74 | 22 | 1 |
@@ -173,10 +170,13 @@ Ataques extra contados: `attack2`, `attack3`, `kick2`, `beam` y `up`. `dash` no 
 | cooler | 1 | 81 | 27 | 0 |
 | frost | 2 | 106 | 48 | 0 |
 | ginyu | 1 | 111 | 26 | 0 |
+| gohandbs | 5 | 603 | 128 | 0 |
 | goku044 | 1 | 71 | 23 | 0 |
 | gokubluewhis | 1 | 70 | 21 | 0 |
 | gokuuisign | 1 | 114 | 23 | 0 |
 | goten | 1 | 89 | 20 | 0 |
+| guldo | 1 | 103 | 28 | 0 |
+| jeice | 1 | 79 | 26 | 0 |
 | krilin | 1 | 81 | 20 | 0 |
 | mrsatan | 1 | 371 | 31 | 0 |
 | toppo | 1 | 77 | 27 | 0 |

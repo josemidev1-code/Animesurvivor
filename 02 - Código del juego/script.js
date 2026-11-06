@@ -7297,7 +7297,7 @@ const FLAMES={};
 
 function auraFlames(kind){if(FLAMES[kind])return FLAMES[kind];
 
-  const C={gold:['#e8a010','#ffd23f','#fff6a8'],white:['#7ab8e8','#bfe6ff','#ffffff'],orange:['#d0501a','#ff9a3a','#ffe0a0'],red:['#a01030','#ff3a5a','#ffb0c0'],blue:['#1a7ad8','#3ad0f0','#c0f8ff'],green:['#5aa010','#b8f040','#f0ffc0'],purple:['#5a1a90','#a050ff','#e8c8ff']}[kind];
+  const C={gold:['#e8a010','#ffd23f','#fff6a8'],white:['#7ab8e8','#bfe6ff','#ffffff'],orange:['#d0501a','#ff9a3a','#ffe0a0'],red:['#a01030','#ff3a5a','#ffb0c0'],blue:['#1a7ad8','#3ad0f0','#c0f8ff'],green:['#5aa010','#b8f040','#f0ffc0'],purple:['#5a1a90','#a050ff','#e8c8ff'],silver:['#8a94a8','#c8d0dc','#ffffff']}[kind];
 
   const out=[];for(let f=0;f<3;f++){const W=46,H=62,c=mk(W,H),g=c.getContext('2d'),r=srand(77+f*31);
 

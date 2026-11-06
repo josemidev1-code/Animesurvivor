@@ -3955,3 +3955,21 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Tanda 4: Jeice, Guldo, segunda forma de Bra, Cumber, DLRX y las cinco formas de Gohan DBS.
+
+## 2026-11-06 — Claude Opus 5.5 (tanda 4 de ataques y pantalla congelada)
+
+### Lo que pidió el usuario
+- Josemi: «Sí, tanda 4».
+
+### Lo que hice
+- `herramientas/animaciones/zz_tanda_ataques_4_2026_11_06.json`: 46 animaciones en 10 formas (Jeice, Guldo, Bra SSJ, Cumber, DLRX y las cinco de Gohan DBS). Revisadas a ojo y vistas en partida, sin errores. Exportadas a `piskel_animaciones/`.
+- Error grave corregido: el aura `silver` no estaba en la paleta de `auraFlames`, y al transformarse en esas formas `render` fallaba en cada fotograma y la pantalla se quedaba congelada. Afectaba a `gohandbs/2`, `gohandbs/3`, `gogetafan/2`, `vegettofan/3`, `gokumoro/4` y `blackfan/3`. Añadido el color y una prueba en `comprobar_catalogo_sprites.cjs` que exige color para todas las auras.
+- Formas jugables sin ningún ataque extra: de 153 a 143. Con los 5 completos: de 46 a 53.
+
+### A medias / problemas
+- Sin pose adecuada en el pack: `kick2` de Bra SSJ y Cumber, `attack3` de Cumber y `up` de DLRX.
+- Con el panel del navegador oculto, el juego deja de dibujarse y las capturas salen congeladas. Para probar el dibujado con el panel oculto, usar Playwright. Las capturas de las tandas 1 a 3 se hicieron en el panel: los datos y las poses se comprobaron, pero conviene no fiarse de una captura sin comprobar antes que el lienzo se está dibujando.
+- Las poses `Beam` y `Up` se probaron forzando el estado de la técnica; los combos, por el motor. No se ha jugado una partida completa.
+
+### Siguiente paso recomendado
+- Tanda 5: las cuatro formas de `bardockalt`, las dos de `brolyfan`, las tres de `gogetafan` y `gokuxeno/0`.

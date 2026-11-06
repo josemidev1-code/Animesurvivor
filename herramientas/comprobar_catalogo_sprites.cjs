@@ -40,3 +40,10 @@ const antes=actor.atkT;actor.atkK=1;actor.atkT=actor.atkD=0.24;actor.atkA=Math.P
 vm.runInContext(source.slice(begin,end),sandbox);
 assert.equal(actor.atkK,0);assert.equal(actor.atkD,duration);assert(actor.atkT<antes,'El combo sigue su propio reloj');assert.equal(actor.atkA,0);
 console.log('Combo: conserva variante y progreso entre impactos, aunque salte un disparo.');
+// Un aura sin color en la paleta de auraFlames congela la pantalla al transformarse.
+const inicioAura=source.indexOf('function auraFlames'),paleta=source.slice(source.indexOf('const C={',inicioAura),source.indexOf('}[kind]',inicioAura));
+const coloresAura=new Set([...paleta.matchAll(/(\w+):\[/g)].map(m=>m[1]));
+const usadas=new Set([...source.matchAll(/\baura:\[([^\]]*)\]/g)].flatMap(m=>[...m[1].matchAll(/'(\w+)'/g)].map(c=>c[1])));
+assert(usadas.size>0,'No encuentro auras');
+for(const color of usadas)assert(coloresAura.has(color),`Aura sin color en auraFlames: ${color}`);
+console.log(`Auras: ${usadas.size} colores usados, todos en la paleta.`);
