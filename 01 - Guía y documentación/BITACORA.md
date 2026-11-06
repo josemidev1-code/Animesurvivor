@@ -3780,3 +3780,18 @@ ode --check.
 
 ### Siguiente paso recomendado
 - Abrir index.html con doble clic para probar la nueva barra universal de navegación, los iconos pixel art de Dragon Ball en las mejoras y la invocación de Shenron.
+
+## 2026-11-06 — Claude (sesión HUD/Shenron)
+
+### Lo que pidió el usuario
+- Mejorar la interfaz/HUD con estética Dragon Ball; animación de Shenron en pixel art (sin Sprite Fusion aún). Empezar por Shenron.
+
+### Lo que hice
+- Reescrita la animación del deseo (`wish` en script.js): tormenta con rayos y lluvia, 7 esferas orbitando con columna de luz, Shenron descendiendo con cuerpo serpenteante (segmentos pixel art) y cabeza del sprite SW2, ojos que brillan, nubes con parallax, esferas que salen disparadas al conceder el deseo. script.js?v=156.
+- Nota: `ui/shenron_pose2.png` es arte dorado de tarjeta, no una pose real; ya no se usa en la animación.
+
+### A medias / problemas
+- Falta pulir (cuerpo/espinas) si Josemi lo pide; HUD de partida sin empezar.
+
+### Siguiente paso recomendado
+- Rediseñar el HUD de partida con estética Dragon Ball.

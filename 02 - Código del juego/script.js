@@ -6343,66 +6343,69 @@ function heroMigrate(sv){if(sv.lockv)return;sv.lockv=1;const keep={goku:1,vegeta
 function wish(n,free){const s=loadSave();if(free?!freeReady():s.tickets<n){$('#gInfo').textContent=`Te faltan tickets: tienes ${s.tickets} y necesitas ${n}. Gana más jugando partidas.`;return}
   const m=muted;muted=true;doPull(n,free);muted=m;const box=$('#gRes'),top=box.querySelector('.r5')?5:box.querySelector('.r4')?4:3,news=box.querySelectorAll('.gcard').length;box.style.display='none';
   const W=320,H=180,c=mk(W,H);c.id='wishFx';const g=c.getContext('2d');g.imageSmoothingEnabled=false;document.body.appendChild(c);
-  const COL={3:['#3a8aff','#bfe6ff'],4:['#b04aff','#f0c0ff'],5:['#ffb020','#fff6a0']}[top],t0=performance.now(),dur=top===5?4.4:3.6,cf=[],sd=[];let done=false,ph=0;
-  for(let i=0;i<70;i++)sd.push([Math.random()*W,Math.random()*H,Math.random()]);
+  const COL={3:['#3a8aff','#bfe6ff'],4:['#b04aff','#f0c0ff'],5:['#ffb020','#fff6a0']}[top],t0=performance.now(),TF=3.3,dur=TF+(top===5?2.2:1.6),cf=[];let done=false,ph=0;
   const end=()=>{if(done)return;done=true;c.remove();box.style.display='';if(top===5)sfx('trans');else sfx('level')};c.onclick=end;
+  const rnd=a=>{const x=Math.sin(a*127.1+311.7)*43758.5453;return x-Math.floor(x)},sm=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x)};
+  // elipse rellena en píxeles enteros (nubes, esferas, contornos)
+  const disc=(cx,cy,rx,ry,col)=>{g.fillStyle=col;ry=Math.max(1,Math.round(ry));for(let dy=-ry;dy<=ry;dy++){const w=Math.round(rx*Math.sqrt(Math.max(0,1-(dy*dy)/(ry*ry+0.5))));g.fillRect(Math.round(cx)-w,Math.round(cy)+dy,w*2+1,1)}};
+  // esfera del dragón con k estrellas rojas
+  const ball=(x,y,r,k)=>{disc(x,y,r+1,r+1,'#5a1c00');disc(x,y,r,r,'#f29a14');disc(x+r*0.15,y+r*0.2,r*0.8,r*0.75,'#e07a0a');disc(x-r*0.35,y-r*0.4,r*0.38,r*0.32,'#ffe49a');
+    g.fillStyle='#d01818';const q=k===7?6:k,pts=k===1?[[0,0]]:Array.from({length:q},(_,i)=>{const a=i/q*6.283+0.4;return[Math.cos(a)*r*0.55,Math.sin(a)*r*0.55]}).concat(k===7?[[0,0]]:[]);
+    for(const[a,b]of pts)g.fillRect(Math.round(x+a),Math.round(y+b),r>=6?2:1,r>=6?2:1)};
+  const cloud=(x,y,w,col,hi)=>{disc(x,y,w,w*0.26,col);disc(x-w*0.35,y-w*0.12,w*0.45,w*0.26,col);disc(x+w*0.25,y-w*0.18,w*0.5,w*0.3,col);g.fillStyle=hi;g.fillRect(Math.round(x-w*0.3),Math.round(y-w*0.38),Math.round(w*0.6),1)};
+  const bolt=id=>{let x=40+rnd(id)*240,y=0;while(y<125){const nx=x+(rnd(id*7+y)-0.5)*20,x0=Math.min(x,nx);g.fillStyle='#8fa6ff';g.fillRect(Math.round(x0)-1,y,1,6);g.fillStyle='#fff6b0';g.fillRect(Math.round(x0),y,Math.round(Math.abs(nx-x))+2,6);x=nx;y+=6}};
+  const SPR=SHENIMG,BOLTS=[0.30,0.78,1.6,2.45];
   const fr=()=>{if(done)return;const t=(performance.now()-t0)/1000;if(t>dur){end();return}
-    // Oscuridad del cielo místico nocturno con estrellas parpadeantes
-    g.fillStyle='#02040a';g.fillRect(0,0,W,H);
-    for(const [x,y,k] of sd){
-      const tw=((t*6+k*9)|0)%3===0;
-      g.fillStyle=tw?'#ffeaa7':((t*3+k*5)|0)%2?'#3a4060':'#818cf8';
-      g.fillRect(x|0,y|0,1,1);
+    // cielo de tormenta en bandas
+    const bands=['#04050f','#070a1c','#0b1030','#141a44','#1f2058','#2b2260'];
+    for(let i=0;i<bands.length;i++){g.fillStyle=bands[i];g.fillRect(0,Math.round(i*H/bands.length),W,Math.ceil(H/bands.length))}
+    for(let i=0;i<46;i++){if(((t*5+rnd(i)*9)|0)%3===0){g.fillStyle='#ffeaa7';g.fillRect(Math.floor(rnd(i+1)*W),Math.floor(rnd(i+2)*H*0.5),1,1)}}
+    // nubes lejanas (parallax lento)
+    for(let i=0;i<6;i++){cloud(((i*70+t*9)%(W+120))-60,24+(i%3)*14,34+(i%2)*10,'#0d1233','#1e2658')}
+    // columna de luz que sube de las esferas
+    if(t<1.5){const wd=Math.round(4+22*sm(t/0.9)),a=0.35*(1-sm((t-0.9)/0.6))*(0.8+0.2*Math.sin(t*40));g.globalAlpha=Math.max(0,a);g.fillStyle='#ffe27a';g.fillRect(W/2-(wd>>1),0,wd,100);g.fillStyle='#fffbe0';g.fillRect(W/2-(wd>>2),0,wd>>1,100);g.globalAlpha=1}
+    // rayos
+    let fl=0;BOLTS.forEach((b,i)=>{if(t>b&&t<b+0.14){bolt(i+3);if(t<b+0.05)fl=0.22}});
+    // esferas orbitando
+    const R=sm(t/0.9),orb=[];for(let i=0;i<7;i++){const a=t*2.4+i*0.8976,rr=20+110*R;orb.push([W/2+Math.cos(a)*rr,100+Math.sin(a)*rr*0.2,Math.sin(a),i+1])}
+    const sc=t>TF?(t-TF):0;
+    const drawBalls=front=>{for(const[x,y,d,k]of orb){if((d>=0)!==front)continue;if(sc>0){const a=(k-1)/7*6.283,v=sc*230,bx=x+Math.cos(a)*v,by=y+Math.sin(a)*v-30*sc;if(bx<-12||bx>W+12||by<-12||by>H+12)continue;g.fillStyle='#fffbe0';for(let j=1;j<5;j++)g.fillRect(Math.round(bx-Math.cos(a)*j*7),Math.round(by-Math.sin(a)*j*7),2,2);ball(bx,by,7,k)}else{if(t<0.15)continue;g.globalAlpha=Math.min(1,t/0.4);ball(x,y,front?8:6,k);g.globalAlpha=1}}};
+    drawBalls(false);
+    // Shenron: cuerpo serpenteante hecho con segmentos y la cabeza del sprite oficial
+    const k=sm((t-0.9)/1.1),hx=Math.round(W/2-34+Math.sin(t*2.1)*2),hy=Math.round(44-(1-k)*210+Math.sin(t*3)*3);
+    if(k>0&&SPR.complete&&SPR.naturalWidth){
+      const P=[];let x=hx+24,y=hy+2;for(let i=0;i<92;i++){const u=i*3,a=-2.09-u*0.0125+Math.sin(u/26-t*3.2)*0.5*Math.min(1,u/45);P.push([x,y,a,22-19*Math.pow(u/276,0.8)]);x+=Math.cos(a)*3;y+=Math.sin(a)*3}
+      for(let i=3;i<P.length;i+=4){const[px,py,a,r]=P[i],nx=-Math.sin(a),ny=Math.cos(a);for(let j=0;j<5;j++){g.fillStyle=j<3?'#3c9be0':'#a8dcff';const w=Math.max(1,3-(j>>1));g.fillRect(Math.round(px+nx*(r+1+j))-1,Math.round(py+ny*(r+1+j))-1,w,w+1)}}
+      for(let i=P.length-1;i>=0;i--)disc(P[i][0],P[i][1],P[i][3]+1,P[i][3]+1,'#0b2412');
+      for(let i=P.length-1;i>=0;i--){const[px,py,,r]=P[i],ri=Math.round(r);for(let dy=-ri;dy<=ri;dy++){const f=dy/r,w=Math.round(r*Math.sqrt(Math.max(0,1-f*f)));g.fillStyle=f<-0.55?'#63c24f':f<0.25?'#3a9a3e':f<0.7?'#2a7a31':'#1f5f27';g.fillRect(Math.round(px)-w,Math.round(py)+dy,w*2+1,1)}}
+      for(let i=P.length-1;i>=0;i--){const[px,py,a,r]=P[i],nx=-Math.sin(a),ny=Math.cos(a);if(r>6){g.fillStyle='#d6c56c';g.fillRect(Math.round(px-nx*r*0.62)-1,Math.round(py-ny*r*0.62)-1,3,3);if(i%3===0){g.fillStyle='#8a7a38';g.fillRect(Math.round(px-nx*r*0.62),Math.round(py-ny*r*0.62),1,1)}}
+        if(i%2===0){g.fillStyle='#1d6a28';g.fillRect(Math.round(px+nx*r*0.3),Math.round(py+ny*r*0.3),1,1)}}
+      g.drawImage(SPR,hx,hy);
+      // ojos carmesí que brillan al hablar
+      if(t>1.9&&t<TF+0.3){g.globalAlpha=0.6+0.4*Math.sin(t*18);g.fillStyle='#ff5a5a';g.fillRect(hx+97,hy+76,4,3);g.fillStyle='#fff2a0';g.fillRect(hx+98,hy+77,2,1);g.globalAlpha=1}
     }
-    // Ascenso y presencia majestuosa de Shenron (solo Shenron)
-    const k=Math.min(1,t/0.7);
-    const shenFrame=((t*3.5)|0)%2;
-    const curShen=(shenFrame===1&&SHENIMG2.complete&&SHENIMG2.naturalWidth)?SHENIMG2:SHENIMG;
-    if(curShen.complete&&curShen.naturalWidth){
-      const sc=1.35;
-      const sw=Math.round(curShen.naturalWidth*sc),sh=Math.round(curShen.naturalHeight*sc);
-      const floatY=Math.round(Math.sin(t*3.6)*4);
-      const y=Math.round(8+(1-k)*35)+floatY;
-      const x=Math.round(W/2-sw/2);
-      // Resplandor áurico divino suave
-      const grad=g.createRadialGradient(W/2,y+sh*0.4,10,W/2,y+sh*0.4,sw*0.7);
-      grad.addColorStop(0,'rgba(34,197,94,0.25)');
-      grad.addColorStop(0.6,'rgba(16,185,129,0.08)');
-      grad.addColorStop(1,'rgba(0,0,0,0)');
-      g.fillStyle=grad;g.fillRect(0,0,W,H);
-      g.globalAlpha=k;
-      g.drawImage(curShen,x,y,sw,sh);
-      // Ojos carmesí brillantes de Shenron
-      if(t>0.6){
-        const eyeGlow=0.75+0.25*Math.sin(t*16);
-        g.globalAlpha=k*eyeGlow;
-        g.fillStyle='#ef4444';
-        g.fillRect(x+Math.round(sw*0.48),y+Math.round(sh*0.38),3,2);
-        g.fillStyle='#fef08a';
-        g.fillRect(x+Math.round(sw*0.49),y+Math.round(sh*0.39),1,1);
-      }
-      g.globalAlpha=1;
-    }
-    // Diálogos solemnes de Shenron
-    if(t<2.2){
-      text2(g,'¡HABLA! ¡CONCEDERÉ TU DESEO!',W/2,H-26,'#fef08a');
-      text2(g,'(Toca la pantalla para continuar)',W/2,H-14,'#94a3b8');
-      if(ph<1&&t>0.1){ph=1;sfx('boss')}
+    drawBalls(true);
+    // nubes delanteras: Shenron emerge entre ellas
+    for(let i=0;i<5;i++){cloud(((i*88-t*22)%(W+140)+W+140)%(W+140)-70,H+6,46,'#1a2150','#3b4580')}
+    // lluvia
+    if(t<TF)for(let i=0;i<46;i++){const yy=(rnd(i+5)*H+t*230)%H,xx=((rnd(i)*W-yy*0.3)%W+W)%W;g.globalAlpha=0.5;g.fillStyle='#7f8fd0';g.fillRect(Math.round(xx),Math.round(yy),1,3);g.globalAlpha=1}
+    if(fl){g.globalAlpha=fl;g.fillStyle='#cfdcff';g.fillRect(0,0,W,H);g.globalAlpha=1}
+    // texto arriba, sobre una franja oscura
+    g.globalAlpha=0.6;g.fillStyle='#000';g.fillRect(0,0,W,t<TF?24:34);g.globalAlpha=1;
+    if(t<TF){
+      if(t>0.15&&ph<1){ph=1;sfx('boss')}
+      if(t>0.9&&ph<2){ph=2;sfx('boss')}
+      const msg=t<1.9?'LAS 7 ESFERAS BRILLAN...':'¡HABLA! ¡CONCEDERE TU DESEO!',n2=t<1.9?msg.length:Math.min(msg.length,((t-1.9)*26)|0);
+      text2(g,msg.slice(0,n2),W/2,9,'#fef08a');
     } else {
-      if(ph<2){ph=2;sfx(top>=4?'trans':'level');for(let i=0;i<(top===5?80:40);i++)cf.push([W/2,H*0.45,(Math.random()-0.5)*260,-Math.random()*220,Math.random(),Math.random()<0.3?'#ffd23f':COL[1]])}
-      const f=Math.max(0,1-(t-2.2)*2.0);
+      if(ph<3){ph=3;sfx(top>=4?'trans':'level');for(let i=0;i<(top===5?90:44);i++)cf.push([W/2,H*0.45,(Math.random()-0.5)*280,-Math.random()*220,Math.random(),Math.random()<0.3?'#ffd23f':COL[1]])}
+      const f=Math.max(0,1-(t-TF)*1.8);
       if(f>0){g.globalAlpha=f;g.fillStyle=top===5?'#fffbeb':'#ffffff';g.fillRect(0,0,W,H);g.globalAlpha=1}
-      text2(g,top===5?'¡DESEO LEGENDARIO CONCEDIDO!':top===4?'¡DESEO ÉPICO CONCEDIDO!':'¡TU DESEO HA SIDO CONCEDIDO!',W/2,H-28,COL[1]);
-      text2(g,top===5?'★★★★★':top===4?'★★★★':'★★★',W/2,H-14,'#ffd23f');
-      for(const p of cf){
-        const dt=1/60;p[0]+=p[2]*dt;p[1]+=p[3]*dt;p[3]+=280*dt;
-        g.fillStyle=p[5];g.fillRect(p[0]|0,p[1]|0,2,2);
-      }
+      text2(g,top===5?'¡DESEO LEGENDARIO CONCEDIDO!':top===4?'¡DESEO EPICO CONCEDIDO!':'¡TU DESEO HA SIDO CONCEDIDO!',W/2,7,COL[1]);
+      text2(g,top===5?'★★★★★':top===4?'★★★★':'★★★',W/2,20,'#ffd23f');
+      for(const p of cf){const dt=1/60;p[0]+=p[2]*dt;p[1]+=p[3]*dt;p[3]+=280*dt;g.fillStyle=p[5];g.fillRect(p[0]|0,p[1]|0,2,2)}
     }
-    if(t>2.1&&t<2.35){
-      const sh=top===5?3.5:2;
-      c.style.transform=`translate(${(Math.random()-0.5)*sh*2}px,${(Math.random()-0.5)*sh*2}px)`;
-    } else c.style.transform='';
+    if(t>TF-0.05&&t<TF+0.2){const sh=top===5?3.5:2;c.style.transform=`translate(${(Math.random()-0.5)*sh*2}px,${(Math.random()-0.5)*sh*2}px)`}else c.style.transform='';
     requestAnimationFrame(fr);
   };
   fr();
