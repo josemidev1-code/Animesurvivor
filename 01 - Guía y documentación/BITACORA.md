@@ -3854,3 +3854,21 @@ ode --check.
 
 ### Lo que hice
 - Subidos a GitHub los cambios de ChatGPT (gachapón «El invento de Bulma» y auditoría de sprites) tras comprobar sintaxis, catálogo, personajes y carga en navegador.
+- Interfaz nueva con un solo sistema visual (azul marino y naranja del gi, detalles dorados, paneles de píxel):
+  - **HUD:** retrato, vida con cifras y rastro de daño, EXP fina, tiempo con las 7 esferas, KO/zeni/escenario arriba a la derecha, bandeja de ataques con recarga, destello al estar listo y candados en las casillas por abrir, jefe con barra grande, viñeta roja con poca vida. Diseño propio para pantallas estrechas.
+  - **Barras de enemigos:** mucho más finas y solo al recibir daño (jefes y élites siempre), para despejar la pantalla.
+  - **Subida de nivel:** tres tarjetas por color según tipo (pasiva azul, técnica naranja, nuevo verde, evolución dorada, fusión morada), icono grande x2, puntos de nivel y franja «TU EQUIPO». En móvil pasan a filas.
+  - **Pausa:** retrato, estadísticas con vida verde, ataque rojo y velocidad azul, más técnicas y pasivas con icono.
+  - **Sala de entrenamiento:** tarjetas con precio verde si se puede comprar, barra por tramos, estado MÁXIMO y destello al comprar. Sin emojis.
+  - **Menú principal, barras de menú, botones y pantalla final** alineados con el mismo sistema.
+- Corregido: VOLVER y la X no cerraban Entrenamiento, Cápsulas, Forja, Créditos, Mapas ni Mis Sprites porque `hideMenus` no los incluía. Probado entrando y saliendo de los 7 menús del hub.
+- Iconos de objetos mal recortados redibujados con `herramientas/generar_iconos_objetos.py` (armadura, Kinton, scouter verde y rojo, pesas, báculo, vasija); quitados de los recortes de `ui/objetos/fuentes.json`. «Bolas de Dragón» y «Semilla Senzu extra» ya no muestran el cuadrado provisional.
+
+### A medias / problemas
+- `comprobar_enemigos`, `comprobar_formas`, `comprobar_objetos` y `comprobar_rotacion` fallan, igual que en el commit anterior a esta sesión: no los causa la interfaz y siguen sin arreglar.
+- Comprobado con Playwright por servidor local a 1920x1080, 1280x720 y 390x844 con ratio de píxel 1. Sin probar: apertura con doble clic, móvil real ni ratio de píxel mayor.
+- Los iconos de PERSONAJES, TIENDA, AJUSTES y demás del menú siguen pendientes de los recursos que aporte Josemi (punto 6).
+
+### Siguiente paso recomendado
+- Que Josemi juegue y valore el nuevo aspecto; ajustar según su opinión.
+

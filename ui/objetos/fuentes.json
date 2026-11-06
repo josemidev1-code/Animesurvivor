@@ -9,19 +9,54 @@
       "url": "https://www.spriters-resource.com/game_boy_advance/dbzlog2/asset/175858/",
       "condiciones": "La hoja dice No Credit Needed. Se acredita igualmente la extracción. Es material del juego original; no se presenta como CC0 ni como arte propio.",
       "objetos": {
-        "senzu": [59, 29, 26, 27],
-        "capsulaVida": [1, 30, 17, 30],
-        "capsulaKi": [19, 122, 17, 30],
-        "radar": [97, 29, 26, 27],
-        "scouter": [38, 110, 28, 25],
-        "scouterRojo": [107, 87, 30, 16],
-        "pesas": [80, 110, 31, 21],
-        "mafuba": [141, 56, 32, 29],
-        "capsulacorp": [20, 30, 16, 30],
-        "senzuBolsa": [59, 30, 26, 25],
-        "capsulaDorada": [19, 154, 16, 30],
-        "capsulaRoja": [2, 92, 16, 30],
-        "armaduraSaiyan": [181, 147, 28, 32]
+        "senzu": [
+          59,
+          29,
+          26,
+          27
+        ],
+        "capsulaVida": [
+          1,
+          30,
+          17,
+          30
+        ],
+        "capsulaKi": [
+          19,
+          122,
+          17,
+          30
+        ],
+        "radar": [
+          97,
+          29,
+          26,
+          27
+        ],
+        "capsulacorp": [
+          20,
+          30,
+          16,
+          30
+        ],
+        "senzuBolsa": [
+          59,
+          30,
+          26,
+          25
+        ],
+        "capsulaDorada": [
+          19,
+          154,
+          16,
+          30
+        ],
+        "capsulaRoja": [
+          2,
+          92,
+          16,
+          30
+        ]
       }
     },
     {

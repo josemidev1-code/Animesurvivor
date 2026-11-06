@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
-<link rel="stylesheet" href="02 - Código del juego/style.css?v=84">
+<link rel="stylesheet" href="02 - Código del juego/style.css?v=90">
 
 <canvas id="game" aria-label="DragonBall Survivor, juego"></canvas>
 <div id="radarAviso" hidden><img data-ui="radarAnimado" alt="Radar del Dragón animado de Lady-Pixel"><span>RADAR ACTIVO</span></div>
@@ -168,12 +168,26 @@
   <h2 id="luTitle">¡SUBES DE NIVEL!</h2>
   <p class="lusub">Elige una recompensa · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd></p>
   <div class="ups" id="ups"></div>
+  <div class="luBuild" id="luBuild"></div>
   </div>
 </div>
 <div id="pause" class="ov dark" hidden>
-  <h2>PAUSA</h2>
-  <div class="moves" id="pauseMoves"></div>
-  <div class="btns"><button class="btn" id="bResume" type="button">SEGUIR</button><button class="btn alt" id="bQuit" type="button">ABANDONAR</button></div>
+  <div class="pausePanel">
+    <h2>PAUSA</h2>
+    <div class="pauseCols">
+      <section class="pauseHero">
+        <div class="pHead"><img id="pFace" alt=""><div><b id="pName"></b><span id="pForm"></span></div></div>
+        <div id="pStats"></div>
+      </section>
+      <section class="pauseGear">
+        <h3>TÉCNICAS</h3>
+        <div class="pList" id="pauseMoves"></div>
+        <h3>PASIVAS</h3>
+        <div class="pList" id="pauseCards"></div>
+      </section>
+    </div>
+    <div class="btns"><button class="btn" id="bResume" type="button">SEGUIR</button><button class="btn alt" id="bQuit" type="button">ABANDONAR</button></div>
+  </div>
 </div>
 <div id="end" class="ov dark" hidden>
   <h2 id="endTitle">HAS CAIDO</h2>
@@ -182,7 +196,7 @@
 </div>
 
 <script src="02 - Código del juego/sprites.js?v=66"></script>
-<script src="02 - Código del juego/ui_imagenes.js?v=66"></script>
+<script src="02 - Código del juego/ui_imagenes.js?v=67"></script>
 <script src="02 - Código del juego/portadas_mapas.js?v=66"></script>
 <script src="02 - Código del juego/shenron_imagen.js?v=66"></script>
 <script src="02 - Código del juego/escenarios_tiles.js?v=66"></script>
@@ -192,4 +206,4 @@
 <script src="02 - Código del juego/andar.js?v=5"></script>
 <script src="02 - Código del juego/andar_frames.js?v=2"></script>
 <script src="02 - Código del juego/efectos_packs.js?v=1"></script>
-<script src="02 - Código del juego/script.js?v=161"></script>
+<script src="02 - Código del juego/script.js?v=167"></script>

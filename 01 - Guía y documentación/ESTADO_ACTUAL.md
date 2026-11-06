@@ -86,3 +86,11 @@ Actualizado: 5 de noviembre de 2026.
 - 307 formas montadas, índice sin rutas faltantes. Catálogo y pruebas de navegador sin errores de carga de sprites. Detalle y límites en REVISION_SPRITES_2026-11-06.md.
 - Siete archivos vacíos sin extensión apartados con manifest recuperable. Créditos y fotogramas duplicados conservados para mantener procedencia e índices.
 - script.js?v=160, animaciones_juego.js?v=112. Guardado local, publicación pendiente.
+
+
+## 6 nov. — Rediseño de HUD, interfaz y mejoras
+- Sistema visual común (azul marino, naranja y dorado) en HUD, subida de nivel, pausa, Sala de entrenamiento, menú principal, barras de menú y pantalla final. Pendiente de la valoración de Josemi.
+- Corregido VOLVER/X en los menús que quedaban abiertos. Iconos de objetos erróneos redibujados con `herramientas/generar_iconos_objetos.py`.
+- Cuatro comprobaciones (`enemigos`, `formas`, `objetos`, `rotacion`) ya fallaban antes de este trabajo y siguen pendientes.
+- script.js?v=167, style.css?v=90, ui_imagenes.js?v=67.
+
